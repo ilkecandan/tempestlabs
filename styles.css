@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     color: #333;
     text-align: center;
 }
@@ -59,7 +59,7 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #DFD7C1, #F5F5F5);
+    background: #FFFFFF;
 }
 
 .hero h1 {
