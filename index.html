@@ -63,6 +63,11 @@
     
     <footer>
         <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
+        <div class="legal-links">
+            <a href="#" onclick="redirectToLegal('membership')" data-key="legal.membership">Membership Agreement</a> |
+            <a href="#" onclick="redirectToLegal('kvkk')" data-key="legal.kvkk">KVKK Clarification</a> |
+            <a href="#" onclick="redirectToLegal('distance')" data-key="legal.distance">Distance Sales Agreement</a>
+        </div>
     </footer>
 
     <script>
@@ -76,6 +81,15 @@
             const language = localStorage.getItem('preferredLanguage') || 'en';
             document.getElementById('language-selector').value = language;
         });
+
+        function redirectToLegal(doc) {
+            const language = localStorage.getItem('preferredLanguage') || 'en';
+            let url = `/legal/${doc}-agreement.html`;
+            if (language === 'tr') {
+                url = `/turkish/legal/${doc}-sozlesmesi.html`;
+            }
+            window.location.href = url;
+        }
     </script>
 </body>
 </html>
