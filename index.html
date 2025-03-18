@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-    <script defer src="weepay-integration.js"></script>
+    <script defer src="language-switcher.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo">Tempest Labs</div>
+        <div class="logo" data-key="home">Tempest Labs</div>
         <nav>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html" data-key="about">About</a></li>
+                <li><a href="products.html" data-key="products">Products</a></li>
+                <li><a href="contact.html" data-key="contact">Contact</a></li>
                 <li>
-                    <select id="language-selector" onchange="changeLanguage()">
-                        <option value="en" selected>English</option>
+                    <select id="language-selector">
+                        <option value="en">English</option>
                         <option value="tr">Türkçe</option>
                     </select>
                 </li>
@@ -30,50 +29,52 @@
         <div class="image-container">
             <img src="images/main.png" alt="Innovation at Tempest Labs">
             <div class="overlay-text">
-                <h1>Pioneering the Future of Digital Solutions</h1>
-                <p>Explore our groundbreaking creations that redefine possibilities.</p>
-                <a href="products.html" class="cta-button">Discover More</a>
+                <h1 data-key="hero_title">Pioneering the Future of Digital Solutions</h1>
+                <p data-key="hero_subtitle">Explore our groundbreaking creations that redefine possibilities.</p>
+                <a href="products.html" class="cta-button" data-key="discover_more">Discover More</a>
             </div>
         </div>
     </section>
     
     <section class="featured-products">
-        <h2>Our Flagship Products</h2>
+        <h2 data-key="featured_products">Our Flagship Products</h2>
         <div class="product-grid">
             <div class="product-card">
                 <img src="images/cabinet-of-selves.png" alt="Cabinet of Selves">
-                <h3>Cabinet of Selves</h3>
-                <p>A self-reflection tool that allows you to explore your many facets.</p>
-                <a href="product-cabinet.html" class="cta-button">Learn More</a>
+                <h3 data-key="products.cabinet.title">Cabinet of Selves</h3>
+                <p data-key="products.cabinet.description">A self-reflection tool that allows you to explore your many facets.</p>
+                <a href="product-cabinet.html" class="cta-button" data-key="products.cabinet.cta">Learn More</a>
             </div>
             <div class="product-card">
                 <img src="images/intuiva.png" alt="Intuiva">
-                <h3>Intuiva</h3>
-                <p>An AI-powered financial empowerment app designed for modern women.</p>
-                <a href="product-intuiva.html" class="cta-button">Learn More</a>
+                <h3 data-key="products.intuiva.title">Intuiva</h3>
+                <p data-key="products.intuiva.description">An AI-powered financial empowerment app designed for modern women.</p>
+                <a href="product-intuiva.html" class="cta-button" data-key="products.intuiva.cta">Learn More</a>
             </div>
         </div>
     </section>
     
     <section class="call-to-action">
-        <h2>Join the Innovation</h2>
-        <p>Be part of our journey as we shape the digital landscape with cutting-edge solutions.</p>
-        <a href="contact.html" class="cta-button">Get in Touch</a>
+        <h2 data-key="cta.title">Join the Innovation</h2>
+        <p data-key="cta.description">Be part of our journey as we shape the digital landscape with cutting-edge solutions.</p>
+        <a href="contact.html" class="cta-button" data-key="cta.button">Get in Touch</a>
     </section>
     
     <footer>
-        <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+        <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
     </footer>
 
     <script>
         function changeLanguage() {
             const language = document.getElementById('language-selector').value;
-            if (language === 'tr') {
-                window.location.href = 'turkish/index.html';
-            } else {
-                window.location.href = 'index.html';
-            }
+            localStorage.setItem('preferredLanguage', language);
+            window.location.href = language === 'tr' ? 'turkish/index.html' : 'index.html';
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const language = localStorage.getItem('preferredLanguage') || 'en';
+            document.getElementById('language-selector').value = language;
+        });
     </script>
 </body>
 </html>
