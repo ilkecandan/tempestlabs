@@ -1,1 +1,52 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - Tempest Labs</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Tempest Labs</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="products.html">Ürünler</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="about-container">
+        <div class="about-content">
+            <h1>Hakkımızda</h1>
+            <p>Tempest Labs olarak, modern çalışma ve yaşamda netlik, odak ve derinlik sağlayan dijital ürünler geliştiriyoruz. Vizyonumuz, bağımsız düşünürleri güçlendiren, fikirleri yapılandırmalarına, projeleri yönetmelerine ve bilinçli kararlar almalarına yardımcı olan araçlar yaratmaktır—gereksiz karmaşıklık veya dikkat dağıtıcı unsurlar olmadan.</p>
+            <p>Şık tasarımı, kusursuz işlevselliği ve anlamlı deneyimleri trendlere tercih ediyoruz. Ürünlerimiz, gürültü yerine derinliği, aşırılık yerine sadeliği ve hızlı çözümler yerine kaliteyi önemseyenler için tasarlanmıştır.</p>
+            <p>Tempest Labs, malzeme bilimi, yapay zeka ve web teknolojileri alanlarında uzmanlığa sahip bir araştırmacı ve geliştirici olan <strong><a href="https://ilkecandanbengi.com/" target="_blank">İlke Candan Bengi</a></strong> tarafından kuruldu. Teknolojinin insanlara hizmet etmesi gerektiğine inanan şirketimiz, günlük yaşama kusursuz şekilde entegre olan araçlar üretmeye odaklanmaktadır.</p>
+            <p>Yaklaşımımız basit: Abonelik yok, gereksiz karmaşıklık yok—sadece iyi tasarlanmış, tek seferlik satın alınan ve gerçekten işe yarayan dijital araçlar.</p>
+        </div>
+        <div class="about-image">
+            <img src="../images/profile.png" alt="İlke Candan Bengi" class="profile-pic">
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
+        <div class="legal-links">
+            <a href="#" onclick="redirectToLegal('membership')">Üyelik Sözleşmesi</a> |
+            <a href="#" onclick="redirectToLegal('kvkk')">KVKK Aydınlatma Metni</a> |
+            <a href="#" onclick="redirectToLegal('distance')">Mesafeli Satış Sözleşmesi</a>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToLegal(doc) {
+            const language = 'tr';
+            let url = `../turkish/legal/${doc}-sozlesmesi.html`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
