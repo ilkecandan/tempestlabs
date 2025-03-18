@@ -65,7 +65,7 @@
             languageSelector.addEventListener('change', (event) => {
                 const selectedLanguage = event.target.value;
                 localStorage.setItem('preferredLanguage', selectedLanguage);
-                window.location.href = selectedLanguage === 'tr' ? 'about.html' : '../about.html';
+                window.location.href = selectedLanguage === 'tr' ? '../turkish/about.html' : '../about.html';
             });
         });
     </script>
