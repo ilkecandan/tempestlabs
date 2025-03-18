@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Tempest Labs</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="language-switcher.js"></script>
+    <title>İletişim - Tempest Labs</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script defer src="../language-switcher.js"></script>
 </head>
 <body>
     <header>
         <div class="logo">Tempest Labs</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="products.html">Ürünler</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
                 <li>
                     <select id="language-selector">
-                        <option value="en" selected>English</option>
-                        <option value="tr">Türkçe</option>
+                        <option value="en">English</option>
+                        <option value="tr" selected>Türkçe</option>
                     </select>
                 </li>
             </ul>
@@ -26,37 +26,37 @@
     </header>
     
     <section class="contact-container">
-        <h1 data-key="contact.title">Contact Us</h1>
-        <p data-key="contact.subtitle">Have questions or want to collaborate? Reach out to us using the form below.</p>
+        <h1 data-key="contact.title">Bize Ulaşın</h1>
+        <p data-key="contact.subtitle">You can also send direct emails to <a href='mailto:tempestlabsofficial@gmail.com'>tempestlabsofficial@gmail.com</a>. Sorularınız mı var veya iş birliği yapmak mı istiyorsunuz? Aşağıdaki formu kullanarak bizimle iletişime geçin.</p>
         
-        <form action="https://formspree.io/f/your-formspree-id" method="POST" class="contact-form">
-            <label for="name" data-key="contact.name">Name</label>
+        <form action="https://formspree.io/f/myzezopr" method="POST" class="contact-form">
+            <label for="name" data-key="contact.name">Adınız</label>
             <input type="text" id="name" name="name" required>
             
-            <label for="email" data-key="contact.email">Email</label>
+            <label for="email" data-key="contact.email">E-posta</label>
             <input type="email" id="email" name="email" required>
             
-            <label for="message" data-key="contact.message">Message</label>
+            <label for="message" data-key="contact.message">Mesajınız</label>
             <textarea id="message" name="message" rows="5" required></textarea>
             
-            <button type="submit" class="cta-button" data-key="contact.send">Send Message</button>
+            <button type="submit" class="cta-button" data-key="contact.send">Mesaj Gönder</button>
         </form>
     </section>
     
     <footer>
-        <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+        <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const languageSelector = document.getElementById('language-selector');
-            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'tr';
             languageSelector.value = savedLanguage;
 
             languageSelector.addEventListener('change', (event) => {
                 const selectedLanguage = event.target.value;
                 localStorage.setItem('preferredLanguage', selectedLanguage);
-                window.location.href = selectedLanguage === 'tr' ? 'turkish/contact.html' : 'contact.html';
+                window.location.href = selectedLanguage === 'tr' ? 'contact.html' : '../contact.html';
             });
         });
     </script>
