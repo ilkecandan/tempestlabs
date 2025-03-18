@@ -19,21 +19,28 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: rgba(223, 215, 193, 0.9);
+    background: rgba(223, 215, 193, 0.95);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: #333;
+    cursor: pointer;
+}
+
+/* Navigation */
+nav {
+    display: flex;
 }
 
 nav ul {
@@ -48,11 +55,47 @@ nav ul li a {
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
-    color: #88B8D9;
+    color: #FFF;
+    background-color: #88B8D9;
     transform: scale(1.05);
+}
+
+/* Responsive Navigation */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(223, 215, 193, 0.95);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
 }
 
 /* Hero Section */
@@ -60,23 +103,32 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px;
+    flex-direction: column;
+    padding: 120px 20px;
+    min-height: 80vh;
 }
 
 /* Image Container */
 .image-container {
     position: relative;
-    max-width: 600px;
+    max-width: 90%;
     margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .image-container img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* Overlay Text (Now Without Background) */
+.image-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Overlay Text */
 .overlay-text {
     position: absolute;
     top: 50%;
@@ -84,67 +136,69 @@ nav ul li a:hover {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #333;
-    font-weight: 600;
+    font-weight: 700;
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .overlay-text h1 {
-    font-size: 28px;
+    font-size: 30px;
 }
 
 .overlay-text p {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
 /* CTA Button */
 .cta-button {
     display: inline-block;
-    padding: 12px 24px;
-    background: #88B8D9;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #88B8D9, #5A9BCF);
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
     transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button:hover {
-    background: #74A5C3;
+    background: linear-gradient(135deg, #74A5C3, #4A89B1);
     transform: translateY(-3px);
 }
 
 /* Sections */
 section {
     padding: 100px 5%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 36px;
+    margin-bottom: 25px;
     color: #333;
+    font-weight: 700;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .image-container {
-        max-width: 80%;
+        max-width: 95%;
     }
 
     .overlay-text h1 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .overlay-text p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .cta-button {
-        font-size: 14px;
-        padding: 10px 20px;
+        font-size: 16px;
+        padding: 12px 24px;
     }
 
     section {
