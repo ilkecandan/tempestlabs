@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('language-selector');
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
@@ -10,16 +9,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
         
+        const page = window.location.pathname.split('/').pop();
+        
+        let pageMap = {
+            'index.html': 'index.html',
+            'about.html': 'about.html',
+            'products.html': 'products.html',
+            'product-cabinet.html': 'product-cabinet.html',
+            'product-intuiva.html': 'product-intuiva.html',
+            'product-stem.html': 'product-stem.html',
+            'contact.html': 'contact.html'
+        };
+
         if (selectedLanguage === 'tr') {
-            window.location.href = '/turkish/index.html';
+            window.location.href = `../turkish/${pageMap[page] || 'index.html'}`;
         } else {
-            window.location.href = '/index.html';
+            window.location.href = `../${pageMap[page] || 'index.html'}`;
         }
     });
 });
 
 function loadLanguage(lang) {
-    fetch(`/languages/${lang}.json`)
+    fetch(`../languages/${lang}.json`)
         .then(response => response.json())
         .then(translations => {
             document.querySelectorAll('[data-key]').forEach(element => {
@@ -34,9 +45,9 @@ function loadLanguage(lang) {
 
 function redirectToLegal(doc) {
     const language = localStorage.getItem('preferredLanguage') || 'en';
-    let url = `/legal/${doc}-agreement.html`;
+    let url = `../legal/${doc}-agreement.html`;
     if (language === 'tr') {
-        url = `/turkish/legal/${doc}-sozlesmesi.html`;
+        url = `../turkish/legal/${doc}-sozlesmesi.html`;
     }
     window.location.href = url;
 }
