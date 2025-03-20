@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    background-color: #FAF3E0;
     color: #2C2C2C;
     text-align: center;
     line-height: 1.6;
@@ -19,135 +19,119 @@ body {
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background: #FFFFFF;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #785964;
+    color: #ffffff;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #2C2C2C;
-    cursor: pointer;
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.tagline {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
-nav ul li a {
-    color: #2C2C2C;
+.cta-button {
+    display: inline-block;
+    background-color: #E1B07E;
+    color: white;
+    padding: 12px 24px;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    color: #FFF;
-    background-color: #92BCEA;
-    transform: scale(1.05);
-}
-
-/* Cabinet of Selves Section */
-.cabinet-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #F7F9FC;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
-    flex-wrap: wrap;
-}
-
-.small-product-image {
-    width: 180px;
-    height: auto;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.cabinet-description {
-    flex: 1;
-    max-width: 600px;
     font-size: 18px;
-    line-height: 1.6;
-    color: #2C2C2C;
-    text-align: left;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .cabinet-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .small-product-image {
-        width: 150px;
-        margin-bottom: 15px;
-    }
-    
-    .cabinet-description {
-        text-align: center;
-    }
+.cta-button:hover {
+    background-color: #C89564;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-    
-    .cabinet-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-    
-    .small-product-image {
-        width: 120px;
-        margin-bottom: 10px;
-    }
-    
-    .cabinet-description {
-        font-size: 16px;
-        max-width: 90%;
-    }
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #F4E1D2;
 }
 
-@media (max-width: 480px) {
-    .logo {
-        font-size: 20px;
-    }
-    
-    .small-product-image {
-        width: 100px;
-    }
-    
-    .cabinet-description {
-        font-size: 14px;
-    }
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Features */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFF8EF;
+}
+
+.feature {
+    flex: 1 1 250px;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.feature i {
+    font-size: 50px;
+    color: #785964;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* Visualization */
+.visual {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #F4E1D2;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.grid-item {
+    max-width: 300px;
+}
+
+.grid-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #785964;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2C2C2C;
+    color: white;
+    font-size: 14px;
 }
