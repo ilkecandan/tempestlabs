@@ -11,8 +11,8 @@ html {
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #F5F1E8; /* Warm, soft beige background */
-    color: #3A3A3A; /* Elegant dark gray */
+    background-color: #FFFFFF; /* Clean white background */
+    color: #2C2C2C; /* Dark gray for readability */
     text-align: center;
     line-height: 1.6;
 }
@@ -23,7 +23,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: rgba(223, 215, 193, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     position: fixed;
     width: 100%;
     top: 0;
@@ -38,7 +38,7 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #3A3A3A;
+    color: #2C2C2C;
     cursor: pointer;
 }
 
@@ -50,7 +50,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: #3A3A3A;
+    color: #2C2C2C;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -61,7 +61,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #FFF;
-    background-color: #D5B895;
+    background-color: #92BCEA;
     transform: scale(1.05);
 }
 
@@ -80,7 +80,7 @@ nav ul li a:hover {
     nav ul {
         display: none;
         flex-direction: column;
-        background: rgba(223, 215, 193, 0.95);
+        background: rgba(255, 255, 255, 0.95);
         position: absolute;
         top: 60px;
         right: 0;
@@ -102,12 +102,12 @@ nav ul li a:hover {
     flex-direction: column;
     padding: 120px 20px;
     min-height: 80vh;
-    background: linear-gradient(to bottom, #F8F5F1, #E8D9C8);
+    background: linear-gradient(to bottom, #FFFFFF, #E3F2FD);
 }
 
 .overlay-text h1 {
     font-size: 32px;
-    color: #3A3A3A;
+    color: #2C2C2C;
     font-weight: bold;
 }
 
@@ -120,7 +120,7 @@ nav ul li a:hover {
 .cta-button {
     display: inline-block;
     padding: 14px 28px;
-    background: linear-gradient(135deg, #B89B72, #967A58);
+    background: linear-gradient(135deg, #92BCEA, #5A9BCF);
     color: #FFFFFF;
     text-decoration: none;
     font-size: 18px;
@@ -131,7 +131,7 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background: linear-gradient(135deg, #A98D6D, #856A4A);
+    background: linear-gradient(135deg, #74A5C3, #4A89B1);
     transform: translateY(-3px);
 }
 
@@ -145,7 +145,7 @@ section {
 h2 {
     font-size: 36px;
     margin-bottom: 25px;
-    color: #3A3A3A;
+    color: #2C2C2C;
     font-weight: 700;
 }
 
