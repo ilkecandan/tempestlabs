@@ -33,8 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadLanguage(lang) {
-    const languageFilePath = `/languages/${lang}.json`;
-    
+    let basePath = window.location.pathname.includes('/turkish/') ? '../languages/' : '/languages/';
+    const languageFilePath = `${basePath}${lang}.json`;
+
     fetch(languageFilePath)
         .then(response => {
             if (!response.ok) {
