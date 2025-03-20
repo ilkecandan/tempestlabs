@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -32,24 +31,24 @@
             <div class="overlay-text">
                 <h1 data-key="hero_title">Bazı fikirler bir fısıltı gibi gelir. Diğerleri fırtına gibi.</h1>
                 <p data-key="hero_subtitle">İkisi için de araçlar inşa ediyoruz.</p>
-                <p data-key="hero_description">Tempest Labs, zihninizi keskinleştiren, vizyonunuzu geliştiren ve düşüncelerinizi hayata geçiren zarif ve etkileyici dijital deneyimler yaratır. Ürünlerimiz yalnızca yazılım değildir—onlar birer mekândır; derinlik ve estetik arzulayanlar için bilinçle inşa edilmiştir.</p>
+                <p data-key="hero_description">Tempest Labs, zihninizi keskinleştiren, vizyonunuzu geliştiren ve düşncelerinizı hayata geçiren zarif ve etkileyici dijital deneyimler yaratır. Ürünlerimiz yalnızca yazılım değildir—onlar birer mekândır; derinlik ve estetik arzulayanlar için bilinçle inşa edilmiştir.</p>
                 <a href="products.html" class="cta-button" data-key="discover_more">İçeri girin. Bir süre kalın.</a>
             </div>
         </div>
     </section>
     
     <section class="featured-products">
-        <h2 data-key="featured_products"></h2>
+        <h2 data-key="featured_products">Öne Çıkan Ürünler</h2>
         <div class="product-grid">
             <div class="product-card">
                 <img src="../images/intuiva.png" alt="Intuiva">
-                <h3 data-key="products.intuiva.title">🧭 Intuiva</h3>
+                <h3 data-key="products.intuiva.title">🫡 Intuiva</h3>
                 <p data-key="products.intuiva.description">Cebinizdeki stratejist. Daha net düşünün, daha akıllıca plan yapın ve dağınık fikirleri yapılandırılmış bir zekâya dönüştürün.</p>
                 <a href="product-intuiva.html" class="cta-button" data-key="products.intuiva.cta">Daha Fazla Bilgi</a>
             </div>
             <div class="product-card">
                 <img src="../images/cabinet-of-selves.png" alt="Benlikler Kabini">
-                <h3 data-key="products.cabinet.title">🪞 Benlikler Kabini</h3>
+                <h3 data-key="products.cabinet.title">🫡 Benlikler Kabini</h3>
                 <p data-key="products.cabinet.description">Bir günlük, bir ayna, bir zihin haritası. Kendinizle tanışın, tüm yönlerinizle.</p>
                 <a href="product-cabinet.html" class="cta-button" data-key="products.cabinet.cta">Daha Fazla Bilgi</a>
             </div>
@@ -64,33 +63,6 @@
     
     <footer>
         <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">Tüm hakları saklıdır.</span></p>
-        <div class="legal-links">
-            <a href="#" onclick="redirectToLegal('membership')" data-key="legal.membership">Üyelik Sözleşmesi</a> |
-            <a href="#" onclick="redirectToLegal('kvkk')" data-key="legal.kvkk">KVKK Aydınlatma Metni</a> |
-            <a href="#" onclick="redirectToLegal('distance')" data-key="legal.distance">Mesafeli Satış Sözleşmesi</a>
-        </div>
     </footer>
-
-    <script>
-        function changeLanguage() {
-            const language = document.getElementById('language-selector').value;
-            localStorage.setItem('preferredLanguage', language);
-            window.location.href = language === 'tr' ? 'index.html' : '../index.html';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const language = localStorage.getItem('preferredLanguage') || 'tr';
-            document.getElementById('language-selector').value = language;
-        });
-
-        function redirectToLegal(doc) {
-            const language = localStorage.getItem('preferredLanguage') || 'tr';
-            let url = `../legal/${doc}-agreement.html`;
-            if (language === 'tr') {
-                url = `../turkish/legal/${doc}-sozlesmesi.html`;
-            }
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>
