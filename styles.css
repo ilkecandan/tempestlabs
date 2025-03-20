@@ -10,10 +10,11 @@ html {
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: #FFFFFF; /* 60% - Dominant color */
+    font-family: 'Poppins', sans-serif; /* More elegant font */
+    background-color: #FFFFFF; /* Dominant color */
     color: #2C2C2C;
-    line-height: 1.6;
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -21,31 +22,42 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background: #FFFFFF;
+    padding: 20px 5%;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 15px 5%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: #2C2C2C;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #92BCEA; /* Secondary color */
 }
 
 /* Navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav ul li a {
@@ -59,42 +71,48 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FFF;
-    background-color: #92BCEA; /* 30% - Secondary color */
-    transform: scale(1.05);
+    color: #92BCEA; /* Secondary color */
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-    background-color: #F7F9FC; /* 10% - Accent color */
-    padding: 150px 5% 100px; /* Adjusted for fixed header */
+    background-color: #F7F9FC; /* Accent color */
+    padding: 180px 5% 120px; /* Adjusted for fixed header */
     text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 56px;
     margin-bottom: 20px;
     color: #2C2C2C;
+    font-weight: 700;
+    animation: slideIn 1s ease-in-out;
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    margin-bottom: 40px;
     color: #2C2C2C;
+    animation: slideIn 1.2s ease-in-out;
 }
 
 .cta-button {
-    background-color: #92BCEA; /* 30% - Secondary color */
+    background-color: #92BCEA; /* Secondary color */
     color: #FFFFFF;
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .cta-button:hover {
     background-color: #7AA6D1;
+    transform: translateY(-3px);
 }
 
 /* About Section */
@@ -102,8 +120,9 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 5%;
-    background-color: #FFFFFF; /* 60% - Dominant color */
+    padding: 120px 5%;
+    background-color: #FFFFFF; /* Dominant color */
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .about-content {
@@ -111,9 +130,10 @@ nav ul li a:hover {
 }
 
 .about-content h1 {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 20px;
     color: #2C2C2C;
+    font-weight: 700;
 }
 
 .about-content p {
@@ -124,6 +144,13 @@ nav ul li a:hover {
 
 .about-image {
     max-width: 35%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
 }
 
 .profile-pic {
@@ -133,15 +160,17 @@ nav ul li a:hover {
 
 /* Featured Products Section */
 .featured-products {
-    padding: 100px 5%;
-    background-color: #F7F9FC; /* 10% - Accent color */
+    padding: 120px 5%;
+    background-color: #F7F9FC; /* Accent color */
     text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .featured-products h2 {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 20px;
     color: #2C2C2C;
+    font-weight: 700;
 }
 
 .product-grid {
@@ -152,12 +181,18 @@ nav ul li a:hover {
 }
 
 .product-card {
-    background-color: #FFFFFF; /* 60% - Dominant color */
+    background-color: #FFFFFF; /* Dominant color */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
     flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
@@ -170,6 +205,7 @@ nav ul li a:hover {
     font-size: 24px;
     margin-bottom: 10px;
     color: #2C2C2C;
+    font-weight: 600;
 }
 
 .product-card p {
@@ -187,10 +223,11 @@ nav ul li a:hover {
     max-width: 1100px;
     margin: 40px auto;
     padding: 20px;
-    background: #F7F9FC; /* 10% - Accent color */
+    background: #F7F9FC; /* Accent color */
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
     flex-wrap: wrap;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .small-product-image {
@@ -198,6 +235,11 @@ nav ul li a:hover {
     height: auto;
     border-radius: 10px;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.small-product-image:hover {
+    transform: scale(1.05);
 }
 
 .cabinet-description {
@@ -211,29 +253,32 @@ nav ul li a:hover {
 
 /* Call to Action Section */
 .call-to-action {
-    padding: 100px 5%;
-    background-color: #92BCEA; /* 30% - Secondary color */
+    padding: 120px 5%;
+    background-color: #92BCEA; /* Secondary color */
     text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .call-to-action h2 {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 20px;
     color: #FFFFFF;
+    font-weight: 700;
 }
 
 .call-to-action p {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    margin-bottom: 40px;
     color: #FFFFFF;
 }
 
 /* Footer */
 footer {
     padding: 20px 5%;
-    background-color: #2C2C2C; /* 10% - Accent color */
+    background-color: #2C2C2C; /* Accent color */
     text-align: center;
     color: #FFFFFF;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 footer p {
@@ -241,13 +286,25 @@ footer p {
 }
 
 .legal-links a {
-    color: #92BCEA; /* 30% - Secondary color */
+    color: #92BCEA; /* Secondary color */
     text-decoration: none;
     margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 .legal-links a:hover {
-    text-decoration: underline;
+    color: #7AA6D1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* Responsive Design */
@@ -282,15 +339,15 @@ footer p {
 
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 36px;
+        font-size: 42px;
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .about-content h1 {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     .about-content p {
@@ -298,11 +355,11 @@ footer p {
     }
 
     .featured-products h2 {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     .product-card h3 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .product-card p {
@@ -310,11 +367,11 @@ footer p {
     }
 
     .call-to-action h2 {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     .call-to-action p {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .small-product-image {
@@ -328,15 +385,15 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .about-content h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .about-content p {
@@ -344,11 +401,11 @@ footer p {
     }
 
     .featured-products h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .product-card h3 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .product-card p {
@@ -356,7 +413,7 @@ footer p {
     }
 
     .call-to-action h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .call-to-action p {
@@ -364,6 +421,6 @@ footer p {
     }
 
     .small-product-image {
-        width: 100px;
+        width: 120px;
     }
 }
