@@ -1,18 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('language-selector');
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    
+
     loadLanguage(savedLanguage);
     languageSelector.value = savedLanguage;
-    
+
     languageSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
+
+        // Detect if current page is in the Turkish directory
+        const isTurkishPage = window.location.pathname.includes('/turkish/');
         
-        // Get the current page name
-        let page = window.location.pathname.split('/').pop();
-        if (!page || page === 'index.html') page = 'index.html';
-        
+        // Define base path
+        let basePath = isTurkishPage ? '/turkish/' : '/';
+
         // Define page mapping for both languages
         let pageMap = {
             'index.html': 'index.html',
@@ -24,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'contact.html': 'contact.html'
         };
 
+        // Get the current page name
+        let page = window.location.pathname.split('/').pop();
+        if (!page || page === 'index.html') page = 'index.html';
+
+        // Redirect to the correct language version of the page
         if (selectedLanguage === 'tr') {
             window.location.href = `/turkish/${pageMap[page] || 'index.html'}`;
         } else {
@@ -33,13 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadLanguage(lang) {
-    let basePath = window.location.origin + "/tempestlabs/languages/";
-    const languageFilePath = `${basePath}${lang}.json`;
+    // Adjust paths for GitHub Pages
+    let basePath = window.location.pathname.includes('/turkish/') 
+        ? window.location.origin + "/tempestlabs/languages/tr.json" 
+        : window.location.origin + "/tempestlabs/languages/en.json";
 
-    fetch(languageFilePath)
+    fetch(basePath)
         .then(response => {
             if (!response.ok) {
-                console.warn(`Language file not found: ${languageFilePath}`);
+                console.warn(`Language file not found: ${basePath}`);
                 return {};
             }
             return response.json();
@@ -76,3 +85,4 @@ document.addEventListener('DOMContentLoaded', () => {
         checkImageExists(img.src, img);
     });
 });
+s
