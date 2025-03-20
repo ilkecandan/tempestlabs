@@ -36,7 +36,8 @@ function loadLanguage(lang) {
     fetch(`/languages/${lang}.json`)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                console.warn(`Language file not found: /languages/${lang}.json`);
+                return {};
             }
             return response.json();
         })
@@ -50,3 +51,21 @@ function loadLanguage(lang) {
         })
         .catch(error => console.error("Error loading language file:", error));
 }
+
+// Ensure images exist before setting the src
+function checkImageExists(imageSrc, imgElement) {
+    fetch(imageSrc, { method: 'HEAD' })
+        .then(response => {
+            if (!response.ok) {
+                console.warn(`Image not found: ${imageSrc}`);
+                imgElement.style.display = 'none'; // Hide missing images
+            }
+        })
+        .catch(error => console.error("Error checking image:", imageSrc, error));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(img => {
+        checkImageExists(img.src, img);
+    });
+});
