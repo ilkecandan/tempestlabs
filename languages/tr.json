@@ -1,1 +1,24 @@
-
+{
+    "home": "Tempest Labs",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "contact": "İletişim",
+    "hero_title": "Bazı fikirler bir fısıltı gibi gelir. Diğerleri fırtına gibi.",
+    "hero_subtitle": "İkisi için de araçlar inşa ediyoruz.",
+    "hero_description": "Tempest Labs, zihninizi keskinleştiren, vizyonunuzu geliştiren ve düşüncelerinizi hayata geçiren zarif ve etkileyici dijital deneyimler yaratır. Ürünlerimiz yalnızca yazılım değildir—onlar birer mekândır; derinlik ve estetik arzulayanlar için bilinçle inşa edilmiştir.",
+    "discover_more": "İçeri girin. Bir süre kalın.",
+    "featured_products": "Öne Çıkan Ürünler",
+    "products.intuiva.title": "🧭 Intuiva",
+    "products.intuiva.description": "Cebinizdeki stratejist. Daha net düşünün, daha akıllıca plan yapın ve dağınık fikirleri yapılandırılmış bir zekâya dönüştürün.",
+    "products.intuiva.cta": "Daha Fazla Bilgi",
+    "products.cabinet.title": "🪞 Benlikler Kabini",
+    "products.cabinet.description": "Bir günlük, bir ayna, bir zihin haritası. Kendinizle tanışın, tüm yönlerinizle.",
+    "products.cabinet.cta": "Daha Fazla Bilgi",
+    "cta.title": "Sanat gibi hissettiren, makine gibi çalışan ve ihtiyacınız olmadığında görünmeyen yazılımlara inanıyoruz.",
+    "cta.description": "Abonelik yok. Gürültü yok. Sadece sizinle birlikte hareket eden araçlar.",
+    "cta.button": "Bize Ulaşın",
+    "footer.rights": "Tüm hakları saklıdır.",
+    "legal.membership": "Üyelik Sözleşmesi",
+    "legal.kvkk": "KVKK Aydınlatma Metni",
+    "legal.distance": "Mesafeli Satış Sözleşmesi"
+}
