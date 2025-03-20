@@ -38,7 +38,7 @@
     </section>
     
     <section class="featured-products">
-        <h2 data-key="featured_products"></h2>
+        <h2 data-key="featured_products">Featured Products</h2>
         <div class="product-grid">
             <div class="product-card">
                 <img src="images/intuiva.png" alt="Intuiva">
@@ -69,27 +69,5 @@
             <a href="#" onclick="redirectToLegal('distance')" data-key="legal.distance">Distance Sales Agreement</a>
         </div>
     </footer>
-
-    <script>
-        function changeLanguage() {
-            const language = document.getElementById('language-selector').value;
-            localStorage.setItem('preferredLanguage', language);
-            window.location.href = language === 'tr' ? 'turkish/index.html' : 'index.html';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const language = localStorage.getItem('preferredLanguage') || 'en';
-            document.getElementById('language-selector').value = language;
-        });
-
-        function redirectToLegal(doc) {
-            const language = localStorage.getItem('preferredLanguage') || 'en';
-            let url = `/legal/${doc}-agreement.html`;
-            if (language === 'tr') {
-                url = `/turkish/legal/${doc}-sozlesmesi.html`;
-            }
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>
