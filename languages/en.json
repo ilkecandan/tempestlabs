@@ -1,1 +1,24 @@
-
+{
+    "home": "Tempest Labs",
+    "about": "About",
+    "products": "Products",
+    "contact": "Contact",
+    "hero_title": "Some ideas arrive like a whisper. Others like a storm.",
+    "hero_subtitle": "We build tools for both.",
+    "hero_description": "Tempest Labs creates elegant, immersive digital experiences designed to sharpen your mind, refine your vision, and bring your thoughts to life. Our products are not just software—they are spaces, built with intention, crafted for those who crave both depth and beauty in what they use.",
+    "discover_more": "Step inside. Stay a while.",
+    "featured_products": "Featured Products",
+    "products.intuiva.title": "🧭 Intuiva",
+    "products.intuiva.description": "A strategist in your pocket. Think clearer, plan smarter, and turn scattered thoughts into structured brilliance.",
+    "products.intuiva.cta": "Learn More",
+    "products.cabinet.title": "🪞 Cabinet of Selves",
+    "products.cabinet.description": "A journal, a mirror, a map of the mind. Meet yourself, all of you.",
+    "products.cabinet.cta": "Learn More",
+    "cta.title": "We believe in software that feels like art, works like a machine, and disappears when you don’t need it.",
+    "cta.description": "No subscriptions. No noise. Just tools that move with you.",
+    "cta.button": "Get in Touch",
+    "footer.rights": "All rights reserved.",
+    "legal.membership": "Membership Agreement",
+    "legal.kvkk": "KVKK Clarification",
+    "legal.distance": "Distance Sales Agreement"
+}
