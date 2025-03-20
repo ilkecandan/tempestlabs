@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        // Detect if current page is in the Turkish directory
+        // Base path for GitHub Pages (Adjust based on repo name)
+        const basePath = "/tempestlabs/";
+
+        // Detect if the current page is in the Turkish directory
         const isTurkishPage = window.location.pathname.includes('/turkish/');
-        
-        // Define base path
-        let basePath = isTurkishPage ? '/turkish/' : '/';
 
         // Define page mapping for both languages
         let pageMap = {
@@ -32,23 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Redirect to the correct language version of the page
         if (selectedLanguage === 'tr') {
-            window.location.href = `/turkish/${pageMap[page] || 'index.html'}`;
+            window.location.href = `${basePath}turkish/${pageMap[page] || 'index.html'}`;
         } else {
-            window.location.href = `/${pageMap[page] || 'index.html'}`;
+            window.location.href = `${basePath}${pageMap[page] || 'index.html'}`;
         }
     });
 });
 
 function loadLanguage(lang) {
     // Adjust paths for GitHub Pages
-    let basePath = window.location.pathname.includes('/turkish/') 
-        ? window.location.origin + "/tempestlabs/languages/tr.json" 
-        : window.location.origin + "/tempestlabs/languages/en.json";
+    let basePath = "/tempestlabs/languages/";
+    const languageFilePath = `${window.location.origin}${basePath}${lang}.json`;
 
-    fetch(basePath)
+    fetch(languageFilePath)
         .then(response => {
             if (!response.ok) {
-                console.warn(`Language file not found: ${basePath}`);
+                console.warn(`Language file not found: ${languageFilePath}`);
                 return {};
             }
             return response.json();
@@ -85,4 +84,3 @@ document.addEventListener('DOMContentLoaded', () => {
         checkImageExists(img.src, img);
     });
 });
-s
