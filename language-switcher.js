@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'product-cabinet.html': 'product-cabinet.html',
             'product-intuiva.html': 'product-intuiva.html',
             'product-stem.html': 'product-stem.html',
-            'contact.html': 'contact.html'
+            'contact.html': 'contact.html',
+            'distance-sales-agreement.html': 'distance-sales-agreement.html'
         };
 
         // Get the current page name
@@ -38,6 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Ensure correct legal page redirects
+function redirectToLegal(doc) {
+    const basePath = "/tempestlabs/";
+    const language = localStorage.getItem('preferredLanguage') || 'en';
+    let url;
+
+    if (language === 'tr') {
+        url = `${basePath}turkish/legal/${doc}-sozlesmesi.html`;
+    } else {
+        url = `${basePath}legal/${doc}-sales-agreement.html`;
+    }
+
+    window.location.href = url;
+}
 
 function loadLanguage(lang) {
     // Adjust paths for GitHub Pages
@@ -82,5 +98,14 @@ function checkImageExists(imageSrc, imgElement) {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('img').forEach(img => {
         checkImageExists(img.src, img);
+    });
+
+    // Update all legal links to use correct redirect function
+    document.querySelectorAll('[data-legal-link]').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const docType = link.getAttribute('data-legal-link');
+            redirectToLegal(docType);
+        });
     });
 });
