@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
         
-        const page = window.location.pathname.split('/').pop();
+        // Get the current page name
+        let page = window.location.pathname.split('/').pop();
+        if (!page || page === 'index.html') page = 'index.html';
         
+        // Define page mapping for both languages
         let pageMap = {
             'index.html': 'index.html',
             'about.html': 'about.html',
@@ -22,15 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (selectedLanguage === 'tr') {
-            window.location.href = `../turkish/${pageMap[page] || 'index.html'}`;
+            window.location.href = `/turkish/${pageMap[page] || 'index.html'}`;
         } else {
-            window.location.href = `../${pageMap[page] || 'index.html'}`;
+            window.location.href = `/${pageMap[page] || 'index.html'}`;
         }
     });
 });
 
 function loadLanguage(lang) {
-    fetch(`../languages/${lang}.json`)
+    fetch(`/languages/${lang}.json`)
         .then(response => response.json())
         .then(translations => {
             document.querySelectorAll('[data-key]').forEach(element => {
@@ -41,13 +44,4 @@ function loadLanguage(lang) {
             });
         })
         .catch(error => console.error("Error loading language file:", error));
-}
-
-function redirectToLegal(doc) {
-    const language = localStorage.getItem('preferredLanguage') || 'en';
-    let url = `../legal/${doc}-agreement.html`;
-    if (language === 'tr') {
-        url = `../turkish/legal/${doc}-sozlesmesi.html`;
-    }
-    window.location.href = url;
 }
