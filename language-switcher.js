@@ -33,15 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadLanguage(lang) {
-    fetch(`/languages/${lang}.json`)
+    const languageFilePath = `/languages/${lang}.json`;
+    
+    fetch(languageFilePath)
         .then(response => {
             if (!response.ok) {
-                console.warn(`Language file not found: /languages/${lang}.json`);
+                console.warn(`Language file not found: ${languageFilePath}`);
                 return {};
             }
             return response.json();
         })
         .then(translations => {
+            if (Object.keys(translations).length === 0) {
+                console.warn("Translation data is empty or could not be loaded.");
+                return;
+            }
             document.querySelectorAll('[data-key]').forEach(element => {
                 const translationKey = element.getAttribute('data-key');
                 if (translations[translationKey]) {
