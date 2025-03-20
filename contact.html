@@ -1,64 +1,153 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim - Tempest Labs</title>
-    <link rel="stylesheet" href="../styles.css">
-    <script defer src="../language-switcher.js"></script>
-</head>
-<body>
-    <header>
-        <div class="logo">Tempest Labs</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="products.html">Ürünler</a></li>
-                <li><a href="about.html">Hakkımızda</a></li>
-                <li>
-                    <select id="language-selector">
-                        <option value="en">English</option>
-                        <option value="tr" selected>Türkçe</option>
-                    </select>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="contact-container">
-        <h1 data-key="contact.title">Bize Ulaşın</h1>
-        <p data-key="contact.subtitle">You can also send direct emails to <a href='mailto:tempestlabsofficial@gmail.com'>tempestlabsofficial@gmail.com</a>. Sorularınız mı var veya iş birliği yapmak mı istiyorsunuz? Aşağıdaki formu kullanarak bizimle iletişime geçin.</p>
-        
-        <form action="https://formspree.io/f/myzezopr" method="POST" class="contact-form">
-            <label for="name" data-key="contact.name">Adınız</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email" data-key="contact.email">E-posta</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message" data-key="contact.message">Mesajınız</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <button type="submit" class="cta-button" data-key="contact.send">Mesaj Gönder</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
-    </footer>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const languageSelector = document.getElementById('language-selector');
-            const savedLanguage = localStorage.getItem('preferredLanguage') || 'tr';
-            languageSelector.value = savedLanguage;
+html {
+    scroll-behavior: smooth;
+}
 
-            languageSelector.addEventListener('change', (event) => {
-                const selectedLanguage = event.target.value;
-                localStorage.setItem('preferredLanguage', selectedLanguage);
-                window.location.href = selectedLanguage === 'tr' ? 'contact.html' : '../contact.html';
-            });
-        });
-    </script>
-</body>
-</html>
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #FFFFFF;
+    color: #2C2C2C;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #FFFFFF;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #2C2C2C;
+    cursor: pointer;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #2C2C2C;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #FFF;
+    background-color: #92BCEA;
+    transform: scale(1.05);
+}
+
+/* Cabinet of Selves Section */
+.cabinet-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #F7F9FC;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;
+}
+
+.small-product-image {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.cabinet-description {
+    flex: 1;
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2C2C2C;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cabinet-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .small-product-image {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+    
+    .cabinet-description {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .cabinet-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .small-product-image {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+    
+    .cabinet-description {
+        font-size: 16px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+    
+    .small-product-image {
+        width: 100px;
+    }
+    
+    .cabinet-description {
+        font-size: 14px;
+    }
+}
