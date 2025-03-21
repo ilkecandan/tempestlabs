@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tempest Labs</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="language-switcher.js"></script>
     <style>
         /* General Reset */
@@ -20,8 +20,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #FFFFFF;
-            color: #2C2C2C;
+            background-color: #000000; /* Dark background to kill any white */
+            color: #FFFFFF;
             line-height: 1.8;
             overflow-x: hidden;
         }
@@ -32,13 +32,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.8); /* Translucent black */
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -48,29 +48,40 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #2C2C2C;
+            color: #FFFFFF;
             cursor: pointer;
-            transition: color 0.3s ease;
         }
 
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
         .hero {
             position: relative;
-            height: 80vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background-color: #F7F9FC;
+            background-color: transparent; /* Removed the F7F9FC background */
         }
 
-        /* Center the smaller image behind the text */
         .image-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            opacity: 0.3;
+            opacity: 0.1; /* Soft background image effect */
             z-index: -1;
         }
 
@@ -79,24 +90,26 @@
             max-width: 600px;
         }
 
-        /* Overlay text styling */
         .overlay-text {
             max-width: 700px;
-            background: rgba(255, 255, 255, 0.8);
+            background: transparent; /* Removed white overlay */
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            color: #FFFFFF;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         }
 
         .cta-button {
             background-color: #92BCEA;
-            color: #FFFFFF;
+            color: #000000;
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
             font-weight: 500;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            margin-top: 1.5rem;
         }
 
         .cta-button:hover {
@@ -104,6 +117,70 @@
             transform: translateY(-3px);
         }
 
+        .featured-products {
+            padding: 4rem 2rem;
+            background-color: #111111;
+        }
+
+        .featured-products h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #FFFFFF;
+        }
+
+        .product-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action {
+            padding: 4rem 2rem;
+            background-color: #000000;
+            text-align: center;
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action p {
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #000000;
+            color: #999999;
+            font-size: 14px;
+        }
+
+        .legal-links a {
+            color: #CCCCCC;
+            margin: 0 5px;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -116,17 +193,17 @@
                 <li><a href="contact.html" data-key="contact">Contact</a></li>
                 <li>
                     <select id="language-selector">
-                        <option value="en">English</option>
+                        <option value="en" selected>English</option>
                         <option value="tr">Türkçe</option>
                     </select>
                 </li>
             </ul>
         </nav>
     </header>
-    
+
     <section class="hero">
         <div class="image-container">
-            <img src="images/main.png" alt="Background Design">
+            <img src="images/main.png" alt="Background Design" />
         </div>
         <div class="overlay-text">
             <h1 data-key="hero_title">Some ideas arrive like a whisper. Others like a storm.</h1>
@@ -139,30 +216,31 @@
             <a href="products.html" class="cta-button" data-key="discover_more">Step inside. Stay a while.</a>
         </div>
     </section>
-   <section class="featured-products">
+
+    <section class="featured-products">
         <h2 data-key="featured_products">Featured Products</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="../images/intuiva.png" alt="Intuiva">
+                <img src="../images/intuiva.png" alt="Intuiva" />
                 <h3 data-key="products.intuiva.title">🫡 Intuiva</h3>
                 <p data-key="products.intuiva.description">The strategist in your pocket. Think clearer, plan smarter, and turn scattered ideas into structured intelligence.</p>
                 <a href="product-intuiva.html" class="cta-button" data-key="products.intuiva.cta">Learn More</a>
             </div>
             <div class="product-card">
-                <img src="../images/cabinet-of-selves.png" alt="Cabinet of Selves">
+                <img src="../images/cabinet-of-selves.png" alt="Cabinet of Selves" />
                 <h3 data-key="products.cabinet.title">🫡 Cabinet of Selves</h3>
                 <p data-key="products.cabinet.description">A journal, a mirror, a mind map. Meet yourself, in all your dimensions.</p>
                 <a href="product-cabinet.html" class="cta-button" data-key="products.cabinet.cta">Learn More</a>
             </div>
         </div>
     </section>
-    
+
     <section class="call-to-action">
         <h2 data-key="cta.title">We believe in software that feels like art, works like a machine, and disappears when you don’t need it.</h2>
         <p data-key="cta.description">No subscriptions. No noise. Just tools that move with you.</p>
         <a href="contact.html" class="cta-button" data-key="cta.button">Contact Us</a>
     </section>
-    
+
     <footer>
         <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
         <div class="legal-links">
