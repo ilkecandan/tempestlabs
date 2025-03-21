@@ -77,9 +77,14 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-color: #F7F9FC; /* Accent color */
-    padding: 180px 5% 120px; /* Adjusted for fixed header */
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 2rem;
+    background-color: #F7F9FC; /* Accent color */
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -97,13 +102,30 @@ nav ul li a:hover {
     color: #2C2C2C;
     animation: slideIn 1.2s ease-in-out;
 }
+
+/* Center the smaller image behind the text */
+.image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3; /* Adjust transparency */
+    z-index: -1; /* Moves it behind the text */
+}
+
+.image-container img {
+    width: 50vw; /* Makes the image smaller and responsive */
+    max-width: 600px; /* Limits its size */
+}
+
+/* Overlay text styling */
 .overlay-text {
+    max-width: 700px;
+    color: black; /* Ensures text is readable */
+    font-family: 'Georgia', serif;
+    text-shadow: none;
     padding: 2rem;
     border-radius: 1rem;
-    color: white;
-    max-width: 800px;
-    text-align: center;
-    font-family: 'Georgia', serif;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -385,6 +407,10 @@ footer p {
 
     .small-product-image {
         width: 150px;
+    }
+
+    .image-container img {
+        width: 70vw; /* Slightly smaller on mobile */
     }
 }
 
