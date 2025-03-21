@@ -6,6 +6,39 @@
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="language-switcher.js"></script>
+    <style>
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: black;
+            background: #f7f7f7;
+        }
+        .image-container {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            max-width: 800px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+        .overlay-text {
+            position: relative;
+            background: rgba(255, 255, 255, 0.8); /* Ensures readability */
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -40,43 +73,9 @@
             <a href="products.html" class="cta-button" data-key="discover_more">Step inside. Stay a while.</a>
         </div>
     </section>
-
-    <section class="featured-products">
-        <h2 data-key="featured_products">Featured Products</h2>
-        <p class="product-intro">We sell digital solutions that stay yours.</p>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="images/intuiva.png" alt="Intuiva">
-                <h3 data-key="products.intuiva.title">🫡 Intuiva</h3>
-                <p data-key="products.intuiva.description">A strategist in your pocket. Think clearer, plan smarter, and turn scattered thoughts into structured brilliance.</p>
-                <a href="product-intuiva.html" class="cta-button" data-key="products.intuiva.cta">Learn More</a>
-            </div>
-            <div class="product-card">
-                <img src="images/cabinet-of-selves.png" alt="Cabinet of Selves">
-                <h3 data-key="products.cabinet.title">🫡 Cabinet of Selves</h3>
-                <p data-key="products.cabinet.description">A journal, a mirror, a map of the mind. Meet yourself, all of you.</p>
-                <div class="cabinet-container">
-                    <img src="images/cabinet.png" alt="Cabinet Illustration" class="small-product-image">
-                    <p class="cabinet-description">Cabinet of Selves is a beautifully designed, deeply intuitive journaling tool that helps you explore the layers of who you are. Inspired by the warmth of a writer’s desk and the depth of introspection, this PWA is built for those who think, feel, and evolve. No subscriptions, no logins—just a private space for your thoughts.</p>
-                </div>
-                <a href="product-cabinet.html" class="cta-button" data-key="products.cabinet.cta">Learn More</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="call-to-action">
-        <h2 data-key="cta.title">We believe in software that feels like art, works like a machine, and disappears when you don’t need it.</h2>
-        <p data-key="cta.description">No subscriptions. No noise. Just tools that move with you.</p>
-        <a href="contact.html" class="cta-button" data-key="cta.button">Get in Touch</a>
-    </section>
     
     <footer>
         <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
-        <div class="legal-links">
-            <a href="legal/membership-agreement.html" data-key="legal.membership">Membership Agreement</a> |
-            <a href="legal/kvkk-clarification.html" data-key="legal.kvkk">KVKK Clarification</a> |
-            <a href="legal/distance-sales-agreement.html" data-key="legal.distance">Distance Sales Agreement</a>
-        </div>
     </footer>
 </body>
 </html>
