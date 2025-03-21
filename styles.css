@@ -97,6 +97,16 @@ nav ul li a:hover {
     color: #2C2C2C;
     animation: slideIn 1.2s ease-in-out;
 }
+.overlay-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    max-width: 800px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
 
 .cta-button {
     background-color: #92BCEA; /* Secondary color */
