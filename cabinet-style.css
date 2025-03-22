@@ -1,41 +1,77 @@
-/* Cabinet of Selves Specific Styles */
 body {
     background-color: #7AA6D1;
+    color: #2C2C2C;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 1rem 10%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: #2C2C2C;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
     color: #2C2C2C;
 }
 
 .hero {
     background-color: #FDD5D5;
-    text-align: left;
-    padding-left: 10%;
+    padding: 4rem 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.overlay-text {
+    max-width: 600px;
+    font-size: 18px;
 }
 
 .image-container img {
-    width: 80%;
-    height: 90%;
+    max-width: 400px;
+    height: auto;
     object-fit: cover;
     border-radius: 30px;
     transition: transform 0.5s ease;
 }
 
 .image-container img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-.overlay-text {
-    position: relative;
-    z-index: 2;
-    right:50
-    max-width: 700px;
-    padding: 2rem;
-   font-size: 18px;
-    border-radius: 20px;
-    color: #2C2C2C;
-    animation: fadeIn 2s ease-in-out;
-}
 .cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
     background-color: #7AA6D1;
-    color: #FFFFFF;
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .cta-button:hover {
@@ -44,10 +80,10 @@ body {
 
 .features-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 50px 10%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .feature-block {
@@ -57,13 +93,10 @@ body {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.how-it-works, .storytelling {
+.how-it-works,
+.storytelling {
     padding: 50px 10%;
     background-color: #FDD5D5;
-}
-
-.storytelling .cta-button {
-    background-color: #52B788;
 }
 
 footer {
