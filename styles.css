@@ -46,6 +46,7 @@ header.scrolled {
     letter-spacing: 1.5px;
     justify-content: center;
     color: #2C2C2C;
+    transform: translateX(100px);
     cursor: pointer;
     transition: color 0.3s ease;
 }
