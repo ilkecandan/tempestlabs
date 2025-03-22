@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,35 +11,42 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #FFF;
+    background-color: #FFFFFF;
     color: #2C2C2C;
-    line-height: 1.8;
+    line-height: 2.1;
     overflow-x: hidden;
 }
 
 /* Header */
 header {
-    padding: 20px 5%;
+    margin-down: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: rgba(255, 255, 255, 0.9);
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 8px 15px rgba(0.5, 0.5, 0.5, 0.05);
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
+header.scrolled {
+    padding: 40px 5%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .logo {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
-    letter-spacing: 1px;
-    color: #2C2C2C;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
+    justify-content: center;
+    color: #2C2C2C;
+    transform: translateX(100px);
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -48,161 +55,192 @@ header {
     color: #7AA6D1;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
-nav a {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
+nav ul li a {
     color: #2C2C2C;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
 }
 
-nav a:hover {
+nav ul li a:hover {
     color: #7AA6D1;
     transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-    margin-top: 100px;
-    padding: 6rem 10%;
+    margin-top: 90px;
+    padding: 10% 0;
+    position: relative;
+    height: 90vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    background-color: #FDD5D5;
-    animation: fadeIn 1.5s ease-in-out;
+    justify-content: center;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+.image-container {
+    margin-down: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: transform 0.5s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
 }
 
 .overlay-text {
-    flex: 1;
-    max-width: 600px;
+    position: relative;
     z-index: 2;
-    font-size: 18px;
-    animation: slideUp 1s ease-in-out;
-}
-
-.overlay-text h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.overlay-text p {
-    margin-bottom: 30px;
-    line-height: 1.8;
+    max-width: 700px;
+    padding: 2rem;
+   font-size: 18px;
+    border-radius: 20px;
+    color: #2C2C2C;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .cta-button {
     background-color: #7AA6D1;
-    color: #fff;
-    padding: 14px 28px;
-    font-size: 18px;
-    border-radius: 10px;
+    color: #FFFFFF;
+    padding: 15px 30px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-    background-color: #52B788;
-    transform: translateY(-2px);
+    background-color: #92BCEA;
+    transform: translateY(-3px);
 }
 
-.image-container {
-    flex: 1;
+/* Featured Products Section */
+.featured-products {
+    padding: 50px 5%; /* Reduced padding */
+    background-color: #FFFFFF;
     text-align: center;
 }
 
-.image-container img {
-    width: 90%;
-    max-width: 500px;
-    border-radius: 30px;
-    transition: transform 0.4s ease;
+.featured-products h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #2C2C2C;
+    font-weight: 700;
+    animation: slideIn 1s ease-in-out;
 }
 
-.image-container img:hover {
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card {
+    background-color: #F7F9FC;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 80%;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
     transform: scale(1.05);
 }
 
-/* Features Section */
-.features-section {
-    padding: 80px 10%;
-    background-color: #FFFFFF;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    animation: fadeIn 1.5s ease-in-out;
+.product-card h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #2C2C2C;
+    font-weight: 600;
 }
 
-.feature-block {
-    background-color: #F7F9FC;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-block:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.feature-block h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
+.product-card p {
+    font-size: 25px;
+    margin-bottom: 20px;
     color: #2C2C2C;
 }
 
-.feature-block p {
-    font-size: 16px;
-    color: #444;
-}
-
-/* Story Sections */
-.how-it-works, .storytelling {
-    padding: 80px 10%;
-    background-color: #FDD5D5;
+/* Call to Action Section */
+.call-to-action {
+    padding: 80px 5%; /* Reduced padding */
+    background-color: #7AA6D1;
+    text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 }
 
-.how-it-works h2,
-.storytelling h2 {
-    font-size: 36px;
+.call-to-action h2 {
+    font-size: 42px;
     margin-bottom: 20px;
+    color: #FFFFFF;
+    font-weight: 700;
 }
 
-.storytelling p {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.storytelling .cta-button {
-    margin-top: 30px;
-    background-color: #52B788;
+.call-to-action p {
+    font-size: 25px;
+    margin-bottom: 20px; /* Reduced margin */
+    color: #FFFFFF;
 }
 
 /* Footer */
 footer {
+    padding: 15px 5%;
     background-color: #2C2C2C;
-    color: #fff;
     text-align: center;
-    padding: 30px 5%;
-    font-size: 14px;
-    animation: fadeIn 2s ease-in-out;
+    color: #FFFFFF;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-footer a {
+footer p {
+    margin-bottom: 10px;
+}
+
+.legal-links a {
     color: #7AA6D1;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
-footer a:hover {
+.legal-links a:hover {
     color: #92BCEA;
 }
 
@@ -212,41 +250,92 @@ footer a:hover {
     to { opacity: 1; }
 }
 
-@keyframes slideUp {
-    from { transform: translateY(40px); opacity: 0; }
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsiveness */
-@media (max-width: 992px) {
-    .hero {
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product-grid {
         flex-direction: column;
-        text-align: center;
-    }
-
-    .overlay-text, .image-container {
-        max-width: 100%;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        gap: 15px;
     }
 }
 
-@media (max-width: 600px) {
-    .overlay-text h1 {
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 30px;
+    }
+
+    .featured-products h2 {
+        font-size: 40px;
+    }
+
+    .product-card h3 {
+        font-size: 30px;
+    }
+
+    .product-card p {
+        font-size: 30px;
+    }
+
+    .call-to-action h2 {
+        font-size: 36px;
+    }
+
+    .call-to-action p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero h1 {
         font-size: 32px;
     }
 
-    .overlay-text p,
-    .feature-block p,
-    .storytelling p {
-        font-size: 16px;
+    .hero p {
+        font-size: 18px;
     }
 
-    .cta-button {
-        font-size: 16px;
-        padding: 12px 20px;
+    .featured-products h2 {
+        font-size: 28px;
     }
+
+    .product-card h3 {
+        font-size: 20px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+
+    .call-to-action h2 {
+        font-size: 28px;
+    }
+
+    .call-to-action p {
+        font-size: 16px;
+    }
+}
+
+/* Add this to your existing CSS file */
+.product-gif {
+    width: 90%;
+    height: 400px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-gif:hover {
+    transform: scale(1.05);
 }
