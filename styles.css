@@ -96,7 +96,7 @@ nav ul li a:hover {
 }
 
 .image-container img {
-    width: 70%;
+    width: 80%;
     height: 90%;
     object-fit: cover;
     border-radius: 30px;
@@ -114,6 +114,7 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 20px;
     color: #2C2C2C;
+    background: #FFFFFF;
     animation: fadeIn 2s ease-in-out;
 }
 
