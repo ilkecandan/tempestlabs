@@ -63,7 +63,7 @@ nav ul {
 nav ul li a {
     color: #2C2C2C;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
     border-radius: 5px;
@@ -126,7 +126,7 @@ nav ul li a:hover {
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -138,7 +138,7 @@ nav ul li a:hover {
 
 /* Featured Products Section */
 .featured-products {
-    padding: 60px 5%; /* Reduced padding */
+    padding: 50px 5%; /* Reduced padding */
     background-color: #FFFFFF;
     text-align: center;
 }
@@ -154,13 +154,13 @@ nav ul li a:hover {
 .product-grid {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 5px;
     margin-top: 10px; /* Reduced margin */
 }
 
 .product-card {
     background-color: #F7F9FC;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
@@ -186,14 +186,14 @@ nav ul li a:hover {
 }
 
 .product-card h3 {
-    font-size: 30px;
+    font-size: 50px;
     margin-bottom: 10px;
     color: #2C2C2C;
     font-weight: 600;
 }
 
 .product-card p {
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 20px;
     color: #2C2C2C;
 }
@@ -214,7 +214,7 @@ nav ul li a:hover {
 }
 
 .call-to-action p {
-    font-size: 22px;
+    font-size: 25px;
     margin-bottom: 20px; /* Reduced margin */
     color: #FFFFFF;
 }
@@ -275,11 +275,11 @@ footer p {
     }
 
     .product-card h3 {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .product-card p {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .call-to-action h2 {
