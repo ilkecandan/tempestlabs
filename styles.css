@@ -138,7 +138,7 @@ nav ul li a:hover {
 
 /* Featured Products Section */
 .featured-products {
-    padding: 120px 5%;
+    padding: 80px 5%; /* Reduced padding */
     background-color: #FFFFFF;
     text-align: center;
 }
@@ -155,7 +155,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: 20px; /* Reduced margin */
 }
 
 .product-card {
@@ -200,7 +200,7 @@ nav ul li a:hover {
 
 /* Call to Action Section */
 .call-to-action {
-    padding: 120px 5%;
+    padding: 80px 5%; /* Reduced padding */
     background-color: #7AA6D1;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
@@ -215,7 +215,7 @@ nav ul li a:hover {
 
 .call-to-action p {
     font-size: 22px;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Reduced margin */
     color: #FFFFFF;
 }
 
