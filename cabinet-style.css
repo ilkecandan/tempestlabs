@@ -10,20 +10,29 @@ body {
     padding-left: 10%;
 }
 
+.image-container img {
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: transform 0.5s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
+
 .overlay-text {
-   
     position: relative;
     z-index: 2;
-    right:100;
-    max-width: 600px;
+    right:50
+    max-width: 700px;
     padding: 2rem;
-   font-size: 20px;
+   font-size: 18px;
     border-radius: 20px;
     color: #2C2C2C;
     animation: fadeIn 2s ease-in-out;
-
 }
-
 .cta-button {
     background-color: #7AA6D1;
     color: #FFFFFF;
