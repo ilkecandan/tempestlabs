@@ -102,6 +102,11 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
 }
 
 .overlay-text {
@@ -112,6 +117,7 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 20px;
     color: #2C2C2C;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .cta-button {
@@ -142,6 +148,7 @@ nav ul li a:hover {
     margin-bottom: 20px;
     color: #2C2C2C;
     font-weight: 700;
+    animation: slideIn 1s ease-in-out;
 }
 
 .product-grid {
@@ -159,6 +166,7 @@ nav ul li a:hover {
     text-align: center;
     flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .product-card:hover {
@@ -170,6 +178,11 @@ nav ul li a:hover {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+    transform: scale(1.05);
 }
 
 .product-card h3 {
@@ -190,6 +203,7 @@ nav ul li a:hover {
     padding: 120px 5%;
     background-color: #7AA6D1;
     text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .call-to-action h2 {
@@ -211,6 +225,7 @@ footer {
     background-color: #2C2C2C;
     text-align: center;
     color: #FFFFFF;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 footer p {
@@ -226,6 +241,17 @@ footer p {
 
 .legal-links a:hover {
     color: #92BCEA;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* Responsive Design */
