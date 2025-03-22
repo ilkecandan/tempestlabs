@@ -369,7 +369,6 @@ body.cabinet-page .hero-image {
 body.cabinet-page .hero-image img {
   width: 100%;
   border-radius: 50px;
-  flex-wrap: wrap;
   transform: rotate(-3deg);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease;
