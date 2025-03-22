@@ -9,56 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        // Base path for GitHub Pages (Adjust based on repo name)
-        const basePath = "/tempestlabs/";
-
         // Detect if the current page is in the Turkish directory
         const isTurkishPage = window.location.pathname.includes('/turkish/');
 
-        // Define page mapping for both languages
-        let pageMap = {
-            'index.html': 'index.html',
-            'about.html': 'about.html',
-            'products.html': 'products.html',
-            'product-cabinet.html': 'product-cabinet.html',
-            'product-intuiva.html': 'product-intuiva.html',
-            'product-stem.html': 'product-stem.html',
-            'contact.html': 'contact.html',
-            'distance-sales-agreement.html': 'distance-sales-agreement.html'
-        };
+        // Get the current page name (e.g., index.html)
+        let currentPage = window.location.pathname.split('/').pop();
+        if (!currentPage || currentPage === '') currentPage = 'index.html';
 
-        // Get the current page name
-        let page = window.location.pathname.split('/').pop();
-        if (!page || page === 'index.html') page = 'index.html';
-
-        // Redirect to the correct language version of the page
+        // Redirect based on language
         if (selectedLanguage === 'tr') {
-            window.location.href = `${basePath}turkish/${pageMap[page] || 'index.html'}`;
+            window.location.href = `/turkish/${currentPage}`;
         } else {
-            window.location.href = `${basePath}${pageMap[page] || 'index.html'}`;
+            window.location.href = `/${currentPage}`;
         }
+    });
+
+    // Image check logic
+    document.querySelectorAll('img').forEach(img => {
+        checkImageExists(img.src, img);
+    });
+
+    // Hook for legal redirects
+    document.querySelectorAll('[data-legal-link]').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const docType = link.getAttribute('data-legal-link');
+            redirectToLegal(docType);
+        });
     });
 });
 
-// Ensure correct legal page redirects
-function redirectToLegal(doc) {
-    const basePath = "/tempestlabs/";
-    const language = localStorage.getItem('preferredLanguage') || 'en';
-    let url;
-
-    if (language === 'tr') {
-        url = `${basePath}turkish/legal/${doc}-sozlesmesi.html`;
-    } else {
-        url = `${basePath}legal/${doc}-sales-agreement.html`;
-    }
-
-    window.location.href = url;
-}
-
 function loadLanguage(lang) {
-    // Adjust paths for GitHub Pages
-    let basePath = "/tempestlabs/languages/";
-    const languageFilePath = `${window.location.origin}${basePath}${lang}.json`;
+    const languageFilePath = `/languages/${lang}.json`;
 
     fetch(languageFilePath)
         .then(response => {
@@ -83,29 +65,26 @@ function loadLanguage(lang) {
         .catch(error => console.error("Error loading language file:", error));
 }
 
-// Ensure images exist before setting the src
+function redirectToLegal(doc) {
+    const language = localStorage.getItem('preferredLanguage') || 'en';
+    let url;
+
+    if (language === 'tr') {
+        url = `/turkish/legal/${doc}.html`;
+    } else {
+        url = `/legal/${doc}.html`;
+    }
+
+    window.location.href = url;
+}
+
 function checkImageExists(imageSrc, imgElement) {
     fetch(imageSrc, { method: 'HEAD' })
         .then(response => {
             if (!response.ok) {
                 console.warn(`Image not found: ${imageSrc}`);
-                imgElement.style.display = 'none'; // Hide missing images
+                imgElement.style.display = 'none';
             }
         })
         .catch(error => console.error("Error checking image:", imageSrc, error));
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('img').forEach(img => {
-        checkImageExists(img.src, img);
-    });
-
-    // Update all legal links to use correct redirect function
-    document.querySelectorAll('[data-legal-link]').forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const docType = link.getAttribute('data-legal-link');
-            redirectToLegal(docType);
-        });
-    });
-});
