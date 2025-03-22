@@ -76,7 +76,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    margin-top: 150px;
+    margin-top: 750px;
     padding: 10% 0;
     position: relative;
     height: 90vh;
@@ -84,7 +84,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #F7F9FC;
+    background-color: #FFFFFF;
 }
 
 .image-container {
