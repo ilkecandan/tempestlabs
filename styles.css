@@ -156,8 +156,6 @@ nav ul li a:hover {
 .product-grid {
     display: flex;
     justify-content: space-between;
-    gap: 5px;
-    margin-top: 10px; /* Reduced margin */
 }
 
 .product-card {
