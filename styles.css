@@ -343,41 +343,66 @@ footer p {
 /* === Cabinet of Selves Scoped Styles === */
 
 /* Only targets pages with a body tag like <body class="cabinet-page"> */
-
 body.cabinet-page {
   background: #F7FAFC;
   color: #2C2C2C;
 }
 
+/* Hero Section with left-aligned image */
 body.cabinet-page .hero {
   background: linear-gradient(to bottom, #EFF6FB, #DDECF5);
   padding: 160px 10% 80px;
-  text-align: center;
-  min-height: 80vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  text-align: left;
 }
 
-body.cabinet-page .hero h1 {
+body.cabinet-page .hero-image {
+  flex: 1;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+body.cabinet-page .hero-image img {
+  width: 100%;
+  border-radius: 50px;
+  transform: rotate(-3deg);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+body.cabinet-page .hero-image img:hover {
+  transform: rotate(-1deg) scale(1.03);
+}
+
+body.cabinet-page .overlay-text {
+  flex: 1;
+  max-width: 600px;
+  padding: 1rem;
+}
+
+body.cabinet-page .overlay-text h1 {
   font-size: 60px;
   font-weight: 700;
   color: #2C2C2C;
   margin-bottom: 10px;
 }
 
-body.cabinet-page .hero .tagline {
+body.cabinet-page .overlay-text .tagline {
   font-size: 24px;
   margin-bottom: 20px;
   color: #4C4C4C;
   font-style: italic;
 }
 
-body.cabinet-page .hero p {
+body.cabinet-page .overlay-text p {
   font-size: 20px;
   color: #3B3B3B;
-  max-width: 750px;
-  margin: 0 auto;
+  margin-bottom: 20px;
+  line-height: 1.8;
 }
 
 /* Features Section */
@@ -452,14 +477,20 @@ body.cabinet-page .storytelling p {
   color: #444;
 }
 
-/* CTA Button (inherits main site styling) */
+/* CTA Button */
 body.cabinet-page .cta-button {
   margin-top: 30px;
+  display: inline-block;
 }
 
 /* Responsive Tweaks */
 @media (max-width: 768px) {
-  body.cabinet-page .hero h1 {
+  body.cabinet-page .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  body.cabinet-page .overlay-text h1 {
     font-size: 44px;
   }
 
@@ -470,5 +501,9 @@ body.cabinet-page .cta-button {
   body.cabinet-page .storytelling h2,
   body.cabinet-page .how-it-works h2 {
     font-size: 30px;
+  }
+
+  body.cabinet-page .hero-image img {
+    transform: rotate(0deg);
   }
 }
