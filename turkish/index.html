@@ -9,12 +9,13 @@
 </head>
 <body>
     <header>
-        <div class="logo" data-key="home">Tempest Labs</div>
+        <a class="logo" href="index.html">Tempest Labs</a>
         <nav>
             <ul>
                 <li><a href="about.html" data-key="about">Hakkımızda</a></li>
                 <li><a href="products.html" data-key="products">Ürünler</a></li>
                 <li><a href="contact.html" data-key="contact">İletişim</a></li>
+                <li><a href="blog.html" data-key="about">Blog</a></li>
                 <li>
                     <select id="language-selector">
                         <option value="en">English</option>
@@ -24,43 +25,61 @@
             </ul>
         </nav>
     </header>
-    
+
+    <br>
     <section class="hero">
         <div class="image-container">
             <img src="../images/main.png" alt="Tempest Labs - Dijital Yenilik">
-            <div class="overlay-text">
-                <h1 data-key="hero_title">Bazı fikirler bir fısıltı gibi gelir. Diğerleri fırtına gibi.</h1>
-                <p data-key="hero_subtitle">İkisi için de araçlar inşa ediyoruz.</p>
-                <p data-key="hero_description">Tempest Labs, zihninizi keskinleştiren, vizyonunuzu geliştiren ve düşncelerinizı hayata geçiren zarif ve etkileyici dijital deneyimler yaratır. Ürünlerimiz yalnızca yazılım değildir—onlar birer mekândır; derinlik ve estetik arzulayanlar için bilinçle inşa edilmiştir.</p>
-                <a href="products.html" class="cta-button" data-key="discover_more">İçeri girin. Bir süre kalın.</a>
-            </div>
+        </div>
+        <div class="overlay-text">
+            <br>
+            <h1 data-key="hero_title">Bazı fikirler bir fısıltı gibi gelir. Diğerleri fırtına gibi.</h1>
+            <p data-key="hero_subtitle">İkisi için de araçlar inşa ediyoruz.</p>
+            <p data-key="hero_description">
+                Tempest Labs, zihninizi keskinleştiren, vizyonunuzu geliştiren ve düşüncelerinizi hayata geçiren zarif ve etkileyici dijital deneyimler yaratır.
+                Ürünlerimiz yalnızca yazılım değildir—onlar birer mekândır; derinlik ve estetik arzulayanlar için bilinçle inşa edilmiştir.
+            </p>
+            <p class="tagline">Yaratıcılığın kodla buluştuğu, fikirlerin kalıcı hale geldiği yer.</p>
+            <br><br>
+            <a href="products.html" class="cta-button" data-key="discover_more">İçeri girin. Bir süre kalın.</a>
         </div>
     </section>
-    
+
     <section class="featured-products">
         <h2 data-key="featured_products">Öne Çıkan Ürünler</h2>
         <div class="product-grid">
+            <!-- Intuiva -->
             <div class="product-card">
-                <img src="../images/intuiva.png" alt="Intuiva">
-                <h3 data-key="products.intuiva.title">🫡 Intuiva</h3>
-                <p data-key="products.intuiva.description">Cebinizdeki stratejist. Daha net düşünün, daha akıllıca plan yapın ve dağınık fikirleri yapılandırılmış bir zekâya dönüştürün.</p>
-                <a href="product-intuiva.html" class="cta-button" data-key="products.intuiva.cta">Daha Fazla Bilgi</a>
+                <a href="https://tempestlabs.space/turkish/product-intuiva.html" class="product-link">
+                    <img src="../images/intuiva.png" alt="Intuiva" class="product-gif">
+                    <h3 data-key="products.intuiva.title">🫡 Intuiva</h3>
+                </a>
+                <p data-key="products.intuiva.description">
+                    Cebinizdeki stratejist. Daha net düşünün, daha akıllıca plan yapın ve dağınık fikirleri yapılandırılmış bir zekâya dönüştürün.
+                </p>
+                <a href="https://tempestlabs.space/turkish/product-intuiva.html" class="cta-button" data-key="products.intuiva.cta">Daha Fazla Bilgi</a>
             </div>
+
+            <!-- Cabinet of Selves -->
             <div class="product-card">
-                <img src="../images/cabinet-of-selves.png" alt="Benlikler Kabini">
-                <h3 data-key="products.cabinet.title">🫡 Benlikler Kabini</h3>
-                <p data-key="products.cabinet.description">Bir günlük, bir ayna, bir zihin haritası. Kendinizle tanışın, tüm yönlerinizle.</p>
-                <a href="product-cabinet.html" class="cta-button" data-key="products.cabinet.cta">Daha Fazla Bilgi</a>
+                <a href="https://tempestlabs.space/turkish/product-cabinet.html" class="product-link">
+                    <img src="../images/cabinet-of-selves.png" alt="Benlikler Kabini" class="product-gif">
+                    <h3 data-key="products.cabinet.title">🫡 Benlikler Kabini</h3>
+                </a>
+                <p data-key="products.cabinet.description">
+                    Bir günlük, bir ayna, bir zihin haritası. Kendinizle tanışın, tüm yönlerinizle.
+                </p>
+                <a href="https://tempestlabs.space/turkish/product-cabinet.html" class="cta-button" data-key="products.cabinet.cta">Daha Fazla Bilgi</a>
             </div>
         </div>
     </section>
-    
+
     <section class="call-to-action">
         <h2 data-key="cta.title">Sanat gibi hissettiren, makine gibi çalışan ve ihtiyacınız olmadığında görünmeyen yazılımlara inanıyoruz.</h2>
         <p data-key="cta.description">Abonelik yok. Gürültü yok. Sadece sizinle birlikte hareket eden araçlar.</p>
         <a href="contact.html" class="cta-button" data-key="cta.button">Bize Ulaşın</a>
     </section>
-    
+
     <footer>
         <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">Tüm hakları saklıdır.</span></p>
         <div class="legal-links">
