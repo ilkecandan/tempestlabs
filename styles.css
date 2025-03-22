@@ -112,7 +112,6 @@ nav ul li a:hover {
     position: relative;
     z-index: 2;
     max-width: 700px;
-    background: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     border-radius: 20px;
     color: #2C2C2C;
