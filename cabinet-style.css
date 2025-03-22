@@ -12,6 +12,7 @@ body {
 
 .hero .overlay-text {
     max-width: 50%;
+      left: 150px;
     text-align: left;
 }
 
