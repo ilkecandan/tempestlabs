@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* More elegant font */
-    background-color: #FFFFFF; /* Dominant color */
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
     color: #2C2C2C;
     line-height: 1.8;
     overflow-x: hidden;
@@ -23,7 +23,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.9);
     position: fixed;
     width: 100%;
     top: 0;
@@ -50,7 +50,7 @@ header.scrolled {
 }
 
 .logo:hover {
-    color: #92BCEA; /* Secondary color */
+    color: #7AA6D1;
 }
 
 /* Navigation */
@@ -71,14 +71,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #92BCEA; /* Secondary color */
+    color: #7AA6D1;
     transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-    background-color: #F7F9FC; /* Accent color */
-    padding: 180px 5% 120px; /* Adjusted for fixed header */
+    background-color: #F7F9FC;
+    padding: 180px 5% 120px;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -99,7 +99,7 @@ nav ul li a:hover {
 }
 
 .cta-button {
-    background-color: #92BCEA; /* Secondary color */
+    background-color: #7AA6D1;
     color: #FFFFFF;
     padding: 15px 30px;
     text-decoration: none;
@@ -111,57 +111,14 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background-color: #7AA6D1;
+    background-color: #92BCEA;
     transform: translateY(-3px);
-}
-
-/* About Section */
-.about-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 120px 5%;
-    background-color: #FFFFFF; /* Dominant color */
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.about-content {
-    max-width: 60%;
-}
-
-.about-content h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    color: #2C2C2C;
-    font-weight: 700;
-}
-
-.about-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #2C2C2C;
-}
-
-.about-image {
-    max-width: 35%;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.about-image:hover {
-    transform: scale(1.05);
-}
-
-.profile-pic {
-    width: 100%;
-    border-radius: 10px;
 }
 
 /* Featured Products Section */
 .featured-products {
     padding: 120px 5%;
-    background-color: #F7F9FC; /* Accent color */
+    background-color: #FFFFFF;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -181,7 +138,7 @@ nav ul li a:hover {
 }
 
 .product-card {
-    background-color: #FFFFFF; /* Dominant color */
+    background-color: #F7F9FC;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
@@ -214,47 +171,10 @@ nav ul li a:hover {
     color: #2C2C2C;
 }
 
-/* Cabinet of Selves Section */
-.cabinet-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #F7F9FC; /* Accent color */
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
-    flex-wrap: wrap;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.small-product-image {
-    width: 180px;
-    height: auto;
-    border-radius: 10px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
-
-.small-product-image:hover {
-    transform: scale(1.05);
-}
-
-.cabinet-description {
-    flex: 1;
-    max-width: 600px;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #2C2C2C;
-    text-align: left;
-}
-
 /* Call to Action Section */
 .call-to-action {
     padding: 120px 5%;
-    background-color: #92BCEA; /* Secondary color */
+    background-color: #7AA6D1;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -275,7 +195,7 @@ nav ul li a:hover {
 /* Footer */
 footer {
     padding: 20px 5%;
-    background-color: #2C2C2C; /* Accent color */
+    background-color: #2C2C2C;
     text-align: center;
     color: #FFFFFF;
     animation: fadeIn 1.5s ease-in-out;
@@ -286,14 +206,14 @@ footer p {
 }
 
 .legal-links a {
-    color: #92BCEA; /* Secondary color */
+    color: #7AA6D1;
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .legal-links a:hover {
-    color: #7AA6D1;
+    color: #92BCEA;
 }
 
 /* Animations */
@@ -309,31 +229,8 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-content {
-        max-width: 100%;
-    }
-
-    .about-image {
-        max-width: 50%;
-        margin-top: 20px;
-    }
-
     .product-grid {
         flex-direction: column;
-    }
-
-    .cabinet-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cabinet-description {
-        text-align: center;
     }
 }
 
@@ -344,14 +241,6 @@ footer p {
 
     .hero p {
         font-size: 20px;
-    }
-
-    .about-content h1 {
-        font-size: 36px;
-    }
-
-    .about-content p {
-        font-size: 16px;
     }
 
     .featured-products h2 {
@@ -373,10 +262,6 @@ footer p {
     .call-to-action p {
         font-size: 20px;
     }
-
-    .small-product-image {
-        width: 150px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -390,14 +275,6 @@ footer p {
 
     .hero p {
         font-size: 18px;
-    }
-
-    .about-content h1 {
-        font-size: 28px;
-    }
-
-    .about-content p {
-        font-size: 14px;
     }
 
     .featured-products h2 {
@@ -418,9 +295,5 @@ footer p {
 
     .call-to-action p {
         font-size: 16px;
-    }
-
-    .small-product-image {
-        width: 120px;
     }
 }
