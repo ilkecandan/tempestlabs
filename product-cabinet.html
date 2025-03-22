@@ -1,104 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabinet of Selves - Tempest Labs</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="language-switcher.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabinet of Selves | Tempest Labs</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../cabinet-style.css" />
 </head>
 <body>
-    <header>
-        <div class="logo" data-key="home">Tempest Labs</div>
-        <nav>
-            <ul>
-                <li><a href="about.html" data-key="about">About</a></li>
-                <li><a href="products.html" data-key="products">Products</a></li>
-                <li><a href="contact.html" data-key="contact">Contact</a></li>
-                <li>
-                    <select id="language-selector">
-                        <option value="en">English</option>
-                        <option value="tr">Türkçe</option>
-                    </select>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <a class="logo" href="index.html">Tempest Labs</a>
+    <nav>
+        <ul>
+            <li><a href="about.html" data-key="about">About</a></li>
+            <li><a href="products.html" data-key="products">Products</a></li>
+            <li><a href="contact.html" data-key="contact">Contact</a></li>
+            <li><a href="blog.html" data-key="about">Blog</a></li>
 
-    <main>
-        <header>
-        <h1>Cabinet of Selves</h1>
-        <p class="tagline">Soft. Deep. Yours Forever.</p>
-        <a href="#" class="cta-button">Get Cabinet of Selves</a>
-    </header>
+            <li>
+                <select id="language-selector">
+                    <option value="en" selected>English</option>
+                    <option value="tr">Türkçe</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>"You contain multitudes. Now, give them a space to exist."</h2>
-            <p>Cabinet of Selves is a beautifully designed journaling tool for self-reflection, personal growth, and parts therapy.</p>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="overlay-text">
+      <h1 data-key="cabinet.title">Cabinet of Selves</h1>
+      <p class="tagline" data-key="cabinet.tagline">You contain multitudes. Now, give them a space to exist.</p>
+      <p data-key="cabinet.intro">Cabinet of Selves is a beautifully designed journaling tool for self-reflection, personal growth, and parts therapy. It’s a wonderland for your inner world—gentle, profound, and private.</p>
+      <a href="#how-it-works" class="cta-button" data-key="cabinet.howitworks.cta">How It Works</a>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature">
-            <i class="fas fa-user-circle"></i>
-            <h3>See & Name Your Inner World</h3>
-            <p>Explore your different parts, give them names, and even assign images.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-pen"></i>
-            <h3>Journaling & Daily Check-Ins</h3>
-            <p>Write, reflect, and track which parts of you are most active.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-comments"></i>
-            <h3>Talk to an AI Companion</h3>
-            <p>Engage in guided self-reflection with an AI assistant (not a real therapist!).</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-lock"></i>
-            <h3>Private & Offline</h3>
-            <p>No logins, no tracking. Everything stays on your device.</p>
-        </div>
-    </section>
+  <section class="features-section">
+    <div class="feature-block">
+      <h2 data-key="cabinet.features.seename">See & Name Your Inner World</h2>
+      <p data-key="cabinet.features.seename.desc">Explore the diverse voices within you—protectors, exiles, artists, dreamers. Give them names. Assign them images. Let each part take up space in your story and find peace in being seen.</p>
+    </div>
+    <div class="feature-block">
+      <h2 data-key="cabinet.features.journaling">Journaling & Daily Check-Ins</h2>
+      <p data-key="cabinet.features.journaling.desc">Track your internal weather. Journal freely or follow reflective prompts. Identify which parts are active and how they influence your emotions, choices, and relationships over time.</p>
+    </div>
+    <div class="feature-block">
+      <h2 data-key="cabinet.features.ai">Talk to an AI Companion</h2>
+      <p data-key="cabinet.features.ai.desc">Have thoughtful, guided conversations with an AI assistant designed to mirror your thoughts, not judge them. It’s not therapy—but it is a space to explore with curiosity and kindness.</p>
+    </div>
+    <div class="feature-block">
+      <h2 data-key="cabinet.features.privacy">Private & Offline</h2>
+      <p data-key="cabinet.features.privacy.desc">No logins. No accounts. No data sent anywhere. Cabinet of Selves runs entirely on your device. Your mind is sacred—your data stays yours.</p>
+    </div>
+  </section>
 
-    <!-- Product Visualization -->
-    <section class="visual">
-        <h2>How It Works</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="journal-mockup.jpg" alt="Journaling Feature">
-                <p>Beautiful, distraction-free journaling space.</p>
-            </div>
-            <div class="grid-item">
-                <img src="parts-mockup.jpg" alt="Parts Tracking">
-                <p>Visualize and track different aspects of yourself.</p>
-            </div>
-        </div>
-    </section>
+  <section class="how-it-works" id="how-it-works">
+    <h2 data-key="cabinet.howitworks.title">How It Works</h2>
+    <p data-key="cabinet.howitworks.desc">
+      Cabinet of Selves gives you a sanctuary of stillness and depth. With an elegant interface designed to feel soft, intuitive, and warm, you can explore and organize the voices within you. Add new parts, track their emotional states, journal their messages, and return to them whenever you need. It’s a living map of your inner landscape.
+    </p>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <h2>Your Mind, Your Space</h2>
-        <p>Own your story. Understand your mind. Find your balance.</p>
-        <a href="#" class="cta-button">Get Cabinet of Selves</a>
-    </section>
+  <section class="storytelling">
+    <h2 data-key="cabinet.story.title">Your Mind, Your Space</h2>
+    <p data-key="cabinet.story.ifs">
+      Inspired by Internal Family Systems (IFS) therapy, Cabinet of Selves embraces the idea that we are not one voice—but many. IFS views the mind as a system of parts, each holding beliefs, roles, or wounds. By engaging these parts compassionately, we create harmony and internal leadership. If you're new to this, we recommend the book <em>No Bad Parts: Healing Trauma and Restoring Wholeness with the Internal Family Systems Model</em> by Richard Schwartz, Ph.D.—the founder of the IFS model.
+    </p>
+    <p data-key="cabinet.story.experience">
+      Inside the app, you’ll see all your parts arranged with intention. Add visuals, describe their thoughts, reflect on what they need. Whether you’re working with protectors or exiles, you can offer them space and attention.
+    </p>
+    <p data-key="cabinet.story.trust">
+      This is not just a tool—it’s a philosophy. One that trusts you to be your own healer, listener, and leader. One that respects your boundaries. That’s why there are no trackers, no accounts, no subscriptions—just a one-time purchase and full access, forever.
+    </p>
+    <a href="https://tempestlabs.space/cabinet" class="cta-button" data-key="cabinet.cta.try">Try Cabinet of Selves</a>
+  </section>
 
-    <footer>
-        <p>© 2025 Tempest Labs | All Rights Reserved</p>
-    </footer>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
-        <div class="legal-links">
-            <a href="legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="legal.membership">Membership Agreement</a> |
+  <footer>
+       <a href="legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="legal.membership">Membership Agreement</a> |
             <a href="legal/kvkk-clarification.html" onclick="redirectToLegal('kvkk')" data-key="legal.kvkk">KVKK Clarification</a> |
             <a href="legal/distance-sales-agreement.html" onclick="redirectToLegal('distance')" data-key="legal.distance">Distance Sales Agreement</a>
-        </div>
-    </footer>
+    <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
+  </footer>
 </body>
 </html>
