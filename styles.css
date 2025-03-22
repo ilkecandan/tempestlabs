@@ -353,10 +353,10 @@ body.cabinet-page .hero {
   background: linear-gradient(to bottom, #EFF6FB, #DDECF5);
   padding: 160px 10% 80px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 10px;
   text-align: left;
 }
 
@@ -369,6 +369,7 @@ body.cabinet-page .hero-image {
 body.cabinet-page .hero-image img {
   width: 100%;
   border-radius: 50px;
+  flex-wrap: wrap;
   transform: rotate(-3deg);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease;
@@ -385,7 +386,7 @@ body.cabinet-page .overlay-text {
 }
 
 body.cabinet-page .overlay-text h1 {
-  font-size: 60px;
+  font-size: 30px;
   font-weight: 700;
   color: #2C2C2C;
   margin-bottom: 10px;
