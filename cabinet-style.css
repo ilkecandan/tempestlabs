@@ -15,9 +15,9 @@ body {
     position: relative;
     z-index: 2;
     right:400;
-    max-width: 700px;
+    max-width: 600px;
     padding: 2rem;
-   font-size: 18px;
+   font-size: 20px;
     border-radius: 20px;
     color: #2C2C2C;
     animation: fadeIn 2s ease-in-out;
