@@ -19,7 +19,7 @@ body {
 
 /* Header */
 header {
-    margin-down: 50px;
+    margin-down: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,7 +76,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    margin-top: 75px;
+    margin-top: 90px;
     padding: 10% 0;
     position: relative;
     height: 90vh;
@@ -138,7 +138,7 @@ nav ul li a:hover {
 
 /* Featured Products Section */
 .featured-products {
-    padding: 80px 5%; /* Reduced padding */
+    padding: 60px 5%; /* Reduced padding */
     background-color: #FFFFFF;
     text-align: center;
 }
@@ -154,7 +154,7 @@ nav ul li a:hover {
 .product-grid {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 10px;
     margin-top: 10px; /* Reduced margin */
 }
 
