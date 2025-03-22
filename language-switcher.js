@@ -9,14 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        // Detect if the current page is in the Turkish directory
-        const isTurkishPage = window.location.pathname.includes('/turkish/');
-
         // Get the current page name (e.g., index.html)
         let currentPage = window.location.pathname.split('/').pop();
         if (!currentPage || currentPage === '') currentPage = 'index.html';
 
-        // Redirect based on language
+        // Redirect based on selected language
         if (selectedLanguage === 'tr') {
             window.location.href = `/turkish/${currentPage}`;
         } else {
@@ -24,12 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Image check logic
+    // Hide broken images
     document.querySelectorAll('img').forEach(img => {
         checkImageExists(img.src, img);
     });
 
-    // Hook for legal redirects
+    // Legal links redirection
     document.querySelectorAll('[data-legal-link]').forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
