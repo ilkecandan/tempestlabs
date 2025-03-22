@@ -14,7 +14,7 @@ body {
    
     position: relative;
     z-index: 2;
-    left:400;
+    right:400;
     max-width: 700px;
     padding: 2rem;
    font-size: 18px;
