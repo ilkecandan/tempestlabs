@@ -339,3 +339,136 @@ footer p {
 .product-gif:hover {
     transform: scale(1.05);
 }
+
+/* === Cabinet of Selves Scoped Styles === */
+
+/* Only targets pages with a body tag like <body class="cabinet-page"> */
+
+body.cabinet-page {
+  background: #F7FAFC;
+  color: #2C2C2C;
+}
+
+body.cabinet-page .hero {
+  background: linear-gradient(to bottom, #EFF6FB, #DDECF5);
+  padding: 160px 10% 80px;
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.cabinet-page .hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin-bottom: 10px;
+}
+
+body.cabinet-page .hero .tagline {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #4C4C4C;
+  font-style: italic;
+}
+
+body.cabinet-page .hero p {
+  font-size: 20px;
+  color: #3B3B3B;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Features Section */
+body.cabinet-page .features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 80px 10%;
+  background-color: #FFFFFF;
+}
+
+body.cabinet-page .feature-block {
+  background-color: #F5F9FC;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+body.cabinet-page .feature-block:hover {
+  transform: translateY(-5px);
+}
+
+body.cabinet-page .feature-block h2 {
+  font-size: 26px;
+  color: #2C2C2C;
+  margin-bottom: 10px;
+}
+
+body.cabinet-page .feature-block p {
+  font-size: 18px;
+  color: #4A4A4A;
+  line-height: 1.8;
+}
+
+/* How It Works Section */
+body.cabinet-page .how-it-works {
+  padding: 100px 10%;
+  background: #ECF3F9;
+  text-align: center;
+}
+
+body.cabinet-page .how-it-works h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+body.cabinet-page .how-it-works p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 2;
+}
+
+/* Storytelling Section */
+body.cabinet-page .storytelling {
+  padding: 100px 10%;
+  background: #FFFFFF;
+  text-align: center;
+}
+
+body.cabinet-page .storytelling h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+body.cabinet-page .storytelling p {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-size: 20px;
+  line-height: 2;
+  color: #444;
+}
+
+/* CTA Button (inherits main site styling) */
+body.cabinet-page .cta-button {
+  margin-top: 30px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  body.cabinet-page .hero h1 {
+    font-size: 44px;
+  }
+
+  body.cabinet-page .feature-block h2 {
+    font-size: 22px;
+  }
+
+  body.cabinet-page .storytelling h2,
+  body.cabinet-page .how-it-works h2 {
+    font-size: 30px;
+  }
+}
