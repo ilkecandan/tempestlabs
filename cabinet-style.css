@@ -11,9 +11,17 @@ body {
 }
 
 .hero .overlay-text {
-    max-width: 50%;
-      right: 400px;
-    text-align: left;
+   
+    position: relative;
+    z-index: 2;
+    left:300;
+    max-width: 700px;
+    padding: 2rem;
+   font-size: 18px;
+    border-radius: 20px;
+    color: #2C2C2C;
+    animation: fadeIn 2s ease-in-out;
+
 }
 
 .cta-button {
