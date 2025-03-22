@@ -40,10 +40,11 @@ header.scrolled {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    justify-content: center;
     color: #2C2C2C;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -63,7 +64,7 @@ nav ul {
 nav ul li a {
     color: #2C2C2C;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
     border-radius: 5px;
