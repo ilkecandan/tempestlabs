@@ -365,3 +365,79 @@ footer p {
     transform: scale(1.05);
 }
 
+  .featured-products {
+            padding: 80px 5%;
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        .featured-products h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2C2C2C;
+            font-weight: 700;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #F7F9FC;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            flex: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2C2C2C;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+
+        .product-card a {
+            background-color: #7AA6D1;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .product-card a:hover {
+            background-color: #92BCEA;
+            transform: translateY(-3px);
+        }
+
