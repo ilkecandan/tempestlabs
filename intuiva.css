@@ -1,199 +1,159 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #92BCEA; /* Text color */
-    background-color: #2A2A2A; /* Body background color */
-}
-
-header {
-    background-color: #1E1E1E; /* Header background color */
-    color: #92BCEA; /* Header text color */
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #48B19E; /* Logo color */
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #92BCEA; /* Navigation link color */
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.cta-button {
-    background-color: #48B19E; /* Button color */
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #3A9C8A; /* Button hover color */
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1E1E1E;
+  color: #92BCEA;
 }
 
 .hero {
-    display: flex;
+  background-color: #2A2A2A;
+  padding: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 80px 20px;
-    background-color: #1E1E1E; /* Hero background color */
+  }
 }
 
-.hero-text {
-    max-width: 50%;
+.text-content h1 {
+  font-size: 2.5rem;
 }
 
-.hero-text h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #92BCEA; /* Hero heading color */
+.brand-name {
+  color: #48B19E;
 }
 
-.hero-text p {
-    font-size: 22px;
-    margin-bottom: 30px;
-    color: #92BCEA; /* Hero paragraph color */
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
 }
 
-.hero-video {
-    max-width: 50%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.video-box {
+  max-width: 500px;
+  width: 100%;
 }
 
-.features, .how-it-works, .testimonials, .pricing {
-    padding: 80px 20px;
-    text-align: center;
-    background-color: #1E1E1E; /* Section background color */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
+  overflow: hidden;
 }
 
-.features h2, .how-it-works h2, .testimonials h2, .pricing h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #92BCEA; /* Section heading color */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.feature-grid, .steps, .testimonial-grid, .pricing-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+.video-credit {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
 }
 
-.feature-item, .step, .testimonial-item, .pricing-plan {
-    background-color: #2A2A2A; /* Feature box background color */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    width: 300px; /* Larger feature boxes */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.video-credit a {
+  color: #48B19E;
+  text-decoration: none;
 }
 
-.feature-item:hover, .step:hover, .testimonial-item:hover, .pricing-plan:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+.why-intuiva,
+.features,
+.pricing {
+  padding: 3rem 2rem;
+  background-color: #1E1E1E;
 }
 
-.feature-item h3, .step h3, .pricing-plan h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #48B19E; /* Feature title color */
+.features h2,
+.why-intuiva h2,
+.pricing h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.feature-item p, .step p, .testimonial-item p, .pricing-plan p {
-    font-size: 16px;
-    color: #92BCEA; /* Feature text color */
+.why-intuiva p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feature-box {
+  background-color: #2A2A2A;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #48B19E;
+}
+
+.feature-box h3 {
+  margin-top: 0;
+  color: #48B19E;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+@media (min-width: 600px) {
+  .plans {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.plan {
+  background-color: #2A2A2A;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #48B19E;
+}
+
+.plan h3 {
+  margin-bottom: 0.5rem;
+  color: #48B19E;
+}
+
+.plan p {
+  margin: 0.5rem 0;
 }
 
 footer {
-    background-color: #1E1E1E; /* Footer background color */
-    color: #92BCEA; /* Footer text color */
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px 20px;
-    }
-
-    .hero-text, .hero-video {
-        max-width: 100%;
-    }
-
-    .hero-text h1 {
-        font-size: 36px;
-    }
-
-    .hero-text p {
-        font-size: 18px;
-    }
-
-    .feature-grid, .steps, .testimonial-grid, .pricing-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature-item, .step, .testimonial-item, .pricing-plan {
-        width: 80%;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        margin-top: 10px;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    .hero-text h1 {
-        font-size: 28px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-    .feature-item, .step, .testimonial-item, .pricing-plan {
-        width: 90%;
-        padding: 20px;
-    }
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background-color: #1E1E1E;
+  color: #666;
 }
