@@ -21,7 +21,7 @@ body {
 
 /* 3. Tüm section'lar arasında eşit boşluk */
 section {
-    padding: 60px 0;
+    padding: 15px 0;
 }
 
 /* 4. Header */
@@ -118,6 +118,8 @@ nav a {
 /* How it Works */
 .how-it-works {
     background: #FBDEDA;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .how-it-works-container {
