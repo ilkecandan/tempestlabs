@@ -1,1 +1,246 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tempest Labs - Mesafeli Satış Sözleşmesi</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header .logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main.agreement-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .agreement-section {
+            margin-bottom: 2rem;
+        }
+
+        .agreement-section p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .agreement-section strong {
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer .legal-links {
+            margin-top: 0.5rem;
+        }
+
+        footer .legal-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer .legal-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script defer src="language-switcher.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a class="logo" href="index.html" data-key="distanceheader">Tempest Labs</a>
+        <nav>
+            <ul>
+                <li><a href="/about.html" data-key="about">Hakkımızda</a></li>
+                <li><a href="/products.html" data-key="products">Ürünler</a></li>
+                <li><a href="/contact.html" data-key="contact">İletişim</a></li>
+                <li><a href="/blog.html" data-key="about">Blog</a></li>
+                <li>
+                    <select id="language-selector">
+                        <option value="en">English</option>
+                        <option value="tr" selected>Türkçe</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="agreement-container">
+        <h1 data-key="distanceheader">Mesafeli Satış Sözleşmesi</h1>
+
+        <!-- Parties Section -->
+        <section class="agreement-section">
+            <h2 data-key="distanceparties">Taraflar</h2>
+            <p><strong data-key="distancesellerlabel">SATICI:</strong> Tempest Labs, Adres: İstanbul 34020, Türkiye, Telefon: 905075275600, E-posta: tempestlabsofficial@gmail.com</p>
+            <p data-key="distancesellerref">Bundan sonra <strong>SATICI</strong> olarak anılacaktır.</p>
+            <p><strong data-key="distancebuyerlabel">ALICI:</strong> Ad-Soyad, T.C. Kimlik Numarası, Adres, Telefon, E-posta</p>
+            <p data-key="distancebuyerref">Bundan sonra <strong>ALICI</strong> olarak anılacaktır.</p>
+        </section>
+
+        <!-- Purpose of the Agreement -->
+        <section class="agreement-section">
+            <h2 data-key="distancepurpose">Sözleşmenin Amacı</h2>
+            <p data-key="distancepurposetext">Bu sözleşme, ALICI'nın SATICI'nın web sitesi (<a href="https://tempestlabs.space/">https://tempestlabs.space/</a>) üzerinden verdiği elektronik siparişi düzenler ve aşağıda belirtilen ürün(ler)in özelliklerini ve satış fiyatını açıklar. Sözleşme, 4077 sayılı Tüketicilerin Korunması Hakkında Kanun ve Mesafeli Sözleşmelere İlişkin Usul ve Esaslar Hakkında Yönetmelik hükümlerine uygun olarak düzenlenmiştir.</p>
+        </section>
+
+        <!-- Product/Service Delivery -->
+        <section class="agreement-section">
+            <h2 data-key="distancedelivery">Ürün/Hizmet Teslimi</h2>
+            <p data-key="distancedeliverytext">Ürün/hizmet, ALICI tarafından belirtilen <strong>[Alıcı Adı]</strong> adlı kişi/kuruluşa, ALICI'nın belirttiği adreste teslim edilecektir: <strong>[Teslimat Adresi]</strong>.</p>
+        </section>
+
+        <!-- BUYER's Declaration -->
+        <section class="agreement-section">
+            <h2 data-key="distancebuyerdeclaration">ALICI Beyanı</h2>
+            <p data-key="distancebuyerdeclarationtext">ALICI, SATICI'nın web sitesinde yer alan ürünlerin temel özelliklerini, satış fiyatını, ödeme yöntemini ve teslimat bilgilerini okuduğunu ve anladığını, elektronik ortamda siparişi onayladığını beyan eder.</p>
+        </section>
+
+        <!-- Delivery Time -->
+        <section class="agreement-section">
+            <h2 data-key="distancedeliverytime">Teslimat Süresi</h2>
+            <p data-key="distancedeliverytimetext">Sözleşme konusu ürün(ler), ALICI'nın yerleşim yerinin uzaklığına bağlı olarak, web sitesinde belirtilen süre içinde ve yasal 30 günlük süreyi aşmadan ALICI'ya veya belirttiği adresteki kişi/kuruluşa teslim edilecektir.</p>
+        </section>
+
+        <!-- Delivery to Third Parties -->
+        <section class="agreement-section">
+            <h2 data-key="distancethirdparty">Üçüncü Kişilere Teslimat</h2>
+            <p data-key="distancethirdpartytext">Ürünün bir üçüncü kişiye/kuruluşa teslim edilmesi durumunda, teslim alıcının teslimi reddetmesinden SATICI sorumlu tutulamaz.</p>
+        </section>
+
+        <!-- SELLER's Responsibility -->
+        <section class="agreement-section">
+            <h2 data-key="distancesellerresponsibility">SATICI'nın Sorumlulukları</h2>
+            <p data-key="distancesellerresponsibilitytext">SATICI, sözleşme konusu ürün(ler)in sağlam, eksiksiz, siparişte belirtilen niteliklere uygun ve varsa garanti belgeleri ile kullanım kılavuzlarıyla birlikte teslim edilmesinden sorumludur.</p>
+        </section>
+
+        <!-- Payment Condition -->
+        <section class="agreement-section">
+            <h2 data-key="distancepayment">Ödeme Koşulu</h2>
+            <p data-key="distancepaymenttext">Ürün(ler)in teslimi, ALICI'nın tercih ettiği ödeme yöntemi ile ürün bedelinin ödenmesine bağlıdır. Herhangi bir nedenle ürün bedeli ödenmez veya banka kayıtlarında iptal edilirse, SATICI ürünü teslim etme yükümlülüğünden kurtulmuş sayılır.</p>
+        </section>
+
+        <!-- Unauthorized Use of Payment Method -->
+        <section class="agreement-section">
+            <h2 data-key="distanceunauthorized">Ödeme Yönteminin Yetkisiz Kullanımı</h2>
+            <p data-key="distanceunauthorizedtext">ALICI'nın kredi kartının, ALICI'nın kusurundan kaynaklanmayan bir şekilde yetkisiz kişilerce haksız veya hukuka aykırı olarak kullanılması nedeniyle ilgili banka veya finans kuruluşunun ürün bedelini SATICI'ya ödememesi durumunda, ALICI ürünü 3 gün içinde SATICI'ya iade etmekle yükümlüdür.</p>
+        </section>
+
+        <!-- Force Majeure -->
+        <section class="agreement-section">
+            <h2 data-key="distanceforcemajeure">Mücbir Sebepler</h2>
+            <p data-key="distanceforcemajeuretext">SATICI, mücbir sebepler veya nakliyeyi engelleyen olağanüstü durumlar nedeniyle sözleşme konusu ürün(ler)i belirtilen süre içinde teslim edemezse, durumu ALICI'ya bildirmekle yükümlüdür. Bu durumda ALICI, siparişi iptal etme, emsal ürünle değiştirme veya teslimat süresinin engelleyici durumun ortadan kalkmasına kadar erteleme haklarından birini kullanabilir. ALICI'nın siparişi iptal etmesi halinde, ödediği tutar 10 gün içinde kendisine iade edilir.</p>
+        </section>
+
+        <!-- Warranty and Repairs -->
+        <section class="agreement-section">
+            <h2 data-key="distancewarranty">Garanti ve Onarım</h2>
+            <p data-key="distancewarrantytext">Garanti kapsamında olan veya olmayan arızalı veya bozuk ürünler, garanti şartları çerçevesinde onarım için SATICI'ya gönderilebilir. Bu durumda kargo giderleri SATICI tarafından karşılanacaktır.</p>
+        </section>
+
+        <!-- Typographical Errors -->
+        <section class="agreement-section">
+            <h2 data-key="distanceerrors">Yazım Hataları</h2>
+            <p data-key="distanceerrorstext">SATICI, yazım hataları veya yanlış fiyat girişlerinden sorumlu tutulamaz.</p>
+        </section>
+
+        <!-- Right of Withdrawal -->
+        <section class="agreement-section">
+            <h2 data-key="distancewithdrawal">Cayma Hakkı</h2>
+            <p data-key="distancewithdrawaltext">ALICI, ürünün teslim tarihinden itibaren 7 gün içinde cayma hakkına sahiptir. Cayma hakkını kullanabilmek için, ALICI'nın belirtilen süre içinde SATICI'ya faks, e-posta veya telefon ile bildirimde bulunması ve ürünün 6. madde hükümlerine göre kullanılmamış olması gerekmektedir. Cayma hakkının kullanılması durumunda, ürünün orijinal faturası ve teslimat tutanağı örneği ile birlikte SATICI'ya gönderilmesi zorunludur. Bu belgelerin SATICI'ya ulaşmasını takip eden 7 gün içinde ürün bedeli ALICI'ya iade edilir. İade kargo ücretleri ALICI tarafından karşılanır.</p>
+            <p data-key="distancewithdrawalexception">Cayma hakkı, niteliği itibarıyla iade edilemeyecek, tek kullanımlık, kopyalanabilir yazılım ve programlar, hızlı bozulan veya son kullanım tarihi geçmiş ürünler için geçerli değildir. Ayrıca, ambalajı açılmamış, bozulmamış ve kullanılmamış olması şartıyla aşağıdaki ürünlerde cayma hakkı kullanılabilir:</p>
+        </section>
+
+        <!-- Jurisdiction -->
+        <section class="agreement-section">
+            <h2 data-key="distancejurisdiction">Yetkili Mahkeme</h2>
+            <p data-key="distancejurisdictiontext">Bu sözleşmenin uygulanmasında, Sanayi ve Ticaret Bakanlığı tarafından belirlenen değere kadar Tüketici Hakem Heyetleri ile ALICI'nın veya SATICI'nın yerleşim yerindeki Tüketici Mahkemeleri yetkilidir.</p>
+        </section>
+
+        <!-- Acceptance of Terms -->
+        <section class="agreement-section">
+            <h2 data-key="distanceacceptance">Şartların Kabulü</h2>
+            <p data-key="distanceacceptancetext">Sipariş verilmesi durumunda, ALICI bu sözleşmenin tüm şartlarını kabul etmiş sayılır.</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">Tüm hakları saklıdır.</span></p>
+        <div class="legal-links">
+            <a href="legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="legal.membership">Üyelik Sözleşmesi</a> |
+            <a href="legal/kvkk-clarification.html" onclick="redirectToLegal('kvkk')" data-key="legal.kvkk">KVKK Aydınlatma Metni</a> |
+            <a href="legal/distance-sales-agreement.html" onclick="redirectToLegal('distance')" data-key="legal.distance">Mesafeli Satış Sözleşmesi</a>
+        </div>
+    </footer>
+</body>
+</html>
