@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script defer src="language-switcher.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STEM Student Bundle</title>
   <style>
@@ -41,10 +42,6 @@
       font-size: 1.75rem;
     }
 
-    .intro, .section {
-      margin-bottom: 30px;
-    }
-
     .checklist {
       list-style: none;
       padding-left: 0;
@@ -69,15 +66,45 @@
       text-decoration: none;
     }
 
-    .image-section {
-      text-align: center;
-      margin-top: 40px;
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 30px auto;
     }
 
-    img {
+    .slide {
+      display: none;
+      text-align: center;
+    }
+
+    .slide img {
       width: 100%;
       max-width: 500px;
       border-radius: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.6);
     }
 
     @media (max-width: 768px) {
@@ -91,55 +118,110 @@
   </style>
 </head>
 <body>
+  <header>
+    <a class="logo" href="index.html">Tempest Labs</a>
+    <nav>
+        <ul>
+            <li><a href="about.html" data-key="about">About</a></li>
+            <li><a href="products.html" data-key="products">Products</a></li>
+            <li><a href="contact.html" data-key="contact">Contact</a></li>
+            <li><a href="blog.html" data-key="about">Blog</a></li>
+
+            <li>
+                <select id="language-selector">
+                    <option value="en" selected>English</option>
+                    <option value="tr">Türkçe</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
   <div class="container">
     <h1>STEM Student Bundle</h1>
-    <p class="intro"><strong>Because Surviving STEM Shouldn’t Feel Like a Full-Time Panic Attack</strong></p>
+    <p><strong>Because Surviving STEM Shouldn’t Feel Like a Full-Time Panic Attack</strong></p>
+    <p>STEM degrees are brutal. You’ve got endless problem sets, 10 tabs of research papers open, and a vague sense that you should probably be “networking” but no clue where to start.</p>
+    <p>Meanwhile, your non-STEM friends are out actually enjoying life while you’re buried in equations and caffeine-fueled all-nighters.</p>
+    <p>This STEM Student Bundle won’t make your professor less evil, but it <strong>will</strong> help you get your life together, study smarter, and stop feeling lost about your career.</p>
 
-    <p class="intro">STEM degrees are brutal. You’ve got endless problem sets, 10 tabs of research papers open, and a vague sense that you should probably be “networking” but no clue where to start.</p>
-    <p class="intro">Meanwhile, your non-STEM friends are out actually enjoying life while you’re buried in equations and caffeine-fueled all-nighters.</p>
-    <p class="intro">Sound familiar?</p>
-    <p class="intro">This STEM Student Bundle won’t make your professor less evil, but it <strong>will</strong> help you get your life together, study smarter, and stop feeling lost about your career.</p>
+    <div class="slideshow-container">
+      <div class="slide" style="display:block">
+        <img src="stem.png" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="stem1.png" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="stem2.png" alt="Slide 3">
+      </div>
+       <div class="slide">
+        <img src="stem3.png" alt="Slide 4">
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
     <h2>🎒 What’s Inside & Why You Actually Need It</h2>
 
     <h3>📚 For When Your Study Plan is Just “Hope for the Best”</h3>
     <ul class="checklist">
-      <li>Weekly Study Planner (Fillable & Printable) – Stop “studying” for hours and actually track what works.</li>
-      <li>Personal Study Planner (Fillable & Printable) – Organize your time without losing your mind.</li>
+      <li>Weekly Study Planner (Fillable & Printable)</li>
+      <li>Personal Study Planner (Fillable & Printable)</li>
     </ul>
 
     <h3>🎯 For When You Have Skills but No Idea How to Sell Yourself</h3>
     <ul class="checklist">
-      <li>Skill Tracker (Printable) – Turns your random class projects into actual career skills.</li>
-      <li>ChatGPT Career Prompts for STEM Students – AI-powered career coaching that pushes you to think (not just copy-paste answers).</li>
+      <li>Skill Tracker (Printable)</li>
+      <li>ChatGPT Career Prompts for STEM Students</li>
     </ul>
 
     <h3>🤝 For When Networking Feels Like Social Torture</h3>
     <ul class="checklist">
-      <li>Networking Log (Fillable & Printable) – Remember names, follow up without being awkward, and actually make connections that matter.</li>
+      <li>Networking Log (Fillable & Printable)</li>
     </ul>
 
     <h3>💼 For When Job Descriptions Make No Sense</h3>
     <ul class="checklist">
-      <li>STEM Career Survival Handbook – Translates corporate jargon into what companies actually want so you can write better applications.</li>
-      <li>How to Put Research on a Resume – Because “I worked in a lab” isn’t enough to get you hired.</li>
+      <li>STEM Career Survival Handbook</li>
+      <li>How to Put Research on a Resume</li>
     </ul>
 
     <h2>🚀 Why This Bundle is Actually Useful</h2>
     <ul class="checklist">
-      <li>No fluff, no “inspirational” nonsense. Just practical tools to get your life together.</li>
-      <li>Made for STEM students. Not generic productivity junk.</li>
-      <li>Fillable & Printable. Use it digitally or print it—whatever works for you.</li>
-      <li>Instant download + email delivery. Get immediate access after purchase, and we’ll send you an email with all the files so you can always find them.</li>
+      <li>No fluff, just practical tools</li>
+      <li>Made for STEM students</li>
+      <li>Fillable & Printable</li>
+      <li>Instant download + email delivery</li>
     </ul>
 
-    <p class="intro"><strong>💡 Get your life together. Get ahead.</strong></p>
+    <p><strong>💡 Get your life together. Get ahead.</strong></p>
 
-    <a href="tempestlabs.space" class="cta">🎓 Download the STEM Student Bundle now</a>
-
-    <div class="image-section">
-      <img src="New Skin Hydration (1).png" alt="STEM Student Bundle Promo">
-    </div>
+    <a href="https://inktempest.com" class="cta">🎓 Download the STEM Student Bundle now</a>
   </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides(n) {
+      slides.forEach((slide, index) => {
+        slide.style.display = index === n ? "block" : "none";
+      });
+    }
+
+    function plusSlides(n) {
+      slideIndex += n;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      showSlides(slideIndex);
+    }
+  </script>
+   <footer>
+        <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
+        <div class="legal-links">
+            <a href="legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="legal.membership">Membership Agreement</a> |
+            <a href="legal/kvkk-clarification.html" onclick="redirectToLegal('kvkk')" data-key="legal.kvkk">KVKK Clarification</a> |
+            <a href="legal/distance-sales-agreement.html" onclick="redirectToLegal('distance')" data-key="legal.distance">Distance Sales Agreement</a>
+        </div>
+    </footer>
 </body>
 </html>
