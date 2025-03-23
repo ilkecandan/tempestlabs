@@ -154,3 +154,101 @@ footer {
   background-color: #1E1E1E;
   color: #666;
 }
+/* How It Works */
+.how-it-works {
+  background-color: #1E1E1E;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.step h3 {
+  color: #48B19E;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 1rem;
+}
+
+/* Extended Features Section */
+.deep-features {
+  background-color: #2A2A2A;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.deep-features h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Pricing Block Reminder */
+.pricing-block {
+  background-color: #1E1E1E;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pricing-block h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.price {
+  font-size: 2rem;
+  color: #48B19E;
+  margin: 1rem 0;
+}
+
+/* Get Started CTA */
+.get-started {
+  background-color: #2A2A2A;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.get-started h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.get-started p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #48B19E;
+  color: #1E1E1E;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #3ca08e;
+  color: white;
+}
