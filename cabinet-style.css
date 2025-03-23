@@ -94,7 +94,7 @@ nav a {
 }
 
 .how-it-works {
-    background: #7AA6D1;
+    background: #FBDEDA;
     position: relative;
 }
 
@@ -123,17 +123,17 @@ nav a {
 }
 
 .how-image img {
-    max-width: 400px;
+    max-width: 450px;
 }
 
 .storytelling {
-    background: #7AA6D1;
+    background: #ffffff;
     position: relative;
 }
 
 .how-it-works p,
 .storytelling p {
-    background: #7AA6D1;
+    background: #FBDEDA;
     padding: 20px 25px;
     border-radius: 15px;
     margin-bottom: 25px;
