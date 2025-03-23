@@ -1,153 +1,152 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Source Sans Pro', sans-serif;
+<style>
+         body {
+    font-family: 'Poppins', sans-serif;
     background-color: #FFFFFF;
     color: #2C2C2C;
-    text-align: center;
-    line-height: 1.6;
+    line-height: 2.1;
+    overflow-x: hidden;
 }
 
 /* Header */
 header {
+    margin-down: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.9);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 15px rgba(0.5, 0.5, 0.5, 0.05);
     backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 40px 5%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    justify-content: center;
     color: #2C2C2C;
+    transform: translateX(100px);
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #7AA6D1;
 }
 
 /* Navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav ul li a {
     color: #2C2C2C;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 30px;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
-    padding: 10px;
     border-radius: 5px;
 }
 
 nav ul li a:hover {
-    color: #FFF;
-    background-color: #92BCEA;
-    transform: scale(1.05);
-}
+    color: #7AA6D1;
+    transform: translateY(-2px);
+}       
 
-/* Cabinet of Selves Section */
-.cabinet-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #F7F9FC;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
-    flex-wrap: wrap;
-}
+       /* Main Content */
+        main.agreement-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
-.small-product-image {
-    width: 180px;
-    height: auto;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
 
-.cabinet-description {
-    flex: 1;
-    max-width: 600px;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #2C2C2C;
-    text-align: left;
-}
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .cabinet-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .small-product-image {
-        width: 150px;
-        margin-bottom: 15px;
-    }
-    
-    .cabinet-description {
-        text-align: center;
-    }
-}
+        .agreement-section {
+            margin-bottom: 2rem;
+        }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-    
-    .cabinet-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-    
-    .small-product-image {
-        width: 120px;
-        margin-bottom: 10px;
-    }
-    
-    .cabinet-description {
-        font-size: 16px;
-        max-width: 90%;
-    }
-}
+        .agreement-section p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #666;
+        }
 
-@media (max-width: 480px) {
-    .logo {
-        font-size: 20px;
-    }
-    
-    .small-product-image {
-        width: 100px;
-    }
-    
-    .cabinet-description {
-        font-size: 14px;
-    }
-}
+        .agreement-section strong {
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer .legal-links {
+            margin-top: 0.5rem;
+        }
+
+        footer .legal-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer .legal-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script defer src="language-switcher.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a class="logo" href="index.html" data-key="distanceheader">Tempest Labs</a>
+        <nav>
+            <ul>
+                <li><a href="/about.html" data-key="about">About</a></li>
+                <li><a href="/products.html" data-key="products">Products</a></li>
+                <li><a href="/contact.html" data-key="contact">Contact</a></li>
+                <li><a href="/blog.html" data-key="about">Blog</a></li>
+                <li>
+                    <select id="language-selector">
+                        <option value="en" selected>English</option>
+                        <option value="tr">Türkçe</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
