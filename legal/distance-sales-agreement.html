@@ -6,50 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tempest Labs - Distance Sales Agreement</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
+         body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    color: #2C2C2C;
+    line-height: 2.1;
+    overflow-x: hidden;
+}
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
+/* Header */
+header {
+    margin-down: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 8px 15px rgba(0.5, 0.5, 0.5, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
 
-        header .logo {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+header.scrolled {
+    padding: 40px 5%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    justify-content: center;
+    color: #2C2C2C;
+    transform: translateX(100px);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-        }
+.logo:hover {
+    color: #7AA6D1;
+}
 
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
 
-        /* Main Content */
+nav ul li a {
+    color: #2C2C2C;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #7AA6D1;
+    transform: translateY(-2px);
+}       
+
+       /* Main Content */
         main.agreement-container {
             max-width: 800px;
             margin: 2rem auto;
