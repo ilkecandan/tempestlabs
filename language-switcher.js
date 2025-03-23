@@ -1,16 +1,9 @@
 // language-switcher.js
 
-// This script supports dynamic switching between English and Turkish
-// for Cabinet of Selves product pages and related legal pages.
-
-// ENGLISH PAGE: /product-cabinet.html
-// TURKISH PAGE: /turkish/product-cabinet.html
-
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('language-selector');
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
 
-    // Load translations based on stored language
     loadLanguage(savedLanguage);
     languageSelector.value = savedLanguage;
 
@@ -18,15 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        // Determine current page (e.g., product-cabinet.html)
+        // Get current page name (e.g., product-cabinet.html)
         let currentPage = window.location.pathname.split('/').pop();
         if (!currentPage || currentPage === '') currentPage = 'index.html';
 
-        // If on Cabinet page and language changes, redirect accordingly
+        const origin = window.location.origin;
+
+        // Redirect to correct language version with absolute URLs
         if (selectedLanguage === 'tr') {
-            window.location.href = `/turkish/${currentPage}`;
+            window.location.href = `${origin}/turkish/${currentPage}`;
         } else {
-            window.location.href = `/${currentPage}`;
+            window.location.href = `${origin}/${currentPage}`;
         }
     });
 
@@ -35,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkImageExists(img.src, img);
     });
 
-    // Legal document link localization
+    // Localize legal links
     document.querySelectorAll('[data-legal-link]').forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -57,14 +52,11 @@ function loadLanguage(lang) {
             return response.json();
         })
         .then(translations => {
-            if (Object.keys(translations).length === 0) {
-                console.warn("Translation data is empty or could not be loaded.");
-                return;
-            }
+            if (Object.keys(translations).length === 0) return;
             document.querySelectorAll('[data-key]').forEach(element => {
-                const translationKey = element.getAttribute('data-key');
-                if (translations[translationKey]) {
-                    element.textContent = translations[translationKey];
+                const key = element.getAttribute('data-key');
+                if (translations[key]) {
+                    element.textContent = translations[key];
                 }
             });
         })
@@ -72,20 +64,20 @@ function loadLanguage(lang) {
 }
 
 function redirectToLegal(doc) {
-    const language = localStorage.getItem('preferredLanguage') || 'en';
-    let url = (language === 'tr')
-        ? `/turkish/legal/${doc}.html`
+    const lang = localStorage.getItem('preferredLanguage') || 'en';
+    const origin = window.location.origin;
+    const path = (lang === 'tr') 
+        ? `/turkish/legal/${doc}.html` 
         : `/legal/${doc}.html`;
-    window.location.href = url;
+    window.location.href = `${origin}${path}`;
 }
 
-function checkImageExists(imageSrc, imgElement) {
-    fetch(imageSrc, { method: 'HEAD' })
+function checkImageExists(src, img) {
+    fetch(src, { method: 'HEAD' })
         .then(response => {
-            if (!response.ok) {
-                console.warn(`Image not found: ${imageSrc}`);
-                imgElement.style.display = 'none';
-            }
+            if (!response.ok) img.style.display = 'none';
         })
-        .catch(error => console.error("Error checking image:", imageSrc, error));
+        .catch(() => {
+            img.style.display = 'none';
+        });
 }
