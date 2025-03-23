@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <script defer src="language-switcher.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEM Student Bundle</title>
+  <title data-key="stemtitle">STEM Student Bundle</title>
   <style>
     :root {
       --bg-color: #f8eee7;
@@ -21,36 +21,35 @@
       line-height: 1.6;
       padding: 20px;
     }
+
     header {
-    background-color: #F8EEE7;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+      background-color: #F8EEE7;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.logo {
-    font-weight: bold;
-    text-decoration: none;
-    color: #2C2C2C;
-    padding-left: 15px;
-    font-size: 40px;
+    .logo {
+      font-weight: bold;
+      text-decoration: none;
+      color: #2C2C2C;
+      padding-left: 15px;
+      font-size: 40px;
+    }
 
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: #2C2C2C;
-}
-
+    nav a {
+      text-decoration: none;
+      color: #2C2C2C;
+    }
 
     .container {
       max-width: 960px;
@@ -100,17 +99,20 @@ nav a {
       position: relative;
       max-width: 100%;
       margin: 30px auto;
+      overflow: hidden;
     }
 
     .slide {
       display: none;
       text-align: center;
+      width: 100%;
     }
 
     .slide img {
       width: 100%;
       max-width: 500px;
       border-radius: 10px;
+      height: auto;
     }
 
     .prev, .next {
@@ -126,6 +128,7 @@ nav a {
       transition: 0.6s ease;
       border-radius: 0 3px 3px 0;
       user-select: none;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .next {
@@ -134,7 +137,7 @@ nav a {
     }
 
     .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0, 0, 0, 0.8);
     }
 
     @media (max-width: 768px) {
@@ -144,6 +147,13 @@ nav a {
       .cta {
         font-size: 1rem;
       }
+      .logo {
+        font-size: 30px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -151,27 +161,26 @@ nav a {
   <header>
     <a class="logo" href="index.html">Tempest Labs</a>
     <nav>
-        <ul>
-            <li><a href="about.html" data-key="about">About</a></li>
-            <li><a href="products.html" data-key="products">Products</a></li>
-            <li><a href="contact.html" data-key="contact">Contact</a></li>
-            <li><a href="blog.html" data-key="about">Blog</a></li>
-
-            <li>
-                <select id="language-selector">
-                    <option value="en" selected>English</option>
-                    <option value="tr">Türkçe</option>
-                </select>
-            </li>
-        </ul>
+      <ul>
+        <li><a href="about.html" data-key="about">About</a></li>
+        <li><a href="products.html" data-key="products">Products</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <li><a href="blog.html" data-key="blog">Blog</a></li>
+        <li>
+          <select id="language-selector">
+            <option value="en" selected>English</option>
+            <option value="tr">Türkçe</option>
+          </select>
+        </li>
+      </ul>
     </nav>
-</header>
+  </header>
   <div class="container">
-    <h1>STEM Student Bundle</h1>
-    <p><strong>Because Surviving STEM Shouldn’t Feel Like a Full-Time Panic Attack</strong></p>
-    <p>STEM degrees are brutal. You’ve got endless problem sets, 10 tabs of research papers open, and a vague sense that you should probably be “networking” but no clue where to start.</p>
-    <p>Meanwhile, your non-STEM friends are out actually enjoying life while you’re buried in equations and caffeine-fueled all-nighters.</p>
-    <p>This STEM Student Bundle won’t make your professor less evil, but it <strong>will</strong> help you get your life together, study smarter, and stop feeling lost about your career.</p>
+    <h1 data-key="stemheader">STEM Student Bundle</h1>
+    <p data-key="stemtext1"><strong>Because Surviving STEM Shouldn’t Feel Like a Full-Time Panic Attack</strong></p>
+    <p data-key="stemtext2">STEM degrees are brutal. You’ve got endless problem sets, 10 tabs of research papers open, and a vague sense that you should probably be “networking” but no clue where to start.</p>
+    <p data-key="stemtext3">Meanwhile, your non-STEM friends are out actually enjoying life while you’re buried in equations and caffeine-fueled all-nighters.</p>
+    <p data-key="stemtext4">This STEM Student Bundle won’t make your professor less evil, but it <strong>will</strong> help you get your life together, study smarter, and stop feeling lost about your career.</p>
 
     <div class="slideshow-container">
       <div class="slide" style="display:block">
@@ -183,49 +192,49 @@ nav a {
       <div class="slide">
         <img src="images/stem2.png" alt="Slide 3">
       </div>
-       <div class="slide">
+      <div class="slide">
         <img src="images/stem3.png" alt="Slide 4">
       </div>
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <h2>🎒 What’s Inside & Why You Actually Need It</h2>
+    <h2 data-key="stemwhatsinside">🎒 What’s Inside & Why You Actually Need It</h2>
 
-    <h3>📚 For When Your Study Plan is Just “Hope for the Best”</h3>
+    <h3 data-key="stemstudyplan">📚 For When Your Study Plan is Just “Hope for the Best”</h3>
     <ul class="checklist">
-      <li>Weekly Study Planner (Fillable & Printable)</li>
-      <li>Personal Study Planner (Fillable & Printable)</li>
+      <li data-key="stemweeklyplanner">Weekly Study Planner (Fillable & Printable)</li>
+      <li data-key="stempersonalplanner">Personal Study Planner (Fillable & Printable)</li>
     </ul>
 
-    <h3>🎯 For When You Have Skills but No Idea How to Sell Yourself</h3>
+    <h3 data-key="stemskills">🎯 For When You Have Skills but No Idea How to Sell Yourself</h3>
     <ul class="checklist">
-      <li>Skill Tracker (Printable)</li>
-      <li>ChatGPT Career Prompts for STEM Students</li>
+      <li data-key="stemskilltracker">Skill Tracker (Printable)</li>
+      <li data-key="stemchatgptprompts">ChatGPT Career Prompts for STEM Students</li>
     </ul>
 
-    <h3>🤝 For When Networking Feels Like Social Torture</h3>
+    <h3 data-key="stemnetworking">🤝 For When Networking Feels Like Social Torture</h3>
     <ul class="checklist">
-      <li>Networking Log (Fillable & Printable)</li>
+      <li data-key="stemnetworkinglog">Networking Log (Fillable & Printable)</li>
     </ul>
 
-    <h3>💼 For When Job Descriptions Make No Sense</h3>
+    <h3 data-key="stemjobdescriptions">💼 For When Job Descriptions Make No Sense</h3>
     <ul class="checklist">
-      <li>STEM Career Survival Handbook</li>
-      <li>How to Put Research on a Resume</li>
+      <li data-key="stemcareerhandbook">STEM Career Survival Handbook</li>
+      <li data-key="stemresearchresume">How to Put Research on a Resume</li>
     </ul>
 
-    <h2>🚀 Why This Bundle is Actually Useful</h2>
+    <h2 data-key="stemwhyuseful">🚀 Why This Bundle is Actually Useful</h2>
     <ul class="checklist">
-      <li>No fluff, just practical tools</li>
-      <li>Made for STEM students</li>
-      <li>Fillable & Printable</li>
-      <li>Instant download + email delivery</li>
+      <li data-key="stemnoduff">No fluff, just practical tools</li>
+      <li data-key="stemforstudents">Made for STEM students</li>
+      <li data-key="stemfillable">Fillable & Printable</li>
+      <li data-key="steminstantdownload">Instant download + email delivery</li>
     </ul>
 
-    <p><strong>💡 Get your life together. Get ahead.</strong></p>
+    <p data-key="stemfinaltext"><strong>💡 Get your life together. Get ahead.</strong></p>
 
-    <a href="https://inktempest.com" class="cta">🎓 Download the STEM Student Bundle now</a>
+    <a href="https://inktempest.com" class="cta" data-key="stemcta">🎓 Download the STEM Student Bundle now</a>
   </div>
 
   <script>
@@ -244,14 +253,17 @@ nav a {
       if (slideIndex < 0) slideIndex = slides.length - 1;
       showSlides(slideIndex);
     }
+
+    // Automatically cycle slides every 5 seconds
+    setInterval(() => plusSlides(1), 5000);
   </script>
-   <footer>
-        <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
-        <div class="legal-links">
-            <a href="legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="legal.membership">Membership Agreement</a> |
-            <a href="legal/kvkk-clarification.html" onclick="redirectToLegal('kvkk')" data-key="legal.kvkk">KVKK Clarification</a> |
-            <a href="legal/distance-sales-agreement.html" onclick="redirectToLegal('distance')" data-key="legal.distance">Distance Sales Agreement</a>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Tempest Labs. <span data-key="stemfooterrights">All rights reserved.</span></p>
+    <div class="legal-links">
+      <a href="legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="stemlegalmembership">Membership Agreement</a> |
+      <a href="legal/kvkk-clarification.html" onclick="redirectToLegal('kvkk')" data-key="stemlegalkvkk">KVKK Clarification</a> |
+      <a href="legal/distance-sales-agreement.html" onclick="redirectToLegal('distance')" data-key="stemlegaldistance">Distance Sales Agreement</a>
+    </div>
+  </footer>
 </body>
 </html>
