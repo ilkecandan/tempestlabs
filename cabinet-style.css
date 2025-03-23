@@ -2,7 +2,7 @@
 body {
     background-color: #7AA6D1;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 
     margin: 0;
     padding: 0;
@@ -124,7 +124,6 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
 }
 
 @media(min-width: 768px) {
@@ -136,6 +135,7 @@ nav a {
 
 .how-text {
     flex: 1;
+    font-family: "Alice", serif;
     max-width: 550px;
 }
 
@@ -157,7 +157,7 @@ nav a {
 
 .how-image p {
     font-family: 'Georgia', serif;
-    font-size: 20px;
+    font-size: 22px;
     color: #2C2C2C;
 }
 
