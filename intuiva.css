@@ -6,7 +6,6 @@ body {
 }
 header {
     background-color: #92BCEA;
-    padding: 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,6 +18,18 @@ header {
     padding-left: 15px;
     font-size: 40px;
 
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2C2C2C;
 }
 
 .hero {
