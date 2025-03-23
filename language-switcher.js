@@ -1,7 +1,16 @@
+// language-switcher.js
+
+// This script supports dynamic switching between English and Turkish
+// for Cabinet of Selves product pages and related legal pages.
+
+// ENGLISH PAGE: /product-cabinet.html
+// TURKISH PAGE: /turkish/product-cabinet.html
+
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('language-selector');
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
 
+    // Load translations based on stored language
     loadLanguage(savedLanguage);
     languageSelector.value = savedLanguage;
 
@@ -9,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        // Get the current page name (e.g., index.html)
+        // Determine current page (e.g., product-cabinet.html)
         let currentPage = window.location.pathname.split('/').pop();
         if (!currentPage || currentPage === '') currentPage = 'index.html';
 
-        // Redirect based on selected language
+        // If on Cabinet page and language changes, redirect accordingly
         if (selectedLanguage === 'tr') {
             window.location.href = `/turkish/${currentPage}`;
         } else {
@@ -26,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkImageExists(img.src, img);
     });
 
-    // Legal links redirection
+    // Legal document link localization
     document.querySelectorAll('[data-legal-link]').forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -64,14 +73,9 @@ function loadLanguage(lang) {
 
 function redirectToLegal(doc) {
     const language = localStorage.getItem('preferredLanguage') || 'en';
-    let url;
-
-    if (language === 'tr') {
-        url = `/turkish/legal/${doc}.html`;
-    } else {
-        url = `/legal/${doc}.html`;
-    }
-
+    let url = (language === 'tr')
+        ? `/turkish/legal/${doc}.html`
+        : `/legal/${doc}.html`;
     window.location.href = url;
 }
 
