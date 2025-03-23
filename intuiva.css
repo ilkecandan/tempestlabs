@@ -2,13 +2,13 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #FFFFFF;
-    background-color: #2A2A2A;
+    color: #92BCEA; /* Text color */
+    background-color: #2A2A2A; /* Body background color */
 }
 
 header {
-    background-color: #080808;
-    color: black;
+    background-color: #1E1E1E; /* Header background color */
+    color: #92BCEA; /* Header text color */
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
@@ -18,6 +18,7 @@ header {
 header .logo {
     font-size: 30px;
     font-weight: bold;
+    color: #48B19E; /* Logo color */
 }
 
 header nav ul {
@@ -32,26 +33,31 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: #92BCEA; /* Navigation link color */
     text-decoration: none;
     font-weight: 500;
 }
 
 .cta-button {
-    background-color: #92BCEA;
+    background-color: #48B19E; /* Button color */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3A9C8A; /* Button hover color */
 }
 
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 20px;
-    background-color: #2A2A2A;
+    padding: 80px 20px;
+    background-color: #1E1E1E; /* Hero background color */
 }
 
 .hero-text {
@@ -61,65 +67,133 @@ header nav ul li a {
 .hero-text h1 {
     font-size: 50px;
     margin-bottom: 20px;
+    color: #92BCEA; /* Hero heading color */
 }
 
 .hero-text p {
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #92BCEA; /* Hero paragraph color */
 }
 
 .hero-video {
     max-width: 50%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .features, .how-it-works, .testimonials, .pricing {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
+    background-color: #1E1E1E; /* Section background color */
 }
 
 .features h2, .how-it-works h2, .testimonials h2, .pricing h2 {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    color: #92BCEA; /* Section heading color */
 }
 
 .feature-grid, .steps, .testimonial-grid, .pricing-grid {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .feature-item, .step, .testimonial-item, .pricing-plan {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #2A2A2A; /* Feature box background color */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     margin: 10px;
-    width: 200px;
+    width: 300px; /* Larger feature boxes */
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover, .step:hover, .testimonial-item:hover, .pricing-plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.feature-item h3, .step h3, .pricing-plan h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #48B19E; /* Feature title color */
+}
+
+.feature-item p, .step p, .testimonial-item p, .pricing-plan p {
+    font-size: 16px;
+    color: #92BCEA; /* Feature text color */
 }
 
 footer {
-    background-color: #007bff;
-    color: white;
+    background-color: #1E1E1E; /* Footer background color */
+    color: #92BCEA; /* Footer text color */
     text-align: center;
-    padding: 10px 20px;
+    padding: 20px;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
         text-align: center;
+        padding: 50px 20px;
     }
 
     .hero-text, .hero-video {
         max-width: 100%;
     }
 
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+
     .feature-grid, .steps, .testimonial-grid, .pricing-grid {
         flex-direction: column;
         align-items: center;
+    }
+
+    .feature-item, .step, .testimonial-item, .pricing-plan {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .feature-item, .step, .testimonial-item, .pricing-plan {
+        width: 90%;
+        padding: 20px;
     }
 }
