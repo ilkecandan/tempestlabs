@@ -1,5 +1,5 @@
 body {
-    background-color: #FDD5D5;
+    background-color: #7AA6D1;
     color: #2C2C2C;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
 
 header {
     padding: 1rem 5%;
-    background-color: #ffffff;
+    background-color: #7AA6D1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,7 +105,6 @@ nav a {
 .how-it-works {
     background: #FBDEDA;
     position: relative;
-    padding: 50px 5%;
 }
 
 .how-it-works-container {
@@ -115,7 +114,6 @@ nav a {
     justify-content: space-between;
     max-width: 900px;
     margin: 0 auto;
-    gap: 2rem;
     padding: 0 6rem;
 }
 
