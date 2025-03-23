@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+      <script defer src="language-switcher.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tempest Labs - Ürünler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+            color: #2C2C2C;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 5%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #2C2C2C;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #7AA6D1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #2C2C2C;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #7AA6D1;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 90px;
+            padding: 10% 5%;
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+            font-weight: 700;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #2C2C2C;
+            margin-bottom: 30px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .cta-button {
+            background-color: #7AA6D1;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #92BCEA;
+            transform: translateY(-3px);
+        }
+
+        /* Featured Products Section */
+        .featured-products {
+            padding: 80px 5%;
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        .featured-products h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2C2C2C;
+            font-weight: 700;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #F7F9FC;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            flex: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2C2C2C;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+
+        .product-card a {
+            background-color: #7AA6D1;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .product-card a:hover {
+            background-color: #92BCEA;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 5%;
+            background-color: #2C2C2C;
+            text-align: center;
+            color: #FFFFFF;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .legal-links a {
+            color: #7AA6D1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .legal-links a:hover {
+            color: #92BCEA;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-grid {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .featured-products h2 {
+                font-size: 28px;
+            }
+
+            .product-card h3 {
+                font-size: 20px;
+            }
+
+            .product-card p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script defer src="language-switcher.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a class="logo" href="index.html" data-key="headerlogo">Tempest Labs</a>
+        <nav>
+            <ul>
+                <li><a href="/about.html" data-key="about">Hakkımızda</a></li>
+                <li><a href="/products.html" data-key="products">Ürünler</a></li>
+                <li><a href="/contact.html" data-key="contact">İletişim</a></li>
+                <li><a href="/blog.html" data-key="blog">Blog</a></li>
+                <li>
+                    <select id="language-selector">
+                        <option value="en">English</option>
+                        <option value="tr" selected>Türkçe</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <h2 data-key="featuredproducts">Tempest Labs Ürünleri</h2>
+        <div class="product-grid">
+            <!-- Cabinet of Selves -->
+            <a href="/product-cabinet.html" class="product-card">
+                <img src="images/girl.png" alt="Kendilikler Dolabı" />
+                <h3 data-key="aboutcabinet">Kendilikler Dolabı</h3>
+                <p data-key="aboutcabinettext">Birçok yönünüzü keşfetmenizi sağlayan bir öz-yansıma aracı.</p>
+                <span data-key="learnmore">Daha Fazla Bilgi</span>
+            </a>
+
+            <!-- Intuiva -->
+            <a href="/product-intuiva.html" class="product-card">
+                <img src="images/planner.gif" alt="Intuiva" />
+                <h3 data-key="aboutintuiva">Intuiva</h3>
+                <p data-key="aboutintuivatext">Modern kadınlar için tasarlanmış, yapay zeka destekli bir finansal güçlendirme uygulaması.</p>
+                <span data-key="learnmore">Daha Fazla Bilgi</span>
+            </a>
+
+            <!-- STEM Student Bundle -->
+            <a href="/product-stem.html" class="product-card">
+                <img src="images/stem.png" alt="STEM Öğrenci Paketi" />
+                <h3 data-key="aboutstem">STEM Öğrenci Paketi</h3>
+                <p data-key="aboutstemtext">STEM öğrenimini ve gelişimini desteklemek için özenle hazırlanmış bir kaynak koleksiyonu.</p>
+                <span data-key="learnmore">Daha Fazla Bilgi</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tempest Labs. <span data-key="footerrights">Tüm hakları saklıdır.</span></p>
+        <div class="legal-links">
+            <a href="legal/membership-agreement.html" data-key="legalmembership">Üyelik Sözleşmesi</a> |
+            <a href="legal/kvkk-clarification.html" data-key="legalkvkk">KVKK Aydınlatma Metni</a> |
+            <a href="legal/distance-sales-agreement.html" data-key="legaldistance">Mesafeli Satış Sözleşmesi</a>
+        </div>
+    </footer>
+</body>
+</html>
