@@ -1,61 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Tempest Labs</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tempest Labs - Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+            color: #2C2C2C;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 5%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #2C2C2C;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #7AA6D1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #2C2C2C;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #7AA6D1;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 90px;
+            padding: 10% 5%;
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+            font-weight: 700;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #2C2C2C;
+            margin-bottom: 30px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .cta-button {
+            background-color: #7AA6D1;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #92BCEA;
+            transform: translateY(-3px);
+        }
+
+        /* Featured Products Section */
+        .featured-products {
+            padding: 80px 5%;
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        .featured-products h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2C2C2C;
+            font-weight: 700;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #F7F9FC;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            flex: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2C2C2C;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+
+        .product-card a {
+            background-color: #7AA6D1;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .product-card a:hover {
+            background-color: #92BCEA;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 5%;
+            background-color: #2C2C2C;
+            text-align: center;
+            color: #FFFFFF;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .legal-links a {
+            color: #7AA6D1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .legal-links a:hover {
+            color: #92BCEA;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-grid {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .featured-products h2 {
+                font-size: 28px;
+            }
+
+            .product-card h3 {
+                font-size: 20px;
+            }
+
+            .product-card p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script defer src="language-switcher.js"></script>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">Tempest Labs</div>
+        <a class="logo" href="index.html" data-key="headerlogo">Tempest Labs</a>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="turkish/products.html">TR</a></li>
+                <li><a href="/about.html" data-key="about">About</a></li>
+                <li><a href="/products.html" data-key="products">Products</a></li>
+                <li><a href="/contact.html" data-key="contact">Contact</a></li>
+                <li><a href="/blog.html" data-key="blog">Blog</a></li>
+                <li>
+                    <select id="language-selector">
+                        <option value="en" selected>English</option>
+                        <option value="tr">Türkçe</option>
+                    </select>
+                </li>
             </ul>
         </nav>
     </header>
-    
-    <section class="hero products-hero">
-        <div class="image-container">
-            <img src="images/products-banner.jpg" alt="Our Products">
-            <div class="overlay-text">
-                <h1>Explore Our Digital Creations</h1>
-                <p>Discover the innovative tools shaping the future.</p>
-            </div>
-        </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 data-key="aboutproducts">Our Products</h1>
+        <p data-key="aboutproductstext">Explore our innovative solutions designed to empower and inspire.</p>
     </section>
-    
-    <section class="product-list">
-        <h2>Our Products</h2>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <h2 data-key="featuredproducts">Featured Products</h2>
         <div class="product-grid">
+            <!-- Cabinet of Selves -->
             <div class="product-card">
-                <img src="images/cabinet-of-selves.png" alt="Cabinet of Selves">
-                <h3>Cabinet of Selves</h3>
-                <p>A self-reflection tool that allows you to explore your many facets.</p>
-                <a href="product-cabinet.html" class="cta-button">Learn More</a>
+                <img src="images/girl.png" alt="Cabinet of Selves" />
+                <h3 data-key="aboutcabinet">Cabinet of Selves</h3>
+                <p data-key="aboutcabinettext">A self-reflection tool that allows you to explore your many facets.</p>
+                <a href="#" data-key="learnmore">Learn More</a>
             </div>
+
+            <!-- Intuiva -->
             <div class="product-card">
-                <img src="images/intuiva.png" alt="Intuiva">
-                <h3>Intuiva</h3>
-                <p>An AI-powered financial empowerment app designed for modern women.</p>
-                <a href="product-intuiva.html" class="cta-button">Learn More</a>
+                <img src="images/planner.gif" alt="Intuiva" />
+                <h3 data-key="aboutintuiva">Intuiva</h3>
+                <p data-key="aboutintuivatext">An AI-powered financial empowerment app designed for modern women.</p>
+                <a href="#" data-key="learnmore">Learn More</a>
             </div>
+
+            <!-- STEM Student Bundle -->
             <div class="product-card">
-                <img src="images/stem-bundle.png" alt="STEM Student Bundle">
-                <h3>STEM Student Bundle</h3>
-                <p>A curated collection of resources to support STEM learning and growth.</p>
-                <a href="product-stem.html" class="cta-button">Learn More</a>
+                <img src="images/stem.png" alt="STEM Student Bundle" />
+                <h3 data-key="aboutstem">STEM Student Bundle</h3>
+                <p data-key="aboutstemtext">A curated collection of resources to support STEM learning and growth.</p>
+                <a href="#" data-key="learnmore">Learn More</a>
             </div>
         </div>
     </section>
-    
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+        <p>&copy; 2025 Tempest Labs. <span data-key="footerrights">All rights reserved.</span></p>
+        <div class="legal-links">
+            <a href="legal/membership-agreement.html" data-key="legalmembership">Membership Agreement</a> |
+            <a href="legal/kvkk-clarification.html" data-key="legalkvkk">KVKK Clarification</a> |
+            <a href="legal/distance-sales-agreement.html" data-key="legaldistance">Distance Sales Agreement</a>
+        </div>
     </footer>
 </body>
 </html>
