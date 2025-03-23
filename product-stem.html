@@ -13,6 +13,7 @@
       --font: 'Georgia', serif;
       --gradient: linear-gradient(135deg, #f8eee7 0%, #e6d5c3 100%);
       --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --header-gradient: linear-gradient(135deg, #c9a88b 0%, #b08a6e 100%);
     }
 
     body {
@@ -24,7 +25,7 @@
     }
 
     header {
-      background: var(--gradient);
+      background: var(--header-gradient);
       padding: 1rem 0;
       box-shadow: var(--shadow);
       position: sticky;
@@ -35,9 +36,14 @@
     .logo {
       font-weight: bold;
       text-decoration: none;
-      color: #2C2C2C;
+      color: white;
       padding-left: 15px;
       font-size: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
     }
 
     nav ul {
@@ -50,13 +56,32 @@
 
     nav a {
       text-decoration: none;
-      color: #2C2C2C;
+      color: white;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
       color: var(--accent-color);
+    }
+
+    #language-selector {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 5px center;
+      background-size: 12px;
+    }
+
+    #language-selector:hover {
+      background-color: rgba(255, 255, 255, 0.3);
     }
 
     .container {
@@ -114,11 +139,12 @@
       display: inline-block;
       margin-top: 30px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .cta:hover {
       background-color: #b08a6e;
+      transform: scale(1.05);
     }
 
     .slideshow-container {
@@ -174,10 +200,21 @@
       background: white;
       border-radius: 10px;
       box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
     }
 
     .section:nth-child(even) {
       background: var(--gradient);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
     @media (max-width: 768px) {
@@ -254,29 +291,35 @@
     <!-- Features Section -->
     <section class="section">
       <h2 data-key="stemwhatsinside">🎒 What’s Inside & Why You Actually Need It</h2>
-
-      <h3 data-key="stemstudyplan">📚 For When Your Study Plan is Just “Hope for the Best”</h3>
-      <ul class="checklist">
-        <li data-key="stemweeklyplanner">Weekly Study Planner (Fillable & Printable)</li>
-        <li data-key="stempersonalplanner">Personal Study Planner (Fillable & Printable)</li>
-      </ul>
-
-      <h3 data-key="stemskills">🎯 For When You Have Skills but No Idea How to Sell Yourself</h3>
-      <ul class="checklist">
-        <li data-key="stemskilltracker">Skill Tracker (Printable)</li>
-        <li data-key="stemchatgptprompts">ChatGPT Career Prompts for STEM Students</li>
-      </ul>
-
-      <h3 data-key="stemnetworking">🤝 For When Networking Feels Like Social Torture</h3>
-      <ul class="checklist">
-        <li data-key="stemnetworkinglog">Networking Log (Fillable & Printable)</li>
-      </ul>
-
-      <h3 data-key="stemjobdescriptions">💼 For When Job Descriptions Make No Sense</h3>
-      <ul class="checklist">
-        <li data-key="stemcareerhandbook">STEM Career Survival Handbook</li>
-        <li data-key="stemresearchresume">How to Put Research on a Resume</li>
-      </ul>
+      <div class="grid">
+        <div>
+          <h3 data-key="stemstudyplan">📚 For When Your Study Plan is Just “Hope for the Best”</h3>
+          <ul class="checklist">
+            <li data-key="stemweeklyplanner">Weekly Study Planner (Fillable & Printable)</li>
+            <li data-key="stempersonalplanner">Personal Study Planner (Fillable & Printable)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-key="stemskills">🎯 For When You Have Skills but No Idea How to Sell Yourself</h3>
+          <ul class="checklist">
+            <li data-key="stemskilltracker">Skill Tracker (Printable)</li>
+            <li data-key="stemchatgptprompts">ChatGPT Career Prompts for STEM Students</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-key="stemnetworking">🤝 For When Networking Feels Like Social Torture</h3>
+          <ul class="checklist">
+            <li data-key="stemnetworkinglog">Networking Log (Fillable & Printable)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-key="stemjobdescriptions">💼 For When Job Descriptions Make No Sense</h3>
+          <ul class="checklist">
+            <li data-key="stemcareerhandbook">STEM Career Survival Handbook</li>
+            <li data-key="stemresearchresume">How to Put Research on a Resume</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Why Useful Section -->
