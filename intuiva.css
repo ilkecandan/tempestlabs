@@ -4,6 +4,22 @@ body {
   background-color: #1E1E1E;
   color: #92BCEA;
 }
+header {
+    background-color: #92BCEA;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: #2C2C2C;
+    padding-left: 15px;
+    font-size: 40px;
+
+}
 
 .hero {
   position: relative;
