@@ -5,7 +5,7 @@ body {
   color: #92BCEA;
 }
 header {
-    background-color: #000000;
+    background-color: #1E1E1E;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +51,7 @@ nav a {
 .hero-overlay {
   position: relative;
   z-index: 2;
-  background: #121212;
+  background: #1E1E1E;
   height: 100%;
   display: flex;
   align-items: center;
