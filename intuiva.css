@@ -51,7 +51,7 @@ nav a {
 .hero-overlay {
   position: relative;
   z-index: 2;
-  background: rgba(30, 30, 30, 0.6);
+  background: #121212;
   height: 100%;
   display: flex;
   align-items: center;
@@ -88,63 +88,117 @@ nav a {
 
 /* Sections below hero */
 
+/* Enhanced Global Section Styling */
 .why-intuiva,
 .features,
-.pricing {
-  padding: 3rem 2rem;
+.pricing,
+.deep-features,
+.how-it-works,
+.pricing-block,
+.get-started {
+  padding: 5rem 2rem;
   background-color: #1E1E1E;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 .features h2,
 .why-intuiva h2,
-.pricing h2 {
+.pricing h2,
+.deep-features h2,
+.how-it-works h2,
+.pricing-block h2,
+.get-started h2 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #92BCEA;
 }
 
-.why-intuiva p {
-  max-width: 800px;
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Paragraph Texts */
+.why-intuiva p,
+.get-started p,
+.step p,
+.plan p {
+  font-size: 1.2rem;
+  max-width: 900px;
   margin: 0 auto;
+  color: #bcd3f4;
+  line-height: 1.7;
   text-align: center;
-  font-size: 1.1rem;
 }
 
+/* Feature Grid */
 .feature-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 2rem auto;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto;
 }
 
 @media (min-width: 768px) {
   .feature-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .feature-box {
   background-color: #2A2A2A;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #48B19E;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid #48B19E;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(72, 177, 158, 0.1);
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(72, 177, 158, 0.3);
 }
 
 .feature-box h3 {
-  margin-top: 0;
   color: #48B19E;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
+/* Steps (How it Works) */
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.step h3 {
+  color: #48B19E;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+/* Pricing Section */
 .plans {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 2rem auto;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .plans {
     flex-direction: row;
     justify-content: center;
@@ -153,129 +207,67 @@ nav a {
 
 .plan {
   background-color: #2A2A2A;
-  padding: 2rem;
-  border-radius: 8px;
+  padding: 3rem;
+  border-radius: 12px;
   text-align: center;
   border: 2px solid #48B19E;
+  box-shadow: 0 4px 12px rgba(72, 177, 158, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .plan:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(72, 177, 158, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(72, 177, 158, 0.4);
 }
 
 .plan h3 {
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
   color: #48B19E;
 }
 
-.plan p {
-  margin: 0.5rem 0;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  background-color: #1E1E1E;
-  color: #666;
-}
-/* How It Works */
-.how-it-works {
-  background-color: #1E1E1E;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.how-it-works h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .steps {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.step h3 {
-  color: #48B19E;
-  margin-bottom: 0.5rem;
-}
-
-.step p {
-  font-size: 1rem;
-}
-
-/* Extended Features Section */
-.deep-features {
-  background-color: #2A2A2A;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.deep-features h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Pricing Block Reminder */
-.pricing-block {
-  background-color: #1E1E1E;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.pricing-block h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.price {
-  font-size: 2rem;
-  color: #48B19E;
+.plan .price {
+  font-size: 2.2rem;
+  color: #92BCEA;
   margin: 1rem 0;
 }
 
 /* Get Started CTA */
 .get-started {
-  background-color: #2A2A2A;
   text-align: center;
-  padding: 4rem 2rem;
-}
-
-.get-started h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
 }
 
 .get-started p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 2rem;
+  color: #bcd3f4;
 }
 
 .cta-button {
   background-color: #48B19E;
   color: #1E1E1E;
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(72, 177, 158, 0.3);
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .cta-button:hover {
   background-color: #3ca08e;
-  color: white;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(72, 177, 158, 0.4);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 1rem;
+  background-color: #1E1E1E;
+  color: #666;
 }
