@@ -105,7 +105,6 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
 }
 
 @media(min-width: 768px) {
@@ -127,7 +126,7 @@ nav a {
 }
 
 .how-image img {
-    max-width: 300px;
+    max-width: 400px;
     border-radius: 20px;
 }
 
