@@ -158,8 +158,12 @@ nav a {
 }
 
 .feature-box:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
   box-shadow: 0 4px 16px rgba(72, 177, 158, 0.3);
+}
+  box-shadow: 0 6px 16px rgba(72, 177, 158, 0.4);
+}
+  box-shadow: 0 6px 16px rgba(72, 177, 158, 0.4);
 }
 
 .feature-box h3 {
@@ -181,6 +185,10 @@ nav a {
   .steps {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.steps.hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(72, 177, 158, 0.4);
 }
 
 .step h3 {
