@@ -481,49 +481,61 @@ footer p {
 
 /* 💼 Agreement Page Enhancements */
 
+/* 🌟 Agreement Page Polished Styling */
+
 main.agreement-container {
     max-width: 900px;
-    margin: 120px auto 60px auto; /* Extra top space for fixed header */
-    padding: 40px;
+    margin: 140px auto 60px auto; /* Top margin clears header */
+    padding: 40px 30px;
     background-color: #ffffff;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     border-radius: 12px;
     line-height: 1.8;
-    animation: fadeIn 1.2s ease-in-out;
+    font-size: 1.05rem;
+    color: #444;
+    animation: fadeIn 1s ease-in-out;
 }
 
 main.agreement-container h1 {
-    font-size: 2.5rem;
-    color: #2C2C2C;
+    font-size: 2.4rem;
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 700;
+    color: #2C2C2C;
     border-bottom: 3px solid #7AA6D1;
-    padding-bottom: 10px;
+    padding-bottom: 0.5rem;
 }
 
 main.agreement-container h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #2C2C2C;
     margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    position: relative;
     font-weight: 600;
+    position: relative;
 }
 
 main.agreement-container h2::after {
-    content: "";
+    content: '';
     display: block;
     width: 50px;
     height: 3px;
     background-color: #7AA6D1;
-    margin-top: 8px;
+    margin-top: 10px;
+}
+
+.agreement-section {
+    margin-bottom: 1.5rem;
 }
 
 .agreement-section p {
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 1rem;
+    margin: 0.8rem 0;
+    line-height: 1.7;
+    color: #555;
+}
+
+.agreement-section strong {
+    color: #2C2C2C;
+    font-weight: 600;
 }
 
 .agreement-section a {
@@ -535,15 +547,3 @@ main.agreement-container h2::after {
 .agreement-section a:hover {
     text-decoration: underline;
 }
-
-.agreement-section strong {
-    color: #2C2C2C;
-    font-weight: 600;
-}
-
-/* Optional: Subtle fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
