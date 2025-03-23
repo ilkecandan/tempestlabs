@@ -1,19 +1,33 @@
+/* 1. Full blue background behind everything */
 body {
     background-color: #7AA6D1;
-    color: #2C2C2C;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* 2. Wrap all your content in a centered white box */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    min-height: 100vh;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+}
+
+/* 3. Section spacing */
+section {
+    padding: 60px 0;
+}
+
+/* 4. Header styling inside the wrapper */
 header {
-    padding: 1rem 5%;
-    background-color: #7AA6D1;
+    padding: 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .logo {
@@ -26,8 +40,8 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -35,21 +49,17 @@ nav a {
     color: #2C2C2C;
 }
 
+/* Hero section */
 .hero {
     background-color: #FDD5D5;
-    padding: 4rem 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .hero-content {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 3rem;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .overlay-text {
@@ -59,8 +69,6 @@ nav a {
 
 .image-container img {
     max-width: 400px;
-    height: auto;
-    object-fit: cover;
     border-radius: 30px;
     transition: transform 0.5s ease;
 }
@@ -69,6 +77,7 @@ nav a {
     transform: scale(1.05);
 }
 
+/* Call to action */
 .cta-button {
     display: inline-block;
     margin-top: 1.5rem;
@@ -84,14 +93,11 @@ nav a {
     background-color: #52B788;
 }
 
+/* Features section */
 .features-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    padding: 50px 5%;
-    background-color: #ffffff;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .feature-block {
@@ -101,32 +107,27 @@ nav a {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-
+/* How it works */
 .how-it-works {
     background: #FBDEDA;
-    position: relative;
 }
 
 .how-it-works-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 6rem;
+    gap: 2rem;
 }
 
 @media(min-width: 768px) {
     .how-it-works-container {
         flex-direction: row;
-        align-items: flex-start;
+        justify-content: space-between;
     }
 }
 
 .how-text {
     flex: 1;
-    padding-right: 2rem;
     max-width: 550px;
 }
 
@@ -137,7 +138,6 @@ nav a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 450px;
 }
 
 .how-image img {
@@ -146,26 +146,13 @@ nav a {
     margin-top: 1rem;
 }
 
-.how-it-works p {
-    background: #FBDEDA;
-    padding: 20px 25px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(6px);
+.how-image p {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    color: #2C2C2C;
 }
 
-
-
-.storytelling {
-    background: #ffffff;
-    position: relative;
-    padding: 50px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* Shared text box style */
 .how-it-works p,
 .storytelling p {
     background: #FBDEDA;
@@ -183,58 +170,14 @@ nav a {
     box-shadow: 0px 12px 36px rgba(0,0,0,0.1);
 }
 
-.how-it-works h2,
-.storytelling h2 {
-    position: relative;
-    font-size: 36px;
-    margin-bottom: 30px;
-    animation: slideUp 1s ease-in-out;
+.storytelling {
+    background: #ffffff;
 }
 
-.how-it-works h2::after,
-.storytelling h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #7AA6D1;
-    margin-top: 10px;
-    border-radius: 5px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-.how-it-works::before,
-.storytelling::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 80px;
-    background-image: url("https://www.svgbackgrounds.com/wp-content/uploads/2021/05/organic-waves.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    transform: rotate(180deg);
-}
-
-.storytelling .cta-button {
-    background: linear-gradient(90deg, #52B788, #7AA6D1);
-    border: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0px 6px 20px rgba(82, 183, 136, 0.4);
-    transition: all 0.3s ease-in-out;
-}
-
-.storytelling .cta-button:hover {
-    background: linear-gradient(90deg, #7AA6D1, #52B788);
-    transform: scale(1.05);
-}
-
+/* Footer */
 footer {
     background-color: #2C2C2C;
     color: #FFFFFF;
-    padding: 20px 5%;
+    padding: 20px 0;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
