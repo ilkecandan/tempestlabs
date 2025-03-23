@@ -7,11 +7,13 @@ body {
 }
 
 header {
-    padding: 1rem 10%;
+    padding: 1rem 5%;
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -24,6 +26,8 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
@@ -33,7 +37,7 @@ nav a {
 
 .hero {
     background-color: #FDD5D5;
-    padding: 4rem 10%;
+    padding: 4rem 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +48,8 @@ nav a {
     align-items: center;
     gap: 3rem;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .overlay-text {
@@ -82,8 +88,10 @@ nav a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    padding: 50px 10%;
+    padding: 50px 5%;
     background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .feature-block {
@@ -96,12 +104,16 @@ nav a {
 .how-it-works {
     background: #FBDEDA;
     position: relative;
+    padding: 50px 5%;
 }
 
 .how-it-works-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 @media(min-width: 768px) {
@@ -124,11 +136,15 @@ nav a {
 
 .how-image img {
     max-width: 450px;
+    height: auto;
 }
 
 .storytelling {
     background: #ffffff;
     position: relative;
+    padding: 50px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .how-it-works p,
@@ -198,6 +214,8 @@ nav a {
 footer {
     background-color: #2C2C2C;
     color: #FFFFFF;
-    padding: 20px 10%;
+    padding: 20px 5%;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
