@@ -2,21 +2,21 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #FFFFFF;
+    background-color: #2A2A2A;
 }
 
 header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+    background-color: #080808;
+    color: black;
+    padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 header .logo {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -38,7 +38,7 @@ header nav ul li a {
 }
 
 .cta-button {
-    background-color: #0056b3;
+    background-color: #92BCEA;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -51,7 +51,7 @@ header nav ul li a {
     justify-content: space-between;
     align-items: center;
     padding: 50px 20px;
-    background-color: #e9ecef;
+    background-color: #2A2A2A;
 }
 
 .hero-text {
@@ -59,17 +59,17 @@ header nav ul li a {
 }
 
 .hero-text h1 {
-    font-size: 48px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
 
 .hero-text p {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 20px;
 }
 
 .hero-video {
-    max-width: 40%;
+    max-width: 50%;
 }
 
 .features, .how-it-works, .testimonials, .pricing {
