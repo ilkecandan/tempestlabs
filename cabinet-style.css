@@ -119,6 +119,7 @@ nav a {
 .how-it-works {
     background: #FBDEDA;
     padding-top: 60px;
+    max-height: 500px;
     padding-bottom: 34px;
 }
 
