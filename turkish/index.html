@@ -80,11 +80,21 @@
 
     <footer>
         <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">Tüm hakları saklıdır.</span></p>
-        <div class="legal-links">
-            <a href="https://tempestlabs.space/turkish/legal/membership-agreement.html">Üyelik Sözleşmesi</a> |
-            <a href="https://tempestlabs.space/turkish/legal/distance-sales-agreement.html">KVKK Aydınlatma Metni</a> |
-            <a href="https://tempestlabs.space/turkish/legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
-        </div>
+       <div class="legal-links">
+  <a href="#" onclick="loadContent('https://tempestlabs.space/turkish/legal/membership-agreement.html')">Üyelik Sözleşmesi</a> |
+  <a href="#" onclick="loadContent('https://tempestlabs.space/turkish/legal/distance-sales-agreement.html')">KVKK Aydınlatma Metni</a> |
+  <a href="#" onclick="loadContent('https://tempestlabs.space/turkish/legal/distance-sales-agreement.html')">Mesafeli Satış Sözleşmesi</a>
+</div>
+
+<!-- Area where the content will load -->
+<iframe id="content-frame" width="100%" height="600px" style="border:none;"></iframe>
+
+<script>
+  function loadContent(url) {
+    document.getElementById("content-frame").src = url;
+  }
+</script>
+
     </footer>
 </body>
 </html>
