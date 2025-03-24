@@ -3,8 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script defer src="language-switcher.js"></script>
-        <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="styles.css" />
 
 <body>
     <!-- Header Section -->
@@ -18,25 +17,40 @@
 </div>
            <nav>
             <ul>
-                <li><a href="/about.html" data-key="about">About</a></li>
-                <li><a href="/products.html" data-key="products">Products</a></li>
-                <li><a href="/contact.html" data-key="contact">Contact</a></li>
-                <li><a href="/blog.html" data-key="about">Blog</a></li>
+                <li><a href="https://tempestlabs.space/about.html">About</a></li>
+                <li><a href="https://tempestlabs.space/products.html">Products</a></li>
+                <li><a href="https://tempestlabs.space/contact.html" data-key="contact">Contact</a></li>
+                <li><a href="https://tempestlabs.space/blog.html" data-key="about">Blog</a></li>
                 <li>
-                    <select id="language-selector">
-                        <option value="en" selected>English</option>
-                        <option value="tr">Türkçe</option>
-                    </select>
+                <li><a href="https://tempestlabs.space/turkish/contact.html">Türkçe</a></li>
                 </li>
             </ul>
         </nav>
     </header>
+     <section class="contact-container">
+        <h1>Contact Us</h1>
+        <p>You can send an email directly to: <a href='mailto:tempestlabsofficial@gmail.com'>tempestlabsofficial@gmail.com</a>. Have questions? Would you like to collaborate with us? You can contact us using the form below.</p>
+        
+        <form action="https://formspree.io/f/myzezopr" method="POST" class="contact-form">
+            <label for="name" data-key="contact.name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email" data-key="contact.email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message" data-key="contact.message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit" class="cta-button" data-key="contact.send">Send</button>
+        </form>
+    </section>
+    
    <footer>
-        <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+        <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
         <div class="legal-links">
-            <a href="/legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="legal.membership">Membership Agreement</a> |
-            <a href="/legal/kvkk-clarification.html" onclick="redirectToLegal('kvkk')" data-key="legal.kvkk">KVKK Clarification</a> |
-            <a href="/legal/distance-sales-agreement.html" onclick="redirectToLegal('distance')" data-key="legal.distance">Distance Sales Agreement</a>
+            <a href="https://tempestlabs.space/legal/membership-agreement.html">Membership Agreement</a> |
+            <a href="https://tempestlabs.space/legal/kvkk-clarification.html">KVKK Clarification</a> |
+            <a href="https://tempestlabs.space/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
         </div>
     </footer>
 
