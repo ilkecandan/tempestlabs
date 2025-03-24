@@ -10,21 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        let currentPage = window.location.pathname.split('/').pop();
-        if (!currentPage || currentPage === '') currentPage = 'index.html';
+        let currentPage = window.location.pathname.split('/').pop(); // get current page
+        if (!currentPage || currentPage === '') currentPage = 'index.html'; // default page
         
         const origin = window.location.origin;
         
-        // Check if the page is in the 'legal' directory, and adjust path
+        // Handle legal pages separately for Turkish and English
         if (currentPage.startsWith('legal/')) {
-            // Legal pages: Turkish path should be '/turkish/legal/'
             if (selectedLanguage === 'tr') {
                 window.location.href = `${origin}/turkish${window.location.pathname}`;
             } else {
+                // English: Remove /turkish from the path and just use /legal/
                 window.location.href = `${origin}${window.location.pathname.replace('/turkish', '')}`;
             }
         } else {
-            // Non-legal pages: Turkish path should be '/turkish/'
+            // Non-legal pages: Simply adjust to the /turkish/ prefix for Turkish, and remove it for English
             if (selectedLanguage === 'tr') {
                 window.location.href = `${origin}/turkish/${currentPage}`;
             } else {
