@@ -250,3 +250,73 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+
+
+/* Transitions for smooth interaction */
+a, button, .cta-button, .feature-block, nav a, .social-icons a {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Header Behavior */
+@media (max-width: 992px) {
+    header .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Hero Section responsiveness */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .overlay-text {
+        font-size: 17px;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Feature Cards Interaction */
+.feature-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Button Enhancements */
+.cta-button {
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(82, 183, 136, 0.3);
+}
+
+/* Footer responsiveness */
+@media (max-width: 600px) {
+    footer {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
