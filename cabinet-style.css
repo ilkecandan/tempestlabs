@@ -244,13 +244,6 @@ nav a:hover {
     background: #ffffff;
 }
 
-/* Footer */
-footer {
-    background-color: #2C2C2C;
-    color: #FFFFFF;
-    padding: 20px 0;
-    text-align: center;
-}
 
 
 /* Transitions for smooth interaction */
@@ -320,4 +313,30 @@ a, button, .cta-button, .feature-block, nav a, .social-icons a {
         font-size: 14px;
         padding: 15px;
     }
+}
+/* Footer */
+footer {
+    padding: 30px 5%;
+    background-color: #2C2C2C;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+footer p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.legal-links a {
+    color: #21AFBF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 14px;
 }
