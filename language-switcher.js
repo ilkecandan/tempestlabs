@@ -1,76 +1,63 @@
-// language-switcher.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('language-selector');
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-
+    
+    // Set the selected language based on previous choice or default to English
     loadLanguage(savedLanguage);
     languageSelector.value = savedLanguage;
-
+    
+    // Add event listener for language change
     languageSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        // Get current page name (e.g., product-cabinet.html)
+        // Get the current page name (e.g., product-cabinet.html)
         let currentPage = window.location.pathname.split('/').pop();
         if (!currentPage || currentPage === '') currentPage = 'index.html';
-
+        
         const origin = window.location.origin;
-
-        // Redirect to correct language version with absolute URLs
+        
+        // Redirect to the corresponding language version with correct folder structure
         if (selectedLanguage === 'tr') {
-            window.location.href = `${origin}/turkish/${currentPage}`;
+            // Check if the current page is a legal document
+            if (currentPage.startsWith('legal/')) {
+                window.location.href = `${origin}/turkish/${currentPage}`;
+            } else {
+                window.location.href = `${origin}/turkish/${currentPage}`;
+            }
         } else {
-            window.location.href = `${origin}/${currentPage}`;
+            if (currentPage.startsWith('turkish/')) {
+                window.location.href = `${origin}/${currentPage.replace('turkish/', '')}`;
+            } else {
+                window.location.href = `${origin}/${currentPage}`;
+            }
         }
     });
 
-    // Hide broken images
-    document.querySelectorAll('img').forEach(img => {
-        checkImageExists(img.src, img);
-    });
-
-    // Localize legal links
-    document.querySelectorAll('[data-legal-link]').forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const docType = link.getAttribute('data-legal-link');
-            redirectToLegal(docType);
-        });
-    });
+    // Function to load language translations from the JSON file
+    function loadLanguage(lang) {
+        const languageFilePath = `/languages/${lang}.json`;
+        fetch(languageFilePath)
+            .then(response => {
+                if (!response.ok) {
+                    console.warn(`Language file not found: ${languageFilePath}`);
+                    return {};
+                }
+                return response.json();
+            })
+            .then(translations => {
+                if (Object.keys(translations).length === 0) return;
+                document.querySelectorAll('[data-key]').forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[key]) {
+                        element.textContent = translations[key];
+                    }
+                });
+            })
+            .catch(error => console.error("Error loading language file:", error));
+    }
 });
 
-function loadLanguage(lang) {
-    const languageFilePath = `/languages/${lang}.json`;
-
-    fetch(languageFilePath)
-        .then(response => {
-            if (!response.ok) {
-                console.warn(`Language file not found: ${languageFilePath}`);
-                return {};
-            }
-            return response.json();
-        })
-        .then(translations => {
-            if (Object.keys(translations).length === 0) return;
-            document.querySelectorAll('[data-key]').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (translations[key]) {
-                    element.textContent = translations[key];
-                }
-            });
-        })
-        .catch(error => console.error("Error loading language file:", error));
-}
-
-function redirectToLegal(doc) {
-    const lang = localStorage.getItem('preferredLanguage') || 'en';
-    const origin = window.location.origin;
-    const path = (lang === 'tr') 
-        ? `/turkish/legal/${doc}.html` 
-        : `/legal/${doc}.html`;
-    window.location.href = `${origin}${path}`;
-}
 
 function checkImageExists(src, img) {
     fetch(src, { method: 'HEAD' })
