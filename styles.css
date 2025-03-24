@@ -82,11 +82,12 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
-    margin-top: 70px;
-    padding: 60px 5%;
+    margin-top: 90px;
+    padding: 10% 0;
     position: relative;
-    min-height: 80vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,34 +96,38 @@ nav ul li a:hover {
 }
 
 .image-container {
-    position: relative;
+    margin-down: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: 1;
     overflow: hidden;
-    margin-bottom: 30px;
 }
 
 .image-container img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
+    width: 80%;
+    height: 90%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 30px;
     transition: transform 0.5s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
 }
 
 .overlay-text {
     position: relative;
     z-index: 2;
-    max-width: 100%;
-    padding: 20px;
-    font-size: 16px;
+    max-width: 700px;
+    padding: 2rem;
+   font-size: 18px;
     border-radius: 20px;
     color: #2C2C2C;
     animation: fadeIn 2s ease-in-out;
 }
-
 .cta-button {
     background-color: #7AA6D1;
     color: #FFFFFF;
