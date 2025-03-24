@@ -1,40 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('language-selector');
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'tr';
     
-    // Set the selected language based on previous choice or default to English
+    // Load language content based on saved language
     loadLanguage(savedLanguage);
     languageSelector.value = savedLanguage;
-    
-    // Add event listener for language change
+
     languageSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
         localStorage.setItem('preferredLanguage', selectedLanguage);
 
-        // Get the current page name (e.g., product-cabinet.html)
         let currentPage = window.location.pathname.split('/').pop();
         if (!currentPage || currentPage === '') currentPage = 'index.html';
         
         const origin = window.location.origin;
         
-        // Redirect to the corresponding language version with correct folder structure
-        if (selectedLanguage === 'tr') {
-            // Check if the current page is a legal document
-            if (currentPage.startsWith('legal/')) {
-                window.location.href = `${origin}/turkish/${currentPage}`;
+        // Check if the page is in the 'legal' directory, and adjust path
+        if (currentPage.startsWith('legal/')) {
+            // Legal pages: Turkish path should be '/turkish/legal/'
+            if (selectedLanguage === 'tr') {
+                window.location.href = `${origin}/turkish${window.location.pathname}`;
             } else {
-                window.location.href = `${origin}/turkish/${currentPage}`;
+                window.location.href = `${origin}${window.location.pathname.replace('/turkish', '')}`;
             }
         } else {
-            if (currentPage.startsWith('turkish/')) {
-                window.location.href = `${origin}/${currentPage.replace('turkish/', '')}`;
+            // Non-legal pages: Turkish path should be '/turkish/'
+            if (selectedLanguage === 'tr') {
+                window.location.href = `${origin}/turkish/${currentPage}`;
             } else {
                 window.location.href = `${origin}/${currentPage}`;
             }
         }
     });
 
-    // Function to load language translations from the JSON file
     function loadLanguage(lang) {
         const languageFilePath = `/languages/${lang}.json`;
         fetch(languageFilePath)
@@ -57,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error("Error loading language file:", error));
     }
 });
-
 
 function checkImageExists(src, img) {
     fetch(src, { method: 'HEAD' })
