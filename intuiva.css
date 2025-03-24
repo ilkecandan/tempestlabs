@@ -26,19 +26,26 @@ body {
       font-size: 40px;
   
   }
-  nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-  }
-  
-  nav a {
-      text-decoration: none;
-      color: #2C2C2C;
-  }
-  
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #92BCEA;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #48B19E;
+}
+
   .hero {
     position: relative;
     height: 100vh;
