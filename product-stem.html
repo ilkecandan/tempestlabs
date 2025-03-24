@@ -1,158 +1,180 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <script defer src="language-switcher.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-key="stemtitle">STEM Student Bundle </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEM Student Bundle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --bg-color: #ffffff; /* White background */
-      --accent-color: #6c5b7b; /* Soft purple for accents */
-      --text-color: #333333; /* Dark gray for text */
-      --font: 'Georgia', serif;
-      --gradient: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%); /* Subtle white gradient */
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --header-gradient: linear-gradient(135deg, #6c5b7b 0%, #4a3f5e 100%); /* Purple gradient for header */
+      --bg: #fff8f4;
+      --accent: #FFF0C5;
+      --text: #1f1f1f;
+      --hover: #f8b195;
+      --card-bg: #fff;
+      --card-alt-bg: #fdf4f8;
+      --shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+      --radius: 12px;
     }
 
     body {
       margin: 0;
-      font-family: var(--font);
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: 'Georgia', serif;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     header {
-      background: var(--header-gradient);
-      padding: 1rem 0;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      background: var(--accent);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #1f1f1f;
+      flex-wrap: wrap;
     }
 
     .logo {
+      font-size: 2rem;
       font-weight: bold;
       text-decoration: none;
-      color: white;
-      padding-left: 15px;
-      font-size: 40px;
-      transition: transform 0.3s ease;
+      color: #1f1f1f;
     }
 
-    .logo:hover {
-      transform: scale(1.05);
+    .social-icons a {
+      color: #1f1f1f;
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--hover);
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 1rem;
-      margin: 0;
+      list-style: none;
       padding: 0;
+      margin: 1rem 0 0;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     nav a {
+      color: #1f1f1f;
       text-decoration: none;
-      color: white;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #f8b195; /* Soft pink for hover */
-    }
-
-    #language-selector {
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-      background-repeat: no-repeat;
-      background-position: right 5px center;
-      background-size: 12px;
-    }
-
-    #language-selector:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+      color: var(--hover);
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      margin: 3rem 0;
+      padding: 2rem;
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .section:hover {
+      transform: translateY(-6px);
     }
 
     h1, h2, h3 {
-      color: var(--text-color);
+      color: #1f1f1f;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
-    h2 {
-      margin-top: 40px;
-      font-size: 1.75rem;
-      color: var(--accent-color);
+    .feature-card {
+      background: var(--card-alt-bg);
+      border-radius: var(--radius);
+      padding: 1rem 1.5rem;
+      transition: transform 0.3s, background 0.3s;
     }
 
-    .checklist {
-      list-style: none;
-      padding-left: 0;
+    .feature-card:hover {
+      background: #fef6fa;
+      transform: translateY(-5px);
     }
 
-    .checklist li {
-      margin: 10px 0;
-      padding: 10px;
-      background: rgba(108, 91, 123, 0.1); /* Light purple background */
-      border-radius: 6px;
-      transition: transform 0.3s ease;
+    .feature-card h3 {
+      margin-top: 0;
     }
 
-    .checklist li:hover {
-      transform: translateX(10px);
+    .feature-card ul {
+      padding-left: 1rem;
+    }
+
+    .feature-card li {
+      margin-bottom: 0.5rem;
     }
 
     .checklist li::before {
       content: "✅ ";
-      color: var(--accent-color);
     }
 
     .cta {
-      background-color: var(--accent-color);
-      color: white;
-      padding: 15px 25px;
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
       display: inline-block;
-      margin-top: 30px;
+      background: var(--accent);
+      color: #1f1f1f;
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
       text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      transition: background 0.3s;
     }
 
     .cta:hover {
-      background-color: #4a3f5e; /* Darker purple on hover */
-      transform: scale(1.05);
+      background: #eac391;
     }
 
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #f4f4f4;
+      font-size: 0.9rem;
+    }
+
+    .legal-links a {
+      color: #1f1f1f;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+  
     .slideshow-container {
       position: relative;
       max-width: 100%;
-      margin: 30px auto;
+      margin: 2rem auto;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: var(--shadow);
     }
 
@@ -160,217 +182,177 @@
       display: none;
       text-align: center;
       width: 100%;
+      transition: opacity 0.6s ease-in-out;
     }
 
     .slide img {
       width: 100%;
-      max-width: 800px;
-      border-radius: 10px;
       height: auto;
+      border-radius: 12px;
     }
 
     .prev, .next {
       cursor: pointer;
       position: absolute;
       top: 50%;
-      width: auto;
-      padding: 16px;
+      padding: 12px;
       margin-top: -22px;
-      color: white;
+      color: #fff;
       font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
+      font-size: 24px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
       user-select: none;
-      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+    }
+
+    .prev {
+      left: 10px;
     }
 
     .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
+      right: 10px;
     }
 
     .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.7);
     }
 
-    .section {
-      padding: 40px 20px;
-      margin: 20px 0;
-      background: white;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
-    }
-
-    .section:hover {
-      transform: translateY(-5px);
-    }
-
-    .section:nth-child(even) {
-      background: var(--gradient);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .cta {
-        font-size: 1rem;
-      }
-      .logo {
-        font-size: 30px;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .slideshow-container {
-        margin: 20px auto;
-      }
-    }
-  </style>
+</style>
 </head>
 <body>
+
   <header>
-    <div class="container">
-      <a class="logo" href="index.html">Tempest Labs</a>
-      <nav>
-        <ul>
-          <li><a href="about.html" data-key="about">About</a></li>
-          <li><a href="products.html" data-key="products">Products</a></li>
-          <li><a href="contact.html" data-key="contact">Contact</a></li>
-          <li><a href="blog.html" data-key="blog">Blog</a></li>
-          <li>
-            <select id="language-selector">
-              <option value="en" selected>English</option>
-              <option value="tr">Türkçe</option>
-            </select>
-          </li>
-        </ul>
-      </nav>
+    <a class="logo" href="index.html">Tempest Labs</a>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="https://tempestlabs.space/about.html">About</a></li>
+        <li><a href="https://tempestlabs.space/products.html">Products</a></li>
+        <li><a href="https://tempestlabs.space/contact.html">Contact</a></li>
+        <li><a href="https://tempestlabs.space/blog.html">Blog</a></li>
+        <li><a href="https://tempestlabs.space/turkish/product-stem.html">Türkçe</a></li>
+      </ul>
+    </nav>
   </header>
 
   <div class="container">
-    <!-- Hero Section -->
+
+<!-- Slideshow Section -->
+<section class="section">
+  <h2 style="text-align:center;">✨ A Peek Inside the Bundle</h2>
+  <div class="slideshow-container">
+    <div class="slide" style="display:block">
+      <img src="images/stem.png" alt="Slide 1">
+    </div>
+    <div class="slide">
+      <img src="images/stem1.png" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="images/stem2.png" alt="Slide 3">
+    </div>
+    <div class="slide">
+      <img src="images/stem3.png" alt="Slide 4">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+</section>
+
+    <img src="stem_final.png" alt="STEM Student" class="hero-img">
+
     <section class="section">
-      <h1 data-key="stemheader">STEM Student Bundle</h1>
-      <p data-key="stemtext1"><strong>Because Surviving STEM Shouldn’t Feel Like a Full-Time Panic Attack</strong></p>
-      <p data-key="stemtext2">STEM degrees are brutal. You’ve got endless problem sets, 10 tabs of research papers open, and a vague sense that you should probably be “networking” but no clue where to start.</p>
-      <p data-key="stemtext3">Meanwhile, your non-STEM friends are out actually enjoying life while you’re buried in equations and caffeine-fueled all-nighters.</p>
-      <p data-key="stemtext4">This STEM Student Bundle won’t make your professor less evil, but it <strong>will</strong> help you get your life together, study smarter, and stop feeling lost about your career.</p>
+      <h1>STEM Student Bundle</h1>
+      <p><strong>Because surviving STEM shouldn’t feel like a full-time panic attack.</strong></p>
+      <p>Endless problem sets, caffeine-fueled all-nighters, and “networking” anxiety? Been there.</p>
+      <p>This bundle helps you get it together, study smarter, and take control of your future (even if your professor is still evil).</p>
     </section>
 
-    <!-- Slideshow Section -->
     <section class="section">
-      <div class="slideshow-container">
-        <div class="slide" style="display:block">
-          <img src="images/stem.png" alt="Slide 1">
-        </div>
-        <div class="slide">
-          <img src="images/stem1.png" alt="Slide 2">
-        </div>
-        <div class="slide">
-          <img src="images/stem2.png" alt="Slide 3">
-        </div>
-        <div class="slide">
-          <img src="images/stem3.png" alt="Slide 4">
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section">
-      <h2 data-key="stemwhatsinside">🎒 What’s Inside & Why You Actually Need It</h2>
+      <h2>🎒 What’s Inside & Why You Actually Need It</h2>
       <div class="grid">
-        <div>
-          <h3 data-key="stemstudyplan">📚 For When Your Study Plan is Just “Hope for the Best”</h3>
+        <div class="feature-card">
+          <h3>📚 Study Planning</h3>
           <ul class="checklist">
-            <li data-key="stemweeklyplanner">Weekly Study Planner (Fillable & Printable)</li>
-            <li data-key="stempersonalplanner">Personal Study Planner (Fillable & Printable)</li>
+            <li>Weekly Study Planner</li>
+            <li>Personal Study Planner</li>
           </ul>
         </div>
-        <div>
-          <h3 data-key="stemskills">🎯 For When You Have Skills but No Idea How to Sell Yourself</h3>
+        <div class="feature-card">
+          <h3>🎯 Show Your Skills</h3>
           <ul class="checklist">
-            <li data-key="stemskilltracker">Skill Tracker (Printable)</li>
-            <li data-key="stemchatgptprompts">ChatGPT Career Prompts for STEM Students</li>
+            <li>Skill Tracker</li>
+            <li>ChatGPT Career Prompts</li>
           </ul>
         </div>
-        <div>
-          <h3 data-key="stemnetworking">🤝 For When Networking Feels Like Social Torture</h3>
+        <div class="feature-card">
+          <h3>🤝 Easy Networking</h3>
           <ul class="checklist">
-            <li data-key="stemnetworkinglog">Networking Log (Fillable & Printable)</li>
+            <li>Networking Log</li>
           </ul>
         </div>
-        <div>
-          <h3 data-key="stemjobdescriptions">💼 For When Job Descriptions Make No Sense</h3>
+        <div class="feature-card">
+          <h3>💼 Job Prep</h3>
           <ul class="checklist">
-            <li data-key="stemcareerhandbook">STEM Career Survival Handbook</li>
-            <li data-key="stemresearchresume">How to Put Research on a Resume</li>
+            <li>STEM Career Handbook</li>
+            <li>Research Resume Guide</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Why Useful Section -->
     <section class="section">
-      <h2 data-key="stemwhyuseful">🚀 Why This Bundle is Actually Useful</h2>
+      <h2>🚀 Why This Bundle is Actually Useful</h2>
       <ul class="checklist">
-        <li data-key="stemnoduff">No fluff, just practical tools</li>
-        <li data-key="stemforstudents">Made for STEM students</li>
-        <li data-key="stemfillable">Fillable & Printable</li>
-        <li data-key="steminstantdownload">Instant download + email delivery</li>
+        <li>No fluff, just practical tools</li>
+        <li>Made for STEM students</li>
+        <li>Fillable & Printable</li>
+        <li>Instant download + email delivery</li>
       </ul>
+      <a href="https://inktempest.com" class="cta">Access STEM Student Bundle Now</a>
     </section>
-
-    <!-- Call to Action Section -->
+  
     <section class="section">
-      <p data-key="stemfinaltext"><strong>💡 Get your life together. Get ahead.</strong></p>
-      <a href="https://inktempest.com" class="cta" data-key="stemcta"> Access STEM Student Bundle now</a>
+      <h2>💰 Affordable, Just for Students</h2>
+      <p>Get everything in the STEM Student Bundle for only <strong>$3.99</strong></p>
+      <a href="https://inktempest.com" class="cta">Buy Now</a>
     </section>
   </div>
 
-  <!-- Footer -->
-  <footer class="section">
-    <div class="container">
-      <p>&copy; 2025 Tempest Labs. <span data-key="stemfooterrights">All rights reserved.</span></p>
-      <div class="legal-links">
-        <a href="legal/membership-agreement.html" onclick="redirectToLegal('membership')" data-key="stemlegalmembership">Membership Agreement</a> |
-        <a href="legal/kvkk-clarification.html" onclick="redirectToLegal('kvkk')" data-key="stemlegalkvkk">KVKK Clarification</a> |
-        <a href="legal/distance-sales-agreement.html" onclick="redirectToLegal('distance')" data-key="stemlegaldistance">Distance Sales Agreement</a>
-      </div>
+  <footer>
+    <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="https://tempestlabs.space/legal/membership-agreement.html">Membership Agreement</a> |
+      <a href="https://tempestlabs.space/legal/kvkk-clarification.html">KVKK Clarification</a> |
+      <a href="https://tempestlabs.space/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
     </div>
   </footer>
 
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
 
-    function showSlides(n) {
-      slides.forEach((slide, index) => {
-        slide.style.display = index === n ? "block" : "none";
-      });
-    }
+  function showSlides(n) {
+    slides.forEach((slide, index) => {
+      slide.style.display = index === n ? "block" : "none";
+    });
+  }
 
-    function plusSlides(n) {
-      slideIndex += n;
-      if (slideIndex >= slides.length) slideIndex = 0;
-      if (slideIndex < 0) slideIndex = slides.length - 1;
-      showSlides(slideIndex);
-    }
+  function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    showSlides(slideIndex);
+  }
 
-    // Automatically cycle slides every 5 seconds
-    setInterval(() => plusSlides(1), 5000);
-  </script>
+  // Automatically cycle slides every 5 seconds
+  setInterval(() => plusSlides(1), 5000);
+</script>
+
 </body>
 </html>
