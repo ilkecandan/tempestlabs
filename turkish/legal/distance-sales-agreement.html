@@ -48,6 +48,30 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
+                #language-selector {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+#language-selector:hover {
+    background-color: #e9e9e9;
+    border-color: #999;
+}
+
+#language-selector:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #7AA6D1;
+}
 
         /* Main Content */
         main.agreement-container {
@@ -118,16 +142,22 @@
     <!-- Header Section -->
     <header>
         <a class="logo" href="index.html" data-key="distanceheader">Tempest Labs</a>
-        <nav>
+        <div class="social-icons">
+  <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+</div>
+           <nav>
             <ul>
-                <li><a href="/about.html" data-key="about">Hakkımızda</a></li>
-                <li><a href="/products.html" data-key="products">Ürünler</a></li>
-                <li><a href="/contact.html" data-key="contact">İletişim</a></li>
+                <li><a href="/about.html" data-key="about">About</a></li>
+                <li><a href="/products.html" data-key="products">Products</a></li>
+                <li><a href="/contact.html" data-key="contact">Contact</a></li>
                 <li><a href="/blog.html" data-key="about">Blog</a></li>
                 <li>
                     <select id="language-selector">
-                        <option value="en">English</option>
-                        <option value="tr" selected>Türkçe</option>
+                        <option value="en" selected>English</option>
+                        <option value="tr">Türkçe</option>
                     </select>
                 </li>
             </ul>
