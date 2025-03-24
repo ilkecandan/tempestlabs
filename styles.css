@@ -13,13 +13,13 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #FFFFFF;
     color: #2C2C2C;
-    line-height: 2.1;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 /* Header */
 header {
-    margin-down: 70px;
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,18 +35,15 @@ header {
 }
 
 header.scrolled {
-    padding: 40px 5%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    justify-content: center;
+    letter-spacing: 1px;
     color: #2C2C2C;
-    transform: translateX(100px);
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -59,16 +56,17 @@ header.scrolled {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 15px;
 }
 
 nav ul li a {
     color: #2C2C2C;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
     border-radius: 5px;
+    padding: 5px 10px;
 }
 
 nav ul li a:hover {
@@ -76,12 +74,19 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
 /* Hero Section */
 .hero {
-    margin-top: 90px;
-    padding: 10% 0;
+    margin-top: 70px;
+    padding: 60px 5%;
     position: relative;
-    height: 90vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,183 +95,163 @@ nav ul li a:hover {
 }
 
 .image-container {
-    margin-down: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
     z-index: 1;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 .image-container img {
-    width: 80%;
-    height: 90%;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
     object-fit: cover;
-    border-radius: 30px;
+    border-radius: 20px;
     transition: transform 0.5s ease;
-}
-
-.image-container img:hover {
-    transform: scale(1.1);
 }
 
 .overlay-text {
     position: relative;
     z-index: 2;
-    max-width: 700px;
-    padding: 2rem;
-   font-size: 18px;
+    max-width: 100%;
+    padding: 20px;
+    font-size: 16px;
     border-radius: 20px;
     color: #2C2C2C;
     animation: fadeIn 2s ease-in-out;
 }
-#language-selector {
-    background-color: #f4f4f4;
-    color: #333;
-    font-size: 16px;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: 15px;
-}
-
-#language-selector:hover {
-    background-color: #e9e9e9;
-    border-color: #999;
-}
-
-#language-selector:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #7AA6D1;
-}
-
 
 .cta-button {
     background-color: #7AA6D1;
     color: #FFFFFF;
-    padding: 15px 30px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cta-button:hover {
-    background-color: #92BCEA;
-    transform: translateY(-3px);
+    display: inline-block;
+    margin-top: 20px;
 }
 
 /* Featured Products Section */
 .featured-products {
-    padding: 50px 5%; /* Reduced padding */
+    padding: 50px 5%;
     background-color: #FFFFFF;
     text-align: center;
 }
 
 .featured-products h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 30px;
     color: #2C2C2C;
     font-weight: 700;
-    animation: slideIn 1s ease-in-out;
 }
 
 .product-grid {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .product-card {
     background-color: #F7F9FC;
-    padding: 10px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
-    flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
-    width: 80%;
-    border-radius: 25px;
-    margin-bottom: 25px;
-    transition: transform 0.3s ease;
-}
-
-.product-card img:hover {
-    transform: scale(1.05);
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin-bottom: 15px;
 }
 
 .product-card h3 {
-    font-size: 50px;
+    font-size: 20px;
     margin-bottom: 10px;
     color: #2C2C2C;
     font-weight: 600;
 }
 
 .product-card p {
-    font-size: 25px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
     color: #2C2C2C;
 }
 
 /* Call to Action Section */
 .call-to-action {
-    padding: 80px 5%; /* Reduced padding */
+    padding: 60px 5%;
     background-color: #7AA6D1;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
 .call-to-action h2 {
-    font-size: 42px;
+    font-size: 28px;
     margin-bottom: 20px;
     color: #FFFFFF;
     font-weight: 700;
 }
 
 .call-to-action p {
-    font-size: 25px;
-    margin-bottom: 20px; /* Reduced margin */
+    font-size: 16px;
+    margin-bottom: 25px;
     color: #FFFFFF;
 }
 
 /* Footer */
 footer {
-    padding: 15px 5%;
+    padding: 30px 5%;
     background-color: #2C2C2C;
     text-align: center;
     color: #FFFFFF;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
 footer p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .legal-links a {
     color: #7AA6D1;
     text-decoration: none;
-    margin: 0 10px;
     transition: color 0.3s ease;
+    font-size: 14px;
 }
 
-.legal-links a:hover {
-    color: #92BCEA;
+/* Agreement Page */
+main.agreement-container {
+    max-width: 100%;
+    margin: 100px auto 40px auto;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+main.agreement-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+main.agreement-container h2 {
+    font-size: 20px;
+    margin-top: 30px;
 }
 
 /* Animations */
@@ -281,269 +266,131 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
+    /* Tablet styles */
+    .logo {
+        font-size: 24px;
+    }
+    
+    nav ul li a {
+        font-size: 18px;
+    }
+    
+    .hero {
+        min-height: 70vh;
+    }
+    
+    .overlay-text {
+        font-size: 18px;
+    }
+    
+    .featured-products h2,
+    .call-to-action h2 {
+        font-size: 32px;
+    }
+    
     .product-grid {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .product-card {
+        flex: 0 0 calc(50% - 20px);
     }
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 42px;
+@media (min-width: 992px) {
+    /* Desktop styles */
+    .logo {
+        font-size: 28px;
     }
-
-    .hero p {
-        font-size: 30px;
+    
+    .hero {
+        padding: 80px 5%;
     }
-
-    .featured-products h2 {
-        font-size: 40px;
+    
+    .overlay-text {
+        max-width: 700px;
+        font-size: 20px;
     }
-
-    .product-card h3 {
-        font-size: 30px;
-    }
-
-    .product-card p {
-        font-size: 30px;
-    }
-
+    
+    .featured-products h2,
     .call-to-action h2 {
         font-size: 36px;
     }
-
-    .call-to-action p {
-        font-size: 20px;
+    
+    .product-card {
+        flex: 0 0 calc(33.333% - 20px);
     }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 20px;
+    
+    main.agreement-container {
+        max-width: 900px;
+        padding: 40px 50px;
     }
-
-    .hero h1 {
+    
+    main.agreement-container h1 {
         font-size: 32px;
     }
+    
+    main.agreement-container h2 {
+        font-size: 24px;
+    }
+}
 
-    .hero p {
+@media (max-width: 767px) {
+    /* Mobile menu */
+    nav ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+    
+    nav ul.active {
+        left: 0;
+    }
+    
+    nav ul li a {
         font-size: 18px;
+        padding: 10px 20px;
     }
-
-    .featured-products h2 {
-        font-size: 28px;
+    
+    .menu-toggle {
+        display: block;
     }
-
-    .product-card h3 {
-        font-size: 20px;
+    
+    /* Adjust header padding for mobile */
+    header {
+        padding: 15px 5%;
     }
-
-    .product-card p {
-        font-size: 12px;
+    
+    /* Adjust hero section for mobile */
+    .hero {
+        min-height: auto;
+        padding: 40px 5%;
     }
-
-    .call-to-action h2 {
-        font-size: 28px;
+    
+    /* Make sure images don't overflow */
+    .image-container img {
+        max-height: 300px;
     }
-
-    .call-to-action p {
-        font-size: 16px;
+    
+    /* Adjust product card spacing */
+    .product-card {
+        margin-bottom: 20px;
     }
-}
-
-/* Add this to your existing CSS file */
-.product-gif {
-    width: 90%;
-    height: 400px; /* Adjust height as needed */
-    object-fit: cover;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.product-gif:hover {
-    transform: scale(1.05);
-}
-
-  .featured-products {
-            padding: 80px 5%;
-            background-color: #FFFFFF;
-            text-align: center;
-        }
-
-        .featured-products h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #2C2C2C;
-            font-weight: 700;
-            animation: slideIn 1s ease-in-out;
-        }
-
-        .product-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .product-card {
-            background-color: #F7F9FC;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            flex: 1;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-card img {
-            width: 100%;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card img:hover {
-            transform: scale(1.05);
-        }
-
-        .product-card h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #2C2C2C;
-            font-weight: 600;
-        }
-
-        .product-card p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #2C2C2C;
-        }
-
-        .product-card a {
-            background-color: #7AA6D1;
-            color: #FFFFFF;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .product-card a:hover {
-            background-color: #92BCEA;
-            transform: translateY(-3px);
-        }
-        main.agreement-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #333;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: #555;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-
-        .agreement-section {
-            margin-bottom: 2rem;
-        }
-
-        .agreement-section p {
-            margin: 0.5rem 0;
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .agreement-section strong {
-            color: #333;
-        }
-
-/* 💼 Agreement Page Enhancements */
-
-/* 🌟 Agreement Page Polished Styling */
-
-main.agreement-container {
-    max-width: 900px;
-    margin: 140px auto 60px auto; /* Top margin clears header */
-    padding: 40px 30px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    border-radius: 12px;
-    line-height: 1.8;
-    font-size: 1.05rem;
-    color: #444;
-    animation: fadeIn 1s ease-in-out;
-}
-
-main.agreement-container h1 {
-    font-size: 2.4rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    color: #2C2C2C;
-    border-bottom: 3px solid #7AA6D1;
-    padding-bottom: 0.5rem;
-}
-
-main.agreement-container h2 {
-    font-size: 1.6rem;
-    color: #2C2C2C;
-    margin-top: 2.5rem;
-    font-weight: 600;
-    position: relative;
-}
-
-main.agreement-container h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #7AA6D1;
-    margin-top: 10px;
-}
-
-.agreement-section {
-    margin-bottom: 1.5rem;
-}
-
-.agreement-section p {
-    margin: 0.8rem 0;
-    line-height: 1.7;
-    color: #555;
-}
-
-.agreement-section strong {
-    color: #2C2C2C;
-    font-weight: 600;
-}
-
-.agreement-section a {
-    color: #7AA6D1;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.agreement-section a:hover {
-    text-decoration: underline;
+    
+    /* Footer adjustments */
+    footer {
+        padding: 25px 5%;
+    }
 }
