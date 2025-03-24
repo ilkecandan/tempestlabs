@@ -17,15 +17,13 @@ body {
   z-index: 1000;
 }
 
-  
-  .logo {
-      font-weight: bold;
-      text-decoration: none;
-      color: #2C2C2C;
-      padding-left: 15px;
-      font-size: 40px;
-  
-  }
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #48B19E;
+  font-size: 32px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
