@@ -1,4 +1,3 @@
-
 /* General Reset */
 * {
     margin: 0;
@@ -308,107 +307,6 @@ main.agreement-container h2 {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-    .logo {
-        font-size: 24px;
-    }
-    nav ul li a {
-        font-size: 18px;
-    }
-    .hero {
-        min-height: 70vh;
-    }
-    .overlay-text {
-        font-size: 18px;
-    }
-    .featured-products h2,
-    .call-to-action h2 {
-        font-size: 32px;
-    }
-    .product-grid {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .product-card {
-        flex: 0 0 calc(50% - 20px);
-    }
-}
-
-@media (min-width: 992px) {
-    .logo {
-        font-size: 28px;
-    }
-    .hero {
-        padding: 80px 5%;
-    }
-    .overlay-text {
-        max-width: 700px;
-        font-size: 20px;
-    }
-    .featured-products h2,
-    .call-to-action h2 {
-        font-size: 36px;
-    }
-    .product-card {
-        flex: 0 0 calc(33.333% - 20px);
-    }
-    main.agreement-container {
-        max-width: 900px;
-        padding: 40px 50px;
-    }
-    main.agreement-container h1 {
-        font-size: 32px;
-    }
-    main.agreement-container h2 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 767px) {
-    nav ul {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 70px);
-        background: rgba(255, 255, 255, 0.95);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 30px;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-    }
-    nav ul.active {
-        left: 0;
-    }
-    nav ul li a {
-        font-size: 18px;
-        padding: 10px 20px;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    header {
-        padding: 15px 5%;
-    }
-    .hero {
-        min-height: auto;
-        padding: 40px 5%;
-    }
-    .image-container img {
-        max-height: 300px;
-    }
-    .product-card {
-        margin-bottom: 20px;
-    }
-    footer {
-        padding: 25px 5%;
-    }
-}
-
 /* Contact Page Enhancements */
 .contact-container {
     max-width: 700px;
@@ -488,7 +386,6 @@ main.agreement-container h2 {
     box-shadow: 0 6px 20px rgba(33, 175, 191, 0.25);
 }
 
-
 /* About Page Layout */
 .about-container {
     display: flex;
@@ -547,20 +444,175 @@ main.agreement-container h2 {
     transform: scale(1.05);
 }
 
-/* Responsive Layout */
+/* Responsive Design - Desktop First Approach */
 @media (min-width: 768px) {
+    .logo {
+        font-size: 24px;
+    }
+    nav ul li a {
+        font-size: 18px;
+    }
+    .hero {
+        min-height: 70vh;
+    }
+    .overlay-text {
+        font-size: 18px;
+    }
+    .featured-products h2,
+    .call-to-action h2 {
+        font-size: 32px;
+    }
+    .product-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .product-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+    /* About Page */
     .about-container {
         flex-direction: row;
         align-items: flex-start;
     }
-
     .about-content {
         padding-right: 40px;
     }
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@media (min-width: 992px) {
+    .logo {
+        font-size: 28px;
+    }
+    .hero {
+        padding: 80px 5%;
+    }
+    .overlay-text {
+        max-width: 700px;
+        font-size: 20px;
+    }
+    .featured-products h2,
+    .call-to-action h2 {
+        font-size: 36px;
+    }
+    .product-card {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+    main.agreement-container {
+        max-width: 900px;
+        padding: 40px 50px;
+    }
+    main.agreement-container h1 {
+        font-size: 32px;
+    }
+    main.agreement-container h2 {
+        font-size: 24px;
+    }
+}
+
+/* Mobile Responsiveness - Only Added Mobile-Specific Adjustments */
+@media (max-width: 767px) {
+    /* Header Adjustments */
+    header {
+        padding: 15px 5%;
+    }
+    
+    /* Mobile Menu */
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 80px;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+        z-index: 999;
+    }
+    nav ul.active {
+        left: 0;
+    }
+    nav ul li {
+        margin: 15px 0;
+    }
+    nav ul li a {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    /* Hero Section Adjustments */
+    .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 40px 5%;
+        margin-top: 70px;
+    }
+    .image-container {
+        position: relative;
+        height: 40vh;
+        margin-bottom: 30px;
+    }
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .overlay-text {
+        position: relative;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+    
+    /* Product Cards */
+    .product-card {
+        margin-bottom: 20px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 25px 5%;
+    }
+    .legal-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Contact Page */
+    .contact-container {
+        margin: 90px auto 40px auto;
+        padding: 30px 20px;
+    }
+    
+    /* About Page */
+    .about-container {
+        padding: 90px 5% 40px;
+    }
+    .profile-pic {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Special Mobile Fixes for Hero Text */
+@media (max-width: 480px) {
+    .overlay-text {
+        font-size: 16px;
+        padding: 1.5rem;
+    }
+    .overlay-text h1 {
+        font-size: 24px;
+    }
+    .cta-button {
+        padding: 10px 20px;
+    }
 }
