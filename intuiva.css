@@ -45,44 +45,34 @@ nav a:hover {
     color: #48B19E;
 }
 
-/* Enhanced Hero Section with Video Fixes */
 .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: #000 url('images/intu-fallback.jpg') no-repeat center center;
-    background-size: cover;
 }
 
 .hero-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translate(-50%, -50%);
     z-index: 1;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
 }
 
 .hero-overlay {
     position: relative;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.4);
+    background: #000000;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 0 2rem;
 }
 
 .hero-text {
     max-width: 600px;
-    text-align: center;
 }
 
 .hero-text h1 {
@@ -322,6 +312,8 @@ footer a:hover {
     
     .hero-overlay {
         padding: 0 1rem;
+        text-align: center;
+        justify-content: center;
     }
     
     .why-intuiva,
@@ -373,17 +365,6 @@ footer a:hover {
     .legal-links a {
         margin: 0;
     }
-    
-    /* Mobile-specific video fixes */
-    .hero-video {
-        position: fixed;
-        height: auto;
-    }
-    
-    .hero {
-        background: #000 url('images/intu-fallback-mobile.jpg') no-repeat center center;
-        background-size: cover;
-    }
 }
 
 @media (min-width: 768px) {
@@ -421,9 +402,5 @@ footer a:hover {
     
     .plan .price {
         font-size: 1.8rem;
-    }
-    
-    .hero-overlay {
-        padding: 0 0.5rem;
     }
 }
