@@ -119,6 +119,10 @@ nav ul li a:hover {
     height: 100%;
     z-index: 1;
     overflow: hidden;
+     width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .image-container img {
@@ -333,6 +337,9 @@ main.agreement-container h2 {
     }
     .hero {
         min-height: 70vh;
+     padding: 80px 5% 40px;
+    flex-direction: column;
+
     }
     .overlay-text {
         font-size: 18px;
