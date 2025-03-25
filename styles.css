@@ -81,12 +81,12 @@ nav ul li a:hover {
     font-size: 24px;
 }
 
-/* Hero Section */
+/* Hero Section - Fixed to show image properly */
 .hero {
     margin-top: 90px;
-    padding: 10% 0;
+    padding: 10% 5%;
     position: relative;
-    height: 90vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,26 +95,29 @@ nav ul li a:hover {
 }
 
 .image-container {
-    margin-down: 50px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-container img {
-    width: 80%;
-    height: 90%;
-    object-fit: cover;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
     border-radius: 30px;
     transition: transform 0.5s ease;
 }
 
 .image-container img:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .overlay-text {
@@ -126,6 +129,8 @@ nav ul li a:hover {
     border-radius: 20px;
     color: #2C2C2C;
     animation: fadeIn 2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 20px;
 }
 
 .cta-button {
@@ -140,6 +145,7 @@ nav ul li a:hover {
     display: inline-block;
     margin-top: 20px;
 }
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -168,7 +174,6 @@ nav ul li a:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(33, 175, 191, 0.3);
 }
-
 
 /* Featured Products Section */
 .featured-products {
@@ -274,177 +279,13 @@ footer p {
     font-size: 14px;
 }
 
-/* Agreement Page */
-main.agreement-container {
-    max-width: 100%;
-    margin: 100px auto 40px auto;
-    padding: 30px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    line-height: 1.6;
-    font-size: 16px;
-}
-
-main.agreement-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-main.agreement-container h2 {
-    font-size: 20px;
-    margin-top: 30px;
-}
-
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-@keyframes slideIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Contact Page Enhancements */
-.contact-container {
-    max-width: 700px;
-    margin: 120px auto 60px auto;
-    padding: 40px 30px;
-    background-color: #F7F9FC;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-    border-radius: 20px;
-    animation: fadeIn 1.2s ease-in-out;
-}
-
-.contact-container h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #2C2C2C;
-    text-align: center;
-}
-
-.contact-container p {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: #555;
-    text-align: center;
-    line-height: 1.6;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-form label {
-    font-weight: 600;
-    color: #2C2C2C;
-    margin-bottom: 5px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Poppins', sans-serif;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #21AFBF;
-    box-shadow: 0 0 0 3px rgba(33, 175, 191, 0.2);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form .cta-button {
-    align-self: flex-start;
-    background-color: #21AFBF;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-.contact-form .cta-button:hover {
-    background-color: #1a8f9e;
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(33, 175, 191, 0.25);
-}
-
-/* About Page Layout */
-.about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 120px 5% 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-content {
-    flex: 1;
-    text-align: left;
-    font-size: 16px;
-    color: #2C2C2C;
-    line-height: 1.8;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.about-content h1 {
-    font-size: 36px;
-    margin-bottom: 25px;
-    color: #2C2C2C;
-    font-weight: 700;
-}
-
-.about-content a {
-    color: #21AFBF;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.about-content a:hover {
-    text-decoration: underline;
-}
-
-/* Profile Image Styling */
-.about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-pic {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive Design - Desktop First Approach */
+/* Responsive Design - Desktop First */
 @media (min-width: 768px) {
     .logo {
         font-size: 24px;
@@ -457,6 +298,8 @@ main.agreement-container h2 {
     }
     .overlay-text {
         font-size: 18px;
+        background-color: transparent;
+        color: #2C2C2C;
     }
     .featured-products h2,
     .call-to-action h2 {
@@ -469,14 +312,6 @@ main.agreement-container h2 {
     }
     .product-card {
         flex: 0 0 calc(50% - 20px);
-    }
-    /* About Page */
-    .about-container {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    .about-content {
-        padding-right: 40px;
     }
 }
 
@@ -498,62 +333,42 @@ main.agreement-container h2 {
     .product-card {
         flex: 0 0 calc(33.333% - 20px);
     }
-    main.agreement-container {
-        max-width: 900px;
-        padding: 40px 50px;
-    }
-    main.agreement-container h1 {
-        font-size: 32px;
-    }
-    main.agreement-container h2 {
-        font-size: 24px;
-    }
 }
 
-/* Mobile Responsiveness - Only Added Mobile-Specific Adjustments */
+/* Mobile Responsiveness - Only Added What's Needed */
 @media (max-width: 767px) {
-    /* Header Adjustments */
-    header {
-        padding: 15px 5%;
-    }
-    
     /* Mobile Menu */
     nav ul {
         position: fixed;
-        top: 0;
+        top: 70px;
         left: -100%;
         width: 80%;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.95);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding-top: 80px;
-        transition: all 0.4s ease;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transition: all 0.3s ease;
         backdrop-filter: blur(10px);
-        z-index: 999;
     }
     nav ul.active {
         left: 0;
     }
-    nav ul li {
-        margin: 15px 0;
-    }
     nav ul li a {
         font-size: 18px;
-        padding: 10px 25px;
+        padding: 10px 20px;
     }
     .menu-toggle {
         display: block;
-        z-index: 1001;
     }
     
     /* Hero Section Adjustments */
     .hero {
-        height: auto;
-        min-height: 80vh;
+        min-height: 90vh;
         padding: 40px 5%;
         margin-top: 70px;
+        flex-direction: column;
     }
     .image-container {
         position: relative;
@@ -562,57 +377,35 @@ main.agreement-container h2 {
     }
     .image-container img {
         width: 100%;
-        height: 100%;
-        border-radius: 20px;
+        height: auto;
+        max-height: 100%;
     }
     .overlay-text {
-        position: relative;
-        padding: 1rem;
-        background-color: rgba(255, 255, 255, 0.85);
-        border-radius: 15px;
-        margin-top: 20px;
+        width: 100%;
+        padding: 20px;
+        margin: 0;
     }
     
-    /* Product Cards */
+    /* Other Mobile Adjustments */
     .product-card {
         margin-bottom: 20px;
     }
-    
-    /* Footer */
     footer {
         padding: 25px 5%;
     }
-    .legal-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    /* Contact Page */
-    .contact-container {
-        margin: 90px auto 40px auto;
-        padding: 30px 20px;
-    }
-    
-    /* About Page */
-    .about-container {
-        padding: 90px 5% 40px;
-    }
-    .profile-pic {
-        width: 220px;
-        height: 220px;
-    }
 }
 
-/* Special Mobile Fixes for Hero Text */
+/* Very Small Mobile Devices */
 @media (max-width: 480px) {
     .overlay-text {
         font-size: 16px;
-        padding: 1.5rem;
+        padding: 15px;
     }
     .overlay-text h1 {
         font-size: 24px;
     }
     .cta-button {
         padding: 10px 20px;
+        font-size: 14px;
     }
 }
