@@ -369,12 +369,13 @@ main.agreement-container h2 {
     nav ul li a {
         font-size: 18px;
     }
-    .hero {
-        min-height: 70vh;
-     padding: 80px 5% 40px;
+  .hero {
     flex-direction: column;
-
-    }
+    padding: 30px 5% 60px;
+    height: auto;
+    text-align: center;
+    position: relative;
+}
     .overlay-text {
         font-size: 18px;
     }
@@ -391,7 +392,29 @@ main.agreement-container h2 {
         flex: 0 0 calc(50% - 20px);
     }
 }
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    max-height: 250px;
+}
 
+.overlay-text {
+    position: relative;
+    z-index: 2;
+    padding: 0 10px;
+    background-color: transparent;
+    font-size: 16px;
+    text-align: center;
+}
 @media (min-width: 992px) {
     .logo {
         font-size: 28px;
