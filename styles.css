@@ -682,3 +682,36 @@ main.agreement-container h2 {
 .blog-post-container a:hover {
     text-decoration: underline;
 }
+.share-buttons {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.share-buttons p {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.share-buttons a {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background-color: #F7F9FC;
+  color: #2C2C2C;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.share-buttons a:hover {
+  background-color: #21AFBF;
+  color: #fff;
+  border-color: #21AFBF;
+}
+
+.share-buttons i {
+  margin-right: 8px;
+}
