@@ -2,43 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-          <link rel="icon" href="images/tempest.png" type="image/x-icon">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm." />
-
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-   </head>
 <body>
     <!-- Header Section -->
     <header>
         <a class="logo" href="index.html" data-key="distanceheader">Tempest Labs</a>
         <div class="social-icons">
-  <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-</div>
-                <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-       </div>
-           <nav>
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
             <ul>
                 <li><a href="https://tempestlabs.space/about.html">About</a></li>
                 <li><a href="https://tempestlabs.space/products.html">Products</a></li>
                 <li><a href="https://tempestlabs.space/contact.html">Contact</a></li>
                 <li><a href="https://tempestlabs.space/blog.html">Blog</a></li>
-                <li>
                 <li><a href="https://tempestlabs.space/turkish/blog.html">Türkçe</a></li>
-                </li>
             </ul>
         </nav>
     </header>
-        <footer>
+    <section class="blog-section">
+  <h2>Latest from the Blog</h2>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <img src="images/blog1.jpg" alt="Post 1 image">
+      <h3>Why We Build One-Time Purchase Apps</h3>
+      <p>No subscriptions. No stress. Just tools that respect your time and wallet.</p>
+      <a href="blog-posts/one-time-apps.html" class="cta-button">Read More</a>
+    </div>
+
+    <div class="blog-card">
+      <img src="images/blog2.jpg" alt="Post 2 image">
+      <h3>The Calm Tech Philosophy</h3>
+      <p>Explore how gentle technology can support mental clarity and meaningful work.</p>
+      <a href="blog-posts/calm-tech.html" class="cta-button">Read More</a>
+    </div>
+
+    <div class="blog-card">
+      <img src="images/blog3.jpg" alt="Post 3 image">
+      <h3>Building a Business Without Borders</h3>
+      <p>The behind-the-scenes journey of founding Tempest Labs as a solo creator.</p>
+      <a href="blog-posts/borderless-building.html" class="cta-button">Read More</a>
+    </div>
+  </div>
+</section>
+
+
+    <footer>
         <p>&copy; 2025 Tempest Labs. <span data-key="footer.rights">All rights reserved.</span></p>
         <div class="legal-links">
             <a href="https://tempestlabs.space/legal/membership-agreement.html">Membership Agreement</a> |
@@ -46,10 +67,11 @@
             <a href="https://tempestlabs.space/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector("nav ul").classList.toggle("active");
+        }
+    </script>
 </body>
-     <script>
-  function toggleMenu() {
-    document.querySelector("nav ul").classList.toggle("active");
-  }
-</script>
 </html>
