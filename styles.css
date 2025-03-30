@@ -564,3 +564,73 @@ main.agreement-container h2 {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.blog-section {
+  padding: 100px 5% 60px;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.blog-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #2C2C2C;
+  font-weight: 700;
+}
+
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.blog-card {
+  background-color: #F7F9FC;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(33, 175, 191, 0.2);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  color: #2C2C2C;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.blog-card .cta-button {
+  background-color: #21AFBF;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.blog-card .cta-button:hover {
+  background-color: #1a8f9e;
+}
+
