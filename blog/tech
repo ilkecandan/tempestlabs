@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Anti-Overwhelm Tech Manifesto by Tempest Labs. Calm design for real humans in a chaotic world." />
+    <title>The Anti-Overwhelm Manifesto</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<header>
+    <a class="logo" href="https://tempestlabs.space/">Tempest Labs</a>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="https://tempestlabs.space/about.html">About</a></li>
+            <li><a href="https://tempestlabs.space/products.html">Products</a></li>
+            <li><a href="https://tempestlabs.space/contact.html">Contact</a></li>
+            <li><a href="https://tempestlabs.space/blog.html">Blog</a></li>
+            <li><a href="https://tempestlabs.space/turkish/blog.html">Türkçe</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="blog-post-container">
+    <br>
+    <h1>The Anti-Overwhelm Tech Manifesto</h1>
+    <p><em>We don’t want to be part of the digital noise. We want to be the space between notifications.</em></p>
+
+    <p>The digital world is loud. Constant alerts, updates, and algorithm-driven feeds make it hard to think clearly, let alone feel at peace. At Tempest Labs, we believe tech can be designed differently. We believe it should help you breathe, not break your brain.</p>
+
+    <h2>The Problem: Too Much, Too Often</h2>
+    <p>Most people receive between <a href="https://techjury.net/statistics/smartphone-notifications/" target="_blank">65 to 80 phone notifications per day</a>. That’s thousands of interruptions a year, each one fracturing your focus and chipping away at your mental energy.</p>
+    <p>Studies show that <a href="https://www.apa.org/research/action/multitask" target="_blank">multitasking can reduce productivity by up to 40%</a>. Every time your phone buzzes or a window pops up, your brain has to reorient itself. According to <a href="https://www.ics.uci.edu/~gmark/chi08-mark.pdf" target="_blank">research from the University of California, Irvine</a>, it takes about 23 minutes to fully recover your concentration after an interruption.</p>
+    <p>This isn't just about work. It's about how we feel. A <a href="https://www.sciencedirect.com/science/article/abs/pii/S0747563220301771" target="_blank">2020 study in Computers in Human Behavior</a> linked frequent notifications to anxiety, even when the content wasn’t stressful. Our minds are tired, our nervous systems are overstimulated, and we call it normal.</p>
+
+    <h2>Our Response: Gentle Tech</h2>
+    <p>Tempest Labs builds tech that respects your time and attention. We’re not here to dominate your screen or fight for your focus. We want to be the quiet tool you return to when you need to organize your mind, make a plan, or simply think.</p>
+
+    <h2>Inspired by Calm Technology</h2>
+    <p>We draw from the philosophy of <a href="https://calmtech.com/" target="_blank">Calm Technology</a>, which emphasizes that technology should inform and empower without overwhelming. As early tech visionary Mark Weiser put it, “The most profound technologies are those that disappear.”</p>
+    <p>We ask: What would it feel like if your software didn’t demand your attention but gently supported it? What if using an app felt like having a conversation with a thoughtful friend instead of being chased down by a needy robot?</p>
+
+    <h2>The Science of Slowness</h2>
+    <p>Your brain isn’t designed to handle constant input. According to neuroscientist <a href="https://www.daniellevitin.com/the-organized-mind" target="_blank">Daniel Levitin</a>, when you task-switch frequently, your brain uses up glucose at a faster rate, leaving you tired and foggy.</p>
+    <p>Writer and computer science professor <a href="https://www.calnewport.com/books/digital-minimalism/" target="_blank">Cal Newport</a> calls for a return to Digital Minimalism — using tech with intention. He argues that when we reduce digital clutter, we don’t become less productive. We become more present, more focused, and ultimately more fulfilled.</p>
+
+    <h2>How We Build</h2>
+    <ul>
+        <li>We don’t use addictive design patterns</li>
+        <li>We minimize notifications to essential moments</li>
+        <li>We design interfaces that are simple, clean, and quiet</li>
+        <li>We build one-time purchase apps so you don’t feel pressured to keep coming back</li>
+    </ul>
+
+    <h2>Choose Clarity, Not Chaos</h2>
+    <p>Tempest Labs is more than a studio. It’s a quiet rebellion. A place for people who are tired of being overstimulated and underwhelmed. We’re not here to fix your life. We’re here to give you space to fix it yourself — with tools that don’t shout, scroll, or steal your focus.</p>
+
+    <p>If your brain feels tired and your heart craves peace, this is your sign. You’re not broken. The system is. Let’s design something better.</p>
+
+    <p><strong>Choose silence. Choose clarity. Choose Tempest Labs.</strong></p>
+
+    <div class="share-buttons">
+        <p>Share this post:</p>
+        <a href="https://twitter.com/intent/tweet?text=The%20Anti-Overwhelm%20Tech%20Manifesto&url=https%3A%2F%2Ftempestlabs.space%2Fanti-overwhelm.html" target="_blank" class="share twitter">
+            <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftempestlabs.space%2Fanti-overwhelm.html" target="_blank" class="share linkedin">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <a href="https://wa.me/?text=Check%20this%20out%3A%20https%3A%2F%2Ftempestlabs.space%2Fanti-overwhelm.html" target="_blank" class="share whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="mailto:?subject=The%20Anti-Overwhelm%20Tech%20Manifesto&body=Read%20it%20here%3A%20https%3A%2F%2Ftempestlabs.space%2Fanti-overwhelm.html" target="_blank" class="share email">
+            <i class="fas fa-envelope"></i> Email
+        </a>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+    <div class="legal-links">
+        <a href="/legal/membership-agreement.html">Membership Agreement</a> |
+        <a href="/legal/kvkk-clarification.html">KVKK Clarification</a> |
+        <a href="/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.querySelector("nav ul").classList.toggle("active");
+    }
+</script>
+</body>
+</html>
