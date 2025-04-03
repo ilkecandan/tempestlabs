@@ -29,15 +29,17 @@
         }
 
         .quiet-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .quiet-grid img {
             width: 100%;
-            max-width: 300px;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
@@ -49,9 +51,39 @@
 
         @media (max-width: 768px) {
             .quiet-grid {
-                flex-direction: column;
-                align-items: center;
+                grid-template-columns: 1fr;
             }
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .profile-pic {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -93,28 +125,19 @@
     </section>
 
     <!-- Quiet the Noise Section -->
-<section class="quiet-section">
-  <h2>#QuietTheNoise</h2>
-  <p>In a world of constant pings and passive scrolling, we choose a different pace—one led by clarity, intention, and the quiet power of discernment. These visuals aren’t nostalgia. They’re reminders: that your time is sovereign, your attention sacred, and your energy not to be squandered on noise. Every glance at the screen is a choice. To swipe with purpose. To simplify what’s been made chaotic. To step back from the flood and build with focus. At Tempest Labs, we design tools for those who think deeply, act deliberately, and live with a quiet kind of power.</p>
+    <section class="quiet-section">
+        <h2>#QuietTheNoise</h2>
+        <p>In a world of constant pings and passive scrolling, we choose a different pace—one led by clarity, intention, and the quiet power of discernment. These visuals aren't nostalgia. They're reminders: that your time is sovereign, your attention sacred, and your energy not to be squandered on noise. Every glance at the screen is a choice. To swipe with purpose. To simplify what's been made chaotic. To step back from the flood and build with focus. At Tempest Labs, we design tools for those who think deeply, act deliberately, and live with a quiet kind of power.</p>
 
-  <div class="carousel-container">
-    <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-    <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-slide">
-        <img src="images/about1.jpg" alt="Quiet Image 1">
-        <img src="images/about2.jpg" alt="Quiet Image 2">
-        <img src="images/about3.jpg" alt="Quiet Image 3">
-      </div>
-      <div class="carousel-slide">
-        <img src="images/about4.jpg" alt="Quiet Image 4">
-        <img src="images/about5.jpg" alt="Quiet Image 5">
-        <img src="images/about6.jpg" alt="Quiet Image 6">
-      </div>
-    </div>
-    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-  </div>
-</section>
-
+        <div class="quiet-grid">
+            <img src="images/about1.jpg" alt="Quiet Image 1">
+            <img src="images/about2.jpg" alt="Quiet Image 2">
+            <img src="images/about3.jpg" alt="Quiet Image 3">
+            <img src="images/about4.jpg" alt="Quiet Image 4">
+            <img src="images/about5.jpg" alt="Quiet Image 5">
+            <img src="images/about6.jpg" alt="Quiet Image 6">
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
@@ -150,21 +173,6 @@
         function toggleMenu() {
             document.querySelector("nav ul").classList.toggle("active");
         }
-
-        let currentSlide = 0;
-
-  function moveSlide(direction) {
-    const track = document.getElementById("carouselTrack");
-    const slides = document.querySelectorAll(".carousel-slide");
-    const totalSlides = slides.length;
-
-    currentSlide += direction;
-    if (currentSlide < 0) currentSlide = totalSlides - 1;
-    if (currentSlide >= totalSlides) currentSlide = 0;
-
-    const slideWidth = slides[0].offsetWidth;
-    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-  }
     </script>
 </body>
 </html>
