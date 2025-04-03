@@ -2,40 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-          <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm." />
     <title>About Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .quiet-section {
+            padding: 60px 20px;
+            background-color: #fdfdfd;
+            text-align: center;
+        }
 
+        .quiet-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .quiet-section p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .quiet-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .quiet-grid img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .quiet-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .quiet-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
 <body>
     <!-- Header Section -->
     <header>
         <a class="logo" href="index.html" data-key="distanceheader">Tempest Labs</a>
         <div class="social-icons">
-  <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-</div>
-                <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-       </div>
-           <nav>
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
             <ul>
                 <li><a href="https://tempestlabs.space/index.html">About</a></li>
                 <li><a href="https://tempestlabs.space/products.html">Products</a></li>
                 <li><a href="https://tempestlabs.space/contact.html">Contact</a></li>
                 <li><a href="https://tempestlabs.space/blog.html">Blog</a></li>
-                <li>
-                <li><a href="https://tempestlabs.space/turkish/about.html" >Türkçe</a></li>
-
-                </li>
+                <li><a href="https://tempestlabs.space/turkish/about.html">Türkçe</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section class="about-container">
         <div class="about-content">
             <h1>About Tempest Labs</h1>
@@ -48,11 +91,25 @@
             <img src="images/profile.png" alt="İlke Candan Bengi" class="profile-pic">
         </div>
     </section>
-    
-   <footer>
+
+    <!-- Quiet the Noise Section -->
+    <section class="quiet-section">
+        <h2>#QuietTheNoise</h2>
+        <p>In a world of constant pings and passive scrolling, we choose a different pace—one led by clarity, intention, and the quiet power of discernment. These visuals aren’t nostalgia. They’re reminders: that your time is sovereign, your attention sacred, and your energy not to be squandered on noise. Every glance at the screen is a choice. To swipe with purpose. To simplify what’s been made chaotic. To step back from the flood and build with focus. At Tempest Labs, we design tools for those who think deeply, act deliberately, and live with a quiet kind of power.</p>
+        <div class="quiet-grid">
+            <img src="images/about1.jpg" alt="Quiet Image 1">
+            <img src="images/about2.jpg" alt="Quiet Image 2">
+            <img src="images/about3.jpg" alt="Quiet Image 3">
+            <img src="images/about4.jpg" alt="Quiet Image 4">
+            <img src="images/about5.jpg" alt="Quiet Image 5">
+            <img src="images/about6.jpg" alt="Quiet Image 6">
+        </div>
+    </section>
+
+    <footer>
         <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
         <div class="legal-links">
-            <a href="https://tempestlabs.space/legal/membership-agreement.html" >Membership Agreement</a> |
+            <a href="https://tempestlabs.space/legal/membership-agreement.html">Membership Agreement</a> |
             <a href="https://tempestlabs.space/legal/kvkk-clarification.html">KVKK Clarification</a> |
             <a href="https://tempestlabs.space/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
         </div>
@@ -79,9 +136,10 @@
                 window.location.href = selectedLanguage === 'tr' ? 'turkish/about.html' : 'about.html';
             });
         });
-  function toggleMenu() {
-    document.querySelector("nav ul").classList.toggle("active");
-  }
+
+        function toggleMenu() {
+            document.querySelector("nav ul").classList.toggle("active");
+        }
     </script>
 </body>
 </html>
