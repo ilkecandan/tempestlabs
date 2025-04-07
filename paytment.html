@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Your Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9fb;
+      color: #333;
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #5c67f2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4750d6;
+    }
+    iframe {
+      margin-top: 30px;
+      width: 100%;
+      max-width: 800px;
+      height: 600px;
+      border: none;
+      display: none;
+    }
+    #status {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Complete Your Purchase</h1>
+  <p>Click the button below to start the secure PayTR payment process.</p>
+
+  <button id="pay-button">Start Payment</button>
+
+  <iframe id="paytr-iframe"></iframe>
+  <div id="status"></div>
+
+  <script>
+    document.getElementById("pay-button").addEventListener("click", async () => {
+      const status = document.getElementById("status");
+      const iframe = document.getElementById("paytr-iframe");
+
+      status.textContent = "Requesting secure payment link...";
+      
+      try {
+        const response = await fetch("https://your-backend-url.paytr.app/paytr-init", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: "customer@email.com",
+            price: 99.90,
+            user_name: "Ilke"
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.token_url) {
+          iframe.src = data.token_url;
+          iframe.style.display = "block";
+          status.textContent = "Please complete your payment below:";
+        } else {
+          status.textContent = "Error: Could not initiate payment.";
+        }
+      } catch (err) {
+        status.textContent = "Error: " + err.message;
+      }
+    });
+  </script>
+
+</body>
+</html>
