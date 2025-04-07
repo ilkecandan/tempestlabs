@@ -97,17 +97,18 @@
       status.innerHTML = '<span class="loader"></span>Requesting secure payment link...';
 
       try {
-        const response = await fetch("https://paymentintegration-production-a10d.up.railway.app/paytr-init", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            email: "customer@example.com", // You can customize this dynamically
-            price: 99.90, // 💸 Adjust price here
-            user_name: "Ilke" // ✨ You can personalize this per product/customer
-          })
-        });
+      const response = await fetch("https://paymentintegration-production-a10d.up.railway.app/paytr-init", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    email: "test@tempestlabs.space",
+    price: 99.90,
+    user_name: "Ilke" // or the product name
+  })
+});
+
 
         const data = await response.json();
 
