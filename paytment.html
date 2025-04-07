@@ -97,30 +97,33 @@
       status.innerHTML = '<span class="loader"></span>Requesting secure payment link...';
 
       try {
-      const response = await fetch("https://paymentintegration-production-a10d.up.railway.app/paytr-init", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    email: "test@tempestlabs.space",
-    price: 99.90,
-    user_name: "Ilke" // or the product name
-  })
-});
-
+        const response = await fetch("https://paymentintegration-production-a10d.up.railway.app/paytr-init", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: "test@tempestlabs.space",
+            price: "99.90",
+            user_name: "Ilke",
+            user_address: "Imaginary Street No. 42, Istanbul",
+            user_phone: "05555555555"
+          })
+        });
 
         const data = await response.json();
 
         if (data.token_url) {
           iframe.src = data.token_url;
           iframe.style.display = "block";
-          status.textContent = "Please complete your payment below.";
+          status.textContent = "✅ Secure payment loaded. Please complete your transaction below.";
         } else {
           status.textContent = "⚠️ Failed to generate payment link.";
+          console.error("Error response:", data);
         }
       } catch (error) {
         status.textContent = "🚨 Error: " + error.message;
+        console.error("Request error:", error);
       }
     });
   </script>
