@@ -19,8 +19,8 @@
     --metallic-silver: #C0C0C0;
     --text-glow: 0 0 10px rgba(0, 212, 255, 0.7);
     --transition-speed: 0.4s;
-    --ancient-font: 'Alegreya', serif;
-    --modern-font: 'Nunito Sans', sans-serif;
+    --ancient-font: 'Orbitron', serif;
+    --modern-font: 'Exo 2', sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Nunito+Sans:wght@300;400;600&display=swap');
