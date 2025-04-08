@@ -10,13 +10,15 @@
 }
 
 :root {
-    --primary-color: #00D4FF; /* Brighter aqua */
-    --primary-dark: #0096B7; /* Deep sea blue */
+    --storm-glow: #00D4FF; /* Brighter aqua */
+    --deep-mystic: #0E4954; /* Deep sea blue */
+    --primary-dark: #0096B7; /* Retained for compatibility */
     --primary-glow: 0 0 15px rgba(0, 212, 255, 0.7), 0 0 30px rgba(0, 150, 183, 0.5);
-    --secondary-color: #0A1A2B; /* Deep ocean blue */
+    --twilight-shadow: #05111F; /* Deep ocean blue */
+    --secondary-color: #0A1A2B; /* Retained for compatibility */
     --accent-color: #4A8FE7; /* Sky-reflecting water */
-    --gold-accent: #FFD700; /* Atlantis gold */
-    --metallic-silver: #C0C0C0;
+    --mythic-gold: #FFD700; /* Atlantis gold */
+    --aether-silver: #C0C0C0;
     --text-glow: 0 0 10px rgba(0, 212, 255, 0.7);
     --transition-speed: 0.4s;
     --ancient-font: 'Alegreya', serif;
@@ -31,15 +33,29 @@ html {
 
 body {
     font-family: var(--modern-font);
-    background-color: var(--secondary-color);
+    background-color: var(--twilight-shadow);
     color: #F0F8FF; /* Alice blue */
     line-height: 1.8;
     overflow-x: hidden;
     background-image: 
         radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 25%),
         radial-gradient(circle at 80% 70%, rgba(0, 150, 183, 0.08) 0%, transparent 25%),
-        linear-gradient(to bottom, #0A1A2B, #05111F);
+        linear-gradient(to bottom, #0A1A2B, var(--twilight-shadow));
     background-attachment: fixed;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M10,10 L90,10 L90,90 L10,90 Z" stroke="rgba(0,212,255,0.03)" fill="none" stroke-width="0.5"/></svg>'); 
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,8 +67,24 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.2rem;
 }
 
+.mythic-line {
+    font-family: var(--ancient-font);
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.mythic-line::before {
+    content: "⎯";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.4;
+    color: var(--storm-glow);
+}
+
 a {
-    color: var(--primary-color);
+    color: var(--storm-glow);
     text-decoration: none;
     transition: all var(--transition-speed) ease;
 }
@@ -118,7 +150,7 @@ header.scrolled {
     content: "";
     position: absolute;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    background: linear-gradient(90deg, transparent, var(--storm-glow), transparent);
     transition: all var(--transition-speed) ease;
 }
 
@@ -139,7 +171,7 @@ header.scrolled {
 }
 
 .logo span {
-    color: var(--primary-color);
+    color: var(--storm-glow);
     animation: pulse-glow 3.5s infinite;
 }
 
@@ -167,7 +199,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--storm-glow);
     text-shadow: var(--text-glow);
     background: rgba(0, 212, 255, 0.1);
 }
@@ -180,7 +212,7 @@ nav ul li a::after {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--storm-glow);
     transition: width var(--transition-speed) ease;
 }
 
@@ -200,7 +232,7 @@ nav ul li a:hover::after {
 
 .menu-toggle:hover {
     transform: rotate(90deg);
-    color: var(--primary-color);
+    color: var(--storm-glow);
 }
 
 /* Hero Section */
@@ -350,7 +382,7 @@ nav ul li a:hover::after {
     margin-bottom: 2rem;
     letter-spacing: 3px;
     line-height: 1.2;
-    background: linear-gradient(90deg, #FFFFFF, var(--primary-color));
+    background: linear-gradient(90deg, #FFFFFF, var(--storm-glow));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -367,7 +399,7 @@ nav ul li a:hover::after {
 /* CTA Button */
 .cta-button {
     background: transparent;
-    color: var(--primary-color);
+    color: var(--storm-glow);
     padding: 15px 35px;
     text-decoration: none;
     border-radius: 35px;
@@ -378,7 +410,7 @@ nav ul li a:hover::after {
     align-items: center;
     gap: 10px;
     margin-top: 30px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--storm-glow);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -392,13 +424,13 @@ nav ul li a:hover::after {
     left: 0;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    background: linear-gradient(90deg, var(--storm-glow), var(--primary-dark));
     z-index: -1;
     transition: width var(--transition-speed) ease;
 }
 
 .cta-button:hover {
-    color: var(--secondary-color);
+    color: var(--twilight-shadow);
     text-shadow: none;
     box-shadow: var(--primary-glow);
     transform: translateY(-3px);
@@ -421,8 +453,8 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     background: rgba(0, 212, 255, 0.15);
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 1px solid var(--storm-glow);
+    color: var(--storm-glow);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -440,15 +472,16 @@ nav ul li a:hover::after {
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--primary-color);
+    background: var(--storm-glow);
     z-index: -1;
     transition: width var(--transition-speed) ease;
 }
 
 .social-icons a:hover {
-    color: var(--secondary-color);
+    color: var(--twilight-shadow);
     transform: translateY(-5px) rotate(10deg);
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.5));
 }
 
 .social-icons a:hover::before {
@@ -460,7 +493,7 @@ nav ul li a:hover::after {
     position: absolute;
     opacity: 0.1;
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--storm-glow);
     animation: float 8s ease-in-out infinite;
     z-index: -1;
     font-family: var(--ancient-font);
@@ -499,6 +532,18 @@ nav ul li a:hover::after {
     overflow: hidden;
 }
 
+.section-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--storm-glow),
+        transparent
+    );
+    margin: 60px 0;
+}
+
 .featured-products::before {
     content: "";
     position: absolute;
@@ -524,8 +569,8 @@ nav ul li a:hover::after {
     position: absolute;
     height: 3px;
     width: 40px;
-    background: var(--primary-color);
-    box-shadow: 0 0 15px var(--primary-color);
+    background: var(--storm-glow);
+    box-shadow: 0 0 15px var(--storm-glow);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -568,7 +613,7 @@ nav ul li a:hover::after {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--storm-glow), var(--accent-color));
     z-index: -1;
     opacity: 0;
     transition: opacity var(--transition-speed) ease;
@@ -614,7 +659,7 @@ nav ul li a:hover::after {
     transform: translateX(-50%);
     width: 50px;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--storm-glow);
     transition: width var(--transition-speed) ease;
 }
 
@@ -631,7 +676,7 @@ nav ul li a:hover::after {
 
 .product-card .price {
     font-size: 1.4rem;
-    color: var(--gold-accent);
+    color: var(--mythic-gold);
     font-weight: 600;
     margin-bottom: 20px;
     display: block;
@@ -662,7 +707,7 @@ nav ul li a:hover::after {
     font-size: 3.2rem;
     margin-bottom: 40px;
     position: relative;
-    background: linear-gradient(90deg, #FFFFFF, var(--primary-color));
+    background: linear-gradient(90deg, #FFFFFF, var(--storm-glow));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -682,7 +727,7 @@ nav ul li a:hover::after {
 /* Footer */
 footer {
     padding: 80px 5% 40px;
-    background: linear-gradient(to bottom, rgba(5, 17, 31, 0.98), #05111F);
+    background: linear-gradient(to bottom, rgba(5, 17, 31, 0.98), var(--twilight-shadow));
     text-align: center;
     color: #BBBBBB;
     position: relative;
@@ -695,7 +740,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    background: linear-gradient(to right, transparent, var(--storm-glow), transparent);
 }
 
 .footer-content {
@@ -722,7 +767,7 @@ footer::before {
     left: 0;
     width: 40px;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--storm-glow);
 }
 
 .footer-column p, .footer-column a {
@@ -745,11 +790,11 @@ footer::before {
     left: 0;
     opacity: 0;
     transition: all var(--transition-speed) ease;
-    color: var(--primary-color);
+    color: var(--storm-glow);
 }
 
 .footer-column a:hover {
-    color: var(--primary-color);
+    color: var(--storm-glow);
     padding-left: 20px;
 }
 
@@ -791,12 +836,12 @@ footer::before {
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--primary-color);
+    background: var(--storm-glow);
     transition: width var(--transition-speed) ease;
 }
 
 .legal-links a:hover {
-    color: var(--primary-color);
+    color: var(--storm-glow);
 }
 
 .legal-links a:hover::after {
