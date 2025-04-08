@@ -10,20 +10,22 @@
 }
 
 :root {
-    --storm-glow: #00D4FF; /* Brighter aqua */
-    --deep-mystic: #0E4954; /* Deep sea blue */
-    --primary-dark: #0096B7; /* Retained for compatibility */
-    --primary-glow: 0 0 15px rgba(0, 212, 255, 0.7), 0 0 30px rgba(0, 150, 183, 0.5);
-    --twilight-shadow: #05111F; /* Deep ocean blue */
-    --secondary-color: #0A1A2B; /* Retained for compatibility */
-    --accent-color: #4A8FE7; /* Sky-reflecting water */
-    --mythic-gold: #FFD700; /* Atlantis gold */
-    --aether-silver: #C0C0C0;
-    --text-glow: 0 0 10px rgba(0, 212, 255, 0.7);
-    --transition-speed: 0.4s;
-    --ancient-font: 'Alegreya', serif;
-    --modern-font: 'Nunito Sans', sans-serif;
+    /* Cosmic Color Palette */
+    --void-black: #05090F; /* Deep cosmic void */
+    --abyss-blue: #0A1A2B; /* The darkest ocean depth */
+    --storm-glow: #00D4FF; /* Electric blue core */
+    --nebula-pulse: #0066FF; /* Distant nebula glow */
+    --star-sheen: rgba(255,255,255,0.1); /* Stardust particles */
+    
+    /* Glow Effects */
+    --cosmic-glow: 0 0 15px rgba(0, 212, 255, 0.7), 
+                   0 0 30px rgba(0, 102, 255, 0.4);
+    --text-aura: 0 0 8px rgba(0, 212, 255, 0.5);
+    
+    /* Timing */
+    --pulse-speed: 3s;
 }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Nunito+Sans:wght@300;400;600&display=swap');
 
