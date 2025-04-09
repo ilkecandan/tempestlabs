@@ -10,8 +10,8 @@
 }
 
 :root {
-    --primary-color: #00D4FF; /* Brighter aqua */
-    --primary-dark: #0096B7; /* Deep sea blue */
+    --primary-color: #121B21; /* Brighter aqua */
+    --primary-dark: #121B21; /* Deep sea blue */
     --primary-glow: 0 0 15px rgba(0, 212, 255, 0.7), 0 0 30px rgba(0, 150, 183, 0.5);
     --secondary-color: #000000; /* Pure black background */
     --accent-color: #4A8FE7; /* Sky-reflecting water */
