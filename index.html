@@ -42,22 +42,39 @@
             width: 100%;
             height: 100%;
         }
-    .video-container {
+.video-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* or any specific height like 600px */
+    height: 80vh; /* Adjust height as needed */
+    background: linear-gradient(to bottom, #010a0f, #021b24);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black; /* fallback if video doesn't load */
+    z-index: 0;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2); /* subtle line */
 }
 
-.video-container video {
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,255,255,0.1) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.atlantean-video {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    object-fit: contain;
+    border: 2px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+    border-radius: 12px;
+    z-index: 2;
 }
 
 
@@ -102,11 +119,13 @@
         <div class="bubble" style="width:10px;height:10px;left:75%;top:100%;animation-duration:12s;animation-delay:5s;"></div>
         <div class="bubble" style="width:20px;height:20px;left:85%;top:100%;animation-duration:18s;animation-delay:2s;"></div>
         
-   <div class="video-container">
-    <video autoplay loop muted playsinline>
+<div class="video-container">
+    <video autoplay loop muted playsinline class="atlantean-video">
         <source src="images/main.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
     </video>
 </div>
+
 
         <div class="overlay-text">
             <h1 data-key="hero_title">Some ideas arrive like a <span class="glow">whisper</span>. Others like a storm.</h1>
