@@ -4,26 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="lAouwX9U0tqHW65Ae1eVondoC9w3C3ABIUVC4awQXX8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
     <meta name="p:domain_verify" content="47304f44f7fef083243ca9b00aefa939"/>
     <link rel="icon" href="images/tempest.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm." />
     <title>Tempest Labs</title>
-    <link rel="stylesheet" href="styles.css" />
     <style>
-        /* Additional CSS for improved hero section */
+        :root {
+            --primary-color: #0E4954; /* Deep teal-ocean */
+            --primary-dark: #061E22; /* Abyss black-blue */
+            --primary-glow: 0 0 12px rgba(14, 73, 84, 0.7), 0 0 24px rgba(14, 73, 84, 0.5);
+            --secondary-color: #0B1B1C; /* Charcoal twilight */
+            --accent-color: #58BCC5; /* Glacial shimmer */
+            --gold-accent: #BBA45C; /* Ancient bronze-gold */
+            --metallic-silver: #8C9AA8; /* Worn silver, aged steel */
+            --text-glow: 0 0 8px rgba(88, 188, 197, 0.6); /* Softer aqua glow */
+            --transition-speed: 0.35s;
+            --ancient-font: 'Orbitron', serif;
+            --modern-font: 'Exo 2', sans-serif;
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: var(--modern-font);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
         .hero {
             position: relative;
-            height: 90vh;
-            min-height: 600px;
+            height: 100vh;
+            min-height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(10,25,47,0.9) 0%, rgba(32,58,96,0.8) 100%);
+            background: 
+                linear-gradient(135deg, rgba(6, 30, 34, 0.9) 0%, rgba(11, 27, 28, 0.95) 100%),
+                url('images/mainn.png') center/cover no-repeat;
             color: white;
             text-align: center;
             padding: 0 2rem;
+            isolation: isolate;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 30%, transparent 0%, var(--primary-dark) 100%);
+            z-index: -1;
         }
         
         .hero-content {
@@ -31,121 +66,171 @@
             z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
-            background-color: rgba(0,0,0,0.3);
+            padding: 3rem;
+            background-color: rgba(6, 30, 34, 0.6);
             backdrop-filter: blur(8px);
             border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(88, 188, 197, 0.2);
+            box-shadow: var(--primary-glow);
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-family: var(--ancient-font);
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
-            font-weight: 600;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .hero .glow {
-            color: #4fc3f7;
-            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+            color: var(--accent-color);
+            text-shadow: var(--text-glow);
+            font-weight: 700;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 2rem;
             line-height: 1.6;
+            color: var(--metallic-silver);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
         
         .tagline {
             font-style: italic;
             margin: 2rem 0;
-            color: #a5d8ff;
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            font-weight: 300;
         }
         
         .cta-button {
             display: inline-block;
-            padding: 12px 30px;
-            background: rgba(79, 195, 247, 0.2);
+            padding: 14px 36px;
+            background: rgba(88, 188, 197, 0.15);
             color: white;
-            border: 1px solid #4fc3f7;
+            border: 1px solid var(--accent-color);
             border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
             margin-top: 1rem;
+            font-family: var(--ancient-font);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(88, 188, 197, 0.3), transparent);
+            transition: all 0.7s ease;
         }
         
         .cta-button:hover {
-            background: rgba(79, 195, 247, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(79, 195, 247, 0.2);
+            background: rgba(88, 188, 197, 0.3);
+            transform: translateY(-3px);
+            box-shadow: var(--primary-glow);
+            color: white;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
         }
         
         /* Improved product cards */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem auto;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin: 5rem auto;
             max-width: 1200px;
+            padding: 0 2rem;
         }
         
         .product-card {
-            background: white;
+            background: linear-gradient(145deg, var(--primary-dark), var(--secondary-color));
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all var(--transition-speed) ease;
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(88, 188, 197, 0.1);
         }
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(6, 30, 34, 0.5);
+            border-color: rgba(88, 188, 197, 0.3);
         }
         
         .product-gif {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(88, 188, 197, 0.1);
         }
         
         .product-card h3 {
             margin: 1.5rem 1.5rem 0;
-            color: #0a192f;
+            color: var(--accent-color);
+            font-family: var(--ancient-font);
+            font-size: 1.5rem;
+            letter-spacing: 1px;
         }
         
         .product-card p {
             margin: 1rem 1.5rem 2rem;
-            color: #555;
+            color: var(--metallic-silver);
             line-height: 1.6;
+            font-size: 1.1rem;
         }
         
         .product-card .cta-button {
             margin: 0 1.5rem 1.5rem;
             align-self: flex-start;
-            background: rgba(10, 25, 47, 0.8);
-            border-color: #0a192f;
+            background: rgba(14, 73, 84, 0.3);
+            border-color: var(--primary-color);
+            font-size: 0.9rem;
         }
         
         .product-card .cta-button:hover {
-            background: rgba(10, 25, 47, 1);
+            background: rgba(14, 73, 84, 0.5);
         }
         
         /* Decorative elements */
         .atlantis-symbol {
             position: absolute;
-            font-size: 2rem;
-            opacity: 0.3;
+            font-size: 2.5rem;
+            opacity: 0.2;
             z-index: 1;
-            animation: float 6s infinite ease-in-out;
+            animation: float 8s infinite ease-in-out;
+            color: var(--accent-color);
         }
         
         .atlantis-symbol:nth-child(1) {
-            top: 20%;
+            top: 15%;
             left: 10%;
             animation-delay: 0s;
         }
@@ -153,7 +238,7 @@
         .atlantis-symbol:nth-child(2) {
             top: 70%;
             left: 15%;
-            animation-delay: 1s;
+            animation-delay: 1.5s;
         }
         
         .atlantis-symbol:nth-child(3) {
@@ -165,43 +250,44 @@
         .atlantis-symbol:nth-child(4) {
             top: 80%;
             right: 15%;
-            animation-delay: 3s;
+            animation-delay: 3.5s;
         }
         
         .bubble {
             position: absolute;
-            background: rgba(255,255,255,0.05);
+            background: rgba(88, 188, 197, 0.05);
+            border: 1px solid rgba(88, 188, 197, 0.1);
             border-radius: 50%;
-            animation: float 8s infinite ease-in-out;
+            animation: float 10s infinite ease-in-out;
         }
         
         .bubble:nth-child(5) {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             top: 10%;
             left: 20%;
-            animation-delay: 0s;
+            animation-delay: 0.5s;
         }
         
         .bubble:nth-child(6) {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             bottom: 20%;
             left: 25%;
-            animation-delay: 2s;
+            animation-delay: 2.5s;
         }
         
         .bubble:nth-child(7) {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             top: 60%;
             right: 20%;
-            animation-delay: 1s;
+            animation-delay: 1.5s;
         }
         
         .bubble:nth-child(8) {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             top: 20%;
             right: 25%;
             animation-delay: 3s;
@@ -209,13 +295,13 @@
         
         @keyframes float {
             0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
             100% { transform: translateY(0) rotate(0deg); }
         }
         
         /* Section styling */
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             position: relative;
         }
         
@@ -224,31 +310,96 @@
         }
         
         .featured-products h2, .call-to-action h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #0a192f;
+            font-family: var(--ancient-font);
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
         .call-to-action {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-color));
+            border-top: 1px solid rgba(88, 188, 197, 0.1);
+            border-bottom: 1px solid rgba(88, 188, 197, 0.1);
+        }
+        
+        .call-to-action p {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            color: var(--metallic-silver);
         }
         
         .cta-group {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
         
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(6, 30, 34, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(88, 188, 197, 0.1);
+        }
+        
+        .logo {
+            font-family: var(--ancient-font);
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, var(--accent-color), var(--gold-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
         /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
         @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
+                height: auto;
+                padding: 6rem 1rem 3rem;
+            }
+            
+            .hero-content {
+                padding: 2rem;
+            }
+            
             .hero h1 {
                 font-size: 2.2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
             }
             
             .product-grid {
@@ -258,6 +409,14 @@
             .cta-group {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            header {
+                padding: 1rem 1.5rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -302,8 +461,8 @@
         <div class="bubble"></div>
         
         <div class="hero-content">
-            <h1 data-key="hero_title">Some ideas arrive like a whisper Others like a storm.</h1>
-            <p data-key="hero_subtitle">We build tools for both.</p>
+            <h1 data-key="hero_title">Some ideas arrive like a <span class="glow">whisper</span>. Others like a storm.</h1>
+            <p class="hero-subtitle" data-key="hero_subtitle">We build tools for both.</p>
             <p data-key="hero_description">
                 Tempest Labs creates elegant, immersive digital experiences designed to sharpen your mind, refine your vision, and bring your thoughts to life.
                 Our products are not just software—they are spaces, built with intention, crafted for those who crave both depth and beauty in what they use.
@@ -316,7 +475,7 @@
     <!-- Section Divider -->
     <div class="section-divider">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20,50 Q50,20 80,50 T140,50" stroke="currentColor" fill="none" stroke-width="1"/>
+            <path d="M20,50 Q50,20 80,50 T140,50" stroke="var(--accent-color)" fill="none" stroke-width="1"/>
         </svg>
     </div>
 
@@ -353,7 +512,7 @@
     <!-- Section Divider -->
     <div class="section-divider">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20,50 Q50,80 80,50 T140,50" stroke="currentColor" fill="none" stroke-width="1"/>
+            <path d="M20,50 Q50,80 80,50 T140,50" stroke="var(--accent-color)" fill="none" stroke-width="1"/>
         </svg>
     </div>
 
@@ -406,12 +565,26 @@
         document.querySelectorAll('.product-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-10px)';
-                card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.15)';
+                card.style.boxShadow = '0 15px 40px rgba(6, 30, 34, 0.5)';
+                card.style.borderColor = 'rgba(88, 188, 197, 0.3)';
             });
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0)';
-                card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+                card.style.borderColor = 'rgba(88, 188, 197, 0.1)';
             });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(6, 30, 34, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.background = 'rgba(6, 30, 34, 0.8)';
+                header.style.boxShadow = 'none';
+            }
         });
     </script>
 </body>
