@@ -10,18 +10,22 @@
 }
 
 :root {
-    --primary-color: #121B21; /* Brighter aqua */
-    --primary-dark: #121B21; /* Deep sea blue */
-    --primary-glow: 0 0 15px rgba(0, 212, 255, 0.7), 0 0 30px rgba(0, 150, 183, 0.5);
-    --secondary-color: #000000; /* Pure black background */
-    --accent-color: #4A8FE7; /* Sky-reflecting water */
-    --gold-accent: #FFD700; /* Atlantis gold */
-    --metallic-silver: #C0C0C0;
-    --text-glow: 0 0 10px rgba(0, 212, 255, 0.7);
-    --transition-speed: 0.4s;
+    --primary-color: #0E4954; /* Deep teal-ocean */
+    --primary-dark: #061E22; /* Abyss black-blue */
+    --primary-glow: 0 0 12px rgba(14, 73, 84, 0.7), 0 0 24px rgba(14, 73, 84, 0.5);
+    
+    --secondary-color: #0B1B1C; /* Charcoal twilight */
+    --accent-color: #58BCC5; /* Glacial shimmer */
+    --gold-accent: #BBA45C; /* Ancient bronze-gold */
+    --metallic-silver: #8C9AA8; /* Worn silver, aged steel */
+    
+    --text-glow: 0 0 8px rgba(88, 188, 197, 0.6); /* Softer aqua glow */
+    --transition-speed: 0.35s;
+
     --ancient-font: 'Orbitron', serif;
     --modern-font: 'Exo 2', sans-serif;
 }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Nunito+Sans:wght@300;400;600&display=swap');
 
