@@ -10,75 +10,6 @@
     <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm." />
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-        /* Fallback styles to ensure elements are visible */
-        .atlantis-symbol {
-            position: absolute;
-            font-size: 2rem;
-            color: rgba(0, 212, 255, 0.3);
-            z-index: 1;
-            pointer-events: none;
-            font-family: Arial, sans-serif;
-        }
-        .bubble {
-            position: absolute;
-            background: rgba(0, 212, 255, 0.1);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .section-divider {
-            position: relative;
-            height: 100px;
-            overflow: hidden;
-            width: 100%;
-            margin: 40px 0;
-        }
-        .section-divider svg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-        }
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 80vh; /* Adjust height as needed */
-    background: linear-gradient(to bottom, #010a0f, #021b24);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-    border-bottom: 2px solid rgba(0, 255, 255, 0.2); /* subtle line */
-}
-
-.video-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(0,255,255,0.1) 0%, transparent 70%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.atlantean-video {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border: 2px solid rgba(0, 255, 255, 0.2);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
-    border-radius: 12px;
-    z-index: 2;
-}
-
-
-    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -107,26 +38,21 @@
 
     <!-- Hero Section with Sacred Geometry Background -->
     <section class="hero">
-        <!-- Atlantis Symbols with explicit positioning -->
-        <div class="atlantis-symbol" style="top:15%;left:8%;animation-delay:0s;">⚡</div>
-        <div class="atlantis-symbol" style="top:25%;right:10%;animation-delay:1.5s;">🌀</div>
-        <div class="atlantis-symbol" style="bottom:20%;left:12%;animation-delay:2.5s;">⌖</div>
-        <div class="atlantis-symbol" style="bottom:30%;right:8%;animation-delay:3.5s;">⟁</div>
+        <!-- Atlantis Symbols -->
+        <div class="atlantis-symbol">⚡</div>
+        <div class="atlantis-symbol">🌀</div>
+        <div class="atlantis-symbol">⌖</div>
+        <div class="atlantis-symbol">⟁</div>
         
-        <!-- Bubbles with explicit sizing and positioning -->
-        <div class="bubble" style="width:15px;height:15px;left:10%;top:100%;animation-duration:15s;"></div>
-        <div class="bubble" style="width:25px;height:25px;left:25%;top:100%;animation-duration:20s;animation-delay:3s;"></div>
-        <div class="bubble" style="width:10px;height:10px;left:75%;top:100%;animation-duration:12s;animation-delay:5s;"></div>
-        <div class="bubble" style="width:20px;height:20px;left:85%;top:100%;animation-duration:18s;animation-delay:2s;"></div>
+        <!-- Bubbles -->
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
         
-<div class="video-container">
-    <video autoplay loop muted playsinline class="atlantean-video">
-        <source src="images/main.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
-</div>
-
-
+        <div class="image-container">
+            <img src="images/main.png" alt="Background Design" />
+        </div>
         <div class="overlay-text">
             <h1 data-key="hero_title">Some ideas arrive like a <span class="glow">whisper</span>. Others like a storm.</h1>
             <p data-key="hero_subtitle">We build tools for both.</p>
@@ -139,14 +65,10 @@
         </div>
     </section>
 
-    <!-- Section Divider with visible SVG -->
+    <!-- Section Divider -->
     <div class="section-divider">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,60 C150,120 450,0 600,60 S1050,0 1200,60" 
-                  stroke="rgba(0,212,255,0.3)" 
-                  fill="none" 
-                  stroke-width="2"
-                  stroke-dasharray="10,5"></path>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,50 Q50,20 80,50 T140,50" stroke="currentColor" fill="none" stroke-width="1"/>
         </svg>
     </div>
 
@@ -180,14 +102,10 @@
         </div>
     </section>
 
-    <!-- Section Divider with different SVG pattern -->
+    <!-- Section Divider -->
     <div class="section-divider">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,60 C150,0 450,120 600,60 S1050,120 1200,60" 
-                  stroke="rgba(0,212,255,0.3)" 
-                  fill="none" 
-                  stroke-width="2"
-                  stroke-dasharray="5,10"></path>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,50 Q50,80 80,50 T140,50" stroke="currentColor" fill="none" stroke-width="1"/>
         </svg>
     </div>
 
@@ -236,42 +154,13 @@
             document.querySelector("nav ul").classList.toggle("active");
         }
         
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate bubbles
-            const bubbles = document.querySelectorAll('.bubble');
-            bubbles.forEach((bubble, index) => {
-                const duration = 15 + (index * 5);
-                const delay = index * 2;
-                bubble.style.animation = `bubble-rise ${duration}s linear infinite ${delay}s`;
+        // Add floating animation to product cards on hover
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px)';
             });
-            
-            // Animate atlantis symbols
-            const symbols = document.querySelectorAll('.atlantis-symbol');
-            symbols.forEach((symbol, index) => {
-                symbol.style.animation = `float ${8 + (index * 2)}s ease-in-out infinite ${index * 1.5}s`;
-            });
-            
-            // Product card hover effects
-            document.querySelectorAll('.product-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-15px)';
-                    card.style.boxShadow = '0 20px 45px rgba(0, 212, 255, 0.35)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                    card.style.boxShadow = '0 10px 35px rgba(0, 0, 0, 0.25)';
-                });
-            });
-            
-            // Glow effect for CTA buttons
-            document.querySelectorAll('.cta-button').forEach(button => {
-                button.addEventListener('mouseenter', () => {
-                    button.style.boxShadow = '0 0 25px rgba(0,255,255,0.4)';
-                });
-                button.addEventListener('mouseleave', () => {
-                    button.style.boxShadow = '0 0 10px rgba(0,255,255,0.1)';
-                });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
             });
         });
     </script>
