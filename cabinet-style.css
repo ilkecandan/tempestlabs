@@ -1,37 +1,42 @@
+/* MYTHIC PRECISION CSS OVERHAUL */
 
-/* 1. Sayfanın arka planı mavi */
 body {
-    background-color: #7AA6D1;
-    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #0B1B1C, #132B30);
+    font-family: 'EB Garamond', serif;
     font-size: 18px;
     margin: 0;
     padding: 0;
+    color: #E2E8F0;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('path/to/starry-brain-pattern.png');
 }
 
-/* 2. Sayfa içeriğini saran beyaz kutu */
 .page-wrapper {
-    background-color: #ffffff;
+    background-color: rgba(11, 27, 28, 0.6);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     box-sizing: border-box;
     min-height: 100vh;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 40px rgba(0, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
 }
 
-/* 3. Tüm section'lar arasında eşit boşluk */
 section {
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
-/* 4. Header - Improved Styling */
 header {
-    background-color: #7AA6D1;
+    background: rgba(11, 27, 28, 0.8);
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 20px rgba(0, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
 }
 
 header .header-inner {
@@ -43,15 +48,14 @@ header .header-inner {
     align-items: center;
 }
 
-/* Logo Style */
 .logo {
     font-weight: bold;
     text-decoration: none;
-    color: #2C2C2C;
-    font-size: 36px;
+    color: #E2E8F0;
+    font-size: 38px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-/* Navigation Style */
 nav ul {
     list-style: none;
     display: flex;
@@ -64,16 +68,15 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #2C2C2C;
+    color: #E2E8F0;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #ffffff;
+    color: #00D1D1;
 }
 
-/* Social Icons */
 .social-icons {
     display: flex;
     gap: 0.8rem;
@@ -82,79 +85,85 @@ nav a:hover {
 }
 
 .social-icons a {
-    color: #2C2C2C;
+    color: #E2E8F0;
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #ffffff;
+    color: #00D1D1;
 }
 
-/* Hero Section */
 .hero {
-    background-color: #FDD5D5;
+    background: transparent;
+    text-align: center;
+    padding: 4rem 2rem;
 }
 
 .hero-content {
     display: flex;
-    padding-right: 15px;
-    padding-left: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    justify-content: space-between;
+    gap: 2rem;
 }
 
 .overlay-text {
-    max-width: 600px;
-    font-size: 19px;
+    max-width: 700px;
+    font-size: 20px;
+    color: #E2E8F0;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
 }
 
 .image-container img {
-    max-width: 400px;
-    border-radius: 30px;
+    max-width: 350px;
+    border-radius: 20px;
     transition: transform 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
 }
 
 .image-container img:hover {
     transform: scale(1.05);
 }
 
-/* CTA */
 .cta-button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.8rem 1.5rem;
-    background-color: #7AA6D1;
-    color: #ffffff;
-    border-radius: 10px;
+    background: linear-gradient(to right, #52B788, #00D1D1);
+    color: #0B1B1C;
+    border-radius: 12px;
+    padding: 1rem 2rem;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
 .cta-button:hover {
-    background-color: #52B788;
+    transform: scale(1.05);
+    background: linear-gradient(to right, #00D1D1, #52B788);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
 }
 
-/* Features Section */
 .features-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 30px;
 }
 
 .feature-block {
-    background-color: #87EBE2;
-    padding: 20px;
+    background-color: rgba(12, 37, 39, 0.8);
+    padding: 25px;
     border-radius: 20px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.1);
 }
 
-/* How it Works - Refined Layout */
-.how-it-works {
-    background: #FBDEDA;
+.feature-block:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
+}
+
+.how-it-works,
+.storytelling {
+    background: transparent;
     padding: 40px 0;
 }
 
@@ -176,8 +185,8 @@ nav a:hover {
 
 .how-text {
     flex: 1;
-    font-family: "Alice", serif;
     max-width: 550px;
+    color: #D2E4E4;
 }
 
 .how-image {
@@ -193,39 +202,40 @@ nav a:hover {
     max-width: 100%;
     height: auto;
     margin-top: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
 }
 
 .how-image p {
     font-family: 'Georgia', serif;
     font-size: 22px;
-    color: #2C2C2C;
+    color: #C9E7E7;
 }
 
-/* Cards (Shared) */
 .how-it-works p,
 .storytelling p {
-    background: #61DDE0;
+    background: rgba(0, 255, 255, 0.1);
     padding: 20px 25px;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 15px;
     margin-bottom: 25px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(6px);
+    box-shadow: 0px 10px 30px rgba(0, 255, 255, 0.05);
+    color: #E0F2F1;
 }
 
 .how-it-works p:hover,
 .storytelling p:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 12px 36px rgba(0,0,0,0.1);
+    box-shadow: 0px 12px 36px rgba(0, 255, 255, 0.1);
 }
 
-/* Headings */
 .how-it-works h2,
 .storytelling h2 {
-    position: relative;
     font-size: 36px;
-    margin-bottom: 30px;
+    color: #CFFAF9;
+    text-align: center;
+    position: relative;
 }
 
 .how-it-works h2::after,
@@ -233,25 +243,43 @@ nav a:hover {
     content: '';
     display: block;
     width: 60px;
-    height: 4px;
-    background-color: #7AA6D1;
-    margin-top: 10px;
+    height: 3px;
+    background-color: #00D1D1;
+    margin: 10px auto 0;
     border-radius: 5px;
 }
 
-/* Storytelling */
-.storytelling {
-    background: #ffffff;
+footer {
+    padding: 30px 5%;
+    background-color: #0F2326;
+    text-align: center;
+    color: #CDEEEE;
+    border-top: 1px solid rgba(0,255,255,0.1);
 }
 
-
-
-/* Transitions for smooth interaction */
-a, button, .cta-button, .feature-block, nav a, .social-icons a {
-    transition: all 0.3s ease-in-out;
+footer p {
+    margin-bottom: 15px;
+    font-size: 14px;
 }
 
-/* Responsive Header Behavior */
+.legal-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.legal-links a {
+    color: #00D1D1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 14px;
+}
+
+.legal-links a:hover {
+    color: #82FFF9;
+}
+
 @media (max-width: 992px) {
     header .header-inner {
         flex-direction: column;
@@ -274,7 +302,6 @@ a, button, .cta-button, .feature-block, nav a, .social-icons a {
     }
 }
 
-/* Hero Section responsiveness */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
@@ -289,54 +316,4 @@ a, button, .cta-button, .feature-block, nav a, .social-icons a {
         width: 100%;
         max-width: 300px;
     }
-}
-
-/* Feature Cards Interaction */
-.feature-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* CTA Button Enhancements */
-.cta-button {
-    transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(82, 183, 136, 0.3);
-}
-
-/* Footer responsiveness */
-@media (max-width: 600px) {
-    footer {
-        font-size: 14px;
-        padding: 15px;
-    }
-}
-/* Footer */
-footer {
-    padding: 30px 5%;
-    background-color: #2C2C2C;
-    text-align: center;
-    color: #FFFFFF;
-}
-
-footer p {
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-.legal-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.legal-links a {
-    color: #21AFBF;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 14px;
 }
