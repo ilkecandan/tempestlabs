@@ -8,6 +8,39 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title data-key="page_title">Cabinet of Selves | Tempest Labs</title>
   <link rel="stylesheet" href="../cabinet-style.css" />
+  <style>
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      padding: 4rem 2rem;
+    }
+
+    .overlay-text {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .image-container {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-wrapper">
@@ -31,16 +64,16 @@
     </header>
 
     <section class="hero">
-      <div class="hero-content" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 3rem;">
-        <div class="overlay-text" style="flex: 1 1 50%; max-width: 600px;">
+      <div class="hero-content">
+        <div class="overlay-text">
           <h1 data-key="cabinethero_title">You contain multitudes. All of them deserve a voice</h1>
           <p data-key="cabinethero_description">
             Cabinet of Selves is a beautifully designed journaling and self-therapy app with an AI companion, helping you explore, understand, and give voice to every part of your inner world—privately, gently, and without judgment.
           </p>
           <a href="https://buy.stripe.com/dR6g1e5A9gxkeTS7su" class="cta-button" data-key="cabinethero_cta">Start Your Journey Now</a>
         </div>
-        <div class="image-container" style="flex: 1 1 40%; text-align: center;">
-          <img src="images/people.png" alt="Background Design" style="max-width: 100%; border-radius: 20px;" />
+        <div class="image-container">
+          <img src="images/people.png" alt="Cabinet of Selves preview" />
         </div>
       </div>
     </section>
