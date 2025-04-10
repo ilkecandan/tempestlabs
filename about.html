@@ -222,12 +222,12 @@
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
+            align-items: flex-start;
             gap: 50px;
         }
 
         .about-content {
-            flex: 1;
+            flex: 2;
             min-width: 300px;
         }
 
@@ -258,16 +258,16 @@
 
         .about-image {
             flex: 1;
-            min-width: 150px;
+            min-width: 250px;
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .profile-pic {
-            max-width: 100%;
-            max-height: 500px;
+            width: 100%;
+            max-width: 300px;
             border-radius: 15px;
             box-shadow: var(--primary-glow);
             border: 1px solid rgba(88, 188, 197, 0.3);
@@ -354,6 +354,40 @@
 
         .quiet-grid-item:hover img {
             transform: scale(1.05);
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+        }
+
+        .product-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(88, 188, 197, 0.2);
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .product-item p {
+            color: var(--metallic-silver);
+            margin-bottom: 15px;
         }
 
         /* Footer */
@@ -470,6 +504,7 @@
                 padding-top: 120px;
                 flex-direction: column;
                 gap: 30px;
+                align-items: center;
             }
             
             .about-content h1 {
@@ -493,7 +528,7 @@
             }
 
             .profile-pic {
-                max-height: 400px;
+                max-width: 250px;
             }
         }
 
@@ -526,7 +561,7 @@
             }
 
             .profile-pic {
-                max-height: 350px;
+                max-width: 200px;
             }
         }
     </style>
@@ -562,10 +597,21 @@
     <section class="about-container">
         <div class="about-content">
             <h1>About Tempest Labs</h1>
-            <p>At Tempest Labs, we build digital products that bring clarity, focus, and depth to modern work and life. Our vision is to create tools that empower independent thinkers, helping them structure ideas, manage projects, and make informed decisions—without unnecessary clutter or distractions.</p>
-            <p>We prioritize elegant design, seamless functionality, and meaningful experiences over trends. Our products are built for those who value depth over noise, simplicity over excess, and quality over quick fixes.</p>
-            <p>Tempest Labs was founded by <strong><a href="https://ilkecandanbengi.com/" target="_blank">İlke Candan Bengi</a></strong>, a researcher and developer with a background in materials science, AI, and web technologies. Driven by the belief that technology should serve, not overwhelm, the company focuses on crafting tools that integrate effortlessly into daily life.</p>
-            <p>Our approach is simple: No subscriptions, no complexity—just well-made, one-time purchase digital tools that work.</p>
+            <p>Tempest Labs builds clarity-first digital tools for modern minds navigating chaos.</p>
+            
+            <p>Our mission is simple:<br>
+            Help you think deeply, work deliberately, and reclaim focus—without clutter, complexity, or subscriptions.</p>
+            
+            <p>We craft minimalist, one-time purchase products that structure your ideas, guide your projects, and protect your mental space. No pings. No paywalls. Just tools that work, beautifully.</p>
+            
+            <p>We prioritize:</p>
+            <ul style="list-style-type: none; margin-bottom: 1.5rem;">
+                <li>• Design that breathes</li>
+                <li>• Functionality that flows</li>
+                <li>• Experiences that matter</li>
+            </ul>
+            
+            <p>Tempest Labs was founded by <a href="https://ilkecandanbengi.com/" target="_blank">İlke Candan Bengi</a>, a researcher and developer with a background in materials science, AI, and web technologies. Her work bridges logic and feeling, form and function—infused with the belief that technology should serve your mind, not hijack it.</p>
         </div>
         <div class="about-image">
             <img src="images/profile.png" alt="İlke Candan Bengi" class="profile-pic">
@@ -575,7 +621,20 @@
     <!-- Quiet the Noise Section -->
     <section class="quiet-section">
         <h2>#QuietTheNoise</h2>
-        <p>In a world of constant pings and passive scrolling, we choose a different pace—one led by clarity, intention, and the quiet power of discernment. These visuals aren't nostalgia. They're reminders: that your time is sovereign, your attention sacred, and your energy not to be squandered on noise. Every glance at the screen is a choice. To swipe with purpose. To simplify what's been made chaotic. To step back from the flood and build with focus. At Tempest Labs, we design tools for those who think deeply, act deliberately, and live with a quiet kind of power.</p>
+        <p>In a world of passive scrolls and algorithmic overwhelm, we choose a different rhythm—<br>
+        One of clarity.<br>
+        Of sovereignty.<br>
+        Of sacred attention.</p>
+        
+        <p>Our visuals aren't retro—they're rituals.<br>
+        They remind you: every glance at your screen is a choice.<br>
+        To pause.<br>
+        To build with intention.<br>
+        To simplify what's been made chaotic.</p>
+        
+        <p>At Tempest Labs, we create tools for those who don't chase trends—they carve paths.<br>
+        For those who protect their energy like treasure.<br>
+        Who think in arcs, act with purpose, and live with a quiet kind of power.</p>
 
         <div class="quiet-grid">
             <div class="quiet-grid-item">
@@ -596,6 +655,18 @@
             <div class="quiet-grid-item">
                 <img src="images/about6.png" alt="Quiet Image 6">
             </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <h3>Tempest Labs</h3>
+        <p>Creating tools for deeper thinking and clearer vision.</p>
+        
+        <div class="product-item">
+            <h4>🧭 Products</h4>
+            <p><strong>Intuiva</strong> – AI-powered lean project strategist</p>
+            <p><strong>Cabinet of Selves</strong> – Inner parts reflection PWA</p>
         </div>
     </section>
 
