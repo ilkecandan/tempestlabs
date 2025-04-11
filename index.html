@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tempest Labs - One-Time Purchase Software That Clears Your Mind">
+    <meta property="og:description" content="Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tempestlabs.com">
+    <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://tempestlabs.com" />
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -28,13 +36,15 @@
                 radial-gradient(circle at 70% 70%, rgba(0, 150, 183, 0.15) 0%, transparent 30%);
             --primary-light: #91d8e4; /* Luminous teal for better contrast */
             --primary-dark: #061E22; /* Abyss black-blue */
---primary-glow: 0 0 8px rgba(14, 73, 84, 0.5), 0 0 16px rgba(14, 73, 84, 0.3);
+            --primary-glow: 0 0 8px rgba(14, 73, 84, 0.5), 0 0 16px rgba(14, 73, 84, 0.3);
             
             --secondary-color: #0B1B1C; /* Charcoal twilight */
             --accent-color: #58BCC5; /* Glacial shimmer */
---accent-glow: 0 0 8px rgba(88, 188, 197, 0.4), 0 0 16px rgba(88, 188, 197, 0.2);
+            --accent-glow: 0 0 8px rgba(88, 188, 197, 0.4), 0 0 16px rgba(88, 188, 197, 0.2);
             --gold-accent: #BBA45C; /* Ancient bronze-gold */
             --metallic-silver: #8C9AA8; /* Worn silver, aged steel */
+            --rose-accent: #cba6c3; /* For emotional/Cabinet of Selves */
+            --deep-blue: #0E4954; /* For FunnelFlow */
             
             --text-glow: 0 0 8px rgba(145, 216, 228, 0.6); /* Enhanced aqua glow */
             --transition-speed: 0.35s;
@@ -56,10 +66,9 @@
             color: #fff; /* Alice blue */
             line-height: 1.8;
             overflow-x: hidden;
-background-image: 
-    radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.05) 0%, transparent 25%),
-    radial-gradient(circle at 80% 70%, rgba(0, 150, 183, 0.05) 0%, transparent 25%);
-
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 150, 183, 0.05) 0%, transparent 25%),
                 linear-gradient(to bottom, #000000, #000000);
             background-attachment: fixed;
         }
@@ -68,7 +77,7 @@ background-image:
             font-family: var(--ancient-font);
             font-weight: 500;
             letter-spacing: 0.8px;
-            color: white;
+            color: #E5F9FF;
             text-shadow: var(--text-glow);
             margin-bottom: 1.2rem;
         }
@@ -98,7 +107,7 @@ background-image:
 
         header.scrolled {
             padding: 15px 5%;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
@@ -192,7 +201,7 @@ background-image:
             font-size: 28px;
             color: white;
             z-index: 1001;
-    transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
             background: rgba(0, 0, 0, 0.3);
             border-radius: 50%;
             width: 50px;
@@ -226,117 +235,113 @@ background-image:
         }
 
         /* Hero Section - Side by Side Layout */
-    .hero {
-    margin-top: 100px;
-    padding: 5% 5%;
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
+        .hero {
+            margin-top: 100px;
+            padding: 5% 5%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                160deg,
+                #061E22 0%,
+                rgba(88, 188, 197, 0.05) 60%,
+                #0B1B1C 100%
+            );
+        }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 120%;
-    height: 120%;
-    background: 
-        radial-gradient(circle at 25% 40%, rgba(145, 216, 228, 0.1), transparent 50%),
-        radial-gradient(circle at 75% 60%, rgba(145, 216, 228, 0.08), transparent 50%),
-        radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.12) 0%, transparent 30%),
-        radial-gradient(circle at 70% 70%, rgba(0, 150, 183, 0.12) 0%, transparent 30%);
-    z-index: -1;
-    pointer-events: none;
-    animation: water-ripples 80s linear infinite;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120%;
+            height: 120%;
+            background: 
+                radial-gradient(circle at 25% 40%, rgba(145, 216, 228, 0.1), transparent 50%),
+                radial-gradient(circle at 75% 60%, rgba(145, 216, 228, 0.08), transparent 50%),
+                radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.12) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, rgba(0, 150, 183, 0.12) 0%, transparent 30%);
+            z-index: -1;
+            pointer-events: none;
+            animation: water-ripples 80s linear infinite;
+        }
 
-.hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4%;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-}
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
 
-.hero-text {
-    flex: 1.1;
-    padding-right: 4%;
-    position: relative;
-    z-index: 2;
-}
+        .hero-text {
+            flex: 1.1;
+            padding-right: 4%;
+            position: relative;
+            z-index: 2;
+        }
 
-.hero-text h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    text-shadow: 0 0 15px rgba(145, 216, 228, 0.5);
-    line-height: 1.3;
-    margin-bottom: 1.2rem;
-    font-family: var(--ancient-font);
-}
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 15px rgba(145, 216, 228, 0.5);
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            font-family: var(--ancient-font);
+        }
 
-.hero-subtitle {
-    font-size: 1.4rem;
-    color: var(--gold-accent);
-    margin-bottom: 1.2rem;
-    text-shadow: 0 0 10px rgba(88, 188, 197, 0.4);
-    font-weight: 300;
-}
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--gold-accent);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 10px rgba(88, 188, 197, 0.4);
+            font-weight: 300;
+        }
 
-.hero p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: #FFFFFF;
-    line-height: 1.6;
-}
-
-.tagline {
-    font-style: italic;
-    color: var(--accent-color);
-    margin: 2rem 0;
-    font-size: 1.2rem;
-    position: relative;
-    display: inline-block;
-}
-
-.hero-image {
-    flex: 0.9;
-    position: relative;
-    z-index: 1;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-image img {
-    width: 90%;
-    max-width: 600px;
-    border-radius: 20px;
-    box-shadow: var(--primary-glow);
-    border: 1px solid rgba(88, 188, 197, 0.3);
-    transition: transform 0.8s ease;
-    filter: brightness(0.95) contrast(1.1) saturate(1.1);
-}
-
-.hero-image:hover img {
-    transform: scale(1.03);
-    filter: brightness(1) contrast(1.1) saturate(1.05);
-}
-
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #aadce3;
+            line-height: 1.6;
+        }
 
         .tagline {
             font-style: italic;
             color: var(--accent-color);
             margin: 2rem 0;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             position: relative;
             display: inline-block;
+        }
+
+        .hero-image {
+            flex: 0.9;
+            position: relative;
+            z-index: 1;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: var(--primary-glow);
+            border: 1px solid rgba(88, 188, 197, 0.3);
+            transition: transform 0.8s ease;
+            filter: brightness(0.95) contrast(1.1) saturate(1.1);
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.03);
+            filter: brightness(1) contrast(1.1) saturate(1.05);
         }
 
         .tagline::before, .tagline::after {
@@ -357,9 +362,9 @@ background-image:
         .cta-button {
             display: inline-block;
             padding: 14px 36px;
-            background: rgba(88, 188, 197, 0.15);
-            color: white;
-            border: 1px solid var(--accent-color);
+            background: var(--accent-color);
+            color: #061E22;
+            border: none;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
@@ -369,13 +374,13 @@ background-image:
             letter-spacing: 1px;
             position: relative;
             overflow: hidden;
-            box-shadow: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(88, 188, 197, 0.3);
         }
 
         .cta-button:hover {
-            background: rgba(88, 188, 197, 0.3);
+            background: #91d8e4;
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(88, 188, 197, 0.3);
+            box-shadow: 0 0 30px rgba(145, 216, 228, 0.4);
         }
 
         .cta-pair {
@@ -401,9 +406,9 @@ background-image:
         }
 
         .atlantis-symbol:nth-child(1) {
-        top: 20%;
-        left: 12%;
-      animation-delay: 0s;
+            top: 20%;
+            left: 12%;
+            animation-delay: 0s;
             content: "⌘";
         }
 
@@ -413,7 +418,6 @@ background-image:
             animation-delay: 1.5s;
             content: "⎔";
         }
-
 
         .atlantis-symbol:nth-child(4) {
             bottom: 30%;
@@ -463,9 +467,9 @@ background-image:
             position: absolute;
             bottom: -15px;
             left: 50%;
-    font-size: 2.5rem; /* Increase size for emphasis */
-    font-weight: 700; /* Bold to make it stronger */
-    color: var(--primary-light); /* Make it stand out */
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
@@ -867,53 +871,132 @@ background-image:
                 gap: 10px;
             }
         }
-    .separator {
-    width: 100%;
-    border-top: 1px solid transparent;
-    position: relative;
-    margin: 40px 0;
-}
+        
+        .separator {
+            width: 100%;
+            border-top: 1px solid transparent;
+            position: relative;
+            margin: 40px 0;
+        }
 
-.separator::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 30%;
-    border-top: 2px solid #58BCC5;
-}
+        .separator::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 30%;
+            border-top: 2px solid #58BCC5;
+        }
 
-.separator::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 30%;
-    height: 2px;
-    background: #58BCC5;
-}
+        .separator::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 30%;
+            height: 2px;
+            background: #58BCC5;
+        }
 
-.scroll-hint {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 30px;
-  border: 2px solid var(--accent-color);
-  border-radius: 20px;
-  opacity: 0.5;
-  animation: scrollPulse 2.5s infinite ease-in-out;
-}
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 30px;
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            opacity: 0.5;
+            animation: scrollPulse 2.5s infinite ease-in-out;
+        }
 
-@keyframes scrollPulse {
-  0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-  50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
-  100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-}
+        @keyframes scrollPulse {
+            0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+            50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+        }
 
+        /* Dark mode detection */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --primary-glow: 0 0 8px rgba(14, 73, 84, 0.3), 0 0 16px rgba(14, 73, 84, 0.2);
+                --accent-glow: 0 0 8px rgba(88, 188, 197, 0.2), 0 0 16px rgba(88, 188, 197, 0.1);
+            }
+        }
+
+        /* Testimonial Carousel */
+        .testimonial-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .testimonial {
+            background: rgba(6, 30, 34, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px;
+            border: 1px solid rgba(88, 188, 197, 0.1);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--metallic-silver);
+        }
+
+        .testimonial-author {
+            color: var(--gold-accent);
+            font-weight: 600;
+        }
+
+        /* Easter Egg */
+        .easter-egg {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+
+        .easter-egg:hover {
+            opacity: 1;
+        }
+
+        /* Mobile Menu Animation */
+        .menu-toggle.active {
+            transform: rotate(90deg);
+        }
+
+        /* Lock scroll when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* Mobile menu backdrop */
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
     
 </head>
@@ -922,58 +1005,57 @@ background-image:
     <header>
         <a class="logo" href="index.html">Tempest <span>Labs</span></a>
         
-        <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
             <i class="fas fa-bars"></i>
         </div>
 
         <nav>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="turkish/index.html">Türkçe</a></li>
+                <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
+                <li><a href="products.html" aria-label="View our products">Products</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
+                <li><a href="turkish/index.html" aria-label="View in Turkish">Türkçe</a></li>
             </ul>
         </nav>
 
         <div class="social-icons">
-            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
         </div>
     </header>
 
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
     <!-- Hero Section -->
+    <section class="hero">
+        <div class="atlantis-symbol">⎔</div>
 
-<section class="hero">
-  <div class="atlantis-symbol">⎔</div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>One-Time Purchase Software That Clears Your Mind, Not Crowds It</h1>
+                <p class="hero-subtitle">Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.</p>
+                <p class="tagline">Focus isn't a feature. It's what remains when the noise is gone.</p>
+                <div class="cta-pair">
+                    <a href="products.html" class="cta-button">See All Tools</a>
+                </div>
+                <p class="microtagline">Built for solo founders, creatives, and minds that value silence over scale.</p>
+            </div>
 
-  <div class="hero-content">
-    <div class="hero-text">
-      <p class="hero-subtitle">Tempest Labs provides powerful tools that help you stay focused, organized, and in control, all without the clutter.</p>
-      <p>We simplify complex systems with intuitive, streamlined interfaces that appear only when needed.</p>
-      <p class="tagline">Focus isn't a feature. It's the absence of noise. We don’t give you more—we remove what's in your way.</p>
-      <div class="cta-pair">
-        <a href="products.html" class="cta-button">Explore Our Products<br><small>Tools that transform your work</small></a>
-      </div>
-    </div>
+            <div class="hero-image">
+                <img src="images/mainn.png" alt="Tempest Labs creative digital workspace showing minimalist interface design">
+            </div>
+        </div>
 
-    <div class="hero-image">
-      <img src="images/mainn.png" alt="Tempest Labs creative digital workspace">
-    </div>
-  </div>
+        <div class="scroll-hint"></div>
+    </section>
 
-  <div class="scroll-hint"></div>
-</section>
+    <div class="separator"></div>
 
-
-    
-<div class="separator"></div>
-
-
-
-      <!-- Quiet Software Section -->
+    <!-- Quiet Software Section -->
     <section class="quiet-software">
         <h2>Quiet Software. Bold Ideas.</h2>
         <p>At Tempest Labs, we believe digital tools should feel like instruments—not interruptions. We build for clarity, not captivity.</p>
@@ -994,7 +1076,6 @@ background-image:
                 <p>We don't track you. We don't sell you. What happens in your mind stays in your mind.</p>
             </div>
 
-
             <div class="approach-item">
                 <h3>No user profiles.</h3>
                 <p>No accounts. No "remember me." No algorithm peeking over your shoulder.</p>
@@ -1012,12 +1093,24 @@ background-image:
             Because your focus is sacred.<br>
             Because creativity needs silence, not surveillance.
         </p>
-        <p class="tagline">🔒 We don't want your time—we want to give it back to you.</p>
+        <p class="tagline"><span style="color: var(--gold-accent);">"Clarity is a rebellion."</span></p>
         <div class="scroll-hint"></div>
-
     </section>
 
-<div class="separator"></div>
+    <div class="separator"></div>
+
+    <!-- Testimonial Carousel -->
+    <section class="featured-products">
+        <h2>Trusted by Independent Thinkers</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <p class="testimonial-text">"Tempest Labs' tools helped me cut through the noise and finally focus on what matters. The difference in my productivity is night and day."</p>
+                <p class="testimonial-author">— Sarah K., Founder</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
 
     <!-- Featured Products Section -->
     <section class="featured-products">
@@ -1026,7 +1119,7 @@ background-image:
             <!-- Intuiva Card -->
             <div class="product-card">
                 <a href="product-intuiva.html" class="product-link">
-                    <img src="images/planner.png" alt="Intuiva app showing project planning dashboard with Kanban board">
+                    <img src="images/planner.png" alt="Intuiva app screenshot - project planning dashboard with Kanban board for focused work">
                     <h3>Intuiva</h3>
                 </a>
                 <p>
@@ -1038,7 +1131,7 @@ background-image:
             <!-- Cabinet of Selves Card -->
             <div class="product-card">
                 <a href="product-cabinet.html" class="product-link">
-                    <img src="images/girl.png" alt="Icon of Cabinet of Selves, a mental health app for exploring inner parts and emotions">
+                    <img src="images/girl.png" alt="Cabinet of Selves app screenshot - mental health journaling tool for emotional self-reflection">
                     <h3>Cabinet of Selves</h3>
                 </a>
                 <p>
@@ -1050,7 +1143,7 @@ background-image:
             <!-- FunnelFlow Card -->
             <div class="product-card">
                 <a href="product-funnelflow.html" class="product-link">
-                    <img src="images/funnel.png" alt="FunnelFlow interface showing sales pipeline visualization">
+                    <img src="images/funnel.png" alt="FunnelFlow interface screenshot - sales pipeline visualization tool">
                     <h3>FunnelFlow</h3>
                 </a>
                 <p>
@@ -1058,14 +1151,12 @@ background-image:
                 </p>
                 <a href="product-funnelflow.html" class="cta-button">Try / Learn more</a>
             </div>
-                <div class="scroll-hint"></div>
-
+            <div class="scroll-hint"></div>
         </div>
     </section>
 
     <!-- Section Divider -->
-  <div class="separator"></div>
-
+    <div class="separator"></div>
         
     <!-- Use Cases Section -->
     <section class="featured-products">
@@ -1084,12 +1175,11 @@ background-image:
                 <p>"Understand yourself while building what matters."</p>
             </div>
         </div>
-            <p class="open-ended-description">For entrepreneurs, marketers, product managers, and anyone seeking mental bandwidth, focus, and creative freedom.</p>
+        <p class="open-ended-description">For entrepreneurs, marketers, product managers, and anyone seeking mental bandwidth, focus, and creative freedom.</p>
     </section>
 
-  
-<div class="scroll-hint"></div>
-<div class="separator"></div>
+    <div class="scroll-hint"></div>
+    <div class="separator"></div>
     
     <!-- PWA Philosophy Section -->
     <section class="quiet-software">
@@ -1118,7 +1208,7 @@ background-image:
             That's why everything we build is PWA-first.
         </p>
     </section>
-<div class="separator"></div>
+    <div class="separator"></div>
 
     <!-- Call to Action Section -->
     <section class="call-to-action">
@@ -1130,6 +1220,9 @@ background-image:
             <a href="contact.html" class="cta-button">+90 507 527 56 00</a>
         </div>
     </section>
+
+    <!-- Easter Egg -->
+    <span class="easter-egg" title="Silence is the real OS.">🜂</span>
 
     <!-- Footer -->
     <footer>
@@ -1161,10 +1254,35 @@ background-image:
         </div>
     </footer>
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tempest Labs",
+      "url": "https://tempestlabs.com",
+      "logo": "https://tempestlabs.com/images/tempest.png",
+      "description": "Creating calm, focused software tools that help you stay organized and in control without the clutter or tracking.",
+      "sameAs": [
+        "https://www.linkedin.com/company/tempestlabsofficial/",
+        "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
+        "https://www.instagram.com/tempestlabsofficial/",
+        "https://tr.pinterest.com/tempestlabs/"
+      ]
+    }
+    </script>
+
     <script>
         // Toggle mobile menu
         function toggleMenu() {
-            document.querySelector("nav ul").classList.toggle("active");
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
+            
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
         }
         
         // Add scroll effect to header
@@ -1190,6 +1308,9 @@ background-image:
                 card.style.borderColor = 'rgba(88, 188, 197, 0.1)';
             });
         });
+
+        // Initialize AOS (Animate On Scroll) if needed
+        // AOS.init();
     </script>
 </body>
 </html>
