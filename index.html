@@ -849,6 +849,34 @@ filter: brightness(1) contrast(1.1) saturate(1.05);
                 gap: 10px;
             }
         }
+    .separator {
+    width: 100%;
+    border-top: 1px solid transparent;
+    position: relative;
+    margin: 40px 0;
+}
+
+.separator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 30%;
+    border-top: 2px solid #58BCC5;
+}
+
+.separator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 30%;
+    height: 2px;
+    background: #58BCC5;
+}
+
     </style>
     
 </head>
@@ -901,13 +929,8 @@ filter: brightness(1) contrast(1.1) saturate(1.05);
         </div>
     </section>
 
-    <!-- Section Divider -->
-    <div class="section-divider">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20,50 Q50,20 80,50 T140,50" stroke="currentColor" fill="none" stroke-width="1"/>
-        </svg>
-    </div>
-        <div class="atlantis-symbol">⌘</div>
+<div class="separator"></div>
+
 
     <!-- Featured Products Section -->
     <section class="featured-products">
@@ -952,13 +975,8 @@ filter: brightness(1) contrast(1.1) saturate(1.05);
     </section>
 
     <!-- Section Divider -->
-    <div class="section-divider">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20,50 Q50,80 80,50 T140,50" stroke="currentColor" fill="none" stroke-width="1"/>
-        </svg>
-    </div>
-  <div class="atlantis-symbol">⍟</div>
-        <div class="atlantis-symbol">⊛</div>
+  <div class="separator"></div>
+
         
     <!-- Use Cases Section -->
     <section class="featured-products">
