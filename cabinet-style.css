@@ -17,6 +17,12 @@
     --glass-bg: rgba(18, 18, 38, 0.8);
     --glass-filter: blur(12px);
     --border-color: rgba(191, 174, 148, 0.2); /* Antique gold */
+    
+    /* New global variables */
+    --global-radius: 20px;
+    --global-padding: 60px 5%;
+    --shared-font: 'Orbitron', sans-serif;
+    --shared-shadow: 0 0 15px rgba(145, 216, 228, 0.15);
 }
 
 body {
@@ -36,7 +42,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    border-radius: 20px;
+    border-radius: var(--global-radius);
     min-height: 100vh;
     box-shadow: 0 0 40px rgba(191, 174, 148, 0.08);
 }
@@ -67,6 +73,13 @@ header .header-inner {
     text-decoration: none;
     color: var(--text-color);
     text-shadow: 0 0 10px rgba(191, 174, 148, 0.3);
+}
+
+.logo + p {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    opacity: 0.6;
+    margin: 0;
 }
 
 nav ul {
@@ -117,8 +130,6 @@ nav a:hover::after {
     color: var(--accent-color);
 }
 
-
-
 .hero {
     background: transparent;
     padding: 4rem 2rem;
@@ -136,6 +147,23 @@ nav a:hover::after {
     max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
+    padding: 6rem 2rem;
+}
+
+.scroll-hint {
+    width: 18px;
+    height: 30px;
+    border: 2px solid var(--accent-color);
+    border-radius: 20px;
+    opacity: 0.4;
+    animation: scrollPulse 2.5s infinite ease-in-out;
+    margin: 2rem auto 0;
+}
+
+@keyframes scrollPulse {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(8px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.5; }
 }
 
 .overlay-text {
@@ -154,30 +182,61 @@ nav a:hover::after {
 }
 
 .image-container img {
-    max-width: 100%;
+    max-width: 500px;
     height: auto;
-    border-radius: 20px;
+    border-radius: var(--global-radius);
     transition: transform 0.5s ease;
-    box-shadow: 0 0 20px rgba(191, 174, 148, 0.15);
+    box-shadow: var(--shared-shadow);
+    margin-top: -40px;
 }
-
 
 .cta-button {
     background: var(--primary-color);
     color: var(--text-color);
-    border-radius: 12px;
+    border-radius: var(--global-radius);
     padding: 1rem 2rem;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    box-shadow: 0 0 20px rgba(191, 174, 148, 0.2);
+    font-family: var(--shared-font);
+    text-transform: uppercase;
+    box-shadow: var(--shared-shadow);
     transition: all 0.3s ease;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
     background: var(--primary-dark);
-    box-shadow: 0 0 30px rgba(191, 174, 148, 0.3);
+    box-shadow: 0 0 30px rgba(191, 174, 148, 0.3), 0 0 20px var(--accent-light);
+}
+
+section {
+    padding: var(--global-padding);
+}
+
+.section-title {
+    font-family: var(--shared-font);
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(145, 216, 228, 0.2);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+.section-divider {
+    width: 100%;
+    border-top: 1px solid rgba(203, 166, 195, 0.2);
+    margin: 3rem 0;
 }
 
 .features-section {
@@ -189,7 +248,7 @@ nav a:hover::after {
 .feature-block {
     background-color: var(--card-bg);
     padding: 25px;
-    border-radius: 20px;
+    border-radius: var(--global-radius);
     box-shadow: 0px 6px 20px rgba(191, 174, 148, 0.05);
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
@@ -200,10 +259,6 @@ nav a:hover::after {
     box-shadow: 0 10px 30px rgba(191, 174, 148, 0.15);
 }
 
-section {
-    padding: 60px 0;
-}
-
 .how-text,
 .how-image p {
     color: var(--text-secondary);
@@ -211,7 +266,7 @@ section {
 
 .how-image img {
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: var(--global-radius);
     box-shadow: 0 0 20px rgba(191, 174, 148, 0.1);
     margin-top: 1rem;
 }
@@ -232,24 +287,6 @@ section {
 .storytelling p:hover {
     transform: translateY(-5px);
     box-shadow: 0px 12px 36px rgba(0, 0, 0, 0.1);
-}
-
-.how-it-works h2,
-.storytelling h2 {
-    font-size: 36px;
-    text-align: center;
-    color: var(--accent-color);
-}
-
-.how-it-works h2::after,
-.storytelling h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin: 10px auto 0;
-    border-radius: 5px;
 }
 
 footer {
@@ -309,6 +346,7 @@ footer p {
     .hero-content {
         flex-direction: column;
         text-align: center;
+        padding: 4rem 2rem;
     }
 
     .overlay-text {
@@ -318,5 +356,6 @@ footer p {
     .image-container img {
         width: 100%;
         max-width: 300px;
+        margin-top: 0;
     }
 }
