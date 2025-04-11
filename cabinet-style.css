@@ -1,29 +1,33 @@
 /* TEMPEST LABS - MYTHIC PRECISION + MOSS ALCHEMY OVERHAUL */
 
-:root {
-    --primary-color: #1E1F2C; /* Moss green */
-    --primary-light: #5a7a6b;
-    --primary-dark: #3a5246;
-    --secondary-color: #b08ea2; /* Dusty rose */
-    --accent-color: #cba6c3; /* Muted lavender */
-    --accent-light: #d8b8d1;
-    --text-color: #e4dcc9; /* Soft off-white */
-    --text-secondary: #c5bcab;
-    --light-bg: #121826; /* Midnight blue */
-    --card-bg: rgba(30, 30, 36, 0.7); /* Charcoal with transparency */
-    --section-bg: #1a1a24;
-    --success-color: #5a7a6b;
-    --error-color: #b08ea2;
-    --glass-bg: rgba(18, 18, 38, 0.8);
-    --glass-filter: blur(12px);
-    --border-color: rgba(191, 174, 148, 0.2); /* Antique gold */
-    
-    /* New global variables */
-    --global-radius: 20px;
-    --global-padding: 60px 5%;
-    --shared-font: 'Orbitron', sans-serif;
-    --shared-shadow: 0 0 15px rgba(145, 216, 228, 0.15);
-}
+
+ :root {
+            --primary-color: radial-gradient(circle at 25% 40%, rgba(145, 216, 228, 0.1), transparent 50%),
+                radial-gradient(circle at 75% 60%, rgba(145, 216, 228, 0.08), transparent 50%),
+                radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, rgba(0, 150, 183, 0.15) 0%, transparent 30%);
+            --primary-light: #91d8e4; /* Luminous teal for better contrast */
+            --primary-dark: #061E22; /* Abyss black-blue */
+            --primary-glow: 0 0 8px rgba(14, 73, 84, 0.5), 0 0 16px rgba(14, 73, 84, 0.3);
+            
+            --secondary-color: #0B1B1C; /* Charcoal twilight */
+            --accent-color: #58BCC5; /* Glacial shimmer */
+            --accent-glow: 0 0 8px rgba(88, 188, 197, 0.4), 0 0 16px rgba(88, 188, 197, 0.2);
+            --gold-accent: #BBA45C; /* Ancient bronze-gold */
+            --metallic-silver: #8C9AA8; /* Worn silver, aged steel */
+            --rose-accent: #cba6c3; /* For emotional/Cabinet of Selves */
+            --deep-blue: #0E4954; /* For FunnelFlow */
+            
+            --text-glow: 0 0 8px rgba(145, 216, 228, 0.6); /* Enhanced aqua glow */
+            --transition-speed: 0.35s;
+            --glass-effect: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(0, 255, 255, 0.2);
+            --glass-highlight: rgba(255, 255, 255, 0.1);
+
+            --ancient-font: 'Orbitron', serif;
+            --modern-font: 'Exo 2', sans-serif;
+        }
+
 
 body {
     font-family: 'EB Garamond', serif;
