@@ -1,146 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cabinet of Selves is a gentle mental health tool that helps you explore your inner world. Create, connect, and reflect—no subscriptions, just peace." />
-  <link rel="icon" href="/images/tempest.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title data-key="page_title">Cabinet of Selves | Tempest Labs</title>
-  <link rel="stylesheet" href="../cabinet-style.css" />
-  <style>
-    .hero-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(to bottom, rgba(30, 30, 36, 0.4), transparent);
-      border-bottom: 1px solid var(--border-color);
-      gap: 3rem;
-      padding: 4rem 2rem;
-    }
-
-    .overlay-text {
-      flex: 1 1 400px;
-      max-width: 600px;
-    }
-
-    .image-container {
-      flex: 1 1 400px;
-      text-align: center;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      box-shadow: 0 0 30px rgba(203, 166, 195, 0.2);
-      border: 2px solid var(--accent-color);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
-
-    @media (max-width: 768px) {
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tempest Labs - One-Time Purchase Software That Clears Your Mind">
+    <meta property="og:description" content="Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tempestlabs.com">
+    <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://tempestlabs.com" />
+    <title>Tempest Labs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="page-wrapper">
-    <header>
-      <a class="logo" href="index.html" data-key="distanceheader">Tempest Labs</a>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="https://tempestlabs.space/about.html">About</a></li>
-          <li><a href="https://tempestlabs.space/products.html">Products</a></li>
-          <li><a href="https://tempestlabs.space/contact.html">Contact</a></li>
-          <li><a href="https://tempestlabs.space/blog.html">Blog</a></li>
-          <li><a href="https://tempestlabs.space/turkish/product-cabinet.html">Türkçe</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header>
+            <div class="header-inner">
+                <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+                
+                <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </div>
 
-    <section class="hero">
-      <div class="hero-content">
-        <div class="overlay-text">
-          <h1 data-key="cabinethero_title">You contain multitudes. All of them deserve a voice</h1>
-          <p data-key="cabinethero_description">
-            Cabinet of Selves is a beautifully designed journaling and self-therapy app with an AI companion, helping you explore, understand, and give voice to every part of your inner world—privately, gently, and without judgment.
-          </p>
-          <a href="https://buy.stripe.com/dR6g1e5A9gxkeTS7su" class="cta-button" data-key="cabinethero_cta">Start Your Journey Now</a>
-        </div>
-        <div class="image-container">
-          <img src="images/peoplen.png" alt="Cabinet of Selves preview" />
-        </div>
-      </div>
-    </section>
+                <nav>
+                    <ul>
+                        <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
+                        <li><a href="products.html" aria-label="View our products">Products</a></li>
+                        <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                        <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
+                        <li><a href="turkish/index.html" aria-label="View in Turkish">Türkçe</a></li>
+                    </ul>
+                </nav>
 
-    <section class="features-section">
-      <div class="feature-block">
-        <h2 data-key="feature_1_title">See & Name Your Inner World</h2>
-        <p data-key="feature_1_text">Explore the diverse voices within you—protectors, exiles, artists, dreamers. Give them names. Assign them images. Let each part take up space in your story and find peace in being seen.</p>
-      </div>
-      <div class="feature-block">
-        <h2 data-key="feature_2_title">Journaling & Daily Check-Ins</h2>
-        <p data-key="feature_2_text">Track your internal weather. Journal freely or follow reflective prompts. Identify which parts are active and how they influence your emotions, choices, and relationships over time.</p>
-      </div>
-      <div class="feature-block">
-        <h2 data-key="feature_3_title">Talk to an AI Companion</h2>
-        <p data-key="feature_3_text">Have thoughtful, guided conversations with an AI assistant designed to mirror your thoughts, not judge them. It’s not therapy—but it is a space to explore with curiosity and kindness.</p>
-      </div>
-      <div class="feature-block">
-        <h2 data-key="feature_4_title">Private & Offline</h2>
-        <p data-key="feature_4_text">No logins. No accounts. No data sent anywhere. Cabinet of Selves runs entirely on your device. Your mind is sacred—your data stays yours.</p>
-      </div>
-      <div class="feature-block">
-        <h2 data-key="feature_5_title">Multilingual Support</h2>
-        <p data-key="feature_5_text">Cabinet of Selves is available in English, Turkish, and German—because your inner world speaks many languages. Switch freely and explore your parts in the language that feels most like home.</p>
-      </div>
-      <div class="feature-block">
-        <h2 data-key="feature_6_title">Use It Anywhere</h2>
-        <p data-key="feature_6_text">Whether you're on mobile, desktop, or using your browser, Cabinet of Selves works seamlessly as a Progressive Web App (PWA). No downloads required—just open and begin your journey.</p>
-      </div>
-    </section>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </header>
 
-    <section class="how-it-works" id="how-it-works">
-      <div class="how-it-works-container">
-        <div class="how-text">
-          <p data-key="how_it_works_text">
-            Cabinet of Selves gives you a sanctuary of stillness and depth. With an elegant interface designed to feel soft, intuitive, and warm, you can explore and organize the voices within you. Add new parts, track their emotional states, journal their messages, and return to them whenever you need. It’s a living map of your inner landscape.
-          </p>
-        </div>
-      </div>
-    </section>
-    <br><br>
-    <div style="display: flex; justify-content: center;">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/dgxId04Z-jU?si=U4-pLc8d6-GREf69" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- Mobile Menu Backdrop -->
+        <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="atlantis-symbol">⎔</div>
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>One-Time Purchase Software That Clears Your Mind, Not Crowds It</h1>
+                    <p class="hero-subtitle">Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.</p>
+                    <p class="tagline">Focus isn't a feature. It's what remains when the noise is gone.</p>
+                    <div class="cta-pair">
+                        <a href="products.html" class="cta-button">See All Tools</a>
+                    </div>
+                    <p class="microtagline">Built for solo founders, creatives, and minds that value silence over scale.</p>
+                </div>
+
+                <div class="hero-image">
+                    <img src="images/mainn.png" alt="Tempest Labs creative digital workspace showing minimalist interface design">
+                </div>
+            </div>
+
+            <div class="scroll-hint"></div>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- Quiet Software Section -->
+        <section class="quiet-software">
+            <h2>Quiet Software. Bold Ideas.</h2>
+            <p>At Tempest Labs, we believe digital tools should feel like instruments—not interruptions. We build for clarity, not captivity.</p>
+            
+            <div class="approach-list">
+                <div class="approach-item">
+                    <h3>No notifications.</h3>
+                    <p>Nothing blinks, pings, or steals your attention. Our tools wait in stillness until you return.</p>
+                </div>
+
+                <div class="approach-item">
+                    <h3>No data collection.</h3>
+                    <p>We don't track you. We don't sell you. What happens in your mind stays in your mind.</p>
+                </div>
+
+                <div class="approach-item">
+                    <h3>No user profiles.</h3>
+                    <p>No accounts. No "remember me." No algorithm peeking over your shoulder.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 50px;">
+                <strong>Why?</strong><br>
+                Because you're not a product.<br>
+                Because your focus is sacred.<br>
+                Because creativity needs silence, not surveillance.
+            </p>
+            <p class="tagline"><span style="color: var(--gold-accent);">"Clarity is a rebellion."</span></p>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <h2>Crafted Spaces for Creative Strategy</h2>
+            <div class="product-grid">
+                <!-- Intuiva Card -->
+                <div class="product-card">
+                    <a href="product-intuiva.html" class="product-link">
+                        <img src="images/planner.png" alt="Intuiva app screenshot - project planning dashboard with Kanban board for focused work">
+                        <h3>Intuiva</h3>
+                    </a>
+                    <p>
+                        Planning & execution system that turns chaos into creative space.
+                    </p>
+                    <a href="product-intuiva.html" class="cta-button">Try / Learn more</a>
+                </div>
+
+                <!-- Cabinet of Selves Card -->
+                <div class="product-card">
+                    <a href="product-cabinet.html" class="product-link">
+                        <img src="images/girl.png" alt="Cabinet of Selves app screenshot - mental health journaling tool for emotional self-reflection">
+                        <h3>Cabinet of Selves</h3>
+                    </a>
+                    <p>
+                        Reflection tool for understanding your inner world.
+                    </p>
+                    <a href="product-cabinet.html" class="cta-button">Try / Learn more</a>
+                </div>
+
+                <!-- FunnelFlow Card -->
+                <div class="product-card">
+                    <a href="product-funnelflow.html" class="product-link">
+                        <img src="images/funnel.png" alt="FunnelFlow interface screenshot - sales pipeline visualization tool">
+                        <h3>FunnelFlow</h3>
+                    </a>
+                    <p>
+                        Sales & operations flow management with visual focus.
+                    </p>
+                    <a href="product-funnelflow.html" class="cta-button">Try / Learn more</a>
+                </div>
+                <div class="scroll-hint"></div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="separator"></div>
+            
+        <!-- Use Cases Section -->
+        <section class="featured-products">
+            <h2>Made for minds like yours</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>The Founder: Take control of your vision.</h3>
+                    <p>"Turn chaos into certainty."</p>
+                </div>
+                <div class="product-card">
+                    <h3>The Creator: Bring ideas to life, effortlessly.</h3>
+                    <p>"Plan launches like poetry."</p>
+                </div>
+                <div class="product-card">
+                    <h3>The Reflector: Find your flow while building your future.</h3>
+                    <p>"Understand yourself while building what matters."</p>
+                </div>
+            </div>
+            <p class="open-ended-description">For entrepreneurs, marketers, product managers, and anyone seeking mental bandwidth, focus, and creative freedom.</p>
+        </section>
+
+        <div class="scroll-hint"></div>
+        <div class="separator"></div>
+        
+        <!-- PWA Philosophy Section -->
+        <section class="quiet-software">
+            <h2>The PWA Way</h2>
+            <p>At Tempest Labs, we don't just build web apps. We architect tools that transcend platforms. Our PWAs (Progressive Web Apps) are built to run like native software—without the friction, bloat, or dependency.</p>
+
+            <div class="approach-list">
+                <div class="approach-item">
+                    <h3>Installable Anywhere</h3>
+                    <p>Use them on your browser. Pin them to your desktop. Carry them on your phone. One experience, fluid across devices.</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Lightweight but Powerful</h3>
+                    <p>No 2GB downloads. No constant updates. Just fast, beautiful interfaces that feel like magic and perform like code.</p>
+                </div>
+
+                <div class="approach-item">
+                    <h3>Device Freedom</h3>
+                    <p>Mac? Windows? Linux? Android? iOS? Doesn't matter. You don't need to buy new tools for every screen you touch.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 50px;">
+                <strong>This isn't just a tech choice. It's a philosophy.</strong><br>
+                Software should be accessible. It should respect your device, your time, and your space.<br>
+                That's why everything we build is PWA-first.
+            </p>
+        </section>
+        <div class="separator"></div>
+
+        <!-- Call to Action Section -->
+        <section class="call-to-action">
+            <h2>We believe in software that feels like art, works like a machine, and disappears when you don't need it.</h2>
+            <p>No subscriptions. No noise. Just tools that move with you.</p>
+            <div class="cta-group">
+                <a href="contact.html" class="cta-button">Contact Us</a>
+                <a href="contact.html" class="cta-button">Address: Istanbul, Zeytinburnu</a>
+                <a href="contact.html" class="cta-button">+90 507 527 56 00</a>
+            </div>
+        </section>
+
+        <!-- Easter Egg -->
+        <span class="easter-egg" title="Silence is the real OS.">🜂</span>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tempest Labs</h3>
+                    <p>Creating tools for deeper thinking and clearer vision.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <a href="product-intuiva.html">Intuiva</a>
+                    <a href="product-cabinet.html">Cabinet of Selves</a>
+                    <a href="product-funnelflow.html">FunnelFlow</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
+                    <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
+                    <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="legal/membership-agreement.html">Membership Agreement</a>
+                    <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
+                    <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Tempest Labs",
+          "url": "https://tempestlabs.com",
+          "logo": "https://tempestlabs.com/images/tempest.png",
+          "description": "Creating calm, focused software tools that help you stay organized and in control without the clutter or tracking.",
+          "sameAs": [
+            "https://www.linkedin.com/company/tempestlabsofficial/",
+            "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
+            "https://www.instagram.com/tempestlabsofficial/",
+            "https://tr.pinterest.com/tempestlabs/"
+          ]
+        }
+        </script>
+
+        <script>
+            // Toggle mobile menu
+            function toggleMenu() {
+                const menu = document.querySelector("nav ul");
+                const toggle = document.querySelector(".menu-toggle");
+                const backdrop = document.querySelector(".menu-backdrop");
+                
+                menu.classList.toggle("active");
+                toggle.classList.toggle("active");
+                backdrop.classList.toggle("active");
+                document.body.classList.toggle("menu-open");
+            }
+            
+            // Add scroll effect to header
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth hover effects for product cards
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                    card.style.boxShadow = '0 15px 40px rgba(6, 30, 34, 0.5)';
+                    card.style.borderColor = 'rgba(88, 188, 197, 0.3)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+                    card.style.borderColor = 'rgba(88, 188, 197, 0.1)';
+                });
+            });
+
+            // Initialize AOS (Animate On Scroll) if needed
+            // AOS.init();
+        </script>
     </div>
-
-    <section class="storytelling">
-      <h2 data-key="story_title">Your Mind, Your Space</h2>
-      <p data-key="story_1">Inspired by Internal Family Systems (IFS) therapy, Cabinet of Selves embraces the idea that we are not one voice—but many. IFS views the mind as a system of parts, each holding beliefs, roles, or wounds. By engaging these parts compassionately, we create harmony and internal leadership.</p>
-      <p data-key="story_2">Inside the app, you’ll see all your parts arranged with intention. Add visuals, describe their thoughts, reflect on what they need. Whether you’re working with protectors or exiles, you can offer them space and attention.</p>
-      <p data-key="story_3">This is not just a tool—it’s a philosophy. One that trusts you to be your own healer, listener, and leader. That’s why there are no trackers, no accounts, no subscriptions—just a one-time purchase and full access, forever.</p>
-      <p data-key="story_4">Our AI therapist is powered by DeepSeek’s language model, bringing you intelligent, empathetic support through the latest in conversational AI.</p>
-      <a href="https://buy.stripe.com/dR6g1e5A9gxkeTS7su" class="cta-button" data-key="story_cta">Get Access Now</a>
-      <a href="https://buy.stripe.com/dR6g1e5A9gxkeTS7su" class="cta-button" data-key="story_cta">9.99$ for lifetime access. One time purchase.</a>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
-      <div class="legal-links">
-        <a href="https://tempestlabs.space/legal/membership-agreement.html">Membership Agreement</a> |
-        <a href="https://tempestlabs.space/legal/kvkk-clarification.html">KVKK Clarification</a> |
-        <a href="https://tempestlabs.space/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
-      </div>
-    </footer>
-  </div>
 </body>
 </html>
