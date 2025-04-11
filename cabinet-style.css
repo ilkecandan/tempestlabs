@@ -88,12 +88,13 @@ a {
 
 /* Header Styles */
 header {
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(6, 30, 34, 0.7);
+    backdrop-filter: blur(12px);
+    position: relative;
     padding: 25px 5%;
-    position: sticky;
+    border-bottom: 1px solid rgba(88, 188, 197, 0.15);
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
     backdrop-filter: blur(10px);
     transition: all 0.4s ease;
 }
