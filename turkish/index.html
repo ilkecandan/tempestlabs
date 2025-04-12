@@ -2,111 +2,1336 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-          <link rel="icon" href="/images/tempest.png" type="image/x-icon">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Tempest Labs sade ve estetik yazılımlar geliştirir. Aboneliksiz, bir kere satın alınan, huzur veren dijital araçlar." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Tempest Labs, gerçek insanlar için güzel ve sakin yazılımlar üretir. Tek seferlik satın alınabilen, kullanıcıyı güçlendiren ve bunaltmayan uygulamalar tasarlar.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tempest Labs - Zihnini Özgür Bırakan Tek Seferlik Yazılımlar">
+    <meta property="og:description" content="Dikkat dağıtmadan odaklanmanıza, organize olmanıza ve kontrolü elinizde tutmanıza yardımcı olan sakin araçlar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tempestlabs.com">
+    <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://tempestlabs.com" />
     <title>Tempest Labs</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+
+<style>
+        /* ================================= */
+        /* TEMPEST LABS - PREMIUM CSS STYLES */
+        /* ================================= */
+
+        /* General Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: radial-gradient(circle at 25% 40%, rgba(145, 216, 228, 0.1), transparent 50%),
+                radial-gradient(circle at 75% 60%, rgba(145, 216, 228, 0.08), transparent 50%),
+                radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, rgba(0, 150, 183, 0.15) 0%, transparent 30%);
+            --primary-light: #91d8e4; /* Luminous teal for better contrast */
+            --primary-dark: #061E22; /* Abyss black-blue */
+            --primary-glow: 0 0 8px rgba(14, 73, 84, 0.5), 0 0 16px rgba(14, 73, 84, 0.3);
+            
+            --secondary-color: #0B1B1C; /* Charcoal twilight */
+            --accent-color: #58BCC5; /* Glacial shimmer */
+            --accent-glow: 0 0 8px rgba(88, 188, 197, 0.4), 0 0 16px rgba(88, 188, 197, 0.2);
+            --gold-accent: #BBA45C; /* Ancient bronze-gold */
+            --metallic-silver: #8C9AA8; /* Worn silver, aged steel */
+            --rose-accent: #cba6c3; /* For emotional/Cabinet of Selves */
+            --deep-blue: #0E4954; /* For FunnelFlow */
+            
+            --text-glow: 0 0 8px rgba(145, 216, 228, 0.6); /* Enhanced aqua glow */
+            --transition-speed: 0.35s;
+            --glass-effect: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(0, 255, 255, 0.2);
+            --glass-highlight: rgba(255, 255, 255, 0.1);
+
+            --ancient-font: 'Orbitron', serif;
+            --modern-font: 'Exo 2', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--modern-font);
+            background-color: var(--secondary-color);
+            color: #fff; /* Alice blue */
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 150, 183, 0.05) 0%, transparent 25%),
+                linear-gradient(to bottom, #000000, #000000);
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--ancient-font);
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            color: #E5F9FF;
+            text-shadow: var(--text-glow);
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 5%;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            padding: 0 12px;
+            font-family: var(--ancient-font);
+        }
+
+        .logo::before, .logo::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .logo::before {
+            top: -5px;
+            left: 0;
+            width: 0;
+        }
+
+        .logo::after {
+            bottom: -5px;
+            right: 0;
+            width: 0;
+        }
+
+        .logo:hover::before, .logo:hover::after {
+            width: 100%;
+        }
+
+        .logo span {
+            color: var(--primary-light);
+            animation: pulse-glow 3.5s infinite;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-light);
+            text-shadow: var(--text-glow);
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-light);
+            transition: width var(--transition-speed) ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 60%;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 28px;
+            color: white;
+            z-index: 1001;
+            transition: transform 0.3s ease-in-out;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+            color: var(--primary-light);
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-left: 30px;
+        }
+
+        .social-icons a {
+            color: var(--metallic-silver);
+            font-size: 1.2rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section - Side by Side Layout */
+        .hero {
+            margin-top: 100px;
+            padding: 5% 5%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                160deg,
+                #061E22 0%,
+                rgba(88, 188, 197, 0.05) 60%,
+                #0B1B1C 100%
+            );
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120%;
+            height: 120%;
+            background: 
+                radial-gradient(circle at 25% 40%, rgba(145, 216, 228, 0.1), transparent 50%),
+                radial-gradient(circle at 75% 60%, rgba(145, 216, 228, 0.08), transparent 50%),
+                radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.12) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, rgba(0, 150, 183, 0.12) 0%, transparent 30%);
+            z-index: -1;
+            pointer-events: none;
+            animation: water-ripples 80s linear infinite;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1.1;
+            padding-right: 4%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+            font-weight: 650;
+            color: white;
+            text-shadow: 0 0 15px rgba(145, 216, 228, 0.5);
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            font-family: var(--ancient-font);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem); /* Responsive font size */
+            color: var(--gold-accent);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 10px rgba(88, 188, 197, 0.4);
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: clamp(0.9rem, 1.1vw, 1.1rem); /* Responsive font size */
+            margin-bottom: 2rem;
+            color: #aadce3;
+            line-height: 1.6;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: var(--accent-color);
+            margin: 2rem 0;
+            font-size: clamp(0.9rem, 1.2vw, 1.2rem); /* Responsive font size */
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-image {
+            flex: 0.9;
+            position: relative;
+            z-index: 1;
+            transform: translateY(-180px);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 40px rgba(88, 188, 197, 0.4);
+            border: 2px solid rgba(145, 216, 228, 0.2);
+            border-radius: 20px;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: var(--primary-glow);
+            border: 1px solid rgba(88, 188, 197, 0.3);
+            transition: transform 0.8s ease;
+            filter: brightness(0.95) contrast(1.1) saturate(1.1);
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.03);
+            filter: brightness(1) contrast(1.1) saturate(1.05);
+        }
+
+        .tagline::before, .tagline::after {
+            content: "✧";
+            position: absolute;
+            color: var(--gold-accent);
+            opacity: 0.6;
+        }
+
+        .tagline::before {
+            left: -30px;
+        }
+
+        .tagline::after {
+            right: -30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--accent-color);
+            color: #061E22;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+            margin-top: 1rem;
+            font-family: var(--ancient-font);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(88, 188, 197, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #91d8e4;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(145, 216, 228, 0.4);
+        }
+
+        .cta-pair {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cta-pair .cta-button {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Atlantis Symbols */
+        .atlantis-symbol {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            z-index: 1;
+            animation: float 8s ease-in-out infinite;
+            color: var(--accent-color);
+            filter: drop-shadow(0 0 5px rgba(88, 188, 197, 0.5));
+        }
+
+        .atlantis-symbol:nth-child(1) {
+            top: 20%;
+            left: 12%;
+            animation-delay: 0s;
+            content: "⌘";
+        }
+
+        .atlantis-symbol:nth-child(2) {
+            top: 25%;
+            right: 10%;
+            animation-delay: 1.5s;
+            content: "⎔";
+        }
+
+        .atlantis-symbol:nth-child(4) {
+            bottom: 30%;
+            right: 8%;
+            animation-delay: 3.5s;
+            content: "⊛";
+        }
+
+        /* Section Divider */
+        .section-divider {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .section-divider svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+        }
+
+        .section-divider svg path {
+            stroke: var(--accent-color);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .featured-products h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responsive font size */
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .featured-products h2::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+            box-shadow: var(--accent-glow);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, var(--primary-dark), var(--secondary-color));
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all var(--transition-speed) ease;
+            border: 1px solid rgba(88, 188, 197, 0.1);
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(6, 30, 34, 0.5);
+            border-color: rgba(88, 188, 197, 0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(88, 188, 197, 0.2);
+        }
+
+        .product-card h3 {
+            font-size: clamp(1.2rem, 1.5vw, 1.5rem); /* Responsive font size */
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .product-card p {
+            color: var(--metallic-silver);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: clamp(0.9rem, 1vw, 1rem); /* Responsive font size */
+        }
+
+        /* Quiet Software Section */
+        .quiet-software {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, rgba(14, 73, 84, 0.1), rgba(11, 27, 28, 0.9));
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            border: 1px solid rgba(88, 188, 197, 0.2);
+            margin-bottom: 100px;
+        }
+
+        .quiet-software h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+        }
+
+        .quiet-software p {
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: clamp(0.9rem, 1.1vw, 1.1rem); /* Responsive font size */
+        }
+
+        .approach-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .approach-item {
+            background: rgba(6, 30, 34, 0.3);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(88, 188, 197, 0.1);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .approach-item:hover {
+            transform: translateY(-5px);
+            background: rgba(6, 30, 34, 0.5);
+            border-color: rgba(88, 188, 197, 0.3);
+            box-shadow: 0 10px 25px rgba(6, 30, 34, 0.4);
+        }
+
+        .approach-item h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: clamp(1rem, 1.2vw, 1.3rem); /* Responsive font size */
+        }
+
+        /* PWA Philosophy Section */
+        .pwa-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, rgba(14, 73, 84, 0.1), rgba(11, 27, 28, 0.9));
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            border-radius: 15px;
+            border: 1px solid rgba(88, 188, 197, 0.2);
+        }
+
+        /* Call to Action */
+        .call-to-action {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(14, 73, 84, 0.1), rgba(11, 27, 28, 0.9));
+            position: relative;
+        }
+
+        .call-to-action h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.5rem); /* Responsive font size */
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .call-to-action p {
+            font-size: clamp(0.9rem, 1.2vw, 1.2rem); /* Responsive font size */
+            color: var(--metallic-silver);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 5% 40px;
+            background: var(--primary-dark);
+            color: var(--metallic-silver);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: clamp(1rem, 1.3vw, 1.3rem); /* Responsive font size */
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .footer-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--metallic-silver);
+            transition: all var(--transition-speed) ease;
+            font-size: clamp(0.85rem, 1vw, 1rem); /* Responsive font size */
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(88, 188, 197, 0.2);
+            text-align: center;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @keyframes pulse-glow {
+            0% { opacity: 0.8; text-shadow: 0 0 8px rgba(88, 188, 197, 0.6); }
+            50% { opacity: 1; text-shadow: 0 0 20px rgba(88, 188, 197, 0.9); }
+            100% { opacity: 0.8; text-shadow: 0 0 8px rgba(88, 188, 197, 0.6); }
+        }
+
+        @keyframes water-ripples {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content {
+                gap: 40px;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .hero-image {
+                transform: translateY(0);
+                margin-top: 40px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .cta-pair {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-icons {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 5%;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(6, 30, 34, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: all 0.4s ease;
+                backdrop-filter: blur(15px);
+                gap: 20px;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li a {
+                padding: 12px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .social-icons {
+                display: none;
+            }
+            
+            .hero {
+                margin-top: 80px;
+                padding: 40px 5%;
+                min-height: auto;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .tagline::before, .tagline::after {
+                display: none;
+            }
+            
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .featured-products h2 {
+                font-size: 2.2rem;
+                margin-bottom: 40px;
+            }
+            
+            .quiet-software {
+                padding: 60px 5%;
+                margin-bottom: 60px;
+            }
+            
+            .call-to-action h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            /* Adjust hero image for mobile */
+            .hero-image img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 22px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .featured-products h2 {
+                font-size: 1.8rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-card {
+                padding: 20px;
+            }
+            
+            .approach-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .call-to-action h2 {
+                font-size: 1.6rem;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            /* Adjust padding for small screens */
+            .hero, .featured-products, .quiet-software, .call-to-action {
+                padding: 60px 3%;
+            }
+
+            /* Adjust button sizes */
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+
+            /* Hide some decorative elements on very small screens */
+            .atlantis-symbol {
+                display: none;
+            }
+        }
+        
+        .separator {
+            width: 100%;
+            border-top: 1px solid transparent;
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .separator::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 30%;
+            border-top: 2px solid #58BCC5;
+        }
+
+        .separator::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 30%;
+            height: 2px;
+            background: #58BCC5;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 30px;
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            opacity: 0.5;
+            animation: scrollPulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes scrollPulse {
+            0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+            50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+        }
+
+        /* Dark mode detection */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --primary-glow: 0 0 8px rgba(14, 73, 84, 0.3), 0 0 16px rgba(14, 73, 84, 0.2);
+                --accent-glow: 0 0 8px rgba(88, 188, 197, 0.2), 0 0 16px rgba(88, 188, 197, 0.1);
+            }
+        }
+
+        /* Testimonial Carousel */
+        .testimonial-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .testimonial {
+            background: rgba(6, 30, 34, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px;
+            border: 1px solid rgba(88, 188, 197, 0.1);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--metallic-silver);
+        }
+
+        .testimonial-author {
+            color: var(--gold-accent);
+            font-weight: 600;
+        }
+
+        /* Easter Egg */
+        .easter-egg {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+
+        .easter-egg:hover {
+            opacity: 1;
+        }
+
+        /* Mobile Menu Animation */
+        .menu-toggle.active {
+            transform: rotate(90deg);
+        }
+
+        /* Lock scroll when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* Mobile menu backdrop */
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Touch target sizes for mobile */
+        @media (hover: none) {
+            a, button, .menu-toggle {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .cta-button {
+                padding: 16px 32px;
+            }
+            
+            nav ul li a {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+    
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <a class="logo" href="index.html">Tempest Labs</a>
-         <div class="social-icons">
-  <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-</div>
-         <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-       </div>
-                <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-       </div>
+        <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menüyü aç/kapat">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <nav>
             <ul>
-                <li><a href="https://tempestlabs.space/turkish/about.html" >Hakkımızda</a></li>
-                <li><a href="https://tempestlabs.space/turkish/products.html">Ürünler</a></li>
-                <li><a href="https://tempestlabs.space/turkish/contact.html" >İletişim</a></li>
-                <li>
-                <li><a href="https://tempestlabs.space/" >English</a></li>
-
-                    </select>
-                </li>
+                <li><a href="about.html" aria-label="Tempest Labs hakkında">Hakkımızda</a></li>
+                <li><a href="products.html" aria-label="Ürünlerimizi görüntüle">Ürünler</a></li>
+                <li><a href="contact.html" aria-label="Bize ulaşın">İletişim</a></li>
+                <li><a href="blog.html" aria-label="Blogumuzu okuyun">Blog</a></li>
+                <li><a href="english/index.html" aria-label="İngilizce görüntüle">English</a></li>
             </ul>
         </nav>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
     </header>
-    <br>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="image-container">
-            <img src="../images/main.png" alt="Tempest Labs - Dijital Yenilik" />
+        <div class="atlantis-symbol">⎔</div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Zihnini Serbest Bırakan Tek Seferlik Yazılımlar</h1>
+                <p class="hero-subtitle">Dikkat dağıtmadan odaklanmanıza, organize olmanıza ve kontrolü elinizde tutmanıza yardımcı olan sakin araçlar. Ne kalabalık var, ne takip.</p>
+                <p class="tagline">Odak bir özellik değildir. Gürültü sustuğunda geriye kalan özdür.</p>
+                <div class="cta-pair">
+                    <a href="products.html" class="cta-button">Tüm Araçları Gör</a>
+                </div>
+                <p class="microtagline">Yalnız girişimciler, yaratıcılar ve sessizliği ölçekten üstün tutan zihinler için tasarlandı.</p>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/mainn.png" alt="Tempest Labs minimalist dijital çalışma alanı arayüzü">
+            </div>
         </div>
-        <div class="overlay-text">
-            <br>
-            <h1 data-key="hero_title">Bazı fikirler bir fısıltı gibi gelir. Diğerleri fırtına gibi.</h1>
-            <p data-key="hero_subtitle">İkisi için de araçlar inşa ediyoruz.</p>
-            <p data-key="hero_description">
-                Tempest Labs, zihninizi keskinleştiren, vizyonunuzu geliştiren ve düşüncelerinizi hayata geçiren zarif ve etkileyici dijital deneyimler yaratır.
-                Ürünlerimiz yalnızca yazılım değildir—onlar birer mekândır; derinlik ve estetik arzulayanlar için bilinçle inşa edilmiştir.
-            </p>
-            <p class="tagline">Yaratıcılığın kodla buluştuğu, fikirlerin kalıcı hale geldiği yer.</p>
-            <br><br>
-            <a href="https://tempestlabs.space/turkish/products.html" class="cta-button" data-key="discover_more">İçeri girin. Bir süre kalın.</a>
-        </div>
+
+        <div class="scroll-hint"></div>
     </section>
 
+    <div class="separator"></div>
+
+    <!-- Quiet Software Section -->
+    <section class="quiet-software">
+        <h2>Sessiz Yazılım. Cesur Fikirler.</h2>
+        <p>Tempest Labs'ta dijital araçların dikkat dağıtıcı değil, destekleyici olması gerektiğine inanıyoruz. Biz netlik için tasarlarız, bağımlılık için değil.</p>
+        
+        <div class="approach-list">
+
+            <div class="approach-item">
+                <h3>Bildirim yok.</h3>
+                <p>Ne göz kırpan bir ikon, ne pıt diye çıkan bir pencere. Araçlarımız sessizlik içinde seni bekler.</p>
+            </div>
+
+            <div class="approach-item">
+                <h3>Veri takibi yok.</h3>
+                <p>Seni izlemiyoruz. Seni satmıyoruz. Aklında olan, orada kalır.</p>
+            </div>
+
+            <div class="approach-item">
+                <h3>Kullanıcı profili yok.</h3>
+                <p>Hesap yok. "Beni hatırla" yok. Algoritmalar omzunun üzerinden bakmaz.</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 50px;">
+            <strong>Neden mi?</strong><br>
+            Çünkü sen bir ürün değilsin.<br>
+            Çünkü odağın kutsaldır.<br>
+            Çünkü yaratıcılık sessizlikte yeşerir, gözetimde değil.
+        </p>
+        <p class="tagline"><span style="color: var(--gold-accent);">"Netlik bir başkaldırıdır."</span></p>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- Featured Products Section -->
     <section class="featured-products">
-        <h2 data-key="featured_products">Öne Çıkan Ürünler</h2>
+        <h2>Yaratıcı Stratejiler İçin Tasarlanmış Alanlar</h2>
         <div class="product-grid">
             <!-- Intuiva Card -->
             <div class="product-card">
-                <a href="https://tempestlabs.space/turkish/product-intuiva.html" class="product-link">
-                    <img src="../images/planner.gif" alt="Intuiva" class="product-gif">
-                    <h3 data-key="products.intuiva.title">Intuiva</h3>
+                <a href="product-intuiva.html" class="product-link">
+                    <img src="images/planner.png" alt="Intuiva uygulama ekran görüntüsü - odaklı çalışma için Kanban panosu içeren proje planlama paneli">
+                    <h3>Intuiva</h3>
                 </a>
-                <p data-key="products.intuiva.description">
-                    Cebinizdeki stratejist. Daha net düşünün, daha akıllıca plan yapın ve dağınık fikirleri yapılandırılmış bir zekâya dönüştürün.
+                <p>
+                    Kaosu yaratıcı boşluğa dönüştüren bir planlama ve yürütme sistemi.
                 </p>
-                <a href="https://tempestlabs.space/turkish/product-intuiva.html" class="cta-button" data-key="products.intuiva.cta">Daha Fazla Bilgi</a>
+                <a href="product-intuiva.html" class="cta-button">Dene / Daha fazla bilgi</a>
             </div>
 
             <!-- Cabinet of Selves Card -->
             <div class="product-card">
-                <a href="https://tempestlabs.space/turkish/product-cabinet.html" class="product-link">
-                    <img src="../images/girl.png" alt="Benlikler Kabini" class="product-gif">
-                    <h3 data-key="products.cabinet.title">Benlikler Kabini</h3>
+                <a href="product-cabinet.html" class="product-link">
+                    <img src="images/girl.png" alt="Cabinet of Selves uygulama ekran görüntüsü - duygusal öz-yansıma için zihinsel sağlık günlüğü aracı">
+                    <h3>Cabinet of Selves</h3>
                 </a>
-                <p data-key="products.cabinet.description">
-                    Bir günlük, bir ayna, bir zihin haritası. Kendinizle tanışın, tüm yönlerinizle.
+                <p>
+                    İç dünyanı keşfetmeni sağlayan bir yansıtma ve yazı aracı.
                 </p>
-                <a href="https://tempestlabs.space/turkish/product-cabinet.html" class="cta-button" data-key="products.cabinet.cta">Daha Fazla Bilgi</a>
+                <a href="product-cabinet.html" class="cta-button">Dene / Daha fazla bilgi</a>
             </div>
+
+            <!-- FunnelFlow Card -->
+            <div class="product-card">
+                <a href="product-funnelflow.html" class="product-link">
+                    <img src="images/funnel.png" alt="FunnelFlow arayüz ekran görüntüsü - satış kanalı görselleştirme aracı">
+                    <h3>FunnelFlow</h3>
+                </a>
+                <p>
+                    Satış ve operasyon süreçlerini görsel olarak yönetmeni sağlayan bir akış aracı.
+                </p>
+                <a href="product-funnelflow.html" class="cta-button">Dene / Daha fazla bilgi</a>
+            </div>
+            <div class="scroll-hint"></div>
         </div>
     </section>
 
-    <section class="call-to-action">
-        <h2 data-key="cta.title">Sanat gibi hissettiren, makine gibi çalışan ve ihtiyacınız olmadığında görünmeyen yazılımlara inanıyoruz.</h2>
-        <p data-key="cta.description">Abonelik yok. Gürültü yok. Sadece sizinle birlikte hareket eden araçlar.</p>
-        <a href="https://tempestlabs.space/turkish/contact.html" class="cta-button" data-key="cta.button">Bize Ulaşın</a>
-        <a href="https://tempestlabs.space/contact.html" class="cta-button" data-key="cta.button">Adress: Istanbul, Zeytinburnu</a>
-                 <a href="https://tempestlabs.space/contact.html" class="cta-button" data-key="cta.button">+90 507 527 56 00</a>
-
+    <!-- Section Divider -->
+    <div class="separator"></div>
+        
+    <!-- Use Cases Section -->
+    <section class="featured-products">
+        <h2>Senin Gibi Zihinler İçin Üretildi</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Kurucu: Vizyonunun kontrolünü eline al.</h3>
+                <p>"Kaosu kesinliğe çevir."</p>
+            </div>
+            <div class="product-card">
+                <h3>Yaratıcı: Fikirlerini kolayca hayata geçir.</h3>
+                <p>"Lansmanlarını şiir gibi planla."</p>
+            </div>
+            <div class="product-card">
+                <h3>Yansıtıcı: Geleceğini inşa ederken içsel akışını bul.</h3>
+                <p>"Kendini anlarken, önemli olanı inşa et."</p>
+            </div>
+        </div>
+        <p class="open-ended-description">Girişimciler, pazarlamacılar, ürün yöneticileri ve zihinsel alan, odak ve yaratıcı özgürlük arayan herkes için.</p>
     </section>
 
+    <div class="scroll-hint"></div>
+    <div class="separator"></div>
+    
+    <!-- PWA Philosophy Section -->
+    <section class="quiet-software">
+        <h2>PWA Felsefemiz</h2>
+        <p>Tempest Labs'ta sadece uygulama yapmıyoruz; platformların ötesine geçen deneyimler inşa ediyoruz. PWA'larımız (Progressive Web Apps), yerel yazılımlar gibi çalışır—ama sürtünmesiz, şişkinliksiz, bağımsız.</p>
+
+        <div class="approach-list">
+            <div class="approach-item">
+                <h3>Her Yerden Kurulabilir</h3>
+                <p>Tarayıcıda çalıştır. Masaüstüne sabitle. Telefonuna taşı. Bir deneyim, cihazlar arasında akıcı.</p>
+            </div>
+            <div class="approach-item">
+                <h3>Hafif ama Güçlü</h3>
+                <p>2 GB'lık indirmeler yok. Sürekli güncellemeler yok. Sadece hızlı, güzel arayüzler.</p>
+            </div>
+
+            <div class="approach-item">
+                <h3>Cihaz Bağımsızlığı</h3>
+                <p>Mac? Windows? Linux? Android? iOS? Fark etmez. Her ekran için yeni araçlar almana gerek yok.</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 50px;">
+            <strong>Bu sadece bir teknoloji tercihi değil. Bir felsefe.</strong><br>
+            Yazılım erişilebilir olmalı. Cihazına, zamanına ve alanına saygı duymalı.<br>
+            Bu yüzden her şeyimizi PWA öncelikli olarak tasarlıyoruz.
+        </p>
+    </section>
+    <div class="separator"></div>
+
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <h2>Sanat gibi hissettiren, makine gibi çalışan, ihtiyaç duyulmadığında ortadan kaybolan yazılımlara inanıyoruz.</h2>
+        <p>Abonelik yok. Gürültü yok. Sadece seninle akan araçlar var.</p>
+        <div class="cta-group">
+            <a href="contact.html" class="cta-button">İletişim</a>
+            <a href="contact.html" class="cta-button">Adres: İstanbul, Zeytinburnu</a>
+            <a href="contact.html" class="cta-button">+90 507 527 56 00</a>
+        </div>
+    </section>
+
+    <!-- Easter Egg -->
+    <span class="easter-egg" title="Sessizlik gerçek işletim sistemidir.">🜂</span>
+
+    <!-- Footer -->
     <footer>
-   <div class="legal-links">
-  <a href="https://tempestlabs.space/turkish/legal/membership-agreement.html">Üyelik Sözleşmesi</a> |
-  <a href="https://tempestlabs.space/turkish/legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a> |
-  <a href="https://tempestlabs.space/turkish/legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
-</div>
-
-
+        <div class="footer-content">
+            <div class="footer-column">
+                 <h3><a href="about.html" aria-label="Tempest Labs hakkında">Hakkımızda</a></h3>
+                <p>Daha derin düşünce ve daha net bir vizyon için araçlar tasarlıyoruz.</p>
+            </div>
+            <div class="footer-column">
+                 <h3><a href="products.html" aria-label="Ürünlerimizi görüntüle">Ürünler</a></h3>
+                <a href="product-intuiva.html">Intuiva</a>
+                <a href="product-cabinet.html">Cabinet of Selves</a>
+                <a href="product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                 <h3><a href="contact.html" aria-label="Bize ulaşın">Bağlantı</a></h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
+            <div class="legal-links">
+                <a href="legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+                <a href="legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
+                <a href="legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tempest Labs",
+      "url": "https://tempestlabs.com",
+      "logo": "https://tempestlabs.com/images/tempest.png",
+      "description": "Dikkat dağıtmadan odaklanmanıza, organize olmanıza ve kontrolü elinizde tutmanıza yardımcı olan sakin araçlar tasarlar.",
+      "sameAs": [
+        "https://www.linkedin.com/company/tempestlabsofficial/",
+        "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
+        "https://www.instagram.com/tempestlabsofficial/",
+        "https://tr.pinterest.com/tempestlabs/"
+      ]
+    }
+    </script>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
+            
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth hover effects for product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 40px rgba(6, 30, 34, 0.5)';
+                card.style.borderColor = 'rgba(88, 188, 197, 0.3)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+                card.style.borderColor = 'rgba(88, 188, 197, 0.1)';
+            });
+        });
+
+        // Initialize AOS (Animate On Scroll) if needed
+        // AOS.init();
+    </script>
 </body>
-     <script>
-  function toggleMenu() {
-    document.querySelector("nav ul").classList.toggle("active");
-  }
-</script>
 </html>
