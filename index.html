@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm.">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Tempest Labs - One-Time Purchase Software That Clears Your Mind">
@@ -286,7 +286,7 @@
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
             font-weight: 650;
             color: white;
             text-shadow: 0 0 15px rgba(145, 216, 228, 0.5);
@@ -296,7 +296,7 @@
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 2.5vw, 1.4rem); /* Responsive font size */
             color: var(--gold-accent);
             margin-bottom: 1.2rem;
             text-shadow: 0 0 10px rgba(88, 188, 197, 0.4);
@@ -304,7 +304,7 @@
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 1.1vw, 1.1rem); /* Responsive font size */
             margin-bottom: 2rem;
             color: #aadce3;
             line-height: 1.6;
@@ -314,7 +314,7 @@
             font-style: italic;
             color: var(--accent-color);
             margin: 2rem 0;
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 1.2vw, 1.2rem); /* Responsive font size */
             position: relative;
             display: inline-block;
         }
@@ -323,13 +323,13 @@
             flex: 0.9;
             position: relative;
             z-index: 1;
-            transform: translateY(-180px); /* moves it 40px up */
+            transform: translateY(-180px);
             margin-top: 0;
             display: flex;
             align-items: center;
             box-shadow: 0 0 40px rgba(88, 188, 197, 0.4);
             border: 2px solid rgba(145, 216, 228, 0.2);
-             border-radius: 20px;
+            border-radius: 20px;
             justify-content: center;
         }
 
@@ -460,7 +460,7 @@
         }
 
         .featured-products h2 {
-            font-size: 2.8rem;
+            font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responsive font size */
             margin-bottom: 60px;
             position: relative;
             display: inline-block;
@@ -515,7 +515,7 @@
         }
 
         .product-card h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 1.5vw, 1.5rem); /* Responsive font size */
             margin-bottom: 15px;
             color: var(--accent-color);
         }
@@ -524,6 +524,7 @@
             color: var(--metallic-silver);
             margin-bottom: 25px;
             line-height: 1.6;
+            font-size: clamp(0.9rem, 1vw, 1rem); /* Responsive font size */
         }
 
         /* Quiet Software Section */
@@ -541,6 +542,7 @@
         .quiet-software h2 {
             text-align: center;
             margin-bottom: 40px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
         }
 
         .quiet-software p {
@@ -549,6 +551,7 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            font-size: clamp(0.9rem, 1.1vw, 1.1rem); /* Responsive font size */
         }
 
         .approach-list {
@@ -579,6 +582,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: clamp(1rem, 1.2vw, 1.3rem); /* Responsive font size */
         }
 
         /* PWA Philosophy Section */
@@ -601,7 +605,7 @@
         }
 
         .call-to-action h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.6rem, 3.5vw, 2.5rem); /* Responsive font size */
             margin-bottom: 2rem;
             max-width: 800px;
             margin-left: auto;
@@ -609,7 +613,7 @@
         }
 
         .call-to-action p {
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 1.2vw, 1.2rem); /* Responsive font size */
             color: var(--metallic-silver);
             max-width: 700px;
             margin: 0 auto 3rem;
@@ -641,7 +645,7 @@
         .footer-column h3 {
             color: white;
             margin-bottom: 20px;
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 1.3vw, 1.3rem); /* Responsive font size */
             position: relative;
             padding-bottom: 10px;
         }
@@ -661,6 +665,7 @@
             margin-bottom: 10px;
             color: var(--metallic-silver);
             transition: all var(--transition-speed) ease;
+            font-size: clamp(0.85rem, 1vw, 1rem); /* Responsive font size */
         }
 
         .footer-column a:hover {
@@ -723,12 +728,9 @@
                 text-align: center;
             }
             
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
             .hero-image {
-                margin-top: 0;
+                transform: translateY(0);
+                margin-top: 40px;
                 max-width: 600px;
                 margin-left: auto;
                 margin-right: auto;
@@ -736,6 +738,7 @@
 
             .cta-pair {
                 flex-direction: column;
+                align-items: center;
             }
 
             .social-icons {
@@ -835,6 +838,11 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            /* Adjust hero image for mobile */
+            .hero-image img {
+                width: 100%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -873,6 +881,22 @@
             .legal-links {
                 flex-direction: column;
                 gap: 10px;
+            }
+
+            /* Adjust padding for small screens */
+            .hero, .featured-products, .quiet-software, .call-to-action {
+                padding: 60px 3%;
+            }
+
+            /* Adjust button sizes */
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+
+            /* Hide some decorative elements on very small screens */
+            .atlantis-symbol {
+                display: none;
             }
         }
         
@@ -1000,6 +1024,22 @@
         .menu-backdrop.active {
             opacity: 1;
             pointer-events: auto;
+        }
+
+        /* Touch target sizes for mobile */
+        @media (hover: none) {
+            a, button, .menu-toggle {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .cta-button {
+                padding: 16px 32px;
+            }
+            
+            nav ul li a {
+                padding: 15px 20px;
+            }
         }
     </style>
     
