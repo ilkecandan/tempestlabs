@@ -2,41 +2,643 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-          <link rel="icon" href="/images/tempest.png" type="image/x-icon">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Tempest Labs sade ve estetik yazılımlar geliştirir. Aboneliksiz, bir kere satın alınan, huzur veren dijital araçlar." />
-    <title>Tempest Labs</title>
-    <link rel="stylesheet" href="../styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Tempest Labs, gerçek insanlar için güzel ve sakin yazılımlar üretir. Kullanıcıyı güçlendiren, bunaltmayan tek seferlik satın alınabilen uygulamalar.">
+    <title>Tempest Labs İletişim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    <style>
+        /* ================================= */
+        /* TEMPEST LABS - PREMIUM CSS STYLES */
+        /* ================================= */
+        :root {
+            --primary-color: #0E4954; /* Deep teal-ocean */
+            --primary-light: #91d8e4; /* Luminous teal for better contrast */
+            --primary-dark: #061E22; /* Abyss black-blue */
+            --primary-glow: 0 0 12px rgba(14, 73, 84, 0.7), 0 0 24px rgba(14, 73, 84, 0.5);
+            
+            --secondary-color: #0B1B1C; /* Charcoal twilight */
+            --accent-color: #58BCC5; /* Glacial shimmer */
+            --accent-glow: 0 0 10px rgba(88, 188, 197, 0.6), 0 0 20px rgba(88, 188, 197, 0.3);
+            --gold-accent: #BBA45C; /* Ancient bronze-gold */
+            --metallic-silver: #8C9AA8; /* Worn silver, aged steel */
+            
+            --text-glow: 0 0 8px rgba(145, 216, 228, 0.6); /* Enhanced aqua glow */
+            --transition-speed: 0.35s;
+            --glass-effect: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(0, 255, 255, 0.2);
+            --glass-highlight: rgba(255, 255, 255, 0.1);
+
+            --ancient-font: 'Orbitron', serif;
+            --modern-font: 'Exo 2', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--modern-font);
+            background-color: var(--secondary-color);
+            color: #F0F8FF;
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 150, 183, 0.08) 0%, transparent 25%),
+                linear-gradient(to bottom, #000000, #000000);
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--ancient-font);
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            color: white;
+            text-shadow: var(--text-glow);
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 5%;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            padding: 0 12px;
+            font-family: var(--ancient-font);
+        }
+
+        .logo::before, .logo::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .logo::before {
+            top: -5px;
+            left: 0;
+            width: 0;
+        }
+
+        .logo::after {
+            bottom: -5px;
+            right: 0;
+            width: 0;
+        }
+
+        .logo:hover::before, .logo:hover::after {
+            width: 100%;
+        }
+
+        .logo span {
+            color: var(--primary-light);
+            animation: pulse-glow 3.5s infinite;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-light);
+            text-shadow: var(--text-glow);
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-light);
+            transition: width var(--transition-speed) ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 60%;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 28px;
+            color: white;
+            z-index: 1001;
+            transition: transform 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+            color: var(--primary-light);
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-left: 30px;
+        }
+
+        .social-icons a {
+            color: var(--metallic-silver);
+            font-size: 1.2rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            padding: 180px 5% 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        .contact-container h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, #FFFFFF, var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .contact-container p {
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+            margin-bottom: 2.5rem;
+            color: var(--metallic-silver);
+            line-height: 1.8;
+        }
+
+        .contact-container a {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .contact-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: grid;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--modern-font);
+            font-weight: 600;
+            color: var(--primary-light);
+            letter-spacing: 0.5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid rgba(88, 188, 197, 0.3);
+            border-radius: 6px;
+            background-color: rgba(11, 27, 28, 0.7);
+            color: white;
+            font-family: var(--modern-font);
+            font-size: 16px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: var(--accent-glow);
+            background-color: rgba(11, 27, 28, 0.9);
+        }
+
+        .contact-form textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--ancient-font);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(6, 30, 34, 0.4);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-light));
+            transition: width var(--transition-speed) ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(6, 30, 34, 0.6);
+        }
+
+        .cta-button:active {
+            transform: translateY(1px);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        .scroll-text {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            font-family: var(--modern-font);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        .scroll-arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            transform: rotate(45deg);
+            animation: bounce 1.5s infinite;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 5% 40px;
+            background: var(--primary-dark);
+            color: var(--metallic-silver);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-column a {
+            color: var(--metallic-silver);
+            transition: all var(--transition-speed) ease;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(88, 188, 197, 0.2);
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legal-links a {
+            color: var(--metallic-silver);
+            transition: all var(--transition-speed) ease;
+            font-size: clamp(0.8rem, 1vw, 0.9rem);
+        }
+
+        .legal-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes pulse-glow {
+            0% { opacity: 0.8; text-shadow: 0 0 8px rgba(88, 188, 197, 0.6); }
+            50% { opacity: 1; text-shadow: 0 0 20px rgba(88, 188, 197, 0.9); }
+            100% { opacity: 0.8; text-shadow: 0 0 8px rgba(88, 188, 197, 0.6); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            40% {
+                transform: rotate(45deg) translateY(-10px);
+            }
+            60% {
+                transform: rotate(45deg) translateY(-5px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Scroll progress indicator */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--accent-color);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-container {
+                padding-top: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: rgba(6, 30, 34, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: all 0.4s ease;
+                backdrop-filter: blur(15px);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+
+            .social-icons {
+                margin-left: 0;
+                margin-top: 20px;
+                justify-content: center;
+                width: 100%;
+            }
+
+            header {
+                flex-wrap: wrap;
+                padding: 15px 5%;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .menu-toggle {
+                order: 2;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .social-icons {
+                order: 4;
+                width: 100%;
+                justify-content: center;
+                margin: 15px 0 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-container {
+                padding-top: 180px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .legal-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                padding: 12px 20px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Touch target sizes for mobile */
+        @media (hover: none) {
+            a, button, .menu-toggle {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            nav ul li a {
+                padding: 15px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header Section -->
     <header>
-        <a class="logo" href="index.html">Tempest Labs</a>
-         <div class="social-icons">
-  <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-</div>
-                <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-       </div>
+        <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <nav>
             <ul>
-                <li><a href="https://tempestlabs.space/turkish/about.html" >Hakkımızda</a></li>
-                <li><a href="https://tempestlabs.space/turkish/products.html">Ürünler</a></li>
-                <li><a href="https://tempestlabs.space/turkish/contact.html" >İletişim</a></li>
-                <li><a href="https://tempestlabs.space/turkish/blog.html" >Blog</a></li>
-                <li>
-                <li><a href="https://tempestlabs.space/contact.html" >English </a></li>
-                </li>
+                <li><a href="about.html">Hakkımızda</a></li>
+                <li><a href="products.html">Ürünler</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../contact.html">English</a></li>
             </ul>
         </nav>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        </div>
     </header>
-    
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span class="scroll-text">Aşağı Kaydır</span>
+        <div class="scroll-arrow"></div>
+    </div>
+
+    <!-- Contact Content Section -->
     <section class="contact-container">
-        <h1 data-key="contact.title">Bize Ulaşın</h1>
-        <p data-key="contact.subtitle">Doğrudan e-posta gönderebilirsiniz: <a href='mailto:tempestlabsofficial@gmail.com'>tempestlabsofficial@gmail.com</a>. Sorularınız mı var? Bizimle iş birliği yapmak ister misiniz? Aşağıdaki formu kullanarak bizimle iletişime geçebilirsiniz.</p>
+        <h1>Bize Ulaşın</h1>
+        <p>Doğrudan şu e-posta adresine mesaj gönderebilirsiniz: <a href='mailto:tempestlabsofficial@gmail.com'>tempestlabsofficial@gmail.com</a>. Sorularınız mı var? Bizimle işbirliği yapmak ister misiniz? Aşağıdaki formu kullanarak bize ulaşabilirsiniz.</p>
         
         <form action="https://formspree.io/f/myzezopr" method="POST" class="contact-form">
             <label for="name" data-key="contact.name">Adınız</label>
@@ -51,27 +653,108 @@
             <button type="submit" class="cta-button" data-key="contact.send">Mesaj Gönder</button>
         </form>
     </section>
-    
-   <footer>
-   <div class="legal-links">
-  <a href="https://tempestlabs.space/turkish/legal/membership-agreement.html">Üyelik Sözleşmesi</a> |
-  <a href="https://tempestlabs.space/turkish/legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a> |
-  <a href="https://tempestlabs.space/turkish/legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
-</div>
 
-
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><a href="about.html" aria-label="Tempest Labs Hakkında">Hakkımızda</a></h3>
+                <p>Daha derin düşünme ve daha net görüş için araçlar yaratıyoruz.</p>
+            </div>
+            <div class="footer-column">
+                <h3><a href="products.html" aria-label="Tempest Labs Ürünleri">Ürünler</a></h3>
+                <a href="product-intuiva.html">Intuiva</a>
+                <a href="product-cabinet.html">Cabinet of Selves</a>
+                <a href="product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                <h3><a href="contact.html" aria-label="Tempest Labs İletişim">Bağlantı</a></h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
+            <div class="legal-links">
+                <a href="legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+                <a href="legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
+                <a href="legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
+            </div>
+        </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const languageSelector = document.getElementById('language-selector');
-            const savedLanguage = localStorage.getItem('preferredLanguage') || 'tr';
-            languageSelector.value = savedLanguage;
+        // Toggle mobile menu
+        function toggleMenu() {
+            document.querySelector("nav ul").classList.toggle("active");
+            document.querySelector(".menu-toggle i").classList.toggle("fa-times");
+            document.body.classList.toggle("menu-open");
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-            languageSelector.addEventListener('change', (event) => {
-                const selectedLanguage = event.target.value;
-                localStorage.setItem('preferredLanguage', selectedLanguage);
-                window.location.href = selectedLanguage === 'tr' ? 'contact.html' : '../contact.html';
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.querySelector("nav ul").classList.remove("active");
+                    document.querySelector(".menu-toggle i").classList.remove("fa-times");
+                    document.body.classList.remove("menu-open");
+                }
+            });
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Hide scroll indicator when user scrolls down
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (winScroll > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '0.7';
+                scrollIndicator.style.pointerEvents = 'auto';
+            }
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.contact-container');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.animation = `fadeInUp 0.8s ease forwards`;
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
