@@ -247,10 +247,8 @@
             background-size: cover;
             background-attachment: fixed;
             position: relative;
+             justify-content: flex-start; /* Pushes content to the left */
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 5% 10%;
             overflow: hidden;
         }
 
@@ -266,16 +264,8 @@
         }
 
         .hero-overlay {
-            max-width: 900px;
-            z-index: 2;
-            position: relative;
-            background: rgba(31, 43, 46, 0.6);
-            padding: 40px;
-            border-radius: 12px;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(80, 196, 211, 0.2);
-            animation: fadeInUp 1s ease-out;
+               margin-right: auto; /* Optional: ensures it hugs the left */
+
         }
 
         .hero-mythic h1 {
