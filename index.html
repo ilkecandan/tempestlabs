@@ -261,6 +261,7 @@
 .hero-mythic::before {
     content: '';
     position: absolute;
+        padding: 5% 6% 5% 5%;
     top: 0;
     left: 0;
     width: 100%;
@@ -270,13 +271,14 @@
 }
 
 .hero-overlay {
-    z-index: 2;
-    max-width: 40%;
-     margin-left: 0;
+   z-index: 2;
+    max-width: 35%;
+    margin-left: 2%;
+    margin-right: auto;
     background: rgba(31, 43, 46, 0.6);
-    padding: 40px;
+    padding: 50px 40px 50px 60px; /* extra left padding to tuck it into place */
     border-radius: 12px;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(80, 196, 211, 0.2);
     animation: fadeInUp 1s ease-out;
