@@ -1054,9 +1054,10 @@
 .hero.hero-mythic .cta-button {
     margin-top: 1rem;
 }
-.hero-mythic .right-aligned {
+
+    .hero-mythic .left-aligned {
     position: absolute;
-    right: 5%;
+    left: 5%;
     bottom: 8%;
     max-width: 600px;
     background: rgba(11, 27, 28, 0.45);
@@ -1067,30 +1068,14 @@
     text-align: left;
 }
 
-.hero-mythic .right-aligned h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: #fff;
-    font-family: var(--ancient-font);
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 1.2rem;
-    text-shadow: var(--text-glow);
+@media (max-width: 768px) {
+  .hero-mythic .left-aligned {
+    position: static;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+  }
 }
-
-.hero-mythic .right-aligned .hero-subtitle,
-.hero-mythic .right-aligned .microtagline {
-    color: #aadce3;
-    font-size: 1.05rem;
-    margin-bottom: 1rem;
-}
-
-.hero-mythic .right-aligned .tagline {
-    font-style: italic;
-    color: var(--gold-accent);
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-
     
 
         /* Mobile Menu Animation */
@@ -1172,7 +1157,7 @@
 
     <!-- Hero Section -->
 <section class="hero hero-mythic">
-  <div class="hero-overlay right-aligned">
+<div class="hero-overlay left-aligned">
     <h1>One-Time Purchase Software<br>That Clears Your Mind,<br>Not Crowds It</h1>
     <p class="hero-subtitle">Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.</p>
     <p class="tagline">Focus isn't a feature. It's what remains when the noise is gone.</p>
