@@ -244,17 +244,17 @@
 
 /* Hero Section - Fullscreen Mythic */
 .hero-mythic {
-    display: flex; /* Needed for flex alignment */
-    justify-content: flex-start; /* Push content to the left */
-    align-items: center; /* Keep it vertically centered */
+   display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Keeps content left-aligned */
     
-    background: url('images/hero-mythic-bg.png') no-repeat center center;
+    background: url('images/hero-mythic-bg.png') no-repeat left center;
     background-size: cover;
     background-attachment: fixed;
 
-    position: relative;
     min-height: 100vh;
     padding: 5% 10%;
+    position: relative;
     overflow: hidden;
 }
 
@@ -270,9 +270,8 @@
 }
 
 .hero-overlay {
-    margin-right: auto; /* Stick it to the left */
+     max-width: 600px;
     z-index: 2;
-    position: relative;
     background: rgba(31, 43, 46, 0.6);
     padding: 40px;
     border-radius: 12px;
@@ -1039,40 +1038,18 @@
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
     <!-- Hero Section -->
-    <section class="hero-mythic">
-        <!-- Floating leaves -->
-        <div class="floating-leaf" style="left: 10%; animation-delay: 0s;"></div>
-        <div class="floating-leaf" style="left: 20%; animation-delay: 3s;"></div>
-        <div class="floating-leaf" style="left: 30%; animation-delay: 6s;"></div>
-        <div class="floating-leaf" style="left: 40%; animation-delay: 9s;"></div>
-        <div class="floating-leaf" style="left: 50%; animation-delay: 12s;"></div>
-        <div class="floating-leaf" style="left: 60%; animation-delay: 15s;"></div>
-        <div class="floating-leaf" style="left: 70%; animation-delay: 18s;"></div>
-        <div class="floating-leaf" style="left: 80%; animation-delay: 21s;"></div>
-        <div class="floating-leaf" style="left: 90%; animation-delay: 24s;"></div>
-        
-        <!-- Twinkling stars -->
-        <div class="twinkling-star" style="top: 15%; left: 15%; animation-delay: 0s;"></div>
-        <div class="twinkling-star" style="top: 25%; left: 25%; animation-delay: 1s;"></div>
-        <div class="twinkling-star" style="top: 35%; left: 35%; animation-delay: 2s;"></div>
-        <div class="twinkling-star" style="top: 45%; left: 45%; animation-delay: 3s;"></div>
-        <div class="twinkling-star" style="top: 55%; left: 55%; animation-delay: 4s;"></div>
-        <div class="twinkling-star" style="top: 65%; left: 65%; animation-delay: 5s;"></div>
-        <div class="twinkling-star" style="top: 75%; left: 75%; animation-delay: 6s;"></div>
-        <div class="twinkling-star" style="top: 85%; left: 85%; animation-delay: 7s;"></div>
-        
-        <div class="hero-overlay">
-            <h1>One-Time Purchase Software<br>That Clears Your Mind,<br>Not Crowds It</h1>
-            <p class="hero-subtitle">Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.</p>
-            <p class="tagline">Focus isn't a feature. It's what remains when the noise is gone.</p>
-            <div class="cta-pair">
-              <a href="products.html" class="cta-button">See All Tools</a>
-            </div>
-            <p class="microtagline">Built for solo founders, creatives, and minds that value silence over scale.</p>
-        </div>
-        
-        <div class="scroll-hint"></div>
-    </section>
+<section class="hero-mythic">
+  <div class="hero-overlay">
+    <h1>One-Time Purchase Software<br>That Clears Your Mind,<br>Not Crowds It</h1>
+    <p class="hero-subtitle">Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.</p>
+    <p class="tagline">Focus isn't a feature. It's what remains when the noise is gone.</p>
+    <div class="cta-pair">
+      <a href="products.html" class="cta-button">See All Tools</a>
+    </div>
+    <p class="microtagline">Built for solo founders, creatives, and minds that value silence over scale.</p>
+  </div>
+</section>
+
 
     <div class="separator"></div>
 
