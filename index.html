@@ -244,16 +244,18 @@
 
 /* Hero Section - Fullscreen Mythic */
 .hero-mythic {
-  display: flex;
+display: flex;
     align-items: center;
     justify-content: flex-start;
 
-    background: url('images/hero-mythic-bg.png') no-repeat left center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url('images/hero-mythic-bg.png') no-repeat center center;
+    background-size: contain; /* ✅ This shows the whole image */
+    background-repeat: no-repeat;
+    background-position: right center; /* Pushes image fully into view on the right */
+    background-color: #0B1B1C; /* fallback color */
 
     min-height: 100vh;
-    padding: 5% 4% 5% 2%; /* tighter left side */
+    padding: 5% 4% 5% 2%;
     position: relative;
     overflow: hidden;
 
