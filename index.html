@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://tempestlabs.com" />
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Unica+One&family=EB+Garamond:wght@400;600&family=Cormorant:wght@400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="images/tempest.png" type="image/x-icon">
 
 <style>
@@ -24,20 +24,20 @@
 
         /* Mythic Color Palette */
         :root {
-          --deep-teal: #065C63;          /* Background and main canvas */
-          --aqua-glow: #50C4D3;          /* Waterfall light / button glows */
-          --muted-aqua: #3DA9B2;         /* Accent highlights / icons */
-          --burnt-coral: #E94F3D;        /* Hero cape / action buttons / hover effects */
-          --charcoal-black: #1F2B2E;     /* Fonts, UI outlines */
-          --glow-white: #E6FCFF;         /* Stars, sparkles, gentle glows */
-          --hero-teal: #089EB1;         /* New hero accent color */
-          --hero-dark-teal: #08788A;     /* New hero dark accent */
-          
-          --primary-glow: 0 0 8px rgba(5, 92, 99, 0.5), 0 0 16px rgba(5, 92, 99, 0.3);
-          --accent-glow: 0 0 8px rgba(233, 79, 61, 0.4), 0 0 16px rgba(233, 79, 61, 0.2);
-          --text-glow: 0 0 8px rgba(80, 196, 211, 0.6);
-          --hero-text-glow: 0 0 12px rgba(142, 234, 255, 0.7);
-          --transition-speed: 0.35s;
+        --deep-teal: #00B7DF;               /* Primary background */
+  --aqua-glow: #00B7DF;               /* Glow and accent elements */
+  --muted-aqua: #3BA7C1;              /* Secondary accents */
+  --burnt-coral: #E33656;             /* Hero CTA and active highlights */
+  --charcoal-black: #062431;          /* Deep dark for contrast and fonts */
+  --glow-white: #F0FFFF;              /* Mist, stars, subtle light elements */
+  --hero-teal: #00A6C9;               /* Mid-range cool contrast */
+  --hero-dark-teal: #08788A;          /* Deeper depth and layering */
+
+  --primary-glow: 0 0 8px rgba(0, 183, 223, 0.4), 0 0 16px rgba(0, 183, 223, 0.2);
+  --accent-glow: 0 0 8px rgba(227, 54, 86, 0.4), 0 0 16px rgba(227, 54, 86, 0.2);
+  --text-glow: 0 0 8px rgba(0, 183, 223, 0.6);
+  --hero-text-glow: 0 0 12px rgba(0, 183, 223, 0.7);
+  --transition-speed: 0.35s;
         }
 
         /* Base Styles */
@@ -52,7 +52,7 @@
         }
 
         body {
-            font-family: 'EB Garamond', serif;
+    font-family: 'Outfit', sans-serif;
             font-weight: 400;
             color: var(--charcoal-black);
             line-height: 1.8;
@@ -69,7 +69,7 @@
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Unica One', sans-serif;
+    font-family: 'Spectral SC', serif;
             color: var(--burnt-coral);
             letter-spacing: 0.05em;
             text-shadow: var(--text-glow);
@@ -88,13 +88,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(31, 43, 46, 0.95);
+            background: rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
+            backdrop-filter: blur(6px);
             top: 0;
             left: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(80, 196, 211, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
         }
@@ -257,7 +258,10 @@
     width: 100%;
     height: 100%;
     background: url('images/imageshero-mythic-bg.png') center center no-repeat;
-    background-size: cover;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+background-color: var(--deep-teal); /* fallback */
     background-position: center;
     z-index: -1;
     opacity: 1;
@@ -267,7 +271,10 @@
     z-index: 2;
     position: relative;
     max-width: 45%;
-    background: rgba(31, 43, 46, 0.7);
+background: transparent;
+backdrop-filter: none;
+box-shadow: none;
+border: none;
     padding: 40px;
     border-radius: 12px;
     backdrop-filter: blur(8px);
