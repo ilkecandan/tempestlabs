@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>f
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm.">
@@ -274,7 +274,13 @@ background-color: var(--deep-teal); /* fallback */
     opacity: 1;
 }
 
-
+.hero-text-block {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: 5vw; /* nudges it toward the right */
+  text-align: left;
+  z-index: 10;
+}
 
 .hero-mythic h1 {
     font-family: 'Cormorant', serif;
@@ -389,11 +395,7 @@ background-color: var(--deep-teal); /* fallback */
         text-align: center;
     }
     
-    .hero-overlay {
-        max-width: 90%;
-        padding: 30px;
-        background: rgba(31, 43, 46, 0.85);
-    }
+  
     
     .hero-mythic h1 {
         font-size: 2.2rem;
@@ -896,11 +898,6 @@ footer::before {
         background-attachment: scroll;
     }
     
-    .hero-overlay {
-        max-width: 90%;
-        padding: 25px;
-        text-align: center;
-    }
     
     .hero-mythic h1 {
         font-size: 2.2rem;
@@ -1134,18 +1131,19 @@ body.menu-open {
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
     <!-- Hero Section -->
-    <section class="hero-mythic">
-        <div class="hero-bg"></div>
-        <div class="mist-overlay"></div>
-        
-        <div class="hero-overlay">
-            <h1>In Stillness, the Path Unfolds</h1>
-            <p class="hero-subtitle">The gate opens to those who build differently.</p>
-            <p class="tagline">Calm tools for visionaries, founders, and quiet rebels.</p>
-            <button class="hero-cta">Step Into the Flow</button>
-            <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
-        </div>
-    </section>
+<section class="hero-mythic">
+  <div class="hero-bg"></div>
+  <div class="mist-overlay"></div>
+
+  <div class="hero-text-block">
+    <h1>In Stillness, the Path Unfolds</h1>
+    <p class="hero-subtitle">The gate opens to those who build differently.</p>
+    <p class="tagline">Calm tools for visionaries, founders, and quiet rebels.</p>
+    <button class="hero-cta">Step Into the Flow</button>
+    <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
+  </div>
+</section>
+
 
     <div class="separator"></div>
 
