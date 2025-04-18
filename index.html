@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://tempestlabs.com" />
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Unica+One&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&family=EB+Garamond:wght@400;600&family=Cormorant:wght@400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="images/tempest.png" type="image/x-icon">
 
 <style>
@@ -30,10 +30,13 @@
           --burnt-coral: #E94F3D;        /* Hero cape / action buttons / hover effects */
           --charcoal-black: #1F2B2E;     /* Fonts, UI outlines */
           --glow-white: #E6FCFF;         /* Stars, sparkles, gentle glows */
+          --hero-teal: #089EB1;         /* New hero accent color */
+          --hero-dark-teal: #08788A;     /* New hero dark accent */
           
           --primary-glow: 0 0 8px rgba(5, 92, 99, 0.5), 0 0 16px rgba(5, 92, 99, 0.3);
           --accent-glow: 0 0 8px rgba(233, 79, 61, 0.4), 0 0 16px rgba(233, 79, 61, 0.2);
           --text-glow: 0 0 8px rgba(80, 196, 211, 0.6);
+          --hero-text-glow: 0 0 12px rgba(142, 234, 255, 0.7);
           --transition-speed: 0.35s;
         }
 
@@ -241,9 +244,10 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 5% 4% 5% 2%;
+    justify-content: flex-end;
+    padding: 5% 8% 5% 5%;
     background-color: var(--deep-teal);
+    isolation: isolate;
 }
 
 .hero-bg {
@@ -253,74 +257,166 @@
     width: 100%;
     height: 100%;
     background: url('images/hero-mythic-bg.png') center center no-repeat;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right center;
-    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
     opacity: 1;
-}
-
-.hero-mythic::before {
-    content: '';
-    position: absolute;
-    padding: 5% 6% 5% 5%;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(31, 43, 46, 0.4);
-    z-index: 1;
 }
 
 .hero-overlay {
     z-index: 2;
     position: relative;
-    max-width: 32%;
-    margin-left: 0;
-    background: rgba(31, 43, 46, 0.65);
-    padding: 30px 35px;
+    max-width: 45%;
+    background: rgba(31, 43, 46, 0.7);
+    padding: 40px;
     border-radius: 12px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(80, 196, 211, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(142, 234, 255, 0.15);
     animation: fadeInUp 1s ease-out;
 }
 
 .hero-mythic h1 {
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    color: var(--burnt-coral);
-    text-shadow: 0 0 10px var(--aqua-glow);
+    font-family: 'Cormorant', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--glow-white);
+    text-shadow: var(--hero-text-glow);
+    font-weight: 600;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero-mythic .hero-subtitle {
-    font-size: 0.95rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
     color: var(--glow-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-weight: 300;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .hero-mythic .tagline {
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     color: var(--aqua-glow);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
     position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--hero-teal);
+    animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .hero-mythic .microtagline {
     font-size: 0.9rem;
     color: var(--muted-aqua);
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     opacity: 0.8;
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+/* Hero CTA Button */
+.hero-cta {
+    background: var(--burnt-coral);
+    color: white;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-weight: 600;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out 1s both;
+    box-shadow: 0 4px 15px rgba(233, 79, 61, 0.3);
+}
+
+.hero-cta:hover {
+    background: #D04134;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(233, 79, 61, 0.4);
+}
+
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.hero-cta:hover::before {
+    left: 100%;
+}
+
+/* Floating Elements */
+.floating-leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('images/red-leaf.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0;
+    z-index: 1;
+    animation: float-leaves 15s linear infinite;
+}
+
+/* Mist Effect */
+.mist-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(0deg, rgba(8, 126, 140, 0.3) 0%, transparent 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 992px) {
+    .hero-mythic {
+        justify-content: center;
+        padding: 120px 5% 80px;
+        text-align: center;
+    }
+    
+    .hero-overlay {
+        max-width: 90%;
+        padding: 30px;
+        background: rgba(31, 43, 46, 0.85);
+    }
+    
+    .hero-mythic h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-mythic .tagline {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-bg {
-        background-size: cover;
-        background-position: center top;
-    }
     .hero-overlay {
-        max-width: 90%;
+        max-width: 100%;
+        padding: 25px;
+    }
+    
+    .hero-mythic h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-mythic .hero-subtitle {
+        font-size: 1rem;
     }
 }
 
@@ -1037,19 +1133,18 @@ body.menu-open {
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
     <!-- Hero Section -->
-<section class="hero-mythic">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay">
-    <h1>One-Time Purchase Software<br>That Clears Your Mind,<br>Not Crowds It</h1>
-    <p class="hero-subtitle">Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.</p>
-    <p class="tagline">Focus isn't a feature. It's what remains when the noise is gone.</p>
-    <div class="cta-pair">
-      <a href="products.html" class="cta-button glow-element">Explore Tools</a>
-    </div>
-    <p class="microtagline">Built for solo founders, creatives, and minds that value silence over scale.</p>
-  </div>
-</section>
-
+    <section class="hero-mythic">
+        <div class="hero-bg"></div>
+        <div class="mist-overlay"></div>
+        
+        <div class="hero-overlay">
+            <h1>In Stillness, the Path Unfolds</h1>
+            <p class="hero-subtitle">The gate opens to those who build differently.</p>
+            <p class="tagline">Calm tools for visionaries, founders, and quiet rebels.</p>
+            <button class="hero-cta">Step Into the Flow</button>
+            <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
+        </div>
+    </section>
 
     <div class="separator"></div>
 
@@ -1275,9 +1370,16 @@ body.menu-open {
                 const leaf = document.createElement('div');
                 leaf.className = 'floating-leaf';
                 leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.top = Math.random() * 100 + '%';
                 leaf.style.animationDelay = Math.random() * 20 + 's';
                 leaf.style.animationDuration = 15 + Math.random() * 15 + 's';
+                leaf.style.opacity = '0';
                 container.appendChild(leaf);
+                
+                // Trigger animation
+                setTimeout(() => {
+                    leaf.style.opacity = '0.7';
+                }, 100);
             }
         }
         
@@ -1320,6 +1422,17 @@ body.menu-open {
             if (egg) {
                 egg.addEventListener('click', function() {
                     alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
+                });
+            }
+            
+            // Hero CTA focus effect
+            const heroCta = document.querySelector('.hero-cta');
+            if (heroCta) {
+                heroCta.addEventListener('focus', function() {
+                    this.style.boxShadow = '0 0 0 3px rgba(233, 79, 61, 0.5)';
+                });
+                heroCta.addEventListener('blur', function() {
+                    this.style.boxShadow = '0 4px 15px rgba(233, 79, 61, 0.3)';
                 });
             }
         });
