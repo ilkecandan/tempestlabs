@@ -24,13 +24,13 @@
 
         /* Mythic Color Palette */
         :root {
-          --deep-teal: #065C63;
+          --deep-teal: #055B6D;       /* base background */
           --aqua-glow: #50C4D3;
-          --muted-aqua: #3DA9B2;
+          --muted-aqua: #34D6E0;      /* secondary highlight tone */
           --burnt-coral: #E94F3D;
           --charcoal-black: #1F2B2E;
           --glow-white: #EAF4F4;
-          --hero-teal: #089EB1;
+          --hero-teal: #0A9DB7;       /* luminous main tone */
           --hero-dark-teal: #08788A;
           
           --text-glow: 0 0 8px rgba(202, 240, 248, 0.3);
@@ -54,7 +54,7 @@
             color: var(--charcoal-black);
             line-height: 1.8;
             overflow-x: hidden;
-            background-color: var(--deep-teal);
+            background: linear-gradient(135deg, #055B6D, #0A9DB7);
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -89,7 +89,7 @@
         }
 
         header.scrolled {
-            padding: 15px 5%;
+           padding: 8px 5%;
             background: rgba(31, 43, 46, 0.95);
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
         }
@@ -214,6 +214,9 @@
         .hero-overlay {
             z-index: 2;
             position: relative;
+            backdrop-filter: blur(3px);
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
             max-width: 45%;
             padding: 40px;
             animation: fadeInUp 1s ease-out;
@@ -221,6 +224,7 @@
 
         .hero-mythic h1 {
             font-family: 'Cinzel', serif;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
             font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 1.5rem;
             line-height: 1.3;
@@ -234,6 +238,7 @@
             font-family: 'Outfit', sans-serif;
             font-size: 1.1rem;
             color: #C7E9E9;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
             margin-bottom: 1.5rem;
             line-height: 1.6;
             font-weight: 300;
@@ -245,6 +250,7 @@
             color: var(--aqua-glow);
             margin-bottom: 2rem;
             font-size: 1.1rem;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
             position: relative;
             padding-left: 20px;
             border-left: 1px solid var(--hero-teal);
@@ -254,6 +260,7 @@
         .hero-mythic .microtagline {
             font-size: 0.9rem;
             color: var(--muted-aqua);
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
             margin-top: 2rem;
             opacity: 0.8;
             animation: fadeInUp 0.8s ease-out 0.8s both;
@@ -262,6 +269,7 @@
         .hero-cta {
             background: transparent;
             color: white;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
             border-radius: 0;
             padding: 12px 0;
             font-weight: 400;
@@ -724,7 +732,7 @@
 
         @media (max-width: 768px) {
             header {
-                padding: 15px 5%;
+           padding: 12px 5%;
             }
             
             nav ul {
@@ -903,12 +911,14 @@
             <h1>In Stillness, the Path Unfolds</h1>
             <p class="hero-subtitle">The gate opens to those who build differently.</p>
             <p class="tagline">Calm tools for visionaries, founders, and quiet rebels.</p>
-            <button class="hero-cta">Step Into the Flow</button>
+            <button class="hero-cta" href="https://tempestlabs.space/products.html">Step Into the Flow</button>
             <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
         </div>
     </section>
 
     <div class="separator"></div>
+    <section class="quiet-software" id="scroll-target">
+
 
     <!-- Quiet Software Section -->
     <section class="quiet-software">
@@ -1008,7 +1018,7 @@
         <p class="open-ended-description">For entrepreneurs, marketers, product managers, and anyone seeking mental bandwidth, focus, and creative freedom.</p>
     </section>
 
-    <div class="scroll-hint"></div>
+<a href="#scroll-target" class="scroll-hint" aria-label="Scroll down"></a>
     <div class="separator"></div>
     
     <!-- PWA Philosophy Section -->
@@ -1128,7 +1138,7 @@
         // Create floating icons
         function createFloatingIcons() {
             const container = document.querySelector('.hero-mythic');
-            const icons = ['⌘', '⌥', '⇧', '⌫', '⎋', '⇥', '⏎'];
+            const icons = ['⌘',  '⎋', 🍁', '🌀', '🧭];
             
             for (let i = 0; i < 12; i++) {
                 const icon = document.createElement('div');
