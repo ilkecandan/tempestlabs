@@ -213,6 +213,19 @@
             filter: brightness(1.1) contrast(1.1) saturate(1.05);
         }
 
+        .hero-overlay {
+    z-index: 2;
+    position: relative;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.15); /* lighter and more transparent */
+    border-radius: 12px;
+    max-width: 45%;
+    padding: 40px;
+    animation: fadeInUp 1s ease-out;
+    border: 1px solid rgba(58, 227, 248, 0.08); /* subtle glow outline */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* ambient depth */
+}
+
 
         .hero-mythic h1 {
             font-family: 'Cinzel', serif;
