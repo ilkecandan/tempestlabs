@@ -569,75 +569,65 @@
     </footer>
 
     <script>
-        // Toggle mobile menu
-        function toggleMenu() {
-            const menu = document.querySelector("nav ul");
-            const toggle = document.querySelector(".menu-toggle");
-            const backdrop = document.querySelector(".menu-backdrop");
-            
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
-            backdrop.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
+
+         // Toggle mobile menu
+    function toggleMenu() {
+        const menu = document.querySelector("nav ul");
+        const toggle = document.querySelector(".menu-toggle");
+        const backdrop = document.querySelector(".menu-backdrop");
+        
+        menu.classList.toggle("active");
+        toggle.classList.toggle("active");
+        backdrop.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+    }
+    
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Guaranteed Working LinkedIn Share Function
+    function shareOnLinkedIn(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Customize these values
+        const shareData = {
+            url: 'https://tempestlabs.space/one-time-apps.html',
+            title: 'Why We Build One-Time Purchase Apps',
+            text: 'Our philosophy behind creating software you can own, not rent.',
+            via: 'TempestLabs'
+        };
+        
+        // First try the most reliable method
+        const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareData.url)}`;
+        
+        // Window dimensions
+        const width = 600;
+        const height = 600;
+        const left = (screen.width - width) / 2;
+        const top = (screen.height - height) / 2;
+        
+        // Open the share window
+        const shareWindow = window.open(
+            linkedinShareUrl,
+            'LinkedInShareWindow',
+            `width=${width},height=${height},left=${left},top=${top}`
+        );
+        
+        // If popup was blocked, fallback to direct URL
+        if (!shareWindow || shareWindow.closed) {
+            window.location.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&summary=${encodeURIComponent(shareData.text)}&source=${encodeURIComponent(shareData.via)}`;
         }
         
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-    / Guaranteed Working LinkedIn Share Function
-        function shareOnLinkedIn(e) {
-            e.preventDefault();
-            
-            // Customize these values
-            const shareData = {
-                url: 'https://tempestlabs.space/one-time-apps.html',
-                title: 'Why We Build One-Time Purchase Apps',
-                text: 'Our philosophy behind creating software you can own, not rent.',
-                via: 'TempestLabs'
-            };
-            
-            // LinkedIn's recommended sharing endpoints (tries multiple methods)
-            const endpoints = [
-                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareData.url)}`,
-                `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&summary=${encodeURIComponent(shareData.text)}&source=${encodeURIComponent(shareData.via)}`
-            ];
-            
-            // Window dimensions
-            const width = 600;
-            const height = 600;
-            const left = (screen.width - width) / 2;
-            const top = (screen.height - height) / 2;
-            
-            // Try each endpoint until one works
-            let success = false;
-            for (const endpoint of endpoints) {
-                const win = window.open(
-                    endpoint,
-                    'LinkedInShareWindow',
-                    `width=${width},height=${height},left=${left},top=${top}`
-                );
-                
-                // Check if window opened successfully
-                if (win && !win.closed) {
-                    success = true;
-                    break;
-                }
-            }
-            
-            // If all methods failed, redirect to LinkedIn with share parameters
-            if (!success) {
-                window.location.href = `https://www.linkedin.com/post/new?url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&text=${encodeURIComponent(shareData.text)}`;
-            }
-            
-            return false;
-        }
+        return false;
+    }
     </script>
 </body>
 </html>
