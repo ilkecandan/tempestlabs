@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm.">
+    <meta name="description" content="Explore Tempest Labs' premium software products. One-time purchase apps designed to empower, not overwhelm.">
     <title>Products | Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -219,48 +219,120 @@
             transform: translateY(-3px);
         }
 
-        /* Products Section */
-        .products-section {
-            padding: 180px 5% 80px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Hero Section */
+        .hero {
+            padding: 200px 5% 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(6, 30, 34, 0.9) 0%, rgba(11, 27, 28, 0.95) 100%);
         }
 
-        .products-section h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 3rem;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/hero-pattern.png') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
             background: linear-gradient(90deg, #FFFFFF, var(--primary-light));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             line-height: 1.2;
-            text-align: center;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards 0.3s;
         }
 
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.2rem;
+            color: var(--metallic-silver);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 100px 5% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #FFFFFF, var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--metallic-silver);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+        }
+
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
             margin-top: 2rem;
         }
 
         .product-card {
-            background: rgba(11, 27, 28, 0.5);
-            border-radius: 10px;
+            background: rgba(11, 27, 28, 0.6);
+            border-radius: 12px;
             overflow: hidden;
             transition: all var(--transition-speed) ease;
             border: 1px solid rgba(88, 188, 197, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(88, 188, 197, 0.05) 0%, transparent 100%);
+            z-index: -1;
         }
 
         .product-card:nth-child(1) { animation-delay: 0.3s; }
         .product-card:nth-child(2) { animation-delay: 0.5s; }
         .product-card:nth-child(3) { animation-delay: 0.7s; }
+        .product-card:nth-child(4) { animation-delay: 0.9s; }
 
         .product-card:hover {
             transform: translateY(-10px);
@@ -270,7 +342,7 @@
 
         .product-card img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
             border-bottom: 1px solid rgba(88, 188, 197, 0.2);
             transition: transform 0.5s ease;
@@ -281,11 +353,11 @@
         }
 
         .product-content {
-            padding: 25px;
+            padding: 30px;
         }
 
         .product-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
             color: white;
             transition: color var(--transition-speed) ease;
@@ -297,8 +369,50 @@
 
         .product-card p {
             color: var(--metallic-silver);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .product-features {
+            margin: 25px 0;
+        }
+
+        .product-features li {
+            color: var(--metallic-silver);
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .product-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(187, 164, 92, 0.15);
+            color: var(--gold-accent);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(187, 164, 92, 0.3);
+            font-family: var(--ancient-font);
+            font-size: 0.9rem;
+        }
+
+        .price-tag .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-right: 8px;
+            font-size: 0.8em;
         }
 
         .cta-button {
@@ -338,6 +452,251 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(6, 30, 34, 0.6);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: transparent;
+            color: var(--primary-light);
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--ancient-font);
+            font-size: 0.9rem;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            border: 1px solid var(--primary-light);
+            margin-left: 15px;
+        }
+
+        .secondary-button:hover {
+            background: rgba(88, 188, 197, 0.1);
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 5%;
+            background: rgba(6, 30, 34, 0.4);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/dots-pattern.png') center/cover no-repeat;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(11, 27, 28, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(88, 188, 197, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(88, 188, 197, 0.3);
+        }
+
+        .testimonial-content {
+            color: var(--metallic-silver);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: white;
+            font-family: var(--modern-font);
+            font-style: normal;
+        }
+
+        .author-info p {
+            color: var(--metallic-silver);
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(11, 27, 28, 0.4);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(88, 188, 197, 0.1);
+            transition: all var(--transition-speed) ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--accent-glow);
+            border-color: rgba(88, 188, 197, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--metallic-silver);
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(88, 188, 197, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(88, 188, 197, 0.3);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: rgba(11, 27, 28, 0.4);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(11, 27, 28, 0.6);
+        }
+
+        .faq-question::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+            background: rgba(11, 27, 28, 0.2);
+        }
+
+        .faq-question.active + .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(6, 30, 34, 0.9) 0%, rgba(11, 27, 28, 0.95) 100%);
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/cta-pattern.png') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #FFFFFF, var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            color: var(--metallic-silver);
         }
 
         /* Scroll Indicator */
@@ -499,8 +858,12 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .products-section {
-                padding-top: 150px;
+            .hero {
+                padding: 180px 5% 100px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             }
         }
 
@@ -564,11 +927,17 @@
                 justify-content: center;
                 margin: 15px 0 0;
             }
+            
+            .secondary-button {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+            }
         }
 
         @media (max-width: 480px) {
-            .products-section {
-                padding-top: 180px;
+            .hero {
+                padding: 160px 5% 80px;
             }
 
             .footer-content {
@@ -585,6 +954,10 @@
                 padding: 12px 20px;
                 font-size: 1.1rem;
             }
+            
+            .product-content {
+                padding: 20px;
+            }
         }
 
         /* Touch target sizes for mobile */
@@ -596,6 +969,10 @@
             
             nav ul li a {
                 padding: 15px 20px;
+            }
+            
+            .cta-button, .secondary-button {
+                padding: 15px 30px;
             }
         }
     </style>
@@ -632,46 +1009,197 @@
         </div>
     </header>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-        <span class="scroll-text">Scroll Down</span>
-        <div class="scroll-arrow"></div>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 data-key="productshero">Our Premium Software Collection</h1>
+        <p data-key="productsherotext">Discover thoughtfully crafted tools designed to enhance your productivity, creativity, and self-awareness. One-time purchases, lifetime value.</p>
+    </section>
 
     <!-- Products Section -->
     <section class="products-section">
-        <h2 data-key="featuredproducts">Tempest Labs Products</h2>
+        <div class="section-header">
+            <h2 data-key="featuredproducts">Featured Products</h2>
+            <p data-key="featuredproductstext">Each product is meticulously designed to solve specific problems with elegant, intuitive solutions.</p>
+        </div>
+        
         <div class="product-grid">
             <!-- Cabinet of Selves -->
-            <a href="product-cabinet.html" class="product-card" data-key="cabinetcard">
+            <div class="product-card" data-key="cabinetcard">
                 <img src="images/girl.png" alt="Cabinet of Selves" />
                 <div class="product-content">
                     <h3 data-key="aboutcabinet">Cabinet of Selves</h3>
-                    <p data-key="aboutcabinettext">A self-reflection tool that allows you to explore your many facets.</p>
-                    <span class="cta-button" data-key="learnmore">Learn More</span>
+                    <p data-key="aboutcabinettext">A revolutionary self-reflection tool that allows you to explore and document your many facets through guided journaling and personality mapping.</p>
+                    
+                    <div class="product-features">
+                        <ul>
+                            <li data-key="cabinetfeature1">Multi-dimensional personality tracking</li>
+                            <li data-key="cabinetfeature2">Guided reflection prompts</li>
+                            <li data-key="cabinetfeature3">Emotional pattern recognition</li>
+                            <li data-key="cabinetfeature4">Secure, offline-first design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-tag">
+                        <span class="original-price">$49.99</span>
+                        $34.99
+                    </div>
+                    
+                    <a href="product-cabinet.html" class="cta-button" data-key="learnmore">Learn More</a>
+                    <a href="#" class="secondary-button" data-key="buynow">Buy Now</a>
                 </div>
-            </a>
+            </div>
             
             <!-- Intuiva -->
-            <a href="product-intuiva.html" class="product-card" data-key="intuivacard">
+            <div class="product-card" data-key="intuivacard">
                 <img src="images/planner.png" alt="Intuiva" />
                 <div class="product-content">
                     <h3 data-key="aboutintuiva">Intuiva</h3>
-                    <p data-key="aboutintuivatext">AI-powered project strategist that helps you turn ideas into action through intelligent planning and dynamic task boards.</p>
-                    <span class="cta-button" data-key="learnmore">Learn More</span>
+                    <p data-key="aboutintuivatext">AI-powered project strategist that helps you turn ideas into action through intelligent planning, dynamic task boards, and progress tracking.</p>
+                    
+                    <div class="product-features">
+                        <ul>
+                            <li data-key="intuivafeature1">AI-assisted project planning</li>
+                            <li data-key="intuivafeature2">Visual workflow management</li>
+                            <li data-key="intuivafeature3">Progress analytics</li>
+                            <li data-key="intuivafeature4">Cross-platform sync</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-tag">
+                        <span class="original-price">$59.99</span>
+                        $44.99
+                    </div>
+                    
+                    <a href="product-intuiva.html" class="cta-button" data-key="learnmore">Learn More</a>
+                    <a href="#" class="secondary-button" data-key="buynow">Buy Now</a>
                 </div>
-            </a>
+            </div>
             
-            <!-- STEM Student Bundle -->
-            <a href="https://tempestlabs.space/product-funnelflow.html" class="product-card">
+            <!-- Funnel Flow -->
+            <div class="product-card">
                 <img src="images/funnel.png" alt="FunnelFlow" />
                 <div class="product-content">
-                    <h3 data-key="aboutstem">Funnel Flow</h3>
-                    <p data-key="aboutstemtext">Sales & operations flow management with visual focus.</p>
-                    <span class="cta-button" data-key="learnmore">Learn More</span>
+                    <h3 data-key="aboutfunnel">Funnel Flow</h3>
+                    <p data-key="aboutfunneltext">Sales & operations flow management with visual focus. Optimize your business processes with intuitive funnel visualization.</p>
+                    
+                    <div class="product-features">
+                        <ul>
+                            <li data-key="funnelfeature1">Visual sales funnel builder</li>
+                            <li data-key="funnelfeature2">Conversion rate analytics</li>
+                            <li data-key="funnelfeature3">Bottleneck identification</li>
+                            <li data-key="funnelfeature4">Team collaboration tools</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-tag">
+                        <span class="original-price">$79.99</span>
+                        $59.99
+                    </div>
+                    
+                    <a href="product-funnelflow.html" class="cta-button" data-key="learnmore">Learn More</a>
+                    <a href="#" class="secondary-button" data-key="buynow">Buy Now</a>
                 </div>
-            </a>
+            </div>
+            
+            <!-- STEM Student Bundle -->
+            <div class="product-card">
+                <img src="images/stem.png" alt="STEM Student Bundle" />
+                <div class="product-content">
+                    <h3 data-key="aboutstem">STEM Student Bundle</h3>
+                    <p data-key="aboutstemtext">Essential tools for science, technology, engineering, and math students - all in one powerful package.</p>
+                    
+                    <div class="product-features">
+                        <ul>
+                            <li data-key="stemfeature1">Equation solver & grapher</li>
+                            <li data-key="stemfeature2">Scientific reference library</li>
+                            <li data-key="stemfeature3">Code snippet manager</li>
+                            <li data-key="stemfeature4">Research paper organizer</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-tag">
+                        <span class="original-price">$99.99</span>
+                        $74.99
+                    </div>
+                    
+                    <a href="product-stem.html" class="cta-button" data-key="learnmore">Learn More</a>
+                    <a href="#" class="secondary-button" data-key="buynow">Buy Now</a>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="section-header">
+            <h2 data-key="whyus">Why Choose Tempest Labs?</h2>
+            <p data-key="whyustext">Our philosophy is simple: create software that respects your time, attention, and individuality.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 data-key="feature1">Privacy First</h3>
+                <p data-key="feature1text">Your data stays yours. We don't track, sell, or misuse your information.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3 data-key="feature2">One-Time Purchase</h3>
+                <p data-key="feature2text">No subscriptions. Pay once and own the software forever.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 data-key="feature3">Thoughtful Design</h3>
+                <p data-key="feature3text">Every pixel and interaction is crafted with intention and care.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3 data-key="feature4">Minimal Distraction</h3>
+                <p data-key="feature4text">Focus on what matters without unnecessary notifications or clutter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2 data-key="faqtitle">Frequently Asked Questions</h2>
+            <p data-key="faqtext">Find answers to common questions about our products and policies.</p>
+        </div>
+        
+            
+            <div class="faq-item">
+                <div class="faq-question" data-key="faq3">Are your products available on mobile?</div>
+                <div class="faq-answer" data-key="faq3answer">
+                    Currently, our products are desktop-only (Windows and macOS). We're exploring mobile versions for future releases.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" data-key="faq4">How often do you release updates?</div>
+                <div class="faq-answer" data-key="faq4answer">
+                    We release major updates quarterly with new features, and minor updates as needed for bug fixes and improvements. All updates are free for existing customers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 data-key="ctatitle">Ready to Transform Your Workflow?</h2>
+        <p data-key="ctatext">Join thousands of satisfied users who have discovered the Tempest Labs difference.</p>
+        <a href="#" class="cta-button" data-key="browseproducts">Browse All Products</a>
     </section>
 
     <!-- Footer -->
@@ -685,6 +1213,7 @@
                 <h3><a href="products.html" aria-label="About Tempest Labs">Products</a></h3>
                 <a href="product-intuiva.html">Intuiva</a>
                 <a href="product-cabinet.html">Cabinet of Selves</a>
+                <a href="product-funnelflow.html">Funnel Flow</a>
                 <a href="product-stem.html">STEM Student Bundle</a>
             </div>
             <div class="footer-column">
@@ -753,7 +1282,7 @@
 
         // Animate elements when they come into view
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.products-section h2, .product-card');
+            const elements = document.querySelectorAll('.section-header h2, .section-header p, .product-card, .feature-card, .testimonial-card, .faq-item');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -767,6 +1296,25 @@
 
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.faq-question.active');
+                if (currentlyActive && currentlyActive !== question) {
+                    currentlyActive.classList.remove('active');
+                    currentlyActive.nextElementSibling.style.maxHeight = '0';
+                }
+                
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                if (question.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
