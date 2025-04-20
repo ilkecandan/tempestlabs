@@ -217,9 +217,9 @@
             margin: 0 auto;
             padding: 40px;
             backdrop-filter: blur(4px);
-            background-color: rgba(0, 0, 0, 0.15);
+           background-color: rgba(0, 0, 0, 0.25); /* increase from 0.15 */
+            border: 1px solid rgba(58, 227, 248, 0.1); /* slightly stronger outline */         
             border-radius: 12px;
-            border: 1px solid rgba(58, 227, 248, 0.08);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
             animation: fadeInUp 1s ease-out;
         }
@@ -229,16 +229,17 @@
             font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 1.5rem;
             line-height: 1.3;
-            color: var(--glow-white);
-            text-shadow: var(--hero-text-glow);
-            font-weight: 400;
+            color: white;
+             text-shadow: 0 0 12px rgba(0,0,0,0.6);            
+            font-weight: 450;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .about-content p {
             font-family: 'Outfit', sans-serif;
             font-size: clamp(1rem, 1.2vw, 1.2rem);
-            color: #C7E9E9;
+              text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* adds subtle separation */
+            color: #EAF4F4; /* was #C7E9E9 */
             margin-bottom: 1.5rem;
             line-height: 1.6;
             font-weight: 300;
