@@ -2,882 +2,640 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Tempest Labs - Calm Software Design</title>
-    <meta name="description" content="Insights on building digital tools that respect your focus and time. Articles on design philosophy, mindful productivity, and sustainable software.">
-    
-    <!-- Open Graph / Social Meta Tags -->
-    <meta property="og:title" content="Tempest Labs Blog - Calm Software Design">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tempest Labs Blog - Insights on Calm Software Design">
     <meta property="og:description" content="Thoughts on building digital tools that respect your focus and time.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tempestlabs.com/blog">
     <meta property="og:image" content="https://tempestlabs.com/images/blog-social-preview.jpg">
-    <meta property="og:site_name" content="Tempest Labs">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tempest Labs Blog - Calm Software Design">
-    <meta name="twitter:description" content="Insights on building digital tools that respect your focus and time.">
-    <meta name="twitter:image" content="https://tempestlabs.com/images/blog-social-preview.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://tempestlabs.com/blog">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/images/tempest.png" type="image/png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://tempestlabs.com/blog" />
+    <title>Blog | Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <style>
-        /* ====== Global Styles ====== */
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;600&family=EB+Garamond:wght@400;600&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+
+<style>
+        /* ================================= */
+        /* TEMPEST LABS - MYTHIC HERO STYLES */
+        /* ================================= */
+
+        /* Mythic Color Palette */
         :root {
-            --deep-teal: #01343E;
-            --aqua-glow: #3AE3F8;
-            --muted-aqua: #34D6E0;
-            --burnt-coral: #E94F3D;
-            --charcoal-black: #0B1B1C;
-            --glow-white: #EAF4F4;
-            --hero-teal: #0A9DB7;
-            --hero-dark-teal: #055B6D;
-            
-            --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
-            --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
-            --transition-speed: 0.4s ease;
-            
-            --container-width: 1200px;
-            --spacing-unit: 1rem;
-            --border-radius: 8px;
+          --deep-teal: #01343E;       /* base background */
+          --aqua-glow: #3AE3F8;
+          --muted-aqua: #34D6E0;      /* secondary highlight tone */
+          --burnt-coral: #E94F3D;
+          --charcoal-black: #0B1B1C;
+          --glow-white: #EAF4F4;
+          --hero-teal: #0A9DB7;       /* luminous main tone */
+          --hero-dark-teal: #055B6D;
+          
+          --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+          --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+          --transition-speed: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Outfit', sans-serif;
             font-weight: 400;
             color: var(--charcoal-black);
-            line-height: 1.6;
-            background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            word-spacing: 0.5px;
             overflow-x: hidden;
+            background: linear-gradient(135deg, #055B6D, #0A9DB7);
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Cinzel', serif;
             color: var(--glow-white);
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             text-shadow: var(--hero-text-glow);
+            margin-bottom: 1.2rem;
             font-weight: 400;
-            line-height: 1.3;
         }
-        
+
         a {
             color: var(--aqua-glow);
             text-decoration: none;
-            transition: var(--transition-speed);
+            transition: all var(--transition-speed);
         }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing-unit);
-        }
-        
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-        
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--burnt-coral);
-            color: white;
-            padding: 8px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-        
-        .skip-link:focus {
-            top: 0;
-        }
-        
-        /* ====== Header Styles ====== */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1rem 0;
-            background: rgba(11, 27, 28, 0.2);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .site-header.scrolled {
-            background: rgba(11, 27, 28, 0.95);
-            padding: 0.5rem 0;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
-        }
-        
-        .header-container {
+
+        header {
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(11, 27, 28, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
         }
-        
+
+        header.scrolled {
+            padding: 8px 5%;
+            background: rgba(11, 27, 28, 0.95);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+        }
+
         .logo {
-            font-size: 1.6rem;
+            font-size: 26px;
             font-weight: 400;
+            letter-spacing: 1.5px;
             color: var(--glow-white);
+            cursor: pointer;
+            position: relative;
+            padding: 0 12px;
             font-family: 'Cinzel', serif;
         }
-        
+
         .logo span {
             color: var(--aqua-glow);
             animation: pulse-glow 3.5s infinite;
         }
-        
-        .primary-nav ul {
-            display: flex;
+
+        nav ul {
             list-style: none;
-            gap: 1.5rem;
+            display: flex;
+            gap: 30px;
         }
-        
-        .primary-nav a {
-            color: var(--glow-white);
-            font-size: 1rem;
-            padding: 0.5rem;
+
+        nav ul li {
             position: relative;
         }
-        
-        .primary-nav a::after {
-            content: '';
+
+        nav ul li a {
+            color: var(--glow-white);
+            font-size: 17px;
+            font-weight: 300;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav ul li a:hover {
+            color: var(--aqua-glow);
+            text-shadow: var(--text-glow);
+        }
+
+        nav ul li a::after {
+            content: "";
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 1px;
             background: var(--aqua-glow);
-            transition: var(--transition-speed);
+            transition: width var(--transition-speed);
         }
-        
-        .primary-nav a:hover::after,
-        .primary-nav a[aria-current="page"]::after {
-            width: 100%;
+
+        nav ul li a:hover::after {
+            width: 60%;
         }
-        
-        .primary-nav a[aria-current="page"] {
-            color: var(--aqua-glow);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            color: var(--glow-white);
-            opacity: 0.7;
-            transition: var(--transition-speed);
-        }
-        
-        .social-links a:hover {
-            color: var(--aqua-glow);
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-        
+
         .menu-toggle {
             display: none;
-            background: none;
-            border: none;
-            color: var(--glow-white);
-            font-size: 1.5rem;
             cursor: pointer;
-            padding: 0.5rem;
+            font-size: 1.5rem;
+            color: var(--glow-white);
+            z-index: 1001;
+            transition: all var(--transition-speed);
         }
-        
-        .hamburger {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--glow-white);
-            position: relative;
-            transition: var(--transition-speed);
+
+        .menu-toggle:hover {
+            color: var(--aqua-glow);
         }
-        
-        .hamburger::before,
-        .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 2px;
-            background: var(--glow-white);
-            transition: var(--transition-speed);
+    
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-left: 30px;
         }
-        
-        .hamburger::before {
-            top: -8px;
+
+        .social-icons a {
+            color: var(--glow-white);
+            font-size: 1.2rem;
+            transition: all var(--transition-speed);
+            opacity: 0.7;
         }
-        
-        .hamburger::after {
-            top: 8px;
+
+        .social-icons a:hover {
+            color: var(--aqua-glow);
+            transform: translateY(-3px);
+            opacity: 1;
         }
-        
-        .menu-toggle[aria-expanded="true"] .hamburger {
-            background: transparent;
-        }
-        
-        .menu-toggle[aria-expanded="true"] .hamburger::before {
-            transform: rotate(45deg);
-            top: 0;
-        }
-        
-        .menu-toggle[aria-expanded="true"] .hamburger::after {
-            transform: rotate(-45deg);
-            top: 0;
-        }
-        
-        /* ====== Blog Hero ====== */
+
+        /* Blog Section Styles */
         .blog-hero {
+            position: relative;
             min-height: 60vh;
+            overflow: hidden;
             display: flex;
             align-items: center;
-            padding: 8rem 0 4rem;
-            position: relative;
+            justify-content: center;
+            padding: 120px 5% 80px;
             isolation: isolate;
             text-align: center;
         }
-        
-        .blog-hero::before {
-            content: '';
+
+        .blog-hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('/images/blog-hero-bg.jpg') center/cover no-repeat;
+            background: url('images/blog-hero-bg.png') center center no-repeat;
+            background-size: cover;
+            background-position: center;
             z-index: -1;
-            opacity: 0.7;
+            opacity: 1;
+            filter: brightness(1.1) contrast(1.1) saturate(1.05);
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: rgba(6, 30, 34, 0.6);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(58, 227, 248, 0.2);
+
+        .blog-hero-overlay {
+            z-index: 2;
+            position: relative;
             backdrop-filter: blur(4px);
-            animation: fadeInUp 0.8s ease-out;
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            max-width: 800px;
+            padding: 40px;
+            animation: fadeInUp 1s ease-out;
+            border: 1px solid rgba(58, 227, 248, 0.08);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
         }
-        
+
         .blog-hero h1 {
+            font-family: 'Cinzel', serif;
             font-size: clamp(2rem, 4vw, 3.5rem);
             margin-bottom: 1.5rem;
+            line-height: 1.3;
+            color: var(--glow-white);
+            text-shadow: var(--hero-text-glow);
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
-        
-        .hero-subtitle {
+
+        .blog-hero .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
             font-size: 1.2rem;
             color: #C7E9E9;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
-        
-        .search-box {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .search-box form {
-            position: relative;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            padding-right: 3rem;
-            border-radius: 50px;
-            border: 1px solid rgba(58, 227, 248, 0.3);
-            background: rgba(0, 0, 0, 0.3);
-            color: var(--glow-white);
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        .search-box input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .search-box button {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--glow-white);
-            cursor: pointer;
-        }
-        
-        /* ====== Blog Navigation ====== */
-        .blog-categories {
+
+        /* Blog Navigation */
+        .blog-nav {
             background: rgba(6, 30, 34, 0.7);
-            padding: 1rem 0;
+            padding: 20px 5%;
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
             position: sticky;
             top: 80px;
             z-index: 900;
-            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
-            backdrop-filter: blur(6px);
         }
-        
-        .blog-categories ul {
+
+        .blog-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            list-style: none;
+            gap: 15px;
+            justify-content: center;
         }
-        
-        .blog-categories a {
-            display: block;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
+
+        .blog-nav-btn {
             background: rgba(0, 0, 0, 0.15);
             color: var(--glow-white);
             border: 1px solid rgba(58, 227, 248, 0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
             font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-speed);
         }
-        
-        .blog-categories a:hover,
-        .blog-categories a.active {
+
+        .blog-nav-btn:hover, .blog-nav-btn.active {
             background: rgba(58, 227, 248, 0.15);
             color: var(--aqua-glow);
             border-color: var(--aqua-glow);
+            box-shadow: 0 0 10px rgba(58, 227, 248, 0.2);
         }
-        
-        /* ====== Featured Posts ====== */
-        .featured-posts {
-            padding: 4rem 0;
+
+        /* Tag Filter */
+        .tag-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+
+        .tag-btn {
+            background: rgba(0, 0, 0, 0.15);
+            color: var(--glow-white);
+            border: 1px solid rgba(233, 79, 61, 0.3);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .tag-btn:hover, .tag-btn.active {
+            background: rgba(233, 79, 61, 0.15);
+            color: var(--burnt-coral);
+            border-color: var(--burnt-coral);
+            box-shadow: 0 0 8px rgba(233, 79, 61, 0.2);
+        }
+
+        /* Popular Section */
+        .popular-section {
+            padding: 60px 5%;
             background: rgba(6, 30, 34, 0.4);
             border-top: 1px solid rgba(58, 227, 248, 0.1);
             border-bottom: 1px solid rgba(58, 227, 248, 0.1);
         }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+        .popular-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .popular-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .popular-card {
+            background: rgba(6, 30, 34, 0.6);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            transition: all var(--transition-speed);
+        }
+
+        .popular-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(58, 227, 248, 0.2);
+            border-color: var(--aqua-glow);
+        }
+
+        .popular-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .popular-card .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--muted-aqua);
+            margin-bottom: 15px;
+        }
+
+        .popular-card .views {
+            color: var(--aqua-glow);
+            font-weight: 600;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
         }
-        
-        .section-title::after {
-            content: '';
+
+        .blog-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .blog-section h2::after {
+            content: "";
             position: absolute;
-            bottom: -1rem;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
             background: var(--burnt-coral);
+            box-shadow: 0 0 10px var(--aqua-glow);
         }
-        
-        .featured-grid {
+
+        .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
         }
-        
-        .featured-card {
-            background: rgba(6, 30, 34, 0.6);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid rgba(58, 227, 248, 0.2);
-            transition: var(--transition-speed);
-        }
-        
-        .featured-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(58, 227, 248, 0.2);
-            border-color: var(--aqua-glow);
-        }
-        
-        .card-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .featured-card:hover .card-image img {
-            transform: scale(1.05);
-        }
-        
-        .card-content {
-            padding: 1.5rem;
-        }
-        
-        .meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: var(--muted-aqua);
-            margin-bottom: 1rem;
-        }
-        
-        .category {
-            background: rgba(58, 227, 248, 0.1);
-            color: var(--aqua-glow);
-            padding: 0.2rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-        }
-        
-        .featured-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .featured-card p {
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .read-more {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border-radius: var(--border-radius);
-            background: rgba(233, 79, 61, 0.1);
-            color: #FFDED3;
-            border: 1px solid rgba(233, 79, 61, 0.6);
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: var(--transition-speed);
-        }
-        
-        .read-more:hover {
-            background: var(--burnt-coral);
-            color: white;
-            box-shadow: 0 0 15px rgba(233, 79, 61, 0.4);
-        }
-        
-        /* ====== Main Blog Content ====== */
-        .blog-container {
-            padding: 4rem 0;
-        }
-        
-        .blog-posts {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        .tag-filter {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .tag-filter span {
-            color: var(--glow-white);
-            font-size: 0.9rem;
-        }
-        
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .tag-filter a {
-            display: block;
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            background: rgba(233, 79, 61, 0.1);
-            color: var(--glow-white);
-            border: 1px solid rgba(233, 79, 61, 0.3);
-            font-size: 0.8rem;
-        }
-        
-        .tag-filter a:hover,
-        .tag-filter a.active {
-            background: rgba(233, 79, 61, 0.2);
-            color: var(--burnt-coral);
-            border-color: var(--burnt-coral);
-        }
-        
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .post-card {
+
+        .blog-card {
             background: rgba(6, 30, 34, 0.55);
-            border-radius: var(--border-radius);
+            border-radius: 15px;
             overflow: hidden;
+            transition: all var(--transition-speed);
             border: 1px solid rgba(58, 227, 248, 0.2);
-            transition: var(--transition-speed);
+            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.15), 0 0 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(6px);
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards;
         }
-        
-        .post-card:nth-child(1) { animation-delay: 0.1s; }
-        .post-card:nth-child(2) { animation-delay: 0.2s; }
-        .post-card:nth-child(3) { animation-delay: 0.3s; }
-        .post-card:nth-child(4) { animation-delay: 0.4s; }
-        
-        .post-card:hover {
+
+        .blog-card:nth-child(1) { animation-delay: 0.2s; }
+        .blog-card:nth-child(2) { animation-delay: 0.4s; }
+        .blog-card:nth-child(3) { animation-delay: 0.6s; }
+        .blog-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .blog-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(58, 227, 248, 0.25), 0 0 30px rgba(233, 79, 61, 0.2);
             border-color: rgba(58, 227, 248, 0.35);
             background: rgba(6, 30, 34, 0.75);
-            box-shadow: 0 10px 25px rgba(58, 227, 248, 0.2);
         }
-        
-        .post-image {
-            height: 180px;
-            overflow: hidden;
-        }
-        
-        .post-image img {
+
+        .blog-card img {
             width: 100%;
-            height: 100%;
+            height: 220px;
             object-fit: cover;
+            border-bottom: 1px solid rgba(58, 227, 248, 0.2);
             transition: transform 0.5s ease;
         }
-        
-        .post-card:hover .post-image img {
-            transform: scale(1.05);
+
+        .blog-card:hover img {
+            transform: scale(1.03);
         }
-        
-        .post-content {
-            padding: 1.5rem;
+
+        .blog-content {
+            padding: 25px;
         }
-        
-        .post-meta {
+
+        .blog-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--glow-white);
+            transition: color var(--transition-speed);
+            text-shadow: var(--text-glow);
+        }
+
+        .blog-card:hover h3 {
+            color: var(--aqua-glow);
+        }
+
+        .blog-card p {
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .blog-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--muted-aqua);
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            margin-bottom: 15px;
         }
-        
-        .post-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .post-card p {
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .post-tags {
+
+        .blog-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 8px;
+            margin-bottom: 20px;
         }
-        
-        .post-tags a {
-            display: block;
-            padding: 0.2rem 0.8rem;
-            border-radius: 50px;
+
+        .blog-tag {
             background: rgba(58, 227, 248, 0.1);
             color: var(--aqua-glow);
+            padding: 4px 10px;
+            border-radius: 12px;
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
-        .post-tags a:hover {
-            background: rgba(58, 227, 248, 0.2);
-        }
-        
-        .coming-soon {
-            color: var(--burnt-coral);
-            font-style: italic;
-        }
-        
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-        
-        .pagination a,
-        .pagination span {
+
+        .cta-button {
+            background: rgba(0, 0, 0, 0.15);
+            color: #FFDED3;
+            border-radius: 12px;
+            padding: 12px 25px;
+            font-weight: bold;
+            border: 1px solid rgba(233, 79, 61, 0.6);
+            box-shadow: 0 0 10px rgba(233, 79, 61, 0.2), 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
             display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            color: var(--glow-white);
-        }
-        
-        .pagination a {
-            background: rgba(58, 227, 248, 0.1);
-            border: 1px solid rgba(58, 227, 248, 0.3);
-        }
-        
-        .pagination a:hover {
-            background: rgba(58, 227, 248, 0.2);
-        }
-        
-        .pagination .current {
-            background: var(--aqua-glow);
-            color: var(--charcoal-black);
-        }
-        
-        .pagination .dots {
-            pointer-events: none;
-        }
-        
-        /* ====== Sidebar ====== */
-        .blog-sidebar {
-            margin-top: 3rem;
-        }
-        
-        .sidebar-widget {
-            background: rgba(6, 30, 34, 0.6);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(58, 227, 248, 0.2);
-        }
-        
-        .sidebar-widget h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .sidebar-widget h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--burnt-coral);
-        }
-        
-        .sidebar-widget p {
-            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            text-shadow: 0 0 8px rgba(233, 79, 61, 0.3);
             font-size: 0.9rem;
-            margin-bottom: 1rem;
         }
-        
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .tag-cloud a {
-            display: block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            background: rgba(58, 227, 248, 0.1);
-            color: var(--aqua-glow);
-            font-size: 0.8rem;
-        }
-        
-        .tag-cloud a:hover {
-            background: rgba(58, 227, 248, 0.2);
-        }
-        
-        .newsletter-form {
-            display: grid;
-            gap: 0.8rem;
-        }
-        
-        .newsletter-form input {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(58, 227, 248, 0.3);
-            background: rgba(0, 0, 0, 0.3);
-            color: var(--glow-white);
-            font-family: inherit;
-        }
-        
-        .newsletter-form button {
-            padding: 0.8rem;
-            border-radius: var(--border-radius);
+
+        .cta-button:hover {
             background: var(--burnt-coral);
             color: white;
-            border: none;
-            font-family: 'Cinzel', serif;
-            cursor: pointer;
-            transition: var(--transition-speed);
+            box-shadow: 0 0 25px var(--burnt-coral), 0 0 15px rgba(233, 79, 61, 0.6);
+            transform: translateY(-2px);
+            text-shadow: none;
         }
-        
-        .newsletter-form button:hover {
-            background: #d14534;
+
+        .separator {
+            width: 100%;
+            border-top: 1px solid transparent;
+            position: relative;
+            margin: 40px 0;
         }
-        
-        .docs-list {
-            list-style: none;
+
+        .separator::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 30%;
+            border-top: 2px solid var(--aqua-glow);
         }
-        
-        .docs-list li {
-            margin-bottom: 0.8rem;
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 30px;
+            border: 2px solid var(--burnt-coral);
+            border-radius: 20px;
+            opacity: 0.5;
+            animation: scrollPulse 2.5s infinite ease-in-out;
         }
-        
-        .docs-list a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--glow-white);
-        }
-        
-        .docs-list a:hover {
-            color: var(--aqua-glow);
-        }
-        
-        .docs-list i {
-            width: 1.2rem;
-            text-align: center;
-        }
-        
-        /* ====== Newsletter CTA ====== */
-        .newsletter-cta {
-            padding: 4rem 0;
+
+        /* Documentation Section */
+        .docs-section {
+            padding: 80px 5%;
             background: rgba(6, 30, 34, 0.4);
             border-top: 1px solid rgba(58, 227, 248, 0.1);
             border-bottom: 1px solid rgba(58, 227, 248, 0.1);
         }
-        
-        .cta-content {
-            max-width: 600px;
+
+        .docs-container {
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
-        
-        .newsletter-cta h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            margin-bottom: 1rem;
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
-        
-        .newsletter-cta p {
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 2rem;
-            font-size: 1rem;
+
+        .docs-card {
+            background: rgba(6, 30, 34, 0.6);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            transition: all var(--transition-speed);
         }
-        
-        .cta-form {
+
+        .docs-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(58, 227, 248, 0.2);
+            border-color: var(--aqua-glow);
+        }
+
+        .docs-card h3 {
             display: flex;
-            max-width: 500px;
-            margin: 0 auto;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
         }
-        
-        .cta-form input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            border: 1px solid rgba(58, 227, 248, 0.3);
-            background: rgba(0, 0, 0, 0.3);
-            color: var(--glow-white);
-            font-family: inherit;
+
+        .docs-card h3 i {
+            color: var(--aqua-glow);
         }
-        
-        .cta-form button {
-            padding: 0 1.5rem;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            background: var(--burnt-coral);
-            color: white;
-            border: none;
-            font-family: 'Cinzel', serif;
-            cursor: pointer;
-            transition: var(--transition-speed);
+
+        .docs-card p {
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
-        
-        .cta-form button:hover {
-            background: #d14534;
-        }
-        
-        /* ====== Footer ====== */
-        .site-footer {
-            padding: 4rem 0 2rem;
+
+        footer {
+            padding: 80px 5% 40px;
             background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
             color: var(--muted-aqua);
             position: relative;
+            overflow: hidden;
         }
-        
-        .site-footer::before {
+
+        footer::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('/images/noise.png');
+            background: url('images/noise.png');
             opacity: 0.1;
             pointer-events: none;
         }
-        
-        .footer-grid {
+
+        .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
-            padding-bottom: 0.5rem;
+            z-index: 2;
         }
-        
-        .footer-col h3::after {
-            content: '';
+
+        .footer-column h3 {
+            color: var(--glow-white);
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
@@ -885,108 +643,41 @@
             height: 2px;
             background: var(--burnt-coral);
         }
-        
-        .footer-col p {
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-col a {
+
+        .footer-column a {
+            display: block;
+            margin-bottom: 10px;
             color: var(--muted-aqua);
-            font-size: 0.9rem;
+            transition: all var(--transition-speed);
+            font-size: clamp(0.85rem, 1vw, 1rem);
         }
-        
-        .footer-col a:hover {
+
+        .footer-column a:hover {
             color: var(--burnt-coral);
+            padding-left: 5px;
         }
-        
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .footer-social a {
-            color: var(--glow-white);
-            font-size: 1.2rem;
-        }
-        
-        .footer-social a:hover {
-            color: var(--aqua-glow);
-        }
-        
+
         .footer-bottom {
-            padding-top: 2rem;
+            margin-top: 60px;
+            padding-top: 30px;
             border-top: 1px solid rgba(58, 227, 248, 0.2);
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
-        
-        .footer-bottom p {
-            color: var(--glow-white);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        
+
         .legal-links {
             display: flex;
             justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
             flex-wrap: wrap;
-            gap: 1rem;
         }
-        
-        .legal-links a {
-            color: var(--muted-aqua);
-            font-size: 0.8rem;
-        }
-        
-        .legal-links a:hover {
-            color: var(--burnt-coral);
-        }
-        
-        /* ====== Back to Top Button ====== */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: rgba(58, 227, 248, 0.2);
-            color: var(--glow-white);
-            border: 1px solid rgba(58, 227, 248, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition-speed);
-            z-index: 999;
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: rgba(58, 227, 248, 0.3);
-        }
-        
-        /* ====== Easter Egg ====== */
+
         .easter-egg {
             position: fixed;
-            bottom: 1rem;
-            right: 1rem;
+            bottom: 20px;
+            right: 20px;
             font-size: 1.5rem;
             cursor: pointer;
             opacity: 0.3;
@@ -994,19 +685,36 @@
             z-index: 1000;
             color: var(--burnt-coral);
         }
-        
+
         .easter-egg:hover {
             opacity: 1;
             animation: pulse 2s infinite;
         }
-        
-        /* ====== Animations ====== */
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         @keyframes pulse-glow {
             0% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
             50% { opacity: 1; text-shadow: 0 0 20px var(--aqua-glow); }
             100% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1017,41 +725,38 @@
                 transform: translateY(0);
             }
         }
-        
+
+        @keyframes scrollPulse {
+            0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+            50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+        }
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% { box-shadow: 0 0 0px var(--aqua-glow); }
+            50% { box-shadow: 0 0 15px var(--aqua-glow); }
+            100% { box-shadow: 0 0 0px var(--aqua-glow); }
         }
-        
-        /* ====== Responsive Styles ====== */
-        @media (min-width: 768px) {
-            .blog-container {
-                display: grid;
-                grid-template-columns: 1fr 300px;
-                gap: 3rem;
-                align-items: start;
-            }
-            
-            .blog-sidebar {
-                margin-top: 0;
-                position: sticky;
-                top: 120px;
-            }
-        }
-        
+
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            .primary-nav ul {
-                gap: 1rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
+            .blog-hero {
+                min-height: 50vh;
+                padding: 100px 5% 60px;
             }
             
-            .primary-nav ul {
+            .blog-hero-overlay {
+                max-width: 90%;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 5%;
+            }
+            
+            nav ul {
                 position: fixed;
                 top: 80px;
                 left: -100%;
@@ -1061,409 +766,372 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                padding-top: 2rem;
+                padding-top: 40px;
                 transition: all 0.4s ease;
                 backdrop-filter: blur(15px);
-                gap: 1.5rem;
+                gap: 20px;
             }
             
-            .primary-nav ul.active {
+            nav ul.active {
                 left: 0;
             }
             
-            .social-links {
+            nav ul li a {
+                padding: 12px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .social-icons {
                 display: none;
             }
             
-            .blog-hero {
-                min-height: 50vh;
-                padding: 7rem 0 3rem;
+            .blog-grid {
+                grid-template-columns: 1fr;
             }
             
-            .hero-content {
-                padding: 1.5rem;
+            .blog-card {
+                padding: 20px;
             }
             
-            .blog-categories {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-nav {
                 top: 70px;
             }
+
+            .popular-posts, .docs-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        
-        @media (max-width: 576px) {
-            .cta-form {
+
+        @media (max-width: 480px) {
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .blog-hero .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .legal-links {
                 flex-direction: column;
+                gap: 10px;
             }
-            
-            .cta-form input {
-                border-radius: var(--border-radius);
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.85rem;
             }
-            
-            .cta-form button {
-                border-radius: var(--border-radius);
-                padding: 0.8rem;
+
+            .blog-nav-container {
+                gap: 8px;
             }
-            
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .posts-grid {
-                grid-template-columns: 1fr;
+
+            .blog-nav-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
             }
         }
-    </style>
+
+        @media (hover: none) {
+            a, button, .menu-toggle {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .cta-button {
+                padding: 16px 32px;
+            }
+            
+            nav ul li a {
+                padding: 15px 20px;
+            }
+        }
+</style>
+    
 </head>
 <body>
-    <!-- Skip to Content Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container header-container">
-            <a href="/" class="logo" aria-label="Tempest Labs Home">
-                Tempest <span>Labs</span>
-            </a>
-            
-            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            
-            <nav class="primary-nav">
-                <ul>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/products">Products</a></li>
-                    <li><a href="/blog" aria-current="page">Blog</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/turkish" hreflang="tr">Türkçe</a></li>
-                </ul>
-            </nav>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/company/tempestlabsofficial/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/tempestlabsofficial/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
+    <!-- Header Section -->
+    <header>
+        <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
+                <li><a href="products.html" aria-label="View our products">Products</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
+                <li><a href="turkish/index.html" aria-label="View in Turkish">Türkçe</a></li>
+            </ul>
+        </nav>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
         </div>
     </header>
-    
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="blog-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Tempest Labs Blog</h1>
-                    <p class="subtitle">Insights on calm software design, mindful productivity, and building tools that respect your attention.</p>
-                    <div class="search-box">
-                        <form role="search" method="get" action="/search">
-                            <label for="blog-search" class="sr-only">Search blog posts</label>
-                            <input type="search" id="blog-search" placeholder="Search articles..." name="s">
-                            <button type="submit" aria-label="Search">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </form>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="blog-hero-bg"></div>
+        <div class="blog-hero-overlay">
+            <h1>Tempest Labs Blog</h1>
+            <p class="hero-subtitle">Insights on calm software design, mindful productivity, and building tools that respect your attention.</p>
+        </div>
+    </section>
+
+    <!-- Blog Navigation -->
+    <div class="blog-nav">
+        <div class="blog-nav-container">
+            <button class="blog-nav-btn active" data-filter="all">All Articles</button>
+            <button class="blog-nav-btn" data-filter="design">Design Philosophy</button>
+            <button class="blog-nav-btn" data-filter="business">Business Model</button>
+            <button class="blog-nav-btn" data-filter="tutorial">Tutorials</button>
+            <button class="blog-nav-btn" data-filter="documentation">Documentation</button>
+            <button class="blog-nav-btn" data-filter="case-study">Case Studies</button>
+        </div>
+    </div>
+
+    <!-- Popular Posts Section -->
+    <section class="popular-section">
+        <div class="popular-container">
+            <h2>Most Popular Reads</h2>
+            <div class="popular-posts">
+                <div class="popular-card">
+                    <h3>Why We Build One-Time Purchase Apps</h3>
+                    <div class="meta">
+                        <span class="date">May 15, 2024</span>
+                        <span class="views">1.2K views</span>
                     </div>
+                    <p>No subscriptions. No stress. Just tools that respect your time and wallet.</p>
+                    <a href="https://tempestlabs.space/blog/subscriptions.html" class="cta-button">Read More</a>
                 </div>
-            </div>
-        </section>
-        
-        <!-- Blog Navigation -->
-        <nav class="blog-categories">
-            <div class="container">
-                <ul>
-                    <li><a href="#all" class="active" data-filter="all">All Articles</a></li>
-                    <li><a href="#design" data-filter="design">Design</a></li>
-                    <li><a href="#business" data-filter="business">Business</a></li>
-                    <li><a href="#tutorials" data-filter="tutorial">Tutorials</a></li>
-                    <li><a href="#case-studies" data-filter="case-study">Case Studies</a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <!-- Featured Posts -->
-        <section class="featured-posts">
-            <div class="container">
-                <h2 class="section-title">Featured Articles</h2>
-                <div class="featured-grid">
-                    <article class="featured-card">
-                        <div class="card-image">
-                            <img src="/images/blog1.png" alt="No subscriptions. No stress. Just tools that respect your time and wallet." loading="lazy">
-                        </div>
-                        <div class="card-content">
-                            <div class="meta">
-                                <span class="category">Business</span>
-                                <time datetime="2024-05-15">May 15, 2024</time>
-                            </div>
-                            <h3><a href="/blog/why-one-time-purchase">Why We Build One-Time Purchase Apps</a></h3>
-                            <p>No subscriptions. No stress. Just tools that respect your time and wallet.</p>
-                            <a href="/blog/why-one-time-purchase" class="read-more">Read Article</a>
-                        </div>
-                    </article>
-                    
-                    <article class="featured-card">
-                        <div class="card-image">
-                            <img src="/images/blog/featured2.jpg" alt="We don't want to be part of the digital noise." loading="lazy">
-                        </div>
-                        <div class="card-content">
-                            <div class="meta">
-                                <span class="category">Design</span>
-                                <time datetime="2024-04-28">April 28, 2024</time>
-                            </div>
-                            <h3><a href="/blog/anti-overwhelm-manifesto">The Anti-Overwhelm Tech Manifesto</a></h3>
-                            <p>We don't want to be part of the digital noise. We want to be the space between notifications.</p>
-                            <a href="/blog/anti-overwhelm-manifesto" class="read-more">Read Article</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Main Blog Content -->
-        <div class="blog-container">
-            <div class="container">
-                <!-- Blog Posts Grid -->
-                <section class="blog-posts">
-                    <h2 class="section-title">Latest Articles</h2>
-                    
-                    <div class="tag-filter">
-                        <span>Filter by tag:</span>
-                        <div class="tags">
-                            <a href="#all" class="active" data-tag="all">All</a>
-                            <a href="#minimalism" data-tag="minimalism">Minimalism</a>
-                            <a href="#pricing" data-tag="pricing">Pricing</a>
-                            <a href="#ui-design" data-tag="ui-design">UI Design</a>
-                            <a href="#focus" data-tag="focus">Focus</a>
-                        </div>
-                    </div>
-                    
-                    <div class="posts-grid">
-                        <!-- Article 1 -->
-                        <article class="post-card" data-category="business" data-tags="pricing philosophy">
-                            <div class="post-image">
-                                <img src="/images/blog/post1.jpg" alt="No subscriptions. No stress." loading="lazy">
-                            </div>
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span class="category">Business</span>
-                                    <time datetime="2024-05-15">May 15, 2024</time>
-                                    <span class="read-time">8 min read</span>
-                                </div>
-                                <h3><a href="/blog/why-one-time-purchase">Why We Build One-Time Purchase Apps</a></h3>
-                                <p>No subscriptions. No stress. Just tools that respect your time and wallet.</p>
-                                <div class="post-tags">
-                                    <a href="/blog/tag/pricing">Pricing</a>
-                                    <a href="/blog/tag/philosophy">Philosophy</a>
-                                </div>
-                            </div>
-                        </article>
-                        
-                        <!-- Article 2 -->
-                        <article class="post-card" data-category="design" data-tags="minimalism ui-design focus">
-                            <div class="post-image">
-                                <img src="/images/blog/post2.jpg" alt="Anti-overwhelm design" loading="lazy">
-                            </div>
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span class="category">Design</span>
-                                    <time datetime="2024-04-28">April 28, 2024</time>
-                                    <span class="read-time">12 min read</span>
-                                </div>
-                                <h3><a href="/blog/anti-overwhelm-manifesto">The Anti-Overwhelm Tech Manifesto</a></h3>
-                                <p>We don't want to be part of the digital noise. We want to be the space between notifications.</p>
-                                <div class="post-tags">
-                                    <a href="/blog/tag/minimalism">Minimalism</a>
-                                    <a href="/blog/tag/ui-design">UI Design</a>
-                                    <a href="/blog/tag/focus">Focus</a>
-                                </div>
-                            </div>
-                        </article>
-                        
-                        <!-- Article 3 -->
-                        <article class="post-card" data-category="business" data-tags="pricing sustainability">
-                            <div class="post-image">
-                                <img src="/images/blog/post3.jpg" alt="Subscription fatigue" loading="lazy">
-                            </div>
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span class="category">Business</span>
-                                    <time datetime="2024-06-03">June 3, 2024</time>
-                                    <span class="read-time">10 min read</span>
-                                </div>
-                                <h3><a href="/blog/subscription-fatigue">Subscription Fatigue is Real</a></h3>
-                                <p>You shouldn't need a budget spreadsheet just to manage your apps.</p>
-                                <div class="post-tags">
-                                    <a href="/blog/tag/pricing">Pricing</a>
-                                    <a href="/blog/tag/sustainability">Sustainability</a>
-                                </div>
-                            </div>
-                        </article>
-                        
-                        <!-- Article 4 -->
-                        <article class="post-card" data-category="design" data-tags="ui-design focus philosophy">
-                            <div class="post-image">
-                                <img src="/images/blog/post4.jpg" alt="Designing for calm" loading="lazy">
-                            </div>
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span class="category">Design</span>
-                                    <span class="coming-soon">Coming Soon</span>
-                                </div>
-                                <h3>Designing for Calm</h3>
-                                <p>How we create interfaces that reduce cognitive load and promote focus.</p>
-                                <div class="post-tags">
-                                    <a href="/blog/tag/ui-design">UI Design</a>
-                                    <a href="/blog/tag/focus">Focus</a>
-                                    <a href="/blog/tag/philosophy">Philosophy</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    
-                    <div class="pagination">
-                        <a href="/blog/page/1" class="prev" aria-label="Previous page">Previous</a>
-                        <span class="current">1</span>
-                        <a href="/blog/page/2" aria-label="Page 2">2</a>
-                        <a href="/blog/page/3" aria-label="Page 3">3</a>
-                        <span class="dots">...</span>
-                        <a href="/blog/page/5" aria-label="Page 5">5</a>
-                        <a href="/blog/page/2" class="next" aria-label="Next page">Next</a>
-                    </div>
-                </section>
                 
-                <!-- Sidebar -->
-                <aside class="blog-sidebar">
-                    <div class="sidebar-widget">
-                        <h3>About the Blog</h3>
-                        <p>Our blog explores the intersection of thoughtful design, sustainable business models, and technology that serves rather than distracts.</p>
+                <div class="popular-card">
+                    <h3>The Anti-Overwhelm Tech Manifesto</h3>
+                    <div class="meta">
+                        <span class="date">April 28, 2024</span>
+                        <span class="views">890 views</span>
                     </div>
-                    
-                    <div class="sidebar-widget">
-                        <h3>Popular Tags</h3>
-                        <div class="tag-cloud">
-                            <a href="/blog/tag/minimalism">Minimalism</a>
-                            <a href="/blog/tag/pricing">Pricing</a>
-                            <a href="/blog/tag/ui-design">UI Design</a>
-                            <a href="/blog/tag/focus">Focus</a>
-                            <a href="/blog/tag/philosophy">Philosophy</a>
-                            <a href="/blog/tag/sustainability">Sustainability</a>
-                        </div>
+                    <p>We don't want to be part of the digital noise. We want to be the space between notifications.</p>
+                    <a href="https://tempestlabs.space/blog/tech.html" class="cta-button">Read More</a>
+                </div>
+                
+                <div class="popular-card">
+                    <h3>Subscription Fatigue is Real</h3>
+                    <div class="meta">
+                        <span class="date">June 3, 2024</span>
+                        <span class="views">1.5K views</span>
                     </div>
-                    
-                    <div class="sidebar-widget newsletter">
-                        <h3>Get Updates</h3>
-                        <p>Receive our latest articles on calm software design directly to your inbox.</p>
-                        <form class="newsletter-form">
-                            <label for="email" class="sr-only">Email Address</label>
-                            <input type="email" id="email" placeholder="Your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                    
-                    <div class="sidebar-widget">
-                        <h3>Documentation</h3>
-                        <ul class="docs-list">
-                            <li><a href="/docs/intuiva-guide"><i class="fas fa-book"></i> Intuiva User Guide</a></li>
-                            <li><a href="/docs/cabinet-tutorials"><i class="fas fa-video"></i> Cabinet of Selves Tutorials</a></li>
-                            <li><a href="/docs/funnelflow-faq"><i class="fas fa-question-circle"></i> FunnelFlow FAQ</a></li>
-                        </ul>
-                    </div>
-                </aside>
+                    <p>You shouldn't need a budget spreadsheet just to manage your apps.</p>
+                    <a href="https://tempestlabs.space/blog/apps.html" class="cta-button">Read More</a>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-section">
+        <h2>Latest Writings</h2>
         
-        <!-- Newsletter CTA -->
-        <section class="newsletter-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Stay Updated</h2>
-                    <p>Subscribe to receive our latest articles on calm software design and mindful productivity.</p>
-                    <form class="cta-form">
-                        <label for="cta-email" class="sr-only">Email Address</label>
-                        <input type="email" id="cta-email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Tempest Labs</h3>
-                    <p>Creating tools for deeper thinking and clearer vision.</p>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/company/tempestlabsofficial/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/tempestlabsofficial/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="tag-filter">
+            <button class="tag-btn active" data-tag="all">All Tags</button>
+            <button class="tag-btn" data-tag="minimalism">Minimalism</button>
+            <button class="tag-btn" data-tag="pricing">Pricing</button>
+            <button class="tag-btn" data-tag="ui-design">UI Design</button>
+            <button class="tag-btn" data-tag="focus">Focus</button>
+            <button class="tag-btn" data-tag="philosophy">Philosophy</button>
+            <button class="tag-btn" data-tag="sustainability">Sustainability</button>
+        </div>
+        
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <a href="https://tempestlabs.space/blog/subscriptions.html" class="blog-card" data-category="business" data-tags="pricing philosophy">
+                <img src="images/blog1.jpg" alt="No subscriptions. No stress. Just tools that respect your time and wallet.">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>May 15, 2024</span>
+                        <span>8 min read</span>
                     </div>
+                    <h3>Why We Build One-Time Purchase Apps</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Pricing</span>
+                        <span class="blog-tag">Philosophy</span>
+                    </div>
+                    <p>No subscriptions. No stress. Just tools that respect your time and wallet.</p>
+                    <span class="cta-button">Read More</span>
+                </div>
+            </a>
+            
+            <!-- Blog Post 2 -->
+            <a href="https://tempestlabs.space/blog/tech.html" class="blog-card" data-category="design" data-tags="minimalism ui-design focus">
+                <img src="images/blog2.png" alt="We don't want to be part of the digital noise. We want to be the space between notifications.">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>April 28, 2024</span>
+                        <span>12 min read</span>
+                    </div>
+                    <h3>The Anti-Overwhelm Tech Manifesto</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Minimalism</span>
+                        <span class="blog-tag">UI Design</span>
+                        <span class="blog-tag">Focus</span>
+                    </div>
+                    <p>We don't want to be part of the digital noise. We want to be the space between notifications.</p>
+                    <span class="cta-button">Read More</span>
+                </div>
+            </a>
+            
+            <!-- Blog Post 3 -->
+            <a href="https://tempestlabs.space/blog/apps.html" class="blog-card" data-category="business" data-tags="pricing sustainability">
+                <img src="images/blog3.png" alt="Thoughtful design that puts people first.">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>June 3, 2024</span>
+                        <span>10 min read</span>
+                    </div>
+                    <h3>Subscription Fatigue is Real</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Pricing</span>
+                        <span class="blog-tag">Sustainability</span>
+                    </div>
+                    <p>You shouldn't need a budget spreadsheet just to manage your apps.</p>
+                    <span class="cta-button">Read More</span>
+                </div>
+            </a>
+            
+            <!-- Blog Post 4 -->
+            <a href="#" class="blog-card" data-category="design" data-tags="ui-design focus philosophy">
+                <img src="images/blog4.jpg" alt="The philosophy behind our design choices">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <span>-</span>
+                    </div>
+                    <h3>Designing for Calm</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">UI Design</span>
+                        <span class="blog-tag">Focus</span>
+                        <span class="blog-tag">Philosophy</span>
+                    </div>
+                    <p>How we create interfaces that reduce cognitive load and promote focus.</p>
+                    <span class="cta-button">Coming Soon</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="docs-section">
+        <div class="docs-container">
+            <h2>Guides & Documentation</h2>
+            <p class="hero-subtitle" style="text-align: center; margin-bottom: 40px;">Learn how to get the most from our products with these detailed guides.</p>
+            
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h3><i class="fas fa-book-open"></i> Intuiva User Guide</h3>
+                    <p>Complete documentation for all Intuiva features and settings to help you master our productivity suite.</p>
+                    <a href="docs/intuiva-guide.html" class="cta-button">View Guide</a>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="/products/intuiva">Intuiva</a></li>
-                        <li><a href="/products/cabinet-of-selves">Cabinet of Selves</a></li>
-                        <li><a href="/products/funnelflow">FunnelFlow</a></li>
-                    </ul>
+                <div class="docs-card">
+                    <h3><i class="fas fa-video"></i> Cabinet of Selves Tutorials</h3>
+                    <p>Video walkthroughs showing how to set up and use Cabinet of Selves for personal reflection.</p>
+                    <a href="docs/cabinet-tutorials.html" class="cta-button">Watch Videos</a>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/docs">Documentation</a></li>
-                        <li><a href="/support">Support</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                    </ul>
+                <div class="docs-card">
+                    <h3><i class="fas fa-question-circle"></i> FunnelFlow FAQ</h3>
+                    <p>Answers to common questions about installation, customization, and troubleshooting FunnelFlow.</p>
+                    <a href="docs/funnelflow-faq.html" class="cta-button">Read FAQ</a>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
-                <div class="legal-links">
-                    <a href="/legal/privacy">Privacy Policy</a>
-                    <a href="/legal/terms">Terms of Service</a>
-                    <a href="/legal/cookies">Cookie Policy</a>
-                </div>
+        </div>
+    </section>
+
+    <!-- Easter Egg -->
+    <span class="easter-egg" title="Silence is the real OS.">🜂</span>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                 <h3><a href="about.html" aria-label="About Tempest Labs">About</a></h3>
+                <p>Creating tools for deeper thinking and clearer vision.</p>
+            </div>
+            <div class="footer-column">
+                 <h3><a href="products.html" aria-label="About Tempest Labs">Products</a></h3>
+                <a href="product-intuiva.html">Intuiva</a>
+                <a href="product-cabinet.html">Cabinet of Selves</a>
+                <a href="product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                 <h3><a href="contact.html" aria-label="About Tempest Labs">Connect</a></h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="legal/membership-agreement.html">Membership Agreement</a>
+                <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
+                <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
             </div>
         </div>
     </footer>
-    
-    <!-- Back to Top Button -->
-    <button class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- Easter Egg -->
-    <div class="easter-egg" title="Silence is the real OS.">🜂</div>
-    
-    <!-- JavaScript -->
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Tempest Labs Blog",
+      "url": "https://tempestlabs.com/blog",
+      "description": "Insights on building calm, focused software that respects your time and attention",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tempest Labs",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tempestlabs.com/images/tempest.png"
+        }
+      }
+    }
+    </script>
+
     <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const primaryNav = document.querySelector('.primary-nav ul');
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
+            
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+        }
         
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            primaryNav.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-        
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.site-header');
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
@@ -1471,48 +1139,44 @@
             }
         });
         
-        // Back to Top Button
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.blog-card, .popular-card, .docs-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.animation = `fadeInUp 0.8s ease forwards`;
+                }
             });
-        });
-        
-        // Easter Egg Interaction
-        const easterEgg = document.querySelector('.easter-egg');
-        if (easterEgg) {
-            easterEgg.addEventListener('click', () => {
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Easter egg interaction
+        const egg = document.querySelector('.easter-egg');
+        if (egg) {
+            egg.addEventListener('click', function() {
                 alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
             });
         }
-        
-        // Blog Category Filtering
-        const categoryLinks = document.querySelectorAll('.blog-categories a');
-        const postCards = document.querySelectorAll('.post-card');
-        
-        categoryLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
+
+        // Blog category filtering
+        const categoryButtons = document.querySelectorAll('.blog-nav-btn');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
                 
-                // Update active state
-                categoryLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
+                const filter = button.dataset.filter;
+                const blogCards = document.querySelectorAll('.blog-card');
                 
-                const filter = link.dataset.filter;
-                
-                // Filter posts
-                postCards.forEach(card => {
+                blogCards.forEach(card => {
                     if (filter === 'all' || card.dataset.category.includes(filter)) {
                         card.style.display = 'block';
                     } else {
@@ -1521,22 +1185,20 @@
                 });
             });
         });
-        
-        // Tag Filtering
-        const tagLinks = document.querySelectorAll('.tag-filter a');
-        
-        tagLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
+
+        // Tag filtering
+        const tagButtons = document.querySelectorAll('.tag-btn');
+        tagButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tagButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
                 
-                // Update active state
-                tagLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
+                const tag = button.dataset.tag;
+                const blogCards = document.querySelectorAll('.blog-card');
                 
-                const tag = link.dataset.tag;
-                
-                // Filter posts
-                postCards.forEach(card => {
+                blogCards.forEach(card => {
                     if (tag === 'all' || card.dataset.tags.includes(tag)) {
                         card.style.display = 'block';
                     } else {
@@ -1545,57 +1207,6 @@
                 });
             });
         });
-        
-        // Animate elements on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.post-card');
-            const windowHeight = window.innerHeight;
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const animationPoint = windowHeight * 0.8;
-                
-                if (elementPosition < animationPoint) {
-                    element.style.animation = 'fadeInUp 0.8s ease forwards';
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Prevent form submission (for demo)
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Form submission would be handled in a live implementation.');
-            });
-        });
-    </script>
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Tempest Labs Blog",
-        "url": "https://tempestlabs.com/blog",
-        "description": "Insights on building calm, focused software that respects your time and attention",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Tempest Labs",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://tempestlabs.com/images/tempest.png"
-            }
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://tempestlabs.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
     </script>
 </body>
 </html>
