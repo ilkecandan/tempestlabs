@@ -574,21 +574,23 @@ font-family: 'Cinzel', serif;
             flex-wrap: wrap;
         }
 
-        .cta-button {
-    background: transparent;
+.cta-button {
+    background: rgba(233, 79, 61, 0.08); /* subtle glow base */
     color: var(--burnt-coral);
     border-radius: 12px;
-    padding: 12px 24px;
+    padding: 14px 28px;
     font-weight: bold;
-    border: 1px solid var(--burnt-coral);
-    box-shadow: 0 0 12px rgba(233, 79, 61, 0.1);
+    border: 1px solid rgba(233, 79, 61, 0.6);
+    box-shadow: 0 0 10px rgba(233, 79, 61, 0.25), 0 0 4px rgba(58, 227, 248, 0.1);
     transition: all 0.4s ease;
     display: inline-block;
     margin-top: 1rem;
-    font-family: 'Cinzel', sans-serif;
+    font-family: 'Cinzel', serif;
     text-transform: uppercase;
     letter-spacing: 1.2px;
+    backdrop-filter: blur(2px);
 }
+
 
 
         .cta-button:hover {
