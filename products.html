@@ -200,7 +200,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('images/hero-products-bg.png') center center no-repeat;
+            background: url('images/producthero.png') center center no-repeat;
             background-size: cover;
             z-index: -1;
             opacity: 0.8;
@@ -483,7 +483,7 @@
             font-size: clamp(0.9rem, 1.1vw, 1.1rem);
         }
 
-        /* FAQ Section */
+        /* FAQ Section - Enhanced */
         .faq-section {
             padding: 80px 5%;
             max-width: 900px;
@@ -493,18 +493,20 @@
         .faq-item {
             margin-bottom: 20px;
             border: 1px solid rgba(58, 227, 248, 0.1);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             transition: all var(--transition-speed);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .faq-item:hover {
             border-color: rgba(58, 227, 248, 0.3);
+            box-shadow: 0 6px 16px rgba(58, 227, 248, 0.15);
         }
 
         .faq-question {
-            padding: 20px;
-            background: rgba(6, 30, 34, 0.4);
+            padding: 22px 25px;
+            background: rgba(6, 30, 34, 0.5);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -512,10 +514,12 @@
             font-weight: 600;
             color: var(--glow-white);
             transition: all var(--transition-speed);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
         .faq-question:hover {
-            background: rgba(6, 30, 34, 0.6);
+            background: rgba(6, 30, 34, 0.7);
         }
 
         .faq-question::after {
@@ -524,24 +528,37 @@
             font-weight: 900;
             transition: all var(--transition-speed);
             color: var(--aqua-glow);
+            font-size: 0.9rem;
+        }
+
+        .faq-question.active {
+            background: rgba(6, 30, 34, 0.8);
+            color: var(--aqua-glow);
         }
 
         .faq-question.active::after {
             transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all var(--transition-speed);
-            background: rgba(6, 30, 34, 0.2);
             color: var(--muted-aqua);
         }
 
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-speed);
+            background: rgba(6, 30, 34, 0.3);
+            color: var(--muted-aqua);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .faq-answer-inner {
+            padding: 5px 0 25px;
+        }
+
         .faq-question.active + .faq-answer {
-            padding: 20px;
-    max-height: 2000px; /* large enough for any content */
+            max-height: 1000px;
+            padding: 0 25px;
         }
 
         /* CTA Section */
@@ -757,6 +774,19 @@
                 margin-top: 15px;
                 display: block;
             }
+
+            .faq-question {
+                padding: 18px 20px;
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 20px;
+            }
+
+            .faq-question.active + .faq-answer {
+                padding: 0 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -779,6 +809,20 @@
             .legal-links {
                 flex-direction: column;
                 gap: 10px;
+            }
+
+            .faq-question {
+                padding: 16px 18px;
+                font-size: 0.95rem;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+                padding: 0 18px;
+            }
+
+            .faq-question.active + .faq-answer {
+                padding: 0 18px;
             }
         }
 
@@ -986,7 +1030,7 @@
 
     <div class="separator"></div>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - Enhanced -->
     <section class="faq-section">
         <div class="section-header">
             <h2>Frequently Asked Questions</h2>
@@ -996,68 +1040,88 @@
         <div class="faq-item">
             <div class="faq-question">Are your products available on mobile?</div>
             <div class="faq-answer">
-                Currently, our products are desktop-only (Windows and macOS). We're exploring mobile versions for future releases.
+                <div class="faq-answer-inner">
+                    Currently, our products are desktop-only (Windows and macOS). We're exploring mobile versions for future releases.
+                </div>
             </div>
         </div>
         
         <div class="faq-item">
             <div class="faq-question">How often do you release updates?</div>
             <div class="faq-answer">
-                We release major updates quarterly with new features, and minor updates as needed for bug fixes and improvements. All updates are free for existing customers.
+                <div class="faq-answer-inner">
+                    We release major updates quarterly with new features, and minor updates as needed for bug fixes and improvements. All updates are free for existing customers.
+                </div>
             </div>
         </div>
 
-         <div class="faq-item">
+        <div class="faq-item">
             <div class="faq-question">Do I need an account to use your apps?</div>
             <div class="faq-answer">
-Nope. Most of our tools are designed for minimal friction. Just buy, enter your PIN, and go.
+                <div class="faq-answer-inner">
+                    Nope. Most of our tools are designed for minimal friction. Just buy, enter your PIN, and go.
+                </div>
             </div>
         </div>
 
-         <div class="faq-item">
+        <div class="faq-item">
             <div class="faq-question">How does the one-time payment work?</div>
             <div class="faq-answer">
-You pay once, receive a secure PIN, and unlock the app forever. No subscriptions, no renewals, no catches.
+                <div class="faq-answer-inner">
+                    You pay once, receive a secure PIN, and unlock the app forever. No subscriptions, no renewals, no catches.
+                </div>
             </div>
         </div>
-         <div class="faq-item">
+        
+        <div class="faq-item">
             <div class="faq-question">Is there a refund policy?</div>
             <div class="faq-answer">
-Yes—if something doesn't work or wasn't what you expected, reach out within 7 days. We’ll make it right.
+                <div class="faq-answer-inner">
+                    Yes—if something doesn't work or wasn't what you expected, reach out within 7 days. We'll make it right.
+                </div>
             </div>
         </div>
-         <div class="faq-item">
-            <div class="faq-question">Why no subscriptions? Isn’t that bad for business?</div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Why no subscriptions? Isn't that bad for business?</div>
             <div class="faq-answer">
-Not for us. We believe software should empower, not trap. Subscriptions are great—for gyms you forget to cancel.
-Our tools are one-time purchase because that’s what respect looks like in code form. We design with intention, price with integrity, and trust you’ll support what’s truly useful.
+                <div class="faq-answer-inner">
+                    Not for us. We believe software should empower, not trap. Subscriptions are great—for gyms you forget to cancel.
+                    <br><br>
+                    Our tools are one-time purchase because that's what respect looks like in code form. We design with intention, price with integrity, and trust you'll support what's truly useful.
+                </div>
             </div>
         </div>
 
-         <div class="faq-item">
+        <div class="faq-item">
             <div class="faq-question">Where are you based?</div>
             <div class="faq-answer">
-         Geographically? Between Turkey, Switzerland, somewhere in Europe and a good Wi-Fi connection.
-         Philosophically? Somewhere between an ancient library and a futuristic observatory—where myths meet machines and clarity is the currency.
+                <div class="faq-answer-inner">
+                    Geographically? Between Turkey, Switzerland, somewhere in Europe and a good Wi-Fi connection.
+                    <br><br>
+                    Philosophically? Somewhere between an ancient library and a futuristic observatory—where myths meet machines and clarity is the currency.
+                </div>
             </div>
         </div>
 
-         <div class="faq-item">
-            <div class="faq-question">How do I install your apps on iOS? (Because Apple doesn’t make it obvious)</div>
+        <div class="faq-item">
+            <div class="faq-question">How do I install your apps on iOS? (Because Apple doesn't make it obvious)</div>
             <div class="faq-answer">
-         Great question, and yes—our apps are Progressive Web Apps (PWAs). That means they behave like regular apps, without App Store chaos.
-
-To install on iPhone or iPad:
-
-Open the app link in Safari (not Chrome).
-
-Tap the Share icon (the little square with an arrow).
-
-Scroll down and tap “Add to Home Screen.”
-
-Voilà! It now lives on your screen like any other app—except calmer.
-
-(We wish Apple made this easier. But until then, we whisper magic instructions.)
+                <div class="faq-answer-inner">
+                    Great question, and yes—our apps are Progressive Web Apps (PWAs). That means they behave like regular apps, without App Store chaos.
+                    <br><br>
+                    To install on iPhone or iPad:
+                    <br><br>
+                    1. Open the app link in Safari (not Chrome).
+                    <br>
+                    2. Tap the Share icon (the little square with an arrow).
+                    <br>
+                    3. Scroll down and tap "Add to Home Screen."
+                    <br>
+                    4. Voilà! It now lives on your screen like any other app—except calmer.
+                    <br><br>
+                    (We wish Apple made this easier. But until then, we whisper magic instructions.)
+                </div>
             </div>
         </div>
     </section>
@@ -1121,28 +1185,45 @@ Voilà! It now lives on your screen like any other app—except calmer.
             }
         });
 
-        // FAQ accordion functionality
+        // Enhanced FAQ accordion functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const currentlyActive = document.querySelector('.faq-question.active');
-                if (currentlyActive && currentlyActive !== question) {
-                    currentlyActive.classList.remove('active');
-                    currentlyActive.nextElementSibling.style.maxHeight = '0';
-                }
                 
+                // Close all other open FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== question.parentElement) {
+                        item.querySelector('.faq-question').classList.remove('active');
+                        item.querySelector('.faq-answer').style.maxHeight = '0';
+                    }
+                });
+                
+                // Toggle current question
                 question.classList.toggle('active');
                 const answer = question.nextElementSibling;
+                
                 if (question.classList.contains('active')) {
                     answer.style.maxHeight = answer.scrollHeight + 'px';
+                    
+                    // Smooth scroll to keep question visible
+                    setTimeout(() => {
+                        question.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
                 } else {
                     answer.style.maxHeight = '0';
                 }
             });
+            
+            // Pre-open first FAQ on page load
+            if (question.parentElement === document.querySelector('.faq-item')) {
+                question.classList.add('active');
+                question.nextElementSibling.style.maxHeight = question.nextElementSibling.scrollHeight + 'px';
+            }
         });
 
         // Animate elements when they come into view
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.section-header h2, .section-header p, .product-card, .feature-card');
+            const elements = document.querySelectorAll('.section-header h2, .section-header p, .product-card, .feature-card, .faq-item');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
