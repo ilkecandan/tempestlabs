@@ -518,12 +518,17 @@
 
 <div class="share-buttons">
                 <p style="width: 100%; text-align: center; margin-bottom: 20px; color: var(--muted-aqua);">Share this post:</p>
+                <!-- Twitter Button (unchanged) -->
                 <a href="https://twitter.com/intent/tweet?text=Why%20We%20Build%20One-Time%20Purchase%20Apps&url=https%3A%2F%2Ftempestlabs.space%2Fone-time-apps.html" target="_blank" class="share-button">
                     <i class="fab fa-twitter"></i> Twitter
                 </a>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Ftempestlabs.space%2Fone-time-apps.html&title=Why%20We%20Build%20One-Time%20Purchase%20Apps&summary=Our%20philosophy%20behind%20creating%20software%20you%20can%20own,%20not%20rent.&source=Tempest%20Labs" target="_blank" class="share-button">
+                
+                <!-- Updated LinkedIn Button with JavaScript fallback -->
+                <a href="#" onclick="shareOnLinkedIn()" class="share-button">
                     <i class="fab fa-linkedin-in"></i> LinkedIn
                 </a>
+                
+                <!-- Email Button (unchanged) -->
                 <a href="mailto:?subject=Why%20We%20Build%20One-Time%20Purchase%20Apps&body=Read%20it%20here%3A%20https%3A%2F%2Ftempestlabs.space%2Fone-time-apps.html" target="_blank" class="share-button">
                     <i class="fas fa-envelope"></i> Email
                 </a>
@@ -584,6 +589,42 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // LinkedIn Share Function (works in all browsers)
+        function shareOnLinkedIn() {
+            // Customize these variables
+            const url = encodeURIComponent('https://tempestlabs.space/one-time-apps.html');
+            const title = encodeURIComponent('Why We Build One-Time Purchase Apps');
+            const summary = encodeURIComponent('Our philosophy behind creating software you can own, not rent.');
+            const source = encodeURIComponent('Tempest Labs');
+            
+            // Try to open via LinkedIn API
+            const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            
+            // Fallback to traditional share method if API fails
+            const fallbackUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=${source}`;
+            
+            // Open window (600px wide is LinkedIn's recommended width)
+            const windowWidth = 600;
+            const windowHeight = 500;
+            const left = (screen.width - windowWidth) / 2;
+            const top = (screen.height - windowHeight) / 2;
+            
+            // First try the new API
+            const shareWindow = window.open(linkedinUrl, 'LinkedInShare', 
+                `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            
+            // If that fails (window is null or closed immediately), try fallback
+            setTimeout(() => {
+                if (!shareWindow || shareWindow.closed) {
+                    window.open(fallbackUrl, 'LinkedInShare', 
+                        `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+                }
+            }, 200);
+            
+            return false;
+        }
+
     </script>
 </body>
 </html>
