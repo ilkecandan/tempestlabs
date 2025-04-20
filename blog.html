@@ -1110,96 +1110,101 @@
     </script>
 
     <script>
-        // Toggle mobile menu
-        function toggleMenu() {
-            const menu = document.querySelector("nav ul");
-            const toggle = document.querySelector(".menu-toggle");
-            const backdrop = document.querySelector(".menu-backdrop");
-            
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
-            backdrop.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
-        }
+    // Toggle mobile menu
+    function toggleMenu() {
+        const menu = document.querySelector("nav ul");
+        const toggle = document.querySelector(".menu-toggle");
+        const backdrop = document.querySelector(".menu-backdrop");
         
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+        menu.classList.toggle("active");
+        toggle.classList.toggle("active");
+        backdrop.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+    }
+    
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Animate elements when they come into view
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.blog-card, .popular-card, .docs-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.animation = `fadeInUp 0.8s ease forwards`;
             }
         });
-        
-        // Animate elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.blog-card, .popular-card, .docs-card');
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+    // Easter egg interaction
+    const egg = document.querySelector('.easter-egg');
+    if (egg) {
+        egg.addEventListener('click', function() {
+            alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
+        });
+    }
+
+    // Blog category filtering
+    const categoryButtons = document.querySelectorAll('.blog-nav-btn');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
             
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.animation = `fadeInUp 0.8s ease forwards`;
+            const filter = button.dataset.filter;
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            blogCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
                 }
             });
-        };
+        });
+    });
 
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Easter egg interaction
-        const egg = document.querySelector('.easter-egg');
-        if (egg) {
-            egg.addEventListener('click', function() {
-                alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
-            });
-        }
-
-        // Blog category filtering
-        const categoryButtons = document.querySelectorAll('.blog-nav-btn');
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                const filter = button.dataset.filter;
-                const blogCards = document.querySelectorAll('.blog-card');
-                
-                blogCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category.includes(filter)) {
+    // Tag filtering
+    const tagButtons = document.querySelectorAll('.tag-btn');
+    tagButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            tagButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            const tag = button.dataset.tag;
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            blogCards.forEach(card => {
+                if (tag === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const cardTags = card.dataset.tags.split(' ');
+                    if (cardTags.includes(tag)) {
                         card.style.display = 'block';
                     } else {
                         card.style.display = 'none';
                     }
-                });
+                }
             });
         });
-
-        // Tag filtering
-        const tagButtons = document.querySelectorAll('.tag-btn');
-        tagButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                tagButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                const tag = button.dataset.tag;
-                const blogCards = document.querySelectorAll('.blog-card');
-                
-                blogCards.forEach(card => {
-                    if (tag === 'all' || card.dataset.tags.includes(tag)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
