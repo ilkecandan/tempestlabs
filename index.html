@@ -575,30 +575,30 @@ font-family: 'Cinzel', serif;
         }
 
 .cta-button {
-    background: rgba(233, 79, 61, 0.08); /* subtle glow base */
-    color: var(--burnt-coral);
+    background: rgba(0, 0, 0, 0.15); /* darkened contrast backdrop */
+    color: #FFDED3; /* brighter, slightly warm tone for clarity */
     border-radius: 12px;
     padding: 14px 28px;
     font-weight: bold;
     border: 1px solid rgba(233, 79, 61, 0.6);
-    box-shadow: 0 0 10px rgba(233, 79, 61, 0.25), 0 0 4px rgba(58, 227, 248, 0.1);
+    box-shadow: 0 0 10px rgba(233, 79, 61, 0.2), 0 0 15px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
     display: inline-block;
     margin-top: 1rem;
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    backdrop-filter: blur(2px);
+    letter-spacing: 1.4px;
+    text-shadow: 0 0 8px rgba(233, 79, 61, 0.3), 0 0 6px rgba(255, 222, 211, 0.3); /* GLOW BABY */
 }
 
+.cta-button:hover {
+    background: var(--burnt-coral);
+    color: white;
+    box-shadow: 0 0 25px var(--burnt-coral), 0 0 15px rgba(233, 79, 61, 0.6);
+    transform: translateY(-2px);
+    text-shadow: none;
+}
 
-
-        .cta-button:hover {
-            background: var(--burnt-coral);
-            color: white;
-            box-shadow: 0 0 20px var(--burnt-coral);
-            transform: translateY(-2px);
-        }
 
         footer {
             padding: 80px 5% 40px;
@@ -633,7 +633,7 @@ font-family: 'Cinzel', serif;
         .footer-column h3 {
             color: var(--glow-white);
             margin-bottom: 20px;
-            font-size: clamp(1rem, 1.3vw, 1.3rem);
+            font-size: clamp(1.5rem, 1.8vw, 1.8rem);
             position: relative;
             padding-bottom: 10px;
         }
