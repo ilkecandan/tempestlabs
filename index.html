@@ -513,29 +513,31 @@
         }
 
         .approach-item {
-            background: rgba(6, 30, 34, 0.3);
-    border-radius: 10px;
-    padding: 25px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(58, 227, 248, 0.08);
-    box-shadow: 0 0 10px rgba(58, 227, 248, 0.08);
+background: rgba(6, 30, 34, 0.6); /* darker background for contrast */
+    border-radius: 12px;
+    padding: 30px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(58, 227, 248, 0.15);
+    box-shadow: 0 0 20px rgba(58, 227, 248, 0.08);
+    color: #EAF4F4; /* brighter text color */
+    text-align: left;
     transition: all 0.4s ease;
         }
 
         .approach-item:hover {
-            transform: translateY(-5px);
-    background: rgba(6, 30, 34, 0.6);
-    border-color: rgba(58, 227, 248, 0.25);
-    box-shadow: 0 10px 25px rgba(58, 227, 248, 0.2);
+  transform: translateY(-5px);
+    background: rgba(6, 30, 34, 0.85);
+    border-color: rgba(58, 227, 248, 0.3);
+    box-shadow: 0 10px 30px rgba(58, 227, 248, 0.25);
         }
 
         .approach-item h3 {
 font-family: 'Cinzel', serif;
     color: var(--burnt-coral);
-    font-weight: 600; /* BOLDER */
+    font-weight: 700; /* BOLDER */
     text-shadow: 0 0 8px rgba(233, 79, 61, 0.2); /* Slight glow for punch */
     letter-spacing: 1.2px;
-    font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+    font-size: clamp(1.5rem, 1.7vw, 1.9rem);
     text-transform: uppercase;
         }
 
