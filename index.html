@@ -399,28 +399,29 @@
             margin: 0 auto;
         }
 
-        .product-card {
-            background: rgba(6, 30, 34, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 30px rgba(58, 227, 248, 0.12);
-            transition: all var(--transition-speed);
-            border: 1px solid rgba(58, 227, 248, 0.1);
-            text-align: center;
-            backdrop-filter: blur(5px);
-            animation: fadeInUp 0.8s ease-out;
-            animation-fill-mode: both;
-        }
+      .product-card {
+    background: rgba(6, 30, 34, 0.55); /* more contrast */
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 6px 24px rgba(58, 227, 248, 0.25), 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(58, 227, 248, 0.2);
+    text-align: center;
+    backdrop-filter: blur(6px);
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
 
         .product-card:nth-child(1) { animation-delay: 0.2s; }
         .product-card:nth-child(2) { animation-delay: 0.4s; }
         .product-card:nth-child(3) { animation-delay: 0.6s; }
 
-        .product-card:hover {
-            transform: scale(1.015);
-            box-shadow: 0 10px 40px rgba(58, 227, 248, 0.25);
-            border-color: rgba(58, 227, 248, 0.2);
-        }
+      .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(58, 227, 248, 0.4), 0 0 30px rgba(233, 79, 61, 0.2);
+    border-color: rgba(58, 227, 248, 0.35);
+    background: rgba(6, 30, 34, 0.75); /* more depth on hover */
+}
 
         .product-card img {
             width: 100%;
@@ -439,8 +440,8 @@
 
         .product-card h3 {
             margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(58, 227, 248, 0.4);
             font-weight: 700; /* BOLDER */
-            text-shadow: 0 0 8px rgba(233, 79, 61, 0.2); /* Slight glow for punch */
              letter-spacing: 1.2px;
              font-size: clamp(1.1rem, 1.5vw, 1.6rem);
             color: var(--aqua-glow);
@@ -451,6 +452,8 @@
             color: var(--muted-aqua);
             margin-bottom: 25px;
             line-height: 1.6;
+            color: rgba(255, 255, 255, 0.88); /* slightly brighter than muted aqua */
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             font-size: clamp(0.9rem, 1vw, 1rem);
         }
 
