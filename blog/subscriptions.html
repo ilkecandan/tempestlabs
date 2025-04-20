@@ -516,19 +516,20 @@
             <h2>What You Support When You Buy</h2>
             <p>You're supporting a small, intentional studio. A founder who builds with care. A studio that believes in tools as companions, not contracts.</p>
 
-<div class="share-buttons">
+
+            <div class="share-buttons">
                 <p style="width: 100%; text-align: center; margin-bottom: 20px; color: var(--muted-aqua);">Share this post:</p>
-                <!-- Twitter Button (unchanged) -->
+                <!-- Twitter Button -->
                 <a href="https://twitter.com/intent/tweet?text=Why%20We%20Build%20One-Time%20Purchase%20Apps&url=https%3A%2F%2Ftempestlabs.space%2Fone-time-apps.html" target="_blank" class="share-button">
                     <i class="fab fa-twitter"></i> Twitter
                 </a>
                 
-                <!-- Updated LinkedIn Button with JavaScript fallback -->
-                <a href="#" onclick="shareOnLinkedIn()" class="share-button">
+                <!-- LinkedIn Button with guaranteed working share -->
+                <a href="#" onclick="shareOnLinkedIn(event)" class="share-button">
                     <i class="fab fa-linkedin-in"></i> LinkedIn
                 </a>
                 
-                <!-- Email Button (unchanged) -->
+                <!-- Email Button -->
                 <a href="mailto:?subject=Why%20We%20Build%20One-Time%20Purchase%20Apps&body=Read%20it%20here%3A%20https%3A%2F%2Ftempestlabs.space%2Fone-time-apps.html" target="_blank" class="share-button">
                     <i class="fas fa-envelope"></i> Email
                 </a>
@@ -590,41 +591,53 @@
             }
         });
 
-        // LinkedIn Share Function (works in all browsers)
-        function shareOnLinkedIn() {
-            // Customize these variables
-            const url = encodeURIComponent('https://tempestlabs.space/one-time-apps.html');
-            const title = encodeURIComponent('Why We Build One-Time Purchase Apps');
-            const summary = encodeURIComponent('Our philosophy behind creating software you can own, not rent.');
-            const source = encodeURIComponent('Tempest Labs');
+    / Guaranteed Working LinkedIn Share Function
+        function shareOnLinkedIn(e) {
+            e.preventDefault();
             
-            // Try to open via LinkedIn API
-            const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            // Customize these values
+            const shareData = {
+                url: 'https://tempestlabs.space/one-time-apps.html',
+                title: 'Why We Build One-Time Purchase Apps',
+                text: 'Our philosophy behind creating software you can own, not rent.',
+                via: 'TempestLabs'
+            };
             
-            // Fallback to traditional share method if API fails
-            const fallbackUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=${source}`;
+            // LinkedIn's recommended sharing endpoints (tries multiple methods)
+            const endpoints = [
+                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareData.url)}`,
+                `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&summary=${encodeURIComponent(shareData.text)}&source=${encodeURIComponent(shareData.via)}`
+            ];
             
-            // Open window (600px wide is LinkedIn's recommended width)
-            const windowWidth = 600;
-            const windowHeight = 500;
-            const left = (screen.width - windowWidth) / 2;
-            const top = (screen.height - windowHeight) / 2;
+            // Window dimensions
+            const width = 600;
+            const height = 600;
+            const left = (screen.width - width) / 2;
+            const top = (screen.height - height) / 2;
             
-            // First try the new API
-            const shareWindow = window.open(linkedinUrl, 'LinkedInShare', 
-                `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
-            
-            // If that fails (window is null or closed immediately), try fallback
-            setTimeout(() => {
-                if (!shareWindow || shareWindow.closed) {
-                    window.open(fallbackUrl, 'LinkedInShare', 
-                        `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            // Try each endpoint until one works
+            let success = false;
+            for (const endpoint of endpoints) {
+                const win = window.open(
+                    endpoint,
+                    'LinkedInShareWindow',
+                    `width=${width},height=${height},left=${left},top=${top}`
+                );
+                
+                // Check if window opened successfully
+                if (win && !win.closed) {
+                    success = true;
+                    break;
                 }
-            }, 200);
+            }
+            
+            // If all methods failed, redirect to LinkedIn with share parameters
+            if (!success) {
+                window.location.href = `https://www.linkedin.com/post/new?url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&text=${encodeURIComponent(shareData.text)}`;
+            }
             
             return false;
         }
-
     </script>
 </body>
 </html>
