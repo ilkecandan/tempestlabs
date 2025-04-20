@@ -249,6 +249,124 @@
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
+        /* Blog Navigation */
+        .blog-nav {
+            background: rgba(6, 30, 34, 0.7);
+            padding: 20px 5%;
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
+            position: sticky;
+            top: 80px;
+            z-index: 900;
+        }
+
+        .blog-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .blog-nav-btn {
+            background: rgba(0, 0, 0, 0.15);
+            color: var(--glow-white);
+            border: 1px solid rgba(58, 227, 248, 0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .blog-nav-btn:hover, .blog-nav-btn.active {
+            background: rgba(58, 227, 248, 0.15);
+            color: var(--aqua-glow);
+            border-color: var(--aqua-glow);
+            box-shadow: 0 0 10px rgba(58, 227, 248, 0.2);
+        }
+
+        /* Tag Filter */
+        .tag-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+
+        .tag-btn {
+            background: rgba(0, 0, 0, 0.15);
+            color: var(--glow-white);
+            border: 1px solid rgba(233, 79, 61, 0.3);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .tag-btn:hover, .tag-btn.active {
+            background: rgba(233, 79, 61, 0.15);
+            color: var(--burnt-coral);
+            border-color: var(--burnt-coral);
+            box-shadow: 0 0 8px rgba(233, 79, 61, 0.2);
+        }
+
+        /* Popular Section */
+        .popular-section {
+            padding: 60px 5%;
+            background: rgba(6, 30, 34, 0.4);
+            border-top: 1px solid rgba(58, 227, 248, 0.1);
+            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
+        }
+
+        .popular-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .popular-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .popular-card {
+            background: rgba(6, 30, 34, 0.6);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            transition: all var(--transition-speed);
+        }
+
+        .popular-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(58, 227, 248, 0.2);
+            border-color: var(--aqua-glow);
+        }
+
+        .popular-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .popular-card .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--muted-aqua);
+            margin-bottom: 15px;
+        }
+
+        .popular-card .views {
+            color: var(--aqua-glow);
+            font-weight: 600;
+        }
+
+        /* Blog Section */
         .blog-section {
             padding: 80px 5%;
             max-width: 1200px;
@@ -346,6 +464,31 @@
             font-size: 0.95rem;
         }
 
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--muted-aqua);
+            margin-bottom: 15px;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .blog-tag {
+            background: rgba(58, 227, 248, 0.1);
+            color: var(--aqua-glow);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .cta-button {
             background: rgba(0, 0, 0, 0.15);
             color: #FFDED3;
@@ -399,6 +542,58 @@
             border-radius: 20px;
             opacity: 0.5;
             animation: scrollPulse 2.5s infinite ease-in-out;
+        }
+
+        /* Documentation Section */
+        .docs-section {
+            padding: 80px 5%;
+            background: rgba(6, 30, 34, 0.4);
+            border-top: 1px solid rgba(58, 227, 248, 0.1);
+            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
+        }
+
+        .docs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .docs-card {
+            background: rgba(6, 30, 34, 0.6);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            transition: all var(--transition-speed);
+        }
+
+        .docs-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(58, 227, 248, 0.2);
+            border-color: var(--aqua-glow);
+        }
+
+        .docs-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .docs-card h3 i {
+            color: var(--aqua-glow);
+        }
+
+        .docs-card p {
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         footer {
@@ -605,6 +800,14 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+
+            .blog-nav {
+                top: 70px;
+            }
+
+            .popular-posts, .docs-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -624,6 +827,15 @@
             .cta-button {
                 padding: 10px 20px;
                 font-size: 0.85rem;
+            }
+
+            .blog-nav-container {
+                gap: 8px;
+            }
+
+            .blog-nav-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
             }
         }
 
@@ -674,49 +886,181 @@
     <!-- Mobile Menu Backdrop -->
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="blog-hero-bg"></div>
+        <div class="blog-hero-overlay">
+            <h1>Tempest Labs Blog</h1>
+            <p class="hero-subtitle">Insights on calm software design, mindful productivity, and building tools that respect your attention.</p>
+        </div>
+    </section>
+
+    <!-- Blog Navigation -->
+    <div class="blog-nav">
+        <div class="blog-nav-container">
+            <button class="blog-nav-btn active" data-filter="all">All Articles</button>
+            <button class="blog-nav-btn" data-filter="design">Design Philosophy</button>
+            <button class="blog-nav-btn" data-filter="business">Business Model</button>
+            <button class="blog-nav-btn" data-filter="tutorial">Tutorials</button>
+            <button class="blog-nav-btn" data-filter="documentation">Documentation</button>
+            <button class="blog-nav-btn" data-filter="case-study">Case Studies</button>
+        </div>
+    </div>
+
+    <!-- Popular Posts Section -->
+    <section class="popular-section">
+        <div class="popular-container">
+            <h2>Most Popular Reads</h2>
+            <div class="popular-posts">
+                <div class="popular-card">
+                    <h3>Why We Build One-Time Purchase Apps</h3>
+                    <div class="meta">
+                        <span class="date">May 15, 2024</span>
+                        <span class="views">1.2K views</span>
+                    </div>
+                    <p>No subscriptions. No stress. Just tools that respect your time and wallet.</p>
+                    <a href="https://tempestlabs.space/blog/subscriptions.html" class="cta-button">Read More</a>
+                </div>
+                
+                <div class="popular-card">
+                    <h3>The Anti-Overwhelm Tech Manifesto</h3>
+                    <div class="meta">
+                        <span class="date">April 28, 2024</span>
+                        <span class="views">890 views</span>
+                    </div>
+                    <p>We don't want to be part of the digital noise. We want to be the space between notifications.</p>
+                    <a href="https://tempestlabs.space/blog/tech.html" class="cta-button">Read More</a>
+                </div>
+                
+                <div class="popular-card">
+                    <h3>Subscription Fatigue is Real</h3>
+                    <div class="meta">
+                        <span class="date">June 3, 2024</span>
+                        <span class="views">1.5K views</span>
+                    </div>
+                    <p>You shouldn't need a budget spreadsheet just to manage your apps.</p>
+                    <a href="https://tempestlabs.space/blog/apps.html" class="cta-button">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Blog Content Section -->
     <section class="blog-section">
         <h2>Latest Writings</h2>
+        
+        <div class="tag-filter">
+            <button class="tag-btn active" data-tag="all">All Tags</button>
+            <button class="tag-btn" data-tag="minimalism">Minimalism</button>
+            <button class="tag-btn" data-tag="pricing">Pricing</button>
+            <button class="tag-btn" data-tag="ui-design">UI Design</button>
+            <button class="tag-btn" data-tag="focus">Focus</button>
+            <button class="tag-btn" data-tag="philosophy">Philosophy</button>
+            <button class="tag-btn" data-tag="sustainability">Sustainability</button>
+        </div>
+        
         <div class="blog-grid">
             <!-- Blog Post 1 -->
-            <a href="https://tempestlabs.space/blog/subscriptions.html" class="blog-card">
+            <a href="https://tempestlabs.space/blog/subscriptions.html" class="blog-card" data-category="business" data-tags="pricing philosophy">
                 <img src="images/blog1.jpg" alt="No subscriptions. No stress. Just tools that respect your time and wallet.">
                 <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>May 15, 2024</span>
+                        <span>8 min read</span>
+                    </div>
                     <h3>Why We Build One-Time Purchase Apps</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Pricing</span>
+                        <span class="blog-tag">Philosophy</span>
+                    </div>
                     <p>No subscriptions. No stress. Just tools that respect your time and wallet.</p>
                     <span class="cta-button">Read More</span>
                 </div>
             </a>
             
             <!-- Blog Post 2 -->
-            <a href="https://tempestlabs.space/blog/tech.html" class="blog-card">
+            <a href="https://tempestlabs.space/blog/tech.html" class="blog-card" data-category="design" data-tags="minimalism ui-design focus">
                 <img src="images/blog2.png" alt="We don't want to be part of the digital noise. We want to be the space between notifications.">
                 <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>April 28, 2024</span>
+                        <span>12 min read</span>
+                    </div>
                     <h3>The Anti-Overwhelm Tech Manifesto</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Minimalism</span>
+                        <span class="blog-tag">UI Design</span>
+                        <span class="blog-tag">Focus</span>
+                    </div>
                     <p>We don't want to be part of the digital noise. We want to be the space between notifications.</p>
                     <span class="cta-button">Read More</span>
                 </div>
             </a>
             
             <!-- Blog Post 3 -->
-            <a href="https://tempestlabs.space/blog/apps.html" class="blog-card">
+            <a href="https://tempestlabs.space/blog/apps.html" class="blog-card" data-category="business" data-tags="pricing sustainability">
                 <img src="images/blog3.png" alt="Thoughtful design that puts people first.">
                 <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>June 3, 2024</span>
+                        <span>10 min read</span>
+                    </div>
                     <h3>Subscription Fatigue is Real</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Pricing</span>
+                        <span class="blog-tag">Sustainability</span>
+                    </div>
                     <p>You shouldn't need a budget spreadsheet just to manage your apps.</p>
                     <span class="cta-button">Read More</span>
                 </div>
             </a>
             
             <!-- Blog Post 4 -->
-            <a href="#" class="blog-card">
+            <a href="#" class="blog-card" data-category="design" data-tags="ui-design focus philosophy">
                 <img src="images/blog4.jpg" alt="The philosophy behind our design choices">
                 <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <span>-</span>
+                    </div>
                     <h3>Designing for Calm</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">UI Design</span>
+                        <span class="blog-tag">Focus</span>
+                        <span class="blog-tag">Philosophy</span>
+                    </div>
                     <p>How we create interfaces that reduce cognitive load and promote focus.</p>
                     <span class="cta-button">Coming Soon</span>
                 </div>
             </a>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="docs-section">
+        <div class="docs-container">
+            <h2>Guides & Documentation</h2>
+            <p class="hero-subtitle" style="text-align: center; margin-bottom: 40px;">Learn how to get the most from our products with these detailed guides.</p>
+            
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h3><i class="fas fa-book-open"></i> Intuiva User Guide</h3>
+                    <p>Complete documentation for all Intuiva features and settings to help you master our productivity suite.</p>
+                    <a href="docs/intuiva-guide.html" class="cta-button">View Guide</a>
+                </div>
+                
+                <div class="docs-card">
+                    <h3><i class="fas fa-video"></i> Cabinet of Selves Tutorials</h3>
+                    <p>Video walkthroughs showing how to set up and use Cabinet of Selves for personal reflection.</p>
+                    <a href="docs/cabinet-tutorials.html" class="cta-button">Watch Videos</a>
+                </div>
+                
+                <div class="docs-card">
+                    <h3><i class="fas fa-question-circle"></i> FunnelFlow FAQ</h3>
+                    <p>Answers to common questions about installation, customization, and troubleshooting FunnelFlow.</p>
+                    <a href="docs/funnelflow-faq.html" class="cta-button">Read FAQ</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -797,7 +1141,7 @@
         
         // Animate elements when they come into view
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.blog-card');
+            const elements = document.querySelectorAll('.blog-card, .popular-card, .docs-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -819,6 +1163,50 @@
                 alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
             });
         }
+
+        // Blog category filtering
+        const categoryButtons = document.querySelectorAll('.blog-nav-btn');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                const blogCards = document.querySelectorAll('.blog-card');
+                
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Tag filtering
+        const tagButtons = document.querySelectorAll('.tag-btn');
+        tagButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tagButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const tag = button.dataset.tag;
+                const blogCards = document.querySelectorAll('.blog-card');
+                
+                blogCards.forEach(card => {
+                    if (tag === 'all' || card.dataset.tags.includes(tag)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
