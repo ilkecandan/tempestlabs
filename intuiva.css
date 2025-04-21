@@ -1,12 +1,12 @@
 body {
     margin: 0;
     font-family: 'Outfit', sans-serif;
-    background-color: #20232A	;
+    background-color: #000000	;
     color: #00AAD3;
 }
 
 header {
-    background-color: #20232A	;
+    background-color: #000000	;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -99,7 +99,7 @@ nav a:hover {
 .pricing-block,
 .get-started {
     padding: 5rem 2rem;
-    background-color: #20232A;
+    background-color: #000000;
     animation: fadeIn 1.2s ease-in-out;
 }
 
@@ -227,7 +227,7 @@ nav a:hover {
 
 .cta-button {
     background-color: #33FDFF;
-    color: #20232A;
+    color: #000000;
     padding: 1.2rem 3rem;
     font-size: 1.1rem;
     border: none;
