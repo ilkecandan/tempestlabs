@@ -972,64 +972,83 @@
       </div>
 
 <!-- Testimonials Section -->
+
+<!-- Testimonials Section -->
 <section id="testimonials" class="testimonials">
   <h2 class="glow-heading">What Our Users Say</h2>
   <p class="subtext">Don’t just take our word for it—here’s how real users are working smarter with Intuiva.</p>
 
-  <div class="testimonial-slider-wrapper">
-    <div class="testimonial-slider">
-      <!-- Testimonial 1 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          As a solo founder with no technical background, I was drowning in uncertainty. Intuiva gave me the structure and confidence to build my SaaS product methodically. I went from idea to first paying customer in 11 weeks.
-        </p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah K." class="author-avatar">
-          <div class="author-info">
-            <h4>Sarah K.</h4>
-            <p>Founder, DataBloom</p>
-          </div>
-        </div>
-      </div>
+  <div class="testimonial-slider-container">
+    <button class="nav-button left" onclick="moveSlide(-1)">&#10094;</button>
 
-      <!-- Testimonial 2 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          I've used every project management tool out there. Intuiva is the first that actually understands how creative people think. The backward planning feature alone has saved me hundreds of hours on my current project.
-        </p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Miguel R." class="author-avatar">
-          <div class="author-info">
-            <h4>Miguel R.</h4>
-            <p>Indie Game Developer</p>
+    <div class="testimonial-slider-wrapper" id="sliderWrapper">
+      <div class="testimonial-slider" id="testimonialSlider">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            As a solo founder with no technical background, I was drowning in uncertainty. Intuiva gave me the structure and confidence to build my SaaS product methodically. I went from idea to first paying customer in 11 weeks.
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah K." class="author-avatar">
+            <div class="author-info">
+              <h4>Sarah K.</h4>
+              <p>Founder, DataBloom</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Testimonial 3 (Linked) -->
-      <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
-        <p class="testimonial-text">
-          The interface is intuitive, sleek, and effortless to navigate, making workflow seamless and efficient. As a writer, I value tools that let me focus on my work without getting lost in complexity. If you're looking for something that blends power with simplicity, this is your safe place. :)
-        </p>
-        <div class="testimonial-author">
-          <img src="images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar">
-          <div class="author-info">
-            <h4>Ananya Naithani</h4>
-            <p>Investment Banker Turned Ghostwriter & Writing Coach</p>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            I've used every project management tool out there. Intuiva is the first that actually understands how creative people think. The backward planning feature alone has saved me hundreds of hours on my current project.
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Miguel R." class="author-avatar">
+            <div class="author-info">
+              <h4>Miguel R.</h4>
+              <p>Indie Game Developer</p>
+            </div>
           </div>
         </div>
-      </a>
+
+        <!-- Testimonial 3 -->
+        <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
+          <p class="testimonial-text">
+            The interface is intuitive, sleek, and effortless to navigate, making workflow seamless and efficient. As a writer, I value tools that let me focus on my work without getting lost in complexity. If you're looking for something that blends power with simplicity, this is your safe place. :)
+          </p>
+          <div class="testimonial-author">
+            <img src="images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar">
+            <div class="author-info">
+              <h4>Ananya Naithani</h4>
+              <p>Investment Banker Turned Ghostwriter & Writing Coach</p>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
+
+    <button class="nav-button right" onclick="moveSlide(1)">&#10095;</button>
   </div>
 </section>
 
+<!-- JavaScript -->
+<script>
+  let slider = document.getElementById("testimonialSlider");
+  let cardWidth = 350 + 20; // width + gap
+
+  function moveSlide(direction) {
+    slider.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
+  }
+</script>
+
+<!-- CSS -->
 <style>
-/* Testimonials Section Styles */
 .testimonials {
   background-color: #050505;
   padding: 80px 20px;
   color: #e5faff;
   text-align: center;
+  position: relative;
 }
 
 .glow-heading {
@@ -1045,18 +1064,38 @@
   margin-bottom: 50px;
 }
 
-.testimonial-slider-wrapper {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+.testimonial-slider-container {
   display: flex;
-  justify-content: flex-start;
-  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #00f9ff;
+  cursor: pointer;
+  z-index: 2;
+  padding: 10px;
+  transition: color 0.2s ease;
+}
+
+.nav-button:hover {
+  color: #a6f8ff;
+}
+
+.testimonial-slider-wrapper {
+  overflow: hidden;
+  max-width: 100%;
+  scroll-behavior: smooth;
 }
 
 .testimonial-slider {
   display: flex;
   gap: 20px;
-  padding-bottom: 10px;
+  padding: 10px 0;
 }
 
 .testimonial-card {
@@ -1064,7 +1103,6 @@
   border: 1px solid rgba(0, 249, 255, 0.1);
   padding: 25px;
   border-radius: 14px;
-  scroll-snap-align: start;
   flex-shrink: 0;
   width: 330px;
   text-align: left;
