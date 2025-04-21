@@ -973,18 +973,16 @@
 
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials">
-  <h2>What Our Users Say</h2>
-  <p>Don't take our word for it—here's what Intuiva users are saying about their experience.</p>
-  
+  <h2 class="glow-heading">What Our Users Say</h2>
+  <p class="subtext">Don’t just take our word for it—here’s how real users are working smarter with Intuiva.</p>
+
   <div class="testimonial-slider-wrapper">
     <div class="testimonial-slider">
       <!-- Testimonial 1 -->
       <div class="testimonial-card">
-        <div class="testimonial-content">
-          <p>
-            As a solo founder with no technical background, I was drowning in uncertainty. Intuiva gave me the structure and confidence to build my SaaS product methodically. I went from idea to first paying customer in 11 weeks.
-          </p>
-        </div>
+        <p class="testimonial-text">
+          As a solo founder with no technical background, I was drowning in uncertainty. Intuiva gave me the structure and confidence to build my SaaS product methodically. I went from idea to first paying customer in 11 weeks.
+        </p>
         <div class="testimonial-author">
           <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah K." class="author-avatar">
           <div class="author-info">
@@ -996,11 +994,9 @@
 
       <!-- Testimonial 2 -->
       <div class="testimonial-card">
-        <div class="testimonial-content">
-          <p>
-            I've used every project management tool out there. Intuiva is the first that actually understands how creative people think. The backward planning feature alone has saved me hundreds of hours on my current project.
-          </p>
-        </div>
+        <p class="testimonial-text">
+          I've used every project management tool out there. Intuiva is the first that actually understands how creative people think. The backward planning feature alone has saved me hundreds of hours on my current project.
+        </p>
         <div class="testimonial-author">
           <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Miguel R." class="author-avatar">
           <div class="author-info">
@@ -1011,20 +1007,15 @@
       </div>
 
       <!-- Testimonial 3 (Linked) -->
-      <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card-link">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>
-              The interface is intuitive, sleek, and effortless to navigate, making workflow seamless and efficient. As a writer, I value tools that let me focus on my work without getting lost in complexity, and this platform does exactly that.
-              If you're looking for something that blends power with simplicity, this is your safe place. :)
-            </p>
-          </div>
-          <div class="testimonial-author">
-            <img src="images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar">
-            <div class="author-info">
-              <h4>Ananya Naithani</h4>
-              <p>Investment Banker Turned Ghostwriter & Writing Coach</p>
-            </div>
+      <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
+        <p class="testimonial-text">
+          The interface is intuitive, sleek, and effortless to navigate, making workflow seamless and efficient. As a writer, I value tools that let me focus on my work without getting lost in complexity. If you're looking for something that blends power with simplicity, this is your safe place. :)
+        </p>
+        <div class="testimonial-author">
+          <img src="images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar">
+          <div class="author-info">
+            <h4>Ananya Naithani</h4>
+            <p>Investment Banker Turned Ghostwriter & Writing Coach</p>
           </div>
         </div>
       </a>
@@ -1032,23 +1023,26 @@
   </div>
 </section>
 
-<!-- Embedded CSS -->
 <style>
+/* Testimonials Section Styles */
 .testimonials {
   background-color: #050505;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  color: #e5faff;
   text-align: center;
 }
 
-.testimonials h2 {
+.glow-heading {
   font-size: 2rem;
+  color: #00f9ff;
+  text-shadow: 0 0 8px #00f9ff;
   margin-bottom: 10px;
 }
 
-.testimonials p {
+.subtext {
   font-size: 1rem;
-  color: #555;
-  margin-bottom: 40px;
+  color: #9ca3af;
+  margin-bottom: 50px;
 }
 
 .testimonial-slider-wrapper {
@@ -1062,63 +1056,69 @@
 .testimonial-slider {
   display: flex;
   gap: 20px;
-  scroll-snap-align: start;
   padding-bottom: 10px;
 }
 
-.testimonial-card,
-.testimonial-card-link {
-  min-width: 300px;
-  max-width: 350px;
-  background: #fff;
+.testimonial-card {
+  background-color: #101010;
+  border: 1px solid rgba(0, 249, 255, 0.1);
   padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 14px;
   scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 330px;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 249, 255, 0.05);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0, 249, 255, 0.15);
+}
+
+.testimonial-card-link {
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-shrink: 0;
 }
 
-.testimonial-card:hover,
-.testimonial-card-link:hover .testimonial-card {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.testimonial-content p {
+.testimonial-text {
   font-size: 0.95rem;
+  color: #d1d5db;
   line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .author-avatar {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 15px;
+  border: 2px solid #00f9ff33;
 }
 
 .author-info h4 {
-  margin: 0;
   font-size: 1rem;
-  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
 }
 
 .author-info p {
+  font-size: 0.85rem;
+  color: #9ca3af;
   margin: 2px 0 0;
-  font-size: 0.875rem;
-  color: #777;
 }
 </style>
+
+
+      
 
 
 
