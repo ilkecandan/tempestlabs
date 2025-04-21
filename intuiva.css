@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Outfit', sans-serif;
     background-color: #1E1E1E;
     color: #00AAD3;
 }
@@ -130,7 +130,7 @@ nav a:hover {
     font-size: 1.2rem;
     max-width: 900px;
     margin: 0 auto;
-    color: #bcd3f4;
+    color: #00AAD3;
     line-height: 1.7;
     text-align: center;
 }
@@ -222,7 +222,7 @@ nav a:hover {
 .get-started p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    color: #bcd3f4;
+    color: #00AAD3;
 }
 
 .cta-button {
