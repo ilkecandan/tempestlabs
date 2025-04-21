@@ -318,16 +318,6 @@
       font-size: 1.5rem;
     }
 
-.testimonial-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-.testimonial-card-link:hover .testimonial-card {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
 
     
     /* Case Study - Testimonial */
@@ -621,61 +611,7 @@
       padding: 0 0 1.5rem;
     }
 
-    /* Testimonials - Carousel */
-    .testimonials {
-      margin: 4rem 0;
-      position: relative;
-    }
-
-    .testimonial-slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      gap: 2rem;
-      padding: 1rem 0;
-      margin: 0 -2rem;
-      padding: 1rem 2rem;
-    }
-
-    .testimonial-slider::-webkit-scrollbar {
-      display: none;
-    }
-
-    .testimonial-card {
-      scroll-snap-align: start;
-      flex: 0 0 80%;
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid var(--card-border);
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '❝';
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      font-size: 3rem;
-      color: rgba(0, 255, 255, 0.2);
-      line-height: 1;
-    }
-
-    .testimonial-content {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    
 
     .author-avatar {
       width: 50px;
