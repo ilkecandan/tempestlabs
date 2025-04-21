@@ -2,209 +2,274 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-        <link rel="icon" href="images/tempest.png" type="image/x-icon">
-
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Intuiva is a calm, AI-powered project planning tool. Plan with clarity, track with ease, and build without overwhelm. One-time purchase, forever yours." />
-  <title>Intuiva - AI Project Strategist</title>
-  <link rel="stylesheet" href="intuiva.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intuiva – AI Project Planner for Solo Founders</title>
+  <!-- Link to external CSS (if separated) -->
+  <link rel="stylesheet" href="intuiva-product.css" />
+  <!-- Inline CSS for demonstration (can be moved to CSS file) -->
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #d0d0d0;
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    /* Typography */
+    h1, h2, h3, h4 { color: #00ffff; margin-bottom: 0.5em; }
+    h1 { font-size: 2em; margin-top: 0.5em; text-align: center;
+         text-shadow: 0 0 8px rgba(0,255,255,0.5); }
+    h2 { font-size: 1.5em; text-shadow: 0 0 6px rgba(0,255,255,0.5); }
+    h3 { font-size: 1.2em; }
+    p { margin: 0.5em 0 1em; line-height: 1.6; }
+    a { color: #00ffff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    /* Navigation Bar */
+    nav { background: #000; padding: 0.5em 1em; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+    nav li { margin: 0 1em 0 0; }
+    nav a.logo { font-weight: bold; font-size: 1.1em; }
+    /* Buttons */
+    a.btn, a.btn-buy {
+      display: inline-block; font-weight: bold; padding: 0.6em 1.2em;
+      border-radius: 4px; transition: all 0.3s ease;
+    }
+    /* Primary button style (cyan background) */
+    a.btn, a.btn-buy { background: #00ffff; color: #000; }
+    a.btn:hover, a.btn-buy:hover { background: #aefeff; color: #000; }
+    /* Secondary button style (cyan outline) */
+    a.btn.alt { background: transparent; color: #00ffff; border: 2px solid #00ffff; }
+    a.btn.alt:hover { background: #00ffff; color: #000; }
+    /* Main content container */
+    .main-content { max-width: 800px; margin: 0 auto; padding: 1.5em; }
+    /* Hero section */
+    .hero { text-align: center; padding: 2em 1em; }
+    .subtitle { color: #ccc; font-size: 1.1em; line-height: 1.4; }
+    .hero-cta { margin: 1.5em 0; }
+    .hero-cta a { margin: 0.5em; }
+    /* Benefits list */
+    .benefits ul { list-style: none; padding: 0; margin: 1em 0; }
+    .benefits li { margin: 0.5em 0; }
+    /* Case study blockquote styling */
+    .case-study blockquote {
+      border-left: 4px solid #00ffff; padding-left: 1em; margin: 1em 0;
+      color: #aaaaaa; font-style: italic;
+    }
+    /* How it works steps */
+    .steps { counter-reset: step; list-style: none; margin: 1em 0; padding: 0; }
+    .steps li { counter-increment: step; margin: 0 0 1.5em; }
+    .steps li h3 { display: inline; margin: 0 0 0.3em; }
+    .steps li h3::before {
+      content: counter(step) ". "; color: #00ffff; font-weight: bold;
+    }
+    .steps li p { margin: 0.5em 0 0.2em 1.2em; }
+    /* Features grid */
+    .features { display: flex; flex-wrap: wrap; gap: 1.5em; }
+    .feature { flex: 1 1 calc(50% - 1.5em); }
+    .feature h3 { margin-top: 0.5em; }
+    .feature p { margin: 0.3em 0 1em; }
+    /* Video section */
+    .video-container {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      margin: 1em 0;
+    }
+    .video-container iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    /* Pricing cards */
+    .pricing-options { display: flex; flex-wrap: wrap; gap: 1.5em; margin: 1em 0; }
+    .plan { flex: 1 1 calc(50% - 1.5em); background: #141414;
+            border: 1px solid #333; border-radius: 5px; padding: 1em; text-align: center; }
+    .plan h3 { margin-top: 0; }
+    .plan .price { font-size: 1.4em; font-weight: bold; margin: 0.2em 0 0.5em; }
+    .plan p { margin: 0.4em 0; }
+    .plan .btn-buy { margin-top: 0.5em; }
+    /* FAQ section */
+    .faq-item { margin-bottom: 1.5em; }
+    .faq-item h3 { margin-bottom: 0.3em; }
+    /* Final call-to-action */
+    .cta { text-align: center; margin: 2em 0; }
+    .cta p { font-size: 1.1em; }
+  </style>
 </head>
-       <header>
-        <a class="logo" href="index.html" data-key="distanceheader">Tempest Labs</a>
-        <div class="social-icons">
-  <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://tr.pinterest.com/tempestlabs/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-</div>
-           <nav>
-            <ul>
-                <li><a href="https://tempestlabs.space/about.html">About</a></li>
-                <li><a href="https://tempestlabs.space/products.html">Products</a></li>
-                <li><a href="https://tempestlabs.space/contact.html">Contact</a></li>
-                <li><a href="https://tempestlabs.space/blog.html">Blog</a></li>
-                <li>
-                <li><a href="https://tempestlabs.space/turkish/product-intuiva.html">Türkçe</a></li>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
 <body>
 
-  <header class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="images/intu.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-overlay">
-      <div class="hero-text">
-        <h1 data-key="intuivahero_title">Welcome to <span class="brand-name">Intuiva</span></h1>
-        <p class="tagline" data-key="intuivahero_tagline">An AI Project Planner for Solo Builders & First-Time Teams <br>Turn your ideas into real, trackable plans without needing a full product team.</p>
-        <a href="https://youtu.be/CwzQLYFHQS8?si=Gp8L2sqEwjv-1Csq" target="_blank" class="demo-button">Watch a Demo <i class="fas fa-play-circle"></i></a>
-       <a href="https://youtu.be/CwzQLYFHQS8?si=Gp8L2sqEwjv-1Csq" target="_blank" class="demo-button"> Product will be available soon. <i class="fas fa-play-circle"></i></a>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo">Tempest Labs</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="product-intuiva-tr.html">Türkçe</a></li>
+    </ul>
+  </nav>
 
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Welcome to Intuiva</h1>
+      <p class="subtitle">An AI Project Planner for Solo Builders & First-Time Teams<br/>
+      Turn your ideas into real, trackable plans without needing a full product team.</p>
+      <div class="hero-cta">
+        <a href="#tutorial-video" class="btn alt">Watch a Demo</a>
+        <a href="#pricing" class="btn">Get Intuiva Now</a>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <section class="why-intuiva">
-    <h2 data-key="intuivawhy_intuiva_title">Why Intuiva?</h2>
-    <p data-key="intuivawhy_intuiva_description">
-      Intuiva is your AI-powered project strategist, designed for visionary thinkers, entrepreneurs, and innovators who need a structured yet flexible way to turn ideas into reality. Unlike traditional project tools, Intuiva helps you see the future and work backward to make it happen.
-    </p>
-  </section>
+    <!-- Why Intuiva / Benefits -->
+    <section>
+      <h2>Why Intuiva?</h2>
+      <p>Intuiva is your AI-powered project strategist, designed for visionary thinkers, entrepreneurs, and innovators who need a structured yet flexible way to turn ideas into reality. Unlike traditional project tools, Intuiva helps you see the future and work backward to make it happen.</p>
+      <div class="benefits">
+        <p><strong>Intuiva stands out because:</strong></p>
+        <ul>
+          <li><strong>One-time purchase, yours for life –</strong> Pay once and get lifetime access. No recurring subscriptions ever&#8203;:contentReference[oaicite:2]{index=2}.</li>
+          <li><strong>Privacy First –</strong> No data tracking or cloud storage. Your projects stay on your device&#8203;:contentReference[oaicite:3]{index=3}.</li>
+          <li><strong>Offline Capable –</strong> Use Intuiva anywhere, even without internet. As a PWA, it works offline on desktop or mobile&#8203;:contentReference[oaicite:4]{index=4}.</li>
+          <li><strong>No Accounts or Logins –</strong> Get started with a secure PIN after purchase; no account setup or passwords needed&#8203;:contentReference[oaicite:5]{index=5}&#8203;:contentReference[oaicite:6]{index=6}.</li>
+        </ul>
+      </div>
+    </section>
 
-<!-- How It Works Section -->
-<section class="how-it-works">
-  <h2 data-key="intuivahow_it_works_title">How Intuiva Works</h2>
-  <div class="steps">
-    <div class="step">
-      <h3 data-key="intuivastep_1_title">1. Start a Project</h3>
-      <p data-key="intuivastep_1_description">Answer AI-powered questions or skip them—your choice. Receive instant insights with every step.</p>
-    </div>
-    <div class="step">
-      <h3 data-key="intuivastep_2_title">2. Get AI-Generated Summary</h3>
-      <p data-key="intuivastep_2_description">Receive a custom summary of your project. Download it as a beautifully structured PDF.</p>
-    </div>
-    <div class="step">
-      <h3 data-key="intuivastep_3_title">3. View Your Kanban Board</h3>
-      <p data-key="intuivastep_3_description">Your tasks are ready to go. Customize, drag and drop, add columns, and share read-only views.</p>
-    </div>
-    <div class="step">
-      <h3 data-key="intuivastep_4_title">4. Plan Backwards from the Future</h3>
-      <p data-key="intuivastep_4_description">Set your future goal, and Intuiva works backwards—building your success map with editable milestones.</p>
-    </div>
-  </div>
-</section>
+    <!-- Case Study Section -->
+    <section class="case-study">
+      <h2>Case Study: From Overwhelmed to Launched</h2>
+      <p><strong>Meet Alex.</strong> Alex is a solo founder with a big idea but no team. In the beginning, he felt **overwhelmed** – juggling a day job while trying to plan his startup on nights and weekends. With no project manager or co-founder to help, he wasn’t sure where to start and feared important steps might slip through the cracks.</p>
+      <p>After discovering **Intuiva**, Alex decided to give it a try. He started a new project in Intuiva and was guided through simple, thought-provoking questions about his vision and goals. *“It was like Intuiva was reading my mind,”* Alex recalls. As he answered each question, Intuiva’s AI instantly suggested milestones and tasks he hadn’t even considered.</p>
+      <blockquote>“Intuiva was like having an experienced co-founder guiding me step by step,” Alex says. “It turned late-night brainstorming into a structured game plan by morning.”</blockquote>
+      <p>Within a few hours, Alex had a clear project **roadmap**: a detailed summary document of his plan and a full Kanban board of tasks ready to go. Intuiva’s backward planning feature even helped him set a realistic launch date and auto-generated the steps to hit it. Eight weeks later, Alex launched his product **on schedule** – something he once thought impossible. Now he has paying users, and he credits Intuiva for helping turn his *dream* into reality.</p>
+    </section>
 
-<!-- Features Extended -->
-<section class="deep-features">
-  <h2 data-key="intuivadeep_features_title">Built for Modern Thinkers</h2>
-  
-  <div class="feature-grid">
-    <div class="feature-box">
-      <h3 data-key="intuivafeature_1_title">Smart AI Memory</h3>
-      <p data-key="intuivafeature_1_description">Our AI adapts based on your answers, offering tailored advice every time you plan a project.</p>
-    </div>
-    
-    <div class="feature-box">
-      <h3 data-key="intuivafeature_2_title">PDF Reports + Kanban Sync</h3>
-      <p data-key="intuivafeature_2_description">Your project report isn't just a document—it becomes an actionable Kanban board.</p>
-    </div>
-    
-    <div class="feature-box">
-      <h3 data-key="intuivafeature_3_title">Custom Columns & Tasks</h3>
-      <p data-key="intuivafeature_3_description">Add any column: ideas, feedback, inspiration. Fully flexible. Fully yours.</p>
-    </div>
-    
-    <div class="feature-box">
-      <h3 data-key="intuivafeature_4_title">Collaborate Transparently</h3>
-      <p data-key="intuivafeature_4_description">Share your Kanban board via view-only links so your team stays aligned with your progress.</p>
-    </div>
-    
-    <div class="feature-box">
-      <h3 data-key="intuivafeature_5_title">Use It Anywhere, Anytime</h3>
-      <p data-key="intuivafeature_5_description">Intuiva is a PWA (Progressive Web App), which means you can access it instantly from your browser — or download it to your phone, tablet, or computer for offline use. Prefer a classic download? We'll give you a direct link too. Instant access, your way.</p>
-    </div>
-    
-    <div class="feature-box">
-      <h3 data-key="intuivafeature_6_title">Smart Help, Powered by DeepSeek AI</h3>
-      <p data-key="intuivafeature_6_description">Intuiva uses DeepSeek AI to offer personalized project guidance. From planning to execution, our AI adapts to your needs. And don't worry — your privacy matters: we only collect your email to keep things simple and secure.</p>
-    </div>
-  </div>
-</section>
-  
-<style>
-  .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0;
-  }
-  .video-wrapper {
-    max-width: 100%;
-    width: 600px;
-  }
-  .responsive-video {
-    width: 100%;
-    height: 405px;
-    display: block;
-    margin: 0 auto;
-  }
-  /* Demo button styles */
-  .demo-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid white;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-  }
-  .demo-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-  }
-  .demo-button i {
-    margin-left: 8px;
-  }
-</style>
+    <!-- How It Works Section -->
+    <section>
+      <h2>How Intuiva Works</h2>
+      <ol class="steps">
+        <li>
+          <h3>Start a Project</h3>
+          <p>Kick off by outlining your idea. Intuiva will ask a few AI-powered questions (you can skip any if you like) to help refine your vision. You get instant insights with every answer, so you’re never planning in the dark.</p>
+        </li>
+        <li>
+          <h3>Get an AI-Generated Summary</h3>
+          <p>Receive a custom summary report of your project’s strategy. Intuiva compiles your goals, key steps, and potential risks into a beautifully structured PDF that you can download or share for feedback.</p>
+        </li>
+        <li>
+          <h3>View Your Kanban Board</h3>
+          <p>All your tasks are instantly organized into an interactive Kanban board. Customize it as you see fit: drag-and-drop tasks, add new columns (ideas, feedback, etc.), and mark progress as you go. You can even share a read-only link so others can follow along with your progress.</p>
+        </li>
+        <li>
+          <h3>Plan Backwards from the Future</h3>
+          <p>Set a future goal or launch date, and Intuiva will work backward to build your success map. It auto-generates milestones from the future back to today, giving you a step-by-step timeline. Edit and adjust these milestones until the plan fits your schedule.</p>
+        </li>
+      </ol>
+    </section>
 
-<section class="video-container">
-  <div class="video-wrapper">
-    <iframe 
-      class="responsive-video"
-      src="https://www.youtube.com/embed/ji8NjZnKROU?si=RDMEwnsA3I1Zm5li" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" 
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
-  <!-- Pricing Reminder -->
-<section class="pricing-block">
-  <h2 data-key="intuivapricing_title">Simple, Transparent Pricing</h2>
-  <div class="plans">
-    
-    <a class="plan" href=" target="_blank">
-      <h3>Basic</h3>
-      <p class="price">$9.99</p>
-      <p>Includes 3,200,000 AI tokens. One-time purchase. Lifetime access.</p>
-    </a>
-
-    <a class="plan" href="" target="_blank">
-      <h3 data-key="intuivaplan_2_title">Pro</h3>
-      <p class="price" data-key="intuivaplan_2_price">$24.00</p>
-      <p data-key="intuivaplan_2_description">Unlimited AI usage. No limits. No subscriptions. Just power.</p>
-    </a>
-
-  </div>
-</section>
-
-<!-- Call to Action -->
-<section class="get-started">
-  <h2 data-key="intuivacta_title">Ready to turn ideas into action?</h2>
-  <p data-key="intuivacta_description">Let Intuiva be your strategist. One pin, lifetime power.</p>
-</section>
-
-
-  <footer>
-        <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
-        <div class="legal-links">
-            <a href="https://tempestlabs.space/legal/membership-agreement.html" >Membership Agreement</a> |
-            <a href="https://tempestlabs.space/legal/kvkk-clarification.html">KVKK Clarification</a> |
-            <a href="https://tempestlabs.space/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+    <!-- Features Section -->
+    <section>
+      <h2>Built for Modern Thinkers</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Smart AI Memory</h3>
+          <p>Intuiva’s AI adapts to your inputs, offering tailored advice each time you plan a project. The more you use it, the smarter it gets at guiding you.</p>
         </div>
-    </footer>
+        <div class="feature">
+          <h3>PDF Reports + Kanban Sync</h3>
+          <p>Your project report isn’t just a static document—it’s directly tied to your Kanban. Plan once, and execute without duplicating effort.</p>
+        </div>
+        <div class="feature">
+          <h3>Custom Columns & Tasks</h3>
+          <p>Add any column you need: ideas, feedback, inspiration, you name it. Intuiva’s boards are fully flexible, so you can mold them to your workflow.</p>
+        </div>
+        <div class="feature">
+          <h3>Collaborate Transparently</h3>
+          <p>Keep stakeholders in the loop. Share your Kanban via a view-only link so your team or mentors can see progress without affecting your focus.</p>
+        </div>
+        <div class="feature">
+          <h3>Use It Anywhere, Anytime</h3>
+          <p>Intuiva is a PWA (Progressive Web App). Access it from your browser or install it on your phone, tablet, or computer for offline use. Prefer a traditional app? We also provide a direct download, so you can work your way.</p>
+        </div>
+        <div class="feature">
+          <h3>Smart Help, Powered by DeepSeek AI</h3>
+          <p>Under the hood, Intuiva uses our DeepSeek AI engine to give personalized guidance. From planning to execution, it adapts to your needs. And don’t worry—your privacy is paramount: apart from your email for verification, nothing leaves your device&#8203;:contentReference[oaicite:7]{index=7}.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutorial Video Section -->
+    <section id="tutorial-video">
+      <h2>See Intuiva in Action</h2>
+      <p>Get a quick tour of Intuiva’s interface and features in the video below. See how a project goes from idea to actionable plan in minutes:</p>
+      <div class="video-container">
+        <!-- Placeholder YouTube embed -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CwzQLYFHQS8" title="Intuiva Tutorial Video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <h2>Simple, Transparent Pricing</h2>
+      <div class="pricing-options">
+        <div class="plan basic">
+          <h3>Basic</h3>
+          <p class="price">$9.99</p>
+          <p>Includes 3,200,000 AI tokens. One-time purchase. Lifetime access.&#8203;:contentReference[oaicite:8]{index=8}</p>
+          <a href="#" class="btn btn-buy">Buy Basic</a>
+        </div>
+        <div class="plan pro">
+          <h3>Pro</h3>
+          <p class="price">$24.00</p>
+          <p>Unlimited AI usage.<br/>No limits, no subscriptions. Just power.&#8203;:contentReference[oaicite:9]{index=9}</p>
+          <a href="#" class="btn btn-buy">Buy Pro</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Do I need to be tech-savvy to use Intuiva?</h3>
+        <p>Not at all. Intuiva is designed to be **user-friendly** for anyone, even if you’re not a tech expert. If you can describe your idea and answer a few simple prompts, Intuiva will handle the rest. It’s built for solo builders of all backgrounds&#8203;:contentReference[oaicite:10]{index=10}, not just seasoned project managers.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is Intuiva a subscription service?</h3>
+        <p>No. Intuiva is a **one-time purchase** software&#8203;:contentReference[oaicite:11]{index=11} – not a subscription. You pay once and own it for life, including all future updates. There are no monthly fees or hidden charges.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I use Intuiva offline?</h3>
+        <p>Yes. Intuiva works offline. Once you open or install Intuiva on your device, you can use it without an internet connection. This is perfect for working on the go or during flights – your planning won’t be interrupted.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I receive the app after purchase?</h3>
+        <p>After purchasing Intuiva, you’ll immediately receive a **personal PIN code** via email. Use this PIN to activate and access your Intuiva app. There’s no lengthy setup – just enter your PIN and you’re in. (No separate login or account required.)</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my project data private?</h3>
+        <p>Absolutely. Your project data stays on your device and is never uploaded to our servers&#8203;:contentReference[oaicite:12]{index=12}. We don’t see your ideas or plans. The only data we use is your email (for sending your PIN and updates) – nothing more&#8203;:contentReference[oaicite:13]{index=13}. Intuiva is built with privacy in mind from day one.</p>
+      </div>
+    </section>
+
+    <!-- Final Call-to-Action -->
+    <section class="cta">
+      <h2>Ready to turn your ideas into action?</h2>
+      <p>Let Intuiva be your project strategist. **One PIN, lifetime power.**</p>
+      <a href="#pricing" class="btn btn-buy">Get Intuiva Now</a>
+    </section>
+
+  </div> <!-- /main-content -->
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 2em 1em;">
+    <p>© 2025 Tempest Labs. All rights reserved.</p>
+    <p>
+      <a href="membership.html">Membership Agreement</a> | 
+      <a href="kvkk.html">KVKK Clarification</a> | 
+      <a href="distance.html">Distance Sales Agreement</a>
+    </p>
+  </footer>
 
 </body>
 </html>
