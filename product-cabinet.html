@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cabinet of Selves - Explore your inner world with Internal Family Systems (IFS) therapy concepts">
-    <title>Cabinet of Selves | Your Inner World Guide</title>
+    <meta name="description" content="Cabinet of Selves - A revolutionary tool for self-discovery using Internal Family Systems (IFS) therapy. Understand your inner parts, track emotional patterns, and achieve mental harmony.">
+    <title>Cabinet of Selves | Your Inner World Exploration Tool</title>
     
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://unpkg.com/lucide@latest/dist/lucide.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.css">
     
     <style>
     :root {
@@ -271,9 +272,35 @@
         transform: translateY(-10px);
     }
 
+    /* Stats Section */
+    .stats {
+        background: var(--section-bg);
+        padding: 4rem 0;
+    }
+
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .stat-item {
+        padding: 2rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     /* Features Section */
     .features {
-        background: var(--section-bg);
+        position: relative;
     }
 
     .features-grid {
@@ -312,39 +339,29 @@
         color: var(--secondary-color);
     }
 
-    .feature-card h3 {
-        margin-bottom: 1rem;
+    /* How It Works Section */
+    .how-it-works {
+        background: var(--section-bg);
     }
 
-    /* IFS Introduction Section */
-    .ifs-intro {
-        position: relative;
-    }
-
-    .ifs-container {
+    .steps-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
     }
 
-    .ifs-content {
-        max-width: 600px;
-    }
-
-    .ifs-steps {
-        margin-top: 2rem;
-    }
-
-    .step {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
+    .step-card {
+        position: relative;
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: 1rem;
+        text-align: center;
     }
 
     .step-number {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
         background: var(--accent-color);
         color: white;
         border-radius: 50%;
@@ -352,313 +369,224 @@
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        flex-shrink: 0;
+        font-size: 1.5rem;
+        margin: 0 auto 1.5rem;
     }
 
-    .ifs-image {
+    /* Testimonials Section */
+    .testimonials {
+        position: relative;
+    }
+
+    .testimonial-slider {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: 1rem;
+        margin: 0 1rem;
+        text-align: center;
+        border: 1px solid var(--border-color);
+    }
+
+    .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 3px solid var(--secondary-color);
+    }
+
+    .testimonial-quote {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+        font-size: 1.1rem;
+    }
+
+    .testimonial-quote::before,
+    .testimonial-quote::after {
+        content: '"';
+        font-size: 2rem;
+        color: var(--secondary-color);
+        opacity: 0.5;
+    }
+
+    .testimonial-author {
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+
+    .testimonial-role {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    /* Data Visualization Section */
+    .data-viz {
+        background: var(--section-bg);
+    }
+
+    .viz-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .viz-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 1rem;
+        height: 100%;
+    }
+
+    .viz-image {
         position: relative;
         border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
     }
 
-    .ifs-image img {
+    .viz-image img {
         width: 100%;
         height: auto;
         display: block;
     }
 
-    /* Parts Section */
-    .parts {
-        background: var(--section-bg);
-    }
-
-    .parts-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .part-card {
-        background: var(--card-bg);
-        padding: 1.5rem;
-        border-radius: 0.8rem;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-    }
-
-    .part-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .part-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .part-icon {
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 126, 157, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .part-icon i {
-        color: var(--accent-color);
-    }
-
-    .part-actions {
-        display: flex;
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    .part-actions button {
-        background: transparent;
-        border: none;
-        color: var(--text-secondary);
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
-
-    .part-actions button:hover {
-        color: var(--text-color);
-    }
-
-    /* Check-In Section */
-    .checkin {
+    /* Pricing Section */
+    .pricing {
         position: relative;
     }
 
-    .checkin-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-    }
-
-    .checkin-form {
-        background: var(--card-bg);
-        padding: 2rem;
-        border-radius: 1rem;
-    }
-
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-    }
-
-    .form-control {
-        width: 100%;
-        padding: 0.8rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--border-color);
-        border-radius: 0.5rem;
-        color: var(--text-color);
-        font-family: inherit;
-    }
-
-    .form-control:focus {
-        outline: none;
-        border-color: var(--secondary-color);
-    }
-
-    .mood-selector {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-    }
-
-    .mood-option {
-        padding: 0.5rem 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .mood-option:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    .mood-option.selected {
-        background: var(--accent-color);
-        color: white;
-    }
-
-    .parts-selector {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .part-tag {
-        padding: 0.5rem 1rem;
-        background: rgba(109, 195, 165, 0.1);
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .checkin-history {
-        background: var(--card-bg);
-        padding: 2rem;
-        border-radius: 1rem;
-        max-height: 600px;
-        overflow-y: auto;
-    }
-
-    .history-item {
-        padding: 1rem;
-        border-bottom: 1px solid var(--border-color);
-        margin-bottom: 1rem;
-    }
-
-    .history-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-    }
-
-    .history-actions {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .history-actions button {
-        background: transparent;
-        border: none;
-        color: var(--text-secondary);
-        cursor: pointer;
-    }
-
-    /* AI Companion Section */
-    .ai-companion {
-        background: var(--section-bg);
-    }
-
-    .ai-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: var(--card-bg);
-        border-radius: 1rem;
-        overflow: hidden;
-    }
-
-    .ai-header {
-        padding: 1.5rem;
-        background: rgba(255, 126, 157, 0.1);
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .ai-disclaimer {
-        padding: 1rem;
-        background: rgba(248, 113, 113, 0.1);
-        border-radius: 0.5rem;
-        margin-top: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .ai-chat {
-        padding: 1.5rem;
-        min-height: 300px;
-        max-height: 500px;
-        overflow-y: auto;
-    }
-
-    .ai-message {
-        margin-bottom: 1.5rem;
-    }
-
-    .ai-bot {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .ai-bot-avatar {
-        width: 40px;
-        height: 40px;
-        background: rgba(109, 195, 165, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .ai-input {
-        display: flex;
-        padding: 1rem;
-        border-top: 1px solid var(--border-color);
-    }
-
-    .ai-input textarea {
-        flex: 1;
-        padding: 0.8rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--border-color);
-        border-radius: 0.5rem;
-        color: var(--text-color);
-        font-family: inherit;
-        resize: none;
-        min-height: 50px;
-        max-height: 150px;
-    }
-
-    .ai-input button {
-        margin-left: 1rem;
-        align-self: flex-end;
-    }
-
-    /* Resources Section */
-    .resources {
-        position: relative;
-    }
-
-    .resources-grid {
+    .pricing-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
+        margin-top: 4rem;
     }
 
-    .resource-card {
+    .pricing-card {
         background: var(--card-bg);
-        padding: 1.5rem;
-        border-radius: 0.8rem;
-        border: 1px solid var(--border-color);
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
         transition: all 0.3s ease;
     }
 
-    .resource-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    .pricing-card.featured {
+        border: 2px solid var(--accent-color);
+        transform: translateY(-10px);
     }
 
-    .resource-icon {
-        width: 50px;
-        height: 50px;
-        background: rgba(93, 109, 195, 0.1);
-        border-radius: 50%;
+    .pricing-header {
+        margin-bottom: 2rem;
+    }
+
+    .pricing-price {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 1rem 0;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .pricing-features {
+        margin: 2rem 0;
+        text-align: left;
+    }
+
+    .pricing-features li {
+        margin-bottom: 0.8rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
+        gap: 0.5rem;
     }
 
-    .resource-icon i {
-        color: var(--primary-color);
+    .pricing-features i {
+        color: var(--secondary-color);
+    }
+
+    /* FAQ Section */
+    .faq {
+        background: var(--section-bg);
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        background: var(--card-bg);
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+    }
+
+    .faq-question {
+        padding: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+    }
+
+    .faq-answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 1.5rem 1.5rem;
+        max-height: 500px;
+    }
+
+    .faq-question i {
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+    }
+
+    /* CTA Section */
+    .cta {
+        text-align: center;
+        padding: 6rem 0;
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        opacity: 0.3;
+    }
+
+    .cta h2 {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .cta p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-size: 1.1rem;
     }
 
     /* Footer */
@@ -739,53 +667,6 @@
         font-size: 0.9rem;
     }
 
-    /* Language Selector */
-    .language-selector {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        z-index: 100;
-    }
-
-    .language-btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        border: none;
-    }
-
-    .language-dropdown {
-        position: absolute;
-        bottom: 60px;
-        right: 0;
-        background: var(--card-bg);
-        border-radius: 0.5rem;
-        padding: 0.5rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        display: none;
-    }
-
-    .language-dropdown.show {
-        display: block;
-    }
-
-    .language-option {
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        border-radius: 0.3rem;
-    }
-
-    .language-option:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
     /* Animations */
     @keyframes float {
         0%, 100% { transform: translateY(0); }
@@ -808,8 +689,7 @@
     /* Responsive Design */
     @media (max-width: 1024px) {
         .hero-content,
-        .ifs-container,
-        .checkin-container {
+        .viz-container {
             grid-template-columns: 1fr;
             gap: 3rem;
         }
@@ -830,6 +710,10 @@
 
         .hero-image {
             order: 0;
+        }
+
+        .stats-container {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -861,6 +745,10 @@
         section {
             padding: 4rem 0;
         }
+
+        .stats-container {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Utility Classes */
@@ -889,11 +777,14 @@
             Cabinet of Selves
         </a>
         <div class="nav-links">
-            <a href="#ifs">IFS Therapy</a>
-            <a href="#parts">Your Parts</a>
-            <a href="#checkin">Daily Check-In</a>
-            <a href="#ai">AI Companion</a>
-            <a href="#resources">Resources</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <div class="nav-buttons">
+            <button class="btn btn-primary">Get Started</button>
         </div>
     </nav>
 
@@ -902,293 +793,311 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text animate__animated animate__fadeInLeft">
-                    <h1>Discover Your <span class="text-accent">Inner Family</span></h1>
-                    <p>Cabinet of Selves helps you explore and understand the different parts of yourself using Internal Family Systems (IFS) therapy concepts. Honor every voice within.</p>
+                    <h1>Discover the <span class="text-accent">Many Parts</span> of You</h1>
+                    <p>Cabinet of Selves is a revolutionary tool for self-discovery using Internal Family Systems (IFS) therapy. Understand your inner parts, track emotional patterns, and achieve mental harmony.</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-accent animate-float" onclick="window.location.href='#parts'">
-                            <i data-lucide="sparkles"></i> Explore Your Parts
+                        <button class="btn btn-accent animate-float">
+                            <i data-lucide="sparkles"></i> Start Your Journey
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i data-lucide="play-circle"></i> Watch Demo
                         </button>
                     </div>
                 </div>
                 <div class="hero-image animate__animated animate__fadeInRight">
-                    <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80" alt="MindScape Dashboard Preview">
+                    <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80" alt="Cabinet of Selves Interface">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- IFS Introduction Section -->
-    <section id="ifs" class="ifs-intro">
+    <!-- Stats Section -->
+    <section class="stats">
         <div class="container">
-            <div class="section-header">
-                <h2>Understanding Internal Family Systems</h2>
-                <p>A compassionate approach to self-discovery and healing</p>
-            </div>
-            <div class="ifs-container">
-                <div class="ifs-content">
-                    <p>If you've ever thought, "Part of me feels one way, but another part of me feels something completely different," you're already understanding what Internal Family Systems (IFS) is about.</p>
-                    <p>IFS is a therapeutic approach that helps you get to know the many parts that make up your internal world—like unique voices within you, each with their own stories, feelings, and needs.</p>
-                    
-                    <h3 class="mt-3">Why Do We Have Parts?</h3>
-                    <p>Life shapes us. Experiences, both big and small, leave marks on how we see ourselves and the world. To survive difficult moments, we naturally develop parts that step in to protect us.</p>
-                    
-                    <h3 class="mt-3">What is the Self?</h3>
-                    <p>In IFS, Self is the core of who you are—the calm, confident, compassionate essence beneath all the noise of your parts.</p>
-                    
-                    <div class="ifs-steps">
-                        <h3 class="mt-3">How to Begin Your IFS Journey</h3>
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div>
-                                <h4>Recognize your parts</h4>
-                                <p>Pay attention to your inner dialogue. When you feel anxious, sad, or insecure, ask yourself: "Is there a part of me that feels this way?"</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div>
-                                <h4>Be curious, not critical</h4>
-                                <p>Be curious about your parts instead of judging them. Question: "What are you trying to protect me from?"</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <p>Users Exploring Their Inner Worlds</p>
                 </div>
-                <div class="ifs-image">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="IFS Therapy Illustration">
+                <div class="stat-item">
+                    <div class="stat-number">94%</div>
+                    <p>Report Increased Self-Awareness</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9/5</div>
+                    <p>Average User Rating</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <p>AI Companion Availability</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Parts Section -->
-    <section id="parts" class="parts">
+    <!-- Features Section -->
+    <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Your Inner Parts</h2>
-                <p>Explore and understand the different aspects of yourself</p>
+                <h2>Powerful Features</h2>
+                <p>Everything you need for your journey of self-discovery</p>
             </div>
-            <div class="parts-grid">
-                <div class="part-card">
-                    <div class="part-header">
-                        <div class="part-icon">
-                            <i data-lucide="shield"></i>
-                        </div>
-                        <h3>Protector</h3>
+            <div class="features-grid">
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i data-lucide="layers"></i>
                     </div>
-                    <p>This part works hard to keep you safe from emotional pain, sometimes through avoidance or control.</p>
-                    <div class="part-actions">
-                        <button><i data-lucide="edit"></i></button>
-                        <button><i data-lucide="trash-2"></i></button>
-                    </div>
+                    <h3>Parts Mapping</h3>
+                    <p>Visualize and understand the different aspects of your personality with our intuitive mapping tool.</p>
                 </div>
-                <div class="part-card">
-                    <div class="part-header">
-                        <div class="part-icon">
-                            <i data-lucide="zap"></i>
-                        </div>
-                        <h3>Overly Confident</h3>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i data-lucide="activity"></i>
                     </div>
-                    <p>This part compensates for insecurities by projecting an exaggerated sense of self-assurance.</p>
-                    <div class="part-actions">
-                        <button><i data-lucide="edit"></i></button>
-                        <button><i data-lucide="trash-2"></i></button>
-                    </div>
+                    <h3>Mood Tracking</h3>
+                    <p>Identify patterns and triggers with our comprehensive mood tracking system.</p>
                 </div>
-                <div class="part-card">
-                    <div class="part-header">
-                        <div class="part-icon">
-                            <i data-lucide="cloud-rain"></i>
-                        </div>
-                        <h3>Grumpy Part</h3>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <i data-lucide="bot"></i>
                     </div>
-                    <p>This part emerges when you're tired or overwhelmed, expressing frustration on your behalf.</p>
-                    <div class="part-actions">
-                        <button><i data-lucide="edit"></i></button>
-                        <button><i data-lucide="trash-2"></i></button>
-                    </div>
+                    <h3>AI Companion</h3>
+                    <p>Your always-available guide for exploring thoughts and feelings with compassion.</p>
                 </div>
-                <div class="part-card">
-                    <div class="part-header">
-                        <div class="part-icon">
-                            <i data-lucide="heart"></i>
-                        </div>
-                        <h3>Nurturer</h3>
-                    </div>
-                    <p>This part wants to take care of others, sometimes at the expense of your own needs.</p>
-                    <div class="part-actions">
-                        <button><i data-lucide="edit"></i></button>
-                        <button><i data-lucide="trash-2"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <button class="btn btn-primary">
-                    <i data-lucide="plus"></i> Add New Part
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Check-In Section -->
-    <section id="checkin" class="checkin">
-        <div class="container">
-            <div class="section-header">
-                <h2>Daily Check-In</h2>
-                <p>Reflect on your day and connect with your inner world</p>
-            </div>
-            <div class="checkin-container">
-                <div class="checkin-form">
-                    <div class="form-group">
-                        <label>Date:</label>
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Today's Mood:</label>
-                        <div class="mood-selector">
-                            <div class="mood-option selected">😢 Sad</div>
-                            <div class="mood-option">😊 Happy</div>
-                            <div class="mood-option">😐 Neutral</div>
-                            <div class="mood-option">😡 Angry</div>
-                            <div class="mood-option">😌 Peaceful</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Active Parts:</label>
-                        <div class="parts-selector">
-                            <div class="part-tag">
-                                <span>Protector</span>
-                            </div>
-                            <div class="part-tag">
-                                <span>Overly Confident</span>
-                            </div>
-                            <div class="part-tag">
-                                <span>Grumpy Part</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Significant Events:</label>
-                        <input type="text" class="form-control" placeholder="What stood out today?">
-                    </div>
-                    <div class="form-group">
-                        <label>Additional Thoughts:</label>
-                        <textarea class="form-control" rows="4" placeholder="How are you feeling about today?"></textarea>
-                    </div>
-                    <button class="btn btn-primary">
-                        <i data-lucide="save"></i> Save Check-In
-                    </button>
-                </div>
-                <div class="checkin-history">
-                    <h3>Check-In History</h3>
-                    <div class="history-item">
-                        <div class="history-header">
-                            <strong>2025-04-11</strong>
-                            <div class="history-actions">
-                                <button><i data-lucide="file-text"></i></button>
-                                <button><i data-lucide="trash-2"></i></button>
-                            </div>
-                        </div>
-                        <p>Mood: 😢 Sad</p>
-                        <p>Active Parts: Overly Confident, Constantly Tired, Grumpy Part</p>
-                        <p>Significant Events: -</p>
-                    </div>
-                    <div class="history-item">
-                        <div class="history-header">
-                            <strong>2025-04-06</strong>
-                            <div class="history-actions">
-                                <button><i data-lucide="file-text"></i></button>
-                                <button><i data-lucide="trash-2"></i></button>
-                            </div>
-                        </div>
-                        <p>Mood: 🎈 Happy</p>
-                        <p>Active Parts: Overly Confident, Constantly Tired, Grumpy Part</p>
-                        <p>Significant Events: Had a great meeting with my team</p>
-                    </div>
-                    <div class="text-center mt-2">
-                        <button class="btn btn-secondary">
-                            <i data-lucide="calendar"></i> View All History
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Companion Section -->
-    <section id="ai" class="ai-companion">
-        <div class="container">
-            <div class="section-header">
-                <h2>AI Therapist Companion</h2>
-                <p>Explore your thoughts and feelings with our compassionate AI guide</p>
-            </div>
-            <div class="ai-container">
-                <div class="ai-header">
-                    <h3>Welcome to Your AI Therapist</h3>
-                    <p>I'm here to listen and help you explore your thoughts and feelings.</p>
-                </div>
-                <div class="ai-disclaimer">
-                    <i data-lucide="alert-triangle"></i> Please remember this doesn't substitute professional therapy. In crisis situations, please seek professional help.
-                </div>
-                <div class="ai-chat">
-                    <div class="ai-message">
-                        <div class="ai-bot">
-                            <div class="ai-bot-avatar">
-                                <i data-lucide="bot"></i>
-                            </div>
-                            <div>
-                                <p>How are you feeling today?</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ai-input">
-                    <textarea placeholder="Type your thoughts here..."></textarea>
-                    <button class="btn btn-primary">
-                        <i data-lucide="send"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="resources">
-        <div class="container">
-            <div class="section-header">
-                <h2>Resources & Guidance</h2>
-                <p>Explore articles, exercises, and journal prompts for self-discovery</p>
-            </div>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-icon">
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <div class="feature-icon">
                         <i data-lucide="book-open"></i>
                     </div>
-                    <h3>Therapeutic Resources</h3>
-                    <p>Learn more about IFS therapy and how to apply its principles in your daily life.</p>
-                    <button class="btn btn-secondary mt-2">
-                        <i data-lucide="arrow-right"></i> Explore
-                    </button>
+                    <h3>Journaling</h3>
+                    <p>Secure, private journal with AI-powered insights to uncover patterns in your writing.</p>
                 </div>
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i data-lucide="pen-tool"></i>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                    <div class="feature-icon">
+                        <i data-lucide="trending-up"></i>
                     </div>
-                    <h3>Journal Prompts</h3>
-                    <p>Thoughtful questions to help you explore your inner world and understand your parts.</p>
-                    <button class="btn btn-secondary mt-2">
-                        <i data-lucide="arrow-right"></i> Explore
-                    </button>
+                    <h3>Progress Analytics</h3>
+                    <p>Visualize your emotional journey with beautiful charts and data visualizations.</p>
                 </div>
-                <div class="resource-card">
-                    <div class="resource-icon">
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 1s;">
+                    <div class="feature-icon">
                         <i data-lucide="headphones"></i>
                     </div>
                     <h3>Guided Meditations</h3>
-                    <p>Audio exercises to help you connect with your Self and different parts.</p>
-                    <button class="btn btn-secondary mt-2">
-                        <i data-lucide="arrow-right"></i> Explore
-                    </button>
+                    <p>Curated audio exercises to help you connect with your different parts.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Start your journey of self-discovery in just a few steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Identify Your Parts</h3>
+                    <p>Begin by recognizing the different aspects of your personality through guided exercises.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Map Relationships</h3>
+                    <p>Visualize how your parts interact with each other and understand their roles.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Daily Check-Ins</h3>
+                    <p>Track your mood and which parts are active throughout your day.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Grow & Integrate</h3>
+                    <p>Use insights to foster harmony among your parts and strengthen your core Self.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Real stories from people who transformed their self-understanding</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="testimonial-avatar">
+                    <p class="testimonial-quote">Cabinet of Selves helped me understand why I sometimes feel torn between different desires. Seeing my parts visually mapped out was a game-changer for my self-awareness.</p>
+                    <div class="testimonial-author">Sarah J.</div>
+                    <div class="testimonial-role">Teacher, 34</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="testimonial-avatar">
+                    <p class="testimonial-quote">As someone skeptical of therapy, I was amazed at how quickly I connected with the AI companion. It helped me uncover patterns I'd been ignoring for years.</p>
+                    <div class="testimonial-author">Michael T.</div>
+                    <div class="testimonial-role">Software Engineer, 28</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Aisha K." class="testimonial-avatar">
+                    <p class="testimonial-quote">The mood tracking and parts visualization helped me communicate better with my therapist. We make progress much faster now.</p>
+                    <div class="testimonial-author">Aisha K.</div>
+                    <div class="testimonial-role">Graphic Designer, 31</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section id="data-viz" class="data-viz">
+        <div class="container">
+            <div class="section-header">
+                <h2>See Your Growth</h2>
+                <p>Powerful visualizations to track your emotional journey</p>
+            </div>
+            <div class="viz-container">
+                <div class="viz-card">
+                    <canvas id="moodChart" width="400" height="400"></canvas>
+                </div>
+                <div class="viz-card">
+                    <canvas id="partsChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that works for your journey</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <p>For those beginning their self-discovery</p>
+                    </div>
+                    <div class="pricing-price">$9.99</div>
+                    <p>per month</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Parts Mapping</li>
+                        <li><i data-lucide="check"></i> Mood Tracking</li>
+                        <li><i data-lucide="check"></i> Basic Journaling</li>
+                        <li><i data-lucide="x"></i> AI Companion</li>
+                        <li><i data-lucide="x"></i> Advanced Analytics</li>
+                    </ul>
+                    <button class="btn btn-secondary">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <p>Most popular for serious explorers</p>
+                    </div>
+                    <div class="pricing-price">$19.99</div>
+                    <p>per month</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> All Basic Features</li>
+                        <li><i data-lucide="check"></i> AI Companion</li>
+                        <li><i data-lucide="check"></i> Advanced Analytics</li>
+                        <li><i data-lucide="check"></i> Guided Meditations</li>
+                        <li><i data-lucide="check"></i> Priority Support</li>
+                    </ul>
+                    <button class="btn btn-accent">Get Started</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p>For therapists and practitioners</p>
+                    </div>
+                    <div class="pricing-price">$49.99</div>
+                    <p>per month</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> All Premium Features</li>
+                        <li><i data-lucide="check"></i> Client Management</li>
+                        <li><i data-lucide="check"></i> Shared Insights</li>
+                        <li><i data-lucide="check"></i> Professional Resources</li>
+                        <li><i data-lucide="check"></i> Dedicated Account Manager</li>
+                    </ul>
+                    <button class="btn btn-secondary">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Cabinet of Selves</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is Internal Family Systems (IFS) therapy?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>IFS is a therapeutic approach that views the mind as made up of multiple sub-personalities or "parts" that interact like a family. These parts can be protective, wounded, or serve other roles. The goal is to help these parts work harmoniously under the leadership of your core Self.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is Cabinet of Selves a replacement for therapy?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, Cabinet of Selves is designed to complement therapy, not replace it. Many users find it enhances their therapeutic work by providing tools for self-reflection between sessions. For serious mental health concerns, we always recommend working with a licensed professional.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the AI companion work?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our AI companion uses natural language processing to help you explore your thoughts and feelings. It's trained to ask thoughtful questions and reflect your words back to help you gain insight. It doesn't diagnose or give professional advice, but rather serves as a compassionate listener.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my data private and secure?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use end-to-end encryption and never sell your data. You own all your content and can export or delete it at any time. For more details, see our Privacy Policy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I use Cabinet of Selves with my therapist?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Many therapists appreciate when clients use our tools between sessions. The Professional plan even includes features specifically designed for therapist-client collaboration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Explore Your Inner World?</h2>
+            <p>Join thousands of users who have discovered greater self-awareness and emotional harmony with Cabinet of Selves.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-accent animate-float">
+                    <i data-lucide="sparkles"></i> Start Your Free Trial
+                </button>
+                <button class="btn btn-secondary">
+                    <i data-lucide="message-circle"></i> Contact Us
+                </button>
             </div>
         </div>
     </section>
@@ -1216,28 +1125,30 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h3>Explore</h3>
+                    <h3>Product</h3>
                     <ul>
-                        <li><a href="#ifs">IFS Therapy</a></li>
-                        <li><a href="#parts">Your Parts</a></li>
-                        <li><a href="#checkin">Daily Check-In</a></li>
-                        <li><a href="#ai">AI Companion</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                        <li><a href="#">Updates</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="#resources">Therapeutic Resources</a></li>
-                        <li><a href="#resources">Journal Prompts</a></li>
-                        <li><a href="#resources">Guided Meditations</a></li>
+                        <li><a href="#">IFS Therapy Guide</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Help Center</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h3>About</h3>
+                    <h3>Company</h3>
                     <ul>
-                        <li><a href="#">Tempest Labs</a></li>
-                        <li><a href="#">Our Approach</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
                         <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -1247,48 +1158,97 @@
         </div>
     </footer>
 
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <button class="language-btn" id="languageBtn">
-            <i data-lucide="globe"></i>
-        </button>
-        <div class="language-dropdown" id="languageDropdown">
-            <div class="language-option">English</div>
-            <div class="language-option">Türkçe</div>
-            <div class="language-option">Deutsch</div>
-        </div>
-    </div>
-
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
         
-        // Language selector functionality
-        const languageBtn = document.getElementById('languageBtn');
-        const languageDropdown = document.getElementById('languageDropdown');
-        
-        languageBtn.addEventListener('click', () => {
-            languageDropdown.classList.toggle('show');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
-                languageDropdown.classList.remove('show');
+        // Initialize mood chart
+        const moodCtx = document.getElementById('moodChart').getContext('2d');
+        const moodChart = new Chart(moodCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Mood Average',
+                    data: [3.2, 3.5, 3.8, 4.1, 3.9, 4.2],
+                    borderColor: '#6dc3a5',
+                    backgroundColor: 'rgba(109, 195, 165, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Mood: ${context.raw}/5`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 1,
+                        max: 5,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                const moods = ['Very Low', 'Low', 'Neutral', 'Good', 'Great'];
+                                return moods[value - 1];
+                            }
+                        }
+                    }
+                }
             }
         });
-        
-        // Mood selector functionality
-        const moodOptions = document.querySelectorAll('.mood-option');
-        moodOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                moodOptions.forEach(opt => opt.classList.remove('selected'));
-                option.classList.add('selected');
+
+        // Initialize parts chart
+        const partsCtx = document.getElementById('partsChart').getContext('2d');
+        const partsChart = new Chart(partsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Protector', 'Inner Child', 'Perfectionist', 'Critic', 'Nurturer', 'Other'],
+                datasets: [{
+                    data: [25, 20, 15, 15, 15, 10],
+                    backgroundColor: [
+                        '#ff7e9d',
+                        '#6dc3a5',
+                        '#5d6dc3',
+                        '#fbbf24',
+                        '#a78bfa',
+                        '#c7d3e0'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    }
+                }
+            }
+        });
+
+        // FAQ functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
             });
         });
-        
+
         // Create floating elements
         function createFloatingElements() {
             const container = document.querySelector('.floating-elements');
@@ -1346,9 +1306,6 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Close language dropdown if open
-                    languageDropdown.classList.remove('show');
                 }
             });
         });
@@ -1364,6 +1321,27 @@
                 navbar.style.background = 'rgba(15, 23, 42, 0.8)';
             }
         });
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+        
+        // Start with first testimonial visible
+        showTestimonial(0);
+        
+        // Auto-rotate testimonials every 5 seconds
+        setInterval(nextTestimonial, 5000);
     </script>
 </body>
 </html>
