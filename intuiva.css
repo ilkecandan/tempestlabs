@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-color: #1E1E1E;
-    color: #92BCEA;
+    color: #00AAD3;
 }
 
 header {
@@ -36,7 +36,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #92BCEA;
+    color: #00AAD3;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -78,7 +78,7 @@ nav a:hover {
 .hero-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #92BCEA;
+    color: #00AAD3;
 }
 
 .brand-name {
@@ -113,7 +113,7 @@ nav a:hover {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #92BCEA;
+    color: #00AAD3;
 }
 
 /* Fade-in Animation */
@@ -210,7 +210,7 @@ nav a:hover {
 
 .plan .price {
     font-size: 2.2rem;
-    color: #92BCEA;
+    color: #00AAD3;
     margin: 1rem 0;
 }
 
@@ -257,7 +257,7 @@ footer {
 }
 
 footer a {
-    color: #92BCEA;
+    color: #00AAD3;
     text-decoration: none;
     margin: 0 0.3rem;
     transition: color 0.3s ease;
@@ -274,7 +274,7 @@ footer a:hover {
 }
 
 .social-icons a {
-    color: #92BCEA;
+    color: #00AAD3;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
