@@ -3,86 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cabinet of Selves is a gentle mental health tool that helps you explore your inner world. Create, connect, and reflect—no subscriptions, just peace.">
-    <link rel="icon" href="/images/tempest.png" type="image/x-icon">
-    <title data-key="page_title">Cabinet of Selves | Tempest Labs</title>
+    <meta name="description" content="Interactive Mental Health Dashboard with visualization tools and journaling features">
+    <title>MindScape | Your Personal Mental Wellness Dashboard</title>
     
-    <!-- Style Integration from App -->
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://unpkg.com/lucide@latest/dist/lucide.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.css">
     
     <style>
     :root {
-        --primary-color: #4d6659;
-        --primary-light: #5a7a6b;
-        --primary-dark: #3a5246;
-        --secondary-color: #b08ea2;
-        --accent-color: #cba6c3;
-        --text-color: #e4dcc9;
-        --text-secondary: #c5bcab;
-        --light-bg: #121826;
-        --card-bg: rgba(30, 30, 36, 0.7);
-        --section-bg: #1a1a24;
-        --glass-bg: rgba(18, 18, 38, 0.8);
+        --primary-color: #5d6dc3;
+        --primary-light: #7a8ae6;
+        --primary-dark: #4a56a1;
+        --secondary-color: #6dc3a5;
+        --accent-color: #ff7e9d;
+        --text-color: #f0f4f8;
+        --text-secondary: #c7d3e0;
+        --light-bg: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --section-bg: #1e293b;
+        --glass-bg: rgba(15, 23, 42, 0.8);
         --glass-filter: blur(12px);
-        --border-color: rgba(191, 174, 148, 0.2);
+        --border-color: rgba(148, 163, 184, 0.2);
+        --success-color: #4ade80;
+        --warning-color: #fbbf24;
+        --error-color: #f87171;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     body {
-        font-family: 'EB Garamond', serif;
+        font-family: 'Inter', sans-serif;
         color: var(--text-color);
-        background: radial-gradient(ellipse at bottom, #121826 0%, #1a1a24 100%);
+        background: radial-gradient(ellipse at bottom, var(--light-bg) 0%, #1e293b 100%);
         overflow-x: hidden;
+        line-height: 1.6;
     }
 
-    .hero-section {
+    /* Typography */
+    h1, h2, h3, h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 1.8rem; }
+    p { margin-bottom: 1rem; }
+
+    /* Layout Components */
+    .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    section {
+        padding: 6rem 0;
         position: relative;
-        padding: 6rem 2rem;
+    }
+
+    .section-header {
         text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--accent-color);
+        border-radius: 3px;
+    }
+
+    /* Navigation */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         background: var(--glass-bg);
         backdrop-filter: var(--glass-filter);
+        z-index: 1000;
         border-bottom: 1px solid var(--border-color);
     }
 
-    .floating-blobs {
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-color);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .logo i {
+        color: var(--accent-color);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    .nav-links a:hover {
+        color: var(--text-color);
+    }
+
+    .nav-links a::after {
+        content: '';
         position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-color);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.8rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+    .btn-primary {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(93, 109, 195, 0.4);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+    }
+
+    .btn-accent {
+        background: var(--accent-color);
+        color: white;
+    }
+
+    .btn-accent:hover {
+        background: #ff6b8b;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 126, 157, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
+        background: radial-gradient(circle at 20% 50%, rgba(109, 195, 165, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 30%, rgba(255, 126, 157, 0.1) 0%, transparent 50%);
         z-index: -1;
     }
 
     .hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
         align-items: center;
     }
 
-    .hero-text {
-        position: relative;
-        z-index: 2;
+    .hero-text h1 {
+        margin-bottom: 1.5rem;
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        max-width: 600px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
     }
 
     .hero-image {
+        position: relative;
         border-radius: 1.5rem;
         overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         border: 1px solid var(--border-color);
         transition: transform 0.3s ease;
     }
 
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
     .hero-image:hover {
-        transform: translateY(-5px);
+        transform: translateY(-10px);
+    }
+
+    /* Features Section */
+    .features {
+        background: var(--section-bg);
     }
 
     .features-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
-        padding: 4rem 2rem;
     }
 
     .feature-card {
@@ -95,14 +298,302 @@
     }
 
     .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
-    .faq-section {
-        max-width: 800px;
-        margin: 4rem auto;
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(109, 195, 165, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-icon i {
+        font-size: 1.8rem;
+        color: var(--secondary-color);
+    }
+
+    .feature-card h3 {
+        margin-bottom: 1rem;
+    }
+
+    /* Dashboard Preview Section */
+    .dashboard-preview {
+        position: relative;
+    }
+
+    .dashboard-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .dashboard-image {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    }
+
+    .dashboard-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .dashboard-tabs {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        background: transparent;
+        color: var(--text-secondary);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+        background: rgba(109, 195, 165, 0.2);
+        color: var(--secondary-color);
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* Mood Tracker Section */
+    .mood-tracker {
+        background: var(--section-bg);
+    }
+
+    .mood-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .mood-calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    .calendar-header {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .calendar-day {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .calendar-day.empty {
+        visibility: hidden;
+    }
+
+    .calendar-day:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .mood-1 { background: var(--error-color); }
+    .mood-2 { background: #f97316; }
+    .mood-3 { background: var(--warning-color); }
+    .mood-4 { background: #a3e635; }
+    .mood-5 { background: var(--success-color); }
+
+    .mood-legend {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .legend-color {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+
+    /* Journal Section */
+    .journal {
+        position: relative;
+    }
+
+    .journal-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .journal-entry {
+        background: var(--card-bg);
         padding: 2rem;
+        border-radius: 1rem;
+        height: 100%;
+    }
+
+    .journal-form textarea {
+        width: 100%;
+        min-height: 200px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        color: var(--text-color);
+        font-family: inherit;
+        resize: vertical;
+        margin-bottom: 1rem;
+    }
+
+    .journal-form textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+    }
+
+    .entry-preview {
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 1rem;
+    }
+
+    .entry-preview::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .entry-preview::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .entry-preview::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 5px;
+    }
+
+    /* Stats Section */
+    .stats {
+        background: var(--section-bg);
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .stat-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat-value {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 1rem 0;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Testimonials */
+    .testimonials .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .testimonial-slider {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin: 0 1rem;
+        text-align: center;
+        border: 1px solid var(--border-color);
+    }
+
+    .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 3px solid var(--secondary-color);
+    }
+
+    .testimonial-quote {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .testimonial-quote::before,
+    .testimonial-quote::after {
+        content: '"';
+        font-size: 2rem;
+        color: var(--secondary-color);
+        opacity: 0.5;
+    }
+
+    .testimonial-author {
+        font-weight: 600;
+    }
+
+    .testimonial-role {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    /* FAQ Section */
+    .faq .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     .faq-item {
@@ -110,6 +601,7 @@
         margin-bottom: 1rem;
         border-radius: 0.5rem;
         border: 1px solid var(--border-color);
+        overflow: hidden;
     }
 
     .faq-question {
@@ -118,11 +610,142 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-weight: 600;
     }
 
     .faq-answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
         padding: 0 1.5rem 1.5rem;
-        display: none;
+        max-height: 500px;
+    }
+
+    .faq-question i {
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+    }
+
+    /* CTA Section */
+    .cta {
+        text-align: center;
+        padding: 6rem 0;
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        opacity: 0.3;
+    }
+
+    .cta h2 {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .cta p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    /* Footer */
+    .footer {
+        background: #0f172a;
+        padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+
+    .footer-about p {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: var(--accent-color);
+        transform: translateY(-3px);
+    }
+
+    .footer-links h3 {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .footer-links ul {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--text-color);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
     }
 
     /* Animations */
@@ -134,125 +757,691 @@
     .animate-float {
         animation: float 6s ease-in-out infinite;
     }
-    </style>
-</head>
 
-<body>
-    <!-- Floating Blobs Background -->
-    <div class="floating-blobs" id="blobs"></div>
-
-    <header class="top-nav">
-        <a href="/" class="logo">Tempest Labs</a>
-        <nav>
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#faq">FAQ</a>
-        </nav>
-    </header>
-
-    <section class="hero-section animate__animated animate__fadeIn">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="title-with-birds animate__animated animate__fadeInUp">
-                    <span>You Contain Multitudes</span>
-                    <dotlottie-player
-                        src="https://lottie.host/fcadcc09-5da6-4f5b-b79a-ce7451767689/n6T60ZVGq0.lottie"
-                        background="transparent"
-                        speed="1"
-                        style="width: 80px; height: 80px;"
-                        loop
-                        autoplay>
-                    </dotlottie-player>
-                </h1>
-                <p class="section-description">A sanctuary for your inner world. Honor every voice within.</p>
-                <div class="button-container">
-                    <button class="accent animate-float" onclick="window.location.href='#pricing'">
-                        <i data-lucide="sparkles"></i> Start Free Journey
-                    </button>
-                </div>
-            </div>
-            <img src="images/peoplen.png" alt="App interface" class="hero-image animate__animated animate__fadeInRight">
-        </div>
-    </section>
-
-    <section id="features" class="features-grid">
-        <!-- Feature cards with same styling as app -->
-        <div class="feature-card animate__animated animate__fadeInUp">
-            <i data-lucide="brain" width="32" height="32"></i>
-            <h3>Inner Ecosystem Mapping</h3>
-            <p>Visualize your internal family system with interactive relationship diagrams</p>
-        </div>
-        
-        <div class="feature-card animate__animated animate__fadeInUp">
-            <i data-lucide="bot" width="32" height="32"></i>
-            <h3>AI Soul Mirror</h3>
-            <p>Our ethically-trained AI reflects your thoughts without judgment, helping uncover patterns</p>
-        </div>
-
-        <div class="feature-card animate__animated animate__fadeInUp">
-            <i data-lucide="lock" width="32" height="32"></i>
-            <h3>Zero-Knowledge Architecture</h3>
-            <p>Your data never leaves your device. End-to-end encrypted sync available</p>
-        </div>
-    </section>
-
-    <section id="faq" class="faq-section">
-        <h2>Gentle Explorations</h2>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFAQ(this)">
-                <span>How does this differ from traditional journaling?</span>
-                <i data-lucide="chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Cabinet of Selves uses systemic mapping to help you visualize relationships between different aspects of yourself...</p>
-            </div>
-        </div>
-        
-        <!-- More FAQ items -->
-    </section>
-
-    <!-- Interactive Demo Section -->
-    <section class="interactive-demo">
-        <div class="demo-container">
-            <div class="demo-text">
-                <h3>Experience the Cabinet</h3>
-                <p>Try our interactive demo to feel the calming interface</p>
-                <button class="secondary" onclick="launchDemo()">
-                    <i data-lucide="play"></i> Live Preview
-                </button>
-            </div>
-            <div class="demo-visual">
-                <!-- Animated component -->
-            </div>
-        </div>
-    </section>
-
-    <script>
-    // Shared animations and functionality from app
-    function toggleFAQ(element) {
-        const answer = element.parentElement.querySelector('.faq-answer');
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-        element.querySelector('i').style.transform = answer.style.display === 'block' ? 'rotate(180deg)' : 'none';
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
     }
 
-    // Initialize floating blobs similar to app
-    function createFloatingElements() {
-        const container = document.getElementById('blobs');
-        for(let i = 0; i < 5; i++) {
-            const blob = document.createElement('div');
-            blob.style.cssText = `
-                position: absolute;
-                width: ${Math.random()*200+100}px;
-                height: ${Math.random()*200+100}px;
-                background: rgba(203, 166, 195, 0.1);
-                border-radius: 50%;
-                filter: blur(40px);
-                animation: float ${Math.random()*10+10}s infinite;
-            `;
-            container.appendChild(blob);
+    .animate-pulse {
+        animation: pulse 3s ease-in-out infinite;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .hero-content,
+        .dashboard-container,
+        .mood-container,
+        .journal-container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            order: 1;
+            text-align: center;
+        }
+
+        .hero-text p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .hero-image {
+            order: 0;
         }
     }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2rem; }
+
+        .navbar {
+            padding: 1rem;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+    }
+
+    /* Utility Classes */
+    .text-center { text-align: center; }
+    .text-accent { color: var(--accent-color); }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+    .mt-3 { margin-top: 3rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .mb-3 { margin-bottom: 3rem; }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element" style="top: 20%; left: 10%; width: 100px; height: 100px; animation-delay: 0s;"></div>
+        <div class="floating-element" style="top: 70%; left: 80%; width: 150px; height: 150px; animation-delay: 2s;"></div>
+        <div class="floating-element" style="top: 40%; left: 60%; width: 80px; height: 80px; animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <i data-lucide="brain"></i>
+            MindScape
+        </a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#mood">Mood Tracker</a>
+            <a href="#journal">Journal</a>
+            <a href="#testimonials">Testimonials</a>
+        </div>
+        <div class="nav-buttons">
+            <button class="btn btn-secondary">Login</button>
+            <button class="btn btn-primary">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate__animated animate__fadeInLeft">
+                    <h1>Navigate Your <span class="text-accent">Inner World</span> with Confidence</h1>
+                    <p>MindScape is your comprehensive mental wellness dashboard, combining mood tracking, journaling, and personalized insights to help you understand and improve your mental health.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-accent animate-float">
+                            <i data-lucide="sparkles"></i> Start Free Trial
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i data-lucide="play-circle"></i> Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image animate__animated animate__fadeInRight">
+                    <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80" alt="MindScape Dashboard Preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need to track and improve your mental wellness</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <h3>Mood Tracking</h3>
+                    <p>Log your daily moods with our intuitive calendar interface and visualize patterns over time with beautiful charts.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <h3>Journaling</h3>
+                    <p>Secure, private journal with AI-powered insights to help you uncover patterns and themes in your writing.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3>Progress Analytics</h3>
+                    <p>Detailed statistics and visualizations to help you understand your mental health journey over time.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <div class="feature-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3>Self-Care Planner</h3>
+                    <p>Personalized self-care recommendations based on your mood patterns and journal entries.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                    <div class="feature-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3>Privacy Focused</h3>
+                    <p>End-to-end encryption ensures your data remains private and secure at all times.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 1s;">
+                    <div class="feature-icon">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h3>Cross-Platform</h3>
+                    <p>Access your dashboard from any device, with seamless sync between web and mobile apps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview Section -->
+    <section id="dashboard" class="dashboard-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Dashboard</h2>
+                <p>Your personal mental health command center</p>
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-text">
+                    <div class="dashboard-tabs">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="mood">Mood</button>
+                        <button class="tab-btn" data-tab="habits">Habits</button>
+                    </div>
+                    <div class="tab-content active" id="overview">
+                        <h3>Your Mental Health at a Glance</h3>
+                        <p>The overview dashboard provides a comprehensive snapshot of your current mental state, combining data from your mood logs, journal entries, and activity tracking.</p>
+                        <p>See trends over time, identify patterns, and get personalized recommendations to help you maintain or improve your mental wellness.</p>
+                        <button class="btn btn-primary mt-2">
+                            <i data-lucide="plus"></i> Add Today's Entry
+                        </button>
+                    </div>
+                    <div class="tab-content" id="mood">
+                        <h3>Mood Patterns & Insights</h3>
+                        <p>Our mood analytics engine processes your daily logs to identify patterns and potential triggers that affect your emotional state.</p>
+                        <p>Visualize your mood fluctuations over days, weeks, or months to better understand your emotional rhythms.</p>
+                    </div>
+                    <div class="tab-content" id="habits">
+                        <h3>Habit Correlation</h3>
+                        <p>Discover how your daily habits and activities correlate with your mood and mental state.</p>
+                        <p>Track sleep, exercise, social interactions, and more to see what positively or negatively impacts your wellbeing.</p>
+                    </div>
+                </div>
+                <div class="dashboard-image animate-pulse">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dashboard Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mood Tracker Section -->
+    <section id="mood" class="mood-tracker">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mood Tracking</h2>
+                <p>Visualize your emotional patterns over time</p>
+            </div>
+            <div class="mood-container">
+                <div class="mood-image">
+                    <canvas id="moodChart" width="400" height="400"></canvas>
+                </div>
+                <div class="mood-calendar-container">
+                    <h3>Monthly Mood Calendar</h3>
+                    <p>Quickly log your daily mood with our color-coded calendar system. Over time, you'll see patterns emerge that can help you better understand your emotional cycles.</p>
+                    
+                    <div class="mood-calendar">
+                        <div class="calendar-header">
+                            <div>S</div>
+                            <div>M</div>
+                            <div>T</div>
+                            <div>W</div>
+                            <div>T</div>
+                            <div>F</div>
+                            <div>S</div>
+                        </div>
+                        
+                        <!-- Empty days for the first week -->
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        
+                        <!-- Calendar days with sample mood data -->
+                        <div class="calendar-day mood-4">1</div>
+                        <div class="calendar-day mood-5">2</div>
+                        <div class="calendar-day mood-5">3</div>
+                        <div class="calendar-day mood-4">4</div>
+                        
+                        <div class="calendar-day mood-4">5</div>
+                        <div class="calendar-day mood-3">6</div>
+                        <div class="calendar-day mood-3">7</div>
+                        <div class="calendar-day mood-2">8</div>
+                        <div class="calendar-day mood-3">9</div>
+                        <div class="calendar-day mood-4">10</div>
+                        <div class="calendar-day mood-4">11</div>
+                        
+                        <div class="calendar-day mood-5">12</div>
+                        <div class="calendar-day mood-5">13</div>
+                        <div class="calendar-day mood-4">14</div>
+                        <div class="calendar-day mood-3">15</div>
+                        <div class="calendar-day mood-2">16</div>
+                        <div class="calendar-day mood-1">17</div>
+                        <div class="calendar-day mood-2">18</div>
+                        
+                        <div class="calendar-day mood-3">19</div>
+                        <div class="calendar-day mood-4">20</div>
+                        <div class="calendar-day mood-5">21</div>
+                        <div class="calendar-day mood-5">22</div>
+                        <div class="calendar-day mood-4">23</div>
+                        <div class="calendar-day mood-4">24</div>
+                        <div class="calendar-day mood-3">25</div>
+                        
+                        <div class="calendar-day mood-4">26</div>
+                        <div class="calendar-day mood-5">27</div>
+                        <div class="calendar-day mood-5">28</div>
+                        <div class="calendar-day mood-4">29</div>
+                        <div class="calendar-day mood-3">30</div>
+                    </div>
+                    
+                    <div class="mood-legend">
+                        <div class="legend-item">
+                            <div class="legend-color mood-1"></div>
+                            <span>Very Low</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color mood-2"></div>
+                            <span>Low</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color mood-3"></div>
+                            <span>Neutral</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color mood-4"></div>
+                            <span>Good</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color mood-5"></div>
+                            <span>Great</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Section -->
+    <section id="journal" class="journal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reflective Journaling</h2>
+                <p>Express yourself freely with our secure, private journal</p>
+            </div>
+            <div class="journal-container">
+                <div class="journal-entry">
+                    <h3>Today's Journal</h3>
+                    <form class="journal-form">
+                        <textarea placeholder="How are you feeling today? What's on your mind?"></textarea>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary">
+                                <i data-lucide="sun"></i> Add Mood
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i data-lucide="save"></i> Save Entry
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="journal-entry">
+                    <h3>Recent Entry Preview</h3>
+                    <div class="entry-preview">
+                        <h4>June 15, 2023</h4>
+                        <p>Today was a mixed day. I started off feeling anxious about the presentation at work, but it actually went much better than I expected. The team seemed receptive to my ideas and I got some positive feedback from my manager.</p>
+                        <p>I noticed that my mood improved significantly after lunch when I took a short walk outside. The sunshine and fresh air really helped clear my mind. I think I should make this a regular habit.</p>
+                        <p>This evening I'm feeling tired but content. I'm going to try to get to bed early tonight as I've been sleeping poorly this week.</p>
+                        <div class="entry-meta">
+                            <span class="mood-tag"><i data-lucide="smile"></i> Neutral → Good</span>
+                            <span class="word-count">246 words</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Mental Health in Numbers</h2>
+                <p>Data-driven insights to help you understand your patterns</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i data-lucide="calendar" width="32" height="32"></i>
+                    <h3>Current Streak</h3>
+                    <div class="stat-value">14</div>
+                    <p>days of consecutive journaling</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="trending-up" width="32" height="32"></i>
+                    <h3>Mood Average</h3>
+                    <div class="stat-value">3.8</div>
+                    <p>out of 5 this month</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="moon" width="32" height="32"></i>
+                    <h3>Sleep Quality</h3>
+                    <div class="stat-value">72%</div>
+                    <p>of nights with good sleep</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="activity" width="32" height="32"></i>
+                    <h3>Activity Level</h3>
+                    <div class="stat-value">65%</div>
+                    <p>of days with exercise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Real stories from people who transformed their mental health</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="testimonial-avatar">
+                    <p class="testimonial-quote">MindScape helped me identify patterns in my mood swings that I never noticed before. The journaling feature with AI insights was a game-changer for my self-awareness.</p>
+                    <div class="testimonial-author">Sarah J.</div>
+                    <div class="testimonial-role">Teacher, 34</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about MindScape</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my data private and secure?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use end-to-end encryption to ensure your data remains private. Your journal entries and mood logs are only accessible to you, and we never sell or share your data with third parties.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the AI analysis work?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our AI analyzes your journal entries for emotional tone, recurring themes, and potential triggers. It runs entirely on your device (for mobile apps) or in your browser (web version), so your data never leaves your possession.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I export my data?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can export all your data at any time in multiple formats (PDF, CSV, JSON). We believe you should always have full control over your information.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is there a mobile app?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! MindScape is available on both iOS and Android, with full sync capabilities between web and mobile. All your data stays up-to-date across all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Mental Wellness?</h2>
+            <p>Join thousands of users who have discovered greater self-awareness and emotional balance with MindScape.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-accent animate-float">
+                    <i data-lucide="sparkles"></i> Start Free Trial
+                </button>
+                <button class="btn btn-secondary">
+                    <i data-lucide="message-circle"></i> Contact Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i data-lucide="brain"></i>
+                        MindScape
+                    </a>
+                    <p>Your comprehensive mental wellness dashboard, helping you navigate your inner world with confidence and clarity.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Mental Health Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MindScape. All rights reserved. Designed with <i data-lucide="heart" style="color: var(--accent-color); width: 16px; height: 16px;"></i> for your mental wellness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Initialize mood chart
+        const moodCtx = document.getElementById('moodChart').getContext('2d');
+        const moodChart = new Chart(moodCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Mood Average',
+                    data: [3.2, 3.5, 3.8, 4.1, 3.9, 4.2],
+                    borderColor: '#6dc3a5',
+                    backgroundColor: 'rgba(109, 195, 165, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Mood: ${context.raw}/5`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 1,
+                        max: 5,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                const moods = ['Very Low', 'Low', 'Neutral', 'Good', 'Great'];
+                                return moods[value - 1];
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // FAQ functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.querySelector('.floating-elements');
+            for(let i = 0; i < 8; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // Random size
+                const size = Math.random() * 100 + 50;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 15 + 10;
+                const delay = Math.random() * 5;
+                
+                // Random color opacity
+                const opacity = Math.random() * 0.1 + 0.05;
+                const colors = ['rgba(109, 195, 165, OPAC)', 'rgba(255, 126, 157, OPAC)', 'rgba(93, 109, 195, OPAC)'];
+                const color = colors[Math.floor(Math.random() * colors.length)].replace('OPAC', opacity);
+                
+                element.style.cssText = `
+                    position: absolute;
+                    left: ${left}%;
+                    top: ${top}%;
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: ${color};
+                    border-radius: 50%;
+                    filter: blur(40px);
+                    animation: float ${duration}s ease-in-out infinite;
+                    animation-delay: ${delay}s;
+                    z-index: -1;
+                `;
+                
+                container.appendChild(element);
+            }
+        }
+        
+        createFloatingElements();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if(window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                navbar.style.boxShadow = 'none';
+                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+            }
+        });
     </script>
 </body>
 </html>
