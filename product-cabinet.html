@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cabinet of Selves - A revolutionary tool for self-discovery using Internal Family Systems (IFS) therapy. Understand your inner parts, track emotional patterns, and achieve mental harmony.">
-    <title>Cabinet of Selves | Your Inner World Exploration Tool</title>
+    <meta name="description" content="Cabinet of Selves - A self-help tool for emotional awareness using Internal Family Systems (IFS) concepts. Track your emotions, understand patterns, and cultivate self-compassion.">
+    <title>Cabinet of Selves | Emotional Awareness Tool</title>
     
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,14 +19,12 @@
         --primary-dark: #4a56a1;
         --secondary-color: #6dc3a5;
         --accent-color: #ff7e9d;
-        --text-color: #f0f4f8;
-        --text-secondary: #c7d3e0;
-        --light-bg: #0f172a;
-        --card-bg: rgba(30, 41, 59, 0.7);
-        --section-bg: #1e293b;
-        --glass-bg: rgba(15, 23, 42, 0.8);
-        --glass-filter: blur(12px);
-        --border-color: rgba(148, 163, 184, 0.2);
+        --text-color: #2d3748;
+        --text-secondary: #4a5568;
+        --light-bg: #f7fafc;
+        --card-bg: #ffffff;
+        --section-bg: #edf2f7;
+        --border-color: rgba(45, 55, 72, 0.1);
         --success-color: #4ade80;
         --warning-color: #fbbf24;
         --error-color: #f87171;
@@ -41,8 +39,7 @@
     body {
         font-family: 'Inter', sans-serif;
         color: var(--text-color);
-        background: radial-gradient(ellipse at bottom, var(--light-bg) 0%, #1e293b 100%);
-        overflow-x: hidden;
+        background: var(--light-bg);
         line-height: 1.6;
     }
 
@@ -51,29 +48,30 @@
         font-family: 'Playfair Display', serif;
         font-weight: 600;
         line-height: 1.2;
+        color: var(--text-color);
     }
 
-    h1 { font-size: 3.5rem; }
-    h2 { font-size: 2.5rem; }
-    h3 { font-size: 1.8rem; }
-    p { margin-bottom: 1rem; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.6rem; }
+    p { margin-bottom: 1rem; color: var(--text-secondary); }
 
     /* Layout Components */
     .container {
         width: 100%;
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 2rem;
+        padding: 0 1.5rem;
     }
 
     section {
-        padding: 6rem 0;
+        padding: 4rem 0;
         position: relative;
     }
 
     .section-header {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
     }
 
     .section-header h2 {
@@ -99,19 +97,18 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 1.5rem 2rem;
+        padding: 1rem 1.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: var(--glass-bg);
-        backdrop-filter: var(--glass-filter);
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         z-index: 1000;
-        border-bottom: 1px solid var(--border-color);
     }
 
     .logo {
         font-family: 'Playfair Display', serif;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: var(--text-color);
         text-decoration: none;
@@ -126,7 +123,7 @@
 
     .nav-links {
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .nav-links a {
@@ -135,10 +132,11 @@
         font-weight: 500;
         transition: color 0.3s ease;
         position: relative;
+        font-size: 0.95rem;
     }
 
     .nav-links a:hover {
-        color: var(--text-color);
+        color: var(--primary-color);
     }
 
     .nav-links a::after {
@@ -162,14 +160,15 @@
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        padding: 0.8rem 1.8rem;
-        border-radius: 50px;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s ease;
         cursor: pointer;
         border: none;
         outline: none;
+        font-size: 0.95rem;
     }
 
     .btn-primary {
@@ -180,17 +179,17 @@
     .btn-primary:hover {
         background: var(--primary-light);
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(93, 109, 195, 0.4);
+        box-shadow: 0 5px 15px rgba(93, 109, 195, 0.2);
     }
 
     .btn-secondary {
         background: transparent;
-        color: var(--text-color);
-        border: 1px solid var(--border-color);
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
     }
 
     .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(93, 109, 195, 0.05);
         transform: translateY(-2px);
     }
 
@@ -202,49 +201,32 @@
     .btn-accent:hover {
         background: #ff6b8b;
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 126, 157, 0.4);
+        box-shadow: 0 5px 15px rgba(255, 126, 157, 0.2);
     }
 
     /* Hero Section */
     .hero {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        padding-top: 80px;
+        padding: 7rem 0 4rem;
         position: relative;
-        overflow: hidden;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 20% 50%, rgba(109, 195, 165, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 30%, rgba(255, 126, 157, 0.1) 0%, transparent 50%);
-        z-index: -1;
+        background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
     }
 
     .hero-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 4rem;
+        gap: 3rem;
         align-items: center;
     }
 
     .hero-text h1 {
         margin-bottom: 1.5rem;
-        font-size: 4rem;
         line-height: 1.1;
     }
 
     .hero-text p {
-        font-size: 1.2rem;
-        color: var(--text-secondary);
+        font-size: 1.1rem;
         margin-bottom: 2rem;
-        max-width: 600px;
+        max-width: 500px;
     }
 
     .hero-buttons {
@@ -255,9 +237,9 @@
 
     .hero-image {
         position: relative;
-        border-radius: 1.5rem;
+        border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
         border: 1px solid var(--border-color);
         transition: transform 0.3s ease;
     }
@@ -269,33 +251,34 @@
     }
 
     .hero-image:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 
     /* Stats Section */
     .stats {
         background: var(--section-bg);
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
 
     .stats-container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
         text-align: center;
     }
 
     .stat-item {
-        padding: 2rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     }
 
     .stat-number {
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--primary-color);
     }
 
     /* Features Section */
@@ -305,37 +288,37 @@
 
     .features-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
     }
 
     .feature-card {
         background: var(--card-bg);
-        padding: 2rem;
-        border-radius: 1rem;
-        border-left: 4px solid var(--accent-color);
-        backdrop-filter: var(--glass-filter);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
+        border-top: 3px solid var(--accent-color);
     }
 
     .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .feature-icon {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         background: rgba(109, 195, 165, 0.1);
-        border-radius: 50%;
+        border-radius: 0.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .feature-icon i {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         color: var(--secondary-color);
     }
 
@@ -346,22 +329,23 @@
 
     .steps-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 3rem;
-        margin-top: 4rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
     }
 
     .step-card {
         position: relative;
-        padding: 2rem;
+        padding: 1.5rem;
         background: var(--card-bg);
-        border-radius: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         text-align: center;
     }
 
     .step-number {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background: var(--accent-color);
         color: white;
         border-radius: 50%;
@@ -369,8 +353,8 @@
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        font-size: 1.5rem;
-        margin: 0 auto 1.5rem;
+        font-size: 1.2rem;
+        margin: 0 auto 1rem;
     }
 
     /* Testimonials Section */
@@ -379,26 +363,17 @@
     }
 
     .testimonial-slider {
-        max-width: 1000px;
+        max-width: 800px;
         margin: 0 auto;
     }
 
     .testimonial-card {
         background: var(--card-bg);
-        padding: 3rem;
-        border-radius: 1rem;
+        padding: 2rem;
+        border-radius: 0.5rem;
         margin: 0 1rem;
         text-align: center;
-        border: 1px solid var(--border-color);
-    }
-
-    .testimonial-avatar {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto 1rem;
-        border: 3px solid var(--secondary-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     .testimonial-quote {
@@ -406,12 +381,13 @@
         margin-bottom: 1.5rem;
         position: relative;
         font-size: 1.1rem;
+        color: var(--text-color);
     }
 
     .testimonial-quote::before,
     .testimonial-quote::after {
         content: '"';
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: var(--secondary-color);
         opacity: 0.5;
     }
@@ -433,28 +409,17 @@
 
     .viz-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     .viz-card {
         background: var(--card-bg);
-        padding: 2rem;
-        border-radius: 1rem;
-        height: 100%;
-    }
-
-    .viz-image {
-        position: relative;
-        border-radius: 1rem;
-        overflow: hidden;
-    }
-
-    .viz-image img {
-        width: 100%;
-        height: auto;
-        display: block;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     /* Pricing Section */
@@ -464,39 +429,36 @@
 
     .pricing-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
         gap: 2rem;
-        margin-top: 4rem;
+        margin-top: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .pricing-card {
         background: var(--card-bg);
         padding: 2rem;
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         text-align: center;
-        transition: all 0.3s ease;
-    }
-
-    .pricing-card.featured {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         border: 2px solid var(--accent-color);
-        transform: translateY(-10px);
     }
 
     .pricing-header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .pricing-price {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 700;
         margin: 1rem 0;
-        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--primary-color);
     }
 
     .pricing-features {
-        margin: 2rem 0;
+        margin: 1.5rem 0;
         text-align: left;
     }
 
@@ -517,7 +479,7 @@
     }
 
     .faq-container {
-        max-width: 800px;
+        max-width: 700px;
         margin: 0 auto;
     }
 
@@ -525,28 +487,29 @@
         background: var(--card-bg);
         margin-bottom: 1rem;
         border-radius: 0.5rem;
-        border: 1px solid var(--border-color);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         overflow: hidden;
     }
 
     .faq-question {
-        padding: 1.5rem;
+        padding: 1.25rem;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-weight: 600;
+        background: white;
     }
 
     .faq-answer {
-        padding: 0 1.5rem;
+        padding: 0 1.25rem;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, padding 0.3s ease;
     }
 
     .faq-item.active .faq-answer {
-        padding: 0 1.5rem 1.5rem;
+        padding: 0 1.25rem 1.25rem;
         max-height: 500px;
     }
 
@@ -561,29 +524,18 @@
     /* CTA Section */
     .cta {
         text-align: center;
-        padding: 6rem 0;
+        padding: 4rem 0;
         background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-        opacity: 0.3;
+        color: white;
     }
 
     .cta h2 {
+        color: white;
         margin-bottom: 1.5rem;
-        position: relative;
     }
 
     .cta p {
+        color: rgba(255, 255, 255, 0.9);
         max-width: 600px;
         margin: 0 auto 2rem;
         font-size: 1.1rem;
@@ -591,27 +543,33 @@
 
     /* Footer */
     .footer {
-        background: #0f172a;
-        padding: 4rem 0 2rem;
+        background: var(--text-color);
+        padding: 3rem 0 1.5rem;
+        color: white;
+    }
+
+    .footer a {
+        color: rgba(255, 255, 255, 0.8);
     }
 
     .footer-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 3rem;
-        margin-bottom: 3rem;
+        gap: 2rem;
+        margin-bottom: 2rem;
     }
 
     .footer-logo {
         font-family: 'Playfair Display', serif;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: 700;
         margin-bottom: 1rem;
         display: inline-block;
+        color: white;
     }
 
     .footer-about p {
-        color: var(--text-secondary);
+        color: rgba(255, 255, 255, 0.7);
         margin-bottom: 1.5rem;
     }
 
@@ -621,8 +579,8 @@
     }
 
     .social-link {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.1);
         display: flex;
@@ -637,8 +595,9 @@
     }
 
     .footer-links h3 {
-        margin-bottom: 1.5rem;
-        font-size: 1.2rem;
+        margin-bottom: 1.25rem;
+        font-size: 1.1rem;
+        color: white;
     }
 
     .footer-links ul {
@@ -646,52 +605,40 @@
     }
 
     .footer-links li {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.7rem;
     }
 
     .footer-links a {
-        color: var(--text-secondary);
-        text-decoration: none;
         transition: color 0.3s ease;
     }
 
     .footer-links a:hover {
-        color: var(--text-color);
+        color: white;
     }
 
     .footer-bottom {
         text-align: center;
-        padding-top: 2rem;
-        border-top: 1px solid var(--border-color);
-        color: var(--text-secondary);
-        font-size: 0.9rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
     }
 
     /* Animations */
     @keyframes float {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
+        50% { transform: translateY(-10px); }
     }
 
     .animate-float {
-        animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-    }
-
-    .animate-pulse {
-        animation: pulse 3s ease-in-out infinite;
+        animation: float 4s ease-in-out infinite;
     }
 
     /* Responsive Design */
     @media (max-width: 1024px) {
-        .hero-content,
-        .viz-container {
+        .hero-content {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .hero-text {
@@ -710,27 +657,25 @@
 
         .hero-image {
             order: 0;
-        }
-
-        .stats-container {
-            grid-template-columns: repeat(2, 1fr);
+            max-width: 600px;
+            margin: 0 auto;
         }
     }
 
     @media (max-width: 768px) {
-        h1 { font-size: 2.8rem; }
-        h2 { font-size: 2rem; }
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
 
         .navbar {
-            padding: 1rem;
+            padding: 0.8rem 1rem;
         }
 
         .nav-links {
-            display: none;
+            gap: 1rem;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 2.2rem;
         }
 
         .hero-buttons {
@@ -740,14 +685,31 @@
 
         .btn {
             width: 100%;
+            justify-content: center;
         }
 
         section {
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
+    }
 
+    @media (max-width: 576px) {
+        .container {
+            padding: 0 1rem;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
         .stats-container {
             grid-template-columns: 1fr;
+        }
+        
+        .section-header h2::after {
+            bottom: -8px;
+            width: 60px;
+            height: 2px;
         }
     }
 
@@ -763,13 +725,6 @@
     </style>
 </head>
 <body>
-    <!-- Floating Background Elements -->
-    <div class="floating-elements">
-        <div class="floating-element" style="top: 20%; left: 10%; width: 100px; height: 100px; animation-delay: 0s;"></div>
-        <div class="floating-element" style="top: 70%; left: 80%; width: 150px; height: 150px; animation-delay: 2s;"></div>
-        <div class="floating-element" style="top: 40%; left: 60%; width: 80px; height: 80px; animation-delay: 4s;"></div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <a href="#" class="logo">
@@ -793,8 +748,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text animate__animated animate__fadeInLeft">
-                    <h1>Discover the <span class="text-accent">Many Parts</span> of You</h1>
-                    <p>Cabinet of Selves is a revolutionary tool for self-discovery using Internal Family Systems (IFS) therapy. Understand your inner parts, track emotional patterns, and achieve mental harmony.</p>
+                    <h1>Understand Your Emotions with Compassion</h1>
+                    <p>Cabinet of Selves is a self-help tool that helps you track your emotional patterns and cultivate self-awareness using concepts from Internal Family Systems (IFS).</p>
                     <div class="hero-buttons">
                         <button class="btn btn-accent animate-float">
                             <i data-lucide="sparkles"></i> Start Your Journey
@@ -805,7 +760,7 @@
                     </div>
                 </div>
                 <div class="hero-image animate__animated animate__fadeInRight">
-                    <img src="images/peoplen.png" alt="Cabinet of Selves Interface">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Woman journaling">
                 </div>
             </div>
         </div>
@@ -817,19 +772,19 @@
             <div class="stats-container">
                 <div class="stat-item">
                     <div class="stat-number">10,000+</div>
-                    <p>Users Exploring Their Inner Worlds</p>
+                    <p>Users Gaining Self-Awareness</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">94%</div>
-                    <p>Report Increased Self-Awareness</p>
+                    <div class="stat-number">87%</div>
+                    <p>Report Improved Emotional Regulation</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-number">4.8/5</div>
                     <p>Average User Rating</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <p>AI Companion Availability</p>
+                    <div class="stat-number">5 min/day</div>
+                    <p>Average Time Spent</p>
                 </div>
             </div>
         </div>
@@ -839,51 +794,51 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Powerful Features</h2>
-                <p>Everything you need for your journey of self-discovery</p>
+                <h2>Helpful Features</h2>
+                <p>Tools designed to support your emotional awareness journey</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card animate__animated animate__fadeInUp">
                     <div class="feature-icon">
-                        <i data-lucide="layers"></i>
+                        <i data-lucide="heart"></i>
                     </div>
-                    <h3>Parts Mapping</h3>
-                    <p>Visualize and understand the different aspects of your personality with our intuitive mapping tool.</p>
+                    <h3>Emotion Tracking</h3>
+                    <p>Simple daily check-ins to help you recognize and name your emotions with kindness.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                     <div class="feature-icon">
                         <i data-lucide="activity"></i>
                     </div>
-                    <h3>Mood Tracking</h3>
-                    <p>Identify patterns and triggers with our comprehensive mood tracking system.</p>
+                    <h3>Pattern Recognition</h3>
+                    <p>Identify emotional triggers and responses over time with clear visualizations.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
                     <div class="feature-icon">
-                        <i data-lucide="bot"></i>
+                        <i data-lucide="book-open"></i>
                     </div>
-                    <h3>AI Companion</h3>
-                    <p>Your always-available guide for exploring thoughts and feelings with compassion.</p>
+                    <h3>Guided Journaling</h3>
+                    <p>Thoughtful prompts to explore your inner experiences with curiosity.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
                     <div class="feature-icon">
-                        <i data-lucide="book-open"></i>
+                        <i data-lucide="trending-up"></i>
                     </div>
-                    <h3>Journaling</h3>
-                    <p>Secure, private journal with AI-powered insights to uncover patterns in your writing.</p>
+                    <h3>Progress Insights</h3>
+                    <p>See your emotional growth over time with easy-to-understand charts.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
                     <div class="feature-icon">
-                        <i data-lucide="trending-up"></i>
+                        <i data-lucide="headphones"></i>
                     </div>
-                    <h3>Progress Analytics</h3>
-                    <p>Visualize your emotional journey with beautiful charts and data visualizations.</p>
+                    <h3>Mindful Exercises</h3>
+                    <p>Short audio practices to help you connect with your present experience.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 1s;">
                     <div class="feature-icon">
-                        <i data-lucide="headphones"></i>
+                        <i data-lucide="shield"></i>
                     </div>
-                    <h3>Guided Meditations</h3>
-                    <p>Curated audio exercises to help you connect with your different parts.</p>
+                    <h3>Privacy Focused</h3>
+                    <p>Your data stays yours - we never sell or share your personal reflections.</p>
                 </div>
             </div>
         </div>
@@ -894,28 +849,28 @@
         <div class="container">
             <div class="section-header">
                 <h2>How It Works</h2>
-                <p>Start your journey of self-discovery in just a few steps</p>
+                <p>Simple steps to build emotional awareness</p>
             </div>
             <div class="steps-container">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Identify Your Parts</h3>
-                    <p>Begin by recognizing the different aspects of your personality through guided exercises.</p>
+                    <h3>Daily Check-In</h3>
+                    <p>Take just 2 minutes each day to note your emotional state and any notable experiences.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Map Relationships</h3>
-                    <p>Visualize how your parts interact with each other and understand their roles.</p>
+                    <h3>Notice Patterns</h3>
+                    <p>Our tools help you see connections between events, thoughts, and feelings over time.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Daily Check-Ins</h3>
-                    <p>Track your mood and which parts are active throughout your day.</p>
+                    <h3>Reflect</h3>
+                    <p>Use guided questions to explore your experiences with curiosity rather than judgment.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h3>Grow & Integrate</h3>
-                    <p>Use insights to foster harmony among your parts and strengthen your core Self.</p>
+                    <h3>Grow Awareness</h3>
+                    <p>Develop greater understanding and compassion for your emotional landscape.</p>
                 </div>
             </div>
         </div>
@@ -925,25 +880,22 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>What Our Users Say</h2>
-                <p>Real stories from people who transformed their self-understanding</p>
+                <h2>What People Are Saying</h2>
+                <p>How Cabinet of Selves has helped others</p>
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="testimonial-avatar">
-                    <p class="testimonial-quote">Cabinet of Selves helped me understand why I sometimes feel torn between different desires. Seeing my parts visually mapped out was a game-changer for my self-awareness.</p>
+                    <p class="testimonial-quote">This tool helped me recognize patterns in my emotional responses I'd never noticed before. The simple daily check-in made it easy to stick with.</p>
                     <div class="testimonial-author">Sarah J.</div>
                     <div class="testimonial-role">Teacher, 34</div>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="testimonial-avatar">
-                    <p class="testimonial-quote">As someone skeptical of therapy, I was amazed at how quickly I connected with the AI companion. It helped me uncover patterns I'd been ignoring for years.</p>
+                    <p class="testimonial-quote">As someone who struggles with emotional awareness, the visualizations helped me understand my feelings in a whole new way.</p>
                     <div class="testimonial-author">Michael T.</div>
                     <div class="testimonial-role">Software Engineer, 28</div>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Aisha K." class="testimonial-avatar">
-                    <p class="testimonial-quote">The mood tracking and parts visualization helped me communicate better with my therapist. We make progress much faster now.</p>
+                    <p class="testimonial-quote">The journal prompts helped me approach my emotions with more curiosity and less judgment. It's been surprisingly helpful.</p>
                     <div class="testimonial-author">Aisha K.</div>
                     <div class="testimonial-role">Graphic Designer, 31</div>
                 </div>
@@ -955,15 +907,12 @@
     <section id="data-viz" class="data-viz">
         <div class="container">
             <div class="section-header">
-                <h2>See Your Growth</h2>
-                <p>Powerful visualizations to track your emotional journey</p>
+                <h2>See Your Emotional Patterns</h2>
+                <p>Example insights you might discover</p>
             </div>
             <div class="viz-container">
                 <div class="viz-card">
                     <canvas id="moodChart" width="400" height="400"></canvas>
-                </div>
-                <div class="viz-card">
-                    <canvas id="partsChart" width="400" height="400"></canvas>
                 </div>
             </div>
         </div>
@@ -973,57 +922,26 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>Choose the plan that works for your journey</p>
+                <h2>Simple Pricing</h2>
+                <p>One plan with everything you need</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Basic</h3>
-                        <p>For those beginning their self-discovery</p>
+                        <h3>Complete Access</h3>
+                        <p>All features included</p>
                     </div>
                     <div class="pricing-price">$9.99</div>
-                    <p>per month</p>
+                    <p>per month, cancel anytime</p>
                     <ul class="pricing-features">
-                        <li><i data-lucide="check"></i> Parts Mapping</li>
-                        <li><i data-lucide="check"></i> Mood Tracking</li>
-                        <li><i data-lucide="check"></i> Basic Journaling</li>
-                        <li><i data-lucide="x"></i> AI Companion</li>
-                        <li><i data-lucide="x"></i> Advanced Analytics</li>
+                        <li><i data-lucide="check"></i> Daily emotion tracking</li>
+                        <li><i data-lucide="check"></i> Pattern recognition</li>
+                        <li><i data-lucide="check"></i> Guided journaling</li>
+                        <li><i data-lucide="check"></i> Progress insights</li>
+                        <li><i data-lucide="check"></i> Mindful exercises</li>
                     </ul>
-                    <button class="btn btn-secondary">Get Started</button>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-header">
-                        <h3>Premium</h3>
-                        <p>Most popular for serious explorers</p>
-                    </div>
-                    <div class="pricing-price">$19.99</div>
-                    <p>per month</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check"></i> All Basic Features</li>
-                        <li><i data-lucide="check"></i> AI Companion</li>
-                        <li><i data-lucide="check"></i> Advanced Analytics</li>
-                        <li><i data-lucide="check"></i> Guided Meditations</li>
-                        <li><i data-lucide="check"></i> Priority Support</li>
-                    </ul>
-                    <button class="btn btn-accent">Get Started</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Professional</h3>
-                        <p>For therapists and practitioners</p>
-                    </div>
-                    <div class="pricing-price">$49.99</div>
-                    <p>per month</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check"></i> All Premium Features</li>
-                        <li><i data-lucide="check"></i> Client Management</li>
-                        <li><i data-lucide="check"></i> Shared Insights</li>
-                        <li><i data-lucide="check"></i> Professional Resources</li>
-                        <li><i data-lucide="check"></i> Dedicated Account Manager</li>
-                    </ul>
-                    <button class="btn btn-secondary">Get Started</button>
+                    <button class="btn btn-accent">Start 7-Day Free Trial</button>
+                    <p class="mt-1" style="font-size: 0.9rem;">No commitment, cancel anytime</p>
                 </div>
             </div>
         </div>
@@ -1034,52 +952,52 @@
         <div class="container">
             <div class="section-header">
                 <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know about Cabinet of Selves</p>
+                <p>Common questions about Cabinet of Selves</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What is Internal Family Systems (IFS) therapy?</span>
+                        <span>Is this therapy or a mental health treatment?</span>
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>IFS is a therapeutic approach that views the mind as made up of multiple sub-personalities or "parts" that interact like a family. These parts can be protective, wounded, or serve other roles. The goal is to help these parts work harmoniously under the leadership of your core Self.</p>
+                        <p>No, Cabinet of Selves is not therapy or a mental health treatment. It's a self-help tool designed to support emotional awareness and personal reflection. For mental health concerns, we recommend consulting with a licensed professional.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Is Cabinet of Selves a replacement for therapy?</span>
+                        <span>Can this replace my therapy sessions?</span>
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>No, Cabinet of Selves is designed to complement therapy, not replace it. Many users find it enhances their therapeutic work by providing tools for self-reflection between sessions. For serious mental health concerns, we always recommend working with a licensed professional.</p>
+                        <p>Cabinet of Selves is not a replacement for therapy. It's designed to be a supplementary tool that some people find helpful alongside professional care. We always recommend following your mental health provider's advice.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How does the AI companion work?</span>
+                        <span>How is this different from journaling?</span>
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Our AI companion uses natural language processing to help you explore your thoughts and feelings. It's trained to ask thoughtful questions and reflect your words back to help you gain insight. It doesn't diagnose or give professional advice, but rather serves as a compassionate listener.</p>
+                        <p>While journaling is valuable, our tool adds structure by helping you track patterns over time and offering guided prompts based on psychological concepts. The visualizations can help you see connections you might miss in traditional journaling.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Is my data private and secure?</span>
+                        <span>Is my personal information secure?</span>
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely. We use end-to-end encryption and never sell your data. You own all your content and can export or delete it at any time. For more details, see our Privacy Policy.</p>
+                        <p>Absolutely. We use industry-standard encryption and never sell your data. You can export or delete your information at any time. Your reflections are for your eyes only.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Can I use Cabinet of Selves with my therapist?</span>
+                        <span>What if I don't have time for daily check-ins?</span>
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! Many therapists appreciate when clients use our tools between sessions. The Professional plan even includes features specifically designed for therapist-client collaboration.</p>
+                        <p>The daily check-in is designed to take just 2-3 minutes. Many users do it while having their morning coffee or before bed. Even occasional use can provide valuable insights, though regular use tends to be most beneficial.</p>
                     </div>
                 </div>
             </div>
@@ -1089,16 +1007,17 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Explore Your Inner World?</h2>
-            <p>Join thousands of users who have discovered greater self-awareness and emotional harmony with Cabinet of Selves.</p>
+            <h2>Ready to Understand Yourself Better?</h2>
+            <p>Start your journey toward greater emotional awareness today with our simple, supportive tools.</p>
             <div class="cta-buttons">
                 <button class="btn btn-accent animate-float">
                     <i data-lucide="sparkles"></i> Start Your Free Trial
                 </button>
                 <button class="btn btn-secondary">
-                    <i data-lucide="message-circle"></i> Contact Us
+                    <i data-lucide="message-circle"></i> Have Questions?
                 </button>
             </div>
+            <p class="mt-2" style="font-size: 0.9rem; opacity: 0.9;">7-day free trial • No credit card required • Cancel anytime</p>
         </div>
     </section>
 
@@ -1111,7 +1030,7 @@
                         <i data-lucide="brain"></i>
                         Cabinet of Selves
                     </a>
-                    <p>Your guide to exploring and understanding your inner world through Internal Family Systems therapy concepts.</p>
+                    <p>A tool for emotional awareness and self-reflection. Not a substitute for professional mental health care.</p>
                     <div class="social-links">
                         <a href="#" class="social-link">
                             <i data-lucide="twitter"></i>
@@ -1136,7 +1055,7 @@
                 <div class="footer-links">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="#">IFS Therapy Guide</a></li>
+                        <li><a href="#">Emotional Awareness Guide</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Research</a></li>
                         <li><a href="#">Help Center</a></li>
@@ -1146,14 +1065,14 @@
                     <h3>Company</h3>
                     <ul>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Cabinet of Selves by Tempest Labs. All rights reserved.</p>
+                <p>&copy; 2023 Cabinet of Selves. All rights reserved. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
             </div>
         </div>
     </footer>
@@ -1170,12 +1089,20 @@
         const moodChart = new Chart(moodCtx, {
             type: 'line',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
                 datasets: [{
-                    label: 'Mood Average',
+                    label: 'Emotional Balance',
                     data: [3.2, 3.5, 3.8, 4.1, 3.9, 4.2],
                     borderColor: '#6dc3a5',
                     backgroundColor: 'rgba(109, 195, 165, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.3
+                }, {
+                    label: 'Stress Levels',
+                    data: [3.8, 3.5, 3.2, 2.9, 2.7, 2.5],
+                    borderColor: '#ff7e9d',
+                    backgroundColor: 'rgba(255, 126, 157, 0.1)',
                     borderWidth: 3,
                     fill: true,
                     tension: 0.3
@@ -1185,13 +1112,20 @@
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: false
+                        position: 'top',
                     },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return `Mood: ${context.raw}/5`;
+                                return `${context.dataset.label}: ${context.raw}/5`;
                             }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Example Emotional Trends Over 6 Weeks',
+                        font: {
+                            size: 16
                         }
                     }
                 },
@@ -1202,39 +1136,13 @@
                         ticks: {
                             stepSize: 1,
                             callback: function(value) {
-                                const moods = ['Very Low', 'Low', 'Neutral', 'Good', 'Great'];
-                                return moods[value - 1];
+                                if (value === 1) return 'Very Low';
+                                if (value === 2) return 'Low';
+                                if (value === 3) return 'Neutral';
+                                if (value === 4) return 'Good';
+                                if (value === 5) return 'Very Good';
                             }
                         }
-                    }
-                }
-            }
-        });
-
-        // Initialize parts chart
-        const partsCtx = document.getElementById('partsChart').getContext('2d');
-        const partsChart = new Chart(partsCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Protector', 'Inner Child', 'Perfectionist', 'Critic', 'Nurturer', 'Other'],
-                datasets: [{
-                    data: [25, 20, 15, 15, 15, 10],
-                    backgroundColor: [
-                        '#ff7e9d',
-                        '#6dc3a5',
-                        '#5d6dc3',
-                        '#fbbf24',
-                        '#a78bfa',
-                        '#c7d3e0'
-                    ],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'right',
                     }
                 }
             }
@@ -1248,49 +1156,6 @@
                 item.classList.toggle('active');
             });
         });
-
-        // Create floating elements
-        function createFloatingElements() {
-            const container = document.querySelector('.floating-elements');
-            for(let i = 0; i < 8; i++) {
-                const element = document.createElement('div');
-                element.classList.add('floating-element');
-                
-                // Random position
-                const left = Math.random() * 100;
-                const top = Math.random() * 100;
-                
-                // Random size
-                const size = Math.random() * 100 + 50;
-                
-                // Random animation duration and delay
-                const duration = Math.random() * 15 + 10;
-                const delay = Math.random() * 5;
-                
-                // Random color opacity
-                const opacity = Math.random() * 0.1 + 0.05;
-                const colors = ['rgba(109, 195, 165, OPAC)', 'rgba(255, 126, 157, OPAC)', 'rgba(93, 109, 195, OPAC)'];
-                const color = colors[Math.floor(Math.random() * colors.length)].replace('OPAC', opacity);
-                
-                element.style.cssText = `
-                    position: absolute;
-                    left: ${left}%;
-                    top: ${top}%;
-                    width: ${size}px;
-                    height: ${size}px;
-                    background: ${color};
-                    border-radius: 50%;
-                    filter: blur(40px);
-                    animation: float ${duration}s ease-in-out infinite;
-                    animation-delay: ${delay}s;
-                    z-index: -1;
-                `;
-                
-                container.appendChild(element);
-            }
-        }
-        
-        createFloatingElements();
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1313,12 +1178,10 @@
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
-            if(window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            if(window.scrollY > 20) {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             } else {
                 navbar.style.boxShadow = 'none';
-                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
             }
         });
 
@@ -1342,6 +1205,19 @@
         
         // Auto-rotate testimonials every 5 seconds
         setInterval(nextTestimonial, 5000);
+
+        // Make buttons more interactive
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'translateY(1px)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'translateY(0)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
+            });
+        });
     </script>
 </body>
 </html>
