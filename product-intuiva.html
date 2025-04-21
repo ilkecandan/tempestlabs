@@ -318,6 +318,18 @@
       font-size: 1.5rem;
     }
 
+.testimonial-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.testimonial-card-link:hover .testimonial-card {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+    
     /* Case Study - Testimonial */
     .case-study {
       position: relative;
@@ -327,6 +339,7 @@
       overflow: hidden;
       margin: 4rem 0;
     }
+    
 
     .case-study::before {
       content: '';
@@ -1051,18 +1064,25 @@
           </div>
         </div>
         
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>After failing to launch two previous projects due to poor planning, I was hesitant to try again. Intuiva identified critical gaps in my approach that I would have missed. My third project is now profitable and growing steadily.</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya M." class="author-avatar">
-            <div class="author-info">
-              <h4>Priya M.</h4>
-              <p>UX Designer & Entrepreneur</p>
-            </div>
-          </div>
-        </div>
+
+        <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card-link">
+  <div class="testimonial-card">
+    <div class="testimonial-content">
+      <p>
+        The interface is intuitive, sleek, and effortless to navigate, making workflow seamless and efficient. As a writer, I value tools that let me focus on my work without getting lost in complexity, and this platform does exactly that.
+        If you're looking for something that blends power with simplicity, this is your safe place. :)
+      </p>
+    </div>
+    <div class="testimonial-author">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya M." class="author-avatar">
+      <div class="author-info">
+        <h4>Ananya Naithani</h4>
+        <p>Investment Banker Turned Ghostwriter & Writing Coach</p>
+      </div>
+    </div>
+  </div>
+</a>
+
       </div>
     </section>
 
