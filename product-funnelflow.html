@@ -9,36 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            /* Updated Colors */
-            --bg-main: #0F172A;
-            --bg-glass: rgba(15, 23, 42, 0.8);
-            --card-bg: rgba(30, 41, 59, 0.8);
-            --border-glass: rgba(148, 163, 184, 0.1);
+       :root {
+    /* Updated Colors - Dark Theme */
+    --bg-main: #0F172A; /* Dark blue background */
+    --bg-glass: rgba(15, 23, 42, 0.9); /* Slightly transparent dark blue */
+    --card-bg: rgba(30, 41, 59, 0.9); /* Darker blue for cards */
+    --border-glass: rgba(100, 130, 200, 0.15); /* Subtle blue border */
 
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
+    --text-main: #E2E8F0; /* Light gray for primary text */
+    --text-muted: #94A3B8; /* Muted blue-gray for secondary text */
 
-            --accent-blue: #60A5FA;
-            --accent-green: #34D399;
-            --accent-purple: #A78BFA;
-            --accent-glow: rgba(72, 239, 167, 0.4);
+    /* Accent Colors */
+    --accent-blue: #60A5FA; /* Bright blue */
+    --accent-green: #34D399; /* Emerald green */
+    --accent-purple: #A78BFA; /* Soft purple */
+    --accent-glow: rgba(72, 239, 167, 0.3); /* Green glow effect */
 
-            --highlight: rgba(74, 222, 128, 0.15);
-            --danger: #F87171;
+    --highlight: rgba(74, 222, 128, 0.15); /* Subtle green highlight */
+    --danger: #F87171; /* Soft red for errors/warnings */
 
-            --shadow-glow: 0 0 16px var(--accent-glow);
-            --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.2);
+    /* Shadows */
+    --shadow-glow: 0 0 16px var(--accent-glow);
+    --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.3);
 
-            /* Fonts */
-            --font-heading: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
+    /* Fonts */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
-            /* Radius & Padding */
-            --radius: 20px;
-            --radius-lg: 30px;
-            --padding: 2rem;
-        }
+    /* Radius & Padding */
+    --radius: 12px;
+    --padding: 1.25rem;
+}
 
         body {
             background-color: var(--bg-main);
