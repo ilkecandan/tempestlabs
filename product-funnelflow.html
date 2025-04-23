@@ -2,579 +2,471 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FunnelFlow - Visual Marketing Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-       :root {
-    /* Updated Colors - Dark Theme */
-    --bg-main: #0F172A; /* Dark blue background */
-    --bg-glass: rgba(15, 23, 42, 0.9); /* Slightly transparent dark blue */
-    --card-bg: rgba(30, 41, 59, 0.9); /* Darker blue for cards */
-    --border-glass: rgba(100, 130, 200, 0.15); /* Subtle blue border */
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="FunnelFlow by Tempest Labs - Visual marketing dashboard that turns chaos into crystal clear funnels. See, understand, and optimize your customer journey like never before.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="FunnelFlow - Visual Marketing Dashboard by Tempest Labs">
+    <meta property="og:description" content="Turn marketing chaos into crystal clear funnels with our visual dashboard. No spreadsheets. No complexity. Just clarity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tempestlabs.com/funnelflow">
+    <meta property="og:image" content="https://tempestlabs.com/images/funnelflow-preview.jpg">
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://tempestlabs.com/funnelflow" />
+    <title>FunnelFlow - Visual Marketing Dashboard | Tempest Labs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;600&family=EB+Garamond:wght@400;600&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
 
-    --text-main: #E2E8F0; /* Light gray for primary text */
-    --text-muted: #94A3B8; /* Muted blue-gray for secondary text */
+<style>
+        /* ================================= */
+        /* TEMPEST LABS - MYTHIC HERO STYLES */
+        /* ================================= */
 
-    /* Accent Colors */
-    --accent-blue: #60A5FA; /* Bright blue */
-    --accent-green: #34D399; /* Emerald green */
-    --accent-purple: #A78BFA; /* Soft purple */
-    --accent-glow: rgba(72, 239, 167, 0.3); /* Green glow effect */
+        /* Mythic Color Palette */
+        :root {
+          --deep-teal: #01343E;       /* base background */
+          --aqua-glow: #3AE3F8;
+          --muted-aqua: #34D6E0;      /* secondary highlight tone */
+          --burnt-coral: #E94F3D;
+          --charcoal-black: #0B1B1C;
+          --glow-white: #EAF4F4;
+          --hero-teal: #0A9DB7;       /* luminous main tone */
+          --hero-dark-teal: #055B6D;
+          
+          --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+          --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+          --transition-speed: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
 
-    --highlight: rgba(74, 222, 128, 0.15); /* Subtle green highlight */
-    --danger: #F87171; /* Soft red for errors/warnings */
-
-    /* Shadows */
-    --shadow-glow: 0 0 16px var(--accent-glow);
-    --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.3);
-
-    /* Fonts */
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
-
-    /* Radius & Padding */
-    --radius: 12px;
-    --padding: 1.25rem;
-}
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            color: var(--glow-white);
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            word-spacing: 0.5px;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(74, 222, 128, 0.1) 0%, transparent 50%);
+            background: linear-gradient(135deg, #055B6D, #0A9DB7);
         }
 
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            color: var(--text-main);
-            margin-top: 0;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            border-radius: 2px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            color: var(--glow-white);
+            letter-spacing: 1px;
+            text-shadow: var(--hero-text-glow);
+            margin-bottom: 1.2rem;
+            font-weight: 400;
         }
 
         a {
-            color: var(--accent-blue);
+            color: var(--aqua-glow);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed);
         }
 
-        a:hover {
-            color: var(--accent-green);
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: auto;
-            padding: var(--padding);
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--border-glass);
-            backdrop-filter: blur(12px);
+        header {
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 27, 28, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
+            backdrop-filter: blur(5px);
             transition: all 0.4s ease;
-            padding: var(--padding);
-            margin-bottom: 2rem;
-            overflow: hidden;
+        }
+
+        header.scrolled {
+            padding: 8px 5%;
+            background: rgba(11, 27, 28, 0.95);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: var(--glow-white);
+            cursor: pointer;
+            position: relative;
+            padding: 0 12px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .logo span {
+            color: var(--aqua-glow);
+            animation: pulse-glow 3.5s infinite;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
             position: relative;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        nav ul li a {
+            color: var(--glow-white);
+            font-size: 17px;
+            font-weight: 300;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .card:before {
-            content: '';
+        nav ul li a:hover {
+            color: var(--aqua-glow);
+            text-shadow: var(--text-glow);
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--aqua-glow);
+            transition: width var(--transition-speed);
+        }
+
+        nav ul li a:hover::after {
+            width: 60%;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-left: 30px;
+        }
+
+        .social-icons a {
+            color: var(--glow-white);
+            font-size: 1.2rem;
+            transition: all var(--transition-speed);
+            opacity: 0.7;
+        }
+
+        .social-icons a:hover {
+            color: var(--aqua-glow);
+            transform: translateY(-3px);
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-mythic {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5% 80px;
+            isolation: isolate;
+            text-align: center;
+        }
+
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(74, 222, 128, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center no-repeat;
+            background-size: cover;
+            background-position: center;
             z-index: -1;
-        }
-
-        .card:hover:before {
             opacity: 1;
+            filter: brightness(0.7) contrast(1.1) saturate(1.05);
         }
 
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 999px;
-            border: none;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
+        .hero-overlay {
+            z-index: 2;
+            position: relative;
+            backdrop-filter: blur(4px);
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            max-width: 90%;
+            padding: 40px;
+            animation: fadeInUp 1s ease-out;
+            border: 1px solid rgba(58, 227, 248, 0.08);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-mythic h1 {
+            font-family: 'Cinzel', serif;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            color: var(--glow-white);
+            text-shadow: var(--hero-text-glow);
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-mythic .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
             font-size: 1.1rem;
+            color: #C7E9E9;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .btn-primary {
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            color: var(--bg-main);
-            box-shadow: var(--shadow-glow);
+        .hero-mythic .tagline {
+            font-family: 'Outfit', sans-serif;
+            color: var(--aqua-glow);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            position: relative;
+            padding-left: 20px;
+            border-left: 1px solid var(--hero-teal);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 24px var(--accent-glow);
+        .hero-mythic .microtagline {
+            font-size: 0.9rem;
+            color: var(--muted-aqua);
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            margin-top: 2rem;
+            opacity: 0.8;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
-        .btn-outline {
+        .hero-cta {
             background: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent-blue);
             color: white;
-            border-color: transparent;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            border-radius: 0;
+            padding: 12px 0;
+            font-weight: 400;
+            border: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 1s both;
+            text-shadow: 0 0 8px rgba(255,255,255,0.2);
         }
 
-        .tooltip {
+        .hero-cta:hover {
+            color: var(--aqua-glow);
+            transform: translateY(-3px);
+        }
+
+        .hero-cta::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--aqua-glow);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-cta:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .floating-icon {
+            position: absolute;
+            opacity: 0;
+            z-index: 1;
+            animation: float 15s linear infinite;
+        }
+
+        .mist-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(0deg, rgba(8, 126, 140, 0.3) 0%, transparent 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .separator {
+            width: 100%;
+            border-top: 1px solid transparent;
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .separator::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 30%;
+            border-top: 2px solid var(--aqua-glow);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 30px;
+            border: 2px solid var(--burnt-coral);
+            border-radius: 20px;
+            opacity: 0.5;
+            animation: scrollPulse 2.5s infinite ease-in-out;
+        }
+
+        /* Main Content Sections */
+        .content-section {
+            padding: 100px 5%;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
             position: relative;
             display: inline-block;
         }
 
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            opacity: 0;
-            background-color: var(--text-muted);
-            color: white;
-            text-align: center;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius);
+        .section-title::after {
+            content: "";
             position: absolute;
-            z-index: 1;
-            bottom: 125%; 
+            bottom: -15px;
             left: 50%;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--aqua-glow);
             transform: translateX(-50%);
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            min-width: 200px;
+            width: 80px;
+            height: 3px;
+            background: var(--burnt-coral);
+            box-shadow: 0 0 10px var(--aqua-glow);
         }
 
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-pulse {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .transition-soft {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .funnel-awareness { background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(56, 189, 248, 0.4) 100%); }
-        .funnel-interest { background: linear-gradient(135deg, rgba(52, 211, 153, 0.2) 0%, rgba(52, 211, 153, 0.4) 100%); }
-        .funnel-intent { background: linear-gradient(135deg, rgba(74, 222, 128, 0.2) 0%, rgba(74, 222, 128, 0.4) 100%); }
-        .funnel-evaluation { background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0.4) 100%); }
-        .funnel-purchase { background: linear-gradient(135deg, rgba(252, 165, 165, 0.2) 0%, rgba(252, 165, 165, 0.4) 100%); }
-
-        .glow-box {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: var(--shadow-glow);
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            border-radius: var(--radius);
-            transition: all 0.4s ease;
-            padding: var(--padding);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glow-box:hover {
-            box-shadow: 0 0 32px var(--accent-glow);
-        }
-
-        /* Custom styles for the page */
-        header {
-            padding: 6rem 0 4rem;
-        }
-
-        .hero {
+        /* Card Styles */
+        .card-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .hero-image {
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image:hover img {
-            transform: perspective(1000px) rotateY(-5deg) scale(1.02);
-        }
-
-        .hero-image:before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
-            animation: pulse 6s ease infinite;
-            z-index: -1;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .feature-card {
-            padding: 2rem;
-            border-left: 4px solid var(--accent-blue);
-            position: relative;
+            background: rgba(6, 30, 34, 0.55);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.25), 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            text-align: center;
+            backdrop-filter: blur(6px);
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+        .feature-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .feature-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(58, 227, 248, 0.4), 0 0 30px rgba(233, 79, 61, 0.2);
+            border-color: rgba(58, 227, 248, 0.35);
+            background: rgba(6, 30, 34, 0.75);
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .feature-card h3 {
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .feature-card h3:before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-        }
-
-        .feature-card .feature-icon {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-blue);
-        }
-
-        .funnel-stages {
-            display: flex;
-            justify-content: space-between;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .stage {
-            flex: 1;
-            min-width: 150px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            border-radius: var(--radius);
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stage:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .stage h4 {
-            margin-top: 0.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stage:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .stage:hover:after {
-            opacity: 1;
-        }
-
-        .testimonial {
-            font-style: italic;
-            padding: 1.5rem;
-            border-left: 3px solid var(--accent-green);
-            margin: 2rem 0;
-            background: rgba(52, 211, 153, 0.1);
-            border-radius: var(--radius);
-            position: relative;
-        }
-
-        .testimonial:before {
-            content: '"';
-            position: absolute;
-            top: 0.5rem;
-            left: 0.5rem;
-            font-size: 4rem;
-            color: rgba(52, 211, 153, 0.2);
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .testimonial-author img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-glass);
-        }
-
-        .faq-item h4 {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            cursor: pointer;
-        }
-
-        .faq-item h4:before {
-            content: '+';
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background: var(--accent-blue);
-            color: var(--bg-main);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            line-height: 1;
-        }
-
-        .faq-item.active h4:before {
-            content: '-';
-        }
-
-        .faq-item .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding-left: 2.5rem;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-        }
-
-        .cta-section {
-            text-align: center;
-            padding: 6rem 0;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(74, 222, 128, 0.1) 100%);
-            border-radius: var(--radius-lg);
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-            animation: gradient 8s ease infinite;
-            z-index: -1;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .pricing-card {
-            background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            padding: 3rem;
-            margin-top: 3rem;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--accent-blue);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
-        }
-
-        .pricing-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(74, 222, 128, 0.1) 100%);
-            z-index: -1;
-        }
-
-        .price {
-            font-size: 3.5rem;
-            font-family: var(--font-heading);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(58, 227, 248, 0.4);
             font-weight: 700;
-            margin: 1rem 0;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            letter-spacing: 1.2px;
+            font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+            color: var(--aqua-glow);
+            text-transform: none;
         }
 
-        .price-period {
-            font-size: 1rem;
-            color: var(--text-muted);
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            font-size: clamp(0.9rem, 1vw, 1rem);
         }
 
-        .benefits-list {
-            text-align: left;
-            margin: 2rem 0;
-        }
-
-        .benefits-list li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .benefits-list li:before {
-            content: '✓';
-            color: var(--accent-green);
-        }
-
+        /* Funnel Visualization */
         .visualization-demo {
-            margin: 4rem 0;
+            padding: 100px 5%;
+            text-align: center;
             position: relative;
         }
 
         .demo-container {
-            background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
+            background: rgba(6, 30, 34, 0.75);
+            border-radius: 15px;
+            padding: 40px;
             position: relative;
             overflow: hidden;
             min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.25);
+            backdrop-filter: blur(6px);
+            margin: 40px auto;
+            max-width: 800px;
         }
 
         .demo-funnel {
@@ -590,14 +482,15 @@
             width: 80%;
             height: 60px;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(58, 227, 248, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--glow-white);
             font-weight: 500;
             position: relative;
             transition: all 0.5s ease;
+            font-family: 'Outfit', sans-serif;
         }
 
         .funnel-step:not(:last-child) {
@@ -606,58 +499,58 @@
 
         .funnel-step:nth-child(1) {
             width: 100%;
-            background: rgba(56, 189, 248, 0.3);
-            border-color: rgba(56, 189, 248, 0.5);
+            background: rgba(58, 227, 248, 0.2);
+            border-color: rgba(58, 227, 248, 0.4);
         }
 
         .funnel-step:nth-child(2) {
             width: 90%;
-            background: rgba(52, 211, 153, 0.3);
-            border-color: rgba(52, 211, 153, 0.5);
+            background: rgba(52, 214, 224, 0.2);
+            border-color: rgba(52, 214, 224, 0.4);
         }
 
         .funnel-step:nth-child(3) {
             width: 80%;
-            background: rgba(74, 222, 128, 0.3);
-            border-color: rgba(74, 222, 128, 0.5);
+            background: rgba(10, 157, 183, 0.2);
+            border-color: rgba(10, 157, 183, 0.4);
         }
 
         .funnel-step:nth-child(4) {
             width: 70%;
-            background: rgba(251, 191, 36, 0.3);
-            border-color: rgba(251, 191, 36, 0.5);
+            background: rgba(233, 79, 61, 0.2);
+            border-color: rgba(233, 79, 61, 0.4);
         }
 
         .funnel-step:nth-child(5) {
             width: 60%;
-            background: rgba(252, 165, 165, 0.3);
-            border-color: rgba(252, 165, 165, 0.5);
+            background: rgba(5, 91, 109, 0.2);
+            border-color: rgba(5, 91, 109, 0.4);
         }
 
         .demo-lead {
             position: absolute;
             width: 30px;
             height: 30px;
-            background: white;
+            background: var(--glow-white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.7rem;
             font-weight: bold;
-            color: var(--bg-main);
+            color: var(--charcoal-black);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 10;
             transition: all 1s ease;
         }
 
-        .demo-lead:nth-child(6) { top: 20px; left: 30%; background: #60A5FA; }
-        .demo-lead:nth-child(7) { top: 20px; left: 50%; background: #34D399; }
-        .demo-lead:nth-child(8) { top: 20px; left: 70%; background: #A78BFA; }
-        .demo-lead:nth-child(9) { top: 90px; left: 40%; background: #FBBF24; }
-        .demo-lead:nth-child(10) { top: 90px; left: 60%; background: #F472B6; }
-        .demo-lead:nth-child(11) { top: 160px; left: 45%; background: #F87171; }
-        .demo-lead:nth-child(12) { top: 230px; left: 50%; background: #10B981; }
+        .demo-lead:nth-child(6) { top: 20px; left: 30%; background: var(--aqua-glow); }
+        .demo-lead:nth-child(7) { top: 20px; left: 50%; background: var(--muted-aqua); }
+        .demo-lead:nth-child(8) { top: 20px; left: 70%; background: var(--hero-teal); }
+        .demo-lead:nth-child(9) { top: 90px; left: 40%; background: var(--burnt-coral); }
+        .demo-lead:nth-child(10) { top: 90px; left: 60%; background: var(--hero-dark-teal); }
+        .demo-lead:nth-child(11) { top: 160px; left: 45%; background: var(--aqua-glow); }
+        .demo-lead:nth-child(12) { top: 230px; left: 50%; background: var(--muted-aqua); }
 
         .demo-container:hover .demo-lead:nth-child(6) { top: 90px; left: 40%; }
         .demo-container:hover .demo-lead:nth-child(7) { top: 160px; left: 45%; }
@@ -666,48 +559,66 @@
         .demo-container:hover .demo-lead:nth-child(10) { top: 230px; left: 50%; }
         .demo-container:hover .demo-lead:nth-child(11) { top: 230px; left: 50%; }
 
+        /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px auto;
+            max-width: 1000px;
         }
 
         .stat-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: 2rem;
+            background: rgba(6, 30, 34, 0.55);
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.15);
+            backdrop-filter: blur(4px);
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 40px rgba(58, 227, 248, 0.25);
+            background: rgba(6, 30, 34, 0.75);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--aqua-glow);
+            margin-bottom: 15px;
         }
 
         .stat-value {
             font-size: 2.5rem;
-            font-family: var(--font-heading);
-            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
             margin: 0.5rem 0;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--aqua-glow);
+            text-shadow: var(--text-glow);
         }
 
         .stat-label {
-            color: var(--text-muted);
+            color: var(--muted-aqua);
             font-size: 0.9rem;
+            font-family: 'Outfit', sans-serif;
         }
 
+        /* Case Studies */
         .case-study {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 40px;
             align-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 80px;
+            background: rgba(6, 30, 34, 0.55);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.15);
+            backdrop-filter: blur(4px);
         }
 
         .case-study:nth-child(even) .case-study-content {
@@ -720,7 +631,7 @@
 
         .case-study-image {
             position: relative;
-            border-radius: var(--radius-lg);
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
@@ -743,7 +654,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, transparent 100%);
+            background: linear-gradient(135deg, rgba(58, 227, 248, 0.2) 0%, transparent 100%);
             z-index: 1;
         }
 
@@ -751,96 +662,337 @@
             margin-top: 2rem;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 15px;
         }
 
         .result-item {
             background: rgba(255, 255, 255, 0.05);
-            padding: 1rem;
-            border-radius: var(--radius);
+            padding: 1.5rem;
+            border-radius: 10px;
             text-align: center;
+            border: 1px solid rgba(58, 227, 248, 0.1);
         }
 
         .result-value {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--accent-green);
-            margin-bottom: 0.25rem;
+            color: var(--aqua-glow);
+            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
         }
 
         .result-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 0 2rem;
-            color: var(--text-muted);
             font-size: 0.9rem;
-            border-top: 1px solid var(--border-glass);
-            margin-top: 4rem;
+            color: var(--muted-aqua);
+            font-family: 'Outfit', sans-serif;
         }
 
-        .footer-links {
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: rgba(6, 30, 34, 0.55);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.15);
+            backdrop-filter: blur(4px);
+        }
+
+        .faq-item h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--aqua-glow);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .faq-item h4:after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--aqua-glow);
+        }
+
+        .faq-item.active h4:after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--muted-aqua);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 5%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.15);
+            position: relative;
+            backdrop-filter: blur(5px);
+            animation: fadeInUp 0.8s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 100px auto;
+            max-width: 1200px;
+            border-radius: 15px;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 0%, rgba(58, 227, 248, 0.06), transparent 70%);
+            z-index: 0;
+        }
+
+        .pricing-card {
+            background: rgba(6, 30, 34, 0.75);
+            border-radius: 15px;
+            padding: 50px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(58, 227, 248, 0.3);
+            box-shadow: 0 0 30px rgba(58, 227, 248, 0.2);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(6px);
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-family: 'Cinzel', serif;
+            color: var(--aqua-glow);
+            margin: 1rem 0;
+            text-shadow: var(--text-glow);
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--muted-aqua);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .benefits-list {
+            text-align: left;
+            margin: 2rem 0;
+            color: var(--muted-aqua);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .benefits-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .benefits-list li:before {
+            content: '✓';
+            color: var(--aqua-glow);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            text-shadow: 0 0 8px rgba(233, 79, 61, 0.3), 0 0 6px rgba(255, 222, 211, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: rgba(0, 0, 0, 0.15);
+            color: #FFDED3;
+            border: 1px solid rgba(233, 79, 61, 0.6);
+            box-shadow: 0 0 10px rgba(233, 79, 61, 0.2), 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--burnt-coral);
+            color: white;
+            box-shadow: 0 0 25px var(--burnt-coral), 0 0 15px rgba(233, 79, 61, 0.6);
+            transform: translateY(-2px);
+            text-shadow: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--aqua-glow);
+            border: 1px solid var(--aqua-glow);
+            box-shadow: 0 0 10px rgba(58, 227, 248, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: rgba(58, 227, 248, 0.1);
+            box-shadow: 0 0 20px rgba(58, 227, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 5% 40px;
+            background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
+            color: var(--muted-aqua);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/noise.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-column h3 {
+            color: var(--glow-white);
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--burnt-coral);
+        }
+
+        .footer-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--muted-aqua);
+            transition: all var(--transition-speed);
+            font-size: clamp(0.85rem, 1vw, 1rem);
+        }
+
+        .footer-column a:hover {
+            color: var(--burnt-coral);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(58, 227, 248, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .legal-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+        /* Easter Egg */
+        .easter-egg {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            color: var(--burnt-coral);
         }
 
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-blue);
+        .easter-egg:hover {
+            opacity: 1;
+            animation: pulse 2s infinite;
         }
 
         /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.7; }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0; }
         }
 
-        .fade-in {
-            animation: fadeIn 0.8s ease forwards;
+        @keyframes pulse-glow {
+            0% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
+            50% { opacity: 1; text-shadow: 0 0 20px var(--aqua-glow); }
+            100% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
         }
 
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-        .delay-5 { animation-delay: 1s; }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-            }
-            
-            .hero-image {
-                margin: 0 auto;
-                max-width: 600px;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+        @keyframes scrollPulse {
+            0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+            50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0px var(--aqua-glow); }
+            50% { box-shadow: 0 0 15px var(--aqua-glow); }
+            100% { box-shadow: 0 0 0px var(--aqua-glow); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-overlay {
+                max-width: 90%;
+                padding: 30px;
             }
             
             .case-study {
@@ -854,466 +1006,609 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+            header {
+                padding: 12px 5%;
             }
             
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .funnel-stages {
-                flex-direction: column;
-            }
-            
-            .stage {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
                 width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(6, 30, 34, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: all 0.4s ease;
+                backdrop-filter: blur(15px);
+                gap: 20px;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li a {
+                padding: 12px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .social-icons {
+                display: none;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 22px;
+            }
+            
+            .hero-mythic h1 {
+                font-size: 1.8rem;
             }
             
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .case-study-results {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content-section, .visualization-demo, .faq-section, .cta-section {
+                padding: 60px 3%;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
         }
-    </style>
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="hero">
-                <div class="hero-content fade-in">
-                    <h1>Turn Marketing Chaos Into Crystal Clear Funnels</h1>
-                    <p>FunnelFlow is the visual dashboard that helps you see, understand, and optimize your customer journey like never before. No spreadsheets. No complexity. Just clarity.</p>
-                    <div class="glow-box fade-in delay-1">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                            <div style="flex: 1; height: 4px; background: linear-gradient(90deg, var(--accent-blue), var(--accent-green)); border-radius: 2px;"></div>
-                            <span style="color: var(--accent-green); font-weight: 500;">Why it works</span>
-                            <div style="flex: 1; height: 4px; background: linear-gradient(90deg, var(--accent-green), var(--accent-blue)); border-radius: 2px;"></div>
-                        </div>
-                        <p style="margin-bottom: 1.5rem;">Visualizing your funnel helps you:</p>
-                        <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
-                            <li>Spot drop-off points instantly</li>
-                            <li>Optimize content for each stage</li>
-                            <li>Increase conversions by 30-200%</li>
-                        </ul>
-                        <a href="#cta" class="btn btn-primary animate-float">
-                            <i class="fas fa-rocket"></i> Get FunnelFlow Now
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image fade-in delay-2">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="FunnelFlow Dashboard Visualization">
-                </div>
-            </div>
-        </header>
+    <!-- Header Section -->
+    <header>
+        <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </div>
 
-        <section class="visualization-demo fade-in delay-3">
-            <h2>See Your Funnel Come to Life</h2>
-            <p style="max-width: 800px; margin: 0 auto 2rem;">Watch how leads move through your funnel in real-time. Identify bottlenecks and opportunities with our intuitive visualization.</p>
-            
-            <div class="demo-container">
-                <div class="demo-funnel">
-                    <div class="funnel-step">Awareness (1000 leads)</div>
-                    <div class="funnel-step">Interest (650 leads)</div>
-                    <div class="funnel-step">Intent (320 leads)</div>
-                    <div class="funnel-step">Evaluation (180 leads)</div>
-                    <div class="funnel-step">Purchase (95 customers)</div>
-                    
-                    <div class="demo-lead">A</div>
-                    <div class="demo-lead">B</div>
-                    <div class="demo-lead">C</div>
-                    <div class="demo-lead">D</div>
-                    <div class="demo-lead">E</div>
-                    <div class="demo-lead">F</div>
-                    <div class="demo-lead">G</div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <p>Hover over the funnel to see leads progress through stages</p>
-            </div>
-        </section>
+        <nav>
+            <ul>
+                <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
+                <li><a href="products.html" aria-label="View our products">Products</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
+                <li><a href="turkish/index.html" aria-label="View in Turkish">Türkçe</a></li>
+            </ul>
+        </nav>
 
-        <section class="fade-in delay-4">
-            <h2>📈 The Power of Visualization</h2>
-            <p style="max-width: 800px; margin: 0 auto 2rem;">Businesses that visualize their marketing funnels see dramatic improvements in conversion rates and customer understanding.</p>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent-blue);"></i>
-                    <div class="stat-value">73%</div>
-                    <div class="stat-label">Higher Conversion Rates</div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-mythic">
+        <div class="hero-bg"></div>
+        <div class="mist-overlay"></div>
+        
+        <div class="hero-overlay">
+            <h1>Turn Marketing Chaos Into Crystal Clear Funnels</h1>
+            <p class="hero-subtitle">FunnelFlow is the visual dashboard that helps you see, understand, and optimize your customer journey like never before.</p>
+            <p class="tagline">No spreadsheets. No complexity. Just clarity.</p>
+            <a class="hero-cta" href="#cta">See How It Works</a>
+            <p class="microtagline">Visualize your funnel. Optimize your conversions. Own your marketing.</p>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- Visualization Demo -->
+    <section class="visualization-demo" id="features">
+        <h2>See Your Funnel Come to Life</h2>
+        <p>Watch how leads move through your funnel in real-time. Identify bottlenecks and opportunities with our intuitive visualization.</p>
+        
+        <div class="demo-container">
+            <div class="demo-funnel">
+                <div class="funnel-step">Awareness (1000 leads)</div>
+                <div class="funnel-step">Interest (650 leads)</div>
+                <div class="funnel-step">Intent (320 leads)</div>
+                <div class="funnel-step">Evaluation (180 leads)</div>
+                <div class="funnel-step">Purchase (95 customers)</div>
+                
+                <div class="demo-lead">A</div>
+                <div class="demo-lead">B</div>
+                <div class="demo-lead">C</div>
+                <div class="demo-lead">D</div>
+                <div class="demo-lead">E</div>
+                <div class="demo-lead">F</div>
+                <div class="demo-lead">G</div>
+            </div>
+        </div>
+        
+        <p style="margin-top: 2rem; color: var(--muted-aqua);">
+            Hover over the funnel to see leads progress through stages
+        </p>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- Stats Section -->
+    <section class="content-section">
+        <h2>The Power of Visualization</h2>
+        <p>Businesses that visualize their marketing funnels see dramatic improvements in conversion rates and customer understanding.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="stat-value">73%</div>
+                <div class="stat-label">Higher Conversion Rates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <div class="stat-value">2.5x</div>
+                <div class="stat-label">Faster Decision Making</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-value">89%</div>
+                <div class="stat-label">Better Team Alignment</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="stat-value">64%</div>
+                <div class="stat-label">More Strategic Insights</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- Features Section -->
+    <section class="content-section">
+        <h2>Features That Change the Game</h2>
+        <p>FunnelFlow combines powerful analytics with intuitive visualization to give you unprecedented control over your marketing funnel.</p>
+        
+        <div class="card-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-project-diagram"></i>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-clock" style="font-size: 2rem; color: var(--accent-green);"></i>
-                    <div class="stat-value">2.5x</div>
-                    <div class="stat-label">Faster Decision Making</div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-users" style="font-size: 2rem; color: var(--accent-purple);"></i>
-                    <div class="stat-value">89%</div>
-                    <div class="stat-label">Better Team Alignment</div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-lightbulb" style="font-size: 2rem; color: var(--accent-green);"></i>
-                    <div class="stat-value">64%</div>
-                    <div class="stat-label">More Strategic Insights</div>
+                <h3>Funnel Visualization</h3>
+                <p>See your entire customer journey at a glance with our beautiful, interactive funnel visualization. Drag and drop leads between stages, track progress, and identify bottlenecks instantly.</p>
+                <div class="feature-card" style="margin-top: 1rem; padding: 1.5rem; text-align: center;">
+                    <i class="fas fa-mouse-pointer" style="color: var(--aqua-glow);"></i>
+                    <p style="margin: 0.5rem 0 0; font-size: 0.9rem;">Interactive drag-and-drop interface</p>
                 </div>
             </div>
-        </section>
-
-        <section class="fade-in delay-5">
-            <h2>🧩 Features That Change the Game</h2>
-            <p style="max-width: 800px; margin: 0 auto 3rem;">FunnelFlow combines powerful analytics with intuitive visualization to give you unprecedented control over your marketing funnel.</p>
             
-            <div class="features-grid">
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Funnel Visualization</h3>
-                    <p>See your entire customer journey at a glance with our beautiful, interactive funnel visualization. Drag and drop leads between stages, track progress, and identify bottlenecks instantly.</p>
-                    <div class="glow-box" style="text-align: center; margin-top: 1rem; padding: 1rem;">
-                        <i class="fas fa-mouse-pointer" style="color: var(--accent-blue);"></i>
-                        <p style="margin: 0.5rem 0 0; font-size: 0.9rem;">Interactive drag-and-drop interface</p>
-                    </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
                 </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>AI-Powered Insights</h3>
-                    <p>Our smart algorithms analyze your funnel data to provide actionable recommendations for improving conversions at every stage.</p>
-                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                        <li>Content suggestions for each stage</li>
-                        <li>Predictive conversion analytics</li>
-                        <li>Automated bottleneck detection</li>
-                    </ul>
-                    <div class="testimonial">
-                        "The AI insights helped us identify a 42% drop-off we had completely missed in our Evaluation stage."
-                        <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J.">
-                            <div>
-                                <strong>Sarah J.</strong>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">Marketing Director</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3>Lead Management</h3>
-                    <p>Organize, track, and nurture leads through every stage of your funnel with our intuitive lead management system.</p>
-                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <div style="flex: 1; background: rgba(56, 189, 248, 0.2); padding: 0.75rem; border-radius: var(--radius); text-align: center;">
-                            <div style="font-size: 0.8rem; color: var(--text-muted);">Leads</div>
-                            <div style="font-size: 1.5rem; font-weight: 700;">1,248</div>
-                        </div>
-                        <div style="flex: 1; background: rgba(74, 222, 128, 0.2); padding: 0.75rem; border-radius: var(--radius); text-align: center;">
-                            <div style="font-size: 0.8rem; color: var(--text-muted);">Hot</div>
-                            <div style="font-size: 1.5rem; font-weight: 700;">187</div>
-                        </div>
-                        <div style="flex: 1; background: rgba(251, 191, 36, 0.2); padding: 0.75rem; border-radius: var(--radius); text-align: center;">
-                            <div style="font-size: 0.8rem; color: var(--text-muted);">Converted</div>
-                            <div style="font-size: 1.5rem; font-weight: 700;">63</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Advanced Analytics</h3>
-                    <p>Go beyond basic metrics with our comprehensive analytics dashboard that shows you exactly what's working and what's not.</p>
-                    <div style="margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: var(--radius); padding: 1rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span>Awareness → Interest</span>
-                            <span>65%</span>
-                        </div>
-                        <div style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
-                            <div style="width: 65%; height: 100%; background: var(--accent-blue);"></div>
-                        </div>
-                        
-                        <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem;">
-                            <span>Interest → Intent</span>
-                            <span>49%</span>
-                        </div>
-                        <div style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
-                            <div style="width: 49%; height: 100%; background: var(--accent-green);"></div>
-                        </div>
-                        
-                        <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem;">
-                            <span>Intent → Purchase</span>
-                            <span>29%</span>
-                        </div>
-                        <div style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
-                            <div style="width: 29%; height: 100%; background: var(--accent-purple);"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>Content Strategy</h3>
-                    <p>Assign and track content performance at each funnel stage to ensure you're delivering the right message at the right time.</p>
-                    <div style="margin-top: 1rem;">
-                        <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.05); padding: 0.75rem; border-radius: var(--radius); margin-bottom: 0.5rem;">
-                            <span>Blog Post: "10 Tips..."</span>
-                            <span style="color: var(--accent-green);">+42%</span>
-                        </div>
-                        <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.05); padding: 0.75rem; border-radius: var(--radius);">
-                            <span>Webinar: "Masterclass"</span>
-                            <span style="color: var(--accent-green);">+68%</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3>Team Collaboration</h3>
-                    <p>Work seamlessly with your team with built-in collaboration features, comments, and task assignments.</p>
-                    <div style="display: flex; margin-top: 1rem;">
-                        <div style="width: 30px; height: 30px; background: var(--accent-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: -10px; border: 2px solid var(--card-bg);"></div>
-                        <div style="width: 30px; height: 30px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: -10px; border: 2px solid var(--card-bg);"></div>
-                        <div style="width: 30px; height: 30px; background: var(--accent-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: -10px; border: 2px solid var(--card-bg);"></div>
-                        <div style="width: 30px; height: 30px; background: var(--danger); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--card-bg);"></div>
-                    </div>
-                    <div style="margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: var(--radius); padding: 1rem;">
-                        <div style="display: flex; align-items: center; gap: 0.75rem;">
-                            <div style="width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%;"></div>
-                            <div style="flex: 1; font-size: 0.9rem;">Sarah assigned demo to 3 hot leads</div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted);">2h ago</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>📊 Real-World Case Studies</h2>
-            <p style="max-width: 800px; margin: 0 auto 3rem;">See how businesses like yours transformed their marketing with FunnelFlow's visual approach.</p>
-            
-            <div class="case-study">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SaaS Startup Case Study">
-                </div>
-                <div class="case-study-content">
-                    <h3>SaaS Startup 3X Conversions</h3>
-                    <p>A growing SaaS company was struggling with low conversion rates from trial to paid customers. They couldn't identify where prospects were dropping off in their funnel.</p>
-                    <p>After implementing FunnelFlow, they discovered a 68% drop-off during the onboarding stage. By visualizing the problem, they quickly implemented targeted improvements.</p>
-                    
-                    <div class="case-study-results">
-                        <div class="result-item">
-                            <div class="result-value">3.2x</div>
-                            <div class="result-label">More Conversions</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">42%</div>
-                            <div class="result-label">Higher Retention</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">$28K</div>
-                            <div class="result-label">Monthly Revenue</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">2.5x</div>
-                            <div class="result-label">ROI</div>
+                <h3>AI-Powered Insights</h3>
+                <p>Our smart algorithms analyze your funnel data to provide actionable recommendations for improving conversions at every stage.</p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; text-align: left; color: var(--muted-aqua);">
+                    <li>Content suggestions for each stage</li>
+                    <li>Predictive conversion analytics</li>
+                    <li>Automated bottleneck detection</li>
+                </ul>
+                <div class="feature-card" style="margin-top: 1rem; padding: 1.5rem; font-style: italic;">
+                    "The AI insights helped us identify a 42% drop-off we had completely missed in our Evaluation stage."
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <strong>Sarah J.</strong>
+                            <div style="font-size: 0.8rem; color: var(--muted-aqua);">Marketing Director</div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="case-study">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="E-commerce Case Study">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tasks"></i>
                 </div>
-                <div class="case-study-content">
-                    <h3>E-commerce Store Boosts Sales 89%</h3>
-                    <p>An e-commerce store was spending heavily on ads but couldn't understand why their cart abandonment rates were so high.</p>
-                    <p>FunnelFlow revealed that 72% of drop-offs occurred between the "Add to Cart" and "Checkout" stages. The visualization helped them implement a streamlined checkout process with clear progress indicators.</p>
-                    
-                    <div class="case-study-results">
-                        <div class="result-item">
-                            <div class="result-value">89%</div>
-                            <div class="result-label">More Sales</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">56%</div>
-                            <div class="result-label">Lower CAC</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">$14K</div>
-                            <div class="result-label">Daily Revenue</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">3.8x</div>
-                            <div class="result-label">ROAS</div>
-                        </div>
+                <h3>Lead Management</h3>
+                <p>Organize, track, and nurture leads through every stage of your funnel with our intuitive lead management system.</p>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <div style="flex: 1; background: rgba(58, 227, 248, 0.2); padding: 1rem; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 0.8rem; color: var(--muted-aqua);">Leads</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--aqua-glow);">1,248</div>
+                    </div>
+                    <div style="flex: 1; background: rgba(74, 222, 128, 0.2); padding: 1rem; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 0.8rem; color: var(--muted-aqua);">Hot</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--aqua-glow);">187</div>
+                    </div>
+                    <div style="flex: 1; background: rgba(233, 79, 61, 0.2); padding: 1rem; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 0.8rem; color: var(--muted-aqua);">Converted</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--aqua-glow);">63</div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section>
-            <h2>🙋 Frequently Asked Questions</h2>
-            <div class="card">
-                <div class="faq-item">
-                    <h4>Is FunnelFlow a CRM?</h4>
-                    <div class="faq-answer">
-                        <p>No, FunnelFlow is not a traditional CRM. While CRMs focus on contact management and sales pipelines, FunnelFlow specializes in visualizing and optimizing your entire marketing funnel. It's designed to work alongside your existing CRM, providing the visualization layer that most CRMs lack.</p>
-                    </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-pie"></i>
                 </div>
-                
-                <div class="faq-item">
-                    <h4>How does the visualization help my marketing?</h4>
-                    <div class="faq-answer">
-                        <p>Visualizing your funnel provides several key benefits:</p>
-                        <ul>
-                            <li>Immediately see where prospects are dropping off</li>
-                            <li>Understand which content performs best at each stage</li>
-                            <li>Identify bottlenecks in your customer journey</li>
-                            <li>Make data-driven decisions about where to focus improvements</li>
-                            <li>Align your team around a shared understanding of the funnel</li>
-                        </ul>
-                        <p>Our customers typically see a 30-200% improvement in conversion rates after implementing FunnelFlow.</p>
+                <h3>Advanced Analytics</h3>
+                <p>Go beyond basic metrics with our comprehensive analytics dashboard that shows you exactly what's working and what's not.</p>
+                <div style="margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Awareness → Interest</span>
+                        <span>65%</span>
                     </div>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>What does it cost?</h4>
-                    <div class="faq-answer">
-                        <p>FunnelFlow is a one-time purchase of $297 with no recurring fees. This includes:</p>
-                        <ul>
-                            <li>Lifetime access to all features</li>
-                            <li>Free updates for 1 year</li>
-                            <li>Priority email support</li>
-                        </ul>
-                        <p>Compare this to typical SaaS marketing tools that charge $50-$300 per month indefinitely.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Can I use it for multiple projects?</h4>
-                    <div class="faq-answer">
-                        <p>Yes! Your license allows you to use FunnelFlow for as many projects as you need. Many of our customers manage multiple funnels for different products, services, or client accounts all within the same dashboard.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Do I need technical skills to use it?</h4>
-                    <div class="faq-answer">
-                        <p>Not at all. FunnelFlow is designed for marketers, not developers. If you can use tools like Trello or Notion, you'll feel right at home with FunnelFlow. We provide step-by-step onboarding and template funnels to get you started quickly.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>What integrations does it support?</h4>
-                    <div class="faq-answer">
-                        <p>FunnelFlow currently integrates with:</p>
-                        <ul>
-                            <li>Google Analytics</li>
-                            <li>Facebook/Instagram Ads</li>
-                            <li>Google Ads</li>
-                            <li>Mailchimp</li>
-                            <li>Zapier (for connecting to 5000+ other apps)</li>
-                        </ul>
-                        <p>We're constantly adding new integrations based on customer demand.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="cta" class="cta-section">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Marketing?</h2>
-                <p style="font-size: 1.25rem; margin-bottom: 2rem;">Join thousands of marketers who've unlocked the power of visual funnel management.</p>
-                
-                <div class="pricing-card animate-pulse">
-                    <h3 style="margin-bottom: 0.5rem;">FunnelFlow Pro</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">One-time payment. Lifetime access.</p>
-                    
-                    <div class="price">$297</div>
-                    <div class="price-period">one-time payment</div>
-                    
-                    <div class="benefits-list">
-                        <ul>
-                            <li>Unlimited funnels & leads</li>
-                            <li>AI-powered insights</li>
-                            <li>Advanced analytics</li>
-                            <li>Team collaboration</li>
-                            <li>Priority support</li>
-                            <li>1 year of free updates</li>
-                        </ul>
+                    <div style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 65%; height: 100%; background: var(--aqua-glow);"></div>
                     </div>
                     
-                    <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <i class="fas fa-arrow-right"></i> Get FunnelFlow Now
-                    </a>
+                    <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem;">
+                        <span>Interest → Intent</span>
+                        <span>49%</span>
+                    </div>
+                    <div style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 49%; height: 100%; background: var(--muted-aqua);"></div>
+                    </div>
                     
-                    <div style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
-                        <i class="fas fa-lock"></i> Secure checkout. 30-day money-back guarantee.
+                    <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem;">
+                        <span>Intent → Purchase</span>
+                        <span>29%</span>
+                    </div>
+                    <div style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                        <div style="width: 29%; height: 100%; background: var(--burnt-coral);"></div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Content Strategy</h3>
+                <p>Assign and track content performance at each funnel stage to ensure you're delivering the right message at the right time.</p>
+                <div style="margin-top: 1rem;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; margin-bottom: 0.5rem;">
+                        <span>Blog Post: "10 Tips..."</span>
+                        <span style="color: var(--aqua-glow);">+42%</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px;">
+                        <span>Webinar: "Masterclass"</span>
+                        <span style="color: var(--aqua-glow);">+68%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <h3>Team Collaboration</h3>
+                <p>Work seamlessly with your team with built-in collaboration features, comments, and task assignments.</p>
+                <div style="display: flex; margin-top: 1rem;">
+                    <div style="width: 30px; height: 30px; background: var(--aqua-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: -10px; border: 2px solid var(--charcoal-black);"></div>
+                    <div style="width: 30px; height: 30px; background: var(--muted-aqua); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: -10px; border: 2px solid var(--charcoal-black);"></div>
+                    <div style="width: 30px; height: 30px; background: var(--hero-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: -10px; border: 2px solid var(--charcoal-black);"></div>
+                    <div style="width: 30px; height: 30px; background: var(--burnt-coral); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--charcoal-black);"></div>
+                </div>
+                <div style="margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div style="width: 8px; height: 8px; background: var(--aqua-glow); border-radius: 50%;"></div>
+                        <div style="flex: 1; font-size: 0.9rem;">Sarah assigned demo to 3 hot leads</div>
+                        <div style="font-size: 0.8rem; color: var(--muted-aqua);">2h ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Support</a>
+    <div class="separator"></div>
+
+    <!-- Case Studies Section -->
+    <section class="content-section">
+        <h2>Real-World Case Studies</h2>
+        <p>See how businesses like yours transformed their marketing with FunnelFlow's visual approach.</p>
+        
+        <div class="case-study">
+            <div class="case-study-image">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SaaS Startup Case Study">
+            </div>
+            <div class="case-study-content">
+                <h3>SaaS Startup 3X Conversions</h3>
+                <p>A growing SaaS company was struggling with low conversion rates from trial to paid customers. They couldn't identify where prospects were dropping off in their funnel.</p>
+                <p>After implementing FunnelFlow, they discovered a 68% drop-off during the onboarding stage. By visualizing the problem, they quickly implemented targeted improvements.</p>
+                
+                <div class="case-study-results">
+                    <div class="result-item">
+                        <div class="result-value">3.2x</div>
+                        <div class="result-label">More Conversions</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">42%</div>
+                        <div class="result-label">Higher Retention</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">$28K</div>
+                        <div class="result-label">Monthly Revenue</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">2.5x</div>
+                        <div class="result-label">ROI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="case-study">
+            <div class="case-study-image">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="E-commerce Case Study">
+            </div>
+            <div class="case-study-content">
+                <h3>E-commerce Store Boosts Sales 89%</h3>
+                <p>An e-commerce store was spending heavily on ads but couldn't understand why their cart abandonment rates were so high.</p>
+                <p>FunnelFlow revealed that 72% of drop-offs occurred between the "Add to Cart" and "Checkout" stages. The visualization helped them implement a streamlined checkout process with clear progress indicators.</p>
+                
+                <div class="case-study-results">
+                    <div class="result-item">
+                        <div class="result-value">89%</div>
+                        <div class="result-label">More Sales</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">56%</div>
+                        <div class="result-label">Lower CAC</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">$14K</div>
+                        <div class="result-label">Daily Revenue</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">3.8x</div>
+                        <div class="result-label">ROAS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h4>Is FunnelFlow a CRM?</h4>
+            <div class="faq-answer">
+                <p>No, FunnelFlow is not a traditional CRM. While CRMs focus on contact management and sales pipelines, FunnelFlow specializes in visualizing and optimizing your entire marketing funnel. It's designed to work alongside your existing CRM, providing the visualization layer that most CRMs lack.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <h4>How does the visualization help my marketing?</h4>
+            <div class="faq-answer">
+                <p>Visualizing your funnel provides several key benefits:</p>
+                <ul>
+                    <li>Immediately see where prospects are dropping off</li>
+                    <li>Understand which content performs best at each stage</li>
+                    <li>Identify bottlenecks in your customer journey</li>
+                    <li>Make data-driven decisions about where to focus improvements</li>
+                    <li>Align your team around a shared understanding of the funnel</li>
+                </ul>
+                <p>Our customers typically see a 30-200% improvement in conversion rates after implementing FunnelFlow.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <h4>What does it cost?</h4>
+            <div class="faq-answer">
+                <p>FunnelFlow is a one-time purchase of $297 with no recurring fees. This includes:</p>
+                <ul>
+                    <li>Lifetime access to all features</li>
+                    <li>Free updates for 1 year</li>
+                    <li>Priority email support</li>
+                </ul>
+                <p>Compare this to typical SaaS marketing tools that charge $50-$300 per month indefinitely.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Can I use it for multiple projects?</h4>
+            <div class="faq-answer">
+                <p>Yes! Your license allows you to use FunnelFlow for as many projects as you need. Many of our customers manage multiple funnels for different products, services, or client accounts all within the same dashboard.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Do I need technical skills to use it?</h4>
+            <div class="faq-answer">
+                <p>Not at all. FunnelFlow is designed for marketers, not developers. If you can use tools like Trello or Notion, you'll feel right at home with FunnelFlow. We provide step-by-step onboarding and template funnels to get you started quickly.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <h4>What integrations does it support?</h4>
+            <div class="faq-answer">
+                <p>FunnelFlow currently integrates with:</p>
+                <ul>
+                    <li>Google Analytics</li>
+                    <li>Facebook/Instagram Ads</li>
+                    <li>Google Ads</li>
+                    <li>Mailchimp</li>
+                    <li>Zapier (for connecting to 5000+ other apps)</li>
+                </ul>
+                <p>We're constantly adding new integrations based on customer demand.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <h2>Ready to Transform Your Marketing?</h2>
+        <p>Join thousands of marketers who've unlocked the power of visual funnel management.</p>
+        
+        <div class="pricing-card">
+            <h3>FunnelFlow Pro</h3>
+            <p class="microtagline">One-time payment. Lifetime access.</p>
+            
+            <div class="price">$297</div>
+            <div class="price-period">one-time payment</div>
+            
+            <div class="benefits-list">
+                <ul>
+                    <li>Unlimited funnels & leads</li>
+                    <li>AI-powered insights</li>
+                    <li>Advanced analytics</li>
+                    <li>Team collaboration</li>
+                    <li>Priority support</li>
+                    <li>1 year of free updates</li>
+                </ul>
             </div>
             
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-arrow-right"></i> Get FunnelFlow Now
+            </a>
             
-            <p>© 2023 FunnelFlow. All rights reserved.</p>
-        </footer>
-    </div>
+            <p class="microtagline" style="margin-top: 1.5rem;">
+                <i class="fas fa-lock"></i> Secure checkout. 30-day money-back guarantee.
+            </p>
+        </div>
+    </section>
+
+    <!-- Easter Egg -->
+    <span class="easter-egg" title="Silence is the real OS.">🜂</span>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                 <h3><a href="about.html" aria-label="About Tempest Labs">About</a></h3>
+                <p>Creating tools for deeper thinking and clearer vision.</p>
+            </div>
+            <div class="footer-column">
+                 <h3><a href="products.html" aria-label="About Tempest Labs">Products</a></h3>
+                <a href="product-intuiva.html">Intuiva</a>
+                <a href="product-cabinet.html">Cabinet of Selves</a>
+                <a href="product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                 <h3><a href="contact.html" aria-label="About Tempest Labs">Connect</a></h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="legal/membership-agreement.html">Membership Agreement</a>
+                <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
+                <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "FunnelFlow",
+      "url": "https://tempestlabs.com/funnelflow",
+      "logo": "https://tempestlabs.com/images/funnelflow-logo.png",
+      "description": "Visual marketing dashboard that turns chaos into crystal clear funnels. See, understand, and optimize your customer journey like never before.",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "297",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 
     <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
+            
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Create floating icons
+        function createFloatingIcons() {
+            const container = document.querySelector('.hero-mythic');
+            const icons = ['⌘', '⎋', '🍁', '🌀', '🧭'];
+            
+            for (let i = 0; i < 12; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.left = Math.random() * 30 + '%';
+                icon.style.top = Math.random() * 100 + '%';
+                icon.style.fontSize = (14 + Math.random() * 10) + 'px';
+                icon.style.animationDelay = Math.random() * 20 + 's';
+                icon.style.animationDuration = 15 + Math.random() * 15 + 's';
+                icon.style.opacity = '0';
+                icon.style.color = `rgba(58, 227, 248, ${0.3 + Math.random() * 0.5})`;
+                container.appendChild(icon);
+                
+                // Trigger animation
+                setTimeout(() => {
+                    icon.style.opacity = '0.7';
+                }, 100);
+            }
+        }
+        
         // FAQ toggle functionality
         document.querySelectorAll('.faq-item h4').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
                 faqItem.classList.toggle('active');
             });
-        });
-
-        // Simple animation observer
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        fadeElements.forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
         });
 
         // Demo funnel animation
@@ -1331,6 +1626,38 @@
                 });
             });
         }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingIcons();
+            
+            // Simple animation observer
+            const fadeElements = document.querySelectorAll('.feature-card, .case-study, .faq-item, .visualization-demo');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Easter egg interaction
+            const egg = document.querySelector('.easter-egg');
+            if (egg) {
+                egg.addEventListener('click', function() {
+                    alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
+                });
+            }
+        });
     </script>
 </body>
 </html>
