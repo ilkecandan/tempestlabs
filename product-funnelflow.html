@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunnelFlow - Visual Marketing Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colors */
+            --bg-main: #F7F9FC;
+            --bg-glass: rgba(255, 255, 255, 0.7);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --border-glass: rgba(200, 200, 255, 0.2);
+
+            --text-main: #1A1D2E;
+            --text-muted: #6A7A99;
+
+            --accent-blue: #38BDF8;
+            --accent-green: #4ADE80;
+            --accent-glow: rgba(72, 239, 167, 0.6);
+
+            --highlight: #D1FAE5;
+            --danger: #EF4444;
+
+            --shadow-glow: 0 0 12px var(--accent-glow);
+
+            /* Fonts */
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Radius & Padding */
+            --radius: 16px;
+            --padding: 1.5rem;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-green);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: var(--padding);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: var(--padding);
+            margin-bottom: 2rem;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 999px;
+            border: none;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-green);
+            box-shadow: 0 0 14px var(--accent-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            opacity: 0;
+            background-color: var(--text-muted);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: var(--radius);
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; 
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 0.3s ease;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .transition-soft {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .funnel-awareness { background: #E0F2FE; }
+        .funnel-interest { background: #CCFBF1; }
+        .funnel-intent { background: #DCFCE7; }
+        .funnel-evaluation { background: #FEF9C3; }
+        .funnel-purchase { background: #FDE68A; }
+
+        .glow-box {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-glow);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius);
+            transition: box-shadow 0.3s ease;
+            padding: var(--padding);
+        }
+
+        .glow-box:hover {
+            box-shadow: 0 0 24px var(--accent-glow);
+        }
+
+        /* Custom styles for the page */
+        header {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+        }
+
+        .funnel-stages {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stage {
+            width: 18%;
+            min-width: 150px;
+            padding: 1rem;
+            text-align: center;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+        }
+
+        .stage h4 {
+            margin-top: 0.5rem;
+        }
+
+        .testimonial {
+            font-style: italic;
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent-green);
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(74, 222, 128, 0.1) 100%);
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stage {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .funnel-stages {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="hero">
+                <h1>🎬 Not another CRM. Not another spreadsheet.</h1>
+                <p>FunnelFlow is your visual marketing dashboard that turns chaos into clarity.</p>
+                <div class="card glow-box">
+                    <p>✅ No coding.<br>
+                    ✅ No subscriptions.<br>
+                    ✅ No learning curve.<br>
+                    Just a powerful drag-and-drop interface to help you guide leads from awareness to purchase.</p>
+                    <p>This is what would happen if Notion and Trello had a baby that actually understands marketing.</p>
+                    <a href="#cta" class="btn btn-primary">Start Your Journey</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>✨ What Is a Marketing Funnel?</h2>
+            <p>A marketing funnel is the journey every customer takes before buying. It has stages like:</p>
+            
+            <div class="funnel-stages">
+                <div class="stage funnel-awareness">
+                    <h4>Awareness</h4>
+                </div>
+                <div class="stage funnel-interest">
+                    <h4>Interest</h4>
+                </div>
+                <div class="stage funnel-intent">
+                    <h4>Intent</h4>
+                </div>
+                <div class="stage funnel-evaluation">
+                    <h4>Evaluation</h4>
+                </div>
+                <div class="stage funnel-purchase">
+                    <h4>Purchase</h4>
+                </div>
+            </div>
+            
+            <p>Each stage has its own psychology. Most businesses focus on the finish line. The smart ones focus on the steps. FunnelFlow helps you see the full path and control every part of it.</p>
+        </section>
+
+        <section>
+            <h2>🧩 Features That Change the Game</h2>
+            
+            <div class="features-grid">
+                <div class="card feature-card">
+                    <h3>1. Funnel Visualization, Built for Humans</h3>
+                    <p>Drag-and-drop interface lets you see and manage leads in real time. Move them between stages, track behavior, and make updates with a click. No more getting lost in rows and columns.</p>
+                    <div class="glow-box" style="text-align: center; margin-top: 1rem;">
+                        [Visual card with animated drag of a lead card into "Interest" stage]
+                    </div>
+                </div>
+                
+                <div class="card feature-card">
+                    <h3>2. Integrated Lead Management</h3>
+                    <ul>
+                        <li>Add, edit, and organize leads</li>
+                        <li>Filter by stage, contact, source, or status</li>
+                        <li>Assign content strategies to each lead</li>
+                        <li>Add notes and updates as you go</li>
+                    </ul>
+                    <div class="testimonial">
+                        "Feels like a command center where every lead makes sense."
+                    </div>
+                </div>
+                
+                <div class="card feature-card">
+                    <h3>3. Smart Funnel Insights (Powered by AI)</h3>
+                    <p>FunnelFlow doesn't just track your funnel. It reads it.<br>
+                    Get automatic suggestions on:</p>
+                    <ul>
+                        <li>What content performs best</li>
+                        <li>Where conversion drops occur</li>
+                        <li>How to shift strategy to regain momentum</li>
+                    </ul>
+                    <div class="glow-box" style="margin-top: 1rem;">
+                        <p>“Engagement has dropped in the Evaluation stage. Consider adding testimonials.”</p>
+                    </div>
+                </div>
+                
+                <div class="card feature-card">
+                    <h3>4. Content Strategy Center</h3>
+                    <p>Marketing content isn't just decoration. It's how you move people. FunnelFlow lets you:</p>
+                    <ul>
+                        <li>Create and manage blog posts, webinars, demos, and more</li>
+                        <li>Link content to funnel stages</li>
+                        <li>Assign content to leads</li>
+                        <li>Measure content effectiveness in real time</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        [Visual: Demo video assigned to 3 hot leads in "Intent" stage]
+                    </div>
+                </div>
+                
+                <div class="card feature-card">
+                    <h3>5. Advanced Analytics That Don't Overwhelm</h3>
+                    <p>Conversion rates. Average time in funnel. Engagement scores. Response times. Revenue potential.</p>
+                    <p>All clean. All visual. All in one view.</p>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        [Analytics card grid visual mockup here]
+                    </div>
+                </div>
+                
+                <div class="card feature-card">
+                    <h3>6. Export What Matters</h3>
+                    <ul>
+                        <li>PDF reports for investors or team sync</li>
+                        <li>Excel downloads for operations</li>
+                        <li>Clean design that speaks for itself</li>
+                    </ul>
+                </div>
+                
+                <div class="card feature-card">
+                    <h3>7. Offline-Ready & Installable</h3>
+                    <p>FunnelFlow is a PWA (Progressive Web App). That means:</p>
+                    <ul>
+                        <li>You can install it on desktop or mobile</li>
+                        <li>It works offline</li>
+                        <li>You don't need to go through any app store</li>
+                        <li>One-time purchase. Lifetime access.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>💡 What Makes FunnelFlow Different?</h2>
+            <div class="card">
+                <p><strong>Clarity is a business advantage.</strong><br>
+                Other tools give you features. FunnelFlow gives you flow.<br>
+                It's designed for speed, beauty, and real thinking.</p>
+                
+                <ul>
+                    <li>No bloated dashboards</li>
+                    <li>No unnecessary notifications</li>
+                    <li>Just strategy, structure, and smooth execution</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>👥 Who It's For</h2>
+            <div class="features-grid">
+                <div class="card">
+                    <h4>Founders</h4>
+                    <p>who want to visualize and own their sales journey</p>
+                </div>
+                <div class="card">
+                    <h4>Marketers</h4>
+                    <p>tired of fragmented tools</p>
+                </div>
+                <div class="card">
+                    <h4>Consultants</h4>
+                    <p>who need fast setup and exportable client views</p>
+                </div>
+                <div class="card">
+                    <h4>Creators</h4>
+                    <p>who want to see how their content moves people</p>
+                </div>
+                <div class="card">
+                    <h4>Agencies</h4>
+                    <p>managing funnels for multiple clients</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧭 Real Use Cases</h2>
+            <div class="features-grid">
+                <div class="card">
+                    <h4>🎯 SaaS Startup</h4>
+                    <p>Track where sign-ups drop. Assign your onboarding emails to the right leads. Identify which blog posts drive conversions.</p>
+                </div>
+                <div class="card">
+                    <h4>🧵 Solo Freelancer</h4>
+                    <p>Visualize your outreach, follow-up, and proposal flow in one place. Add notes. Export status for your monthly review.</p>
+                </div>
+                <div class="card">
+                    <h4>📚 Course Creator</h4>
+                    <p>See how people go from "Just Curious" to "Signed Up." Use content to educate and nudge. Know what works.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🙋 Frequently Asked Questions</h2>
+            <div class="card">
+                <div class="faq-item">
+                    <h4>Is FunnelFlow a CRM?</h4>
+                    <p>No. FunnelFlow is a funnel dashboard and strategy layer. It's lighter than a CRM and way more visual.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Do I need coding experience?</h4>
+                    <p>None. If you can use Trello or Notion, you can use FunnelFlow.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What does it cost?</h4>
+                    <p>FunnelFlow is a one-time purchase. No monthly fee. You own it forever.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Can I use it for multiple projects?</h4>
+                    <p>Yes. You can manage as many funnels and leads as you want.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What happens if I lose internet?</h4>
+                    <p>As a PWA, FunnelFlow works offline once installed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔮 The Philosophy Behind FunnelFlow</h2>
+            <div class="card">
+                <p>This isn't just a product. It's a rebellion against overwhelming CRMs, expensive SaaS subscriptions, and useless dashboards.</p>
+                <p>You deserve tools that work with you.<br>
+                That don't require tutorials.<br>
+                That help you think clearly and move swiftly.</p>
+                <p><strong>FunnelFlow is that tool.</strong></p>
+            </div>
+        </section>
+
+        <section id="cta" class="cta-section">
+            <h2>🎁 Ready to Start?</h2>
+            <p>One-time payment.<br>
+            Lifetime access.<br>
+            Instant clarity.</p>
+            <a href="#" class="btn btn-primary animate-float">Get FunnelFlow Now</a>
+        </section>
+
+        <footer>
+            <p>© 2023 FunnelFlow. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
