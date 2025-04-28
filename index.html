@@ -374,46 +374,63 @@
             margin: 0 auto;
         }
 
+
 .product-card {
     background: rgba(6, 30, 34, 0.75); /* Deep dark teal */
     border-radius: 15px;
-    padding: 35px;
-    box-shadow: 0 8px 30px rgba(58, 227, 248, 0.2), 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 25px 20px;
+    box-shadow: 0 8px 24px rgba(58, 227, 248, 0.15), 0 0 15px rgba(0, 0, 0, 0.4);
     transition: all var(--transition-speed);
     border: 1px solid rgba(58, 227, 248, 0.2);
     text-align: center;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(5px);
     animation: fadeInUp 0.8s ease-out;
     animation-fill-mode: both;
+    min-height: 380px; /* keep a neat height */
 }
 
 .product-card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 12px 40px rgba(58, 227, 248, 0.4), 0 0 30px rgba(233, 79, 61, 0.2);
+    transform: scale(1.03);
+    box-shadow: 0 12px 35px rgba(58, 227, 248, 0.3), 0 0 25px rgba(233, 79, 61, 0.2);
     border-color: rgba(58, 227, 248, 0.35);
-    background: rgba(6, 30, 34, 0.85); /* Even darker on hover */
+    background: rgba(6, 30, 34, 0.85);
 }
 
-/* Inner text in the product cards */
+/* 🔥 SMALLER Images inside cards */
+.product-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    display: block;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(58, 227, 248, 0.2));
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
 .product-card h3 {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-family: 'Cinzel', serif;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    font-size: clamp(1.1rem, 1.4vw, 1.5rem);
     color: var(--glow-white);
     text-shadow: var(--text-glow);
     text-transform: none;
 }
 
 .product-card p {
-    color: var(--muted-aqua); /* soft aqua text */
-    margin-bottom: 25px;
+    color: var(--muted-aqua);
+    margin-bottom: 20px;
     line-height: 1.6;
     font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
-
+    
         .quiet-software {
             padding: 100px 5%;
             background: rgba(0, 0, 0, 0.15);
