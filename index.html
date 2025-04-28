@@ -55,11 +55,14 @@
         body {
             font-family: 'Outfit', sans-serif;
             font-weight: 400;
-            color: var(--charcoal-black);
+            color: #072C31; /* darker yet soft deep teal */
+             text-shadow: 0 0 2px rgba(0, 0, 0, 0.15); /* subtle clarity */
             line-height: 1.8;
             letter-spacing: 0.3px;
             word-spacing: 0.5px;
             overflow-x: hidden;
+           -webkit-font-smoothing: antialiased;
+           -moz-osx-font-smoothing: grayscale;
             background: linear-gradient(135deg, #36B1C9, #7EE4F3);
         }
 
@@ -425,7 +428,8 @@
 }
 
 .product-card p {
-    color: var(--muted-aqua);
+color: #D5F7F8;
+text-shadow: 0 0 3px rgba(0,0,0,0.3);
     margin-bottom: 20px;
     line-height: 1.6;
     font-size: clamp(0.9rem, 1vw, 1rem);
@@ -480,7 +484,8 @@
             margin-left: auto;
             margin-right: auto;
             font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-           color: #FFFFFF; text-shadow: 0 0 6px rgba(0,0,0,0.8);       
+           color: #D5F7F8;
+            text-shadow: 0 0 6px rgba(0,0,0,0.8);       
         }
   
     .quiet-software p:last-of-type {
@@ -601,7 +606,8 @@ font-family: 'Cinzel', serif;
         footer {
         padding: 60px 5% 30px;
         background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
-        color: var(--muted-aqua);
+        color: #EAF4F4; /* glow-white */
+         text-shadow: 0 0 2px rgba(0,0,0,0.4);
         position: relative;
         overflow: hidden;
         }
@@ -629,7 +635,8 @@ font-family: 'Cinzel', serif;
         }
 
         .footer-column h3 {
-            color: var(--glow-white);
+         color: #F8FEFE;
+          text-shadow: 0 0 4px rgba(0,0,0,0.4);
             margin-bottom: 20px;
             font-size: clamp(1.5rem, 1.8vw, 1.8rem);
             position: relative;
