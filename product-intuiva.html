@@ -1151,34 +1151,40 @@
       
       <div class="pricing-options">
         <!-- Basic Plan -->
-        <div class="pricing-card">
-          <h3>Basic</h3>
-          <div class="price">$9.99</div>
-          <ul class="price-features">
-            <li>All Core Features</li>
-            <li>Project Planner</li>
-            <li>Backcasting Tool</li>
-            <li>Kanban Board</li>
-            <li>PDF Export</li>
-            <li>3.2M AI Tokens</li>
-          </ul>
-          <a href="#" class="btn btn-secondary">Choose Basic</a>
-        </div>
+       <a href="https://tempestlabs.space/intuivabasic.html" class="pricing-card-link" style="text-decoration: none; color: inherit;">
+  <div class="pricing-card">
+    <h3>Basic</h3>
+    <div class="price">$9.99</div>
+    <ul class="price-features">
+      <li>All Core Features</li>
+      <li>Project Planner</li>
+      <li>Backcasting Tool</li>
+      <li>Kanban Board</li>
+      <li>PDF Export</li>
+      <li>3.2M AI Tokens</li>
+    </ul>
+    <div class="btn btn-secondary" style="pointer-events: none;">Choose Basic</div>
+  </div>
+</a>
+
 
         <!-- Pro Plan -->
-        <div class="pricing-card popular">
-          <h3>Pro</h3>
-          <div class="price">$24.99</div>
-          <ul class="price-features">
-            <li>All Core Features</li>
-            <li>Project Planner</li>
-            <li>Backcasting Tool</li>
-            <li>Kanban Board</li>
-            <li>PDF Export</li>
-            <li><strong>Unlimited AI Usage</strong></li>
-          </ul>
-          <a href="#" class="btn btn-primary btn-glow">Choose Pro</a>
-        </div>
+        <a href="https://tempestlabs.space/intuivapro.html" class="pricing-card-link" style="text-decoration: none; color: inherit;">
+  <div class="pricing-card popular">
+    <h3>Pro</h3>
+    <div class="price">$24.99</div>
+    <ul class="price-features">
+      <li>All Core Features</li>
+      <li>Project Planner</li>
+      <li>Backcasting Tool</li>
+      <li>Kanban Board</li>
+      <li>PDF Export</li>
+      <li><strong>Unlimited AI Usage</strong></li>
+    </ul>
+    <div class="btn btn-primary btn-glow" style="pointer-events: none;">Choose Pro</div>
+  </div>
+</a>
+
       </div>
       
       <div class="card">
@@ -1429,12 +1435,45 @@
     window.addEventListener('scroll', animateOnScroll);
     
     // Testimonial slider functionality
-    let slider = document.getElementById("testimonialSlider");
-    let cardWidth = 350 + 20; // width + gap
+// Improved Testimonial Slider with Auto-Snap
+const slider = document.getElementById("testimonialSlider");
+const cardWidth = 350 + 20; // adjust this if your card size or gap changes
 
-    function moveSlide(direction) {
-      slider.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
-    }
+function moveSlide(direction) {
+  const scrollAmount = direction * cardWidth;
+  const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+  
+  let newScrollLeft = slider.scrollLeft + scrollAmount;
+  
+  // Clamp within bounds
+  if (newScrollLeft < 0) {
+    newScrollLeft = 0;
+  } else if (newScrollLeft > maxScrollLeft) {
+    newScrollLeft = maxScrollLeft;
+  }
+
+  slider.scrollTo({
+    left: newScrollLeft,
+    behavior: "smooth"
+  });
+}
+
+// Auto-Snap after Manual Scroll
+slider.addEventListener('scroll', () => {
+  clearTimeout(slider.snapTimeout);
+  slider.snapTimeout = setTimeout(() => {
+    const nearestCard = Math.round(slider.scrollLeft / cardWidth);
+    const snapPosition = nearestCard * cardWidth;
+    slider.scrollTo({
+      left: snapPosition,
+      behavior: 'smooth'
+    });
+  }, 150); // wait 150ms after user stops scrolling
+});
+
+
+
+    
   </script>
 </body>
 </html>
