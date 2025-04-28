@@ -25,12 +25,10 @@
         /* ================================= */
         /* TEMPEST LABS - MYTHIC HERO STYLES */
         /* ================================= */
-
-        /* Mythic Color Palette */
-        :root {
+  :root {
           --deep-teal: #01343E;       /* base background */
           --aqua-glow: #3AE3F8;
-          --muted-aqua: #0F8CA0;
+          --muted-aqua: #34D6E0;      /* secondary highlight tone */
           --burnt-coral: #E94F3D;
           --charcoal-black: #0B1B1C;
           --glow-white: #EAF4F4;
@@ -52,25 +50,20 @@
             scroll-behavior: smooth;
         }
 
-        body {
+  body {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.05rem;
             font-weight: 400;
-            color: color: #D5F7F8;
-             text-shadow: 0 0 2px rgba(0, 0, 0, 0.15); /* subtle clarity */
-            line-height: 1.9;
+            color: var(--charcoal-black);
+            line-height: 1.8;
             letter-spacing: 0.3px;
             word-spacing: 0.5px;
             overflow-x: hidden;
-           -webkit-font-smoothing: antialiased;
-           -moz-osx-font-smoothing: grayscale;
-            background: linear-gradient(135deg, #36B1C9, #7EE4F3);
+  background: linear-gradient(135deg, #055B6D, #0A9DB7);
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Cinzel', serif;
-            color: #F0FAFF; /* make headings a little brighter */
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* heavier shadow for headings */           
+            color: var(--glow-white);
             letter-spacing: 1px;
             text-shadow: var(--hero-text-glow);
             margin-bottom: 1.2rem;
@@ -433,12 +426,14 @@
 }
 
 .product-card p {
-color: #D5F7F8;
-letter-spacing: 0.5px;    
-text-shadow: 0 0 3px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
-    line-height: 1.6;
-    font-size: clamp(0.9rem, 1vw, 1rem);
+  font-family: 'Outfit', sans-serif;
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+              text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* adds subtle separation */
+            color: #EAF4F4; /* was #C7E9E9 */
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out;
 }
 
  .product-image-wrapper {
