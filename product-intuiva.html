@@ -11,6 +11,7 @@
     /* Optimized Cyberpunk-Inspired Base Styles */
     :root {
       --primary: #00ffff;
+      --primary-soft: #5ce6e6;
       --primary-dark: #00b3b3;
       --secondary: #ff00ff;
       --bg-dark: #0a0a0a;
@@ -18,10 +19,13 @@
       --text-light: #e0e0e0;
       --text-lighter: #f5f5f5;
       --text-dark: #888;
+      --text-soft: #c5d9e2;
       --card-bg: rgba(20, 20, 20, 0.8);
       --card-border: rgba(0, 255, 255, 0.2);
       --glow: 0 0 15px rgba(0, 255, 255, 0.7);
+      --soft-glow: 0 0 12px rgba(92, 230, 230, 0.5);
       --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --background-soft: radial-gradient(circle at center, #050505 0%, #0a0a0a 100%);
     }
 
     @font-face {
@@ -179,7 +183,7 @@
 
     .btn-primary:hover {
       background: var(--primary-dark);
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.03);
       box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
     }
 
@@ -191,7 +195,7 @@
 
     .btn-secondary:hover {
       background: rgba(0, 255, 255, 0.1);
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.03);
       box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
     }
 
@@ -265,6 +269,23 @@
       position: relative;
     }
 
+    /* Low energy sections */
+    .low-energy {
+      background: var(--background-soft);
+      color: var(--text-soft);
+    }
+    
+    .low-energy h2,
+    .low-energy h3,
+    .low-energy h4 {
+      color: var(--primary-soft);
+    }
+    
+    .low-energy h2::after {
+      background: var(--primary-soft);
+      box-shadow: 0 0 8px rgba(92, 230, 230, 0.5);
+    }
+
     /* Section Divider */
     .section-divider {
       height: 2px;
@@ -287,7 +308,7 @@
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 255, 255, 0.2);
+      box-shadow: var(--soft-glow);
       border-color: rgba(0, 255, 255, 0.4);
     }
 
@@ -303,7 +324,7 @@
       background: var(--card-bg);
       border-radius: 10px;
       padding: 1.5rem;
-      border-left: 4px solid var(--primary);
+      border-left: 4px solid var(--primary-soft);
       transition: var(--transition);
       opacity: 0;
       transform: translateY(20px);
@@ -315,8 +336,8 @@
     }
 
     .benefit-item:hover {
-      transform: translateX(5px) translateY(0);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: var(--soft-glow);
     }
 
     .benefit-item h3 {
@@ -327,7 +348,7 @@
     }
 
     .benefit-item i {
-      color: var(--primary);
+      color: var(--primary-soft);
       font-size: 1.3rem;
       transition: var(--transition);
     }
@@ -336,7 +357,7 @@
       transform: scale(1.1);
     }
 
-    /* Pain Points Section */
+    /* Pain Points Section - Updated to be more positive */
     .pain-points {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -345,22 +366,34 @@
     }
 
     .pain-point {
-      background: rgba(255, 0, 0, 0.05);
+      background: rgba(0, 255, 255, 0.05);
       border-radius: 10px;
       padding: 1.5rem;
-      border-left: 4px solid #ff5555;
+      border-left: 4px solid var(--primary-soft);
       transition: var(--transition);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .pain-point.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pain-point:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--soft-glow);
     }
 
     .pain-point h3 {
-      color: #ff5555;
+      color: var(--primary-soft);
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
     .pain-point i {
-      color: #ff5555;
+      color: var(--primary-soft);
     }
 
     /* Who It's For Section */
@@ -375,12 +408,24 @@
     .audience-item {
       padding: 1.5rem;
       transition: var(--transition);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .audience-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .audience-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--soft-glow);
     }
 
     .audience-icon {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: var(--primary);
+      color: var(--primary-soft);
     }
 
     /* Comparison Table */
@@ -494,7 +539,7 @@
     }
 
     .step-item:hover {
-      transform: translateX(5px) translateY(0);
+      transform: translateY(-3px);
     }
 
     .step-item::before {
@@ -561,7 +606,8 @@
     }
 
     .feature-card:hover {
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: var(--soft-glow);
     }
 
     .feature-card:hover::after {
@@ -576,14 +622,14 @@
 
     .feature-icon {
       font-size: 2rem;
-      color: var(--primary);
+      color: var(--primary-soft);
       margin-bottom: 0.8rem;
       transition: var(--transition);
     }
 
     .feature-card:hover .feature-icon {
       transform: scale(1.1);
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      text-shadow: 0 0 10px rgba(92, 230, 230, 0.5);
     }
 
     /* Video Container */
@@ -649,14 +695,14 @@
     }
 
     .pricing-card:hover {
-      transform: translateY(-5px) translateY(0);
-      box-shadow: 0 12px 30px rgba(0, 255, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: var(--soft-glow);
     }
 
     .price {
       font-size: 2.5rem;
       font-weight: bold;
-      color: var(--primary);
+      color: var(--primary-soft);
       margin: 0.8rem 0;
       font-family: 'Cyber', sans-serif;
     }
@@ -681,7 +727,7 @@
 
     .price-features li::before {
       content: '✓';
-      color: var(--primary);
+      color: var(--primary-soft);
       position: absolute;
       left: 0;
       font-weight: bold;
@@ -729,7 +775,7 @@
     .faq-toggle {
       width: 26px;
       height: 26px;
-      background: var(--primary);
+      background: var(--primary-soft);
       color: #000;
       border-radius: 50%;
       display: flex;
@@ -759,12 +805,12 @@
       height: 45px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--primary);
+      border: 2px solid var(--primary-soft);
     }
 
     .author-info h4 {
       margin: 0;
-      color: var(--primary);
+      color: var(--primary-soft);
       font-size: 1rem;
     }
 
@@ -1009,7 +1055,7 @@
 
     .result-card h4 {
       font-size: 1.5rem;
-      color: var(--primary);
+      color: var(--primary-soft);
       margin-bottom: 0.3rem;
     }
 
@@ -1182,7 +1228,7 @@
   <div class="main-content">
 
     <!-- Benefits Section -->
-    <section id="features">
+    <section id="features" class="low-energy">
       <h2>Why Intuiva Changes Everything</h2>
       <p>Traditional project tools force you into rigid frameworks. Intuiva adapts to your unique thinking style, helping you see the future and work backward to make it happen.</p>
       
@@ -1202,29 +1248,29 @@
       </div>
     </section>
 
-    <!-- Pain Points Section -->
-    <section>
-      <h2>The Problems Intuiva Solves</h2>
-      <p>Planning projects shouldn't feel like wrestling with spreadsheets. Here's what Intuiva eliminates:</p>
+    <!-- Pain Points Section - Updated -->
+    <section class="low-energy">
+      <h2>Work Smarter, Not Harder</h2>
+      <p>Intuiva helps you bypass common productivity traps that slow down solo creators and small teams:</p>
       
       <div class="pain-points">
         <div class="pain-point">
-          <h3><i class="fas fa-exclamation-triangle"></i> Planning Paralysis</h3>
-          <p>Staring at a blank page, unsure where to start or what steps to take next.</p>
+          <h3><i class="fas fa-lightbulb"></i> From Idea to Action</h3>
+          <p>Skip the blank page syndrome with guided planning that helps you start quickly and stay focused.</p>
         </div>
         <div class="pain-point">
-          <h3><i class="fas fa-clock"></i> Wasted Time</h3>
-          <p>Hours spent setting up complex tools when you should be working on your vision.</p>
+          <h3><i class="fas fa-clock"></i> Maximize Your Time</h3>
+          <p>Spend less time setting up tools and more time making progress on what matters.</p>
         </div>
         <div class="pain-point">
-          <h3><i class="fas fa-random"></i> Chaotic Workflow</h3>
-          <p>Constantly shifting priorities with no clear system to adapt your plan.</p>
+          <h3><i class="fas fa-random"></i> Stay Organized</h3>
+          <p>Keep all your moving parts in one place with a system that adapts as your project evolves.</p>
         </div>
       </div>
     </section>
 
     <!-- Who It's For Section -->
-    <section>
+    <section class="low-energy">
       <h2>Who Intuiva Is For</h2>
       <p>Designed for independent thinkers who need structure without constraints:</p>
       
@@ -1248,7 +1294,7 @@
     </section>
 
     <!-- Comparison Section -->
-    <section>
+    <section class="low-energy">
       <h2>Intuiva vs Traditional Tools</h2>
       <p>Why settle for tools that weren't built for how you think?</p>
       
@@ -1289,9 +1335,9 @@
     <div class="section-divider"></div>
 
     <!-- How It Works Section -->
-    <section id="how-it-works">
+    <section id="how-it-works" class="low-energy">
       <h2>How Intuiva Works</h2>
-      <p>Intuiva is your lean, thinking assistant—designed to help solo founders, creatives, and teams plan smarter without the clutter. It guides you from vision to execution with structure, not stress.</p>
+      <p>Intuiva is your lean, thinking assistant designed to help solo founders, creatives, and teams plan smarter without the clutter. It guides you from vision to execution with structure, not stress.</p>
 
       <div class="how-it-works-container">
         <div>
@@ -1303,17 +1349,17 @@
 
             <li class="step-item">
               <h3>2. Answer Targeted AI Questions</h3>
-              <p>Intuiva asks sharp, focused questions about your project—your goals, users, risks, and timeline. You can skip or revisit any part. The goal? Clarity without overwhelm.</p>
+              <p>Intuiva asks sharp, focused questions about your project your goals, users, risks, and timeline. You can skip or revisit any part. The goal? Clarity without overwhelm.</p>
             </li>
 
             <li class="step-item">
               <h3>3. Receive Your Strategy Blueprint</h3>
-              <p>Once your answers are in, Intuiva generates a customized project plan. It includes a summary, key milestones, risks with mitigation ideas, and tactical suggestions—all beautifully presented and downloadable as a PDF.</p>
+              <p>Once your answers are in, Intuiva generates a customized project plan. It includes a summary, key milestones, risks with mitigation ideas, and tactical suggestions all beautifully presented and downloadable as a PDF.</p>
             </li>
 
             <li class="step-item">
               <h3>4. Visualize It with Flow Boards</h3>
-              <p>Your plan flows into an interactive Kanban board called Flow Boards. Each task is placed into default columns like "To Do," "In Progress," and "Done"—but you can create custom stages, drag and drop, delete, or expand tasks freely.</p>
+              <p>Your plan flows into an interactive Kanban board called Flow Boards. Each task is placed into default columns like "To Do," "In Progress," and "Done" but you can create custom stages, drag and drop, delete, or expand tasks freely.</p>
             </li>
 
             <li class="step-item">
@@ -1323,7 +1369,7 @@
 
             <li class="step-item">
               <h3>6. Optional: Use Backcasting Mode</h3>
-              <p>If you prefer to start from a clear outcome—like "launch in July" or "user test by week 4"—Intuiva can walk you backwards from that endpoint. It calculates key checkpoints and gives you a reverse timeline.</p>
+              <p>If you prefer to start from a clear outcome like "launch in July" or "user test by week 4" Intuiva can walk you backwards from that endpoint. It calculates key checkpoints and gives you a reverse timeline.</p>
             </li>
           </ol>
 
@@ -1344,7 +1390,7 @@
       <div class="case-study-content">
         <h2>From Chaos to Clarity</h2>
         <p>
-          Let's say you're a small SaaS team—or maybe even a solo founder—with a brilliant product idea but zero time for tangled planning tools or corporate-style frameworks. You've got vision, but between juggling feature ideas, investor expectations, and looming deadlines, everything starts to blur.
+          Let's say you're a small SaaS team or maybe even a solo founder with a brilliant product idea but zero time for tangled planning tools or corporate-style frameworks. You've got vision, but between juggling feature ideas, investor expectations, and looming deadlines, everything starts to blur.
         </p>
 
         <blockquote>
@@ -1369,7 +1415,7 @@
     </section>
 
     <!-- Features Section -->
-    <section>
+    <section class="low-energy">
       <h2>Powerful Features for Creative Minds</h2>
       <p>Intuiva combines AI intelligence with intuitive design to give you superhuman planning capabilities.</p>
       
@@ -1432,7 +1478,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
       <h2 class="glow-heading">What Our Users Say</h2>
-      <p class="subtext">Don't just take our word for it—here's how real users are working smarter with Intuiva.</p>
+      <p class="subtext">Don't just take our word for it here's how real users are working smarter with Intuiva.</p>
 
       <div class="testimonial-slider-container">
         <button class="nav-button left" onclick="moveSlide(-1)">&#10094;</button>
@@ -1442,7 +1488,7 @@
             <!-- Testimonial 1 -->
             <a href="https://www.linkedin.com/in/nalan-ocak-pekta%C5%9F-2a3627212/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
               <p class="testimonial-text">
-                As an accountant managing multiple client projects simultaneously, efficiency and organization are non-negotiable. INTUIVA has streamlined my entire workflow with an intuitive system that mirrors how real project management should operate—clear, simple, and actionable.
+                As an accountant managing multiple client projects simultaneously, efficiency and organization are non-negotiable. INTUIVA has streamlined my entire workflow with an intuitive system that mirrors how real project management should operate clear, simple, and actionable.
               </p>
               <div class="testimonial-author">
                 <img src="images/nalan.png" alt="Nalan Ocak" class="author-avatar" loading="lazy">
@@ -1474,7 +1520,7 @@
     </section>
     
     <!-- Pricing Section -->
-    <section id="pricing">
+    <section id="pricing" class="low-energy">
       <h2>Simple, Transparent Pricing</h2>
       <p>One-time purchase. No subscriptions. No hidden fees. Just powerful planning tools that work for you.</p>
       
@@ -1516,12 +1562,12 @@
       
       <div class="card">
         <h3>7-Day Money Back Guarantee</h3>
-        <p>We're confident you'll love Intuiva, but if it's not right for you, we'll refund your purchase within 7 days—no questions asked.</p>
+        <p>We're confident you'll love Intuiva, but if it's not right for you, we'll refund your purchase within 7 days no questions asked.</p>
       </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq">
+    <section id="faq" class="low-energy">
       <h2>Frequently Asked Questions</h2>
       <p>Get answers to common questions about Intuiva and how it can transform your planning process.</p>
       
@@ -1535,7 +1581,7 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Traditional tools like Trello or Asana are task managers—they help you organize work but don't help you plan it. Intuiva is a project strategist that helps you determine what work needs to be done in the first place. Our AI analyzes your goals and generates a customized plan with all necessary steps, then helps you execute it.</p>
+              <p>Traditional tools like Trello or Asana are task managers they help you organize work but don't help you plan it. Intuiva is a project strategist that helps you determine what work needs to be done in the first place. Our AI analyzes your goals and generates a customized plan with all necessary steps, then helps you execute it.</p>
               <p>Unlike rigid Gantt charts or Kanban boards, Intuiva adapts to your thinking style and provides intelligent suggestions based on your progress and changing priorities.</p>
             </div>
           </div>
@@ -1564,7 +1610,7 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>We use industry-standard encryption (AES-256) for all data at rest and in transit. Your account is protected with secure authentication, and we regularly audit our systems for vulnerabilities.</p>
+              <p>We use industry-standard encryption (AES-256) for all data at rest and in transit. Your account is protected with secure authentication, and we regularly audit our systems for vulnerabilities. We only track your AI usage to provide the different pricing tiers, nothing else.</p>
             </div>
           </div>
         </div>
@@ -1578,14 +1624,15 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Intuiva is available as:</p>
+              <p>Intuiva is available as a Progressive Web App (PWA), which means you can install it on any device and use it like a native app. PWAs offer the best of both worlds:</p>
               <ul>
-                <li>A web app (Chrome, Safari, Firefox, Edge)</li>
-                <li>Windows and macOS desktop apps</li>
-                <li>iOS and Android mobile apps</li>
-                <li>A Progressive Web App (PWA) for offline use</li>
+                <li>Works offline once installed</li>
+                <li>No app store downloads required</li>
+                <li>Small footprint on your device</li>
+                <li>Automatic updates</li>
+                <li>Available on all modern browsers (Chrome, Safari, Firefox, Edge)</li>
               </ul>
-              <p>All versions sync seamlessly when you're online. The mobile apps are particularly popular for capturing ideas on the go.</p>
+              <p>You can also install it on your home screen for quick access, just like a regular app.</p>
             </div>
           </div>
         </div>
@@ -1600,7 +1647,7 @@
           <div class="faq-answer">
             <div class="faq-answer-content">
               <p>We release minor updates every 2-3 weeks with performance improvements and bug fixes. Major feature updates come every 3-4 months based on user feedback.</p>
-              <p>All updates are free for existing customers—there are no upgrade fees or "version 2.0" paywalls. When you buy Intuiva, you own it for life.</p>
+              <p>All updates are free for existing customers there are no upgrade fees or "version 2.0" paywalls. When you buy Intuiva, you own it for life.</p>
             </div>
           </div>
         </div>
@@ -1649,7 +1696,7 @@
   <!-- PWA Sidebar -->
   <div class="pwa-sidebar" id="pwaSidebar">
     <div class="pwa-sidebar-toggle" onclick="togglePwaSidebar()">
-      <i class="fas fa-mobile-alt"></i>
+      <i class="fas fa-times"></i>
     </div>
     <h3>Install Intuiva as a PWA</h3>
     <p>Get a native app experience with offline access:</p>
@@ -1658,6 +1705,9 @@
       <li style="margin-bottom: 0.5rem;">iOS: Tap Share → Add to Home Screen</li>
       <li>Android: Tap "Install App" in Chrome</li>
     </ul>
+    <div style="margin-top: 1.5rem;">
+      <button class="btn btn-secondary" onclick="togglePwaSidebar()" style="width: 100%;">Got It, Thanks!</button>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -1808,7 +1858,7 @@
       threshold: 0.1
     });
     
-    document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card, .faq-item, .result-card').forEach((el, index) => {
+    document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card, .faq-item, .result-card, .pain-point, .audience-item').forEach((el, index) => {
       if (el.classList.contains('result-card')) {
         el.dataset.delay = index * 100;
       }
@@ -1856,13 +1906,19 @@
       document.getElementById('pwaSidebar').classList.toggle('visible');
     }
     
-    // Show PWA sidebar after scrolling a bit
+    // Show PWA sidebar only after scrolling to FAQ section
+    const faqSection = document.getElementById('faq');
+    const pwaSidebar = document.getElementById('pwaSidebar');
+    let pwaShown = false;
+    
     window.addEventListener('scroll', function() {
-      const pwaSidebar = document.getElementById('pwaSidebar');
-      if (window.pageYOffset > 500 && !pwaSidebar.classList.contains('visible')) {
-        setTimeout(() => {
-          pwaSidebar.classList.add('visible');
-        }, 2000);
+      const faqPosition = faqSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      // If FAQ section is in view and PWA sidebar hasn't been shown yet
+      if (faqPosition < windowHeight * 0.75 && !pwaShown) {
+        pwaSidebar.classList.add('visible');
+        pwaShown = true;
       }
     });
     
@@ -1874,7 +1930,6 @@
       e.preventDefault();
       // Stash the event so it can be triggered later
       deferredPrompt = e;
-      // Show custom install button if needed
     });
     
     // Service Worker Registration
