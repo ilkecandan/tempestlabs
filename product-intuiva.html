@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="images/tempest.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intuiva – AI Project Planner for Solo Founders</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="manifest" href="/manifest.json">
   <style>
-    /* Modern Cyberpunk-Inspired Base Styles */
+    /* Optimized Cyberpunk-Inspired Base Styles */
     :root {
       --primary: #00ffff;
       --primary-dark: #00b3b3;
@@ -19,7 +21,7 @@
       --card-bg: rgba(20, 20, 20, 0.8);
       --card-border: rgba(0, 255, 255, 0.2);
       --glow: 0 0 15px rgba(0, 255, 255, 0.7);
-      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
     }
 
     @font-face {
@@ -27,6 +29,7 @@
       src: url('https://fonts.cdnfonts.com/css/cyberpunk') format('woff2');
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
     * {
@@ -39,39 +42,38 @@
       background: var(--bg-darker);
       color: var(--text-light);
       font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-      line-height: 1.7;
+      line-height: 1.6;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
-    /* Typography */
+    /* Optimized Typography */
     h1, h2, h3, h4 {
       color: var(--primary);
       font-family: 'Cyber', Arial, sans-serif;
       letter-spacing: 1px;
-      margin-bottom: 0.75em;
+      margin-bottom: 0.5em;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 
                    0 0 20px rgba(0, 255, 255, 0.3);
       line-height: 1.2;
-      margin-top: 0;
     }
 
     h2 {
-      font-size: 2.2rem;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
       position: relative;
       display: inline-block;
-      margin-top: 1.5em;
+      margin-top: 1em;
     }
 
     h2::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
       left: 0;
       width: 60px;
       height: 3px;
@@ -80,13 +82,12 @@
     }
 
     h3 {
-      font-size: 1.5rem;
-      margin-top: 0.5em;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
 
     p {
-      margin: 0.75em 0 1.5em;
-      font-size: 1.1rem;
+      margin: 0.5em 0 1em;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
       color: var(--text-light);
     }
 
@@ -101,7 +102,7 @@
       text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
     }
 
-    /* Navigation - Sticky Glowing */
+    /* Navigation - Optimized Sticky Glowing */
     nav {
       position: fixed;
       top: 0;
@@ -109,25 +110,26 @@
       width: 100%;
       background: rgba(0, 0, 0, 0.9);
       backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
+      padding: 0.8rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
       border-bottom: 1px solid rgba(0, 255, 255, 0.1);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     nav a {
       font-weight: 600;
       position: relative;
-      padding: 0.5rem 0;
+      padding: 0.3rem 0;
+      font-size: 0.95rem;
     }
 
     nav a::after {
@@ -148,15 +150,15 @@
 
     a.logo {
       font-family: 'Cyber', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: var(--primary);
       text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
     }
 
-    /* Buttons - Glowing Interactive */
+    /* Buttons - Optimized Glowing Interactive */
     .btn {
       display: inline-block;
-      padding: 0.8rem 2rem;
+      padding: 0.7rem 1.5rem;
       border-radius: 50px;
       font-weight: 600;
       text-transform: uppercase;
@@ -166,8 +168,8 @@
       transition: var(--transition);
       border: none;
       cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .btn-primary {
@@ -177,8 +179,8 @@
 
     .btn-primary:hover {
       background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
     }
 
     .btn-secondary {
@@ -189,8 +191,8 @@
 
     .btn-secondary:hover {
       background: rgba(0, 255, 255, 0.1);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
     }
 
     .btn-glow {
@@ -199,18 +201,18 @@
 
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(0, 255, 255, 0); }
+      70% { box-shadow: 0 0 0 12px rgba(0, 255, 255, 0); }
       100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
     }
 
-    /* Hero Section with Video Background */
+    /* Hero Section with Optimized Video Background */
     .hero {
       position: relative;
       height: 100vh;
-      min-height: 700px;
+      min-height: 600px;
       display: flex;
       align-items: center;
-      padding: 0 10%;
+      padding: 0 5%;
       overflow: hidden;
     }
 
@@ -228,93 +230,101 @@
       position: relative;
       z-index: 2;
       max-width: 600px;
-      animation: fadeInUp 1s ease-out;
+      animation: fadeInUp 0.8s ease-out;
     }
 
     .subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      margin-bottom: 1.5rem;
       color: var(--text-lighter);
       text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
 
     .hero-cta {
       display: flex;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    /* Main Content Sections */
+    /* Main Content Sections - Reduced Spacing */
     .main-content {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 6rem 2rem;
+      padding: 4rem 1.5rem;
     }
 
     section {
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
       position: relative;
     }
 
-    /* Cards - Glass Morphism */
+    /* Cards - Optimized Glass Morphism */
     .card {
       background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      margin-bottom: 2rem;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
       transition: var(--transition);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 255, 255, 0.2);
       border-color: rgba(0, 255, 255, 0.4);
     }
 
-    /* Benefits List - Animated */
+    /* Benefits List - Optimized */
     .benefits {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
     }
 
     .benefit-item {
       background: var(--card-bg);
       border-radius: 10px;
-      padding: 2rem;
+      padding: 1.5rem;
       border-left: 4px solid var(--primary);
       transition: var(--transition);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .benefit-item.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .benefit-item:hover {
-      transform: translateX(10px);
+      transform: translateX(5px) translateY(0);
       box-shadow: var(--glow);
     }
 
     .benefit-item h3 {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
     }
 
     .benefit-item i {
       color: var(--primary);
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
 
-    /* Case Study - Testimonial */
+    /* Case Study - Optimized */
     .case-study {
       position: relative;
-      padding: 3rem;
-      border-radius: 15px;
+      padding: 2rem;
+      border-radius: 12px;
       background: linear-gradient(135deg, rgba(0,50,50,0.3) 0%, rgba(0,0,0,0.7) 100%);
       overflow: hidden;
-      margin: 4rem 0;
+      margin: 2.5rem 0;
     }
 
     .case-study::before {
@@ -335,42 +345,49 @@
     }
 
     blockquote {
-      font-size: 1.3rem;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
       font-style: italic;
       color: var(--text-lighter);
-      padding: 2rem;
-      margin: 2rem 0;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
       position: relative;
       border-left: 4px solid var(--primary);
       background: rgba(0, 0, 0, 0.4);
-      border-radius: 0 10px 10px 0;
+      border-radius: 0 8px 8px 0;
     }
 
     blockquote::before {
       content: '"';
-      font-size: 5rem;
+      font-size: 4rem;
       color: rgba(0, 255, 255, 0.2);
       position: absolute;
-      left: 1rem;
+      left: 0.5rem;
       top: -1rem;
       line-height: 1;
     }
 
-    /* Steps - Animated Numbered List */
+    /* Steps - Optimized */
     .steps {
       counter-reset: step;
-      margin: 3rem 0;
+      margin: 2rem 0;
     }
 
     .step-item {
       position: relative;
-      padding-left: 5rem;
-      margin-bottom: 3rem;
+      padding-left: 4rem;
+      margin-bottom: 2rem;
       transition: var(--transition);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .step-item.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .step-item:hover {
-      transform: translateX(10px);
+      transform: translateX(5px) translateY(0);
     }
 
     .step-item::before {
@@ -379,36 +396,43 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 3rem;
+      height: 3rem;
       background: var(--primary);
       color: #000;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
       font-family: 'Cyber', sans-serif;
       box-shadow: var(--glow);
     }
 
-    /* Features Grid - Interactive */
+    /* Features Grid - Optimized */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
     }
 
     .feature-card {
       background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
+      border-radius: 12px;
+      padding: 1.5rem;
       border: 1px solid var(--card-border);
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .feature-card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .feature-card::after {
@@ -430,7 +454,7 @@
     }
 
     .feature-card:hover::after {
-      animation: shine 1.5s;
+      animation: shine 1.2s;
     }
 
     @keyframes shine {
@@ -440,9 +464,9 @@
     }
 
     .feature-icon {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     /* Video Container */
@@ -451,10 +475,10 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 15px;
-      margin: 3rem 0;
+      border-radius: 12px;
+      margin: 2rem 0;
       border: 2px solid rgba(0, 255, 255, 0.3);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     .video-container iframe {
@@ -466,23 +490,30 @@
       border: none;
     }
 
-    /* Pricing Cards - Glowing Hover */
+    /* Pricing Cards - Optimized */
     .pricing-options {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
     }
 
     .pricing-card {
       background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2.5rem;
+      border-radius: 12px;
+      padding: 2rem;
       text-align: center;
       border: 1px solid var(--card-border);
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .pricing-card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .pricing-card.popular::before {
@@ -492,42 +523,43 @@
       right: 0;
       background: var(--secondary);
       color: #000;
-      padding: 0.5rem 1.5rem;
-      font-size: 0.8rem;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.7rem;
       font-weight: bold;
-      border-radius: 0 15px 0 15px;
+      border-radius: 0 12px 0 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
+      transform: translateY(-5px) translateY(0);
+      box-shadow: 0 12px 30px rgba(0, 255, 255, 0.2);
     }
 
     .price {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: bold;
       color: var(--primary);
-      margin: 1rem 0;
+      margin: 0.8rem 0;
       font-family: 'Cyber', sans-serif;
     }
 
     .price span {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--text-light);
     }
 
     .price-features {
       list-style: none;
-      margin: 2rem 0;
+      margin: 1.5rem 0;
       text-align: left;
     }
 
     .price-features li {
-      padding: 0.5rem 0;
+      padding: 0.4rem 0;
       position: relative;
-      padding-left: 2rem;
+      padding-left: 1.8rem;
+      font-size: 0.95rem;
     }
 
     .price-features li::before {
@@ -538,21 +570,21 @@
       font-weight: bold;
     }
 
-    /* FAQ - Accordion */
+    /* FAQ - Optimized Accordion */
     .faq-container {
-      margin: 3rem 0;
+      margin: 2rem 0;
     }
 
     .faq-item {
-      margin-bottom: 1rem;
-      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      border-radius: 8px;
       overflow: hidden;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
     }
 
     .faq-question {
-      padding: 1.5rem;
+      padding: 1.2rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -566,12 +598,12 @@
 
     .faq-question h3 {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .faq-toggle {
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
       background: var(--primary);
       color: #000;
       border-radius: 50%;
@@ -589,17 +621,17 @@
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s ease-out;
-      padding: 0 1.5rem;
+      transition: max-height 0.4s ease-out;
+      padding: 0 1.2rem;
     }
 
     .faq-answer-content {
-      padding: 0 0 1.5rem;
+      padding: 0 0 1.2rem;
     }
 
     .author-avatar {
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--primary);
@@ -608,20 +640,21 @@
     .author-info h4 {
       margin: 0;
       color: var(--primary);
+      font-size: 1rem;
     }
 
     .author-info p {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-dark);
     }
 
-    /* CTA Section - Glowing */
+    /* CTA Section - Optimized */
     .cta-section {
       text-align: center;
-      padding: 4rem 2rem;
-      border-radius: 15px;
-      margin: 4rem 0;
+      padding: 3rem 1.5rem;
+      border-radius: 12px;
+      margin: 3rem 0;
       background: linear-gradient(135deg, rgba(0,50,50,0.3) 0%, rgba(0,0,0,0.7) 100%);
       position: relative;
       overflow: hidden;
@@ -649,10 +682,10 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Footer */
+    /* Footer - Optimized */
     footer {
       background: #000;
-      padding: 3rem 2rem;
+      padding: 2rem 1.5rem;
       text-align: center;
       border-top: 1px solid rgba(0, 255, 255, 0.1);
     }
@@ -660,14 +693,15 @@
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin: 1.5rem 0;
+      gap: 1.5rem;
+      margin: 1rem 0;
       flex-wrap: wrap;
     }
 
     .footer-links a {
       color: var(--text-light);
       transition: var(--transition);
+      font-size: 0.9rem;
     }
 
     .footer-links a:hover {
@@ -677,13 +711,13 @@
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0;
+      gap: 1.2rem;
+      margin: 1.5rem 0;
     }
 
     .social-links a {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
       display: flex;
@@ -695,19 +729,20 @@
     .social-links a:hover {
       background: var(--primary);
       color: #000;
-      transform: translateY(-5px);
+      transform: translateY(-3px);
     }
 
     .copyright {
       color: var(--text-dark);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
     }
 
-    /* Animations */
+    /* Animations - Optimized */
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -715,67 +750,160 @@
       }
     }
 
+    /* How It Works Section - Split Layout */
+    .how-it-works-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .how-it-works-image {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(0, 255, 255, 0.3);
+    }
+
+    .how-it-works-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* PWA Install Section */
+    .pwa-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid var(--card-border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .pwa-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pwa-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .pwa-step-number {
+      background: var(--primary);
+      color: #000;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .pwa-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pwa-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Scroll Hints */
+    .scroll-hint {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      background: rgba(0, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100;
+      opacity: 0;
+      transition: var(--transition);
+      border: 1px solid var(--primary);
+    }
+
+    .scroll-hint.visible {
+      opacity: 1;
+    }
+
+    .scroll-hint:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
     /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.8rem; }
+    @media (max-width: 1024px) {
+      .how-it-works-container,
+      .pwa-section {
+        grid-template-columns: 1fr;
+      }
       
+      .how-it-works-image {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
       nav ul {
         display: none;
       }
       
-      .hero-content {
-        max-width: 100%;
+      .hero {
+        min-height: 500px;
+        padding: 0 1.5rem;
       }
       
       .hero-cta {
         flex-direction: column;
-        gap: 1rem;
       }
       
       .testimonial-card {
-        flex: 0 0 90%;
+        width: 280px;
+      }
+      
+      .pwa-section {
+        padding: 1.5rem;
       }
     }
 
-    /* Scroll Indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      color: var(--primary);
-      animation: bounce 2s infinite;
-      cursor: pointer;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-20px) translateX(-50%); }
-      60% { transform: translateY(-10px) translateX(-50%); }
-    }
-
-    /* Testimonials Slider */
+    /* Testimonials Slider - Optimized */
     .testimonials {
       background-color: #050505;
-      padding: 80px 20px;
+      padding: 60px 20px;
       color: #e5faff;
       text-align: center;
       position: relative;
     }
 
     .glow-heading {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       color: #00f9ff;
       text-shadow: 0 0 8px #00f9ff;
       margin-bottom: 10px;
     }
 
     .subtext {
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 2vw, 1rem);
       color: #9ca3af;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
     .testimonial-slider-container {
@@ -788,11 +916,11 @@
     .nav-button {
       background: transparent;
       border: none;
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #00f9ff;
       cursor: pointer;
       z-index: 2;
-      padding: 10px;
+      padding: 8px;
       transition: color 0.2s ease;
     }
 
@@ -808,17 +936,17 @@
 
     .testimonial-slider {
       display: flex;
-      gap: 20px;
+      gap: 15px;
       padding: 10px 0;
     }
 
     .testimonial-card {
       background-color: #101010;
       border: 1px solid rgba(0, 249, 255, 0.1);
-      padding: 25px;
-      border-radius: 14px;
+      padding: 20px;
+      border-radius: 12px;
       flex-shrink: 0;
-      width: 330px;
+      width: 300px;
       text-align: left;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 0 8px rgba(0, 249, 255, 0.05);
@@ -835,10 +963,10 @@
     }
 
     .testimonial-text {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #d1d5db;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .testimonial-author {
@@ -847,53 +975,31 @@
       margin-top: 10px;
     }
 
-    .author-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 15px;
-      border: 2px solid #00f9ff33;
-    }
-
-    .author-info h4 {
-      font-size: 1rem;
-      color: #ffffff;
-      margin: 0;
-    }
-
-    .author-info p {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      margin: 2px 0 0;
-    }
-
-    /* Results Grid */
+    /* Results Grid - Optimized */
     .results-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
     }
 
     .result-card {
       background: rgba(0, 255, 255, 0.05);
-      border-radius: 10px;
-      padding: 1.5rem;
+      border-radius: 8px;
+      padding: 1.2rem;
       text-align: center;
       border: 1px solid rgba(0, 255, 255, 0.1);
     }
 
     .result-card h4 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: var(--primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     .result-card p {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       margin: 0;
-      color: var(--text-light);
     }
   </style>
 </head>
@@ -941,8 +1047,8 @@
       
       <div class="benefits">
         <div class="benefit-item">
-          <h3><i class="fas fa-lock"></i> Privacy First</h3>
-          <p>Your projects stay on your device. No cloud storage, no data tracking. We believe your ideas should remain yours alone.</p>
+          <h3><i class="fas fa-lock"></i> Secure Data Storage</h3>
+          <p>Your projects are stored securely with enterprise-grade encryption. We protect your intellectual property with the highest security standards.</p>
         </div>
         <div class="benefit-item">
           <h3><i class="fas fa-bolt"></i> One-Time Purchase</h3>
@@ -988,50 +1094,89 @@
     
     <!-- How It Works Section -->
     <section id="how-it-works">
+      <h2>How Intuiva Works</h2>
+      <p>Intuiva is your lean, thinking assistant—designed to help solo founders, creatives, and teams plan smarter without the clutter. It guides you from vision to execution with structure, not stress.</p>
 
-<h2>How Intuiva Works</h2>
-<p>Intuiva is your lean, thinking assistant—designed to help solo founders, creatives, and teams plan smarter without the clutter. It guides you from vision to execution with structure, not stress.</p>
+      <div class="how-it-works-container">
+        <div>
+          <ol class="steps">
+            <li class="step-item">
+              <h3>1. Set Up Your Project</h3>
+              <p>Create your account and start instantly. You'll land in the Project Planner, where the journey begins.</p>
+            </li>
 
-<ol class="steps">
-  <li class="step-item">
-    <h3>1. Set Up Your Project</h3>
-    <p>No logins, no fluff. Just enter your unique access PIN and start instantly. You’ll land in the Project Planner, where the journey begins.</p>
-  </li>
+            <li class="step-item">
+              <h3>2. Answer Targeted AI Questions</h3>
+              <p>Intuiva asks sharp, focused questions about your project—your goals, users, risks, and timeline. You can skip or revisit any part. The goal? Clarity without overwhelm.</p>
+            </li>
 
-  <li class="step-item">
-    <h3>2. Answer Targeted AI Questions</h3>
-    <p>Intuiva asks sharp, focused questions about your project—your goals, users, risks, and timeline. You can skip or revisit any part. The goal? Clarity without overwhelm.</p>
-  </li>
+            <li class="step-item">
+              <h3>3. Receive Your Strategy Blueprint</h3>
+              <p>Once your answers are in, Intuiva generates a customized project plan. It includes a summary, key milestones, risks with mitigation ideas, and tactical suggestions—all beautifully presented and downloadable as a PDF.</p>
+            </li>
 
-  <li class="step-item">
-    <h3>3. Receive Your Strategy Blueprint</h3>
-    <p>Once your answers are in, Intuiva generates a customized project plan. It includes a summary, key milestones, risks with mitigation ideas, and tactical suggestions—all beautifully presented and downloadable as a PDF.</p>
-  </li>
+            <li class="step-item">
+              <h3>4. Visualize It with Flow Boards</h3>
+              <p>Your plan flows into an interactive Kanban board called Flow Boards. Each task is placed into default columns like "To Do," "In Progress," and "Done"—but you can create custom stages, drag and drop, delete, or expand tasks freely.</p>
+            </li>
 
-  <li class="step-item">
-    <h3>4. Visualize It with Flow Boards</h3>
-    <p>Your plan isn’t static. It flows into an interactive Kanban board called Flow Boards. Each task is placed into default columns like “To Do,” “In Progress,” and “Done”—but you can create custom stages, drag and drop, delete, or expand tasks freely. It’s structure with flexibility.</p>
-  </li>
+            <li class="step-item">
+              <h3>5. Export, Save, and Share</h3>
+              <p>Want to send updates or archive your progress? You can export both the report and your Flow Board as PDFs. Generate shareable read-only links for teammates or clients.</p>
+            </li>
 
-  <li class="step-item">
-    <h3>5. Export, Save, and Share</h3>
-    <p>Want to send updates or archive your progress? You can export both the report and your Flow Board as PDFs. You can also save multiple boards, rename them, or generate shareable read-only links for teammates or clients.</p>
-  </li>
+            <li class="step-item">
+              <h3>6. Optional: Use Backcasting Mode</h3>
+              <p>If you prefer to start from a clear outcome—like "launch in July" or "user test by week 4"—Intuiva can walk you backwards from that endpoint. It calculates key checkpoints and gives you a reverse timeline.</p>
+            </li>
+          </ol>
 
-  <li class="step-item">
-    <h3>6. Optional: Use Backcasting Mode</h3>
-    <p>If you prefer to start from a clear outcome—like “launch in July” or “user test by week 4”—Intuiva can walk you backwards from that endpoint. It calculates key checkpoints and gives you a reverse timeline, which you can customize or export.</p>
-  </li>
-</ol>
+          <div class="card">
+            <h3>Why Intuiva Feels Different</h3>
+            <p>Most project tools either overwhelm you with features or oversimplify your process. Intuiva gives you a focused space to think clearly, guided by lean methodology and intuitive flow.</p>
+          </div>
+        </div>
+        
+        <div class="how-it-works-image">
+          <img src="kanban.webp" alt="Intuiva Kanban Board Interface" loading="lazy">
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-  <h3>Why Intuiva Feels Different</h3>
-  <p>Most project tools either overwhelm you with features or oversimplify your process. Intuiva gives you a warm, focused space to think clearly, guided by lean methodology and intuitive flow.</p>
-  <p>No logins. No subscription pressure. Just one-time access, full control, and a clear mind.</p>
-</div>
-
-
+    <!-- PWA Section -->
+    <section class="pwa-section">
+      <div class="pwa-steps">
+        <h2>Use Intuiva Anywhere as a PWA</h2>
+        <p>Install Intuiva as a Progressive Web App for a native-like experience on any device, with offline capabilities.</p>
+        
+        <div class="pwa-step">
+          <div class="pwa-step-number">1</div>
+          <div>
+            <h4>Desktop Installation</h4>
+            <p>In Chrome/Edge, click "Install" in the address bar or find "Install Intuiva" in the browser menu.</p>
+          </div>
+        </div>
+        
+        <div class="pwa-step">
+          <div class="pwa-step-number">2</div>
+          <div>
+            <h4>Mobile Installation</h4>
+            <p>On iOS (Safari), tap the share icon and select "Add to Home Screen." On Android (Chrome), tap the menu and select "Install App."</p>
+          </div>
+        </div>
+        
+        <div class="pwa-step">
+          <div class="pwa-step-number">3</div>
+          <div>
+            <h4>Offline Access</h4>
+            <p>Once installed, Intuiva works offline with all core features. Your data syncs when you reconnect.</p>
+          </div>
+        </div>
+      </div>
       
+      <div class="pwa-image">
+        <img src="images/pwa-install.png" alt="PWA Installation Instructions" loading="lazy">
+      </div>
     </section>
 
     <!-- Features Section -->
@@ -1063,10 +1208,10 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-eye"></i>
           </div>
-          <h3>Collaboration Mode</h3>
-          <p>Share read-only views with stakeholders or enable live collaboration with team members.</p>
+          <h3>View-Only Sharing</h3>
+          <p>Share read-only views of your Flow Boards with stakeholders without granting edit access.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -1091,58 +1236,53 @@
       <p>Watch how Intuiva transforms a raw idea into a fully structured project plan in under 5 minutes.</p>
       
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/CwzQLYFHQS8" title="Intuiva Tutorial Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CwzQLYFHQS8" title="Intuiva Tutorial Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
-      
-
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+      <h2 class="glow-heading">What Our Users Say</h2>
+      <p class="subtext">Don't just take our word for it—here's how real users are working smarter with Intuiva.</p>
 
-<section id="testimonials" class="testimonials">
-  <h2 class="glow-heading">What Our Users Say</h2>
-  <p class="subtext">Don't just take our word for it—here's how real users are working smarter with Intuiva.</p>
+      <div class="testimonial-slider-container">
+        <button class="nav-button left" onclick="moveSlide(-1)">&#10094;</button>
 
-  <div class="testimonial-slider-container">
-    <button class="nav-button left" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="testimonial-slider-wrapper" id="sliderWrapper">
+          <div class="testimonial-slider" id="testimonialSlider">
+            <!-- Testimonial 1 -->
+            <a href="https://www.linkedin.com/in/nalan-ocak-pekta%C5%9F-2a3627212/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
+              <p class="testimonial-text">
+                As an accountant managing multiple client projects simultaneously, efficiency and organization are non-negotiable. INTUIVA has streamlined my entire workflow with an intuitive system that mirrors how real project management should operate—clear, simple, and actionable.
+              </p>
+              <div class="testimonial-author">
+                <img src="images/nalan.png" alt="Nalan Ocak" class="author-avatar" loading="lazy">
+                <div class="author-info">
+                  <h4>Nalan Ocak</h4>
+                  <p>Accountant at TTGlobal</p>
+                </div>
+              </div>
+            </a>
 
-    <div class="testimonial-slider-wrapper" id="sliderWrapper">
-      <div class="testimonial-slider" id="testimonialSlider">
-        <!-- Testimonial 1 -->
-        <a href="https://www.linkedin.com/in/nalan-ocak-pekta%C5%9F-2a3627212/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
-          <p class="testimonial-text">
-            As an accountant managing multiple client projects simultaneously, efficiency and organization are non-negotiable. INTUIVA has streamlined my entire workflow with an intuitive system that mirrors how real project management should operate—clear, simple, and actionable.
-          </p>
-          <div class="testimonial-author">
-            <img src="images/nalan.png" alt="Nalan Ocak" class="author-avatar">
-            <div class="author-info">
-              <h4>Nalan Ocak</h4>
-              <p>Accountant at TTGlobal</p>
-            </div>
+            <!-- Testimonial 2 -->
+            <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
+              <p class="testimonial-text">
+                The interface is intuitive, sleek, and effortless to navigate, making workflow seamless and efficient. As a writer, I value tools that let me focus on my work without getting lost in complexity. If you're looking for something that blends power with simplicity, this is your safe place. :)
+              </p>
+              <div class="testimonial-author">
+                <img src="images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar" loading="lazy">
+                <div class="author-info">
+                  <h4>Ananya Naithani</h4>
+                  <p>Investment Banker Turned Ghostwriter & Writing Coach</p>
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
+        </div>
 
-        <!-- Testimonial 2 -->
-        <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
-          <p class="testimonial-text">
-            The interface is intuitive, sleek, and effortless to navigate, making workflow seamless and efficient. As a writer, I value tools that let me focus on my work without getting lost in complexity. If you're looking for something that blends power with simplicity, this is your safe place. :)
-          </p>
-          <div class="testimonial-author">
-            <img src="images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar">
-            <div class="author-info">
-              <h4>Ananya Naithani</h4>
-              <p>Investment Banker Turned Ghostwriter & Writing Coach</p>
-            </div>
-          </div>
-        </a>
-
-      </div> <!-- End of testimonial-slider -->
-    </div> <!-- End of testimonial-slider-wrapper -->
-
-    <button class="nav-button right" onclick="moveSlide(1)">&#10095;</button>
-  </div> <!-- End of testimonial-slider-container -->
-</section>
-
-
+        <button class="nav-button right" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </section>
     
     <!-- Pricing Section -->
     <section id="pricing">
@@ -1151,40 +1291,38 @@
       
       <div class="pricing-options">
         <!-- Basic Plan -->
-       <a href="https://tempestlabs.space/intuivabasic.html" class="pricing-card-link" style="text-decoration: none; color: inherit;">
-  <div class="pricing-card">
-    <h3>Basic</h3>
-    <div class="price">$9.99</div>
-    <ul class="price-features">
-      <li>All Core Features</li>
-      <li>Project Planner</li>
-      <li>Backcasting Tool</li>
-      <li>Kanban Board</li>
-      <li>PDF Export</li>
-      <li>3.2M AI Tokens</li>
-    </ul>
-    <div class="btn btn-secondary" style="pointer-events: none;">Choose Basic</div>
-  </div>
-</a>
-
+        <a href="https://tempestlabs.space/intuivabasic.html" class="pricing-card-link" style="text-decoration: none; color: inherit;">
+          <div class="pricing-card">
+            <h3>Basic</h3>
+            <div class="price">$9.99</div>
+            <ul class="price-features">
+              <li>All Core Features</li>
+              <li>Project Planner</li>
+              <li>Backcasting Tool</li>
+              <li>Kanban Board</li>
+              <li>PDF Export</li>
+              <li>3.2M AI Tokens</li>
+            </ul>
+            <div class="btn btn-secondary" style="pointer-events: none;">Choose Basic</div>
+          </div>
+        </a>
 
         <!-- Pro Plan -->
         <a href="https://tempestlabs.space/intuivapro.html" class="pricing-card-link" style="text-decoration: none; color: inherit;">
-  <div class="pricing-card popular">
-    <h3>Pro</h3>
-    <div class="price">$24.99</div>
-    <ul class="price-features">
-      <li>All Core Features</li>
-      <li>Project Planner</li>
-      <li>Backcasting Tool</li>
-      <li>Kanban Board</li>
-      <li>PDF Export</li>
-      <li><strong>Unlimited AI Usage</strong></li>
-    </ul>
-    <div class="btn btn-primary btn-glow" style="pointer-events: none;">Choose Pro</div>
-  </div>
-</a>
-
+          <div class="pricing-card popular">
+            <h3>Pro</h3>
+            <div class="price">$24.99</div>
+            <ul class="price-features">
+              <li>All Core Features</li>
+              <li>Project Planner</li>
+              <li>Backcasting Tool</li>
+              <li>Kanban Board</li>
+              <li>PDF Export</li>
+              <li><strong>Unlimited AI Usage</strong></li>
+            </ul>
+            <div class="btn btn-primary btn-glow" style="pointer-events: none;">Choose Pro</div>
+          </div>
+        </a>
       </div>
       
       <div class="card">
@@ -1216,30 +1354,28 @@
         
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What happens if I need more projects than my plan allows?</h3>
+            <h3>Can I share my projects with others?</h3>
             <div class="faq-toggle">
               <i class="fas fa-chevron-down"></i>
             </div>
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>You can upgrade at any time to a higher plan by paying just the difference in price. All your existing projects and data will carry over seamlessly.</p>
-              <p>We'll never delete your projects if you downgrade—you just won't be able to create new ones until you upgrade again or archive existing projects.</p>
+              <p>Yes! You can generate shareable read-only links for any of your Flow Boards. This allows stakeholders to view your progress without making changes. For team collaboration, each member would need their own Intuiva license.</p>
             </div>
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Is my data really private? Where is it stored?</h3>
+            <h3>How is my data secured?</h3>
             <div class="faq-toggle">
               <i class="fas fa-chevron-down"></i>
             </div>
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Your privacy is our top priority. All project data is stored locally on your devices by default. If you enable cloud sync (optional), your data is encrypted end-to-end before leaving your device—we can't read it even if we wanted to.</p>
-              <p>Unlike most SaaS tools, we don't mine your data for insights or sell it to third parties. You own your intellectual property 100%.</p>
+              <p>We use industry-standard encryption (AES-256) for all data at rest and in transit. Your account is protected with secure authentication, and we regularly audit our systems for vulnerabilities.</p>
             </div>
           </div>
         </div>
@@ -1279,7 +1415,6 @@
             </div>
           </div>
         </div>
-        
       </div>
     </section>
 
@@ -1288,7 +1423,7 @@
       <div class="cta-content">
         <h2>Ready to Transform Your Planning Process?</h2>
         <p>Join thousands of solo founders, creators, and small teams who are building the future with Intuiva.</p>
-        <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem;">
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
           <a href="#pricing" class="btn btn-primary btn-glow">Get Intuiva Now</a>
           <a href="#contact" class="btn btn-secondary">Contact Sales</a>
         </div>
@@ -1300,13 +1435,13 @@
       <h2>Have Questions? Get in Touch</h2>
       <p>Our team is here to help you determine if Intuiva is right for your needs.</p>
       
-      <div class="features" style="margin-top: 3rem;">
+      <div class="features" style="margin-top: 2rem;">
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-envelope"></i>
           </div>
-          <h3 href="mailto:tempestlabsofficial@gmail.com">Email Us</h3>
-          <p href="mailto:tempestlabsofficial@gmail.com">For general inquiries and support: <br> tempestlabsofficial@gmail.com </p>
+          <h3>Email Us</h3>
+          <p>For general inquiries and support: <br> tempestlabsofficial@gmail.com</p>
         </div>
         
         <div class="feature-card">
@@ -1315,9 +1450,9 @@
           </div>
           <h3>Get in Contact</h3>
           <p>Get instant answers during business hours:</p>
-          <a href="https://tempestlabs.space/contact.html" class="btn btn-secondary" style="margin-top: 1rem;">Start a Conversation</a>
+          <a href="https://tempestlabs.space/contact.html" class="btn btn-secondary" style="margin-top: 0.8rem;">Start a Conversation</a>
         </div>
-        
+      </div>
     </section>
 
   </div> <!-- /main-content -->
@@ -1352,6 +1487,11 @@
       </p>
     </div>
   </footer>
+
+  <!-- Scroll Hint -->
+  <div class="scroll-hint" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
   <script>
     // FAQ Accordion
@@ -1408,72 +1548,99 @@
       });
     });
     
-    // Add animation to elements when they come into view
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card');
-      
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        
-        if (elementPosition < screenPosition) {
-          element.style.opacity = '1';
-          element.style.transform = 'translateY(0)';
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Intersection Observer for animations
+    const animateElements = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
     };
     
-    // Set initial state for animated elements
-    document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    const observer = new IntersectionObserver(animateElements, {
+      threshold: 0.1
     });
     
-    // Run on load and scroll
-    window.addEventListener('load', animateOnScroll);
-    window.addEventListener('scroll', animateOnScroll);
+    document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card').forEach(el => {
+      observer.observe(el);
+    });
     
     // Testimonial slider functionality
-// Improved Testimonial Slider with Auto-Snap
-const slider = document.getElementById("testimonialSlider");
-const cardWidth = 350 + 20; // adjust this if your card size or gap changes
-
-function moveSlide(direction) {
-  const scrollAmount = direction * cardWidth;
-  const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-  
-  let newScrollLeft = slider.scrollLeft + scrollAmount;
-  
-  // Clamp within bounds
-  if (newScrollLeft < 0) {
-    newScrollLeft = 0;
-  } else if (newScrollLeft > maxScrollLeft) {
-    newScrollLeft = maxScrollLeft;
-  }
-
-  slider.scrollTo({
-    left: newScrollLeft,
-    behavior: "smooth"
-  });
-}
-
-// Auto-Snap after Manual Scroll
-slider.addEventListener('scroll', () => {
-  clearTimeout(slider.snapTimeout);
-  slider.snapTimeout = setTimeout(() => {
-    const nearestCard = Math.round(slider.scrollLeft / cardWidth);
-    const snapPosition = nearestCard * cardWidth;
-    slider.scrollTo({
-      left: snapPosition,
-      behavior: 'smooth'
-    });
-  }, 150); // wait 150ms after user stops scrolling
-});
-
-
-
+    const slider = document.getElementById("testimonialSlider");
+    const cardWidth = 320; // card width + gap
     
+    function moveSlide(direction) {
+      const scrollAmount = direction * cardWidth;
+      const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+      
+      let newScrollLeft = slider.scrollLeft + scrollAmount;
+      
+      // Clamp within bounds
+      if (newScrollLeft < 0) {
+        newScrollLeft = 0;
+      } else if (newScrollLeft > maxScrollLeft) {
+        newScrollLeft = maxScrollLeft;
+      }
+
+      slider.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth"
+      });
+    }
+
+    // Auto-Snap after Manual Scroll
+    slider.addEventListener('scroll', () => {
+      clearTimeout(slider.snapTimeout);
+      slider.snapTimeout = setTimeout(() => {
+        const nearestCard = Math.round(slider.scrollLeft / cardWidth);
+        const snapPosition = nearestCard * cardWidth;
+        slider.scrollTo({
+          left: snapPosition,
+          behavior: 'smooth'
+        });
+      }, 150); // wait 150ms after user stops scrolling
+    });
+    
+    // PWA Installation Prompt
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault();
+      // Stash the event so it can be triggered later
+      deferredPrompt = e;
+      // Show custom install button if needed
+    });
+    
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('ServiceWorker registration successful');
+        }, err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>
