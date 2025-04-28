@@ -374,18 +374,19 @@
             margin: 0 auto;
         }
 
-      .product-card {
-    background: rgba(6, 30, 34, 0.55);
+.product-card {
+    background: rgba(255, 255, 255, 0.85); /* Soft bright background */
     border-radius: 15px;
     padding: 35px;
-    box-shadow: 0 6px 24px rgba(58, 227, 248, 0.25), 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 24px rgba(58, 227, 248, 0.25), 0 0 20px rgba(0, 0, 0, 0.1);
     transition: all var(--transition-speed);
-    border: 1px solid rgba(58, 227, 248, 0.2);
+    border: 1px solid rgba(58, 227, 248, 0.15);
     text-align: center;
     backdrop-filter: blur(6px);
     animation: fadeInUp 0.8s ease-out;
     animation-fill-mode: both;
 }
+
 
         .product-card:nth-child(1) { animation-delay: 0.2s; }
         .product-card:nth-child(2) { animation-delay: 0.4s; }
@@ -413,24 +414,24 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .product-card h3 {
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(58, 227, 248, 0.4);
-            font-weight: 700; /* BOLDER */
-             letter-spacing: 1.2px;
-             font-size: clamp(1.1rem, 1.5vw, 1.6rem);
-            color: var(--aqua-glow);
-            text-transform: none;
-        }
+       .product-card h3 {
+    margin-bottom: 15px;
+    text-shadow: none;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+    color: var(--charcoal-black); /* darker text */
+    text-transform: none;
+}
 
-        .product-card p {
-            color: var(--muted-aqua);
-            margin-bottom: 25px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.88); /* slightly brighter than muted aqua */
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            font-size: clamp(0.9rem, 1vw, 1rem);
-        }
+
+.product-card p {
+    color: #333; /* dark grey for better readability */
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
 
         .quiet-software {
             padding: 100px 5%;
