@@ -224,6 +224,12 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .hero-video.loaded {
+      opacity: 1;
     }
 
     .hero-content {
@@ -259,6 +265,14 @@
       position: relative;
     }
 
+    /* Section Divider */
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      margin: 3rem 0;
+      opacity: 0.3;
+    }
+
     /* Cards - Optimized Glass Morphism */
     .card {
       background: var(--card-bg);
@@ -277,11 +291,11 @@
       border-color: rgba(0, 255, 255, 0.4);
     }
 
-    /* Benefits List - Optimized */
+    /* Benefits Section - WHY you need it */
     .benefits {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
       margin: 2rem 0;
     }
 
@@ -302,7 +316,7 @@
 
     .benefit-item:hover {
       transform: translateX(5px) translateY(0);
-      box-shadow: var(--glow);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
     }
 
     .benefit-item h3 {
@@ -315,6 +329,92 @@
     .benefit-item i {
       color: var(--primary);
       font-size: 1.3rem;
+      transition: var(--transition);
+    }
+
+    .benefit-item:hover i {
+      transform: scale(1.1);
+    }
+
+    /* Pain Points Section */
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pain-point {
+      background: rgba(255, 0, 0, 0.05);
+      border-radius: 10px;
+      padding: 1.5rem;
+      border-left: 4px solid #ff5555;
+      transition: var(--transition);
+    }
+
+    .pain-point h3 {
+      color: #ff5555;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pain-point i {
+      color: #ff5555;
+    }
+
+    /* Who It's For Section */
+    .audience {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .audience-item {
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .audience-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* Comparison Table */
+    .comparison {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .comparison th, .comparison td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    }
+
+    .comparison th {
+      background: rgba(0, 255, 255, 0.1);
+      color: var(--primary);
+    }
+
+    .comparison tr:last-child td {
+      border-bottom: none;
+    }
+
+    .check {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .cross {
+      color: #ff5555;
     }
 
     /* Case Study - Optimized */
@@ -325,18 +425,17 @@
       background: linear-gradient(135deg, rgba(0,50,50,0.3) 0%, rgba(0,0,0,0.7) 100%);
       overflow: hidden;
       margin: 2.5rem 0;
+      background-image: 
+        radial-gradient(circle at 70% 30%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 30% 70%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
+      background-size: 200% 200%;
+      animation: gradientFlow 15s ease infinite;
     }
 
-    .case-study::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(0,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
-      background-size: cover;
-      z-index: 0;
+    @keyframes gradientFlow {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
     }
 
     .case-study-content {
@@ -364,6 +463,14 @@
       left: 0.5rem;
       top: -1rem;
       line-height: 1;
+    }
+
+    blockquote em {
+      color: var(--primary);
+      font-style: normal;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(0, 255, 255, 0.5);
     }
 
     /* Steps - Optimized */
@@ -410,11 +517,11 @@
       box-shadow: var(--glow);
     }
 
-    /* Features Grid - Optimized */
+    /* Features Grid - HOW it delivers */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
       margin: 2rem 0;
     }
 
@@ -453,6 +560,10 @@
       opacity: 0;
     }
 
+    .feature-card:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
     .feature-card:hover::after {
       animation: shine 1.2s;
     }
@@ -467,6 +578,12 @@
       font-size: 2rem;
       color: var(--primary);
       margin-bottom: 0.8rem;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1);
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     }
 
     /* Video Container */
@@ -494,7 +611,7 @@
     .pricing-options {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
       margin: 2rem 0;
     }
 
@@ -581,6 +698,14 @@
       overflow: hidden;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .faq-item.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .faq-question {
@@ -738,6 +863,10 @@
       margin-top: 1rem;
     }
 
+    .footer-cta {
+      margin-top: 2rem;
+    }
+
     /* Animations - Optimized */
     @keyframes fadeInUp {
       from {
@@ -771,54 +900,51 @@
       display: block;
     }
 
-    /* PWA Install Section */
-    .pwa-section {
+    /* PWA Sidebar */
+    .pwa-sidebar {
+      position: fixed;
+      right: -300px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 280px;
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
       border: 1px solid var(--card-border);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
+      border-radius: 12px 0 0 12px;
+      padding: 1.5rem;
+      z-index: 999;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
     }
 
-    .pwa-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+    .pwa-sidebar.visible {
+      right: 0;
     }
 
-    .pwa-step {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .pwa-step-number {
-      background: var(--primary);
-      color: #000;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
+    .pwa-sidebar-toggle {
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 60px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-right: none;
+      border-radius: 12px 0 0 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      flex-shrink: 0;
+      cursor: pointer;
+      color: var(--primary);
+      box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
     }
 
-    .pwa-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .pwa-sidebar-toggle i {
+      transition: transform 0.3s ease;
     }
 
-    .pwa-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
+    .pwa-sidebar.visible .pwa-sidebar-toggle i {
+      transform: rotate(180deg);
     }
 
     /* Scroll Hints */
@@ -838,6 +964,13 @@
       opacity: 0;
       transition: var(--transition);
       border: 1px solid var(--primary);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
     }
 
     .scroll-hint.visible {
@@ -847,12 +980,47 @@
     .scroll-hint:hover {
       background: var(--primary);
       color: #000;
+      animation: none;
+    }
+
+    /* Results Grid - Optimized */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .result-card {
+      background: rgba(0, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-align: center;
+      border: 1px solid rgba(0, 255, 255, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .result-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .result-card h4 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .result-card p {
+      font-size: 0.8rem;
+      margin: 0;
     }
 
     /* Responsive Adjustments */
     @media (max-width: 1024px) {
-      .how-it-works-container,
-      .pwa-section {
+      .how-it-works-container {
         grid-template-columns: 1fr;
       }
       
@@ -879,8 +1047,8 @@
         width: 280px;
       }
       
-      .pwa-section {
-        padding: 1.5rem;
+      .pwa-sidebar {
+        display: none;
       }
     }
 
@@ -974,33 +1142,6 @@
       align-items: center;
       margin-top: 10px;
     }
-
-    /* Results Grid - Optimized */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-
-    .result-card {
-      background: rgba(0, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 1.2rem;
-      text-align: center;
-      border: 1px solid rgba(0, 255, 255, 0.1);
-    }
-
-    .result-card h4 {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 0.3rem;
-    }
-
-    .result-card p {
-      font-size: 0.8rem;
-      margin: 0;
-    }
   </style>
 </head>
 <body>
@@ -1020,7 +1161,7 @@
 
   <!-- Hero Section with Video Background -->
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
+    <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
       <source src="images/main.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -1054,44 +1195,99 @@
           <h3><i class="fas fa-bolt"></i> One-Time Purchase</h3>
           <p>Pay once, own it forever. No subscriptions, no recurring fees. Just unlimited access to your AI strategist.</p>
         </div>
-        
         <div class="benefit-item">
           <h3><i class="fas fa-project-diagram"></i> Visual Roadmapping</h3>
           <p>See your entire project timeline at a glance with our dynamic, interactive roadmap visualization.</p>
         </div>
-      
       </div>
     </section>
 
-    <!-- Case Study Section -->
-    <section class="case-study">
-      <div class="case-study-content">
-        <h2>From Chaos to Clarity</h2>
-        <p>
-          Let's say you're a small SaaS team—or maybe even a solo founder—with a brilliant product idea but zero time for tangled planning tools or corporate-style frameworks. You've got vision, but between juggling feature ideas, investor expectations, and looming deadlines, everything starts to blur.
-        </p>
-
-        <blockquote>
-          "Intuiva helped structure what felt like chaos. Within a few hours, we had a full project roadmap, visualized milestones, and a Kanban board that actually made sense for our process. What felt impossible on Monday became a confident launch plan by Friday."
-        </blockquote>
-
-        <div class="results-grid">
-          <div class="result-card">
-            <h4>83%</h4>
-            <p>Faster planning process compared to traditional tools</p>
-          </div>
-          <div class="result-card">
-            <h4>42%</h4>
-            <p>More hidden tasks identified upfront</p>
-          </div>
-          <div class="result-card">
-            <h4>100%</h4>
-            <p>Launch deadline hit exactly as projected</p>
-          </div>
+    <!-- Pain Points Section -->
+    <section>
+      <h2>The Problems Intuiva Solves</h2>
+      <p>Planning projects shouldn't feel like wrestling with spreadsheets. Here's what Intuiva eliminates:</p>
+      
+      <div class="pain-points">
+        <div class="pain-point">
+          <h3><i class="fas fa-exclamation-triangle"></i> Planning Paralysis</h3>
+          <p>Staring at a blank page, unsure where to start or what steps to take next.</p>
+        </div>
+        <div class="pain-point">
+          <h3><i class="fas fa-clock"></i> Wasted Time</h3>
+          <p>Hours spent setting up complex tools when you should be working on your vision.</p>
+        </div>
+        <div class="pain-point">
+          <h3><i class="fas fa-random"></i> Chaotic Workflow</h3>
+          <p>Constantly shifting priorities with no clear system to adapt your plan.</p>
         </div>
       </div>
     </section>
-    
+
+    <!-- Who It's For Section -->
+    <section>
+      <h2>Who Intuiva Is For</h2>
+      <p>Designed for independent thinkers who need structure without constraints:</p>
+      
+      <div class="audience">
+        <div class="audience-item">
+          <div class="audience-icon">🧠</div>
+          <h3>Solo Founders</h3>
+          <p>Who wear all hats and need clarity without committees</p>
+        </div>
+        <div class="audience-item">
+          <div class="audience-icon">🎨</div>
+          <h3>Creatives & Makers</h3>
+          <p>Who think visually and need flexible structure</p>
+        </div>
+        <div class="audience-item">
+          <div class="audience-icon">🚀</div>
+          <h3>Early-Stage Startups</h3>
+          <p>Who need to move fast with limited resources</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section>
+      <h2>Intuiva vs Traditional Tools</h2>
+      <p>Why settle for tools that weren't built for how you think?</p>
+      
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Intuiva</th>
+            <th>Others</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creates Plan For You</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+          <tr>
+            <td>Adaptive Questions</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+          <tr>
+            <td>Backcasting Mode</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+          <tr>
+            <td>One-Time Purchase</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
     <!-- How It Works Section -->
     <section id="how-it-works">
       <h2>How Intuiva Works</h2>
@@ -1143,39 +1339,32 @@
       </div>
     </section>
 
-    <!-- PWA Section -->
-    <section class="pwa-section">
-      <div class="pwa-steps">
-        <h2>Use Intuiva Anywhere as a PWA</h2>
-        <p>Install Intuiva as a Progressive Web App for a native-like experience on any device, with offline capabilities.</p>
-        
-        <div class="pwa-step">
-          <div class="pwa-step-number">1</div>
-          <div>
-            <h4>Desktop Installation</h4>
-            <p>In Chrome/Edge, click "Install" in the address bar or find "Install Intuiva" in the browser menu.</p>
+    <!-- Case Study Section -->
+    <section class="case-study">
+      <div class="case-study-content">
+        <h2>From Chaos to Clarity</h2>
+        <p>
+          Let's say you're a small SaaS team—or maybe even a solo founder—with a brilliant product idea but zero time for tangled planning tools or corporate-style frameworks. You've got vision, but between juggling feature ideas, investor expectations, and looming deadlines, everything starts to blur.
+        </p>
+
+        <blockquote>
+          "Intuiva helped structure what felt like chaos. Within a few hours, we had a full project roadmap, visualized milestones, and a Kanban board that actually made sense for our process. What felt impossible on <em>Monday</em> became a confident launch plan by <em>Friday</em>."
+        </blockquote>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>83%</h4>
+            <p>Faster planning process compared to traditional tools</p>
+          </div>
+          <div class="result-card">
+            <h4>42%</h4>
+            <p>More hidden tasks identified upfront</p>
+          </div>
+          <div class="result-card">
+            <h4>100%</h4>
+            <p>Launch deadline hit exactly as projected</p>
           </div>
         </div>
-        
-        <div class="pwa-step">
-          <div class="pwa-step-number">2</div>
-          <div>
-            <h4>Mobile Installation</h4>
-            <p>On iOS (Safari), tap the share icon and select "Add to Home Screen." On Android (Chrome), tap the menu and select "Install App."</p>
-          </div>
-        </div>
-        
-        <div class="pwa-step">
-          <div class="pwa-step-number">3</div>
-          <div>
-            <h4>Offline Access</h4>
-            <p>Once installed, Intuiva works offline with all core features. Your data syncs when you reconnect.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="pwa-image">
-        <img src="images/pwa-install.png" alt="PWA Installation Instructions" loading="lazy">
       </div>
     </section>
 
@@ -1457,6 +1646,20 @@
 
   </div> <!-- /main-content -->
 
+  <!-- PWA Sidebar -->
+  <div class="pwa-sidebar" id="pwaSidebar">
+    <div class="pwa-sidebar-toggle" onclick="togglePwaSidebar()">
+      <i class="fas fa-mobile-alt"></i>
+    </div>
+    <h3>Install Intuiva as a PWA</h3>
+    <p>Get a native app experience with offline access:</p>
+    <ul style="margin-top: 1rem; padding-left: 1.2rem;">
+      <li style="margin-bottom: 0.5rem;">Desktop: Click "Install" in Chrome/Edge</li>
+      <li style="margin-bottom: 0.5rem;">iOS: Tap Share → Add to Home Screen</li>
+      <li>Android: Tap "Install App" in Chrome</li>
+    </ul>
+  </div>
+
   <!-- Footer -->
   <footer>
     <a href="index.html" class="logo">INTUIVA</a>
@@ -1478,6 +1681,10 @@
       <a href="#"><i class="fab fa-youtube"></i></a>
     </div>
     
+    <div class="footer-cta">
+      <a href="#pricing" class="btn btn-primary">Ready to build your future? Get Started</a>
+    </div>
+    
     <div class="copyright">
       <p>© 2025 Tempest Labs. All rights reserved.</p>
       <p>
@@ -1494,6 +1701,19 @@
   </div>
 
   <script>
+    // Video loading optimization
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('heroVideo');
+      video.addEventListener('loadeddata', function() {
+        video.classList.add('loaded');
+      }, false);
+      
+      // Fallback in case loadeddata doesn't fire
+      setTimeout(function() {
+        video.classList.add('loaded');
+      }, 1000);
+    });
+
     // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
@@ -1518,9 +1738,6 @@
         }
       });
     });
-    
-    // Open first FAQ by default
-    document.querySelector('.faq-question').click();
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1571,6 +1788,17 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          
+          // Special animation for result cards
+          if (entry.target.classList.contains('result-card')) {
+            setTimeout(() => {
+              entry.target.style.transform = 'translateY(-10px)';
+              setTimeout(() => {
+                entry.target.style.transform = 'translateY(0)';
+              }, 300);
+            }, entry.target.dataset.delay || 0);
+          }
+          
           observer.unobserve(entry.target);
         }
       });
@@ -1580,7 +1808,10 @@
       threshold: 0.1
     });
     
-    document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card').forEach(el => {
+    document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card, .faq-item, .result-card').forEach((el, index) => {
+      if (el.classList.contains('result-card')) {
+        el.dataset.delay = index * 100;
+      }
       observer.observe(el);
     });
     
@@ -1618,6 +1849,21 @@
           behavior: 'smooth'
         });
       }, 150); // wait 150ms after user stops scrolling
+    });
+    
+    // PWA Sidebar Toggle
+    function togglePwaSidebar() {
+      document.getElementById('pwaSidebar').classList.toggle('visible');
+    }
+    
+    // Show PWA sidebar after scrolling a bit
+    window.addEventListener('scroll', function() {
+      const pwaSidebar = document.getElementById('pwaSidebar');
+      if (window.pageYOffset > 500 && !pwaSidebar.classList.contains('visible')) {
+        setTimeout(() => {
+          pwaSidebar.classList.add('visible');
+        }, 2000);
+      }
     });
     
     // PWA Installation Prompt
