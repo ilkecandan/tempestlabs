@@ -616,6 +616,23 @@
                 padding: 15px 20px;
             }
         }
+
+        /* Always hide the menu-toggle (hamburger) by default */
+.menu-toggle {
+    display: none;
+}
+
+/* Show the hamburger only on mobile screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1001; /* above everything */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -657,11 +674,14 @@
             <p>We craft minimalist, one-time purchase products that structure your ideas, guide your projects, and protect your mental space. No pings. No paywalls. Just tools that work, beautifully.</p>
             
             <p>We prioritize:</p>
-            <ul>
-                <li>Design that breathes</li>
-                <li>Functionality that flows</li>
-                <li>Experiences that matter</li>
-            </ul>
+           <section aria-label="Our Principles">
+<ul>
+    <li>Design that breathes</li>
+    <li>Functionality that flows</li>
+    <li>Experiences that matter</li>
+</ul>
+</section>
+
             
             <p>Tempest Labs was founded by <a href="https://ilkecandanbengi.com/" target="_blank">İlke Candan Bengi</a>, a researcher and developer with a background in materials science, AI, and web technologies. Her work bridges logic and feeling, form and function—infused with the belief that technology should serve your mind, not hijack it.</p>
         </div>
