@@ -1049,6 +1049,7 @@
       overflow-x: auto;
       padding-bottom: 2rem;
       -webkit-overflow-scrolling: touch;
+      width: 100%;
     }
 
     .roadmap {
@@ -1059,6 +1060,7 @@
       position: relative;
       padding: 1rem 2rem;
       min-width: 1200px;
+      width: 100%;
     }
 
     .roadmap::before {
@@ -1275,7 +1277,7 @@
     /* Founder Note Section */
     .founder-note {
       background: linear-gradient(135deg, rgba(0,30,30,0.8) 0%, rgba(0,0,0,0.9) 100%);
-      padding: 3rem 2rem;
+      padding: 2rem;
       border-radius: 12px;
       margin: 3rem 0;
       position: relative;
@@ -1304,29 +1306,20 @@
 
     .founder-note h2 {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       color: var(--primary-soft);
     }
 
     .founder-note p {
       font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .founder-note p::before {
-      content: '»';
-      position: absolute;
-      left: 0;
-      color: var(--primary-soft);
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     .founder-signature {
       display: flex;
       align-items: center;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     .founder-avatar {
@@ -1347,11 +1340,6 @@
       margin: 0;
       font-size: 0.9rem;
       color: var(--text-light);
-      padding-left: 0;
-    }
-
-    .founder-info p::before {
-      display: none;
     }
 
     /* Sticky CTA Button */
@@ -1486,19 +1474,20 @@
     .message {
       margin-bottom: 1rem;
       max-width: 80%;
+      padding: 0.6rem 0.8rem;
+      border-radius: 12px;
+      line-height: 1.4;
     }
 
     .message.bot {
       align-self: flex-start;
       background: rgba(0, 255, 255, 0.1);
-      padding: 0.6rem 0.8rem;
       border-radius: 12px 12px 12px 0;
     }
 
     .message.user {
       align-self: flex-end;
       background: rgba(0, 255, 255, 0.2);
-      padding: 0.6rem 0.8rem;
       border-radius: 12px 12px 0 12px;
       margin-left: auto;
     }
@@ -1511,6 +1500,10 @@
       
       .how-it-works-image {
         order: -1;
+      }
+      
+      .roadmap {
+        min-width: 900px;
       }
     }
 
@@ -1546,15 +1539,33 @@
       }
 
       .roadmap {
-        min-width: 800px;
+        min-width: 700px;
+        gap: 1rem;
+        padding: 1rem;
       }
 
       .milestone:not(:last-child)::after {
         display: none;
       }
 
+      .founder-note {
+        padding: 1.5rem;
+      }
+      
       .founder-note p {
-        padding-left: 1rem;
+        font-size: 1rem;
+      }
+      
+      .chat-container {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+      }
+      
+      .roadmap::before,
+      .roadmap::after {
+        left: 30px;
+        right: 30px;
       }
     }
 
@@ -1576,17 +1587,37 @@
       }
       
       .founder-note {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
       }
       
       .founder-note p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+      }
+      
+      .roadmap {
+        min-width: 600px;
+      }
+      
+      .milestone {
+        max-width: 150px;
+      }
+      
+      .milestone p {
+        font-size: 0.8rem;
       }
       
       .chat-container {
-        width: calc(100% - 40px);
-        right: 20px;
-        left: 20px;
+        bottom: 80px;
+      }
+      
+      .sticky-cta {
+        bottom: 10px;
+        right: 10px;
+      }
+      
+      .chat-widget {
+        bottom: 70px;
+        right: 10px;
       }
     }
 
@@ -1680,6 +1711,105 @@
       align-items: center;
       margin-top: 10px;
     }
+    
+    /* Curved Roadmap */
+    .roadmap-curve {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      margin: 3rem 0;
+    }
+    
+    .roadmap-path {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #0B1B1C 0%, #5ce6e6 50%, #0B1B1C 100%);
+      border-radius: 4px;
+      z-index: 1;
+      box-shadow: 0 0 20px rgba(92, 230, 230, 0.3);
+    }
+    
+    .roadpath-glow {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, transparent 0%, rgba(92, 230, 230, 0.5) 50%, transparent 100%);
+      border-radius: 4px;
+      z-index: 2;
+      animation: roadGlow 3s infinite;
+    }
+    
+    .milestone-curve {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      transition: all 0.3s ease;
+      z-index: 3;
+    }
+    
+    .milestone-curve:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .milestone-curve:nth-child(1) { left: 5%; }
+    .milestone-curve:nth-child(2) { left: 20%; }
+    .milestone-curve:nth-child(3) { left: 35%; }
+    .milestone-curve:nth-child(4) { left: 50%; }
+    .milestone-curve:nth-child(5) { left: 65%; }
+    .milestone-curve:nth-child(6) { left: 80%; }
+    
+    .milestone-curve .circle {
+      margin: 0 auto 0.5rem;
+    }
+    
+    .milestone-curve h4 {
+      margin-bottom: 0.3rem;
+    }
+    
+    .milestone-curve p {
+      font-size: 0.8rem;
+    }
+    
+    /* Curved connector */
+    .roadmap-curve::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: rgba(92, 230, 230, 0.3);
+      z-index: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .roadmap-curve {
+        height: 400px;
+      }
+      
+      .milestone-curve {
+        width: 120px;
+      }
+      
+      .milestone-curve:nth-child(1) { left: 5%; top: 20%; }
+      .milestone-curve:nth-child(2) { left: 30%; top: 10%; }
+      .milestone-curve:nth-child(3) { left: 55%; top: 20%; }
+      .milestone-curve:nth-child(4) { left: 55%; top: 60%; }
+      .milestone-curve:nth-child(5) { left: 30%; top: 70%; }
+      .milestone-curve:nth-child(6) { left: 5%; top: 60%; }
+      
+      .roadmap-path,
+      .roadpath-glow,
+      .roadmap-curve::before {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1726,9 +1856,9 @@
     <section class="founder-note">
       <div class="founder-content">
         <h2>A Note From Our Founder</h2>
-        <p>I built Intuiva after burning out trying to plan my solo SaaS launch across Google Sheets, Notion, and twenty open tabs. I didn't need just another AI tool or a fancy kanban board—I needed a real assistant that could meet me where my brain was at.</p>
-        <p>Most project tools assume you already know exactly what needs to be done. But when you're building something new, half the battle is figuring out what you don't know you don't know. That's where traditional tools fail solo founders.</p>
-        <p>Intuiva is the planning partner I wish I had when I was starting out—something that could help me think through the hard questions while keeping me organized. It's not about replacing your creativity with AI, but about giving your ideas the structure they deserve.</p>
+        <p>I built Intuiva after burning out trying to plan my solo SaaS launch across multiple tools. I needed an assistant that could meet me where my brain was at, not force me into rigid frameworks.</p>
+        <p>Most project tools assume you already know exactly what needs to be done. But when you're building something new, half the battle is figuring out what you don't know. That's where traditional tools fail solo founders.</p>
+        <p>Intuiva is the planning partner I wish I had when starting out—something that helps think through hard questions while keeping me organized. It's about giving your ideas the structure they deserve.</p>
         
         <div class="founder-signature">
           <img src="images/ilke-avatar.jpg" alt="Ilke Demir" class="founder-avatar">
@@ -1880,55 +2010,56 @@
         Intuiva is your lean, thinking assistant designed to help solo founders, creatives, and teams plan smarter without the clutter. It guides you from vision to execution with structure, not stress.
       </p>
 
-      <div class="roadmap-track">
-        <div class="roadmap">
-          <div class="milestone">
-            <div class="circle">
-              <i class="fas fa-check"></i>
-            </div>
-            <h4>Setup</h4>
-            <p>Create your account and start instantly. Land in the Project Planner where the journey begins.</p>
+      <div class="roadmap-curve">
+        <div class="roadmap-path"></div>
+        <div class="roadpath-glow"></div>
+        
+        <div class="milestone-curve">
+          <div class="circle">
+            <i class="fas fa-check"></i>
           </div>
-
-          <div class="milestone">
-            <div class="circle">
-              <i class="fas fa-clock"></i>
-            </div>
-            <h4>AI Questions</h4>
-            <p>Answer sharp questions about your goals, risks, and timeline. Skip or revisit anytime.</p>
+          <h4>Setup</h4>
+          <p>Create account and start instantly</p>
+        </div>
+        
+        <div class="milestone-curve">
+          <div class="circle">
+            <i class="fas fa-clock"></i>
           </div>
-
-          <div class="milestone">
-            <div class="circle">
-              <i class="fas fa-file-alt"></i>
-            </div>
-            <h4>Blueprint</h4>
-            <p>Receive a tactical plan with milestones, risks, and advice. Download a polished PDF.</p>
+          <h4>AI Questions</h4>
+          <p>Answer about goals, risks, timeline</p>
+        </div>
+        
+        <div class="milestone-curve">
+          <div class="circle">
+            <i class="fas fa-file-alt"></i>
           </div>
-
-          <div class="milestone">
-            <div class="circle">
-              <i class="fas fa-project-diagram"></i>
-            </div>
-            <h4>Flow Boards</h4>
-            <p>Visualize your plan with a drag-and-drop Flow Board. Customize and manage freely.</p>
+          <h4>Blueprint</h4>
+          <p>Receive tactical plan with milestones</p>
+        </div>
+        
+        <div class="milestone-curve">
+          <div class="circle">
+            <i class="fas fa-project-diagram"></i>
           </div>
-
-          <div class="milestone">
-            <div class="circle">
-              <i class="fas fa-download"></i>
-            </div>
-            <h4>Export</h4>
-            <p>Download reports and boards as PDFs. Share read-only links with others.</p>
+          <h4>Flow Boards</h4>
+          <p>Visualize plan with drag-and-drop</p>
+        </div>
+        
+        <div class="milestone-curve">
+          <div class="circle">
+            <i class="fas fa-download"></i>
           </div>
-
-          <div class="milestone">
-            <div class="circle">
-              <i class="fas fa-undo-alt"></i>
-            </div>
-            <h4>Backcasting</h4>
-            <p>Define your future goal, then work backwards with automated milestone logic.</p>
+          <h4>Export</h4>
+          <p>Download reports as PDFs</p>
+        </div>
+        
+        <div class="milestone-curve">
+          <div class="circle">
+            <i class="fas fa-undo-alt"></i>
           </div>
+          <h4>Backcasting</h4>
+          <p>Work backwards from goals</p>
         </div>
       </div>
     </section>
@@ -2251,7 +2382,7 @@
     </div>
     <div class="chat-messages" id="chatMessages">
       <div class="message bot">
-        Hi there! I'm the Intuiva assistant. How can I help you today?
+        Hi there! I'm the Intuiva assistant. Ask me about features, pricing, or how Intuiva can help with your projects.
       </div>
     </div>
     <div class="chat-input">
@@ -2537,6 +2668,57 @@
       chatContainer.classList.toggle('visible');
     }
 
+    // Improved chat responses
+    function getChatResponse(userText) {
+      const lowerText = userText.toLowerCase();
+      
+      // Define responses based on keywords
+      const responses = [
+        {
+          keywords: ['feature', 'features', 'what can', 'do'],
+          response: "Intuiva helps you plan projects with AI assistance, create roadmaps, manage tasks, and generate professional reports. Key features include adaptive AI planning, visual roadmapping, backcasting, and one-click PDF exports."
+        },
+        {
+          keywords: ['price', 'cost', 'how much', 'pricing'],
+          response: "Intuiva offers two pricing options: Basic ($9.99 one-time) and Pro ($24.99 one-time). Both are lifetime purchases with no subscriptions. The Pro version includes unlimited AI usage. You can see all features on our pricing section."
+        },
+        {
+          keywords: ['contact', 'help', 'support', 'email'],
+          response: "You can reach our team at tempestlabsofficial@gmail.com or book a call at tempestlabs.space/contact.html. We're happy to help with any questions!"
+        },
+        {
+          keywords: ['security', 'safe', 'data', 'privacy'],
+          response: "We use industry-standard encryption (AES-256) for all data. Your information is protected with secure authentication, and we regularly audit our systems. We only track AI usage for pricing tiers, nothing else."
+        },
+        {
+          keywords: ['platform', 'device', 'mobile', 'desktop'],
+          response: "Intuiva is a Progressive Web App (PWA) that works on all devices. You can install it on desktop (Chrome/Edge), iOS (via Share menu), and Android (Chrome). It works offline after installation."
+        },
+        {
+          keywords: ['founder', 'ilke', 'who made'],
+          response: "Intuiva was created by Ilke Demir, founder of Tempest Labs, to solve the challenges she faced as a solo founder needing better project planning tools."
+        },
+        {
+          keywords: ['hi', 'hello', 'hey'],
+          response: "Hello! How can I help you with Intuiva today?"
+        },
+        {
+          keywords: ['thanks', 'thank you'],
+          response: "You're welcome! Let me know if you have any other questions about Intuiva."
+        }
+      ];
+      
+      // Check for matching keywords
+      for (const item of responses) {
+        if (item.keywords.some(keyword => lowerText.includes(keyword))) {
+          return item.response;
+        }
+      }
+      
+      // Default response if no keywords match
+      return "I'm not sure about that. You can email tempestlabsofficial@gmail.com for specific questions. Otherwise, ask me about Intuiva's features, pricing, or how it can help with your projects!";
+    }
+
     function sendChatMessage() {
       const input = document.getElementById('chatInput');
       const messages = document.getElementById('chatMessages');
@@ -2555,27 +2737,23 @@
       // Scroll to bottom
       messages.scrollTop = messages.scrollHeight;
       
-      // Simulate bot response after delay
+      // Simulate typing indicator
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'message bot';
+      typingIndicator.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+      messages.appendChild(typingIndicator);
+      messages.scrollTop = messages.scrollHeight;
+      
+      // Remove typing indicator after delay and show response
       setTimeout(() => {
+        messages.removeChild(typingIndicator);
+        
         const botMsg = document.createElement('div');
         botMsg.className = 'message bot';
-        
-        // Simple response logic
-        const userText = userMsg.textContent.toLowerCase();
-        let response = "I'm an AI assistant here to help with Intuiva questions. For detailed support, please email tempestlabsofficial@gmail.com";
-        
-        if (userText.includes('price') || userText.includes('cost')) {
-          response = "Intuiva offers two pricing options: Basic ($9.99 one-time) and Pro ($24.99 one-time). Both are lifetime purchases with no subscriptions. You can see all features on our pricing section.";
-        } else if (userText.includes('feature') || userText.includes('do')) {
-          response = "Intuiva helps you plan projects with AI assistance, create roadmaps, manage tasks, and generate professional reports. It's designed specifically for solo founders and small teams.";
-        } else if (userText.includes('contact') || userText.includes('help')) {
-          response = "You can reach our team at tempestlabsofficial@gmail.com or book a call at tempestlabs.space/contact.html. We're happy to help!";
-        }
-        
-        botMsg.textContent = response;
+        botMsg.textContent = getChatResponse(userMsg.textContent);
         messages.appendChild(botMsg);
         messages.scrollTop = messages.scrollHeight;
-      }, 1000);
+      }, 1000 + Math.random() * 1000);
     }
 
     // Initialize chat widget
