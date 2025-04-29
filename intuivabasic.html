@@ -199,7 +199,7 @@
 
   <input type="email" id="email-input" placeholder="Enter your email" />
 
-  <button id="pay-button">💳 Pay $9.99</button>
+  <button id="pay-button">💳 Pay $0.09</button>
 
   <div id="status"></div>
   <iframe id="paytr-iframe" title="Secure PayTR Checkout"></iframe>
@@ -209,7 +209,7 @@
   <div class="info-section">
     <h2>🛠️ What Happens After Payment</h2>
     <ul>
-      <li>Click the <strong>Pay $9.99</strong> button above.</li>
+      <li>Click the <strong>Pay $0.09</strong> button above.</li>
       <li>A secure checkout window from our partner PayTR will appear.</li>
       <li>Fill in your card details and complete your transaction securely.</li>
       <li>After payment, you will be redirected automatically to your activation page.</li>
@@ -256,7 +256,7 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email: email,
-            price: "9.99",
+            price: "0.09",
             user_name: "Ilke",
             user_address: "Imaginary Street No. 42, Istanbul",
             user_phone: "05555555555"
