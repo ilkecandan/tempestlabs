@@ -990,7 +990,7 @@
 /* How It Works Section - Curved Visual Roadmap */
 .how-it-works-section {
   background: linear-gradient(135deg, #062D34 0%, #0B1B1C 100%);
-  padding: 5rem 2rem;
+  padding: 3.5rem 2rem; /* from 5rem */
   position: relative;
   overflow: hidden;
 }
@@ -1014,6 +1014,7 @@
   color: #00ffff;
   text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
   margin-bottom: 0.5rem; /* tighter spacing below the title */
+   margin-top: 0; /* remove the default top margin */
   position: relative;
   z-index: 1;
 }
@@ -1061,13 +1062,15 @@
 
 .milestone-curve {
   position: absolute;
+   padding-bottom: 1rem; /* was 2rem */
+
+   top: 45%; /* from 50% */
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 3;
   animation: fadeInUp 1.2s ease forwards;
   opacity: 0;
-  padding-bottom: 2rem; /* ← new: adds space below the path */
-  max-width: 180px;
+  max-width: 160px;
 }
 
 
@@ -1123,7 +1126,8 @@
   }
 
   .milestone-curve {
-    width: 140px;
+    width: 120px;
+
   }
 
   .milestone-curve:nth-child(2) { left: 10%; top: 25%; }
