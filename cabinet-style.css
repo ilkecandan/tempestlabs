@@ -1166,6 +1166,20 @@
         transform: translateY(-5px) rotate(10deg);
         color: var(--cosmic-deep);
     }
+.viz-container {
+    height: 400px; /* Fixed height for the chart */
+    width: 100%;
+}
+
+.viz-card {
+    height: 100%;
+    width: 100%;
+}
+
+#happinessChart {
+    width: 100% !important;
+    height: 100% !important;
+}
 
     .footer-links h3 {
         margin-bottom: 1.5rem;
