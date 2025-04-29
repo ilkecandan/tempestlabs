@@ -56,6 +56,8 @@
             letter-spacing: 0.3px;
             word-spacing: 0.5px;
             overflow-x: hidden;
+              background-blend-mode: overlay;
+              background-color: rgba(212, 207, 199, 0.04); /* fog-sand overlay */
             background: linear-gradient(135deg, var(--hero-dark-teal), var(--deep-teal));
         }
 
@@ -546,10 +548,9 @@
         .feature-card:nth-child(4) { animation-delay: 0.8s; }
 
         .feature-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 40px rgba(47, 211, 235, 0.4), 0 0 30px rgba(207, 75, 61, 0.2);
-            border-color: rgba(47, 211, 235, 0.35);
-            background: rgba(6, 30, 34, 0.75);
+             transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(207, 75, 61, 0.3), 0 0 20px rgba(47, 211, 235, 0.25);
+  background: rgba(6, 30, 34, 0.85);
         }
 
         .feature-card img {
@@ -966,12 +967,13 @@
             cursor: pointer;
         }
 
-        .btn-primary {
-            background: rgba(0, 0, 0, 0.15);
-            color: #FFDED3;
-            border: 1px solid rgba(207, 75, 61, 0.6);
-            box-shadow: 0 0 10px rgba(207, 75, 61, 0.2), 0 0 15px rgba(0, 0, 0, 0.3);
-        }
+     .btn-primary {
+  background: var(--burnt-coral);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(207, 75, 61, 0.3), 0 0 20px rgba(255, 222, 211, 0.2);
+}
+
 
         .btn-primary:hover {
             background: var(--burnt-coral);
@@ -1185,28 +1187,41 @@
             backdrop-filter: blur(4px);
         }
 
-        .data-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+    .data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 30px;
+    margin-top: 40px;
+}
 
-        .data-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid rgba(47, 211, 235, 0.1);
-            transition: all var(--transition-speed);
-        }
+@media (max-width: 992px) {
+    .data-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+    }
+}
 
-        .data-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(47, 211, 235, 0.2);
-        }
+@media (max-width: 600px) {
+    .data-grid {
+        grid-template-columns: 1fr; /* 1 per row on mobile */
+    }
+}
 
+.data-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(47, 211, 235, 0.1);
+    transition: all var(--transition-speed);
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(47, 211, 235, 0.2);
+}
+
+     
         .data-value {
             font-size: 2.5rem;
             font-family: 'Cinzel', serif;
@@ -1468,6 +1483,7 @@
                 <p><strong>Intent:</strong> They show signs of wanting what you offer.</p>
                 <p><strong>Evaluation:</strong> They compare you to alternatives.</p>
                 <p><strong>Purchase:</strong> They decide to buy from you.</p>
+                <br>
                 <p>FunnelFlow helps you visualize and optimize each stage, turning more prospects into paying customers.</p>
             </div>
             <div class="funnel-diagram">
@@ -1504,10 +1520,7 @@
                 <div class="demo-lead">G</div>
             </div>
         </div>
-        
-        <p style="margin-top: 2rem; color: var(--muted-aqua);">
-            Hover over the funnel to see leads progress through stages
-        </p>
+    
     </section>
 
     <div class="separator"></div>
@@ -1519,23 +1532,23 @@
         
         <div class="data-grid">
             <div class="data-card">
-                <div class="data-value">0</div>
+                <div class="data-value">3 weeks</div>
                 <div class="data-label">Avg. Time in Funnel</div>
             </div>
             <div class="data-card">
-                <div class="data-value">0</div>
+                <div class="data-value">35</div>
                 <div class="data-label">Hot Leads</div>
             </div>
             <div class="data-card">
-                <div class="data-value">0%</div>
+                <div class="data-value">60%</div>
                 <div class="data-label">Engagement Rate</div>
             </div>
             <div class="data-card">
-                <div class="data-value">0</div>
+                <div class="data-value">10</div>
                 <div class="data-label">Leads Added This Week</div>
             </div>
             <div class="data-card">
-                <div class="data-value">0</div>
+                <div class="data-value">5</div>
                 <div class="data-label">Stale Leads</div>
             </div>
             <div class="data-card">
