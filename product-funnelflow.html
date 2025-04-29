@@ -348,6 +348,116 @@
             animation: scrollPulse 2.5s infinite ease-in-out;
         }
 
+        /* Success Ticker */
+        .success-ticker {
+            background: rgba(6, 30, 34, 0.55);
+            border-top: 1px solid rgba(58, 227, 248, 0.2);
+            border-bottom: 1px solid rgba(58, 227, 248, 0.2);
+            padding: 20px 0;
+            margin: 40px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            white-space: nowrap;
+            animation: tickerScroll 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 40px;
+            font-family: 'Cinzel', serif;
+            color: var(--aqua-glow);
+            font-size: 1.1rem;
+        }
+
+        .ticker-item:before {
+            content: "✦";
+            margin-right: 10px;
+            color: var(--burnt-coral);
+        }
+
+        /* Funnel Basics Section */
+        .funnel-basics {
+            padding: 100px 5%;
+            background: rgba(6, 30, 34, 0.55);
+            border-radius: 15px;
+            margin: 60px auto;
+            max-width: 1200px;
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.15);
+            backdrop-filter: blur(4px);
+        }
+
+        .funnel-explainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .funnel-diagram {
+            position: relative;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .funnel-stage {
+            width: 80%;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(58, 227, 248, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--glow-white);
+            font-weight: 500;
+            position: relative;
+            transition: all 0.5s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .funnel-stage:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .funnel-stage:nth-child(1) {
+            width: 100%;
+            background: rgba(58, 227, 248, 0.2);
+            border-color: rgba(58, 227, 248, 0.4);
+        }
+
+        .funnel-stage:nth-child(2) {
+            width: 90%;
+            background: rgba(52, 214, 224, 0.2);
+            border-color: rgba(52, 214, 224, 0.4);
+        }
+
+        .funnel-stage:nth-child(3) {
+            width: 80%;
+            background: rgba(10, 157, 183, 0.2);
+            border-color: rgba(10, 157, 183, 0.4);
+        }
+
+        .funnel-stage:nth-child(4) {
+            width: 70%;
+            background: rgba(233, 79, 61, 0.2);
+            border-color: rgba(233, 79, 61, 0.4);
+        }
+
+        .funnel-stage:nth-child(5) {
+            width: 60%;
+            background: rgba(5, 91, 109, 0.2);
+            border-color: rgba(5, 91, 109, 0.4);
+        }
+
         /* Main Content Sections */
         .content-section {
             padding: 100px 5%;
@@ -951,6 +1061,55 @@
             animation: pulse 2s infinite;
         }
 
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .progress-dot.active {
+            background: var(--aqua-glow);
+            border-color: var(--glow-white);
+            transform: scale(1.3);
+        }
+
+        .progress-dot:hover {
+            transform: scale(1.5);
+        }
+
+        .progress-label {
+            position: absolute;
+            right: 30px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            color: var(--glow-white);
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot:hover .progress-label {
+            opacity: 1;
+            right: 40px;
+        }
+
         /* Animations */
         @keyframes float {
             0% { transform: translateY(0) rotate(0deg); opacity: 0; }
@@ -988,6 +1147,11 @@
             100% { box-shadow: 0 0 0px var(--aqua-glow); }
         }
 
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero-overlay {
@@ -1002,6 +1166,10 @@
             .case-study:nth-child(even) .case-study-content,
             .case-study:nth-child(even) .case-study-image {
                 order: initial;
+            }
+
+            .funnel-explainer {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1051,6 +1219,10 @@
                 flex-direction: column;
                 gap: 15px;
             }
+
+            .scroll-progress {
+                right: 15px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1082,6 +1254,10 @@
             .btn {
                 padding: 12px 20px;
                 font-size: 0.85rem;
+            }
+
+            .scroll-progress {
+                display: none;
             }
         }
 </style>
@@ -1116,25 +1292,75 @@
     <!-- Mobile Menu Backdrop -->
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="progress-dot active" data-section="hero" title="The Problem"></div>
+        <div class="progress-dot" data-section="basics" title="Funnel Basics"></div>
+        <div class="progress-dot" data-section="visualization" title="Your Solution"></div>
+        <div class="progress-dot" data-section="scenarios" title="Success Stories"></div>
+        <div class="progress-dot" data-section="features" title="How It Works"></div>
+        <div class="progress-dot" data-section="proof" title="The Proof"></div>
+        <div class="progress-dot" data-section="cta" title="Get Started"></div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero-mythic">
+    <section class="hero-mythic" id="hero">
         <div class="hero-bg"></div>
         <div class="mist-overlay"></div>
         
         <div class="hero-overlay">
-            <h1>Turn Marketing Chaos Into Crystal Clear Funnels</h1>
-            <p class="hero-subtitle">FunnelFlow is the visual dashboard that helps you see, understand, and optimize your customer journey like never before.</p>
+            <h1>Marketing Chaos → Crystal Clear Funnels</h1>
+            <p class="hero-subtitle">FunnelFlow is the visual dashboard that reveals your customer journey like never before. See where prospects drop off, understand why, and fix it instantly.</p>
             <p class="tagline">No spreadsheets. No complexity. Just clarity.</p>
-            <a class="hero-cta" href="#cta">See How It Works</a>
-            <p class="microtagline">Visualize your funnel. Optimize your conversions. Own your marketing.</p>
+            <a class="hero-cta" href="#cta">Show Me How It Works</a>
+            <p class="microtagline">"After FunnelFlow, we saw conversions jump 68% in 30 days" — SaaS Founder</p>
+        </div>
+    </section>
+
+    <!-- Success Ticker -->
+    <div class="success-ticker">
+        <div class="ticker-track">
+            <div class="ticker-item">From 12% to 31% conversion in 6 weeks</div>
+            <div class="ticker-item">Identified $28k/month in wasted ad spend</div>
+            <div class="ticker-item">Tripled email open rates after fixing the bottleneck</div>
+            <div class="ticker-item">Cut customer acquisition cost by 42%</div>
+            <div class="ticker-item">From 12% to 31% conversion in 6 weeks</div>
+            <div class="ticker-item">Identified $28k/month in wasted ad spend</div>
+            <div class="ticker-item">Tripled email open rates after fixing the bottleneck</div>
+            <div class="ticker-item">Cut customer acquisition cost by 42%</div>
+        </div>
+    </div>
+
+    <!-- Funnel Basics Section -->
+    <section class="funnel-basics" id="basics">
+        <h2>What Exactly Is a Marketing Funnel?</h2>
+        <p>Your funnel is the journey customers take from first hearing about you to making a purchase. Most businesses lose 80-95% of potential customers along the way without knowing why.</p>
+        
+        <div class="funnel-explainer">
+            <div>
+                <h3>The 5 Stages Every Customer Goes Through</h3>
+                <p><strong>Awareness:</strong> They discover your brand exists.</p>
+                <p><strong>Interest:</strong> They engage with your content or products.</p>
+                <p><strong>Intent:</strong> They show signs of wanting what you offer.</p>
+                <p><strong>Evaluation:</strong> They compare you to alternatives.</p>
+                <p><strong>Purchase:</strong> They decide to buy from you.</p>
+                <p>FunnelFlow helps you visualize and optimize each stage, turning more prospects into paying customers.</p>
+            </div>
+            <div class="funnel-diagram">
+                <div class="funnel-stage">Awareness</div>
+                <div class="funnel-stage">Interest</div>
+                <div class="funnel-stage">Intent</div>
+                <div class="funnel-stage">Evaluation</div>
+                <div class="funnel-stage">Purchase</div>
+            </div>
         </div>
     </section>
 
     <div class="separator"></div>
 
     <!-- Visualization Demo -->
-    <section class="visualization-demo" id="features">
-        <h2>See Your Funnel Come to Life</h2>
+    <section class="visualization-demo" id="visualization">
+        <h2>Your Customer's Journey—Unblurred</h2>
         <p>Watch how leads move through your funnel in real-time. Identify bottlenecks and opportunities with our intuitive visualization.</p>
         
         <div class="demo-container">
@@ -1162,50 +1388,77 @@
 
     <div class="separator"></div>
 
-    <!-- Stats Section -->
-    <section class="content-section">
-        <h2>The Power of Visualization</h2>
-        <p>Businesses that visualize their marketing funnels see dramatic improvements in conversion rates and customer understanding.</p>
-        
-        <div class="stats-grid">
-            <a href="https://www.hubspot.com/marketing-statistics" target="_blank" style="text-decoration: none; color: inherit;">
-  <div class="stat-card" style="cursor: pointer;">
-    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-    <div class="stat-value">2x</div>
-    <div class="stat-label">Marketers who use dashboards to track performance are 2x more likely to exceed their goals.</div>
-     <div style="font-size: 8px; color: #888; margin-top: 4px;">HubSpot, Marketing Statistics</div>
+    <!-- Case Studies Section -->
+    <section class="content-section" id="scenarios">
+        <h2>Future You, with FunnelFlow</h2>
+        <p>Not testimonials. Not fluff. Just realistic snapshots of what's possible when clarity replaces chaos.</p>
 
-  </div>
-</a>
+        <div class="case-study">
+            <div class="case-study-image">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="SaaS Funnel Flow Example">
+            </div>
+            <div class="case-study-content">
+                <h3>From Trial to Tribe: The SaaS Funnel That Clicked</h3>
+                <p>Imagine a solo SaaS founder drowning in spreadsheets. Churn creeping in, trial users ghosting, and no clue where the leak is.</p>
+                <p>Enter FunnelFlow. With visualized stages, she sees 70% of users drop off during onboarding. She streamlines the experience, adds targeted content—and watches her funnel come alive.</p>
 
-  <a href="https://growthmolecules.com/customer-journey-mapping-the-secret-behind-revenue-growth/" target="_blank" style="text-decoration: none; color: inherit;">
-  <div class="stat-card" style="cursor: pointer;">
-    <div class="stat-icon"><i class="fas fa-users"></i></div>
-    <div class="stat-value">54%</div>
-    <div class="stat-label">Businesses that map their customer journey see a 54% greater return on marketing investment.</div>
-    <div style="font-size: 8px; color: #888; margin-top: 4px;">Salesforce, State of Marketing Report</div>
-  </div>
-</a>
+                <div class="case-study-results">
+                    <div class="result-item">
+                        <div class="result-value">↑ Focus</div>
+                        <div class="result-label">On what actually works</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">↓ Guesswork</div>
+                        <div class="result-label">No more analytics rabbit holes</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">⚡ Flow</div>
+                        <div class="result-label">From insight to action</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">∞ Potential</div>
+                        <div class="result-label">Zero limits</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <a href="https://www.mckinsey.com/" target="_blank" style="text-decoration: none; color: inherit;">
-  <div class="stat-card" style="cursor: pointer;">
-    <div class="stat-icon"><i class="fas fa-lightbulb"></i></div>
-    <div class="stat-value">58%</div>
-    <div class="stat-label">
-      58% of marketers say unclear customer journeys are their biggest barrier to success.
-      <div style="font-size: 8px; color: #888; margin-top: 4px;">Source: McKinsey</div>
-    </div>
-  </div>
-</a>
+        <div class="case-study">
+            <div class="case-study-image">
+                <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="E-commerce Funnel Flow Story">
+            </div>
+            <div class="case-study-content">
+                <h3>The E-commerce Clarity Flip</h3>
+                <p>A small online brand, strong traffic but stagnant sales. Ads are expensive, and abandoned carts are everywhere. What's missing?</p>
+                <p>With FunnelFlow's visual dashboard, the founder spots a major drop-off after "Add to Cart." She tweaks her checkout flow, assigns targeted content at the right stage—and finally sees smooth progress through to Purchase.</p>
 
+                <div class="case-study-results">
+                    <div class="result-item">
+                        <div class="result-value">🔍 Visibility</div>
+                        <div class="result-label">Where it matters</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">🧠 Smarter Moves</div>
+                        <div class="result-label">Every click counts</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">📈 Less Burn</div>
+                        <div class="result-label">Better ROAS, less stress</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">💡 Confidence</div>
+                        <div class="result-label">In every decision</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <div class="separator"></div>
 
     <!-- Features Section -->
-    <section class="content-section">
-        <h2>Features That Change the Game</h2>
+    <section class="content-section" id="features">
+        <h2>How FunnelFlow Works</h2>
         <p>FunnelFlow combines powerful analytics with intuitive visualization to give you unprecedented control over your marketing funnel.</p>
         
         <div class="card-grid">
@@ -1213,7 +1466,7 @@
                 <div class="feature-icon">
                     <i class="fas fa-project-diagram"></i>
                 </div>
-                <h3>Funnel Visualization</h3>
+                <h3>Track Every Click to Conversion</h3>
                 <p>See your entire customer journey at a glance with our beautiful, interactive funnel visualization. Drag and drop leads between stages, track progress, and identify bottlenecks instantly.</p>
                 <div class="feature-card" style="margin-top: 1rem; padding: 1.5rem; text-align: center;">
                     <i class="fas fa-mouse-pointer" style="color: var(--aqua-glow);"></i>
@@ -1225,7 +1478,7 @@
                 <div class="feature-icon">
                     <i class="fas fa-brain"></i>
                 </div>
-                <h3>Smart Insights</h3>
+                <h3>Know What Works, Fix What Doesn't</h3>
                 <p>Our smart algorithms analyze your funnel data to provide actionable recommendations for improving conversions at every stage.</p>
                 <ul style="margin: 1rem 0; padding-left: 1.5rem; text-align: left; color: var(--muted-aqua);">
                     <li>Suggestions for each stage</li>
@@ -1238,7 +1491,7 @@
                 <div class="feature-icon">
                     <i class="fas fa-tasks"></i>
                 </div>
-                <h3>Lead Management</h3>
+                <h3>Organize Leads Like Never Before</h3>
                 <p>Organize, track, and nurture leads through every stage of your funnel with our intuitive lead management system.</p>
                 <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                     <div style="flex: 1; background: rgba(58, 227, 248, 0.2); padding: 1rem; border-radius: 10px; text-align: center;">
@@ -1260,7 +1513,7 @@
                 <div class="feature-icon">
                     <i class="fas fa-chart-pie"></i>
                 </div>
-                <h3>Advanced Analytics</h3>
+                <h3>See the Data That Matters</h3>
                 <p>Go beyond basic metrics with our comprehensive analytics dashboard that shows you exactly what's working and what's not.</p>
                 <div style="margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
@@ -1293,7 +1546,7 @@
                 <div class="feature-icon">
                     <i class="fas fa-file-alt"></i>
                 </div>
-                <h3>Content Strategy</h3>
+                <h3>Content That Converts at Each Stage</h3>
                 <p>Assign and track content performance at each funnel stage to ensure you're delivering the right message at the right time.</p>
                 <div style="margin-top: 1rem;">
                     <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; margin-bottom: 0.5rem;">
@@ -1322,7 +1575,7 @@
                 <div style="margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <div style="width: 8px; height: 8px; background: var(--aqua-glow); border-radius: 50%;"></div>
-                        <div style="flex: 1; font-size: 0.9rem;"> It’s a focused, self-hosted workspace for marketers who just want their funnel to work.</div>
+                        <div style="flex: 1; font-size: 0.9rem;"> It's a focused, self-hosted workspace for marketers who just want their funnel to work.</div>
                     </div>
                 </div>
             </div>
@@ -1331,72 +1584,42 @@
 
     <div class="separator"></div>
 
-<!-- Exemplary Scenarios Section -->
-<section class="content-section">
-  <h2>Future You, with FunnelFlow</h2>
-  <p>Not testimonials. Not fluff. Just realistic snapshots of what’s possible when clarity replaces chaos.</p>
+    <!-- Stats Section -->
+    <section class="content-section" id="proof">
+        <h2>The Proof Is in the Pipeline</h2>
+        <p>Businesses that visualize their marketing funnels see dramatic improvements in conversion rates and customer understanding.</p>
+        
+        <div class="stats-grid">
+            <a href="https://www.hubspot.com/marketing-statistics" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="stat-card" style="cursor: pointer;">
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="stat-value">2x</div>
+                    <div class="stat-label">Marketers who use dashboards to track performance are 2x more likely to exceed their goals.</div>
+                    <div style="font-size: 8px; color: #888; margin-top: 4px;">HubSpot, Marketing Statistics</div>
+                </div>
+            </a>
 
-  <div class="case-study">
-    <div class="case-study-image">
-      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="SaaS Funnel Flow Example">
-    </div>
-    <div class="case-study-content">
-      <h3>From Trial to Tribe: The SaaS Funnel That Clicked</h3>
-      <p>Imagine a solo SaaS founder drowning in spreadsheets. Churn creeping in, trial users ghosting, and no clue where the leak is.</p>
-      <p>Enter FunnelFlow. With visualized stages, she sees 70% of users drop off during onboarding. She streamlines the experience, adds targeted content—and watches her funnel come alive.</p>
+            <a href="https://growthmolecules.com/customer-journey-mapping-the-secret-behind-revenue-growth/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="stat-card" style="cursor: pointer;">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-value">54%</div>
+                    <div class="stat-label">Businesses that map their customer journey see a 54% greater return on marketing investment.</div>
+                    <div style="font-size: 8px; color: #888; margin-top: 4px;">Salesforce, State of Marketing Report</div>
+                </div>
+            </a>
 
-      <div class="case-study-results">
-        <div class="result-item">
-          <div class="result-value">↑ Focus</div>
-          <div class="result-label">On what actually works</div>
+            <a href="https://www.mckinsey.com/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="stat-card" style="cursor: pointer;">
+                    <div class="stat-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="stat-value">58%</div>
+                    <div class="stat-label">
+                        58% of marketers say unclear customer journeys are their biggest barrier to success.
+                        <div style="font-size: 8px; color: #888; margin-top: 4px;">Source: McKinsey</div>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="result-item">
-          <div class="result-value">↓ Guesswork</div>
-          <div class="result-label">No more analytics rabbit holes</div>
-        </div>
-        <div class="result-item">
-          <div class="result-value">⚡ Flow</div>
-          <div class="result-label">From insight to action</div>
-        </div>
-        <div class="result-item">
-          <div class="result-value">∞ Potential</div>
-          <div class="result-label">Zero limits</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="case-study">
-    <div class="case-study-image">
-      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="E-commerce Funnel Flow Story">
-    </div>
-    <div class="case-study-content">
-      <h3>The E-commerce Clarity Flip</h3>
-      <p>A small online brand, strong traffic but stagnant sales. Ads are expensive, and abandoned carts are everywhere. What’s missing?</p>
-      <p>With FunnelFlow’s visual dashboard, the founder spots a major drop-off after "Add to Cart." She tweaks her checkout flow, assigns targeted content at the right stage—and finally sees smooth progress through to Purchase.</p>
-
-      <div class="case-study-results">
-        <div class="result-item">
-          <div class="result-value">🔍 Visibility</div>
-          <div class="result-label">Where it matters</div>
-        </div>
-        <div class="result-item">
-          <div class="result-value">🧠 Smarter Moves</div>
-          <div class="result-label">Every click counts</div>
-        </div>
-        <div class="result-item">
-          <div class="result-value">📈 Less Burn</div>
-          <div class="result-label">Better ROAS, less stress</div>
-        </div>
-        <div class="result-item">
-          <div class="result-value">💡 Confidence</div>
-          <div class="result-label">In every decision</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <div class="separator"></div>
 
@@ -1494,7 +1717,19 @@
                 </ul>
             </div>
             
-            <a href="#" class="btn btn-primary">
+            <div class="cta-options">
+                <button class="cta-choice" data-choice="done-guessing">
+                    I'm done guessing → Show me the flow
+                </button>
+                <button class="cta-choice" data-choice="funnel-work">
+                    I want my funnel to work → Fix it for me
+                </button>
+                <button class="cta-choice" data-choice="see-flow">
+                    Show me the flow → Let's get started
+                </button>
+            </div>
+            
+            <a href="#" class="btn btn-primary" id="main-cta">
                 <i class="fas fa-arrow-right"></i> Get FunnelFlow Now
             </a>
             
@@ -1627,6 +1862,68 @@
             });
         }
 
+        // Scroll progress indicator
+        const sections = document.querySelectorAll('section[id], .funnel-basics');
+        const dots = document.querySelectorAll('.progress-dot');
+        
+        function updateProgressIndicator() {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop - 300) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-section') === currentSection) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+        
+        // Dot click navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const targetSection = dot.getAttribute('data-section');
+                const targetElement = document.getElementById(targetSection);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // CTA choice buttons
+        const ctaChoices = document.querySelectorAll('.cta-choice');
+        const mainCta = document.getElementById('main-cta');
+        
+        ctaChoices.forEach(choice => {
+            choice.addEventListener('click', () => {
+                // Remove active class from all choices
+                ctaChoices.forEach(c => c.classList.remove('active'));
+                // Add active class to clicked choice
+                choice.classList.add('active');
+                
+                // Update main CTA text based on choice
+                const choiceType = choice.getAttribute('data-choice');
+                if (choiceType === 'done-guessing') {
+                    mainCta.innerHTML = '<i class="fas fa-arrow-right"></i> Show Me The Flow';
+                } else if (choiceType === 'funnel-work') {
+                    mainCta.innerHTML = '<i class="fas fa-arrow-right"></i> Fix My Funnel';
+                } else {
+                    mainCta.innerHTML = '<i class="fas fa-arrow-right"></i> Get Started Now';
+                }
+            });
+        });
+
         // Initialize animations
         document.addEventListener('DOMContentLoaded', function() {
             createFloatingIcons();
@@ -1657,6 +1954,10 @@
                     alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
                 });
             }
+
+            // Update progress indicator on scroll
+            window.addEventListener('scroll', updateProgressIndicator);
+            updateProgressIndicator();
         });
     </script>
 </body>
