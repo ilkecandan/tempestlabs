@@ -476,18 +476,12 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 80%;
         height: 100%;
         background: radial-gradient(circle at 30% 70%, rgba(187, 164, 92, 0.1) 0%, transparent 40%);
         z-index: 0;
     }
 
-    .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    }
 
     .pricing-card {
         background: var(--card-bg);
@@ -1420,9 +1414,11 @@
             Cabinet of Selves
         </a>
         <div class="nav-links">
+            <a href="#pricing">Buy Now</a>
             <a href="#ifs-intro">The Science</a>
             <a href="#features">Exploration</a>
             <a href="#pricing">Pricing</a>
+
             <a href="#how-it-works">Process</a>
             <a href="#app-screenshots">Journey</a>
             <a href="#testimonials">Experiences</a>
@@ -1531,6 +1527,7 @@
     </section>
 
     <!-- Pricing Section -->
+    <a href="https://tempestlabs.space/paytment.html" target="_blank" style="text-decoration: none; color: inherit;">
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
@@ -1547,11 +1544,13 @@
                         <li><i data-lucide="check"></i> Local data storage only</li>
                         <li><i data-lucide="check"></i> PDF export capability</li>
                     </ul>
-                    <a href="https://tempestlabs.space/paytment.html" target="_blank" class="btn btn-secondary pricing-button">Start Exploring</a>
+                    <div class="btn btn-secondary pricing-button">Start Exploring</div>
                 </div>            
             </div>
         </div>
     </section>
+</a>
+
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
