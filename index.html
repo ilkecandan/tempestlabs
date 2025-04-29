@@ -458,6 +458,23 @@
 .product-card:hover .product-image-wrapper img {
     transform: scale(1.08);
 }
+
+    .product-image-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto; /* centers image + spacing */
+    display: block;
+    box-shadow: 0 0 12px rgba(58, 227, 248, 0.25);
+    border: 2px solid rgba(58, 227, 248, 0.5);
+    transition: transform var(--transition-speed);
+}
+
+.product-image-circle:hover {
+    transform: scale(1.05);
+}
+
    
         .quiet-software {
             padding: 60px 5%;
@@ -1073,24 +1090,28 @@ font-family: 'Cinzel', serif;
     <div class="separator"></div>
         
     <!-- Use Cases Section -->
-    <section class="featured-products">
-        <h2>Made for minds like yours</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <h3>The Founder: Take control of your vision.</h3>
-                <p>Turn chaos into certainty.</p>
-            </div>
-            <div class="product-card">
-                <h3>The Creator: Bring ideas to life, effortlessly.</h3>
-                <p>Plan launches like poetry.</p>
-            </div>
-            <div class="product-card">
-                <h3>The Reflector: Find your flow while building your future.</h3>
-                <p>Understand yourself while building what matters.</p>
-            </div>
+   <section class="featured-products">
+    <h2>Made for minds like yours</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="images/founder.webp" alt="The Founder" class="product-image-circle">
+            <h3>The Founder: Take control of your vision.</h3>
+            <p>Turn chaos into certainty.</p>
         </div>
-        <p class="open-ended-description">For entrepreneurs, marketers, product managers, and anyone seeking mental bandwidth, focus, and creative freedom.</p>
-    </section>
+        <div class="product-card">
+            <img src="images/creator.webp" alt="The Creator" class="product-image-circle">
+            <h3>The Creator: Bring ideas to life, effortlessly.</h3>
+            <p>Plan launches like poetry.</p>
+        </div>
+        <div class="product-card">
+            <img src="images/reflector.webp" alt="The Reflector" class="product-image-circle">
+            <h3>The Reflector: Find your flow while building your future.</h3>
+            <p>Understand yourself while building what matters.</p>
+        </div>
+    </div>
+    <p class="open-ended-description">For entrepreneurs, marketers, product managers, and anyone seeking mental bandwidth, focus, and creative freedom.</p>
+</section>
+
 
     <a href="#scroll-target" class="scroll-hint" aria-label="Scroll down"></a>
     <div class="separator"></div>
