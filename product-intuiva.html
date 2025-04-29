@@ -562,6 +562,8 @@
     .case-study-content {
       position: relative;
       z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     blockquote {
@@ -1718,30 +1720,33 @@
       width: 100%;
       height: 300px;
       margin: 3rem 0;
+      overflow: hidden;
     }
     
     .roadmap-path {
       position: absolute;
       top: 50%;
-      left: 0;
-      right: 0;
+      left: 5%;
+      width: 0;
       height: 6px;
       background: linear-gradient(90deg, #0B1B1C 0%, #5ce6e6 50%, #0B1B1C 100%);
       border-radius: 4px;
       z-index: 1;
       box-shadow: 0 0 20px rgba(92, 230, 230, 0.3);
+      transition: width 1.5s ease-out;
     }
     
     .roadpath-glow {
       position: absolute;
       top: 50%;
-      left: 0;
-      right: 0;
+      left: 5%;
+      width: 0;
       height: 6px;
-      background: linear-gradient(90deg, transparent 0%, rgba(92, 230, 230, 0.5) 50%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, rgba(92, 230, 230, 0.7) 50%, transparent 100%);
       border-radius: 4px;
       z-index: 2;
-      animation: roadGlow 3s infinite;
+      transition: width 1.5s ease-out;
+      animation: roadGlow 2s infinite;
     }
     
     .milestone-curve {
@@ -1751,18 +1756,21 @@
       text-align: center;
       transition: all 0.3s ease;
       z-index: 3;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.3s ease;
     }
     
     .milestone-curve:hover {
       transform: translateY(-50%) scale(1.1);
     }
     
-    .milestone-curve:nth-child(1) { left: 5%; }
-    .milestone-curve:nth-child(2) { left: 20%; }
-    .milestone-curve:nth-child(3) { left: 35%; }
-    .milestone-curve:nth-child(4) { left: 50%; }
-    .milestone-curve:nth-child(5) { left: 65%; }
-    .milestone-curve:nth-child(6) { left: 80%; }
+    /* Animate milestones in sequentially */
+    .milestone-curve:nth-child(1) { left: 5%; transition-delay: 0.3s; }
+    .milestone-curve:nth-child(2) { left: 20%; transition-delay: 0.6s; }
+    .milestone-curve:nth-child(3) { left: 35%; transition-delay: 0.9s; }
+    .milestone-curve:nth-child(4) { left: 50%; transition-delay: 1.2s; }
+    .milestone-curve:nth-child(5) { left: 65%; transition-delay: 1.5s; }
+    .milestone-curve:nth-child(6) { left: 80%; transition-delay: 1.8s; }
     
     .milestone-curve .circle {
       margin: 0 auto 0.5rem;
@@ -1770,43 +1778,43 @@
     
     .milestone-curve h4 {
       margin-bottom: 0.3rem;
+      color: var(--primary-soft);
+      transition: color 0.3s ease;
     }
     
     .milestone-curve p {
       font-size: 0.8rem;
     }
     
-    /* Curved connector */
-    .roadmap-curve::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      right: 5%;
-      height: 2px;
-      background: rgba(92, 230, 230, 0.3);
-      z-index: 1;
+    /* Make milestones visible when in view */
+    .roadmap-curve.in-view .roadmap-path,
+    .roadmap-curve.in-view .roadpath-glow {
+      width: 90%;
+    }
+
+    .roadmap-curve.in-view .milestone-curve {
+      opacity: 1;
     }
     
     @media (max-width: 768px) {
       .roadmap-curve {
-        height: 400px;
+        height: 500px;
       }
       
       .milestone-curve {
         width: 120px;
       }
       
-      .milestone-curve:nth-child(1) { left: 5%; top: 20%; }
-      .milestone-curve:nth-child(2) { left: 30%; top: 10%; }
+      /* Stack milestones vertically on mobile */
+      .milestone-curve:nth-child(1) { left: 10%; top: 10%; }
+      .milestone-curve:nth-child(2) { left: 30%; top: 25%; }
       .milestone-curve:nth-child(3) { left: 55%; top: 20%; }
       .milestone-curve:nth-child(4) { left: 55%; top: 60%; }
       .milestone-curve:nth-child(5) { left: 30%; top: 70%; }
       .milestone-curve:nth-child(6) { left: 5%; top: 60%; }
       
       .roadmap-path,
-      .roadpath-glow,
-      .roadmap-curve::before {
+      .roadpath-glow {
         display: none;
       }
     }
@@ -1860,7 +1868,7 @@
         <p>Intuiva is the planning partner I wish I had when starting, something that helps me think through hard questions while keeping me organized. It's about giving your ideas the structure they deserve.</p>
         
         <div class="founder-signature">
-          <img src="images/ilke-avatar.jpg" alt="Ilke Demir" class="founder-avatar">
+          <img src="images/ilke-avatar.webp" alt="Ilke Bengi" class="founder-avatar">
           <div class="founder-info">
             <h4>Ilke Bengi</h4>
             <p>Founder, Tempest Labs</p>
@@ -2009,7 +2017,7 @@
         Intuiva is your lean, thinking assistant designed to help solo founders, creatives, and teams plan smarter without the clutter. It guides you from vision to execution with structure, not stress.
       </p>
 
-      <div class="roadmap-curve">
+      <div class="roadmap-curve" id="roadmapCurve">
         <div class="roadmap-path"></div>
         <div class="roadpath-glow"></div>
         
@@ -2044,7 +2052,6 @@
           <h4>Flow Boards</h4>
           <p>Visualize plan with drag-and-drop</p>
         </div>
-        
         
         <div class="milestone-curve">
           <div class="circle">
@@ -2133,7 +2140,7 @@
                 As an accountant managing multiple client projects simultaneously, efficiency and organization are non-negotiable. INTUIVA has streamlined my entire workflow with an intuitive system that mirrors how real project management should operate clear, simple, and actionable.
               </p>
               <div class="testimonial-author">
-                <img src="images/nalan.png" alt="Nalan Ocak" class="author-avatar" loading="lazy">
+                <img src="images/nalan.webg" alt="Nalan Ocak" class="author-avatar" loading="lazy">
                 <div class="author-info">
                   <h4>Nalan Ocak</h4>
                   <p>Accountant at TTGlobal</p>
@@ -2482,21 +2489,28 @@
           chatWidget.classList.remove('visible');
         }
       });
+
+      // Roadmap Animation
+      const roadmap = document.getElementById('roadmapCurve');
+      if (roadmap) {
+        const roadmapObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              roadmapObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        roadmapObserver.observe(roadmap);
+      }
     });
 
-    // FAQ Accordion
+    // FAQ Accordion - Allow multiple to be open
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
         const answer = question.nextElementSibling;
         const isOpen = question.classList.contains('active');
-        
-        // Close all other FAQs
-        document.querySelectorAll('.faq-question').forEach(q => {
-          if (q !== question) {
-            q.classList.remove('active');
-            q.nextElementSibling.style.maxHeight = null;
-          }
-        });
         
         // Toggle current FAQ
         if (isOpen) {
@@ -2658,43 +2672,71 @@
       chatContainer.classList.toggle('visible');
     }
 
-    // Improved chat responses
+    // Enhanced chat responses
     function getChatResponse(userText) {
       const lowerText = userText.toLowerCase();
       
       // Define responses based on keywords
       const responses = [
         {
+          keywords: ['hi', 'hello', 'hey', 'greetings'],
+          response: "Hello! I'm the Intuiva assistant. How can I help you today?"
+        },
+        {
+          keywords: ['how are you', "how's it going", 'how are things'],
+          response: "I'm just a chatbot, but I'm functioning perfectly! Ready to help you with anything about Intuiva."
+        },
+        {
           keywords: ['feature', 'features', 'what can', 'do'],
-          response: "Intuiva helps you plan projects with AI assistance, create roadmaps, manage tasks, and generate professional reports. Key features include adaptive AI planning, visual roadmapping, backcasting, and one-click PDF exports."
+          response: "Intuiva helps you plan projects with AI assistance, create roadmaps, manage tasks, and generate professional reports. Key features include:\n- Adaptive AI planning\n- Visual roadmapping\n- Backcasting from goals\n- One-click PDF exports\n- Progress analytics"
         },
         {
           keywords: ['price', 'cost', 'how much', 'pricing'],
-          response: "Intuiva offers two pricing options: Basic ($9.99 one-time) and Pro ($24.99 one-time). Both are lifetime purchases with no subscriptions. The Pro version includes unlimited AI usage. You can see all features on our pricing section."
+          response: "Intuiva offers simple one-time pricing:\n\nBasic: $9.99 (3.2M AI tokens)\nPro: $24.99 (Unlimited AI usage)\n\nNo subscriptions, no recurring fees. You can see all features on our pricing section."
         },
         {
-          keywords: ['contact', 'help', 'support', 'email'],
-          response: "You can reach our team at tempestlabsofficial@gmail.com or book a call at tempestlabs.space/contact.html. We're happy to help with any questions!"
+          keywords: ['contact', 'help', 'support', 'email', 'talk to someone'],
+          response: "You can reach our team at:\n\nEmail: tempestlabsofficial@gmail.com\n\nOr book a call: tempestlabs.space/contact.html\n\nWe're happy to help with any questions!"
         },
         {
           keywords: ['security', 'safe', 'data', 'privacy'],
-          response: "We use industry-standard encryption (AES-256) for all data. Your information is protected with secure authentication, and we regularly audit our systems. We only track AI usage for pricing tiers, nothing else."
+          response: "Your security is our priority:\n\n- AES-256 encryption for all data\n- Secure authentication\n- Regular security audits\n- We only track AI usage for pricing tiers\n- No unnecessary data collection"
         },
         {
-          keywords: ['platform', 'device', 'mobile', 'desktop'],
-          response: "Intuiva is a Progressive Web App (PWA) that works on all devices. You can install it on desktop (Chrome/Edge), iOS (via Share menu), and Android (Chrome). It works offline after installation."
+          keywords: ['platform', 'device', 'mobile', 'desktop', 'install'],
+          response: "Intuiva works everywhere as a Progressive Web App (PWA):\n\n- Desktop (Chrome/Edge): Click 'Install'\n- iOS: Use Share → Add to Home Screen\n- Android: Tap 'Install App' in Chrome\n\nWorks offline after installation with automatic updates."
         },
         {
-          keywords: ['founder', 'ilke', 'who made'],
-          response: "Intuiva was created by Ilke Demir, founder of Tempest Labs, to solve the challenges she faced as a solo founder needing better project planning tools."
+          keywords: ['founder', 'ilke', 'who made', 'created by'],
+          response: "Intuiva was created by Ilke Bengi, founder of Tempest Labs, to solve the challenges she faced as a solo founder needing better project planning tools. The goal was to build something that adapts to how creative thinkers work."
         },
         {
-          keywords: ['hi', 'hello', 'hey'],
-          response: "Hello! How can I help you with Intuiva today?"
+          keywords: ['thanks', 'thank you', 'appreciate'],
+          response: "You're very welcome! Let me know if there's anything else I can help you with regarding Intuiva."
         },
         {
-          keywords: ['thanks', 'thank you'],
-          response: "You're welcome! Let me know if you have any other questions about Intuiva."
+          keywords: ['what is intuiva', 'about intuiva', 'describe intuiva'],
+          response: "Intuiva is an AI-powered project planning tool designed specifically for solo founders and small teams. Unlike traditional project management tools that just help organize tasks, Intuiva helps you figure out what needs to be done through intelligent questioning and adaptive planning."
+        },
+        {
+          keywords: ['difference', 'vs', 'compare', 'better than'],
+          response: "Intuiva differs from tools like Trello or Asana in key ways:\n1. Creates plans for you through AI\n2. Adapts to your thinking style\n3. Offers backcasting from goals\n4. One-time purchase (no subscriptions)\n5. Designed for solo founders' needs"
+        },
+        {
+          keywords: ['free trial', 'demo', 'try before'],
+          response: "While we don't offer a free trial, you can watch our demo video to see Intuiva in action. We also offer a 30-day money-back guarantee if you're not satisfied."
+        },
+        {
+          keywords: ['refund', 'money back', 'return'],
+          response: "We offer a 30-day money-back guarantee. If Intuiva doesn't meet your needs, just email us at tempestlabsofficial@gmail.com for a full refund."
+        },
+        {
+          keywords: ['update', 'new features', 'roadmap'],
+          response: "We release updates regularly:\n- Minor updates every 2-3 weeks\n- Major features every 3-4 months\nAll updates are free for existing users - no upgrade fees!"
+        },
+        {
+          keywords: ['team', 'collaborate', 'multiple users'],
+          response: "Intuiva is primarily designed for solo founders, but you can share view-only links of your plans. For team collaboration, each member would need their own license."
         }
       ];
       
@@ -2706,7 +2748,7 @@
       }
       
       // Default response if no keywords match
-      return "I'm not sure about that. You can email tempestlabsofficial@gmail.com for specific questions. Otherwise, ask me about Intuiva's features, pricing, or how it can help with your projects!";
+      return "I'm not sure I understand that question. I can help with information about Intuiva's features, pricing, security, and how it works. Try asking something like:\n\n- What makes Intuiva different?\n- How much does Intuiva cost?\n- Can I see a demo?";
     }
 
     function sendChatMessage() {
@@ -2740,7 +2782,9 @@
         
         const botMsg = document.createElement('div');
         botMsg.className = 'message bot';
-        botMsg.textContent = getChatResponse(userMsg.textContent);
+        const responseText = getChatResponse(userMsg.textContent);
+        // Preserve line breaks in response
+        botMsg.innerHTML = responseText.replace(/\n/g, '<br>');
         messages.appendChild(botMsg);
         messages.scrollTop = messages.scrollHeight;
       }, 1000 + Math.random() * 1000);
@@ -2751,6 +2795,34 @@
     document.getElementById('chatInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         sendChatMessage();
+      }
+    });
+
+    // Roadmap Animation
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate roadmap path
+      const path = document.querySelector('.roadmap-path');
+      const glow = document.querySelector('.roadpath-glow');
+      
+      if (path && glow) {
+        // Initial animation
+        setTimeout(() => {
+          path.style.width = '100%';
+          glow.style.width = '100%';
+        }, 500);
+        
+        // Add hover effects to milestones
+        document.querySelectorAll('.milestone-curve').forEach(milestone => {
+          milestone.addEventListener('mouseenter', () => {
+            milestone.querySelector('.circle').style.transform = 'scale(1.2)';
+            milestone.querySelector('h4').style.color = 'var(--primary)';
+          });
+          
+          milestone.addEventListener('mouseleave', () => {
+            milestone.querySelector('.circle').style.transform = 'scale(1)';
+            milestone.querySelector('h4').style.color = 'var(--primary-soft)';
+          });
+        });
       }
     });
   </script>
