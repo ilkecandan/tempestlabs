@@ -991,143 +991,114 @@
     }
 
     /* How It Works Section - Visual Roadmap */
-    .how-it-works-section {
-    background: #062D34;
-    padding: 60px 20px;
-    text-align: center;
-    color: #E0FFFF;
-    font-family: 'Segoe UI', sans-serif;
+  .how-it-works-section {
+  background: #062D34;
+  padding: 60px 20px;
+  text-align: center;
+  color: #E0FFFF;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.how-it-works-section h2 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff;
+  margin-bottom: 20px;
+}
+
+.how-it-works-section .section-description {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #b0e0e6;
+}
+
+.roadmap-track {
+  margin-top: 3rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.roadmap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  padding: 1rem 2rem;
+  min-width: 1200px;
+}
+
+.roadmap::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #0B1B1C;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.milestone {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 200px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: #0E4954;
+  border: 2px solid #5ce6e6;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #00ffff;
+  box-shadow: 0 0 10px rgba(0,255,255,0.4);
+}
+
+.milestone h4 {
+  color: #5ce6e6;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.milestone p {
+  font-size: 0.85rem;
+  color: #C8CDD0;
+}
+
+@media (max-width: 768px) {
+  .roadmap {
+    flex-direction: column;
+    align-items: center;
+    min-width: unset;
   }
 
-  .how-it-works-section h2 {
-    font-size: 2.5rem;
-    color: #00ffff;
-    text-shadow: 0 0 12px #00ffff;
-    margin-bottom: 20px;
-  }
-
-  .how-it-works-section .section-description {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto 50px;
-    color: #b0e0e6;
-  }
-
-  .roadmap-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 60px;
-  }
-
-  .road {
-    position: relative;
-    height: 120px;
-    width: 100%;
-    margin: auto;
-  }
-
-  .road::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background: #0B1B1C;
-    border-radius: 5px;
-    z-index: 1;
-    transform: translateY(-50%);
-  }
-
-  .milestones {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    z-index: 2;
+  .roadmap::before {
+    top: unset;
+    left: 50%;
+    height: auto;
+    width: 6px;
+    bottom: 0;
+    top: 0;
+    transform: translateX(-50%);
   }
 
   .milestone {
-    background: #0E4954;
-    border: 2px solid #58BCC5;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    color: #fff;
-    box-shadow: 0 0 15px #58BCC5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transition: all 0.3s ease;
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
+}
 
-  .milestone:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px #00ffff;
-  }
-
-  .milestone-icon svg {
-    stroke: #00ffff;
-  }
-
-  .milestone-title {
-    margin-top: 5px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  .milestone-text {
-    position: absolute;
-    bottom: -110px;
-    background: rgba(11, 27, 28, 0.95);
-    padding: 12px;
-    border-radius: 10px;
-    width: 220px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-    z-index: 3;
-  }
-
-  .milestone:hover .milestone-text {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(-10px);
-  }
-
-  .milestone-text h3 {
-    color: #58BCC5;
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-
-  .milestone-text p {
-    font-size: 0.85rem;
-    color: #c8cdd0;
-    margin: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .milestones {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .milestone-text {
-      bottom: auto;
-      top: 100px;
-    }
-
-    .road::before {
-      display: none;
-    }
-  }
 
     /* PWA Sidebar */
     .pwa-sidebar {
@@ -1527,98 +1498,60 @@
     <div class="section-divider"></div>
 
     <!-- How It Works Section -->
-
- <section id="how-it-works" class="how-it-works-section">
+<section id="how-it-works" class="how-it-works-section">
   <h2>How Intuiva Works</h2>
   <p class="section-description">
     Intuiva is your lean, thinking assistant designed to help solo founders, creatives, and teams plan smarter without the clutter. It guides you from vision to execution with structure, not stress.
   </p>
 
-  <div class="roadmap-container">
-    <div class="road"></div>
-    <div class="milestones">
-      <!-- Milestone 1 -->
+  <div class="roadmap-track">
+    <div class="roadmap">
       <div class="milestone">
-        <div class="milestone-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
-          </svg>
+        <div class="circle">
+          <i class="fas fa-check"></i>
         </div>
-        <div class="milestone-title">Setup</div>
-        <div class="milestone-text">
-          <h3>Set Up Your Project</h3>
-          <p>Create your account and start instantly. You'll land in the Project Planner, where the journey begins.</p>
-        </div>
+        <h4>Setup</h4>
+        <p>Create your account and start instantly. Land in the Project Planner where the journey begins.</p>
       </div>
 
-      <!-- Milestone 2 -->
       <div class="milestone">
-        <div class="milestone-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2m-4-10a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
-          </svg>
+        <div class="circle">
+          <i class="fas fa-clock"></i>
         </div>
-        <div class="milestone-title">AI Questions</div>
-        <div class="milestone-text">
-          <h3>Answer Targeted AI Questions</h3>
-          <p>Intuiva asks sharp questions about your project goals, risks, and timeline. Skip or revisit anytime.</p>
-        </div>
+        <h4>AI Questions</h4>
+        <p>Answer sharp questions about your goals, risks, and timeline. Skip or revisit anytime.</p>
       </div>
 
-      <!-- Milestone 3 -->
       <div class="milestone">
-        <div class="milestone-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 5v14h14V5H5zm2 2h10v10H7V7z" />
-          </svg>
+        <div class="circle">
+          <i class="fas fa-file-alt"></i>
         </div>
-        <div class="milestone-title">Blueprint</div>
-        <div class="milestone-text">
-          <h3>Receive Your Strategy Blueprint</h3>
-          <p>Get a custom plan with milestones, risks, and tactical advice. Download as a polished PDF.</p>
-        </div>
+        <h4>Blueprint</h4>
+        <p>Receive a tactical plan with milestones, risks, and advice. Download a polished PDF.</p>
       </div>
 
-      <!-- Milestone 4 -->
       <div class="milestone">
-        <div class="milestone-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-          </svg>
+        <div class="circle">
+          <i class="fas fa-project-diagram"></i>
         </div>
-        <div class="milestone-title">Flow Boards</div>
-        <div class="milestone-text">
-          <h3>Visualize It with Flow Boards</h3>
-          <p>Turn your strategy into an interactive Flow Board. Customize, drag-drop, and manage freely.</p>
-        </div>
+        <h4>Flow Boards</h4>
+        <p>Visualize your plan with a drag-and-drop Flow Board. Customize and manage freely.</p>
       </div>
 
-      <!-- Milestone 5 -->
       <div class="milestone">
-        <div class="milestone-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v12m0 0l3-3m-3 3l-3-3m9-5h.01M15 19h2a2 2 0 0 0 2-2v-2H5v2a2 2 0 0 0 2 2h2" />
-          </svg>
+        <div class="circle">
+          <i class="fas fa-download"></i>
         </div>
-        <div class="milestone-title">Export</div>
-        <div class="milestone-text">
-          <h3>Export, Save, and Share</h3>
-          <p>Export your reports and Flow Boards as PDFs. Share read-only links with teammates or clients.</p>
-        </div>
+        <h4>Export</h4>
+        <p>Download reports and boards as PDFs. Share read-only links with others.</p>
       </div>
 
-      <!-- Milestone 6 -->
       <div class="milestone">
-        <div class="milestone-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3M12 4a8 8 0 1 0 8 8" />
-          </svg>
+        <div class="circle">
+          <i class="fas fa-undo-alt"></i>
         </div>
-        <div class="milestone-title">Backcasting</div>
-        <div class="milestone-text">
-          <h3>Optional: Use Backcasting Mode</h3>
-          <p>Start from your goal and work backwards. Calculate key checkpoints automatically.</p>
-        </div>
+        <h4>Backcasting</h4>
+        <p>Define your future goal, then work backwards with automated milestone logic.</p>
       </div>
     </div>
   </div>
