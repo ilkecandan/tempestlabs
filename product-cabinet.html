@@ -69,6 +69,39 @@
         line-height: 1.2;
         color: var(--parchment);
         letter-spacing: 0.5px;
+        position: relative;
+    }
+
+    /* Section title micro-illustrations */
+    h2::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.1;
+    }
+
+    /* Different micro-icons for each section */
+    #features h2::before {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23D5A5C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>');
+    }
+
+    #visualization h2::before {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23BBA45C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>');
+    }
+
+    #how-it-works h2::before {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23D5A5C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>');
+    }
+
+    #pricing h2::before {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23BBA45C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>');
     }
 
     h1 { 
@@ -185,6 +218,15 @@
 
     .nav-links a:hover {
         color: var(--parchment);
+    }
+
+    .nav-links a.active {
+        color: var(--parchment);
+        font-weight: 600;
+    }
+
+    .nav-links a.active::after {
+        width: 100%;
     }
 
     .nav-links a::after {
@@ -332,8 +374,7 @@
     }
 
     .hero-image-container:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
     }
 
     .hero-image {
@@ -1008,6 +1049,20 @@
         justify-content: center;
     }
 
+    /* CTA Light Source Effect */
+    .cta::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(187, 164, 92, 0.2) 0%, transparent 70%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
     /* PWA Installation Section */
     .pwa-install {
         position: relative;
@@ -1280,6 +1335,47 @@
         z-index: -1;
     }
 
+    /* Progress indicator */
+    .progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 100vh;
+        z-index: 999;
+    }
+
+    .progress-bar {
+        width: 100%;
+        background: linear-gradient(to bottom, var(--mauve-mist), var(--sacred-gold));
+        height: 0%;
+        transition: height 0.1s ease;
+    }
+
+    .progress-dots {
+        position: absolute;
+        right: -4px;
+        width: 16px;
+        height: 100%;
+    }
+
+    .progress-dot {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: var(--weathered-silver);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        transition: all 0.3s ease;
+    }
+
+    .progress-dot.active {
+        width: 12px;
+        height: 12px;
+        background: var(--sacred-gold);
+        box-shadow: 0 0 10px var(--sacred-gold);
+    }
+
     /* Animations */
     @keyframes float {
         0%, 100% { transform: translateY(0) translateX(0); }
@@ -1457,6 +1553,11 @@
         .swiper {
             padding: 2rem 0;
         }
+
+        /* Hide progress indicator on mobile */
+        .progress-container {
+            display: none;
+        }
     }
 
     @media (max-width: 576px) {
@@ -1517,6 +1618,12 @@
     </style>
 </head>
 <body>
+    <!-- Progress Indicator -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-dots" id="progressDots"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <a href="#" class="logo">
@@ -1532,6 +1639,9 @@
             <a href="#app-screenshots">Journey</a>
             <a href="#testimonials">Experiences</a>
             <a href="#faq">Wisdom</a>
+            <a href="https://tempestlabs.space/paytment.html" class="btn btn-primary" style="margin-left: 1rem;">
+                <i data-lucide="shopping-cart"></i> Get Now
+            </a>
         </div>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i data-lucide="menu"></i>
@@ -2328,6 +2438,58 @@
                 }, 1000);
             });
         }, 5000);
+
+        // Progress indicator functionality
+        const progressBar = document.getElementById('progressBar');
+        const progressDots = document.getElementById('progressDots');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        // Create progress dots
+        sections.forEach((section, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('progress-dot');
+            dot.dataset.section = section.id;
+            progressDots.appendChild(dot);
+            
+            // Position dots evenly
+            dot.style.top = `${(index / (sections.length - 1)) * 100}%`;
+        });
+
+        // Update progress bar and active section
+        function updateProgress() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Calculate scroll percentage
+            const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
+            progressBar.style.height = `${scrollPercentage}%`;
+            
+            // Update active dot and nav link
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    const dot = document.querySelector(`.progress-dot[data-section="${section.id}"]`);
+                    document.querySelectorAll('.progress-dot').forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${section.id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        // Initialize progress indicator
+        updateProgress();
+        window.addEventListener('scroll', updateProgress);
+        window.addEventListener('resize', updateProgress);
     </script>
 </body>
 </html>
