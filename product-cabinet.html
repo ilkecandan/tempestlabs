@@ -465,6 +465,104 @@
         color: var(--parchment);
     }
 
+    /* Pricing Section */
+    .pricing {
+        position: relative;
+        background: var(--section-bg);
+    }
+
+    .pricing::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 70%, rgba(187, 164, 92, 0.1) 0%, transparent 40%);
+        z-index: 0;
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .pricing-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        transition: all 0.5s ease;
+        border: 1px solid var(--border-color);
+        backdrop-filter: blur(5px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pricing-card.featured {
+        border: 2px solid var(--mauve-mist);
+        transform: translateY(-10px);
+    }
+
+    .pricing-card.featured::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: 15px;
+        right: -40px;
+        background: var(--mauve-mist);
+        color: var(--cosmic-deep);
+        padding: 0.3rem 2.5rem;
+        transform: rotate(45deg);
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .pricing-name {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--parchment);
+    }
+
+    .pricing-price {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--sacred-gold);
+    }
+
+    .pricing-period {
+        font-size: 1rem;
+        color: var(--weathered-silver);
+    }
+
+    .pricing-features {
+        margin: 2rem 0;
+        text-align: left;
+    }
+
+    .pricing-features li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .pricing-features i {
+        color: var(--sacred-gold);
+    }
+
+    .pricing-button {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
     /* How It Works Section */
     .how-it-works {
         background: var(--section-bg);
@@ -1233,6 +1331,14 @@
             padding: 4rem 0;
         }
 
+        .pricing-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .pricing-card.featured {
+            transform: none;
+        }
+
         .cta-buttons {
             flex-direction: column;
             align-items: center;
@@ -1316,6 +1422,7 @@
         <div class="nav-links">
             <a href="#ifs-intro">The Science</a>
             <a href="#features">Exploration</a>
+            <a href="#pricing">Pricing</a>
             <a href="#how-it-works">Process</a>
             <a href="#app-screenshots">Journey</a>
             <a href="#testimonials">Experiences</a>
@@ -1345,7 +1452,7 @@
                     </div>
                 </div>
                 <div class="hero-image-container animate__animated animate__fadeInRight">
-                    <img src="/images/cabin1.webp" alt="Mythic character representing inner selves" class="hero-image">
+                    <img src="/images/peoplen.webp" alt="People exploring their inner selves" class="hero-image">
                 </div>
             </div>
         </div>
@@ -1360,6 +1467,7 @@
                     <p>Internal Family Systems (IFS) is an evidence-based psychotherapy approach developed by Dr. Richard Schwartz in the 1980s. It recognizes the mind as naturally multiple - a system of interacting subpersonalities each with valuable qualities.</p>
                     <p>IFS therapy helps individuals access their core Self - the calm, curious, compassionate center of consciousness that can heal wounded parts and restore inner harmony.</p>
                     <p>Cabinet of Selves adapts these clinical insights into a structured self-exploration tool, helping you map your internal system without requiring therapy.</p>
+                    <p class="text-gold"><strong>Important:</strong> This is not a replacement for therapy. We recommend working with an <a href="https://ifs-institute.com/find-a-therapist" target="_blank" style="color: var(--sacred-gold); text-decoration: underline;">IFS-trained therapist</a> for clinical issues.</p>
                 </div>
                 <div>
                     <img src="/images/cabin2.webp" alt="IFS therapy visualization" class="ifs-image">
@@ -1422,6 +1530,29 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Journey</h2>
+                <p>Simple, transparent pricing to support your psychological exploration</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Explorer</h3>
+                    <div class="pricing-price">$9.99<span class="pricing-period">/month</span></div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Basic parts mapping</li>
+                        <li><i data-lucide="check"></i> Simple system visualization</li>
+                        <li><i data-lucide="check"></i> Local data storage only</li>
+                        <li><i data-lucide="check"></i> PDF export capability</li>
+                    </ul>
+                    <a href="https://tempestlabs.space/paytment.html" target="_blank" class="btn btn-secondary pricing-button">Start Exploring</a>
+                </div>            
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
@@ -1475,6 +1606,9 @@
                     <div class="swiper-slide">
                         <img src="/images/cabin6.webp" alt="Healing progress tracking">
                     </div>
+                    <div class="swiper-slide">
+                        <img src="/images/cabin1.webp" alt="AI-assisted insights">
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev"></div>
@@ -1522,6 +1656,9 @@
                     <canvas id="moodChart" width="400" height="400"></canvas>
                 </div>
             </div>
+            <div class="text-center mt-3">
+                <p><strong>Your data stays private:</strong> All information is stored locally on your device. You can export your data as PDF at any time.</p>
+            </div>
         </div>
     </section>
 
@@ -1539,7 +1676,8 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>No. Cabinet of Selves is designed as a self-help tool based on therapeutic principles, but it doesn't replace professional mental health care. For clinical issues, we recommend working with an IFS-trained therapist.</p>
+                        <p>No. Cabinet of Selves is designed as a self-help tool based on therapeutic principles, but it doesn't replace professional mental health care. For clinical issues, we recommend working with an <a href="https://ifs-institute.com/find-a-therapist" target="_blank">IFS-trained therapist</a>.</p>
+                        <p class="mt-2"><strong>Important Note:</strong> We are not therapists. This tool is meant to complement therapy, not replace it.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1549,6 +1687,7 @@
                     </div>
                     <div class="faq-answer">
                         <p>While journaling is valuable, our tool provides structured clinical protocols from IFS therapy. The mapping and visualization tools help you see systemic relationships between parts that traditional journaling might miss.</p>
+                        <p class="mt-2">We also use <strong>DeepSeek's AI API</strong> to provide insights while maintaining your privacy - all processing happens locally on your device.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1557,7 +1696,8 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely. We use end-to-end encryption and never share your data. Your psychological work remains completely private, with options to export or delete all information at any time.</p>
+                        <p>Absolutely. We use a <strong>local storage only</strong> approach - your data never leaves your device. There are no user profiles or accounts to create. You can export your work as PDF for your records or to share with your therapist.</p>
+                        <p class="mt-2">For added security, the app includes an option to completely wipe all local data at any time.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1567,6 +1707,7 @@
                     </div>
                     <div class="faq-answer">
                         <p>The tool includes grounding exercises and pacing protocols. However, if you encounter overwhelming material, we recommend pausing and consulting a mental health professional before continuing your work.</p>
+                        <p class="mt-2">Remember: This is a <strong>self-exploration tool</strong>, not a therapeutic intervention. Proceed at your own pace.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1576,6 +1717,7 @@
                     </div>
                     <div class="faq-answer">
                         <p>Many therapists recommend using Cabinet of Selves to reinforce clinical work. You can share your maps and insights with your therapist to enhance your sessions. Always follow your therapist's guidance.</p>
+                        <p class="mt-2">We provide PDF export specifically for this purpose - to facilitate communication between you and your mental health professional.</p>
                     </div>
                 </div>
             </div>
@@ -1643,6 +1785,7 @@
                         Cabinet of Selves
                     </a>
                     <p>A psychological tool for internal exploration based on Internal Family Systems therapy principles.</p>
+                    <p><strong>Note:</strong> This is not therapy. We provide tools to complement therapeutic work.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i data-lucide="twitter"></i></a>
                         <a href="#" class="social-link"><i data-lucide="instagram"></i></a>
@@ -1652,28 +1795,28 @@
                 <div class="footer-links">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="#"><i data-lucide="file-text"></i> IFS Research</a></li>
-                        <li><a href="#"><i data-lucide="book-open"></i> Clinical Guides</a></li>
-                        <li><a href="#"><i data-lucide="users"></i> Therapist Directory</a></li>
-                        <li><a href="#"><i data-lucide="library-big"></i> Psychology Studies</a></li>
+                        <li><a href="https://ifs-institute.com/resources" target="_blank"><i data-lucide="file-text"></i> IFS Research</a></li>
+                        <li><a href="https://selfleadership.org/ifs-resources" target="_blank"><i data-lucide="book-open"></i> Clinical Guides</a></li>
+                        <li><a href="https://ifs-institute.com/find-a-therapist" target="_blank"><i data-lucide="users"></i> Therapist Directory</a></li>
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8121108/" target="_blank"><i data-lucide="library-big"></i> Psychology Studies</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h3>Organization</h3>
                     <ul>
-                        <li><a href="#"><i data-lucide="info"></i> About Tempest Labs</a></li>
-                        <li><a href="#"><i data-lucide="mail"></i> Clinical Contact</a></li>
-                        <li><a href="#"><i data-lucide="shield"></i> Privacy Policy</a></li>
-                        <li><a href="#"><i data-lucide="file-text"></i> Terms of Service</a></li>
+                        <li><a href="https://tempestlabs.space/about.html" target="_blank"><i data-lucide="info"></i> About Tempest Labs</a></li>
+                        <li><a href="mailto:contact@tempestlabs.space"><i data-lucide="mail"></i> Clinical Contact</a></li>
+                        <li><a href="https://tempestlabs.space/privacy.html" target="_blank"><i data-lucide="shield"></i> Privacy Policy</a></li>
+                        <li><a href="https://tempestlabs.space/terms.html" target="_blank"><i data-lucide="file-text"></i> Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h3>Support</h3>
                     <ul>
-                        <li><a href="#"><i data-lucide="help-circle"></i> Psychological FAQ</a></li>
-                        <li><a href="#"><i data-lucide="message-square"></i> Therapeutic Support</a></li>
-                        <li><a href="#"><i data-lucide="lightbulb"></i> Integration Tips</a></li>
-                        <li><a href="#"><i data-lucide="heart-handshake"></i> Community</a></li>
+                        <li><a href="#faq"><i data-lucide="help-circle"></i> Psychological FAQ</a></li>
+                        <li><a href="mailto:support@tempestlabs.space"><i data-lucide="message-square"></i> Therapeutic Support</a></li>
+                        <li><a href="https://ifs-institute.com/blog" target="_blank"><i data-lucide="lightbulb"></i> Integration Tips</a></li>
+                        <li><a href="https://www.reddit.com/r/InternalFamilySystems/" target="_blank"><i data-lucide="heart-handshake"></i> Community</a></li>
                     </ul>
                 </div>
             </div>
