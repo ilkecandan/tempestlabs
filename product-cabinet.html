@@ -887,6 +887,37 @@
         updateProgress();
         window.addEventListener('scroll', updateProgress);
         window.addEventListener('resize', updateProgress);
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Swiper after DOM is fully loaded
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-next',
+        },
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 10,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        }
+    });
+});
     </script>
 </body>
 </html>
