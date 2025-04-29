@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" href="/images/tempest.png" type="image/x-icon">
+    <link rel="icon" href="/images/tempest.png" type="image/x-icon">
     <meta name="description" content="Cabinet of Selves - An Internal Family Systems (IFS) tool for psychological integration and emotional healing">
     <title>Cabinet of Selves | IFS-Inspired Psychological Tool</title>
     
@@ -465,6 +465,89 @@
         color: var(--parchment);
     }
 
+    /* Visualization Importance Section */
+    .visualization-section {
+        position: relative;
+        background: var(--section-bg);
+    }
+
+    .visualization-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="%23D5A5C9" stroke-width="0.3" opacity="0.1"/></svg>');
+        z-index: 0;
+    }
+
+    .visualization-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .visualization-image {
+        border-radius: 0.5rem;
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+        width: 100%;
+        height: auto;
+    }
+
+    /* Multilingual Section */
+    .multilingual-section {
+        position: relative;
+    }
+
+    .multilingual-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 70%, rgba(187, 164, 92, 0.1) 0%, transparent 40%);
+        z-index: -1;
+    }
+
+    .language-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .language-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        transition: all 0.5s ease;
+        border: 1px solid var(--border-color);
+        backdrop-filter: blur(5px);
+    }
+
+    .language-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .language-flag {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        background: rgba(187, 164, 92, 0.1);
+        border: 1px solid var(--border-color);
+    }
+
     /* Pricing Section */
     .pricing {
         position: relative;
@@ -481,7 +564,6 @@
         background: radial-gradient(circle at 30% 70%, rgba(187, 164, 92, 0.1) 0%, transparent 40%);
         z-index: 0;
     }
-
 
     .pricing-card {
         background: var(--card-bg);
@@ -1190,15 +1272,23 @@
         border-radius: 0.5rem;
     }
 
+    /* Floating particles */
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
     /* Animations */
     @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(var(--y-movement, -15px)) translateX(var(--x-movement, 0)); }
     }
 
     @keyframes pulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.1); }
     }
 
     @keyframes rotate {
@@ -1210,6 +1300,11 @@
         0% { transform: translateX(-10%) translateY(-5%); }
         50% { transform: translateX(10%) translateY(5%); }
         100% { transform: translateX(-10%) translateY(-5%); }
+    }
+
+    @keyframes shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
     }
 
     .animate-float {
@@ -1227,6 +1322,12 @@
     .animate-mist {
         animation: mist 60s linear infinite;
         opacity: 0.1;
+    }
+
+    .animate-shimmer {
+        animation: shimmer 8s linear infinite;
+        background: linear-gradient(90deg, rgba(187,164,92,0.1) 0%, rgba(213,165,201,0.2) 50%, rgba(187,164,92,0.1) 100%);
+        background-size: 1000px 100%;
     }
 
     /* Responsive Design */
@@ -1267,6 +1368,15 @@
         }
 
         .ifs-image {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .visualization-content {
+            grid-template-columns: 1fr;
+        }
+
+        .visualization-image {
             max-width: 500px;
             margin: 0 auto;
         }
@@ -1417,8 +1527,7 @@
             <a href="#pricing">Buy Now</a>
             <a href="#ifs-intro">The Science</a>
             <a href="#features">Exploration</a>
-            <a href="#pricing">Pricing</a>
-
+            <a href="#visualization">Visualization</a>
             <a href="#how-it-works">Process</a>
             <a href="#app-screenshots">Journey</a>
             <a href="#testimonials">Experiences</a>
@@ -1526,6 +1635,62 @@
         </div>
     </section>
 
+    <!-- Visualization Importance Section -->
+    <section id="visualization" class="visualization-section">
+        <div class="container">
+            <div class="visualization-content">
+                <div>
+                    <img src="/images/visualization.webp" alt="Mind visualization techniques" class="visualization-image">
+                </div>
+                <div class="ifs-text">
+                    <h2>The Power of Visualization</h2>
+                    <p>Visualization is a powerful therapeutic tool that bridges the gap between conscious and unconscious processes, allowing for deeper self-understanding and integration.</p>
+                    
+                    <h3 class="mt-2">Self-Concept Exploration</h3>
+                    <p>Visualization allows individuals to mentally simulate different scenarios, aiding in the understanding and integration of various self-aspects. By creating mental images of our internal parts, we can engage with them more directly and compassionately.</p>
+                    
+                    <h3 class="mt-2">Therapeutic Techniques</h3>
+                    <p>Practices like guided imagery can help individuals confront and reconcile conflicting parts of their identity, fostering a cohesive self-concept. Research shows that visualization activates the same neural networks as actual experiences, making it a potent tool for psychological change.</p>
+                    
+                    <p class="text-gold mt-2"><strong>Our Approach:</strong> Cabinet of Selves provides structured visualization exercises based on clinical IFS techniques to help you safely explore your inner world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multilingual Section -->
+    <section id="multilingual" class="multilingual-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available in Your Language</h2>
+                <p>Psychological exploration without language barriers</p>
+            </div>
+            <div class="language-cards">
+                <div class="language-card">
+                    <div class="language-flag">
+                        🇬🇧
+                    </div>
+                    <h3>English</h3>
+                    <p>Full content available with culturally adapted examples and metaphors for English speakers.</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-flag">
+                        🇩🇪
+                    </div>
+                    <h3>German</h3>
+                    <p>Complete translation with attention to German psychological terminology and cultural context.</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-flag">
+                        🇹🇷
+                    </div>
+                    <h3>Turkish</h3>
+                    <p>Localized content that respects Turkish cultural perspectives on self and identity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <a href="https://tempestlabs.space/paytment.html" target="_blank" style="text-decoration: none; color: inherit;">
     <section id="pricing" class="pricing">
@@ -1549,8 +1714,7 @@
             </div>
         </div>
     </section>
-</a>
-
+    </a>
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
@@ -1651,11 +1815,11 @@
         <div class="container">
             <div class="section-header">
                 <h2>Mapping Your Psychological Landscape</h2>
-                <p>Track your progress in developing Self-leadership and reducing extreme behaviors</p>
+                <p>Track your progress in developing greater happiness and well-being</p>
             </div>
             <div class="viz-container">
                 <div class="viz-card">
-                    <canvas id="moodChart" width="400" height="400"></canvas>
+                    <canvas id="happinessChart" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="text-center mt-3">
@@ -1839,28 +2003,23 @@
         // Initialize Lucide icons
         lucide.createIcons();
         
-        // Initialize mood chart
-        const moodCtx = document.getElementById('moodChart').getContext('2d');
-        const moodChart = new Chart(moodCtx, {
+        // Initialize happiness chart
+        const happinessCtx = document.getElementById('happinessChart').getContext('2d');
+        const happinessChart = new Chart(happinessCtx, {
             type: 'line',
             data: {
                 labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
                 datasets: [{
-                    label: 'Self-Energy',
-                    data: [2.8, 3.2, 3.5, 3.9, 4.2, 4.5],
+                    label: 'Happiness Level',
+                    data: [3.2, 3.5, 3.8, 4.2, 4.5, 4.7],
                     borderColor: '#BBA45C',
                     backgroundColor: 'rgba(187, 164, 92, 0.1)',
                     borderWidth: 3,
                     fill: true,
-                    tension: 0.3
-                }, {
-                    label: 'Part Activation',
-                    data: [4.2, 3.8, 3.5, 3.1, 2.7, 2.3],
-                    borderColor: '#D5A5C9',
-                    backgroundColor: 'rgba(213, 165, 201, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.3
+                    tension: 0.3,
+                    pointBackgroundColor: '#D5A5C9',
+                    pointRadius: 5,
+                    pointHoverRadius: 7
                 }]
             },
             options: {
@@ -1868,17 +2027,28 @@
                 plugins: {
                     legend: {
                         position: 'top',
+                        labels: {
+                            color: '#E4DCCC',
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        }
                     },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
                                 return `${context.dataset.label}: ${context.raw}/5`;
                             }
-                        }
+                        },
+                        backgroundColor: 'rgba(9, 26, 43, 0.9)',
+                        titleColor: '#E4DCCC',
+                        bodyColor: '#C5BCAB',
+                        borderColor: '#BBA45C',
+                        borderWidth: 1
                     },
                     title: {
                         display: true,
-                        text: 'Therapeutic Progress Over 6 Weeks',
+                        text: 'Happiness Progress Over 6 Weeks',
                         font: {
                             size: 16,
                             family: "'Cormorant', serif"
@@ -1892,7 +2062,10 @@
                         max: 5,
                         ticks: {
                             stepSize: 1,
-                            color: '#C5BCAB'
+                            color: '#C5BCAB',
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
                         },
                         grid: {
                             color: 'rgba(197, 188, 171, 0.1)'
@@ -1900,7 +2073,10 @@
                     },
                     x: {
                         ticks: {
-                            color: '#C5BCAB'
+                            color: '#C5BCAB',
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
                         },
                         grid: {
                             color: 'rgba(197, 188, 171, 0.1)'
@@ -1944,6 +2120,15 @@
             question.addEventListener('click', () => {
                 const item = question.parentElement;
                 item.classList.toggle('active');
+                
+                // Close other open FAQs
+                if (item.classList.contains('active')) {
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                }
             });
         });
 
@@ -2063,7 +2248,7 @@
 
         // Add animation to elements when they come into view
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .step-card, .pwa-step');
+            const elements = document.querySelectorAll('.feature-card, .step-card, .pwa-step, .language-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -2078,55 +2263,72 @@
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Run once on page load
 
-        // Add cosmic particles to hero section
-        function createCosmicParticles() {
-            const hero = document.querySelector('.hero');
-            const particleCount = 20;
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.createElement('div');
+            particlesContainer.style.position = 'fixed';
+            particlesContainer.style.top = '0';
+            particlesContainer.style.left = '0';
+            particlesContainer.style.width = '100%';
+            particlesContainer.style.height = '100%';
+            particlesContainer.style.pointerEvents = 'none';
+            particlesContainer.style.zIndex = '-1';
+            document.body.appendChild(particlesContainer);
+
+            const particleCount = 30;
+            const colors = ['#BBA45C', '#D5A5C9', '#E4DCCC'];
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
-                particle.style.position = 'absolute';
-                particle.style.width = `${Math.random() * 5 + 2}px`;
-                particle.style.height = particle.style.width;
-                particle.style.background = Math.random() > 0.5 ? 'var(--mauve-mist)' : 'var(--sacred-gold)';
-                particle.style.borderRadius = '50%';
-                particle.style.opacity = Math.random() * 0.5 + 0.1;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.zIndex = '0';
+                particle.classList.add('particle');
                 
-                // Random animation
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const xPos = Math.random() * 100;
+                const yPos = Math.random() * 100;
                 const duration = Math.random() * 20 + 10;
                 const delay = Math.random() * -20;
-                const xMovement = (Math.random() - 0.5) * 100;
-                const yMovement = (Math.random() - 0.5) * 100;
+                const xMovement = (Math.random() - 0.5) * 50;
+                const yMovement = (Math.random() - 0.5) * 50;
                 
-                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                // Apply properties
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.background = color;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particle.style.left = `${xPos}%`;
+                particle.style.top = `${yPos}%`;
                 particle.style.setProperty('--x-movement', `${xMovement}px`);
                 particle.style.setProperty('--y-movement', `${yMovement}px`);
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
                 
-                hero.appendChild(particle);
+                particlesContainer.appendChild(particle);
             }
         }
 
-        createCosmicParticles();
+        createParticles();
 
-        // Add mist effect
-        function createMistEffect() {
-            const hero = document.querySelector('.hero');
-            const mist = document.createElement('div');
-            mist.style.position = 'absolute';
-            mist.style.top = '0';
-            mist.style.left = '0';
-            mist.style.width = '100%';
-            mist.style.height = '100%';
-            mist.style.background = 'radial-gradient(circle at center, rgba(213, 165, 201, 0.03), transparent 60%)';
-            mist.style.zIndex = '0';
-            mist.classList.add('animate-mist');
-            hero.appendChild(mist);
-        }
+        // Add shimmer effect to feature cards on hover
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('animate-shimmer');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('animate-shimmer');
+            });
+        });
 
-        createMistEffect();
+        // Add subtle pulse animation to CTA buttons
+        setInterval(() => {
+            document.querySelectorAll('.btn-primary').forEach(btn => {
+                btn.classList.add('animate-pulse');
+                setTimeout(() => {
+                    btn.classList.remove('animate-pulse');
+                }, 1000);
+            });
+        }, 5000);
     </script>
 </body>
 </html>
