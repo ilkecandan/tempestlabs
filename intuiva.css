@@ -989,7 +989,7 @@
 
 .how-it-works-section {
   background: linear-gradient(135deg, #062D34 0%, #0B1B1C 100%);
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1rem 1.5rem 3rem; /* cut top, give bottom */
   position: relative;
   overflow: hidden;
 }
@@ -1009,9 +1009,9 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  height: 300px; /* reduced from 360px */
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
+  height: 320px; /* slightly reduced */
+  margin-top: 0.5rem; /* minimized top gap */
+  margin-bottom: 3.5rem; /* generous bottom padding */
   z-index: 2;
 }
 
@@ -1042,7 +1042,7 @@
 
 .milestone-curve {
   position: absolute;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -40%); /* more upward position */
   text-align: center;
   z-index: 3;
   animation: fadeInUp 1s ease forwards;
