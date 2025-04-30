@@ -1009,11 +1009,12 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  height: 300px; /* slightly lower curve base */
-  margin-top: 0.2rem; /* practically no top margin */
-  margin-bottom: 4.5rem; /* more breathing space below */
+  height: 280px; /* was 300px */
+  margin-top: -2rem; /* this is the magic lift */
+  margin-bottom: 4.5rem;
   z-index: 2;
-}}
+}
+
 
 .road-svg {
   width: 100%;
