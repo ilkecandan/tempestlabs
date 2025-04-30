@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/images/tempest.png" type="image/x-icon">
     <meta name="description" content="FunnelFlow by Tempest Labs - Visual marketing dashboard that turns chaos into crystal clear funnels with a calm, human-centered approach.">
     <title>FunnelFlow - Visual Marketing Dashboard | Tempest Labs</title>
     
@@ -210,27 +211,27 @@
         /* Hero Section */
 
 .hero {
-    padding-top: 4rem; /* Reduce top padding for alignment */
-    padding-bottom: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     background-image: url('images/herofunnel.webp');
-    background-size: contain;
-    background-position: right center;
+    background-size: cover; /* Fills entire section */
+    background-position: center center; /* centers image */
     background-repeat: no-repeat;
     background-color: var(--bg);
     display: flex;
     align-items: flex-start;
-    height: 100vh;
+    min-height: 100vh; /* ensures full viewport coverage */
 }
 
 .hero-container {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: none; /* remove width limits */
     padding: 0 var(--space-md);
 }
+
 
         
         .hero-content {
