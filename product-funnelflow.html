@@ -190,78 +190,92 @@
             width: 100%;
         }
         
+
         /* Hero Section */
-        .hero {
-            padding-top: 8rem;
-            padding-bottom: 6rem;
-            background-color: var(--bg);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: center;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-title {
-            margin-bottom: var(--space-md);
-            position: relative;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: var(--space-md);
-            max-width: 90%;
-        }
-        
-        .hero-illustration {
-            position: relative;
-            height: 400px;
-            background-color: var(--bg-soft);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-soft);
-            overflow: hidden;
-        }
-        
-        .hero-illustration:before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle at center, var(--symbol-glow) 0%, transparent 70%);
-            opacity: 0.3;
-        }
-        
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background-color: var(--accent-pink);
-            color: white;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: 8px;
-            font-family: var(--font-serif);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 12px rgba(255,182,193,0.3);
-            transition: var(--transition);
-        }
-        
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255,182,193,0.4);
-        }
+.hero {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    background-image: url('images/funnelbackground.webp'); /* Background Image */
+    background-size: cover; /* Ensures the image covers the whole hero section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-color: var(--bg); /* Fallback color */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container for content */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+/* Hero content (text area) */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures content is above the background */
+}
+
+/* Title style */
+.hero-title {
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+/* Subtitle style */
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+    max-width: 90%;
+}
+
+/* Hero illustration box */
+.hero-illustration {
+    position: relative;
+    height: 400px;
+    background-color: var(--bg-soft); /* Soft background color */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+/* Hero illustration glow effect */
+.hero-illustration:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at center, var(--symbol-glow) 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+/* CTA Button Style */
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background-color: var(--accent-pink);
+    color: white;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 8px;
+    font-family: var(--font-serif);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(255,182,193,0.3);
+    transition: var(--transition);
+}
+
+/* CTA Button Hover Effect */
+.hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255,182,193,0.4);
+}
+
         
         /* Funnel Basics */
         .funnel-basics {
@@ -1055,9 +1069,8 @@
             </nav>
         </div>
     </header>
-
-    <!-- Hero Section -->
-  <section class="hero" id="hero">
+<!-- Hero Section -->
+<section class="hero" id="hero">
     <div class="container hero-container">
         <div class="hero-content">
             <h1 class="hero-title">Marketing Chaos → Clarity</h1>
@@ -1075,6 +1088,7 @@
         </div>
     </div>
 </section>
+
 
 
     <!-- Funnel Basics Section -->
