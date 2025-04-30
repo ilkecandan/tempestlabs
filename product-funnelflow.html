@@ -18,19 +18,18 @@
         /* ===================== */
         
         :root {
-            /* Color Palette - Sunlight on Stone */
+            /* Color Palette - Pastel Pink & Blue Theme */
             --bg: #F9F9F8;             /* Warm paper background */
             --text-main: #2B2C28;      /* Cozy charcoal-black */
-            --accent-gold: #E6A756;    /* Friendly highlight */
-            --accent-teal: #2A8683;    /* Calm tech contrast */
-            --accent-coral: #D8675F;   /* Emphasis/callout */
-            --bg-soft: #EFEDE9;        /* Section backgrounds */
+            --accent-pink: #FFB6C1;    /* Soft pastel pink */
+            --accent-blue: #89CFF0;    /* Calm pastel blue */
+            --accent-dark-blue: #5D8AA8;   /* Darker blue for contrast */
+            --bg-soft: #F5F9FF;        /* Light blue section backgrounds */
             --card-bg: #FFFFFF;        /* Surface cards */
             --shadow-soft: 0 6px 18px rgba(0,0,0,0.04);
-            --symbol-glow: rgba(42,134,131,0.1);
-            --pastel-blue: #e6f2ff;
-            --pastel-blue-light: #f0f7ff;
-            --pastel-blue-dark: #cce0ff;
+            --symbol-glow: rgba(137,207,240,0.1);
+            --pastel-pink-light: #FFE4E1;
+            --pastel-pink-dark: #FFC0CB;
             
             /* Typography */
             --font-serif: 'Cormorant Garamond', serif;
@@ -95,7 +94,7 @@
         }
         
         a {
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
             text-decoration: none;
             transition: var(--transition);
         }
@@ -123,7 +122,7 @@
             content: "⌘";
             display: block;
             font-size: 1.5rem;
-            color: var(--accent-gold);
+            color: var(--accent-blue);
             margin-top: var(--space-sm);
             opacity: 0.6;
         }
@@ -160,7 +159,7 @@
         }
         
         .logo span {
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
         }
         
         nav ul {
@@ -183,7 +182,7 @@
             left: 0;
             width: 0;
             height: 1px;
-            background-color: var(--accent-teal);
+            background-color: var(--accent-dark-blue);
             transition: var(--transition);
         }
         
@@ -247,7 +246,7 @@
             display: inline-flex;
             align-items: center;
             gap: var(--space-xs);
-            background-color: var(--accent-gold);
+            background-color: var(--accent-pink);
             color: white;
             padding: var(--space-sm) var(--space-md);
             border-radius: 8px;
@@ -255,13 +254,13 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 4px 12px rgba(230,167,86,0.3);
+            box-shadow: 0 4px 12px rgba(255,182,193,0.3);
             transition: var(--transition);
         }
         
         .hero-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(230,167,86,0.4);
+            box-shadow: 0 6px 16px rgba(255,182,193,0.4);
         }
         
         /* Funnel Basics */
@@ -302,11 +301,11 @@
             font-size: 1.2rem;
         }
         
-        .funnel-stage:nth-child(1) { border-left: 4px solid var(--accent-teal); }
-        .funnel-stage:nth-child(2) { border-left: 4px solid var(--accent-gold); }
-        .funnel-stage:nth-child(3) { border-left: 4px solid var(--accent-coral); }
-        .funnel-stage:nth-child(4) { border-left: 4px solid var(--accent-teal); }
-        .funnel-stage:nth-child(5) { border-left: 4px solid var(--accent-gold); }
+        .funnel-stage:nth-child(1) { border-left: 4px solid var(--accent-blue); }
+        .funnel-stage:nth-child(2) { border-left: 4px solid var(--accent-pink); }
+        .funnel-stage:nth-child(3) { border-left: 4px solid var(--accent-dark-blue); }
+        .funnel-stage:nth-child(4) { border-left: 4px solid var(--accent-blue); }
+        .funnel-stage:nth-child(5) { border-left: 4px solid var(--accent-pink); }
         
         /* Features Grid */
         .features-grid {
@@ -322,10 +321,17 @@
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        
+        .feature-card.animated {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 12px 24px rgba(0,0,0,0.08);
         }
         
@@ -338,7 +344,7 @@
             align-items: center;
             justify-content: center;
             margin-bottom: var(--space-sm);
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
             font-size: 1.2rem;
         }
         
@@ -369,12 +375,18 @@
             background-color: var(--card-bg);
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--pastel-pink-light);
         }
         
         .stat-value {
             font-size: 2.5rem;
             font-family: var(--font-serif);
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
             margin-bottom: var(--space-xs);
         }
         
@@ -390,6 +402,14 @@
             gap: var(--space-md);
             margin-bottom: var(--space-xl);
             align-items: center;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition-slow);
+        }
+        
+        .case-study.animated {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .case-study-image {
@@ -398,6 +418,12 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-dark-blue);
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
         }
         
         .case-study-results {
@@ -412,12 +438,18 @@
             padding: var(--space-sm);
             border-radius: 8px;
             text-align: center;
+            transition: var(--transition);
+        }
+        
+        .result-item:hover {
+            background-color: var(--pastel-pink-light);
+            transform: translateY(-3px);
         }
         
         .result-value {
             font-family: var(--font-serif);
             font-size: 1.5rem;
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
         }
         
         /* FAQ */
@@ -425,6 +457,11 @@
             margin-bottom: var(--space-sm);
             border-bottom: 1px solid rgba(0,0,0,0.05);
             padding-bottom: var(--space-sm);
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            border-bottom-color: var(--accent-pink);
         }
         
         .faq-question {
@@ -435,12 +472,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            color: var(--accent-dark-blue);
         }
         
         .faq-question:after {
             content: '+';
             font-size: 1.5rem;
-            color: var(--accent-gold);
+            color: var(--accent-pink);
+            transition: var(--transition);
         }
         
         .faq-item.active .faq-question:after {
@@ -473,12 +516,28 @@
             margin-top: var(--space-lg);
             position: relative;
             overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
         }
         
         .price {
             font-size: 3.5rem;
             font-family: var(--font-serif);
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
             margin: var(--space-sm) 0;
         }
         
@@ -497,11 +556,16 @@
             display: flex;
             align-items: center;
             gap: var(--space-xs);
+            transition: var(--transition);
+        }
+        
+        .benefits-list li:hover {
+            transform: translateX(5px);
         }
         
         .benefits-list li:before {
             content: '✓';
-            color: var(--accent-gold);
+            color: var(--accent-pink);
         }
         
         .btn {
@@ -518,14 +582,15 @@
         }
         
         .btn-primary {
-            background-color: var(--accent-gold);
+            background-color: var(--accent-pink);
             color: white;
-            box-shadow: 0 4px 12px rgba(230,167,86,0.3);
+            box-shadow: 0 4px 12px rgba(255,182,193,0.3);
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(230,167,86,0.4);
+            box-shadow: 0 6px 16px rgba(255,182,193,0.4);
+            background-color: var(--pastel-pink-dark);
         }
         
         /* Footer */
@@ -555,7 +620,7 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background-color: var(--accent-gold);
+            background-color: var(--accent-pink);
         }
         
         .footer-column a {
@@ -565,7 +630,7 @@
         }
         
         .footer-column a:hover {
-            color: var(--accent-gold);
+            color: var(--accent-pink);
         }
         
         .footer-bottom {
@@ -582,7 +647,7 @@
             position: fixed;
             bottom: var(--space-md);
             right: var(--space-md);
-            background-color: var(--accent-gold);
+            background-color: var(--accent-pink);
             color: white;
             padding: var(--space-sm) var(--space-md);
             border-radius: 8px;
@@ -606,6 +671,7 @@
         .sticky-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            background-color: var(--pastel-pink-dark);
         }
         
         /* Scroll Indicator */
@@ -631,7 +697,7 @@
         }
         
         .scroll-dot.active {
-            background-color: var(--accent-teal);
+            background-color: var(--accent-dark-blue);
         }
         
         .scroll-dot:after {
@@ -680,26 +746,26 @@
         .funnel-stage-visual.attention {
             width: 300px;
             height: 80px;
-            background-color: var(--accent-teal);
+            background-color: var(--accent-blue);
             border-radius: 8px 8px 0 0;
         }
         
         .funnel-stage-visual.interest {
             width: 250px;
             height: 80px;
-            background-color: var(--accent-gold);
+            background-color: var(--accent-pink);
         }
         
         .funnel-stage-visual.desire {
             width: 200px;
             height: 80px;
-            background-color: var(--accent-coral);
+            background-color: var(--accent-dark-blue);
         }
         
         .funnel-stage-visual.action {
             width: 150px;
             height: 80px;
-            background-color: var(--accent-teal);
+            background-color: var(--accent-blue);
             border-radius: 0 0 8px 8px;
         }
         
@@ -720,7 +786,7 @@
         }
         
         .analytics-section {
-            background-color: var(--pastel-blue-light);
+            background-color: var(--bg-soft);
             border-radius: 12px;
             padding: var(--space-md);
             margin-top: var(--space-xl);
@@ -729,7 +795,7 @@
         
         .analytics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md);
             margin-top: var(--space-md);
         }
@@ -744,12 +810,13 @@
         
         .analytics-card:hover {
             transform: translateY(-3px);
+            background-color: var(--pastel-pink-light);
         }
         
         .analytics-value {
             font-size: 2rem;
             font-family: var(--font-serif);
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
             margin-bottom: var(--space-xs);
         }
         
@@ -764,7 +831,7 @@
             justify-content: space-between;
             margin: var(--space-md) 0;
             padding: var(--space-sm);
-            background-color: var(--pastel-blue);
+            background-color: var(--bg-soft);
             border-radius: 8px;
         }
         
@@ -780,32 +847,78 @@
             right: -15px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
         }
         
         .path-percentage {
             font-weight: bold;
-            color: var(--accent-teal);
+            color: var(--accent-dark-blue);
         }
         
         .stage-distribution {
-            display: flex;
-            height: 40px;
-            margin-top: var(--space-md);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .stage-segment {
+            width: 300px;
+            height: 300px;
+            margin: var(--space-md) auto;
+            position: relative;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--accent-blue) 0% 60%,
+                var(--accent-pink) 60% 80%,
+                var(--accent-dark-blue) 80% 95%,
+                var(--pastel-pink-dark) 95% 100%
+            );
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 0.8rem;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .stage-distribution:before {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            background-color: white;
+            border-radius: 50%;
+        }
+        
+        .stage-distribution-label {
+            position: absolute;
+            font-family: var(--font-serif);
+            color: var(--text-main);
+            z-index: 2;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .stage-distribution-legend {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
         }
         
         /* Responsive */
+        @media (max-width: 1024px) {
+            .analytics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -842,6 +955,10 @@
             .funnel-stage-visual.action {
                 width: 100px;
             }
+            
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -855,10 +972,6 @@
             
             .case-study-results {
                 grid-template-columns: 1fr;
-            }
-            
-            .analytics-grid {
-                grid-template-columns: 1fr 1fr;
             }
             
             .funnel-visualization {
@@ -880,6 +993,51 @@
             .funnel-stage-visual.action {
                 width: 80px;
             }
+            
+            .stage-distribution {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-5 {
+            animation-delay: 0.5s;
+        }
+        
+        .delay-6 {
+            animation-delay: 0.6s;
         }
     </style>
 </head>
@@ -921,8 +1079,8 @@
     <!-- Funnel Basics Section -->
     <section class="section funnel-basics" id="basics">
         <div class="container">
-            <h2 class="section-title">The Marketing Funnel</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">Track how leads progress through each stage of your marketing funnel with real-time visualization.</p>
+            <h2 class="section-title">Understanding Marketing Funnels</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">A marketing funnel is a visual representation of the customer journey from initial awareness to final purchase. It helps you understand how potential customers interact with your brand and where they might drop off in the process.</p>
             
             <div class="funnel-visualization" id="funnelVisualization">
                 <div class="funnel-stage-visual attention">Attention</div>
@@ -935,34 +1093,40 @@
                 <h3 style="text-align: center; margin-bottom: var(--space-md);">Advanced Funnel Analytics</h3>
                 
                 <div class="analytics-grid">
-                    <div class="analytics-card">
+                    <div class="analytics-card fade-in-up delay-1">
                         <div class="analytics-value">60</div>
                         <div class="analytics-label">Total Leads</div>
                         <div class="analytics-description">Total number of leads in your funnel</div>
                     </div>
                     
-                    <div class="analytics-card">
+                    <div class="analytics-card fade-in-up delay-2">
                         <div class="analytics-value">40</div>
                         <div class="analytics-label">Hot Leads</div>
                         <div class="analytics-description">Leads showing high engagement</div>
                     </div>
                     
-                    <div class="analytics-card">
+                    <div class="analytics-card fade-in-up delay-3">
                         <div class="analytics-value">50%</div>
                         <div class="analytics-label">Engagement Rate</div>
                         <div class="analytics-description">Average interaction with content</div>
                     </div>
                     
-                    <div class="analytics-card">
+                    <div class="analytics-card fade-in-up delay-1">
                         <div class="analytics-value">23</div>
                         <div class="analytics-label">Leads Added</div>
                         <div class="analytics-description">New leads this week</div>
                     </div>
                     
-                    <div class="analytics-card">
+                    <div class="analytics-card fade-in-up delay-2">
                         <div class="analytics-value">4</div>
                         <div class="analytics-label">Stale Leads</div>
                         <div class="analytics-description">Inactive for 30+ days</div>
+                    </div>
+                    
+                    <div class="analytics-card fade-in-up delay-3">
+                        <div class="analytics-value">12</div>
+                        <div class="analytics-label">Conversions</div>
+                        <div class="analytics-description">Leads that became customers</div>
                     </div>
                 </div>
                 
@@ -981,12 +1145,27 @@
                     </div>
                 </div>
                 
-                <h4 style="margin-top: var(--space-lg);">Stage Distribution</h4>
+                <h4 style="margin-top: var(--space-lg); text-align: center;">Stage Distribution</h4>
                 <div class="stage-distribution">
-                    <div class="stage-segment" style="background-color: var(--accent-teal); flex: 3;">Awareness</div>
-                    <div class="stage-segment" style="background-color: var(--accent-gold); flex: 2;">Interest</div>
-                    <div class="stage-segment" style="background-color: var(--accent-coral); flex: 1;">Desire</div>
-                    <div class="stage-segment" style="background-color: var(--pastel-blue-dark); flex: 0.5;">Action</div>
+                    <div class="stage-distribution-label">Funnel Stages</div>
+                </div>
+                <div class="stage-distribution-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--accent-blue);"></div>
+                        <span>Awareness (60%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--accent-pink);"></div>
+                        <span>Interest (20%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--accent-dark-blue);"></div>
+                        <span>Desire (15%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--pastel-pink-dark);"></div>
+                        <span>Action (5%)</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -999,7 +1178,7 @@
             <p style="text-align: center; max-width: 700px; margin: 0 auto;">A calm, focused approach to understanding your marketing funnel.</p>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card fade-in-up delay-1">
                     <div class="feature-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
@@ -1007,7 +1186,7 @@
                     <p>See your entire customer journey at a glance with our beautiful, intuitive funnel visualization. No more guessing where prospects drop off.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card fade-in-up delay-2">
                     <div class="feature-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
@@ -1015,7 +1194,7 @@
                     <p>Our system analyzes your funnel data to provide actionable recommendations for improving conversions at each stage.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card fade-in-up delay-3">
                     <div class="feature-icon">
                         <i class="fas fa-tasks"></i>
                     </div>
@@ -1023,7 +1202,7 @@
                     <p>Track and nurture leads through every stage with our intuitive system. Know exactly where each prospect is in their journey.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card fade-in-up delay-1">
                     <div class="feature-icon">
                         <i class="fas fa-chart-pie"></i>
                     </div>
@@ -1031,7 +1210,7 @@
                     <p>Focus on the numbers that matter—conversion rates between stages, time in funnel, and content performance.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card fade-in-up delay-2">
                     <div class="feature-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
@@ -1039,7 +1218,7 @@
                     <p>Assign and track content performance at each funnel stage to ensure you're delivering the right message at the right time.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card fade-in-up delay-3">
                     <div class="feature-icon">
                         <i class="fas fa-users-cog"></i>
                     </div>
@@ -1059,8 +1238,7 @@
             <div class="demo-container">
                 <div style="text-align: center; padding: var(--space-md);">
                     <div style="font-size: 3rem; margin-bottom: var(--space-sm);"></div>
-                    <h3 style="font-family: var(--font-serif);">Interactive Funnel Visualization</h3>
-                    <p style="max-width: 500px; margin: 0 auto;">Hover over each stage to see conversion rates and content performance.</p>
+                    <h3 style="font-family: var(--font-serif);">Funnel Visualization</h3>
                 </div>
             </div>
         </div>
@@ -1073,17 +1251,17 @@
             <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">Businesses that visualize their marketing funnels see dramatic improvements.</p>
             
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card fade-in-up delay-1">
                     <div class="stat-value">2x</div>
                     <div class="stat-label">Marketers who visualize funnels are 2x more likely to exceed goals</div>
                 </div>
                 
-                <div class="stat-card">
+                <div class="stat-card fade-in-up delay-2">
                     <div class="stat-value">54%</div>
                     <div class="stat-label">Greater return on marketing investment with funnel mapping</div>
                 </div>
                 
-                <div class="stat-card">
+                <div class="stat-card fade-in-up delay-3">
                     <div class="stat-value">58%</div>
                     <div class="stat-label">Of marketers say unclear customer journeys are their biggest barrier</div>
                 </div>
@@ -1094,14 +1272,17 @@
     <!-- Case Studies -->
     <section class="section" id="scenarios">
         <div class="container">
-            <h2 class="section-title">Real Journeys, Transformed</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-xl);">See how businesses like yours found clarity with FunnelFlow.</p>
+            <h2 class="section-title">Example Success Stories</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-xl);">These fictional examples illustrate how businesses might use FunnelFlow to improve their marketing.</p>
             
-            <div class="case-study">
-                <div class="case-study-image"></div>
+            <div class="case-study fade-in-up">
+                <div class="case-study-image">
+                    Example SaaS Dashboard
+                </div>
                 <div>
                     <h3>The SaaS Founder Who Found Focus</h3>
-                    <p>Sarah was drowning in spreadsheets—high trial signups but low conversions. FunnelFlow showed her exactly where users were dropping off (during onboarding) and what content moved them forward.</p>
+                    <p><em>This is an illustrative example only</em></p>
+                    <p>A fictional SaaS founder was struggling with high trial signups but low conversions. FunnelFlow helped identify where users were dropping off (during onboarding) and what content moved them forward.</p>
                     
                     <div class="case-study-results">
                         <div class="result-item">
@@ -1116,11 +1297,14 @@
                 </div>
             </div>
             
-            <div class="case-study">
-                <div class="case-study-image"></div>
+            <div class="case-study fade-in-up">
+                <div class="case-study-image">
+                    Example E-commerce Store
+                </div>
                 <div>
                     <h3>The E-commerce Store That Stopped Leaking</h3>
-                    <p>Mike's store had great traffic but stagnant sales. FunnelFlow revealed a major drop-off after "Add to Cart." With targeted checkout optimizations, he turned browsers into buyers.</p>
+                    <p><em>This is an illustrative example only</em></p>
+                    <p>A fictional e-commerce store had great traffic but stagnant sales. FunnelFlow revealed a major drop-off after "Add to Cart." With targeted checkout optimizations, they improved conversions.</p>
                     
                     <div class="case-study-results">
                         <div class="result-item">
@@ -1150,9 +1334,9 @@
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">What data sources does it connect to?</div>
+                <div class="faq-question">How do I get my data into FunnelFlow?</div>
                 <div class="faq-answer">
-                    <p>FunnelFlow works with Google Analytics, Facebook Ads, email platforms, and more. You can also manually input data if needed. We focus on simplicity—just connect what you use most.</p>
+                    <p>FunnelFlow allows you to manually add potential leads to your funnels. While we don't connect to external data sources, you can easily export your funnel data to Excel for further analysis.</p>
                 </div>
             </div>
             
@@ -1178,9 +1362,9 @@
             <h2 class="section-title">Ready for Clarity?</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto;">Join thousands of marketers who've unlocked the power of visual funnel management.</p>
             
-            <div class="pricing-card">
+            <div class="pricing-card fade-in-up">
                 <h3>FunnelFlow Launch Special</h3>
-                <p style="opacity: 0.8; margin-bottom: var(--space-sm);">One-time payment. Lifetime access.</p>
+                <p style="opacity: 0.8; margin-bottom: var(--space-sm);">One-time payment. No subscriptions.</p>
                 
                 <div class="price">$9.99</div>
                 <div class="price-period">launch price (reg. $29)</div>
@@ -1190,7 +1374,7 @@
                     <li>Visual funnel builder</li>
                     <li>Essential analytics dashboard</li>
                     <li>Content performance tracking</li>
-                    <li>Export to PDF/Excel</li>
+                    <li>Export to Excel</li>
                     <li>Email support</li>
                 </ul>
                 
@@ -1395,25 +1579,17 @@
             
             // Animate elements on scroll
             const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card');
+                const elements = document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card, .pricing-card');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
                     const screenPosition = window.innerHeight / 1.3;
                     
                     if (elementPosition < screenPosition) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
+                        element.classList.add('animated');
                     }
                 });
             };
-            
-            // Set initial state
-            document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            });
             
             // Run animations
             animateFunnel();
