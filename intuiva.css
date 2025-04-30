@@ -989,7 +989,7 @@
 
 .how-it-works-section {
   background: linear-gradient(135deg, #062D34 0%, #0B1B1C 100%);
-  padding: 3rem 1.5rem 2rem;
+  padding: 2rem 1.5rem 1.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -1004,25 +1004,14 @@
   z-index: 0;
 }
 
-.how-it-works-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
-  z-index: 2;
-  position: relative;
-}
-
 .roadmap-visual {
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  position: relative;
-  height: 360px; /* was 260px */
-  margin-top: 1.5rem;
-  margin-bottom: 4rem; /* was 2rem */
+  height: 300px; /* reduced from 360px */
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
   z-index: 2;
 }
 
@@ -1038,22 +1027,22 @@
   stroke-width: 12;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.3));
-  opacity: 0.8;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
+  opacity: 0.9;
 }
 
 .road-center-line {
   fill: none;
   stroke: rgba(255,255,255,0.5);
   stroke-width: 2;
-  stroke-dasharray: 14, 10;
+  stroke-dasharray: 12, 8;
   stroke-linecap: round;
   opacity: 0.7;
 }
 
 .milestone-curve {
   position: absolute;
-  transform: translate(-50%, -45%); /* was -50% to shift slightly downward */
+  transform: translate(-50%, -45%);
   text-align: center;
   z-index: 3;
   animation: fadeInUp 1s ease forwards;
@@ -1061,11 +1050,10 @@
   max-width: 160px;
 }
 
-
 .milestone-curve::after {
   content: '';
   width: 2px;
-  height: 28px;
+  height: 24px;
   background: var(--primary);
   position: absolute;
   top: 100%;
@@ -1104,13 +1092,13 @@
 }
 
 .milestone-curve.below {
-  transform: translate(-50%, 50%); /* Flips positioning under the road */
+  transform: translate(-50%, 40%);
 }
 
 .milestone-curve.below::after {
   top: auto;
-  bottom: 100%; /* Position stick *above* the milestone */
-  transform: translateX(-50%) rotate(180deg); /* Flip the stick upward */
+  bottom: 100%;
+  transform: translateX(-50%) rotate(180deg);
 }
 
 @keyframes fadeInUp {
@@ -1120,10 +1108,11 @@
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .how-it-works-section {
     padding: 2rem 1rem;
@@ -1149,7 +1138,6 @@
     display: none;
   }
 }
-
 
 
     /* PWA Sidebar */
