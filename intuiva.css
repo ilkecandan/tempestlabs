@@ -988,8 +988,8 @@
     }
 
 .how-it-works-section {
-  background: linear-gradient(135deg, #062D34 0%, #0B1B1C 100%);
-  padding: 1rem 1.5rem 3rem; /* cut top, give bottom */
+   background: linear-gradient(135deg, #062D34 0%, #0B1B1C 100%);
+  padding: 0.5rem 1.5rem 3.5rem; /* even less headroom, more foot space */
   position: relative;
   overflow: hidden;
 }
@@ -1009,11 +1009,11 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  height: 320px; /* slightly reduced */
-  margin-top: 0.5rem; /* minimized top gap */
-  margin-bottom: 3.5rem; /* generous bottom padding */
+  height: 300px; /* slightly lower curve base */
+  margin-top: 0.2rem; /* practically no top margin */
+  margin-bottom: 4.5rem; /* more breathing space below */
   z-index: 2;
-}
+}}
 
 .road-svg {
   width: 100%;
@@ -1042,7 +1042,7 @@
 
 .milestone-curve {
   position: absolute;
-  transform: translate(-50%, -40%); /* more upward position */
+  transform: translate(-50%, -38%); /* lifted more upward */
   text-align: center;
   z-index: 3;
   animation: fadeInUp 1s ease forwards;
