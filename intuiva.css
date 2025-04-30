@@ -1103,6 +1103,16 @@
   margin: 0;
 }
 
+.milestone-curve.below {
+  transform: translate(-50%, 50%); /* Flips positioning under the road */
+}
+
+.milestone-curve.below::after {
+  top: auto;
+  bottom: 100%; /* Position stick *above* the milestone */
+  transform: translateX(-50%) rotate(180deg); /* Flip the stick upward */
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
