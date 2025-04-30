@@ -27,9 +27,12 @@
             --bg-soft: #F5F9FF;        /* Light blue section backgrounds */
             --card-bg: #FFFFFF;        /* Surface cards */
             --shadow-soft: 0 6px 18px rgba(0,0,0,0.04);
+            --shadow-medium: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow-large: 0 12px 32px rgba(0,0,0,0.12);
             --symbol-glow: rgba(137,207,240,0.1);
             --pastel-pink-light: #FFE4E1;
             --pastel-pink-dark: #FFC0CB;
+            --text-on-dark: rgba(255,255,255,0.9);
             
             /* Typography */
             --font-serif: 'Cormorant Garamond', serif;
@@ -41,10 +44,12 @@
             --space-md: 2rem;
             --space-lg: 3rem;
             --space-xl: 4rem;
+            --space-xxl: 6rem;
             
             /* Transitions */
-            --transition: all 0.3s ease;
-            --transition-slow: all 0.6s ease;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
         }
         
         * {
@@ -64,6 +69,7 @@
             line-height: 1.6;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
@@ -108,7 +114,7 @@
         }
         
         .section {
-            padding: var(--space-xl) 0;
+            padding: var(--space-xxl) 0;
             position: relative;
         }
         
@@ -125,6 +131,7 @@
             color: var(--accent-blue);
             margin-top: var(--space-sm);
             opacity: 0.6;
+            animation: pulse 2s infinite;
         }
         
         /* Header */
@@ -139,10 +146,16 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
             transition: var(--transition);
+            transform: translateY(0);
+        }
+        
+        header.hidden {
+            transform: translateY(-100%);
         }
         
         header.scrolled {
             box-shadow: var(--shadow-soft);
+            padding: 0.5rem 0;
         }
         
         .header-container {
@@ -156,6 +169,11 @@
             font-weight: 600;
             font-size: 1.5rem;
             color: var(--text-main);
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
         }
         
         .logo span {
@@ -173,15 +191,16 @@
             font-weight: 500;
             color: var(--text-main);
             position: relative;
+            padding: 0.5rem 0;
         }
         
         nav a:after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
+            height: 2px;
             background-color: var(--accent-dark-blue);
             transition: var(--transition);
         }
@@ -190,92 +209,97 @@
             width: 100%;
         }
         
-
         /* Hero Section */
-.hero {
-    padding-top: 8rem;
-    padding-bottom: 6rem;
-    background-image: url('images/funnelbackground.webp'); /* Background Image */
-    background-size: cover; /* Ensures the image covers the whole hero section */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents repeating the image */
-    background-color: var(--bg); /* Fallback color */
-    position: relative;
-    overflow: hidden;
-}
-
-/* Container for content */
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-    align-items: center;
-}
-
-/* Hero content (text area) */
-.hero-content {
-    position: relative;
-    z-index: 2; /* Ensures content is above the background */
-}
-
-/* Title style */
-.hero-title {
-    margin-bottom: var(--space-md);
-    position: relative;
-}
-
-/* Subtitle style */
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: var(--space-md);
-    max-width: 90%;
-}
-
-/* Hero illustration box */
-.hero-illustration {
-    position: relative;
-    height: 400px;
-    background-color: var(--bg-soft); /* Soft background color */
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;
-}
-
-/* Hero illustration glow effect */
-.hero-illustration:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at center, var(--symbol-glow) 0%, transparent 70%);
-    opacity: 0.3;
-}
-
-/* CTA Button Style */
-.hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
-    background-color: var(--accent-pink);
-    color: white;
-    padding: var(--space-sm) var(--space-md);
-    border-radius: 8px;
-    font-family: var(--font-serif);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 12px rgba(255,182,193,0.3);
-    transition: var(--transition);
-}
-
-/* CTA Button Hover Effect */
-.hero-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255,182,193,0.4);
-}
-
+        .hero {
+            padding-top: 10rem;
+            padding-bottom: 8rem;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/herofunnel.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(137,207,240,0.1) 0%, rgba(255,182,193,0.1) 100%);
+            z-index: 1;
+        }
+        
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--text-on-dark);
+        }
+        
+        .hero-title {
+            margin-bottom: var(--space-md);
+            position: relative;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            max-width: 90%;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background-color: var(--accent-pink);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 8px;
+            font-family: var(--font-serif);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-bounce);
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255,182,193,0.4);
+            background-color: var(--pastel-pink-dark);
+        }
+        
+        .hero-cta i {
+            transition: var(--transition);
+        }
+        
+        .hero-cta:hover i {
+            transform: translateX(3px);
+        }
         
         /* Funnel Basics */
         .funnel-basics {
@@ -293,6 +317,12 @@
             padding: var(--space-md);
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+        
+        .funnel-diagram:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
         }
         
         .funnel-stage {
@@ -304,15 +334,22 @@
             align-items: center;
             gap: var(--space-xs);
             transition: var(--transition);
+            cursor: pointer;
         }
         
         .funnel-stage:hover {
-            transform: translateX(4px);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-soft);
         }
         
         .funnel-stage:before {
             content: attr(data-icon);
             font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .funnel-stage:hover:before {
+            transform: scale(1.2);
         }
         
         .funnel-stage:nth-child(1) { border-left: 4px solid var(--accent-blue); }
@@ -334,9 +371,10 @@
             padding: var(--space-md);
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
-            transition: var(--transition);
+            transition: var(--transition-bounce);
             transform: translateY(20px);
             opacity: 0;
+            cursor: pointer;
         }
         
         .feature-card.animated {
@@ -345,13 +383,13 @@
         }
         
         .feature-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-large);
         }
         
         .feature-icon {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             background-color: var(--bg-soft);
             border-radius: 50%;
             display: flex;
@@ -359,7 +397,14 @@
             justify-content: center;
             margin-bottom: var(--space-sm);
             color: var(--accent-dark-blue);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(10deg) scale(1.1);
+            background-color: var(--accent-pink);
+            color: white;
         }
         
         /* Visualization Demo */
@@ -373,6 +418,12 @@
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
             margin-top: var(--space-lg);
+            transition: var(--transition);
+        }
+        
+        .demo-container:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
         }
         
         /* Stats Grid */
@@ -389,12 +440,20 @@
             background-color: var(--card-bg);
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
-            transition: var(--transition);
+            transition: var(--transition-bounce);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        
+        .stat-card.animated {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .stat-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             background-color: var(--pastel-pink-light);
+            box-shadow: var(--shadow-medium);
         }
         
         .stat-value {
@@ -402,6 +461,11 @@
             font-family: var(--font-serif);
             color: var(--accent-dark-blue);
             margin-bottom: var(--space-xs);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover .stat-value {
+            transform: scale(1.1);
         }
         
         .stat-label {
@@ -438,6 +502,18 @@
             color: var(--accent-dark-blue);
             font-family: var(--font-serif);
             font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        
+        .case-study:hover .case-study-image img {
+            transform: scale(1.05);
         }
         
         .case-study-results {
@@ -457,13 +533,19 @@
         
         .result-item:hover {
             background-color: var(--pastel-pink-light);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
         }
         
         .result-value {
             font-family: var(--font-serif);
             font-size: 1.5rem;
             color: var(--accent-dark-blue);
+            transition: var(--transition);
+        }
+        
+        .result-item:hover .result-value {
+            transform: scale(1.1);
         }
         
         /* FAQ */
@@ -487,6 +569,7 @@
             justify-content: space-between;
             align-items: center;
             transition: var(--transition);
+            padding: var(--space-xs) 0;
         }
         
         .faq-question:hover {
@@ -502,12 +585,13 @@
         
         .faq-item.active .faq-question:after {
             content: '-';
+            transform: rotate(180deg);
         }
         
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
         .faq-item.active .faq-answer {
@@ -530,12 +614,19 @@
             margin-top: var(--space-lg);
             position: relative;
             overflow: hidden;
-            transition: var(--transition);
+            transition: var(--transition-bounce);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        
+        .pricing-card.animated {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
         }
         
         .pricing-card:before {
@@ -553,6 +644,11 @@
             font-family: var(--font-serif);
             color: var(--accent-dark-blue);
             margin: var(--space-sm) 0;
+            transition: var(--transition);
+        }
+        
+        .pricing-card:hover .price {
+            transform: scale(1.05);
         }
         
         .price-period {
@@ -563,6 +659,7 @@
         .benefits-list {
             text-align: left;
             margin: var(--space-md) 0;
+            list-style: none;
         }
         
         .benefits-list li {
@@ -571,15 +668,19 @@
             align-items: center;
             gap: var(--space-xs);
             transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 4px;
         }
         
         .benefits-list li:hover {
-            transform: translateX(5px);
+            transform: translateX(8px);
+            background-color: var(--pastel-pink-light);
         }
         
         .benefits-list li:before {
             content: '✓';
             color: var(--accent-pink);
+            font-weight: bold;
         }
         
         .btn {
@@ -590,7 +691,7 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
+            transition: var(--transition-bounce);
             border: none;
             cursor: pointer;
         }
@@ -602,8 +703,8 @@
         }
         
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255,182,193,0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255,182,193,0.4);
             background-color: var(--pastel-pink-dark);
         }
         
@@ -641,10 +742,13 @@
             display: block;
             margin-bottom: var(--space-xs);
             color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+            padding: 0.25rem 0;
         }
         
         .footer-column a:hover {
             color: var(--accent-pink);
+            transform: translateX(5px);
         }
         
         .footer-bottom {
@@ -669,13 +773,15 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-medium);
             z-index: 100;
             transform: translateY(100px);
-            transition: var(--transition);
+            transition: var(--transition-bounce);
             display: flex;
             align-items: center;
             gap: var(--space-xs);
+            border: none;
+            cursor: pointer;
         }
         
         .sticky-cta.visible {
@@ -683,8 +789,8 @@
         }
         
         .sticky-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-large);
             background-color: var(--pastel-pink-dark);
         }
         
@@ -701,29 +807,36 @@
         }
         
         .scroll-dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background-color: rgba(0,0,0,0.1);
             transition: var(--transition);
             position: relative;
             cursor: pointer;
+            border: 2px solid transparent;
         }
         
         .scroll-dot.active {
             background-color: var(--accent-dark-blue);
+            transform: scale(1.2);
+            border-color: white;
+        }
+        
+        .scroll-dot:hover {
+            transform: scale(1.3);
         }
         
         .scroll-dot:after {
             content: attr(data-label);
             position: absolute;
-            right: 20px;
+            right: 25px;
             top: 50%;
             transform: translateY(-50%);
             background-color: var(--text-main);
             color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
             font-size: 0.8rem;
             white-space: nowrap;
             opacity: 0;
@@ -733,7 +846,7 @@
         
         .scroll-dot:hover:after {
             opacity: 1;
-            right: 25px;
+            right: 30px;
         }
         
         /* Funnel Visualization */
@@ -755,6 +868,8 @@
             color: white;
             font-weight: 500;
             transition: all 0.5s ease;
+            box-shadow: var(--shadow-soft);
+            z-index: 1;
         }
         
         .funnel-stage-visual.attention {
@@ -795,8 +910,13 @@
             align-items: center;
             font-size: 10px;
             color: var(--text-main);
-            transition: all 1s ease;
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             z-index: 10;
+            opacity: 0;
+        }
+        
+        .lead-card.visible {
+            opacity: 1;
         }
         
         .analytics-section {
@@ -805,6 +925,12 @@
             padding: var(--space-md);
             margin-top: var(--space-xl);
             box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+        
+        .analytics-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
         }
         
         .analytics-grid {
@@ -823,8 +949,9 @@
         }
         
         .analytics-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             background-color: var(--pastel-pink-light);
+            box-shadow: var(--shadow-medium);
         }
         
         .analytics-value {
@@ -832,6 +959,11 @@
             font-family: var(--font-serif);
             color: var(--accent-dark-blue);
             margin-bottom: var(--space-xs);
+            transition: var(--transition);
+        }
+        
+        .analytics-card:hover .analytics-value {
+            transform: scale(1.1);
         }
         
         .analytics-label {
@@ -847,6 +979,12 @@
             padding: var(--space-sm);
             background-color: var(--bg-soft);
             border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .conversion-path:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
         }
         
         .path-stage {
@@ -862,11 +1000,17 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--accent-dark-blue);
+            animation: bounceRight 1.5s infinite;
         }
         
         .path-percentage {
             font-weight: bold;
             color: var(--accent-dark-blue);
+            transition: var(--transition);
+        }
+        
+        .path-stage:hover .path-percentage {
+            transform: scale(1.1);
         }
         
         .stage-distribution {
@@ -885,6 +1029,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+        
+        .stage-distribution:hover {
+            transform: rotate(5deg) scale(1.05);
         }
         
         .stage-distribution:before {
@@ -894,6 +1043,7 @@
             height: 70%;
             background-color: white;
             border-radius: 50%;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
         }
         
         .stage-distribution-label {
@@ -918,12 +1068,25 @@
             align-items: center;
             gap: var(--space-xs);
             font-size: 0.9rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .legend-item:hover {
+            background-color: var(--pastel-pink-light);
+            transform: translateY(-3px);
         }
         
         .legend-color {
             width: 16px;
             height: 16px;
             border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .legend-item:hover .legend-color {
+            transform: scale(1.2);
         }
         
         /* Responsive */
@@ -934,8 +1097,14 @@
         }
         
         @media (max-width: 768px) {
+            .hero {
+                padding-top: 8rem;
+                padding-bottom: 6rem;
+                background-attachment: scroll;
+            }
+            
             .hero-container {
-                grid-template-columns: 1fr;
+                max-width: 100%;
             }
             
             .funnel-explainer {
@@ -944,10 +1113,6 @@
             
             .case-study {
                 grid-template-columns: 1fr;
-            }
-            
-            .hero-illustration {
-                height: 300px;
             }
             
             .funnel-visualization {
@@ -973,11 +1138,15 @@
             .analytics-grid {
                 grid-template-columns: 1fr;
             }
+            
+            nav ul {
+                gap: var(--space-sm);
+            }
         }
         
         @media (max-width: 480px) {
             .section {
-                padding: var(--space-lg) 0;
+                padding: var(--space-xl) 0;
             }
             
             .stats-grid {
@@ -1012,6 +1181,10 @@
                 width: 250px;
                 height: 250px;
             }
+            
+            .scroll-indicator {
+                right: var(--space-sm);
+            }
         }
         
         /* Animations */
@@ -1024,6 +1197,17 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+        
+        @keyframes bounceRight {
+            0%, 100% { transform: translateY(-50%) translateX(0); }
+            50% { transform: translateY(-50%) translateX(5px); }
         }
         
         .fade-in-up {
@@ -1069,27 +1253,20 @@
             </nav>
         </div>
     </header>
-<!-- Hero Section -->
-<section class="hero" id="hero">
-    <div class="container hero-container">
-        <div class="hero-content">
-            <h1 class="hero-title">Marketing Chaos → Clarity</h1>
-            <p class="hero-subtitle">FunnelFlow is the calm, visual dashboard that reveals your customer journey like never before. See where prospects drop off, understand why, and fix it with confidence.</p>
-            <a href="#cta" class="hero-cta">
-                <span>See How It Works</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-        <div class="hero-illustration">
-            <div style="text-align: center;">
-                <img src="images/herofunnel.webp" alt="Visualize Your Funnel" style="max-width: 100%; height: auto; margin-bottom: var(--space-sm);" />
-                <p style="font-family: var(--font-serif);">Visualize Your Funnel</p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Marketing Chaos → Clarity</h1>
+                <p class="hero-subtitle">FunnelFlow is the calm, visual dashboard that reveals your customer journey like never before. See where prospects drop off, understand why, and fix it with confidence.</p>
+                <button class="hero-cta" onclick="location.href='#cta'">
+                    <span>See How It Works</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- Funnel Basics Section -->
     <section class="section funnel-basics" id="basics">
@@ -1290,50 +1467,50 @@
             <h2 class="section-title">Example Success Stories</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-xl);">These fictional examples illustrate how businesses might use FunnelFlow to improve their marketing.</p>
             
-        <div class="case-study fade-in-up">
-    <div class="case-study-image">
-        <img src="images/funnelds.webp" alt="Example SaaS Dashboard" />
-    </div>
-    <div>
-        <h3>The SaaS Founder Who Found Focus</h3>
-        <p><em>This is an illustrative example only</em></p>
-        <p>A SaaS founder was struggling with high trial signups but low conversions. FunnelFlow helped identify where users were dropping off (during onboarding) and what content moved them forward.</p>
-        
-        <div class="case-study-results">
-            <div class="result-item">
-                <div class="result-value">68%</div>
-                <div class="result-label">Increase in conversions</div>
+            <div class="case-study fade-in-up">
+                <div class="case-study-image">
+                    <img src="images/funnelds.webp" alt="Example SaaS Dashboard" />
+                </div>
+                <div>
+                    <h3>The SaaS Founder Who Found Focus</h3>
+                    <p><em>This is an illustrative example only</em></p>
+                    <p>A SaaS founder was struggling with high trial signups but low conversions. FunnelFlow helped identify where users were dropping off (during onboarding) and what content moved them forward.</p>
+                    
+                    <div class="case-study-results">
+                        <div class="result-item">
+                            <div class="result-value">68%</div>
+                            <div class="result-label">Increase in conversions</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">2.5x</div>
+                            <div class="result-label">More engaged users</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="result-item">
-                <div class="result-value">2.5x</div>
-                <div class="result-label">More engaged users</div>
+            
+            <div class="case-study fade-in-up">
+                <div class="case-study-image">
+                    <img src="images/funnelds2.webp" alt="Example E-commerce Store" />
+                </div>
+                <div>
+                    <h3>The E-commerce Store That Stopped Leaking</h3>
+                    <p><em>This is an illustrative example only</em></p>
+                    <p>An e-commerce store had great traffic but stagnant sales. FunnelFlow revealed a major drop-off after "Add to Cart." With targeted checkout optimizations, they improved conversions.</p>
+                    
+                    <div class="case-study-results">
+                        <div class="result-item">
+                            <div class="result-value">42%</div>
+                            <div class="result-label">Higher conversion rate</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">$28k</div>
+                            <div class="result-label">Monthly revenue increase</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="case-study fade-in-up">
-    <div class="case-study-image">
-        <img src="images/funnelds2.webp" alt="Example E-commerce Store" />
-    </div>
-    <div>
-        <h3>The E-commerce Store That Stopped Leaking</h3>
-        <p><em>This is an illustrative example only</em></p>
-        <p>An e-commerce store had great traffic but stagnant sales. FunnelFlow revealed a major drop-off after "Add to Cart." With targeted checkout optimizations, they improved conversions.</p>
-        
-        <div class="case-study-results">
-            <div class="result-item">
-                <div class="result-value">42%</div>
-                <div class="result-label">Higher conversion rate</div>
-            </div>
-            <div class="result-item">
-                <div class="result-value">$28k</div>
-                <div class="result-label">Monthly revenue increase</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-        
     </section>
 
     <!-- FAQ -->
@@ -1436,10 +1613,10 @@
     </footer>
 
     <!-- Sticky CTA -->
-    <a href="#cta" class="sticky-cta" id="stickyCta">
+    <button class="sticky-cta" id="stickyCta" onclick="location.href='#cta'">
         <span>Get FunnelFlow</span>
         <i class="fas fa-arrow-right"></i>
-    </a>
+    </button>
 
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
@@ -1454,14 +1631,26 @@
     </div>
 
     <script>
-        // Header scroll effect
+        // Header scroll effects
+        let lastScroll = 0;
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 50) {
+            const currentScroll = window.scrollY;
+            
+            // Add/remove scrolled class based on scroll position
+            if (currentScroll > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
+            
+            // Hide header on scroll down, show on scroll up
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
         });
         
         // Show sticky CTA after scrolling
@@ -1474,11 +1663,26 @@
             }
         });
         
-        // FAQ toggle
+        // FAQ toggle with smooth animation
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    if (el !== item) {
+                        el.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
                 item.classList.toggle('active');
+                
+                // Smooth scroll to keep item in view if opening
+                if (!isActive) {
+                    item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
             });
         });
         
@@ -1488,12 +1692,13 @@
         
         function updateScrollIndicator() {
             let currentSection = '';
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
             
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
                 
-                if (window.scrollY >= sectionTop - 200) {
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     currentSection = section.getAttribute('id');
                 }
             });
@@ -1514,7 +1719,7 @@
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
@@ -1537,6 +1742,11 @@
                 const startX = Math.random() * 200 + 50;
                 lead.style.left = `${startX}px`;
                 lead.style.top = '0px';
+                
+                // Make lead visible after positioning
+                setTimeout(() => {
+                    lead.classList.add('visible');
+                }, 50);
                 
                 // Animate through stages
                 let currentStage = 0;
@@ -1588,23 +1798,23 @@
             setInterval(createLead, 2000);
         }
         
+        // Animate elements on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card, .pricing-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+        
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             updateScrollIndicator();
-            
-            // Animate elements on scroll
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card, .pricing-card');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-                    
-                    if (elementPosition < screenPosition) {
-                        element.classList.add('animated');
-                    }
-                });
-            };
             
             // Run animations
             animateFunnel();
@@ -1613,6 +1823,11 @@
             animateOnScroll();
             window.addEventListener('scroll', animateOnScroll);
             window.addEventListener('scroll', updateScrollIndicator);
+            
+            // Add smooth hover effects to all interactive elements
+            document.querySelectorAll('a, button, .feature-card, .stat-card, .faq-question').forEach(el => {
+                el.style.transition = 'var(--transition)';
+            });
         });
     </script>
 </body>
