@@ -28,6 +28,9 @@
             --card-bg: #FFFFFF;        /* Surface cards */
             --shadow-soft: 0 6px 18px rgba(0,0,0,0.04);
             --symbol-glow: rgba(42,134,131,0.1);
+            --pastel-blue: #e6f2ff;
+            --pastel-blue-light: #f0f7ff;
+            --pastel-blue-dark: #cce0ff;
             
             /* Typography */
             --font-serif: 'Cormorant Garamond', serif;
@@ -42,6 +45,7 @@
             
             /* Transitions */
             --transition: all 0.3s ease;
+            --transition-slow: all 0.6s ease;
         }
         
         * {
@@ -211,15 +215,6 @@
         .hero-title {
             margin-bottom: var(--space-md);
             position: relative;
-        }
-        
-        .hero-title:before {
-            content: "🜂";
-            position: absolute;
-            top: -1.5rem;
-            left: -1rem;
-            font-size: 2rem;
-            opacity: 0.1;
         }
         
         .hero-subtitle {
@@ -480,16 +475,6 @@
             overflow: hidden;
         }
         
-        .pricing-card:before {
-            content: "⚡";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-size: 8rem;
-            opacity: 0.03;
-            z-index: 0;
-        }
-        
         .price {
             font-size: 3.5rem;
             font-family: var(--font-serif);
@@ -671,6 +656,155 @@
             right: 25px;
         }
         
+        /* Funnel Visualization */
+        .funnel-visualization {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            margin: var(--space-lg) auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .funnel-stage-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 500;
+            transition: all 0.5s ease;
+        }
+        
+        .funnel-stage-visual.attention {
+            width: 300px;
+            height: 80px;
+            background-color: var(--accent-teal);
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .funnel-stage-visual.interest {
+            width: 250px;
+            height: 80px;
+            background-color: var(--accent-gold);
+        }
+        
+        .funnel-stage-visual.desire {
+            width: 200px;
+            height: 80px;
+            background-color: var(--accent-coral);
+        }
+        
+        .funnel-stage-visual.action {
+            width: 150px;
+            height: 80px;
+            background-color: var(--accent-teal);
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .lead-card {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: var(--text-main);
+            transition: all 1s ease;
+            z-index: 10;
+        }
+        
+        .analytics-section {
+            background-color: var(--pastel-blue-light);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-top: var(--space-xl);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+        
+        .analytics-card {
+            background-color: white;
+            padding: var(--space-md);
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+        
+        .analytics-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .analytics-value {
+            font-size: 2rem;
+            font-family: var(--font-serif);
+            color: var(--accent-teal);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .analytics-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .conversion-path {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: var(--space-md) 0;
+            padding: var(--space-sm);
+            background-color: var(--pastel-blue);
+            border-radius: 8px;
+        }
+        
+        .path-stage {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .path-stage:not(:last-child):after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-teal);
+        }
+        
+        .path-percentage {
+            font-weight: bold;
+            color: var(--accent-teal);
+        }
+        
+        .stage-distribution {
+            display: flex;
+            height: 40px;
+            margin-top: var(--space-md);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .stage-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero-container {
@@ -688,6 +822,26 @@
             .hero-illustration {
                 height: 300px;
             }
+            
+            .funnel-visualization {
+                height: 400px;
+            }
+            
+            .funnel-stage-visual.attention {
+                width: 250px;
+            }
+            
+            .funnel-stage-visual.interest {
+                width: 200px;
+            }
+            
+            .funnel-stage-visual.desire {
+                width: 150px;
+            }
+            
+            .funnel-stage-visual.action {
+                width: 100px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -701,6 +855,30 @@
             
             .case-study-results {
                 grid-template-columns: 1fr;
+            }
+            
+            .analytics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .funnel-visualization {
+                height: 350px;
+            }
+            
+            .funnel-stage-visual.attention {
+                width: 200px;
+            }
+            
+            .funnel-stage-visual.interest {
+                width: 160px;
+            }
+            
+            .funnel-stage-visual.desire {
+                width: 120px;
+            }
+            
+            .funnel-stage-visual.action {
+                width: 80px;
             }
         }
     </style>
@@ -733,7 +911,7 @@
             </div>
             <div class="hero-illustration">
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: var(--space-sm);">☼</div>
+                    <div style="font-size: 3rem; margin-bottom: var(--space-sm);"></div>
                     <p style="font-family: var(--font-serif);">Visualize Your Funnel</p>
                 </div>
             </div>
@@ -743,25 +921,72 @@
     <!-- Funnel Basics Section -->
     <section class="section funnel-basics" id="basics">
         <div class="container">
-            <h2 class="section-title">The Five Stages of Flow</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">Every customer journey follows these stages. FunnelFlow helps you visualize and optimize each one.</p>
+            <h2 class="section-title">The Marketing Funnel</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">Track how leads progress through each stage of your marketing funnel with real-time visualization.</p>
             
-            <div class="funnel-explainer">
-                <div>
-                    <h3>Understand Your Customer's Path</h3>
-                    <p><strong>Awareness:</strong> They discover your brand exists through ads, content, or word of mouth.</p>
-                    <p><strong>Interest:</strong> They engage with your content, visit your site, or follow you.</p>
-                    <p><strong>Intent:</strong> They show signs of wanting what you offer—saving items, signing up.</p>
-                    <p><strong>Evaluation:</strong> They compare you to alternatives, read reviews, consider options.</p>
-                    <p><strong>Purchase:</strong> They decide to buy from you and complete the transaction.</p>
-                    <p style="margin-top: var(--space-md);">FunnelFlow helps you see exactly where prospects get stuck and what content moves them forward.</p>
+            <div class="funnel-visualization" id="funnelVisualization">
+                <div class="funnel-stage-visual attention">Attention</div>
+                <div class="funnel-stage-visual interest">Interest</div>
+                <div class="funnel-stage-visual desire">Desire</div>
+                <div class="funnel-stage-visual action">Action</div>
+            </div>
+            
+            <div class="analytics-section">
+                <h3 style="text-align: center; margin-bottom: var(--space-md);">Advanced Funnel Analytics</h3>
+                
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <div class="analytics-value">60</div>
+                        <div class="analytics-label">Total Leads</div>
+                        <div class="analytics-description">Total number of leads in your funnel</div>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <div class="analytics-value">40</div>
+                        <div class="analytics-label">Hot Leads</div>
+                        <div class="analytics-description">Leads showing high engagement</div>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <div class="analytics-value">50%</div>
+                        <div class="analytics-label">Engagement Rate</div>
+                        <div class="analytics-description">Average interaction with content</div>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <div class="analytics-value">23</div>
+                        <div class="analytics-label">Leads Added</div>
+                        <div class="analytics-description">New leads this week</div>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <div class="analytics-value">4</div>
+                        <div class="analytics-label">Stale Leads</div>
+                        <div class="analytics-description">Inactive for 30+ days</div>
+                    </div>
                 </div>
-                <div class="funnel-diagram">
-                    <div class="funnel-stage" data-icon="🌀">Awareness</div>
-                    <div class="funnel-stage" data-icon="🧭">Interest</div>
-                    <div class="funnel-stage" data-icon="⚡">Intent</div>
-                    <div class="funnel-stage" data-icon="🔍">Evaluation</div>
-                    <div class="funnel-stage" data-icon="🛒">Purchase</div>
+                
+                <div class="conversion-path">
+                    <div class="path-stage">
+                        <div>Awareness→Interest</div>
+                        <div class="path-percentage">100%</div>
+                    </div>
+                    <div class="path-stage">
+                        <div>Interest→Consideration</div>
+                        <div class="path-percentage">20%</div>
+                    </div>
+                    <div class="path-stage">
+                        <div>Avg. Time in Funnel</div>
+                        <div class="path-percentage">No data</div>
+                    </div>
+                </div>
+                
+                <h4 style="margin-top: var(--space-lg);">Stage Distribution</h4>
+                <div class="stage-distribution">
+                    <div class="stage-segment" style="background-color: var(--accent-teal); flex: 3;">Awareness</div>
+                    <div class="stage-segment" style="background-color: var(--accent-gold); flex: 2;">Interest</div>
+                    <div class="stage-segment" style="background-color: var(--accent-coral); flex: 1;">Desire</div>
+                    <div class="stage-segment" style="background-color: var(--pastel-blue-dark); flex: 0.5;">Action</div>
                 </div>
             </div>
         </div>
@@ -833,7 +1058,7 @@
             
             <div class="demo-container">
                 <div style="text-align: center; padding: var(--space-md);">
-                    <div style="font-size: 3rem; margin-bottom: var(--space-sm);">🜂</div>
+                    <div style="font-size: 3rem; margin-bottom: var(--space-sm);"></div>
                     <h3 style="font-family: var(--font-serif);">Interactive Funnel Visualization</h3>
                     <p style="max-width: 500px; margin: 0 auto;">Hover over each stage to see conversion rates and content performance.</p>
                 </div>
@@ -1020,7 +1245,7 @@
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
         <div class="scroll-dot active" data-label="Home" data-section="hero"></div>
-        <div class="scroll-dot" data-label="Stages" data-section="basics"></div>
+        <div class="scroll-dot" data-label="Funnel" data-section="basics"></div>
         <div class="scroll-dot" data-label="Features" data-section="features"></div>
         <div class="scroll-dot" data-label="Visualization" data-section="visualization"></div>
         <div class="scroll-dot" data-label="Proof" data-section="proof"></div>
@@ -1097,13 +1322,80 @@
             });
         });
         
+        // Funnel visualization animation
+        function animateFunnel() {
+            const funnel = document.getElementById('funnelVisualization');
+            const stages = ['attention', 'interest', 'desire', 'action'];
+            
+            // Create lead cards
+            function createLead() {
+                const lead = document.createElement('div');
+                lead.className = 'lead-card';
+                lead.textContent = Math.floor(Math.random() * 1000);
+                funnel.appendChild(lead);
+                
+                // Random starting position at top of funnel
+                const startX = Math.random() * 200 + 50;
+                lead.style.left = `${startX}px`;
+                lead.style.top = '0px';
+                
+                // Animate through stages
+                let currentStage = 0;
+                const animate = () => {
+                    if (currentStage >= stages.length) {
+                        // Lead has completed the funnel, remove it
+                        setTimeout(() => {
+                            lead.style.opacity = '0';
+                            setTimeout(() => funnel.removeChild(lead), 300);
+                        }, 1000);
+                        return;
+                    }
+                    
+                    const stageElement = document.querySelector(`.${stages[currentStage]}`);
+                    const rect = stageElement.getBoundingClientRect();
+                    const funnelRect = funnel.getBoundingClientRect();
+                    
+                    const targetX = rect.left + rect.width/2 - funnelRect.left - 20;
+                    const targetY = rect.top - funnelRect.top + rect.height/2 - 10;
+                    
+                    lead.style.left = `${targetX}px`;
+                    lead.style.top = `${targetY}px`;
+                    
+                    // Some leads drop off at each stage
+                    const dropOff = Math.random() < 0.3 && currentStage > 0;
+                    if (dropOff) {
+                        // Animate off to the side
+                        setTimeout(() => {
+                            lead.style.left = `${targetX + (Math.random() > 0.5 ? 100 : -100)}px`;
+                            lead.style.opacity = '0';
+                            setTimeout(() => funnel.removeChild(lead), 300);
+                        }, 1000);
+                        return;
+                    }
+                    
+                    currentStage++;
+                    setTimeout(animate, 1000 + Math.random() * 1000);
+                };
+                
+                setTimeout(animate, Math.random() * 2000);
+            }
+            
+            // Create initial leads
+            for (let i = 0; i < 10; i++) {
+                setTimeout(createLead, i * 800);
+            }
+            
+            // Keep adding new leads periodically
+            setInterval(createLead, 2000);
+        }
+        
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             updateScrollIndicator();
             
             // Animate elements on scroll
             const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.feature-card, .case-study, .stat-card');
+                const elements = document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
@@ -1117,11 +1409,14 @@
             };
             
             // Set initial state
-            document.querySelectorAll('.feature-card, .case-study, .stat-card').forEach(el => {
+            document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             });
+            
+            // Run animations
+            animateFunnel();
             
             // Run on load and scroll
             animateOnScroll();
