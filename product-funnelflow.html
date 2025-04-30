@@ -93,7 +93,7 @@
         }
         
         p {
-            font-size: 1.1rem;
+           font-size: 1.15rem;
             margin-bottom: var(--space-sm);
             color: var(--text-main);
             opacity: 0.9;
@@ -210,30 +210,20 @@
         }
         
         /* Hero Section */
+
         .hero {
-            padding-top: 10rem;
-            padding-bottom: 8rem;
-            background-image: url('images/herofunnel.webp'); /* or .webp if you optimized it */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(137,207,240,0.1) 0%, rgba(255,182,193,0.1) 100%);
-            z-index: 1;
-        }
-        
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    background-image: url('images/herofunnel.webp');
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+}
+
+
         .hero-container {
             display: flex;
             flex-direction: column;
@@ -252,8 +242,8 @@
         .hero-title {
             margin-bottom: var(--space-md);
             position: relative;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            color: var(--text-main);
+           text-shadow: none;
             animation: fadeInUp 0.8s ease-out;
         }
         
@@ -261,8 +251,8 @@
             font-size: 1.2rem;
             margin-bottom: var(--space-md);
             max-width: 90%;
-            color: rgba(255,255,255,0.9);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+           color: var(--text-main);
+            text-shadow: none;
             animation: fadeInUp 0.8s ease-out 0.2s forwards;
             opacity: 0;
         }
@@ -1256,8 +1246,9 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
+        <div class="container hero-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center;">
+    <div class="hero-content">
+
                 <h1 class="hero-title">Marketing Chaos → Clarity</h1>
                 <p class="hero-subtitle">FunnelFlow is the calm, visual dashboard that reveals your customer journey like never before. See where prospects drop off, understand why, and fix it with confidence.</p>
                 <button class="hero-cta" onclick="location.href='#cta'">
@@ -1265,6 +1256,10 @@
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+                <div class="hero-illustration" style="text-align: center;">
+        <img src="images/herofunnel.webp" alt="Funnel Illustration" style="max-width: 100%; height: auto;" />
+    </div>
+
         </div>
     </section>
 
