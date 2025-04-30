@@ -927,6 +927,13 @@
         backdrop-filter: blur(5px);
     }
 
+    /* Mood Chart Styles */
+    .mood-chart-container {
+        position: relative;
+        height: 400px;
+        margin: 2rem 0;
+    }
+
     /* FAQ Section */
     .faq {
         background: var(--section-bg);
@@ -1768,6 +1775,24 @@
         </div>
     </section>
 
+    <!-- Mood Trends Section -->
+    <section id="mood-trends" class="data-viz">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mood Trends Visualization</h2>
+                <p>Track your emotional patterns and psychological shifts over time</p>
+            </div>
+            <div class="viz-container">
+                <div class="viz-card">
+                    <div class="mood-chart-container">
+                        <canvas id="moodChart"></canvas>
+                    </div>
+                    <p class="text-center">This example shows how you can track your emotional states over time to identify patterns and triggers in your psychological landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Multilingual Section -->
     <section id="multilingual" class="multilingual-section">
         <div class="container">
@@ -1863,7 +1888,8 @@
                 <p>Explore the therapeutic landscape of your inner world</p>
             </div>
             <div class="swiper">
-                       <div class="swiper-slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
                         <img src="/images/cabin1.webp" alt="AI-assisted insights">
                     </div>
                     <div class="swiper-slide">
@@ -1881,6 +1907,7 @@
                     <div class="swiper-slide">
                         <img src="/images/cabin2.webp" alt="AI-assisted insights">
                     </div>
+                </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -2043,9 +2070,7 @@
                     <div class="social-links">
                         <a href="https://www.linkedin.com/company/tempestlabsofficial/" class="social-link"><i data-lucide="linkedin"></i></a>
                         <a href="https://www.instagram.com/tempestlabsofficial/" class="social-link"><i data-lucide="instagram"></i></a>
-<a href="https://www.tiktok.com/@cabinetofselves" class="social-link" target="_blank">
-  <i data-lucide="tiktok"></i>
-</a>
+                        <a href="https://www.tiktok.com/@cabinetofselves" class="social-link" target="_blank"><i data-lucide="tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -2062,6 +2087,7 @@
                         <li><a href="mailto:contact@tempestlabs.space"><i data-lucide="mail"></i>Contact Us</a></li>
                     </ul>
                 </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
                 <div class="legal-links">
@@ -2093,27 +2119,42 @@
         // Initialize Lucide icons
         lucide.createIcons();
         
-        // Initialize happiness chart
-        const happinessCtx = document.getElementById('happinessChart').getContext('2d');
-        const happinessChart = new Chart(happinessCtx, {
+        // Initialize mood chart
+        const moodCtx = document.getElementById('moodChart').getContext('2d');
+        const moodChart = new Chart(moodCtx, {
             type: 'line',
             data: {
-                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
-                datasets: [{
-                    label: 'Happiness Level',
-                    data: [3.2, 3.5, 3.8, 4.2, 4.5, 4.7],
-                    borderColor: '#BBA45C',
-                    backgroundColor: 'rgba(187, 164, 92, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.3,
-                    pointBackgroundColor: '#D5A5C9',
-                    pointRadius: 5,
-                    pointHoverRadius: 7
-                }]
+                labels: ['Jan 1', 'Jan 2', 'Jan 3', 'Jan 4', 'Jan 5', 'Jan 6', 'Jan 7', 'Jan 8', 'Jan 9', 'Jan 10', 'Jan 11', 'Jan 12', 'Jan 13', 'Jan 14'],
+                datasets: [
+                    {
+                        label: 'Energy Level',
+                        data: [3.5, 4, 3.2, 4.5, 3.8, 4.2, 3.9, 4.1, 3.7, 4.3, 3.6, 4.4, 3.8, 4.2],
+                        borderColor: '#BBA45C',
+                        backgroundColor: 'rgba(187, 164, 92, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.3,
+                        pointBackgroundColor: '#BBA45C',
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    },
+                    {
+                        label: 'Mood State',
+                        data: [3.2, 3.5, 2.8, 4.2, 3.5, 3.8, 3.2, 4.0, 3.0, 4.1, 3.3, 4.0, 3.5, 4.2],
+                        borderColor: '#D5A5C9',
+                        backgroundColor: 'rgba(213, 165, 201, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.3,
+                        pointBackgroundColor: '#D5A5C9',
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    }
+                ]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         position: 'top',
@@ -2138,7 +2179,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Happiness Progress Over 6 Weeks',
+                        text: 'Mood & Energy Trends Over 2 Weeks',
                         font: {
                             size: 16,
                             family: "'Cormorant', serif"
@@ -2155,6 +2196,12 @@
                             color: '#C5BCAB',
                             font: {
                                 family: "'Inter', sans-serif"
+                            },
+                            callback: function(value) {
+                                if (value === 1) return 'Low';
+                                if (value === 3) return 'Medium';
+                                if (value === 5) return 'High';
+                                return '';
                             }
                         },
                         grid: {
