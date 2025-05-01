@@ -33,6 +33,16 @@
       min-height: 100vh;
     }
 
+    input {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
     img.hero-image {
       width: 160px;
       height: auto;
@@ -58,11 +68,12 @@
     .exchange-note {
       font-size: 0.9rem;
       color: #aaa;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       max-width: 480px;
     }
 
-    #pay-button {
+    #pay-button,
+    .link-button {
       background: var(--accent);
       color: var(--bg);
       border: none;
@@ -73,11 +84,17 @@
       cursor: pointer;
       box-shadow: var(--shadow);
       transition: 0.3s all;
+      margin-bottom: 16px;
     }
 
-    #pay-button:hover {
+    .link-button {
       background: var(--accent-dark);
+    }
+
+    #pay-button:hover,
+    .link-button:hover {
       transform: translateY(-2px);
+      opacity: 0.9;
     }
 
     #paytr-iframe {
@@ -141,7 +158,6 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* 🌟 New: Full Page Loading Overlay */
     #loading-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -178,45 +194,49 @@
   </div>
 
   <h1>Complete Your $9.99 Purchase</h1>
+  <p>Enter your name and email to proceed:</p>
 
-  <p>
-    Click the button below to open a secure checkout and finalize your access to the Cabinet of Selves.
-  </p>
+  <form id="user-form" style="width: 100%; max-width: 400px;">
+    <input type="text" id="user-name" placeholder="Your Name" required />
+    <input type="email" id="user-email" placeholder="Your Email" required />
+  </form>
 
   <div class="exchange-note">
     💬 Your card will be charged in Turkish Lira (₺), based on the latest exchange rates (approx. 1 USD ≈ 38.43 TRY).
   </div>
 
-  <button id="pay-button">💳 Pay $9.99</button>
+  <button id="pay-button">💳 Pay Securely via Form</button>
+  <p style="margin: 10px 0;">or</p>
+  <a href="https://www.paytr.com/link/PdWV9Ke?lang=en" target="_blank">
+    <button class="link-button">🔗 Pay via Direct Link</button>
+  </a>
 
   <div id="status"></div>
   <iframe id="paytr-iframe" title="Secure PayTR Checkout"></iframe>
 
   <img src="images/peoplen.png" alt="Welcome" class="hero-image" />
 
-  
   <div class="info-section">
     <h2>📜 How the Payment Process Works</h2>
     <ul>
-      <li>Click the <strong>Pay $9.99</strong> button above.</li>
-      <li>A secure payment window will open — hosted directly by our trusted partner, PayTR.</li>
-      <li>Enter your card details and complete the transaction.</li>
-      <li>Upon successful payment, you will be redirected automatically to your access page.</li>
+      <li>Fill in your name and email.</li>
+      <li>Click the secure payment button or use the direct link.</li>
+      <li>Complete payment via PayTR's secure checkout.</li>
+      <li>Get redirected to your access page instantly after success.</li>
     </ul>
 
     <h2 style="margin-top:32px;">📱 How to Install Cabinet of Selves as an App</h2>
     <ul>
-      <li><strong>iPhone (Safari):</strong> Tap the <em>Share</em> icon at the bottom and select <strong>"Add to Home Screen"</strong>.</li>
-      <li><strong>Android (Chrome):</strong> Tap the three dots at the top right, then tap <strong>"Install App"</strong> or <strong>"Add to Home Screen"</strong>.</li>
-      <li><strong>Desktop (Chrome/Edge):</strong> Look for the <em>Install</em> icon in the address bar or open browser settings to install as an app.</li>
+      <li><strong>iPhone (Safari):</strong> Tap the <em>Share</em> icon and select <strong>"Add to Home Screen"</strong>.</li>
+      <li><strong>Android (Chrome):</strong> Tap the three-dot menu, then choose <strong>"Install App"</strong>.</li>
+      <li><strong>Desktop:</strong> Look for an <em>install</em> icon in the address bar or use browser settings.</li>
     </ul>
 
     <p style="margin-top:24px;font-size:0.95rem;color:#aaa;">
-      🛡️ Some devices may display a security warning saying this app is "not from an App Store." This is perfectly normal — Cabinet of Selves is an independent private space, and it's safe to proceed with installation.
+      🛡️ This app is not from an app store — it's a safe, private space developed independently.
     </p>
-
     <p style="margin-top:20px;font-size:0.95rem;color:#aaa;">
-      🕯️ If you encounter any issues or need help, feel free to reach out to us anytime. We're always here for you.
+      🕯️ Questions or issues? We're always here to help.
     </p>
   </div>
 
@@ -227,6 +247,14 @@
     const loadingOverlay = document.getElementById("loading-overlay");
 
     payButton.addEventListener("click", async () => {
+      const name = document.getElementById("user-name").value.trim();
+      const email = document.getElementById("user-email").value.trim();
+
+      if (!name || !email) {
+        status.textContent = "⚠️ Please enter your name and email.";
+        return;
+      }
+
       iframe.style.display = "none";
       status.innerHTML = '<span class="loader"></span>Requesting secure payment link...';
 
@@ -239,9 +267,9 @@
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              email: "test@tempestlabs.space",
+              email,
               price: "9.99",
-              user_name: "Ilke",
+              user_name: name,
               user_address: "Imaginary Street No. 42, Istanbul",
               user_phone: "05555555555"
             })
