@@ -209,18 +209,20 @@
         
         /* Hero Section */
 
+
 .hero {
   background-image: url('images/herofunnel.webp');
   background-repeat: no-repeat;
-  background-size: cover; /* makes it full screen */
-  background-position: center top; /* or center center if you prefer */
+  background-size: cover;
+  background-position: top center;
   background-color: var(--bg);
-  min-height: 100vh;
+  min-height: 120vh; /* gives extra height so bottom isn't cut */
   width: 100vw;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* keep content near top */
   justify-content: center;
-  overflow: hidden;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   position: relative;
 }
 
