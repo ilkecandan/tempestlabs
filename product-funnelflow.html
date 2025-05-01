@@ -208,44 +208,46 @@
         }
         
         /* Hero Section */
-
-
 .hero {
-  background-image: url('images/herofunnel.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  background-color: var(--bg);
-  min-height: 120vh; /* gives extra height so bottom isn't cut */
-  width: 100vw;
-  display: flex;
-  align-items: flex-start; /* keep content near top */
-  justify-content: center;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
   position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
 }
 
-
-
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  object-fit: cover;
+}
 
 .hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: none; /* remove width limits */
-    padding: 0 var(--space-md);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10vh var(--space-md);
 }
+
 .hero-content {
-    position: relative;
-    z-index: 2;
-    color: var(--text-on-dark);
-    max-width: 600px;
-    margin-left: 0;
-    text-align: left;
-    transform: translateY(-40px); /* <-- this moves it upward */
+  max-width: 600px;
+  color: var(--text-main);
+  background: rgba(255,255,255,0.85); /* Optional: makes text readable */
+  padding: var(--space-sm);
+  border-radius: 8px;
 }
+
+
+
 
         
 .hero-title {
@@ -1277,7 +1279,9 @@
     </header>
 
     <!-- Hero Section -->
+
 <section class="hero" id="hero">
+  <img src="images/herofunnel.webp" alt="FunnelFlow Hero" class="hero-image" />
   <div class="container hero-container">
     <div class="hero-content">
       <h1 class="hero-title">Marketing Chaos → Clarity</h1>
