@@ -1,1 +1,545 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed | Intuiva by Tempest Labs</title>
+    <style>
+        :root {
+            --primary: #008080;  /* Teal */
+            --primary-light: #4cb8b8;
+            --primary-dark: #006666;
+            --secondary: #166088;
+            --accent: #00cccc;
+            --dark: #0a1128;
+            --light: #f0f8f8;  /* Light teal tint */
+            --error: #e63946;
+            --success: #4caf50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 6px 18px rgba(0, 128, 128, 0.2);
+        }
+        
+        .logo {
+            max-width: 220px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        
+        h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 128, 128, 0.1);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .error-icon {
+            font-size: 5rem;
+            color: var(--error);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        
+        .reason {
+            background: rgba(0, 128, 128, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .reason:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 128, 128, 0.1);
+        }
+        
+        .stripe-section {
+            background: linear-gradient(135deg, #635bff 0%, #8a85ff 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            color: white;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(99, 91, 255, 0.3);
+        }
+        
+        .stripe-section h2 {
+            color: white;
+            margin-top: 0;
+            font-size: 2.2rem;
+        }
+        
+        .stripe-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+        }
+        
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            justify-content: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            min-width: 200px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 128, 128, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(0, 128, 128, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 128, 128, 0.1);
+        }
+        
+        .btn-stripe {
+            background: white;
+            color: #635bff;
+            font-weight: 700;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .btn-stripe:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(99, 91, 255, 0.4);
+        }
+        
+        .stripe-logo {
+            height: 28px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        input, textarea {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.2);
+        }
+        
+        textarea {
+            min-height: 150px;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+        }
+        
+        .language-selector {
+            text-align: right;
+            margin-bottom: 1.5rem;
+        }
+        
+        .language-btn {
+            background: none;
+            border: none;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            font-weight: 600;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .language-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .language-btn:hover {
+            background: rgba(0, 128, 128, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 128, 128, 0.2);
+            color: var(--primary-dark);
+        }
+        
+        .access-note {
+            background: rgba(0, 128, 128, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .reasons {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button class="language-btn active" onclick="changeLanguage('en')">English</button>
+            <button class="language-btn" onclick="changeLanguage('tr')">Türkçe</button>
+            <button class="language-btn" onclick="changeLanguage('de')">Deutsch</button>
+        </div>
+        
+        <header>
+            <img src="https://tempestlabs.space/assets/images/logo.png" alt="Intuiva Logo" class="logo">
+            <h1 id="title">Payment Failed</h1>
+            <p id="subtitle">We couldn't process your payment for Intuiva. Please try again or contact us for assistance.</p>
+        </header>
+        
+        <!-- Stripe Payment Section - More Prominent -->
+        <div class="stripe-section">
+            <h2 id="stripe-title">Alternative Payment Method</h2>
+            <p id="stripe-text">If you experienced issues with local payment systems, please try our secure Stripe payment gateway that accepts all major credit cards worldwide.</p>
+            <a href="https://buy.stripe.com/bIY4iwe6Fch49zy3ci" class="btn btn-stripe" id="stripe-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" class="stripe-logo">
+                Pay with Stripe
+            </a>
+        </div>
+        
+        <div class="card">
+            <div class="error-icon">⚠️</div>
+            <h2 id="possible-reasons">Possible Reasons for Payment Failure</h2>
+            
+            <div class="reasons">
+                <div class="reason">
+                    <h3>Insufficient Funds</h3>
+                    <p>Your bank account or credit card may not have sufficient funds to complete the transaction.</p>
+                </div>
+                <div class="reason">
+                    <h3>Bank Restrictions</h3>
+                    <p>Your bank may be blocking international transactions or online payments.</p>
+                </div>
+                <div class="reason">
+                    <h3>Incorrect Card Details</h3>
+                    <p>You may have entered incorrect card number, expiration date, or CVV code.</p>
+                </div>
+                <div class="reason">
+                    <h3>Turkish Payment System Issues</h3>
+                    <p id="turkey-notice">As we're based in Turkey, sometimes local payment systems may experience temporary issues. Please try using Stripe instead.</p>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <a href="https://tempestlabs.space/product-intuiva.html" class="btn btn-primary" id="product-button">Back to Product Page</a>
+                <a href="https://tempestlabs.space/" class="btn btn-secondary" id="home-button">Return to Homepage</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 id="pwa-title">Intuiva as a Progressive Web App (PWA)</h2>
+            <p id="pwa-description">Intuiva can be installed as a Progressive Web App (PWA) on your device for a native app-like experience with these benefits:</p>
+            <ul>
+                <li id="pwa-feature1">Offline functionality - access some features without internet</li>
+                <li id="pwa-feature2">Faster loading times and smoother performance</li>
+                <li id="pwa-feature3">Home screen icon just like a regular app</li>
+                <li id="pwa-feature4">Push notifications for important updates</li>
+            </ul>
+            
+            <h3 id="install-title">How to Install:</h3>
+            <ol>
+                <li id="install-step1">Open Intuiva in Chrome or Safari</li>
+                <li id="install-step2">Look for the "Add to Home Screen" prompt or find it in the browser menu</li>
+                <li id="install-step3">Confirm the installation</li>
+                <li id="install-step4">Launch Intuiva from your home screen</li>
+            </ol>
+        </div>
+        
+        <div class="card">
+            <h2 id="contact-title">Need Help? Contact Us</h2>
+            <p id="contact-text">If you're having trouble with your payment or have any questions, please don't hesitate to contact us. We're available to assist you anytime.</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name" id="name-label">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="email-label">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" id="message-label">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
+            </div>
+            
+            <div class="access-note">
+                <p id="access-note">After successful payment, you'll receive an access key and download link via email. If you don't receive it within 24 hours, please email us at <a href="mailto:tempestlabsofficial@gmail.com">tempestlabsofficial@gmail.com</a>.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p id="footer-text">© 2023 Tempest Labs. All rights reserved. Intuiva is a product of Tempest Labs.</p>
+    </footer>
+    
+    <script>
+        // Language switching functionality
+        const translations = {
+            en: {
+                title: "Payment Failed",
+                subtitle: "We couldn't process your payment for Intuiva. Please try again or contact us for assistance.",
+                "stripe-title": "Alternative Payment Method",
+                "stripe-text": "If you experienced issues with local payment systems, please try our secure Stripe payment gateway that accepts all major credit cards worldwide.",
+                "stripe-button": "Pay with Stripe",
+                "possible-reasons": "Possible Reasons for Payment Failure",
+                "turkey-notice": "As we're based in Turkey, sometimes local payment systems may experience temporary issues. Please try using Stripe instead.",
+                "product-button": "Back to Product Page",
+                "home-button": "Return to Homepage",
+                "pwa-title": "Intuiva as a Progressive Web App (PWA)",
+                "pwa-description": "Intuiva can be installed as a Progressive Web App (PWA) on your device for a native app-like experience with these benefits:",
+                "pwa-feature1": "Offline functionality - access some features without internet",
+                "pwa-feature2": "Faster loading times and smoother performance",
+                "pwa-feature3": "Home screen icon just like a regular app",
+                "pwa-feature4": "Push notifications for important updates",
+                "install-title": "How to Install:",
+                "install-step1": "Open Intuiva in Chrome or Safari",
+                "install-step2": "Look for the 'Add to Home Screen' prompt or find it in the browser menu",
+                "install-step3": "Confirm the installation",
+                "install-step4": "Launch Intuiva from your home screen",
+                "contact-title": "Need Help? Contact Us",
+                "contact-text": "If you're having trouble with your payment or have any questions, please don't hesitate to contact us. We're available to assist you anytime.",
+                "name-label": "Your Name",
+                "email-label": "Email Address",
+                "message-label": "Your Message",
+                "submit-btn": "Send Message",
+                "access-note": "After successful payment, you'll receive an access key and download link via email. If you don't receive it within 24 hours, please email us at",
+                "footer-text": "© 2023 Tempest Labs. All rights reserved. Intuiva is a product of Tempest Labs."
+            },
+            tr: {
+                title: "Ödeme Başarısız",
+                subtitle: "Intuiva için ödemeniz işleme alınamadı. Lütfen tekrar deneyin veya yardım için bizimle iletişime geçin.",
+                "stripe-title": "Alternatif Ödeme Yöntemi",
+                "stripe-text": "Yerel ödeme sistemleriyle sorun yaşadıysanız, lütfen dünya çapında tüm büyük kredi kartlarını kabul eden güvenli Stripe ödeme ağ geçidimizi deneyin.",
+                "stripe-button": "Stripe ile Öde",
+                "possible-reasons": "Ödeme Hatasının Olası Nedenleri",
+                "turkey-notice": "Türkiye merkezli olduğumuz için bazen yerel ödeme sistemleri geçici sorunlar yaşayabilir. Lütfen bunun yerine Stripe kullanmayı deneyin.",
+                "product-button": "Ürün Sayfasına Dön",
+                "home-button": "Ana Sayfaya Dön",
+                "pwa-title": "Progresif Web Uygulaması (PWA) Olarak Intuiva",
+                "pwa-description": "Intuiva, cihazınıza bir Progressive Web Uygulaması (PWA) olarak yüklenebilir ve yerel bir uygulama gibi deneyim sunar. PWA'lar şu avantajları sağlar:",
+                "pwa-feature1": "Çevrimdışı işlevsellik - internetsiz bazı özelliklere erişim",
+                "pwa-feature2": "Daha hızlı yükleme süreleri ve daha akıcı performans",
+                "pwa-feature3": "Normal bir uygulama gibi ana ekran simgesi",
+                "pwa-feature4": "Önemli güncellemeler için anında bildirimler",
+                "install-title": "Nasıl Yüklenir:",
+                "install-step1": "Intuiva'yı Chrome veya Safari'de açın",
+                "install-step2": "'Ana Ekrana Ekle' istemini arayın veya tarayıcı menüsünde bulun",
+                "install-step3": "Yüklemeyi onaylayın",
+                "install-step4": "Intuiva'yı ana ekranınızdan başlatın",
+                "contact-title": "Yardıma mı İhtiyacınız Var? Bize Ulaşın",
+                "contact-text": "Ödemenizle ilgili sorun yaşıyorsanız veya sorularınız varsa, lütfen bizimle iletişime geçmekten çekinmeyin. Size yardımcı olmak için her zaman hazırız.",
+                "name-label": "Adınız",
+                "email-label": "E-posta Adresiniz",
+                "message-label": "Mesajınız",
+                "submit-btn": "Mesaj Gönder",
+                "access-note": "Başarılı ödemeden sonra, e-posta yoluyla bir erişim anahtarı ve indirme bağlantısı alacaksınız. 24 saat içinde almazsanız, lütfen bize e-posta gönderin",
+                "footer-text": "© 2023 Tempest Labs. Tüm hakları saklıdır. Intuiva, Tempest Labs'ın bir ürünüdür."
+            },
+            de: {
+                title: "Zahlung fehlgeschlagen",
+                subtitle: "Wir konnten Ihre Zahlung für Intuiva nicht verarbeiten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns für Hilfe.",
+                "stripe-title": "Alternative Zahlungsmethode",
+                "stripe-text": "Wenn Sie Probleme mit lokalen Zahlungssystemen hatten, versuchen Sie bitte unser sicheres Stripe-Zahlungsgateway, das alle großen Kreditkarten weltweit akzeptiert.",
+                "stripe-button": "Mit Stripe bezahlen",
+                "possible-reasons": "Mögliche Gründe für Zahlungsfehler",
+                "turkey-notice": "Da wir in der Türkei ansässig sind, können lokale Zahlungssysteme manchmal vorübergehende Probleme verursachen. Bitte versuchen Sie es stattdessen mit Stripe.",
+                "product-button": "Zurück zur Produktseite",
+                "home-button": "Zur Startseite zurückkehren",
+                "pwa-title": "Intuiva als Progressive Web App (PWA)",
+                "pwa-description": "Intuiva kann als Progressive Web App (PWA) auf Ihrem Gerät installiert werden, um ein natives App-Erlebnis mit diesen Vorteilen zu bieten:",
+                "pwa-feature1": "Offline-Funktionalität - Zugriff auf einige Funktionen ohne Internet",
+                "pwa-feature2": "Schnellere Ladezeiten und flüssigere Leistung",
+                "pwa-feature3": "Startbildschirm-Symbol wie eine normale App",
+                "pwa-feature4": "Push-Benachrichtigungen für wichtige Updates",
+                "install-title": "Installationsanleitung:",
+                "install-step1": "Öffnen Sie Intuiva in Chrome oder Safari",
+                "install-step2": "Suchen Sie nach der Aufforderung 'Zum Home-Bildschirm hinzufügen' oder finden Sie sie im Browser-Menü",
+                "install-step3": "Bestätigen Sie die Installation",
+                "install-step4": "Starten Sie Intuiva von Ihrem Home-Bildschirm aus",
+                "contact-title": "Brauchen Sie Hilfe? Kontaktieren Sie uns",
+                "contact-text": "Wenn Sie Probleme mit Ihrer Zahlung haben oder Fragen haben, zögern Sie bitte nicht, uns zu kontaktieren. Wir stehen Ihnen jederzeit zur Verfügung.",
+                "name-label": "Ihr Name",
+                "email-label": "E-Mail-Adresse",
+                "message-label": "Ihre Nachricht",
+                "submit-btn": "Nachricht senden",
+                "access-note": "Nach erfolgreicher Zahlung erhalten Sie einen Zugangsschlüssel und einen Download-Link per E-Mail. Wenn Sie diese innerhalb von 24 Stunden nicht erhalten, senden Sie uns bitte eine E-Mail an",
+                "footer-text": "© 2023 Tempest Labs. Alle Rechte vorbehalten. Intuiva ist ein Produkt von Tempest Labs."
+            }
+        };
+        
+        function changeLanguage(lang) {
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(lang === 'en' ? 'english' : lang === 'tr' ? 'türkçe' : 'deutsch')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            const elements = document.querySelectorAll('[id]');
+            elements.forEach(el => {
+                if (translations[lang] && translations[lang][el.id]) {
+                    el.textContent = translations[lang][el.id];
+                }
+            });
+        }
+        
+        // Simple form submission handling
+        document.querySelector('.submit-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                alert('Thank you for your message! We will get back to you soon.');
+                // In a real implementation, you would send this data to your server
+                document.querySelector('.contact-form').reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>
