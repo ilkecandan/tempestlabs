@@ -1351,26 +1351,27 @@
     }
 
     /* Chat Widget */
-    .chat-widget {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-  background: rgba(10, 10, 10, 0.95); /* increased opacity for better contrast */
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #000;
-      font-size: 1.5rem;
-      cursor: pointer;
-      z-index: 999;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
-      transform: translateY(100px);
-      opacity: 0;
-    }
+.chat-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: rgba(10, 10, 10, 0.95); /* Better visibility */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary); /* Theme-consistent icon color */
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
 
     .chat-widget.visible {
       transform: translateY(0);
