@@ -183,59 +183,93 @@
       max-width: 300px;
       line-height: 1.6;
     }
+
+    .language-toggle {
+      margin-bottom: 24px;
+    }
+    
+    .language-toggle button {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      padding: 8px 16px;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .language-toggle button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    
+    .language-toggle button.active {
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body>
+  <div class="language-toggle">
+    <button onclick="setLanguage('en')" class="active" id="en-btn">🇬🇧 English</button>
+    <button onclick="setLanguage('tr')" id="tr-btn">🇹🇷 Türkçe</button>
+  </div>
 
   <div id="loading-overlay">
     <div class="loader"></div>
-    <p>Processing your payment...<br>Please wait a moment 🌑🌕</p>
+    <p id="loading-text">Processing your payment...<br>Please wait a moment 🌑🌕</p>
   </div>
 
-  <h1>Complete Your $9.99 Purchase</h1>
-  <p>Enter your name and email to proceed:</p>
+  <h1 id="title">Complete Your $9.99 Purchase</h1>
+  <p id="instruction">Enter your name and email to proceed:</p>
 
   <form id="user-form" style="width: 100%; max-width: 400px;">
     <input type="text" id="user-name" placeholder="Your Name" required />
     <input type="email" id="user-email" placeholder="Your Email" required />
   </form>
 
-  <div class="exchange-note">
+  <div class="exchange-note" id="exchange-note">
     💬 Your card will be charged in Turkish Lira (₺), based on the latest exchange rates (approx. 1 USD ≈ 38.43 TRY).
   </div>
 
   <button id="pay-button">💳 Pay Securely via Form</button>
-  <p style="margin: 10px 0;">or</p>
-  <a href="https://www.paytr.com/link/PdWV9Ke?lang=en" target="_blank">
-    <button class="link-button">🔗 Pay via Direct Link</button>
-  </a>
+  <p style="margin: 10px 0;" id="or-text">or</p>
 
   <div id="status"></div>
   <iframe id="paytr-iframe" title="Secure PayTR Checkout"></iframe>
 
+  <a href="https://www.paytr.com/link/PdWV9Ke?lang=en" target="_blank">
+    <button class="link-button" id="direct-link-text">🔗 Pay via Direct Link</button>
+  </a>
+  <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;" id="rate-fixed-note">
+    We've fixed the exchange rate at <strong>1 USD = 39 TRY</strong> for this launch. If the exchange rate changes drastically, we'll update the price accordingly.
+  </p>
+
   <img src="images/peoplen.png" alt="Welcome" class="hero-image" />
 
   <div class="info-section">
-    <h2>📜 How the Payment Process Works</h2>
-    <ul>
+    <h2 id="payment-process-title">📜 How the Payment Process Works</h2>
+    <ul id="payment-process-steps">
       <li>Fill in your name and email.</li>
       <li>Click the secure payment button or use the direct link.</li>
       <li>Complete payment via PayTR's secure checkout.</li>
       <li>Get redirected to your access page instantly after success.</li>
     </ul>
 
-    <h2 style="margin-top:32px;">📱 How to Install Cabinet of Selves as an App</h2>
-    <ul>
+    <h2 style="margin-top:32px;" id="install-title">📱 How to Install Cabinet of Selves as an App</h2>
+    <ul id="install-steps">
       <li><strong>iPhone (Safari):</strong> Tap the <em>Share</em> icon and select <strong>"Add to Home Screen"</strong>.</li>
       <li><strong>Android (Chrome):</strong> Tap the three-dot menu, then choose <strong>"Install App"</strong>.</li>
       <li><strong>Desktop:</strong> Look for an <em>install</em> icon in the address bar or use browser settings.</li>
     </ul>
 
-    <p style="margin-top:24px;font-size:0.95rem;color:#aaa;">
+    <p style="margin-top:24px;font-size:0.95rem;color:#aaa;" id="app-store-note">
       🛡️ This app is not from an app store — it's a safe, private space developed independently.
     </p>
-    <p style="margin-top:20px;font-size:0.95rem;color:#aaa;">
+    <p style="margin-top:20px;font-size:0.95rem;color:#aaa;" id="help-note">
       🕯️ Questions or issues? We're always here to help.
     </p>
   </div>
@@ -246,17 +280,116 @@
     const status = document.getElementById("status");
     const loadingOverlay = document.getElementById("loading-overlay");
 
+    // Language support
+    const translations = {
+      en: {
+        title: "Complete Your $9.99 Purchase",
+        instruction: "Enter your name and email to proceed:",
+        exchangeNote: "💬 Your card will be charged in Turkish Lira (₺), based on the latest exchange rates (approx. 1 USD ≈ 38.43 TRY).",
+        rateFixedNote: "We've fixed the exchange rate at <strong>1 USD = 39 TRY</strong> for this launch. If the exchange rate changes drastically, we'll update the price accordingly.",
+        orText: "or",
+        directLinkText: "🔗 Pay via Direct Link",
+        paymentProcessTitle: "📜 How the Payment Process Works",
+        paymentProcessSteps: [
+          "Fill in your name and email.",
+          "Click the secure payment button or use the direct link.",
+          "Complete payment via PayTR's secure checkout.",
+          "Get redirected to your access page instantly after success."
+        ],
+        installTitle: "📱 How to Install Cabinet of Selves as an App",
+        installSteps: [
+          "<strong>iPhone (Safari):</strong> Tap the <em>Share</em> icon and select <strong>\"Add to Home Screen\"</strong>.",
+          "<strong>Android (Chrome):</strong> Tap the three-dot menu, then choose <strong>\"Install App\"</strong>.",
+          "<strong>Desktop:</strong> Look for an <em>install</em> icon in the address bar or use browser settings."
+        ],
+        appStoreNote: "🛡️ This app is not from an app store — it's a safe, private space developed independently.",
+        helpNote: "🕯️ Questions or issues? We're always here to help.",
+        loadingText: "Processing your payment...<br>Please wait a moment 🌑🌕",
+        namePlaceholder: "Your Name",
+        emailPlaceholder: "Your Email"
+      },
+      tr: {
+        title: "$9.99'lık Satın Alma İşleminizi Tamamlayın",
+        instruction: "Devam etmek için adınızı ve e-posta adresinizi girin:",
+        exchangeNote: "💬 Kartınız Türk Lirası (₺) üzerinden güncel kurla tahsil edilecektir (yaklaşık 1 USD ≈ 38.43 TL).",
+        rateFixedNote: "Bu lansman için döviz kuru sabitlendi: <strong>1 USD = 39 TL</strong>. Kurda ciddi bir değişiklik olursa fiyat güncellenecektir.",
+        orText: "veya",
+        directLinkText: "🔗 Doğrudan Bağlantı ile Öde",
+        paymentProcessTitle: "📜 Ödeme Süreci Nasıl İşler",
+        paymentProcessSteps: [
+          "Adınızı ve e-posta adresinizi girin.",
+          "Güvenli ödeme butonuna tıklayın veya doğrudan bağlantıyı kullanın.",
+          "PayTR'nin güvenli ödeme sayfasında işlemi tamamlayın.",
+          "Başarılı ödeme sonrası anında erişim sayfanıza yönlendirileceksiniz."
+        ],
+        installTitle: "📱 Cabinet of Selves Uygulamasını Yükleme",
+        installSteps: [
+          "<strong>iPhone (Safari):</strong> <em>Paylaş</em> simgesine dokunun ve <strong>\"Ana Ekrana Ekle\"</strong> seçeneğini seçin.",
+          "<strong>Android (Chrome):</strong> Üç nokta menüsüne dokunun, ardından <strong>\"Uygulamayı Yükle\"</strong> seçeneğini seçin.",
+          "<strong>Masaüstü:</strong> Adres çubuğundaki <em>yükleme</em> simgesini arayın veya tarayıcı ayarlarını kullanın."
+        ],
+        appStoreNote: "🛡️ Bu uygulama bir uygulama mağazasından değil — bağımsız olarak geliştirilmiş güvenli, özel bir alandır.",
+        helpNote: "🕯️ Sorularınız veya sorunlarınız mı var? Her zaman yardıma hazırız.",
+        loadingText: "Ödemeniz işleniyor...<br>Lütfen bir dakika bekleyin 🌑🌕",
+        namePlaceholder: "Adınız",
+        emailPlaceholder: "E-posta Adresiniz"
+      }
+    };
+
+    function setLanguage(lang) {
+      // Update button states
+      document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+      document.getElementById('tr-btn').classList.toggle('active', lang === 'tr');
+      
+      // Update all text elements
+      document.getElementById('title').textContent = translations[lang].title;
+      document.getElementById('instruction').textContent = translations[lang].instruction;
+      document.getElementById('exchange-note').textContent = translations[lang].exchangeNote;
+      document.getElementById('rate-fixed-note').innerHTML = translations[lang].rateFixedNote;
+      document.getElementById('or-text').textContent = translations[lang].orText;
+      document.getElementById('direct-link-text').textContent = translations[lang].directLinkText;
+      document.getElementById('payment-process-title').textContent = translations[lang].paymentProcessTitle;
+      document.getElementById('install-title').textContent = translations[lang].installTitle;
+      document.getElementById('app-store-note').textContent = translations[lang].appStoreNote;
+      document.getElementById('help-note').textContent = translations[lang].helpNote;
+      document.getElementById('loading-text').innerHTML = translations[lang].loadingText;
+      document.getElementById('user-name').placeholder = translations[lang].namePlaceholder;
+      document.getElementById('user-email').placeholder = translations[lang].emailPlaceholder;
+      
+      // Update lists
+      const paymentSteps = translations[lang].paymentProcessSteps;
+      const paymentListItems = document.querySelectorAll('#payment-process-steps li');
+      paymentSteps.forEach((step, i) => {
+        if (paymentListItems[i]) {
+          paymentListItems[i].innerHTML = step;
+        }
+      });
+      
+      const installSteps = translations[lang].installSteps;
+      const installListItems = document.querySelectorAll('#install-steps li');
+      installSteps.forEach((step, i) => {
+        if (installListItems[i]) {
+          installListItems[i].innerHTML = step;
+        }
+      });
+    }
+
     payButton.addEventListener("click", async () => {
       const name = document.getElementById("user-name").value.trim();
       const email = document.getElementById("user-email").value.trim();
 
       if (!name || !email) {
-        status.textContent = "⚠️ Please enter your name and email.";
+        status.textContent = document.getElementById('en-btn').classList.contains('active') ? 
+          "⚠️ Please enter your name and email." : 
+          "⚠️ Lütfen adınızı ve e-posta adresinizi girin.";
         return;
       }
 
       iframe.style.display = "none";
-      status.innerHTML = '<span class="loader"></span>Requesting secure payment link...';
+      status.innerHTML = '<span class="loader"></span>' + 
+        (document.getElementById('en-btn').classList.contains('active') ? 
+         "Requesting secure payment link..." : 
+         "Güvenli ödeme bağlantısı isteniyor...");
 
       try {
         loadingOverlay.style.display = "flex";
@@ -282,18 +415,22 @@
         if (data.token_url) {
           iframe.src = data.token_url;
           iframe.style.display = "block";
-          status.textContent = "✅ Secure payment loaded. Please complete your transaction below.";
+          status.textContent = document.getElementById('en-btn').classList.contains('active') ? 
+            "✅ Secure payment loaded. Please complete your transaction below." : 
+            "✅ Güvenli ödeme yüklendi. Lütfen işleminizi aşağıdan tamamlayın.";
         } else {
-          status.textContent = "⚠️ Failed to generate payment link.";
+          status.textContent = document.getElementById('en-btn').classList.contains('active') ? 
+            "⚠️ Failed to generate payment link." : 
+            "⚠️ Ödeme bağlantısı oluşturulamadı.";
           console.error("Error response:", data);
         }
       } catch (err) {
         loadingOverlay.style.display = "none";
-        status.textContent = "🚨 Error: " + err.message;
+        status.textContent = (document.getElementById('en-btn').classList.contains('active') ? 
+          "🚨 Error: " : "🚨 Hata: ") + err.message;
         console.error("Request error:", err);
       }
     });
   </script>
-
 </body>
 </html>
