@@ -1,955 +1,88 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <!-- Meta tags remain unchanged -->
-  <title>Intuiva – Solo Girişimciler için AI Proje Planlayıcı</title>
-  <!-- Rest of head remains unchanged -->
-   <style>
-    /* Modern Cyberpunk-Inspired Base Styles */
-    :root {
-      --primary: #00ffff;
-      --primary-dark: #00b3b3;
-      --secondary: #ff00ff;
-      --bg-dark: #0a0a0a;
-      --bg-darker: #050505;
-      --text-light: #e0e0e0;
-      --text-lighter: #f5f5f5;
-      --text-dark: #888;
-      --card-bg: rgba(20, 20, 20, 0.8);
-      --card-border: rgba(0, 255, 255, 0.2);
-      --glow: 0 0 15px rgba(0, 255, 255, 0.7);
-      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-    }
-
-    @font-face {
-      font-family: 'Cyber';
-      src: url('https://fonts.cdnfonts.com/css/cyberpunk') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--bg-darker);
-      color: var(--text-light);
-      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    /* Typography */
-    h1, h2, h3, h4 {
-      color: var(--primary);
-      font-family: 'Cyber', Arial, sans-serif;
-      letter-spacing: 1px;
-      margin-bottom: 0.75em;
-    }
-
-    h1 {
-      font-size: 3rem;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 
-                   0 0 20px rgba(0, 255, 255, 0.3);
-      line-height: 1.2;
-      margin-top: 0;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
-      position: relative;
-      display: inline-block;
-      margin-top: 1.5em;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-      box-shadow: var(--glow);
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-top: 0.5em;
-    }
-
-    p {
-      margin: 0.75em 0 1.5em;
-      font-size: 1.1rem;
-      color: var(--text-light);
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    a:hover {
-      color: var(--text-lighter);
-      text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
-    }
-
-    /* Navigation - Sticky Glowing */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
-      border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      font-weight: 600;
-      position: relative;
-      padding: 0.5rem 0;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-      box-shadow: var(--glow);
-    }
-
-    a.logo {
-      font-family: 'Cyber', sans-serif;
-      font-size: 1.5rem;
-      color: var(--primary);
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
-    }
-
-    /* Buttons - Glowing Interactive */
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #000;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(0, 255, 255, 0.1);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
-    }
-
-    .btn-glow {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(0, 255, 255, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
-    }
-
-    /* Hero Section with Video Background */
-    .hero {
-      position: relative;
-      height: 100vh;
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-      padding: 0 10%;
-      overflow: hidden;
-    }
-
-    .hero-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 600px;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      color: var(--text-lighter);
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    /* Main Content Sections */
-    .main-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-    }
-
-    section {
-      margin-bottom: 5rem;
-      position: relative;
-    }
-
-    /* Cards - Glass Morphism */
-    .card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(10px);
-      transition: var(--transition);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
-      border-color: rgba(0, 255, 255, 0.4);
-    }
-
-    /* Benefits List - Animated */
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .benefit-item {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 2rem;
-      border-left: 4px solid var(--primary);
-      transition: var(--transition);
-    }
-
-    .benefit-item:hover {
-      transform: translateX(10px);
-      box-shadow: var(--glow);
-    }
-
-    .benefit-item h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .benefit-item i {
-      color: var(--primary);
-      font-size: 1.5rem;
-    }
-
-    /* Case Study - Testimonial */
-    .case-study {
-      position: relative;
-      padding: 3rem;
-      border-radius: 15px;
-      background: linear-gradient(135deg, rgba(0,50,50,0.3) 0%, rgba(0,0,0,0.7) 100%);
-      overflow: hidden;
-      margin: 4rem 0;
-    }
-
-    .case-study::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(0,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
-      background-size: cover;
-      z-index: 0;
-    }
-
-    .case-study-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    blockquote {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--text-lighter);
-      padding: 2rem;
-      margin: 2rem 0;
-      position: relative;
-      border-left: 4px solid var(--primary);
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 0 10px 10px 0;
-    }
-
-    blockquote::before {
-      content: '"';
-      font-size: 5rem;
-      color: rgba(0, 255, 255, 0.2);
-      position: absolute;
-      left: 1rem;
-      top: -1rem;
-      line-height: 1;
-    }
-
-    /* Steps - Animated Numbered List */
-    .steps {
-      counter-reset: step;
-      margin: 3rem 0;
-    }
-
-    .step-item {
-      position: relative;
-      padding-left: 5rem;
-      margin-bottom: 3rem;
-      transition: var(--transition);
-    }
-
-    .step-item:hover {
-      transform: translateX(10px);
-    }
-
-    .step-item::before {
-      counter-increment: step;
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 3.5rem;
-      height: 3.5rem;
-      background: var(--primary);
-      color: #000;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      font-family: 'Cyber', sans-serif;
-      box-shadow: var(--glow);
-    }
-
-    /* Features Grid - Interactive */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid var(--card-border);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        to bottom right,
-        rgba(0, 255, 255, 0) 0%,
-        rgba(0, 255, 255, 0.1) 50%,
-        rgba(0, 255, 255, 0) 100%
-      );
-      transform: rotate(30deg);
-      transition: var(--transition);
-      opacity: 0;
-    }
-
-    .feature-card:hover::after {
-      animation: shine 1.5s;
-    }
-
-    @keyframes shine {
-      0% { opacity: 0; left: -50%; }
-      50% { opacity: 1; }
-      100% { opacity: 0; left: 150%; }
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    /* Video Container */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 15px;
-      margin: 3rem 0;
-      border: 2px solid rgba(0, 255, 255, 0.3);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* Pricing Cards - Glowing Hover */
-    .pricing-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .pricing-card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 2.5rem;
-      text-align: center;
-      border: 1px solid var(--card-border);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-card.popular::before {
-      content: 'MOST POPULAR';
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: var(--secondary);
-      color: #000;
-      padding: 0.5rem 1.5rem;
-      font-size: 0.8rem;
-      font-weight: bold;
-      border-radius: 0 15px 0 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
-    }
-
-    .price {
-      font-size: 3rem;
-      font-weight: bold;
-      color: var(--primary);
-      margin: 1rem 0;
-      font-family: 'Cyber', sans-serif;
-    }
-
-    .price span {
-      font-size: 1rem;
-      color: var(--text-light);
-    }
-
-    .price-features {
-      list-style: none;
-      margin: 2rem 0;
-      text-align: left;
-    }
-
-    .price-features li {
-      padding: 0.5rem 0;
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .price-features li::before {
-      content: '✓';
-      color: var(--primary);
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-    }
-
-    /* FAQ - Accordion */
-    .faq-container {
-      margin: 3rem 0;
-    }
-
-    .faq-item {
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      overflow: hidden;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-    }
-
-    .faq-question {
-      padding: 1.5rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .faq-question:hover {
-      background: rgba(0, 255, 255, 0.05);
-    }
-
-    .faq-question h3 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    .faq-toggle {
-      width: 30px;
-      height: 30px;
-      background: var(--primary);
-      color: #000;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      flex-shrink: 0;
-    }
-
-    .faq-question.active .faq-toggle {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease-out;
-      padding: 0 1.5rem;
-    }
-
-    .faq-answer-content {
-      padding: 0 0 1.5rem;
-    }
-
-    .author-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--primary);
-    }
-
-    .author-info h4 {
-      margin: 0;
-      color: var(--primary);
-    }
-
-    .author-info p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text-dark);
-    }
-
-    /* CTA Section - Glowing */
-    .cta-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      border-radius: 15px;
-      margin: 4rem 0;
-      background: linear-gradient(135deg, rgba(0,50,50,0.3) 0%, rgba(0,0,0,0.7) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, transparent 70%);
-      animation: rotate 20s linear infinite;
-      z-index: 0;
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Footer */
-    footer {
-      background: #000;
-      padding: 3rem 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(0, 255, 255, 0.1);
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1.5rem 0;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-light);
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: var(--primary);
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .social-links a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .social-links a:hover {
-      background: var(--primary);
-      color: #000;
-      transform: translateY(-5px);
-    }
-
-    .copyright {
-      color: var(--text-dark);
-      font-size: 0.9rem;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.8rem; }
-      
-      nav ul {
-        display: none;
-      }
-      
-      .hero-content {
-        max-width: 100%;
-      }
-      
-      .hero-cta {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .testimonial-card {
-        flex: 0 0 90%;
-      }
-    }
-
-    /* Scroll Indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      color: var(--primary);
-      animation: bounce 2s infinite;
-      cursor: pointer;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-20px) translateX(-50%); }
-      60% { transform: translateY(-10px) translateX(-50%); }
-    }
-
-    /* Testimonials Slider */
-    .testimonials {
-      background-color: #050505;
-      padding: 80px 20px;
-      color: #e5faff;
-      text-align: center;
-      position: relative;
-    }
-
-    .glow-heading {
-      font-size: 2rem;
-      color: #00f9ff;
-      text-shadow: 0 0 8px #00f9ff;
-      margin-bottom: 10px;
-    }
-
-    .subtext {
-      font-size: 1rem;
-      color: #9ca3af;
-      margin-bottom: 50px;
-    }
-
-    .testimonial-slider-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .nav-button {
-      background: transparent;
-      border: none;
-      font-size: 2rem;
-      color: #00f9ff;
-      cursor: pointer;
-      z-index: 2;
-      padding: 10px;
-      transition: color 0.2s ease;
-    }
-
-    .nav-button:hover {
-      color: #a6f8ff;
-    }
-
-    .testimonial-slider-wrapper {
-      overflow: hidden;
-      max-width: 100%;
-      scroll-behavior: smooth;
-    }
-
-    .testimonial-slider {
-      display: flex;
-      gap: 20px;
-      padding: 10px 0;
-    }
-
-    .testimonial-card {
-      background-color: #101010;
-      border: 1px solid rgba(0, 249, 255, 0.1);
-      padding: 25px;
-      border-radius: 14px;
-      flex-shrink: 0;
-      width: 330px;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 8px rgba(0, 249, 255, 0.05);
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 20px rgba(0, 249, 255, 0.15);
-    }
-
-    .testimonial-card-link {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .testimonial-text {
-      font-size: 0.95rem;
-      color: #d1d5db;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    .author-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 15px;
-      border: 2px solid #00f9ff33;
-    }
-
-    .author-info h4 {
-      font-size: 1rem;
-      color: #ffffff;
-      margin: 0;
-    }
-
-    .author-info p {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      margin: 2px 0 0;
-    }
-
-    /* Results Grid */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .result-card {
-      background: rgba(0, 255, 255, 0.05);
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-      border: 1px solid rgba(0, 255, 255, 0.1);
-    }
-
-    .result-card h4 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .result-card p {
-      font-size: 0.9rem;
-      margin: 0;
-      color: var(--text-light);
-    }
-  </style>
-</head>
-
+  <meta charset="UTF-8" />
+  <link rel="icon" href="images/tempest.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intuiva – Solo Girişimciler için AI Destekli Proje Planlayıcı</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="intuiva.css">
+  <link rel="manifest" href="/manifest.json">
   
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.cdnfonts.com/css/cyberpunk" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/main.mp4" as="video" type="video/mp4">
+</head>
 <body>
 
-  <!-- Navigation - Turkish -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html" class="logo">INTUIVA</a>
     <ul>
       <li><a href="#features">Özellikler</a></li>
-      <li><a href="#how-it-works">Nasıl Çalışır</a></li>
+      <li><a href="#how-it-works">Nasıl Çalışır?</a></li>
       <li><a href="#pricing">Fiyatlandırma</a></li>
       <li><a href="#testimonials">Kullanıcı Yorumları</a></li>
       <li><a href="#faq">SSS</a></li>
       <li><a href="#contact">İletişim</a></li>
-      <li><a href="https://tempestlabs.space/product-intuiva.html">English</a></li>
-
     </ul>
   </nav>
 
-  <!-- Hero Section - Turkish -->
+  <!-- Hero Section with Video Background -->
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="/images/main.mp4" type="video/mp4">
-      Tarayıcınız video etiketini desteklemiyor.
+    <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+      <source src="images/main.mp4" type="video/mp4">
     </video>
     <div class="hero-content">
-      <h1>Vizyonerler için AI Destekli Proje Planlama</h1>
-      <p class="subtitle">Cesur fikirlerinizi Intuiva'nın akıllı proje stratejisti ile aksiyona dönüştürün. Farklı düşünen solo girişimciler ve küçük ekipler için tasarlandı.</p>
+      <h1>Vizyonerler için Yapay Zeka Destekli Proje Planlama</h1>
+      <p class="subtitle">Geleneksel araçlar solo girişimcileri karmaşıklıkla boğuyor. Intuiva size profesyonel bir proje yöneticisinin yapısını fazlalık olmadan sunar. Sonunda, sizin nasıl düşündüğünüzü anlayan bir planlama aracı.</p>
       <div class="hero-cta">
         <a href="#pricing" class="btn btn-primary btn-glow">Hemen Başla</a>
-        <a href="#tutorial-video" class="btn btn-secondary">Demoyu İzle <i class="fas fa-play"></i></a>
+        <a href="#tutorial-video" class="btn btn-secondary">Tanıtımı İzle <i class="fas fa-play"></i></a>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <i class="fas fa-chevron-down fa-2x"></i>
+    
+    <!-- Scroll Hint -->
+    <div class="scroll-hint-container">
+      <div class="scroll-hint-text">Daha Fazlasını Keşfet</div>
+      <div class="scroll-hint-arrow" onclick="document.querySelector('.main-content').scrollIntoView({ behavior: 'smooth' })"></div>
     </div>
   </section>
 
-  <!-- Main Content - Turkish -->
+  <!-- Main Content -->
   <div class="main-content">
 
-    <!-- Benefits Section - Turkish -->
-    <section id="features">
-      <h2>Intuiva Neden Her Şeyi Değiştiriyor?</h2>
-      <p>Geleneksel proje araçları sizi katı çerçevelere zorlar. Intuiva benzersiz düşünme tarzınıza uyum sağlar, geleceği görmenize ve onu gerçekleştirmek için geriye doğru çalışmanıza yardımcı olur.</p>
+    <!-- Founder's Note Section -->
+    <section class="founder-note">
+      <div class="founder-content">
+        <h2>Kurucumuzdan Bir Not</h2>
+        <p>Intuiva'yı, solo SaaS lansmanımı birden fazla araç üzerinde planlamaya çalışırken tükenmişliğe girdikten sonra yarattım. Beynimin olduğu yerde bana ulaşabilen, katı çerçevelere zorlamayan bir asistan ihtiyacım vardı.</p>
+        <p>Çoğu proje aracı, zaten tam olarak ne yapılması gerektiğini bildiğinizi varsayar. Ancak yeni bir şey inşa ederken, mücadelenin yarısı bilmediğiniz şeyleri bulmaktır. İşte geleneksel araçlar solo girişimcileri bu noktada yüzüstü bırakır.</p>
+        <p>Intuiva, başlarken sahip olmayı dilediğim planlama ortağıdır; zor soruları düşünmeme yardım ederken beni organize tutan bir şey. Fikirlerinize hak ettikleri yapıyı vermekle ilgilidir.</p>
+        
+        <div class="founder-signature">
+          <img src="images/ilke-avatar.webp" alt="Ilke Bengi" class="founder-avatar">
+          <div class="founder-info">
+            <h4>Ilke Bengi</h4>
+            <p>Kurucu, Tempest Labs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="features" class="low-energy">
+      <h2>Solo Girişimciler Neden Intuiva'yı Seçiyor?</h2>
+      <p>Tek başınıza inşa ederken, beyninize uyum sağlayan bir planlamaya ihtiyacınız var, tam tersi değil. Intuiva, farklı düşünen bağımsız yaratıcılar için özel olarak tasarlanmış tek araçtır.</p>
       
       <div class="benefits">
         <div class="benefit-item">
-          <h3><i class="fas fa-lock"></i> Gizlilik Öncelikli</h3>
-          <p>Projeleriniz cihazınızda kalır. Bulut depolama yok, veri takibi yok. Fikirlerinizin yalnızca size ait kalması gerektiğine inanıyoruz.</p>
+          <h3><i class="fas fa-lock"></i> Güvenli Veri Depolama</h3>
+          <p>Projeleriniz kurumsal düzeyde şifreleme ile güvenli bir şekilde saklanır. Fikri mülkiyetinizi en yüksek güvenlik standartlarıyla koruyoruz.</p>
         </div>
         <div class="benefit-item">
-          <h3><i class="fas fa-bolt"></i> Tek Seferlik Satın Alma</h3>
-          <p>Bir kez ödeyin, sonsuza kadar sahip olun. Abonelik yok, tekrarlayan ücret yok. Sadece AI stratejistinize sınırsız erişim.</p>
+          <h3><i class="fas fa-bolt"></i> Tek Seferlik Ödeme</h3>
+          <p>Bir kez öde, sonsuza kadar sahip ol. Abonelik yok, tekrarlayan ücret yok. Sadece AI stratejistinize sınırsız erişim.</p>
         </div>
         <div class="benefit-item">
           <h3><i class="fas fa-project-diagram"></i> Görsel Yol Haritası</h3>
@@ -958,16 +91,99 @@
       </div>
     </section>
 
-    <!-- Case Study Section - Turkish -->
+    <!-- Pain Points Section - Updated -->
+    <section class="low-energy">
+      <h2>Daha Akıllıca Çalışın, Daha Sıkı Değil</h2>
+      <p>Intuiva, solo yaratıcıları ve küçük ekipleri yavaşlatan yaygın verimlilik tuzaklarını aşmanıza yardımcı olur:</p>
+      
+      <div class="pain-points">
+        <div class="pain-point">
+          <h3><i class="fas fa-lightbulb"></i> Fikirden Eyleme</h3>
+          <p>Hızlı başlamanıza ve odaklanmanıza yardımcı olan rehberli planlama ile boş sayfa sendromunu atlayın.</p>
+        </div>
+        <div class="pain-point">
+          <h3><i class="fas fa-clock"></i> Zamanınızı En İyi Şekilde Kullanın</h3>
+          <p>Araçları ayarlamak için daha az, önemli olana ilerlemek için daha fazla zaman harcayın.</p>
+        </div>
+        <div class="pain-point">
+          <h3><i class="fas fa-random"></i> Organize Kalın</h3>
+          <p>Projeniz evrimleştikçe uyum sağlayan bir sistemle tüm hareketli parçalarınızı tek bir yerde tutun.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section class="low-energy">
+      <h2>Bağımsız Düşünenler İçin Tasarlandı</h2>
+      <p>Intuiva geleneksel kalıplara uymayan solo girişimciler için yaratıldı:</p>
+      
+      <div class="audience">
+        <div class="audience-item">
+          <h3>Girişimciler</h3>
+          <p>Tüm şapkaları takan ve komiteler olmadan netliğe ihtiyaç duyanlar</p>
+        </div>
+        <div class="audience-item">
+          <h3>Yaratıcılar & Üreticiler</h3>
+          <p>Görsel düşünen ve esnek yapıya ihtiyaç duyanlar</p>
+        </div>
+        <div class="audience-item">
+          <h3>Erken Aşama Startuplar</h3>
+          <p>Sınırlı kaynaklarla hızlı hareket etmesi gerekenler</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="low-energy">
+      <h2>Intuiva vs Geleneksel Araçlar</h2>
+      <p>Nasıl düşündüğünüz için yapılmamış araçlarla yetinmeyin</p>
+      
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Özellik</th>
+            <th>Intuiva</th>
+            <th>Diğerleri</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sizin İçin Plan Oluşturur</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+          <tr>
+            <td>Uyarlanabilir Sorular</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+          <tr>
+            <td>Geçmişe Dönük Planlama Modu</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+          <tr>
+            <td>Tek Seferlik Ödeme</td>
+            <td class="check">✅</td>
+            <td class="cross">❌</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Case Study Section -->
     <section class="case-study">
       <div class="case-study-content">
-        <h2>Kaostan Netliğe</h2>
+        <h2>Karmaşadan Netliğe</h2>
         <p>
-          Diyelim ki küçük bir SaaS ekibisiniz - veya belki de tek başına bir girişimci - harika bir ürün fikriniz var ama karmaşık planlama araçları veya kurumsal tarz çerçeveler için hiç zamanınız yok. Vizyonunuz var, ancak özellik fikirleri, yatırımcı beklentileri ve yaklaşan son teslim tarihleri arasında gidip gelirken her şey bulanıklaşmaya başlıyor.
+          Diyelim ki küçük bir SaaS ekibisiniz veya belki de harika bir ürün fikri olan ama karmaşık planlama araçları veya kurumsal tarz çerçeveler için hiç zamanı olmayan bir solo girişimcisiniz. Vizyonunuz var ama özellik fikirleri, yatırımcı beklentileri ve yaklaşan son teslim tarihleri arasında her şey bulanıklaşmaya başlıyor.
         </p>
 
         <blockquote>
-          "Intuiva kaos gibi hissettiren şeyi yapılandırmaya yardımcı oldu. Birkaç saat içinde, tam bir proje yol haritamız, görselleştirilmiş kilometre taşlarımız ve sürecimiz için mantıklı olan bir Kanban panomuz vardı. Pazartesi günü imkansız gibi görünen şey, Cuma gününe kadar kendinden emin bir lansman planı haline geldi."
+          "Intuiva karmaşa gibi hissettiren şeyi yapılandırmaya yardımcı oldu. Birkaç saat içinde, tam bir proje yol haritamız, görselleştirilmiş kilometre taşlarımız ve sürecimiz için gerçekten mantıklı olan bir Kanban panomuz vardı. <em>Pazartesi</em> imkansız gibi görünen şey, <em>Cuma</em> gününe kadar kendinden emin bir lansman planına dönüştü."
         </blockquote>
 
         <div class="results-grid">
@@ -986,55 +202,66 @@
         </div>
       </div>
     </section>
-    
-    <!-- How It Works Section - Turkish -->
-    <section id="how-it-works">
-      <h2>Intuiva Nasıl Çalışır?</h2>
-      <p>Intuiva, karmaşa olmadan daha akıllı plan yapmanıza yardımcı olacak, sade ve düşünen asistanınızdır. Sizi yapıyla ama stres olmadan vizyondan uygulamaya götürür.</p>
 
-      <ol class="steps">
-        <li class="step-item">
-          <h3>1. Projenizi Kurun</h3>
-          <p>Giriş yok, gereksiz detay yok. Sadece benzersiz erişim PIN'inizi girin ve anında başlayın. Yolculuğun başladığı Proje Planlayıcı'ya yönlendirileceksiniz.</p>
-        </li>
+    <section id="how-it-works" class="how-it-works-section">
+      <div class="roadmap-visual">
+        <svg viewBox="0 0 1000 300" class="road-svg">
+          <defs>
+            <filter id="road-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00ffff" flood-opacity="0.4"/>
+            </filter>
+          </defs>
+          <!-- Road base -->
+          <path d="M0,250 C150,180 300,320 450,250 S750,180 1000,250" stroke="rgba(0, 0, 0, 0.3)" stroke-width="20" fill="none" />
+          <!-- Main glowing road -->
+          <path d="M0,250 C150,180 300,320 450,250 S750,180 1000,250" class="road-path" />
+          <!-- Center dashed line -->
+          <path d="M0,250 C150,180 300,320 450,250 S750,180 1000,250" class="road-center-line" />
+        </svg>
 
-        <li class="step-item">
-          <h3>2. Hedefli AI Sorularını Yanıtlayın</h3>
-          <p>Intuiva, projeniz hakkında hedefli, odaklanmış sorular sorar - hedefleriniz, kullanıcılarınız, riskleriniz ve zaman çizelgeniz. Herhangi bir bölümü atlayabilir veya tekrar ziyaret edebilirsiniz. Amaç? Stres olmadan netlik.</p>
-        </li>
+        <!-- Milestones alternating above/below -->
+        <div class="milestone-curve below" style="left: 10%; top: 110%;">
+          <div class="circle">1</div>
+          <h4>Başlangıç Ayarları</h4>
+          <p>Hesabınızı oluşturun ve vizyonunuzu tanımlayın.</p>
+        </div>
 
-        <li class="step-item">
-          <h3>3. Strateji Planınızı Alın</h3>
-          <p>Cevaplarınız girildikten sonra, Intuiva özelleştirilmiş bir proje planı oluşturur. Bir özet, önemli kilometre taşları, riskler ve azaltma fikirleri ve taktik öneriler içerir - hepsi güzel bir şekilde sunulur ve PDF olarak indirilebilir.</p>
-        </li>
+        <div class="milestone-curve" style="left: 23%; top: 40%;">
+          <div class="circle">2</div>
+          <h4>AI Görüşmesi</h4>
+          <p>Uyarlanabilir sorular en önemli şeyleri ortaya çıkarır.</p>
+        </div>
 
-        <li class="step-item">
-          <h3>4. Akış Panoları ile Görselleştirin</h3>
-          <p>Planınız statik değildir. Etkileşimli bir Kanban panosu olan Akış Panoları'na akar. Her görev varsayılan olarak "Yapılacak", "Devam Ediyor" ve "Tamamlandı" gibi sütunlara yerleştirilir - ancak özel aşamalar oluşturabilir, sürükleyip bırakabilir, silebilir veya görevleri serbestçe genişletebilirsiniz. Esneklikle yapı.</p>
-        </li>
+        <div class="milestone-curve below" style="left: 37%; top: 115%;">
+          <div class="circle">3</div>
+          <h4>Plan Oluşturma</h4>
+          <p>Uygulama için özel bir plan alın.</p>
+        </div>
 
-        <li class="step-item">
-          <h3>5. Dışa Aktarın, Kaydedin ve Paylaşın</h3>
-          <p>Güncellemeler göndermek veya ilerlemenizi arşivlemek ister misiniz? Hem raporu hem de Akış Panonuzu PDF olarak dışa aktarabilirsiniz. Ayrıca birden çok pano kaydedebilir, yeniden adlandırabilir veya ekip üyeleri veya müşteriler için salt okunur paylaşılabilir bağlantılar oluşturabilirsiniz.</p>
-        </li>
+        <div class="milestone-curve" style="left: 53%; top: 38%;">
+          <div class="circle">4</div>
+          <h4>Görsel Haritalama</h4>
+          <p>Görevlerinizi etkileşimli panolarda düzenleyin.</p>
+        </div>
 
-        <li class="step-item">
-          <h3>6. İsteğe Bağlı: Geriye Dönük Planlama Modunu Kullanın</h3>
-          <p>"Temmuz'da başlat" veya "4. haftada kullanıcı testi" gibi net bir sonuçtan başlamayı tercih ederseniz, Intuiva sizi bu bitiş noktasından geriye doğru yönlendirebilir. Önemli kontrol noktalarını hesaplar ve özelleştirebileceğiniz veya dışa aktarabileceğiniz ters bir zaman çizelgesi verir.</p>
-        </li>
-      </ol>
+        <div class="milestone-curve below" style="left: 71%; top: 108%;">
+          <div class="circle">5</div>
+          <h4>Geçmişe Dönük Planlama</h4>
+          <p>Gelecekteki hedeflerden geriye doğru çalışın.</p>
+        </div>
 
-      <div class="card">
-        <h3>Intuiva Neden Farklı Hissettiriyor?</h3>
-        <p>Çoğu proje aracı ya sizi özelliklerle boğar ya da sürecinizi fazla basitleştirir. Intuiva, size yalın metodoloji ve sezgisel akışla rehberlik eden, net düşünebileceğiniz sıcak, odaklanmış bir alan sunar.</p>
-        <p>Giriş yok. Abonelik baskısı yok. Sadece tek seferlik erişim, tam kontrol ve net bir zihin.</p>
+        <div class="milestone-curve" style="left: 91%; top: 36%;">
+          <div class="circle">6</div>
+          <h4>Uygulama Modu</h4>
+          <p>Lansmana kadar takip edin, uyum sağlayın ve hizalanın.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Features Section - Turkish -->
-    <section>
-      <h2>Yaratıcı Zihinler için Güçlü Özellikler</h2>
-      <p>Intuiva, AI zekasını sezgisel tasarımla birleştirerek size süper insan planlama yetenekleri sunar.</p>
+    <!-- Features Section -->
+    <section class="low-energy">
+      <h2>Yaratıcı Zihinler İçin Güçlü Özellikler</h2>
+      <p>Intuiva, size süper insan planlama yetenekleri vermek için AI zekasını sezgisel tasarımla birleştirir.</p>
       
       <div class="features">
         <div class="feature-card">
@@ -1049,7 +276,7 @@
             <i class="fas fa-file-pdf"></i>
           </div>
           <h3>Profesyonel PDF Raporları</h3>
-          <p>Yatırımcıya hazır proje dokümantasyonunu tek tıkla, otomatik olarak biçimlendirilmiş ve markalı olarak oluşturun.</p>
+          <p>Tek tıkla yatırımcıya hazır proje dokümantasyonu oluşturun, otomatik olarak biçimlendirilmiş ve markalı.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -1060,17 +287,17 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-eye"></i>
           </div>
-          <h3>İşbirliği Modu</h3>
-          <p>Paydaşlarla salt okunur görünümleri paylaşın veya ekip üyeleriyle canlı işbirliğini etkinleştirin.</p>
+          <h3>Sadece Görüntüleme Paylaşımı</h3>
+          <p>Paydaşlarla düzenleme erişimi vermeden Flow Board'larınızın salt okunur görünümlerini paylaşın.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <h3>Çoklu Cihaz Senkronizasyonu</h3>
-          <p>Otomatik, şifreli senkronizasyonla masaüstü ve mobil arasında sorunsuz geçiş yapın.</p>
+          <h3>Çapraz Cihaz Senkronizasyonu</h3>
+          <p>Otomatik, şifreli senkronizasyon ile masaüstü ve mobil arasında sorunsuz geçiş yapın.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -1082,68 +309,47 @@
       </div>
     </section>
 
-    <!-- Video Section - Turkish -->
+    <!-- Video Section -->
     <section id="tutorial-video">
       <h2>Intuiva'yı Hareket Halinde Görün</h2>
       <p>Intuiva'nın ham bir fikri 5 dakikadan kısa sürede tamamen yapılandırılmış bir proje planına nasıl dönüştürdüğünü izleyin.</p>
       
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/CwzQLYFHQS8" title="Intuiva Eğitim Videosu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      
-      <div class="card">
-        <h3>Kişiselleştirilmiş Bir Demo İster misiniz?</h3>
-        <p>Intuiva'nın özel iş akışınız için nasıl özelleştirilebileceğini görmek için ürün ekibimizle bire bir görüşme planlayın.</p>
-        <a href="#contact" class="btn btn-secondary">Demo Talep Et <i class="fas fa-calendar-alt"></i></a>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CwzQLYFHQS8" title="Intuiva Tanıtım Videosu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     </section>
 
-    <!-- Testimonials Section - Turkish -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
       <h2 class="glow-heading">Kullanıcılarımız Ne Diyor?</h2>
-      <p class="subtext">Sadece bizim söylediklerimize güvenmeyin - işte gerçek kullanıcıların Intuiva ile nasıl daha akıllı çalıştıkları.</p>
+      <p class="subtext">Sadece bizim söylediklerimize güvenmeyin, işte gerçek kullanıcılar Intuiva ile nasıl daha akıllı çalıştıklarını anlatıyor.</p>
 
-      <!-- Testimonial slider content remains the same, only text translated -->
       <div class="testimonial-slider-container">
         <button class="nav-button left" onclick="moveSlide(-1)">&#10094;</button>
 
         <div class="testimonial-slider-wrapper" id="sliderWrapper">
           <div class="testimonial-slider" id="testimonialSlider">
-            <!-- Testimonial 1 - Turkish -->
-            <div class="testimonial-card">
+            <!-- Testimonial 1 -->
+            <a href="https://www.linkedin.com/in/nalan-ocak-pekta%C5%9F-2a3627212/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
               <p class="testimonial-text">
-                Teknik geçmişi olmayan tek bir kurucu olarak belirsizlikte boğuluyordum. Intuiva, SaaS ürünümü metodik olarak oluşturmak için bana yapı ve güven verdi. Fikirden ilk ödeyen müşteriye 11 haftada geçtim.
+                Birden fazla müşteri projesini aynı anda yöneten bir muhasebeci olarak verimlilik ve organizasyon tartışılmazdır. INTUIVA, gerçek proje yönetiminin nasıl çalışması gerektiğini yansıtan sezgisel bir sistemle tüm iş akışımı düzenledi - açık, basit ve eyleme dönüştürülebilir.
               </p>
               <div class="testimonial-author">
-                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah K." class="author-avatar">
+                <img src="images/nalan.webp" alt="Nalan Ocak" class="author-avatar" loading="lazy">
                 <div class="author-info">
-                  <h4>Sarah K.</h4>
-                  <p>Kurucu, DataBloom</p>
+                  <h4>Nalan Ocak</h4>
+                  <p>TTGlobal'de Muhasebeci</p>
                 </div>
               </div>
-            </div>
+            </a>
 
-            <!-- Testimonial 2 - Turkish -->
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                Dışarıdaki her proje yönetim aracını kullandım. Intuiva, yaratıcı insanların nasıl düşündüğünü gerçekten anlayan ilk araç. Sadece geriye dönük planlama özelliği bile mevcut projemde yüzlerce saat kazandırdı.
-              </p>
-              <div class="testimonial-author">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Miguel R." class="author-avatar">
-                <div class="author-info">
-                  <h4>Miguel R.</h4>
-                  <p>Bağımsız Oyun Geliştirici</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 3 - Turkish -->
+            <!-- Testimonial 2 -->
             <a href="https://www.linkedin.com/in/ananya-naithani/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer" class="testimonial-card testimonial-card-link">
               <p class="testimonial-text">
-                Arayüz sezgisel, şık ve zahmetsizce gezinilebilir, iş akışını sorunsuz ve verimli hale getiriyor. Bir yazar olarak, karmaşıklıkta kaybolmadan işime odaklanmama izin veren araçlara değer veriyorum. Gücü basitlikle birleştiren bir şey arıyorsanız, burası güvenli limanınız. :)
+                Arayüz sezgisel, şık ve zahmetsizce gezinebilir, bu da iş akışını sorunsuz ve verimli hale getiriyor. Bir yazar olarak, karmaşıklıkta kaybolmadan işime odaklanmama izin veren araçlara değer veriyorum. Güç ve basitliği harmanlayan bir şey arıyorsanız, burası sizin için güvenli liman. :)
               </p>
               <div class="testimonial-author">
-                <img src="/images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar">
+                <img src="images/ananya.jpeg" alt="Ananya Naithani" class="author-avatar" loading="lazy">
                 <div class="author-info">
                   <h4>Ananya Naithani</h4>
                   <p>Yatırım Bankacısından Hayalet Yazar ve Yazı Koçuna</p>
@@ -1156,66 +362,71 @@
         <button class="nav-button right" onclick="moveSlide(1)">&#10095;</button>
       </div>
     </section>
-
-    <!-- Pricing Section - Turkish -->
-    <section id="pricing">
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="low-energy">
       <h2>Basit, Şeffaf Fiyatlandırma</h2>
       <p>Tek seferlik satın alma. Abonelik yok. Gizli ücret yok. Sadece sizin için çalışan güçlü planlama araçları.</p>
       
       <div class="pricing-options">
-        <!-- Basic Plan - Turkish -->
-        <div class="pricing-card">
-          <h3>Başlangıç</h3>
-          <div class="price">$9.99</div>
-          <ul class="price-features">
-            <li>Tüm Temel Özellikler</li>
-            <li>Proje Planlayıcı</li>
-            <li>Geriye Dönük Planlama Aracı</li>
-            <li>Kanban Panosu</li>
-            <li>PDF Dışa Aktarma</li>
-            <li>3.2M AI Tokenı</li>
-          </ul>
-          <a href="#" class="btn btn-secondary">Başlangıç'ı Seçin</a>
-        </div>
+        <!-- Basic Plan -->
+        <a href="https://tempestlabs.space/intuivabasic.html" class="pricing-card-link" style="text-decoration: none; color: inherit;">
+          <div class="pricing-card">
+            <h3>Basic</h3>
+            <div class="price">$9.99 <span class="price-note">(Tek seferlik ödeme)</span></div>
+            <p class="price-subtext">Ömür boyu planlama desteği için bir öğle yemeği bedeli</p>
+            <ul class="price-features">
+              <li>Tüm Temel Özellikler</li>
+              <li>Proje Planlayıcı</li>
+              <li>Geçmişe Dönük Planlama Aracı</li>
+              <li>Kanban Panosu</li>
+              <li>PDF Dışa Aktarma</li>
+              <li>3.2M AI Tokenı</li>
+            </ul>
+            <div class="btn btn-secondary" style="pointer-events: none;">Basic'i Seçin</div>
+          </div>
+        </a>
 
-        <!-- Pro Plan - Turkish -->
-        <div class="pricing-card popular">
-          <h3>Profesyonel</h3>
-          <div class="price">$24.99</div>
-          <ul class="price-features">
-            <li>Tüm Temel Özellikler</li>
-            <li>Proje Planlayıcı</li>
-            <li>Geriye Dönük Planlama Aracı</li>
-            <li>Kanban Panosu</li>
-            <li>PDF Dışa Aktarma</li>
-            <li><strong>Sınırsız AI Kullanımı</strong></li>
-          </ul>
-          <a href="#" class="btn btn-primary btn-glow">Profesyonel'i Seçin</a>
-        </div>
+        <!-- Pro Plan -->
+        <a href="https://tempestlabs.space/intuivapro.html" class="pricing-card-link" style="text-decoration: none; color: inherit;">
+          <div class="pricing-card popular">
+            <h3>Pro</h3>
+            <div class="price">$24.99 <span class="price-note">(Tek seferlik ödeme)</span></div>
+            <p class="price-subtext">Erken benimseyen fiyatı - ömür boyu kilitli</p>
+            <ul class="price-features">
+              <li>Tüm Temel Özellikler</li>
+              <li>Proje Planlayıcı</li>
+              <li>Geçmişe Dönük Planlama Aracı</li>
+              <li>Kanban Panosu</li>
+              <li>PDF Dışa Aktarma</li>
+              <li><strong>Sınırsız AI Kullanımı</strong></li>
+            </ul>
+            <div class="btn btn-primary btn-glow" style="pointer-events: none;">Pro'yu Seçin</div>
+          </div>
+        </a>
       </div>
       
-      <div class="card">
-        <h3>7 Günlük Para İade Garantisi</h3>
-        <p>Intuiva'yı seveceğinizden eminiz, ancak sizin için doğru değilse, 7 gün içinde satın alma işleminizi - soru sorulmadan - iade edeceğiz.</p>
+      <div style="text-align: center; margin-top: 2rem;">
+        <p>Karar vermenize yardımcı olalım mı? <a href="https://tempestlabs.space/contact.html" style="color: var(--primary-soft); text-decoration: underline;">Ekibimizle hızlı bir görüşme ayarlayın</a></p>
       </div>
     </section>
 
-    <!-- FAQ Section - Turkish -->
-    <section id="faq">
+    <!-- FAQ Section -->
+    <section id="faq" class="low-energy">
       <h2>Sıkça Sorulan Sorular</h2>
       <p>Intuiva ve planlama sürecinizi nasıl dönüştürebileceği hakkında sık sorulan soruların yanıtlarını alın.</p>
       
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Intuiva geleneksel proje yönetim araçlarından nasıl farklıdır?</h3>
+            <h3>Intuiva geleneksel proje yönetim araçlarından nasıl farklı?</h3>
             <div class="faq-toggle">
               <i class="fas fa-chevron-down"></i>
             </div>
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Trello veya Asana gibi geleneksel araçlar görev yöneticileridir - işi organize etmenize yardımcı olurlar ancak onu planlamanıza yardımcı olmazlar. Intuiva, ilk etapta hangi işin yapılması gerektiğini belirlemenize yardımcı olan bir proje stratejistidir. AI'mız hedeflerinizi analiz eder ve tüm gerekli adımlarla özelleştirilmiş bir plan oluşturur, ardından onu uygulamanıza yardımcı olur.</p>
+              <p>Trello veya Asana gibi geleneksel araçlar görev yöneticileridir - işi organize etmenize yardımcı olurlar ancak planlamanıza yardımcı olmazlar. Intuiva, ilk etapta hangi işin yapılması gerektiğini belirlemenize yardımcı olan bir proje stratejistidir. AI'mız hedeflerinizi analiz eder ve gerekli tüm adımlarla özelleştirilmiş bir plan oluşturur, ardından bunu uygulamanıza yardımcı olur.</p>
               <p>Katı Gantt çizelgelerinin veya Kanban panolarının aksine, Intuiva düşünme tarzınıza uyum sağlar ve ilerlemenize ve değişen önceliklerinize göre akıllı öneriler sunar.</p>
             </div>
           </div>
@@ -1223,30 +434,28 @@
         
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Planımın izin verdiğinden daha fazla projeye ihtiyacım olursa ne olur?</h3>
+            <h3>Projelerimi başkalarıyla paylaşabilir miyim?</h3>
             <div class="faq-toggle">
               <i class="fas fa-chevron-down"></i>
             </div>
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Herhangi bir zamanda sadece fiyat farkını ödeyerek daha yüksek bir plana yükseltebilirsiniz. Tüm mevcut projeleriniz ve verileriniz sorunsuz bir şekilde aktarılacaktır.</p>
-              <p>Düşürürseniz asla projelerinizi silmeyeceğiz - sadece tekrar yükseltinceye veya mevcut projeleri arşivleyinceye kadar yeni projeler oluşturamazsınız.</p>
+              <p>Evet! Herhangi bir Flow Board için salt okunur paylaşılabilir bağlantılar oluşturabilirsiniz. Bu, paydaşların değişiklik yapmadan ilerlemenizi görüntülemesine olanak tanır. Ekip işbirliği için her üyenin kendi Intuiva lisansına ihtiyacı olacaktır.</p>
             </div>
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Verilerim gerçekten gizli mi? Nerede saklanıyor?</h3>
+            <h3>Verilerim nasıl güvende tutuluyor?</h3>
             <div class="faq-toggle">
               <i class="fas fa-chevron-down"></i>
             </div>
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Gizliliğiniz en önceliğimizdir. Tüm proje verileri varsayılan olarak cihazlarınızda yerel olarak saklanır. Bulut senkronizasyonunu etkinleştirirseniz (isteğe bağlı), verileriniz cihazınızdan ayrılmadan önce uçtan uca şifrelenir - biz istesek bile okuyamayız.</p>
-              <p>Çoğu SaaS aracının aksine, verilerinizi içgörüler için madenciliğe tabi tutmayız veya üçüncü taraflara satmayız. Fikri mülkiyetinizin %100'ü size aittir.</p>
+              <p>Tüm veriler için endüstri standardı şifreleme (AES-256) kullanıyoruz. Hesabınız güvenli kimlik doğrulama ile korunur ve sistemlerimizi düzenli olarak güvenlik açıkları için denetliyoruz. AI için farklı fiyatlandırma katmanları sağlamak amacıyla yalnızca AI kullanımınızı takip ediyoruz, başka hiçbir şeyi değil. AI için DeepSeek API kullanıyoruz.</p>
             </div>
           </div>
         </div>
@@ -1260,14 +469,15 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Intuiva şu şekillerde mevcuttur:</p>
+              <p>Intuiva, Progressive Web App (PWA) olarak mevcuttur, bu da herhangi bir cihaza yükleyip yerel bir uygulama gibi kullanabileceğiniz anlamına gelir. PWA'lar iki dünyanın en iyisini sunar:</p>
               <ul>
-                <li>Bir web uygulaması (Chrome, Safari, Firefox, Edge)</li>
-                <li>Windows ve macOS masaüstü uygulamaları</li>
-                <li>iOS ve Android mobil uygulamalar</li>
-                <li>Çevrimdışı kullanım için Progressive Web App (PWA)</li>
+                <li>Yüklendikten sonra çevrimdışı çalışır</li>
+                <li>Uygulama mağazası indirmesi gerekmez</li>
+                <li>Cihazınızda küçük ayak izi</li>
+                <li>Otomatik güncellemeler</li>
+                <li>Tüm modern tarayıcılarda mevcut (Chrome, Safari, Firefox, Edge)</li>
               </ul>
-              <p>Tüm sürümler çevrimiçi olduğunuzda sorunsuz bir şekilde senkronize olur. Mobil uygulamalar özellikle hareket halindeyken fikirleri yakalamak için popülerdir.</p>
+              <p>Ayrıca normal bir uygulama gibi hızlı erişim için ana ekranınıza yükleyebilirsiniz.</p>
             </div>
           </div>
         </div>
@@ -1281,38 +491,38 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              <p>Performans iyileştirmeleri ve hata düzeltmeleri ile küçük güncellemeleri her 2-3 haftada bir yayınlıyoruz. Kullanıcı geri bildirimlerine dayalı büyük özellik güncellemeleri her 3-4 ayda bir gelir.</p>
-              <p>Tüm güncellemeler mevcut müşteriler için ücretsizdir - yükseltme ücretleri veya "sürüm 2.0" ödeme duvarları yoktur. Intuiva'yı satın aldığınızda, ömür boyu sahip olursunuz.</p>
+              <p>Performans iyileştirmeleri ve hata düzeltmeleri ile küçük güncellemeleri her 2-3 haftada bir yayınlıyoruz. Kullanıcı geri bildirimlerine dayalı büyük özellik güncellemeleri her 3-4 ayda bir geliyor.</p>
+              <p>Tüm güncellemeler mevcut müşteriler için ücretsizdir - yükseltme ücreti veya "sürüm 2.0" ödeme duvarları yoktur. Intuiva'yı satın aldığınızda, ömür boyu sahip olursunuz.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA - Turkish -->
+    <!-- Final CTA -->
     <section class="cta-section">
       <div class="cta-content">
         <h2>Planlama Sürecinizi Dönüştürmeye Hazır mısınız?</h2>
         <p>Geleceği Intuiva ile inşa eden binlerce solo girişimci, yaratıcı ve küçük ekibe katılın.</p>
-        <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem;">
-          <a href="#pricing" class="btn btn-primary btn-glow">Intuiva'yı Edinin</a>
-          <a href="#contact" class="btn btn-secondary">Satış Ekibiyle Görüşün</a>
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+          <a href="#pricing" class="btn btn-primary btn-glow">Intuiva'yı Şimdi Edinin</a>
+          <a href="#contact" class="btn btn-secondary">Satış Ekibiyle Görüş</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section - Turkish -->
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Sorularınız mı var? İletişime Geçin</h2>
-      <p>Ekibimiz, Intuiva'nın ihtiyaçlarınız için uygun olup olmadığını belirlemenize yardımcı olmak için burada.</p>
+      <p>Ekibimiz, Intuiva'nın ihtiyaçlarınıza uygun olup olmadığını belirlemenize yardımcı olmak için burada.</p>
       
-      <div class="features" style="margin-top: 3rem;">
+      <div class="features" style="margin-top: 2rem;">
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-envelope"></i>
           </div>
-          <h3 href="mailto:tempestlabsofficial@gmail.com">Bize E-posta Gönderin</h3>
-          <p href="mailto:tempestlabsofficial@gmail.com">Genel sorular ve destek için: <br> tempestlabsofficial@gmail.com </p>
+          <h3>Bize E-posta Gönderin</h3>
+          <p>Genel sorular ve destek için: <br> tempestlabsofficial@gmail.com</p>
         </div>
         
         <div class="feature-card">
@@ -1321,47 +531,511 @@
           </div>
           <h3>İletişime Geçin</h3>
           <p>Çalışma saatleri içinde anında yanıt alın:</p>
-          <a href="https://tempestlabs.space/contact.html" class="btn btn-secondary" style="margin-top: 1rem;">Sohbet Başlat</a>
+          <a href="https://tempestlabs.space/contact.html" class="btn btn-secondary" style="margin-top: 0.8rem;">Sohbet Başlat</a>
         </div>
       </div>
     </section>
 
   </div> <!-- /main-content -->
 
-  <!-- Footer - Turkish -->
+  <!-- PWA Sidebar -->
+  <div class="pwa-sidebar" id="pwaSidebar">
+    <div class="pwa-sidebar-toggle" onclick="togglePwaSidebar()">
+      <i class="fas fa-times"></i>
+    </div>
+    <h3>Intuiva'yı PWA Olarak Yükleyin</h3>
+    <p>Çevrimdışı erişim ile yerel uygulama deneyimi edinin:</p>
+    <ul style="margin-top: 1rem; padding-left: 1.2rem;">
+      <li style="margin-bottom: 0.5rem;">Masaüstü: Chrome/Edge'de "Yükle"yi tıklayın</li>
+      <li style="margin-bottom: 0.5rem;">iOS: Paylaş → Ana Ekrana Ekle'ye dokunun</li>
+      <li>Android: Chrome'da "Uygulamayı Yükle"ye dokunun</li>
+    </ul>
+    <div style="margin-top: 1.5rem;">
+      <button class="btn btn-secondary" onclick="togglePwaSidebar()" style="width: 100%;">Anladım, Teşekkürler!</button>
+    </div>
+  </div>
+
+  <!-- Sticky CTA Button -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#pricing" class="btn btn-primary">
+      <i class="fas fa-rocket"></i> Intuiva'yı Edinin
+    </a>
+  </div>
+
+  <!-- Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <i class="fas fa-comment-dots"></i>
+  </div>
+
+  <div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+      <h4>Intuiva Asistanı</h4>
+      <button class="chat-close" onclick="toggleChat()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        Merhaba! Ben Intuiva asistanıyım. Özellikler, fiyatlandırma veya Intuiva'nın projelerinize nasıl yardımcı olabileceği hakkında bana soru sorabilirsiniz.
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Sorunuzu yazın..." id="chatInput">
+      <button onclick="sendChatMessage()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <a href="index.html" class="logo">INTUIVA</a>
     <div class="footer-links">
       <a href="#features">Özellikler</a>
-      <a href="#how-it-works">Nasıl Çalışır</a>
+      <a href="#how-it-works">Nasıl Çalışır?</a>
       <a href="#pricing">Fiyatlandırma</a>
       <a href="#testimonials">Kullanıcı Yorumları</a>
       <a href="#faq">SSS</a>
       <a href="#contact">İletişim</a>
-      <a href="#">Blog</a>
+      <a href="https://tempestlabs.space/blog.html">Blog</a>
       <a href="#">Kariyer</a>
     </div>
     
     <div class="social-links">
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/company/tempestlabsofficial/"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA"><i class="fab fa-youtube"></i></a>
+    </div>
+    
+    <div class="footer-cta">
+      <a href="#pricing" class="btn btn-primary">Geleceğinizi inşa etmeye hazır mısınız? Hemen Başlayın</a>
     </div>
     
     <div class="copyright">
       <p>© 2025 Tempest Labs. Tüm hakları saklıdır.</p>
       <p>
-        <a href="https://tempestlabs.space/turkish/legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a> | 
-        <a href="https://tempestlabs.space/turkish/legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a> | 
-        <a href="https://tempestlabs.space/turkish/legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+        <a href="legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+        <a href="legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
+        <a href="legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
       </p>
     </div>
   </footer>
 
-  <!-- JavaScript remains unchanged -->
+  <!-- Scroll Hint -->
+  <div class="scroll-hint" id="scrollToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
   <script>
-    // Same JavaScript code as original
+    // Preload critical functions
+    function preloadResources() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+      
+      // Preload video
+      const video = document.getElementById('heroVideo');
+      if (video) {
+        video.load();
+      }
+      
+      // Preload images
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img => {
+        img.loading = 'eager';
+      });
+    }
+    
+    // Run after DOM loads
+    document.addEventListener('DOMContentLoaded', function() {
+      preloadResources();
+      
+      // Video loading optimization
+      const video = document.getElementById('heroVideo');
+      if (video) {
+        video.addEventListener('loadeddata', function() {
+          video.classList.add('loaded');
+        }, false);
+        
+        // Fallback in case loadeddata doesn't fire
+        setTimeout(function() {
+          video.classList.add('loaded');
+        }, 1000);
+      }
+      
+      // Add scroll hint functionality
+      const scrollHintContainer = document.querySelector('.scroll-hint-container');
+      if (scrollHintContainer) {
+        setTimeout(() => {
+          scrollHintContainer.style.opacity = '1';
+        }, 1500);
+      }
+
+      // Show sticky CTA after scrolling
+      window.addEventListener('scroll', function() {
+        const stickyCta = document.getElementById('stickyCta');
+        const chatWidget = document.getElementById('chatWidget');
+        if (window.pageYOffset > 300) {
+          stickyCta.classList.add('visible');
+          setTimeout(() => {
+            chatWidget.classList.add('visible');
+          }, 500);
+        } else {
+          stickyCta.classList.remove('visible');
+          chatWidget.classList.remove('visible');
+        }
+      });
+
+      // Roadmap Animation
+      const roadmap = document.getElementById('roadmapCurve');
+      if (roadmap) {
+        const roadmapObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              roadmapObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        roadmapObserver.observe(roadmap);
+      }
+    });
+
+    // FAQ Accordion - Allow multiple to be open
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isOpen = question.classList.contains('active');
+        
+        // Toggle current FAQ
+        if (isOpen) {
+          question.classList.remove('active');
+          answer.style.maxHeight = null;
+        } else {
+          question.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Scroll indicator click
+    document.querySelector('.scroll-hint-arrow')?.addEventListener('click', () => {
+      window.scrollTo({
+        top: document.querySelector('.main-content').offsetTop - 80,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Intersection Observer for animations
+    const animateElements = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Special animation for result cards
+          if (entry.target.classList.contains('result-card')) {
+            setTimeout(() => {
+              entry.target.style.transform = 'translateY(-10px)';
+              setTimeout(() => {
+                entry.target.style.transform = 'translateY(0)';
+              }, 300);
+            }, entry.target.dataset.delay || 0);
+          }
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(animateElements, {
+      threshold: 0.1
+    });
+    
+    document.querySelectorAll('.benefit-item, .feature-card, .step-item, .pricing-card, .faq-item, .result-card, .pain-point, .audience-item').forEach((el, index) => {
+      if (el.classList.contains('result-card')) {
+        el.dataset.delay = index * 100;
+      }
+      observer.observe(el);
+    });
+    
+    // Testimonial slider functionality
+    const slider = document.getElementById("testimonialSlider");
+    const cardWidth = 320; // card width + gap
+    
+    function moveSlide(direction) {
+      const scrollAmount = direction * cardWidth;
+      const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+      
+      let newScrollLeft = slider.scrollLeft + scrollAmount;
+      
+      // Clamp within bounds
+      if (newScrollLeft < 0) {
+        newScrollLeft = 0;
+      } else if (newScrollLeft > maxScrollLeft) {
+        newScrollLeft = maxScrollLeft;
+      }
+
+      slider.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth"
+      });
+    }
+
+    // Auto-Snap after Manual Scroll
+    slider.addEventListener('scroll', () => {
+      clearTimeout(slider.snapTimeout);
+      slider.snapTimeout = setTimeout(() => {
+        const nearestCard = Math.round(slider.scrollLeft / cardWidth);
+        const snapPosition = nearestCard * cardWidth;
+        slider.scrollTo({
+          left: snapPosition,
+          behavior: 'smooth'
+        });
+      }, 150); // wait 150ms after user stops scrolling
+    });
+    
+    // PWA Sidebar Toggle
+    function togglePwaSidebar() {
+      document.getElementById('pwaSidebar').classList.toggle('visible');
+    }
+    
+    // Show PWA sidebar only after scrolling to FAQ section
+    const faqSection = document.getElementById('faq');
+    const pwaSidebar = document.getElementById('pwaSidebar');
+    let pwaShown = false;
+    
+    window.addEventListener('scroll', function() {
+      const faqPosition = faqSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      // If FAQ section is in view and PWA sidebar hasn't been shown yet
+      if (faqPosition < windowHeight * 0.75 && !pwaShown) {
+        pwaSidebar.classList.add('visible');
+        pwaShown = true;
+      }
+    });
+    
+    // PWA Installation Prompt
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault();
+      // Stash the event so it can be triggered later
+      deferredPrompt = e;
+    });
+
+    // Chat Widget Functionality
+    function toggleChat() {
+      const chatContainer = document.getElementById('chatContainer');
+      chatContainer.classList.toggle('visible');
+    }
+
+    // Enhanced chat responses
+    function getChatResponse(userText) {
+      const lowerText = userText.toLowerCase();
+      
+      // Define responses based on keywords
+      const responses = [
+        {
+          keywords: ['merhaba', 'selam', 'hey', 'naber'],
+          response: "Merhaba! Ben Intuiva asistanıyım. Bugün size nasıl yardımcı olabilirim?"
+        },
+        {
+          keywords: ['nasılsın', "nasıl gidiyor", 'ne haber'],
+          response: "Ben sadece bir chatbotum ama mükemmel çalışıyorum! Intuiva hakkında her konuda size yardımcı olmaya hazırım."
+        },
+        {
+          keywords: ['özellik', 'özellikler', 'ne yapabilir', 'yapabilir'],
+          response: "Intuiva, AI desteğiyle proje planlamanıza yardımcı olur, yol haritaları oluşturur, görevleri yönetir ve profesyonel raporlar üretir. Temel özellikler:\n- Uyarlanabilir AI planlama\n- Görsel yol haritalama\n- Hedeflerden geriye dönük planlama\n- Tek tıkla PDF dışa aktarma\n- İlerleme analitiği"
+        },
+        {
+          keywords: ['fiyat', 'ücret', 'ne kadar', 'fiyatlandırma'],
+          response: "Intuiva basit tek seferlik fiyatlandırma sunar:\n\nBasic: $9.99 (3.2M AI tokenı)\nPro: $24.99 (Sınırsız AI kullanımı)\n\nAbonelik yok, tekrarlayan ücret yok. Tüm özellikleri fiyatlandırma bölümümüzde görebilirsiniz."
+        },
+        {
+          keywords: ['iletişim', 'yardım', 'destek', 'e-posta', 'biriyle konuş'],
+          response: "Ekibimize şu adreslerden ulaşabilirsiniz:\n\nE-posta: tempestlabsofficial@gmail.com\n\nVeya bir görüşme ayarlayın: tempestlabs.space/contact.html\n\nHer türlü sorunuz için yardımcı olmaktan mutluluk duyarız!"
+        },
+        {
+          keywords: ['güvenlik', 'güvenli', 'veri', 'gizlilik'],
+          response: "Güvenliğiniz önceliğimizdir:\n\n- Tüm veriler için AES-256 şifreleme\n- Güvenli kimlik doğrulama\n- Düzenli güvenlik denetimleri\n- Sadece fiyatlandırma katmanları için AI kullanımınızı takip ediyoruz\n- Gereksiz veri toplama yok"
+        },
+        {
+          keywords: ['platform', 'cihaz', 'mobil', 'masaüstü', 'yükle'],
+          response: "Intuiva her yerde Progressive Web App (PWA) olarak çalışır:\n\n- Masaüstü (Chrome/Edge): 'Yükle'yi tıklayın\n- iOS: Paylaş → Ana Ekrana Ekle'yi kullanın\n- Android: Chrome'da 'Uygulamayı Yükle'ye dokunun\n\nYüklendikten sonra çevrimdışı çalışır ve otomatik güncellenir."
+        },
+        {
+          keywords: ['kurucu', 'ilke', 'kim yaptı', 'kim geliştirdi'],
+          response: "Intuiva, bir solo girişimci olarak daha iyi proje planlama araçlarına ihtiyaç duyduğunda karşılaştığı zorlukları çözmek için Tempest Labs'ın kurucusu Ilke Bengi tarafından yaratıldı. Amaç, yaratıcı düşünenlerin çalışma şekline uyum sağlayan bir şey inşa etmekti."
+        },
+        {
+          keywords: ['teşekkür', 'sağ ol', 'teşekkürler'],
+          response: "Rica ederim! Intuiva hakkında başka bir konuda daha yardımcı olabileceğim bir şey varsa lütfen söyleyin."
+        },
+        {
+          keywords: ['intuiva nedir', 'intuiva hakkında', 'intuivayı tanımla'],
+          response: "Intuiva, özellikle solo girişimciler ve küçük ekipler için tasarlanmış AI destekli bir proje planlama aracıdır. Sadece görevleri organize etmenize yardımcı olan geleneksel proje yönetim araçlarının aksine, Intuiva akıllı sorgulama ve uyarlanabilir planlama ile ne yapılması gerektiğini bulmanıza yardımcı olur."
+        },
+        {
+          keywords: ['fark', 'karşılaştır', 'diğerlerinden farkı', 'daha iyi'],
+          response: "Intuiva, Trello veya Asana gibi araçlardan önemli şekillerde farklıdır:\n1. AI ile sizin için planlar oluşturur\n2. Düşünme tarzınıza uyum sağlar\n3. Hedeflerden geriye dönük planlama sunar\n4. Tek seferlik satın alma (abonelik yok)\n5. Solo girişimcilerin ihtiyaçları için tasarlandı"
+        },
+        {
+          keywords: ['ücretsiz deneme', 'demo', 'denemeden'],
+          response: "Ücretsiz deneme sunmuyoruz ancak Intuiva'yı hareket halinde görmek için demo videomuzu izleyebilirsiniz."
+        },
+        {
+          keywords: ['iade', 'para iadesi', 'geri ödeme'],
+          response: "30 günlük para iade garantisi sunuyoruz. Intuiva ihtiyaçlarınızı karşılamazsa, tam iade için lütfen tempestlabsofficial@gmail.com adresine e-posta gönderin."
+        },
+        {
+          keywords: ['güncelleme', 'yeni özellikler', 'yol haritası'],
+          response: "Düzenli olarak güncelleme yayınlıyoruz:\n- Küçük güncellemeler her 2-3 haftada bir\n- Büyük özellikler her 3-4 ayda bir\nTüm güncellemeler mevcut kullanıcılar için ücretsiz - yükseltme ücreti yok!"
+        },
+        {
+          keywords: ['ekip', 'işbirliği', 'birden fazla kullanıcı'],
+          response: "Intuiva öncelikle solo girişimciler için tasarlandı, ancak planlarınızın salt okunur bağlantılarını paylaşabilirsiniz. Ekip işbirliği için her üyenin kendi lisansına ihtiyacı olacaktır."
+        }
+      ];
+      
+      // Check for matching keywords
+      for (const item of responses) {
+        if (item.keywords.some(keyword => lowerText.includes(keyword))) {
+          return item.response;
+        }
+      }
+      
+      // Default response if no keywords match
+      return "Bu soruyu tam olarak anlayamadım. Intuiva'nın özellikleri, fiyatlandırması, güvenliği ve nasıl çalıştığı hakkında bilgi verebilirim. Şunun gibi bir şey sormayı deneyin:\n\n- Intuiva'yı diğerlerinden farklı kılan nedir?\n- Intuiva ne kadar?\n- Bir demo görebilir miyim?";
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const messages = document.getElementById('chatMessages');
+      
+      if (input.value.trim() === '') return;
+      
+      // Add user message
+      const userMsg = document.createElement('div');
+      userMsg.className = 'message user';
+      userMsg.textContent = input.value;
+      messages.appendChild(userMsg);
+      
+      // Clear input
+      input.value = '';
+      
+      // Scroll to bottom
+      messages.scrollTop = messages.scrollHeight;
+      
+      // Simulate typing indicator
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'message bot';
+      typingIndicator.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+      messages.appendChild(typingIndicator);
+      messages.scrollTop = messages.scrollHeight;
+      
+      // Remove typing indicator after delay and show response
+      setTimeout(() => {
+        messages.removeChild(typingIndicator);
+        
+        const botMsg = document.createElement('div');
+        botMsg.className = 'message bot';
+        const responseText = getChatResponse(userMsg.textContent);
+        // Preserve line breaks in response
+        botMsg.innerHTML = responseText.replace(/\n/g, '<br>');
+        messages.appendChild(botMsg);
+        messages.scrollTop = messages.scrollHeight;
+      }, 1000 + Math.random() * 1000);
+    }
+
+    // Initialize chat widget
+    document.getElementById('chatWidget').addEventListener('click', toggleChat);
+    document.getElementById('chatInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendChatMessage();
+      }
+    });
+
+    // Roadmap Animation
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate roadmap path
+      const path = document.querySelector('.roadmap-path');
+      const glow = document.querySelector('.roadpath-glow');
+      
+      if (path && glow) {
+        // Initial animation
+        setTimeout(() => {
+          path.style.width = '100%';
+          glow.style.width = '100%';
+        }, 500);
+        
+        // Add hover effects to milestones
+        document.querySelectorAll('.milestone-curve').forEach(milestone => {
+          milestone.addEventListener('mouseenter', () => {
+            milestone.querySelector('.circle').style.transform = 'scale(1.2)';
+            milestone.querySelector('h4').style.color = 'var(--primary)';
+          });
+          
+          milestone.addEventListener('mouseleave', () => {
+            milestone.querySelector('.circle').style.transform = 'scale(1)';
+            milestone.querySelector('h4').style.color = 'var(--primary-soft)';
+          });
+        });
+      }
+    });
+    // Intersection Observer for step animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const steps = document.querySelectorAll('.process-step');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    steps.forEach(step => {
+      observer.observe(step);
+    });
+  });
   </script>
 </body>
 </html>
