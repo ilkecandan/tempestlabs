@@ -1802,27 +1802,55 @@
       }
     }
 @media (max-width: 768px) {
+  .how-it-works-section {
+    padding: 2.5rem 1.2rem;
+  }
+
   .roadmap-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
     width: 100%;
-    overflow-x: auto;
-    overflow-y: visible;
-    padding-bottom: 2rem;
-    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    overflow: visible;
+    margin-top: 2rem;
   }
 
   .road-svg {
-    min-width: 1200px; /* Allow scrollable horizontal space */
-    height: auto;
+    display: none;
   }
 
   .milestone-curve {
-    transform: translate(-50%, -38%);
+    position: relative;
+    transform: none;
     opacity: 1 !important;
-    position: absolute;
-    white-space: nowrap;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1.2rem 1rem;
+    background: rgba(0, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 255, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.03);
   }
 
-  .milestone-curve.below {
-    transform: translate(-50%, 40%);
+  .milestone-curve::after {
+    display: none;
+  }
+
+  .milestone-curve .circle {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-curve h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .milestone-curve p {
+    font-size: 0.85rem;
   }
 }
