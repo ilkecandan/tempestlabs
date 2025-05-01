@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/images/tempest.png" type="image/x-icon">
+    <link rel="icon" href="/images/tempest.png" type="image/x-icon">
     <meta name="description" content="FunnelFlow by Tempest Labs - Visual marketing dashboard that turns chaos into crystal clear funnels with a calm, human-centered approach.">
     <title>FunnelFlow - Visual Marketing Dashboard | Tempest Labs</title>
     
@@ -42,10 +42,10 @@
             /* Spacing */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
-            --space-md: 2rem;
-            --space-lg: 3rem;
-            --space-xl: 4rem;
-            --space-xxl: 6rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 3.5rem;
+            --space-xxl: 5rem;
             
             /* Transitions */
             --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -115,7 +115,7 @@
         }
         
         .section {
-            padding: var(--space-xxl) 0;
+            padding: var(--space-xl) 0;
             position: relative;
         }
         
@@ -146,6 +146,7 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
             transition: var(--transition);
             transform: translateY(0);
+            background-color: var(--bg);
         }
         
         header.hidden {
@@ -209,51 +210,56 @@
         }
         
         /* Hero Section */
-
-.hero {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    background-image: url('images/herofunnel.webp');
-    background-size: cover; /* Fills entire section */
-    background-position: center center; /* centers image */
-    background-repeat: no-repeat;
-    background-color: var(--bg);
-    display: flex;
-    align-items: flex-start;
-    min-height: 100vh; /* ensures full viewport coverage */
-}
-
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: none; /* remove width limits */
-    padding: 0 var(--space-md);
-}
-
-
+        .hero {
+            padding: 6rem 0 4rem;
+            background-color: var(--bg);
+            display: flex;
+            align-items: center;
+            min-height: auto;
+        }
+        
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0 var(--space-md);
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: var(--space-lg) auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
         
         .hero-content {
             position: relative;
             z-index: 2;
-            color: var(--text-on-dark);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .hero-title {
             margin-bottom: var(--space-md);
             position: relative;
             color: var(--text-main);
-           text-shadow: none;
             animation: fadeInUp 0.8s ease-out;
         }
         
         .hero-subtitle {
             font-size: 1.2rem;
             margin-bottom: var(--space-md);
-            max-width: 90%;
-           color: var(--text-main);
-            text-shadow: none;
+            color: var(--text-main);
             animation: fadeInUp 0.8s ease-out 0.2s forwards;
             opacity: 0;
         }
@@ -299,8 +305,8 @@
         
         .funnel-explainer {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
         }
         
         .funnel-diagram {
@@ -309,6 +315,13 @@
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .funnel-diagram img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
         
         .funnel-diagram:hover {
@@ -352,7 +365,7 @@
         /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--space-md);
             margin-top: var(--space-lg);
         }
@@ -412,6 +425,12 @@
             transition: var(--transition);
         }
         
+        .demo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
         .demo-container:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-medium);
@@ -467,7 +486,7 @@
         /* Case Studies */
         .case-study {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: var(--space-md);
             margin-bottom: var(--space-xl);
             align-items: center;
@@ -483,7 +502,6 @@
         
         .case-study-image {
             background-color: var(--bg-soft);
-            height: 300px;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow-soft);
@@ -498,7 +516,7 @@
         
         .case-study-image img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
             transition: var(--transition-slow);
         }
@@ -593,6 +611,7 @@
         .cta-section {
             text-align: center;
             background-color: var(--bg-soft);
+            padding: var(--space-xl) 0;
         }
         
         .pricing-card {
@@ -685,6 +704,9 @@
             transition: var(--transition-bounce);
             border: none;
             cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
         }
         
         .btn-primary {
@@ -843,7 +865,7 @@
         /* Funnel Visualization */
         .funnel-visualization {
             width: 100%;
-            height: 500px;
+            height: 400px;
             position: relative;
             margin: var(--space-lg) auto;
             display: flex;
@@ -1005,8 +1027,8 @@
         }
         
         .stage-distribution {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             margin: var(--space-md) auto;
             position: relative;
             border-radius: 50%;
@@ -1085,29 +1107,21 @@
             .analytics-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .stage-distribution {
+                width: 220px;
+                height: 220px;
+            }
         }
         
         @media (max-width: 768px) {
             .hero {
-                padding-top: 8rem;
-                padding-bottom: 6rem;
-                background-attachment: scroll;
-            }
-            
-            .hero-container {
-                max-width: 100%;
-            }
-            
-            .funnel-explainer {
-                grid-template-columns: 1fr;
-            }
-            
-            .case-study {
-                grid-template-columns: 1fr;
+                padding-top: 6rem;
+                padding-bottom: 4rem;
             }
             
             .funnel-visualization {
-                height: 400px;
+                height: 350px;
             }
             
             .funnel-stage-visual.attention {
@@ -1126,8 +1140,23 @@
                 width: 100px;
             }
             
-            .analytics-grid {
-                grid-template-columns: 1fr;
+            .conversion-path {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+            
+            .path-stage:not(:last-child):after {
+                content: '↓';
+                right: auto;
+                left: 50%;
+                top: auto;
+                bottom: -15px;
+                transform: translateX(-50%);
+            }
+            
+            .stage-distribution {
+                width: 200px;
+                height: 200px;
             }
             
             nav ul {
@@ -1137,7 +1166,7 @@
         
         @media (max-width: 480px) {
             .section {
-                padding: var(--space-xl) 0;
+                padding: var(--space-lg) 0;
             }
             
             .stats-grid {
@@ -1149,7 +1178,7 @@
             }
             
             .funnel-visualization {
-                height: 350px;
+                height: 300px;
             }
             
             .funnel-stage-visual.attention {
@@ -1168,13 +1197,33 @@
                 width: 80px;
             }
             
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .stage-distribution {
-                width: 250px;
-                height: 250px;
+                width: 180px;
+                height: 180px;
             }
             
             .scroll-indicator {
                 right: var(--space-sm);
+            }
+            
+            .pricing-card {
+                padding: var(--space-lg);
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
             }
         }
         
@@ -1245,30 +1294,36 @@
         </div>
     </header>
 
-<!-- Hero Section -->
-<section class="hero" id="hero">
-  <div class="container hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">Marketing Chaos → Clarity</h1>
-      <p class="hero-subtitle">
-        FunnelFlow is the calm, visual dashboard that reveals your customer <br>
-          journey like never before. See where prospects drop off, understand <br>
-          why, and fix it with confidence.
-      </p>
-      <button class="hero-cta" onclick="location.href='#cta'">
-        <span>See How It Works</span>
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
-</section>
-
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Marketing Chaos → Clarity</h1>
+                <p class="hero-subtitle">
+                    FunnelFlow is the calm, visual dashboard that reveals your customer 
+                    journey like never before. See where prospects drop off, understand 
+                    why, and fix it with confidence.
+                </p>
+                <button class="hero-cta" onclick="window.location.href='https://tempestlabs.space/buyfunnelflow.html'">
+                    <span>See How It Works</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-image">
+                <img src="images/herofunnel.webp" alt="FunnelFlow Dashboard" loading="lazy">
+            </div>
+        </div>
+    </section>
 
     <!-- Funnel Basics Section -->
     <section class="section funnel-basics" id="basics">
         <div class="container">
             <h2 class="section-title">Understanding Marketing Funnels</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">A marketing funnel is a visual representation of the customer journey from initial awareness to final purchase. It helps you understand how potential customers interact with your brand and where they might drop off in the process.</p>
+            
+            <div class="funnel-diagram">
+                <img src="images/funnel-diagram.webp" alt="Marketing Funnel Diagram" loading="lazy">
+            </div>
             
             <div class="funnel-visualization" id="funnelVisualization">
                 <div class="funnel-stage-visual attention">Attention</div>
@@ -1284,37 +1339,31 @@
                     <div class="analytics-card fade-in-up delay-1">
                         <div class="analytics-value">60</div>
                         <div class="analytics-label">Total Leads</div>
-                        <div class="analytics-description">Total number of leads in your funnel</div>
                     </div>
                     
                     <div class="analytics-card fade-in-up delay-2">
                         <div class="analytics-value">40</div>
                         <div class="analytics-label">Hot Leads</div>
-                        <div class="analytics-description">Leads showing high engagement</div>
                     </div>
                     
                     <div class="analytics-card fade-in-up delay-3">
                         <div class="analytics-value">50%</div>
                         <div class="analytics-label">Engagement Rate</div>
-                        <div class="analytics-description">Average interaction with content</div>
                     </div>
                     
                     <div class="analytics-card fade-in-up delay-1">
                         <div class="analytics-value">23</div>
                         <div class="analytics-label">Leads Added</div>
-                        <div class="analytics-description">New leads this week</div>
                     </div>
                     
                     <div class="analytics-card fade-in-up delay-2">
                         <div class="analytics-value">4</div>
                         <div class="analytics-label">Stale Leads</div>
-                        <div class="analytics-description">Inactive for 30+ days</div>
                     </div>
                     
                     <div class="analytics-card fade-in-up delay-3">
                         <div class="analytics-value">12</div>
                         <div class="analytics-label">Conversions</div>
-                        <div class="analytics-description">Leads that became customers</div>
                     </div>
                 </div>
                 
@@ -1424,10 +1473,7 @@
             <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">Watch how leads move through your funnel with our interactive visualization.</p>
             
             <div class="demo-container">
-                <div style="text-align: center; padding: var(--space-md);">
-                    <div style="font-size: 3rem; margin-bottom: var(--space-sm);"></div>
-                    <h3 style="font-family: var(--font-serif);">Funnel Visualization</h3>
-                </div>
+                <img src="images/funnel-visualization.webp" alt="FunnelFlow Visualization" loading="lazy">
             </div>
         </div>
     </section>
@@ -1465,7 +1511,7 @@
             
             <div class="case-study fade-in-up">
                 <div class="case-study-image">
-                    <img src="images/funnelds.webp" alt="Example SaaS Dashboard" />
+                    <img src="images/funnelds.webp" alt="Example SaaS Dashboard" loading="lazy" />
                 </div>
                 <div>
                     <h3>The SaaS Founder Who Found Focus</h3>
@@ -1487,7 +1533,7 @@
             
             <div class="case-study fade-in-up">
                 <div class="case-study-image">
-                    <img src="images/funnelds2.webp" alt="Example E-commerce Store" />
+                    <img src="images/funnelds2.webp" alt="Example E-commerce Store" loading="lazy" />
                 </div>
                 <div>
                     <h3>The E-commerce Store That Stopped Leaking</h3>
@@ -1566,7 +1612,7 @@
                     <li>Email support</li>
                 </ul>
                 
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" onclick="window.location.href='https://tempestlabs.space/buyfunnelflow.html'">
                     Get FunnelFlow Now
                     <i class="fas fa-arrow-right"></i>
                 </button>
@@ -1609,7 +1655,7 @@
     </footer>
 
     <!-- Sticky CTA -->
-    <button class="sticky-cta" id="stickyCta" onclick="location.href='#cta'">
+    <button class="sticky-cta" id="stickyCta" onclick="window.location.href='https://tempestlabs.space/buyfunnelflow.html'">
         <span>Get FunnelFlow</span>
         <i class="fas fa-arrow-right"></i>
     </button>
