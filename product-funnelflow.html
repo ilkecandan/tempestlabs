@@ -209,18 +209,14 @@
         
         /* Hero Section */
 
-        .hero {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    background-image: url('images/herofunnel.webp');
-    background-size: cover; /* Fills entire section */
-    background-position: center center; /* centers image */
+ .hero {
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-color: var(--bg);
-    display: flex;
-    align-items: flex-start;
-    min-height: 100vh; /* ensures full viewport coverage */
+    background-image: url('images/herofunnel.webp');
+    min-height: 100vh;
 }
+
 
 .hero-container {
     display: flex;
@@ -230,14 +226,16 @@
     max-width: none; /* remove width limits */
     padding: 0 var(--space-md);
 }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: var(--text-on-dark);
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-on-dark);
+    max-width: 600px;
+    margin-left: 0;
+    text-align: left;
+    padding-top: 1rem; /* optional: pushes it down a bit */
+}
+
         
         .hero-title {
             margin-bottom: var(--space-md);
