@@ -208,25 +208,28 @@
         }
         
         /* Hero Section */
-        .hero {
-            padding: 6rem 0 4rem;
-            background-image: url('images/herofunnel.webp');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-color: var(--bg);
-            min-height: auto;
-        }
 
-        .hero-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            width: 100%;
-            padding: 0 var(--space-md);
-        }
-        
+        .hero {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-image: url('images/herofunnel.webp');
+    background-size: cover; /* Fills entire section */
+    background-position: center center; /* centers image */
+    background-repeat: no-repeat;
+    background-color: var(--bg);
+    display: flex;
+    align-items: flex-start;
+    min-height: 100vh; /* ensures full viewport coverage */
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: none; /* remove width limits */
+    padding: 0 var(--space-md);
+}
         .hero-content {
             position: relative;
             z-index: 2;
@@ -1247,22 +1250,22 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Marketing Chaos → Clarity</h1>
-                <p class="hero-subtitle">
-                    FunnelFlow is the calm, visual dashboard that reveals your customer 
-                    journey like never before. See where prospects drop off, understand 
-                    why, and fix it with confidence.
-                </p>
-                <button class="hero-cta" onclick="location.href='#cta'">
-                    <span>See How It Works</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Marketing Chaos → Clarity</h1>
+      <p class="hero-subtitle">
+        FunnelFlow is the calm, visual dashboard that reveals your customer journey like never before.
+        See where prospects drop off, understand why, and fix it with confidence.
+      </p>
+      <button class="hero-cta" onclick="location.href='#cta'">
+        <span>See How It Works</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
 
     <!-- Funnel Basics Section -->
     <section class="section funnel-basics" id="basics">
