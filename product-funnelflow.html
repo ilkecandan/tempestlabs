@@ -239,15 +239,15 @@
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 580px;
   color: var(--text-main);
   padding: var(--space-sm);
-  margin-top: -4rem; /* pull upward */
-  background: none;  /* remove the white overlay */
+  background: none; /* remove background box */
+  position: relative;
+  top: -40px;        /* move upward */
+  left: -20px;       /* shift slightly to the left */
+  z-index: 2;
 }
-
-
-
 
         
 .hero-title {
