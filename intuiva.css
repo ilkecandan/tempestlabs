@@ -1854,3 +1854,15 @@
     font-size: 0.85rem;
   }
 }
+@media (max-width: 1020px) {
+  .how-it-works-section {
+    display: none !important;
+  }
+}
+@media (max-width: 1020px) {
+  nav a[href="#how-it-works"] {
+    display: none;
+  }
+}
+
+
