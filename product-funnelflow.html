@@ -209,12 +209,13 @@
         
         /* Hero Section */
 
- .hero {
-    background-size: cover;
-    background-position: center center;
+.hero {
+    background-size: contain; /* or use cover + padding trick below */
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-image: url('images/herofunnel.webp');
     min-height: 100vh;
+    padding-bottom: 12rem; /* 👈 This is the key part */
 }
 
 
