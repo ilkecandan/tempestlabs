@@ -1801,3 +1801,28 @@
         display: none;
       }
     }
+@media (max-width: 768px) {
+  .roadmap-visual {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .road-svg {
+    min-width: 1200px; /* Allow scrollable horizontal space */
+    height: auto;
+  }
+
+  .milestone-curve {
+    transform: translate(-50%, -38%);
+    opacity: 1 !important;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .milestone-curve.below {
+    transform: translate(-50%, 40%);
+  }
+}
