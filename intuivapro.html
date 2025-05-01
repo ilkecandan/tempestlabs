@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+      <link rel="icon" href="images/tempest.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intuiva Pro – Secure Payment</title>
 
@@ -119,7 +120,7 @@
       max-width: 480px;
     }
 
-    #pay-button {
+    #pay-button, #pay-button-tr, #pay-button-de {
       background: var(--accent);
       color: var(--bg);
       border: none;
@@ -130,10 +131,10 @@
       cursor: pointer;
       box-shadow: var(--shadow);
       transition: 0.3s all;
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
 
-    #pay-button:hover {
+    #pay-button:hover, #pay-button-tr:hover, #pay-button-de:hover {
       background: var(--accent-dark);
       transform: translateY(-2px);
     }
@@ -155,7 +156,7 @@
       background: rgba(73, 214, 233, 0.1);
     }
 
-    #paytr-iframe {
+    #paytr-iframe, #paytr-iframe-tr, #paytr-iframe-de {
       margin-top: 36px;
       width: 100%;
       max-width: 820px;
@@ -166,7 +167,7 @@
       box-shadow: var(--shadow);
     }
 
-    #status {
+    #status, #status-tr, #status-de {
       margin-top: 24px;
       font-size: 1rem;
       color: var(--text);
@@ -252,6 +253,8 @@
       margin-bottom: 20px;
       flex-wrap: wrap;
       justify-content: center;
+      width: 100%;
+      max-width: 500px;
     }
     
     .alternative-payment {
@@ -265,11 +268,25 @@
       cursor: pointer;
       box-shadow: var(--shadow);
       transition: 0.3s all;
+      flex: 1;
+      min-width: 200px;
     }
     
     .alternative-payment:hover {
       background: #2A4B52;
       transform: translateY(-2px);
+    }
+    
+    .main-payment-btn {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .payment-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
   </style>
 </head>
@@ -301,18 +318,20 @@
     </div>
     <input type="email" id="email-input" placeholder="Enter your email" />
     
-    <div class="payment-options">
-      <button id="pay-button">💳 Pay $24.99</button>
-      <button class="alternative-payment" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
-        🌍 Alternative Payment
+    <div class="payment-container">
+      <div class="payment-options">
+        <button id="pay-button" class="main-payment-btn">💳 Pay $24.99</button>
+        <button class="alternative-payment" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
+          🌍 Alternative Payment
+        </button>
+      </div>
+      
+      <button class="payment-failed-btn" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
+        If you could not make the payment
       </button>
+      <div id="status"></div>
+      <iframe id="paytr-iframe" title="Secure PayTR Checkout"></iframe>
     </div>
-    
-    <button class="payment-failed-btn" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
-      If you could not make the payment
-    </button>
-    <div id="status"></div>
-    <iframe id="paytr-iframe" title="Secure PayTR Checkout"></iframe>
 
     <div class="info-section">
       <h2>🛠️ What Happens After Payment</h2>
@@ -349,18 +368,20 @@
     </div>
     <input type="email" id="email-input-tr" placeholder="E-posta adresinizi girin" />
     
-    <div class="payment-options">
-      <button id="pay-button-tr">💳 $24.99 Öde</button>
-      <button class="alternative-payment" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
-        🌍 Alternatif Ödeme
+    <div class="payment-container">
+      <div class="payment-options">
+        <button id="pay-button-tr" class="main-payment-btn">💳 $24.99 Öde</button>
+        <button class="alternative-payment" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
+          🌍 Alternatif Ödeme
+        </button>
+      </div>
+      
+      <button class="payment-failed-btn" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
+        Ödeme yapamadıysanız
       </button>
+      <div id="status-tr"></div>
+      <iframe id="paytr-iframe-tr" title="Güvenli PayTR Ödeme"></iframe>
     </div>
-    
-    <button class="payment-failed-btn" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
-      Ödeme yapamadıysanız
-    </button>
-    <div id="status-tr"></div>
-    <iframe id="paytr-iframe-tr" title="Güvenli PayTR Ödeme"></iframe>
 
     <div class="info-section">
       <h2>🛠️ Ödeme Sonrası Süreç</h2>
@@ -397,18 +418,20 @@
     </div>
     <input type="email" id="email-input-de" placeholder="Geben Sie Ihre E-Mail-Adresse ein" />
     
-    <div class="payment-options">
-      <button id="pay-button-de">💳 $24.99 Zahlen</button>
-      <button class="alternative-payment" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
-        🌍 Alternative Zahlung
+    <div class="payment-container">
+      <div class="payment-options">
+        <button id="pay-button-de" class="main-payment-btn">💳 $24.99 Zahlen</button>
+        <button class="alternative-payment" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
+          🌍 Alternative Zahlung
+        </button>
+      </div>
+      
+      <button class="payment-failed-btn" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
+        Falls Sie keine Zahlung vornehmen konnten
       </button>
+      <div id="status-de"></div>
+      <iframe id="paytr-iframe-de" title="Sicheres PayTR Checkout"></iframe>
     </div>
-    
-    <button class="payment-failed-btn" onclick="window.location.href='https://tempestlabs.space/failprointuiva.html'">
-      Falls Sie keine Zahlung vornehmen konnten
-    </button>
-    <div id="status-de"></div>
-    <iframe id="paytr-iframe-de" title="Sicheres PayTR Checkout"></iframe>
 
     <div class="info-section">
       <h2>🛠️ Was passiert nach der Zahlung</h2>
