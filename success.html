@@ -54,9 +54,10 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 1.25rem;
-      margin-top: 20px;
+      margin: 20px 10px 0;
       box-shadow: var(--shadow);
       transition: background 0.3s;
+      display: inline-block;
     }
 
     .main-button:hover {
@@ -110,43 +111,197 @@
       max-width: 700px;
       line-height: 1.5;
     }
+
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .language-btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-left: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .language-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .language-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .nav-links {
+      margin-top: 40px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .language-selector {
+        position: static;
+        margin-bottom: 20px;
+      }
+      
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .main-button {
+        margin: 10px 0;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <h1>Thank You for Joining the Cabinet of Selves ✨</h1>
+  <div class="language-selector">
+    <button class="language-btn active" onclick="changeLanguage('en')">EN</button>
+    <button class="language-btn" onclick="changeLanguage('de')">DE</button>
+    <button class="language-btn" onclick="changeLanguage('tr')">TR</button>
+  </div>
 
-  <p>
+  <h1 id="main-heading">Thank You for Joining the Cabinet of Selves ✨</h1>
+
+  <p id="main-text">
     Your journey inward has officially begun.<br>
     Click the button below to access your personal space:
   </p>
 
-  <a href="https://cabinetofselves.space/" class="main-button" target="_blank">🌿 Enter Cabinet of Selves</a>
+  <div class="button-group">
+    <a href="https://cabinetofselves.space/" class="main-button" target="_blank">🌿 Enter Cabinet of Selves</a>
+    <a href="https://drive.google.com/file/d/13v6ET33MFQMjN2mDdO-8wQM6fTakCYWR/view?usp=sharing" class="main-button" target="_blank">💾 Download for Desktop</a>
+  </div>
 
   <div class="access-code">
     Access Key: 99005445
   </div>
 
   <div class="install-guide">
-    <h2>📱 How to Install Cabinet of Selves as an App</h2>
-    <ul>
+    <h2 id="install-title">📱 How to Install Cabinet of Selves as an App</h2>
+    <ul id="install-steps">
       <li><strong>iPhone (Safari):</strong> Tap the <em>Share</em> icon (the square with the arrow), then select <strong>"Add to Home Screen"</strong>.</li>
       <li><strong>Android (Chrome):</strong> Tap the three dots (top right corner) and select <strong>"Install App"</strong> or <strong>"Add to Home Screen"</strong>.</li>
       <li><strong>Desktop (Chrome/Edge):</strong> Look for an <em>Install App</em> icon in the address bar, or open settings and select <strong>"Install Cabinet of Selves"</strong>.</li>
     </ul>
 
-    <p class="note">
+    <p class="note" id="note-1">
       🛡️ You might see a message like <em>"This app is not from an official App Store."</em><br>
-      That’s completely normal. Cabinet of Selves is a private sanctuary, not listed publicly.<br>
+      That's completely normal. Cabinet of Selves is a private sanctuary, not listed publicly.<br>
       Feel confident to continue — your experience is secure and your space is yours alone.
     </p>
 
-    <p class="note">
+    <p class="note" id="note-2">
       🕯️ If you have any questions or need help installing, please don't hesitate to reach out.<br>
       We're here to guide you at every step.
     </p>
   </div>
+
+  <div class="nav-links">
+    <a href="https://tempestlabs.space/" target="_blank">Visit Tempest Labs</a>
+    <a href="https://tempestlabs.space/product-cabinet.html" target="_blank">About Cabinet of Selves</a>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        heading: "Thank You for Joining the Cabinet of Selves ✨",
+        text: "Your journey inward has officially begun.<br>Click the button below to access your personal space:",
+        installTitle: "📱 How to Install Cabinet of Selves as an App",
+        installSteps: [
+          "<strong>iPhone (Safari):</strong> Tap the <em>Share</em> icon (the square with the arrow), then select <strong>\"Add to Home Screen\"</strong>.",
+          "<strong>Android (Chrome):</strong> Tap the three dots (top right corner) and select <strong>\"Install App\"</strong> or <strong>\"Add to Home Screen\"</strong>.",
+          "<strong>Desktop (Chrome/Edge):</strong> Look for an <em>Install App</em> icon in the address bar, or open settings and select <strong>\"Install Cabinet of Selves\"</strong>."
+        ],
+        note1: "🛡️ You might see a message like <em>\"This app is not from an official App Store.\"</em><br>That's completely normal. Cabinet of Selves is a private sanctuary, not listed publicly.<br>Feel confident to continue — your experience is secure and your space is yours alone.",
+        note2: "🕯️ If you have any questions or need help installing, please don't hesitate to reach out.<br>We're here to guide you at every step."
+      },
+      de: {
+        heading: "Vielen Dank für Ihre Teilnahme am Cabinet of Selves ✨",
+        text: "Ihre Reise nach innen hat offiziell begonnen.<br>Klicken Sie auf die Schaltfläche unten, um auf Ihren persönlichen Bereich zuzugreifen:",
+        installTitle: "📱 So installieren Sie Cabinet of Selves als App",
+        installSteps: [
+          "<strong>iPhone (Safari):</strong> Tippen Sie auf das <em>Teilen</em>-Symbol (das Quadrat mit dem Pfeil) und wählen Sie dann <strong>\"Zum Home-Bildschirm\"</strong>.",
+          "<strong>Android (Chrome):</strong> Tippen Sie auf die drei Punkte (rechte obere Ecke) und wählen Sie <strong>\"App installieren\"</strong> oder <strong>\"Zum Startbildschirm hinzufügen\"</strong>.",
+          "<strong>Desktop (Chrome/Edge):</strong> Suchen Sie nach einem <em>App installieren</em>-Symbol in der Adressleiste oder öffnen Sie die Einstellungen und wählen Sie <strong>\"Cabinet of Selves installieren\"</strong>."
+        ],
+        note1: "🛡️ Möglicherweise sehen Sie eine Meldung wie <em>\"Diese App ist nicht aus einem offiziellen App Store.\"</em><br>Das ist völlig normal. Cabinet of Selves ist ein privater Rückzugsort, der nicht öffentlich gelistet ist.<br>Fahren Sie sicher fort — Ihr Erlebnis ist sicher und Ihr Raum gehört Ihnen allein.",
+        note2: "🕯️ Wenn Sie Fragen haben oder Hilfe bei der Installation benötigen, zögern Sie bitte nicht, uns zu kontaktieren.<br>Wir begleiten Sie in jedem Schritt."
+      },
+      tr: {
+        heading: "Cabinet of Selves'e Katıldığınız İçin Teşekkürler ✨",
+        text: "İçe dönük yolculuğunuz resmen başladı.<br>Kişisel alanınıza erişmek için aşağıdaki butona tıklayın:",
+        installTitle: "📱 Cabinet of Selves Uygulamasını Yükleme Rehberi",
+        installSteps: [
+          "<strong>iPhone (Safari):</strong> <em>Paylaş</em> simgesine (oklu kare) dokunun, ardından <strong>\"Ana Ekrana Ekle\"</strong> seçeneğini seçin.",
+          "<strong>Android (Chrome):</strong> Sağ üst köşedeki üç noktaya dokunun ve <strong>\"Uygulamayı Yükle\"</strong> veya <strong>\"Ana Ekrana Ekle\"</strong> seçeneğini seçin.",
+          "<strong>Masaüstü (Chrome/Edge):</strong> Adres çubuğundaki <em>Uygulamayı Yükle</em> simgesini arayın veya ayarları açıp <strong>\"Cabinet of Selves'i Yükle\"</strong> seçeneğini belirleyin."
+        ],
+        note1: "🛡️ <em>\"Bu uygulama resmi bir uygulama mağazasından değil.\"</em> gibi bir mesaj görebilirsiniz.<br>Bu tamamen normal. Cabinet of Selves, halka açık olmayan özel bir sığınaktır.<br>Devam etmekten çekinmeyin — deneyiminiz güvenli ve bu alan yalnızca size ait.",
+        note2: "🕯️ Herhangi bir sorunuz varsa veya yükleme konusunda yardıma ihtiyacınız olursa, lütfen bize ulaşmaktan çekinmeyin.<br>Her adımda size rehberlik etmek için buradayız."
+      }
+    };
+
+    function changeLanguage(lang) {
+      // Update active button
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent === lang.toUpperCase()) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Update content
+      const t = translations[lang];
+      document.getElementById('main-heading').innerHTML = t.heading;
+      document.getElementById('main-text').innerHTML = t.text;
+      document.getElementById('install-title').innerHTML = t.installTitle;
+      
+      const installStepsList = document.getElementById('install-steps');
+      installStepsList.innerHTML = '';
+      t.installSteps.forEach(step => {
+        const li = document.createElement('li');
+        li.innerHTML = step;
+        installStepsList.appendChild(li);
+      });
+      
+      document.getElementById('note-1').innerHTML = t.note1;
+      document.getElementById('note-2').innerHTML = t.note2;
+    }
+  </script>
 
 </body>
 </html>
