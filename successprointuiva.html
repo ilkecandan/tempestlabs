@@ -1,1 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+      <link rel="icon" href="images/tempest.png" type="image/x-icon">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Granted – Intuiva Pro Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B1B1C;
+      --card: #0F2124;
+      --heading: #E0FFFF;
+      --text: #C5D9D9;
+      --accent: #00FFFF;
+      --accent-soft: #5CE6E6;
+      --radius: 14px;
+      --shadow: 0 10px 28px rgba(0, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 560px;
+      width: 100%;
+    }
+
+    h1 {
+      color: var(--heading);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    h3 {
+      color: var(--accent-soft);
+      font-size: 1rem;
+      margin: 1rem 0 0.3rem;
+    }
+
+    code {
+      background-color: #083537;
+      color: var(--accent);
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+      font-size: 1rem;
+      margin-top: 0.4rem;
+    }
+
+    a {
+      color: var(--accent-soft);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    ol, ul {
+      padding-left: 1.2rem;
+    }
+
+    .notice {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #9BBFC3;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1rem;
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 2rem;
+      color: #718C8C;
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .language-btn {
+      background: rgba(0, 255, 255, 0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent-soft);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.2s ease;
+    }
+
+    .language-btn:hover {
+      background: rgba(0, 255, 255, 0.2);
+    }
+
+    .language-btn.active {
+      background: var(--accent);
+      color: var(--card);
+      font-weight: bold;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--card);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background-color: var(--accent-soft);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="language-selector">
+      <button class="language-btn active" onclick="changeLanguage('en')">English</button>
+      <button class="language-btn" onclick="changeLanguage('de')">Deutsch</button>
+      <button class="language-btn" onclick="changeLanguage('tr')">Türkçe</button>
+    </div>
+
+    <!-- English Content -->
+    <div id="en-content">
+      <h1>You're In.</h1>
+      <p>Welcome to Intuiva Pro Plan. Your toolkit for solo project mastery is ready.</p>
+
+      <h2>Step-by-Step Access</h2>
+      <ol>
+        <li>Go to <a href="https://intuiva.online" target="_blank">https://intuiva.online</a></li>
+        <li>Click <strong>Register</strong> and create your account</li>
+        <li>When asked, enter your access key:</li>
+      </ol>
+
+      <code>sdfjsdiojfsoidf392424sdf</code>
+
+      <p>Once entered, you'll unlock the full Intuiva Pro experience: project planning, backcasting, Kanban board, and smart reports.</p>
+
+      <h2>📲 How to Install the App</h2>
+      <p>Intuiva is a <strong>Progressive Web App (PWA)</strong> – which means you can install it like a native app. Here's how to do it on your device:</p>
+
+      <h3>🖥️ Desktop (Windows / macOS / Linux)</h3>
+      <ul>
+        <li>Open <a href="https://intuiva.online" target="_blank">https://intuiva.online</a> in <strong>Chrome, Edge, or Brave</strong>.</li>
+        <li>Look for the <strong>install icon</strong> or <em>“+” button</em> in the right side of your browser's address bar.</li>
+        <li>Click <strong>"Install"</strong> when prompted.</li>
+        <li>Intuiva will be added to your desktop like a normal app.</li>
+      </ul>
+
+      <h3>📱 Android (Chrome / Brave / Edge)</h3>
+      <ul>
+        <li>Go to <a href="https://intuiva.online" target="_blank">https://intuiva.online</a> in your browser.</li>
+        <li>Tap the browser <strong>menu icon (⋮)</strong> in the top-right corner.</li>
+        <li>Select <strong>"Add to Home screen"</strong> or <strong>"Install App"</strong>.</li>
+        <li>Confirm by tapping <strong>"Add"</strong>. Intuiva will now appear on your home screen.</li>
+      </ul>
+
+      <h3>🍎 iPhone / iPad (Safari only)</h3>
+      <ul>
+        <li>Open <a href="https://intuiva.online" target="_blank">https://intuiva.online</a> in the <strong>Safari browser</strong>.</li>
+        <li>Tap the <strong>Share icon</strong> at the bottom (a square with an upward arrow).</li>
+        <li>Scroll down and tap <strong>"Add to Home Screen"</strong>.</li>
+        <li>Tap <strong>"Add"</strong>. The app icon will appear on your home screen like any other app.</li>
+      </ul>
+
+      <div class="notice">
+        ⚠️ <strong>Note:</strong> iOS currently does not allow PWA installation from Chrome or Firefox. Please use Safari for installation on Apple devices.
+      </div>
+
+      <h2>Download Additional Resources</h2>
+      <p>Download as a software to your app.</p>
+      <a href="https://drive.google.com/file/d/1Whc8KVeltnfXHk0KI1fIk6D5J1VUDzde/view?usp=sharing" class="download-btn" target="_blank">Download</a>
+
+      <h2>Seeing a Security Warning?</h2>
+      <div class="notice">
+        Some browsers may show a generic security message because this is a brand-new tool. You're safe. Intuiva is hosted securely over HTTPS, without trackers or ads.
+        <br><br>
+        If prompted, choose <strong>"Continue anyway"</strong> or <strong>"Advanced → Proceed"</strong>.
+      </div>
+
+      <div class="footer">
+        Need help? Reach out at <a href="mailto:support@tempestlabs.space">support@tempestlabs.space</a>
+      </div>
+    </div>
+
+    <!-- German Content -->
+    <div id="de-content" class="hidden">
+      <h1>Zugang gewährt.</h1>
+      <p>Willkommen beim Intuiva Pro Plan. Ihr Werkzeugkasten für die Beherrschung von Solo-Projekten ist bereit.</p>
+
+      <h2>Schritt-für-Schritt-Anleitung</h2>
+      <ol>
+        <li>Gehen Sie zu <a href="https://intuiva.online" target="_blank">https://intuiva.online</a></li>
+        <li>Klicken Sie auf <strong>Registrieren</strong> und erstellen Sie Ihr Konto</li>
+        <li>Geben Sie bei Aufforderung Ihren Zugangsschlüssel ein:</li>
+      </ol>
+
+      <code>394i20934ksdlfj</code>
+
+      <p>Nach der Eingabe entsperren Sie das volle Intuiva Pro-Erlebnis: Projektplanung, Backcasting, Kanban-Board und intelligente Berichte.</p>
+
+      <h2>📲 So installieren Sie die App</h2>
+      <p>Intuiva ist eine <strong>Progressive Web App (PWA)</strong> – das bedeutet, Sie können sie wie eine native App installieren. So geht's auf Ihrem Gerät:</p>
+
+      <h3>🖥️ Desktop (Windows / macOS / Linux)</h3>
+      <ul>
+        <li>Öffnen Sie <a href="https://intuiva.online" target="_blank">https://intuiva.online</a> in <strong>Chrome, Edge oder Brave</strong>.</li>
+        <li>Suchen Sie nach dem <strong>Installationssymbol</strong> oder dem <em>"+"-Button</em> auf der rechten Seite der Adressleiste.</li>
+        <li>Klicken Sie auf <strong>"Installieren"</strong>, wenn Sie dazu aufgefordert werden.</li>
+        <li>Intuiva wird wie eine normale App auf Ihrem Desktop hinzugefügt.</li>
+      </ul>
+
+      <h3>📱 Android (Chrome / Brave / Edge)</h3>
+      <ul>
+        <li>Gehen Sie in Ihrem Browser zu <a href="https://intuiva.online" target="_blank">https://intuiva.online</a>.</li>
+        <li>Tippen Sie auf das <strong>Menüsymbol (⋮)</strong> in der oberen rechten Ecke.</li>
+        <li>Wählen Sie <strong>"Zum Startbildschirm hinzufügen"</strong> oder <strong>"App installieren"</strong>.</li>
+        <li>Bestätigen Sie durch Tippen auf <strong>"Hinzufügen"</strong>. Intuiva erscheint nun auf Ihrem Startbildschirm.</li>
+      </ul>
+
+      <h3>🍎 iPhone / iPad (nur Safari)</h3>
+      <ul>
+        <li>Öffnen Sie <a href="https://intuiva.online" target="_blank">https://intuiva.online</a> im <strong>Safari-Browser</strong>.</li>
+        <li>Tippen Sie auf das <strong>Teilen-Symbol</strong> unten (ein Quadrat mit einem Pfeil nach oben).</li>
+        <li>Scrollen Sie nach unten und tippen Sie auf <strong>"Zum Home-Bildschirm"</strong>.</li>
+        <li>Tippen Sie auf <strong>"Hinzufügen"</strong>. Das App-Symbol erscheint wie jede andere App auf Ihrem Home-Bildschirm.</li>
+      </ul>
+
+      <div class="notice">
+        ⚠️ <strong>Hinweis:</strong> iOS erlaubt derzeit keine PWA-Installation über Chrome oder Firefox. Bitte verwenden Sie Safari für die Installation auf Apple-Geräten.
+      </div>
+
+      <h2>Zusätzliche Ressourcen herunterladen</h2>
+      <p>Holen Sie sich den kompletten Intuiva-Starter-Leitfaden als PDF:</p>
+      <a href="https://drive.google.com/file/d/1Whc8KVeltnfXHk0KI1fIk6D5J1VUDzde/view?usp=sharing" class="download-btn" target="_blank">Leitfaden herunterladen</a>
+
+      <h2>Erhalten Sie eine Sicherheitswarnung?</h2>
+      <div class="notice">
+        Einige Browser zeigen möglicherweise eine generische Sicherheitsmeldung an, da es sich um ein brandneues Tool handelt. Sie sind sicher. Intuiva wird sicher über HTTPS gehostet, ohne Tracker oder Werbung.
+        <br><br>
+        Wählen Sie bei Aufforderung <strong>"Trotzdem fortfahren"</strong> oder <strong>"Erweitert → Fortfahren"</strong>.
+      </div>
+
+      <div class="footer">
+        Hilfe benötigt? Kontaktieren Sie uns unter <a href="mailto:support@tempestlabs.space">support@tempestlabs.space</a>
+      </div>
+    </div>
+
+    <!-- Turkish Content -->
+    <div id="tr-content" class="hidden">
+      <h1>Erişim Onaylandı.</h1>
+      <p>Intuiva Pro Plan'a hoş geldiniz. Solo projelerde ustalaşmak için araç setiniz hazır.</p>
+
+      <h2>Adım Adım Erişim</h2>
+      <ol>
+        <li><a href="https://intuiva.online" target="_blank">https://intuiva.online</a> adresine gidin</li>
+        <li><strong>Kayıt Ol</strong> butonuna tıklayarak hesabınızı oluşturun</li>
+        <li>İstenildiğinde erişim anahtarınızı girin:</li>
+      </ol>
+
+      <code>394i20934ksdlfj</code>
+
+      <p>Girdikten sonra, Intuiva Pro deneyiminin tamamının kilidi açılacak: proje planlama, backcasting, Kanban panosu ve akıllı raporlar.</p>
+
+      <h2>📲 Uygulama Nasıl Kurulur</h2>
+      <p>Intuiva bir <strong>Progressive Web App (PWA)</strong>'dir - yani onu yerel bir uygulama gibi kurabilirsiniz. Cihazınızda nasıl yapılacağı:</p>
+
+      <h3>🖥️ Masaüstü (Windows / macOS / Linux)</h3>
+      <ul>
+        <li><a href="https://intuiva.online" target="_blank">https://intuiva.online</a> adresini <strong>Chrome, Edge veya Brave</strong>'de açın.</li>
+        <li>Tarayıcınızın adres çubuğunun sağ tarafındaki <strong>kurulum simgesini</strong> veya <em>"+" düğmesini</em> arayın.</li>
+        <li>İstenirse <strong>"Yükle"</strong> seçeneğine tıklayın.</li>
+        <li>Intuiva normal bir uygulama gibi masaüstünüze eklenecektir.</li>
+      </ul>
+
+      <h3>📱 Android (Chrome / Brave / Edge)</h3>
+      <ul>
+        <li>Tarayıcınızda <a href="https://intuiva.online" target="_blank">https://intuiva.online</a> adresine gidin.</li>
+        <li>Sağ üst köşedeki tarayıcı <strong>menü simgesine (⋮)</strong> dokunun.</li>
+        <li><strong>"Ana ekrana ekle"</strong> veya <strong>"Uygulamayı yükle"</strong> seçeneğini seçin.</li>
+        <li><strong>"Ekle"</strong> butonuna dokunarak onaylayın. Intuiva artık ana ekranınızda görünecektir.</li>
+      </ul>
+
+      <h3>🍎 iPhone / iPad (Yalnızca Safari)</h3>
+      <ul>
+        <li><a href="https://intuiva.online" target="_blank">https://intuiva.online</a> adresini <strong>Safari tarayıcısında</strong> açın.</li>
+        <li>Alttaki <strong>Paylaş simgesine</strong> (yukarı ok olan bir kare) dokunun.</li>
+        <li>Aşağı kaydırın ve <strong>"Ana Ekrana Ekle"</strong> seçeneğine dokunun.</li>
+        <li><strong>"Ekle"</strong> butonuna dokunun. Uygulama simgesi diğer uygulamalar gibi ana ekranınızda görünecektir.</li>
+      </ul>
+
+      <div class="notice">
+        ⚠️ <strong>Not:</strong> iOS şu anda Chrome veya Firefox'tan PWA kurulumuna izin vermemektedir. Apple cihazlarında kurulum için lütfen Safari kullanın.
+      </div>
+
+      <h2>Ek Kaynakları İndirin</h2>
+      <p>Intuiva başlangıç kılavuzunu PDF olarak alın:</p>
+      <a href="https://drive.google.com/file/d/1Whc8KVeltnfXHk0KI1fIk6D5J1VUDzde/view?usp=sharing" class="download-btn" target="_blank">Kılavuzu İndir</a>
+
+      <h2>Güvenlik Uyarısı mı Görüyorsunuz?</h2>
+      <div class="notice">
+        Bazı tarayıcılar, bu yepyeni bir araç olduğu için genel bir güvenlik mesajı gösterebilir. Güvendesiniz. Intuiva, izleyiciler veya reklamlar olmadan HTTPS üzerinden güvenli bir şekilde barındırılmaktadır.
+        <br><br>
+        İstenirse, <strong>"Yine de devam et"</strong> veya <strong>"Gelişmiş → Devam et"</strong> seçeneğini seçin.
+      </div>
+
+      <div class="footer">
+        Yardıma mı ihtiyacınız var? <a href="mailto:support@tempestlabs.space">support@tempestlabs.space</a> adresinden bize ulaşın
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function changeLanguage(lang) {
+      // Hide all language contents
+      document.getElementById('en-content').classList.add('hidden');
+      document.getElementById('de-content').classList.add('hidden');
+      document.getElementById('tr-content').classList.add('hidden');
+      
+      // Show selected language content
+      document.getElementById(lang + '-content').classList.remove('hidden');
+      
+      // Update active button
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase() === 
+            (lang === 'en' ? 'english' : lang === 'de' ? 'deutsch' : 'türkçe').toLowerCase()) {
+          btn.classList.add('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
