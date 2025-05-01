@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/tempest.png" type="image/x-icon">
-    <meta name="description" content="Cabinet of Selves - An Internal Family Systems (IFS) tool for psychological integration and emotional healing">
-    <title>Cabinet of Selves | IFS-Inspired Psychological Tool</title>
+    <meta name="description" content="Cabinet of Selves - A tool for psychological integration and emotional healing based on Internal Family Systems (IFS)">
+    <title>Cabinet of Selves | IFS-Based Psychological Tool</title>
     
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -69,39 +69,6 @@
         line-height: 1.2;
         color: var(--parchment);
         letter-spacing: 0.5px;
-        position: relative;
-    }
-
-    /* Section title micro-illustrations */
-    h2::before {
-        content: '';
-        position: absolute;
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 40px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.1;
-    }
-
-    /* Different micro-icons for each section */
-    #features h2::before {
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23D5A5C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>');
-    }
-
-    #visualization h2::before {
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23BBA45C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>');
-    }
-
-    #how-it-works h2::before {
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23D5A5C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>');
-    }
-
-    #pricing h2::before {
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23BBA45C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>');
     }
 
     h1 { 
@@ -152,12 +119,6 @@
         height: 2px;
         background: linear-gradient(90deg, transparent, var(--sacred-gold), transparent);
     }
-        #moodChart {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-}
-
 
     /* Navigation */
     .navbar {
@@ -224,15 +185,6 @@
 
     .nav-links a:hover {
         color: var(--parchment);
-    }
-
-    .nav-links a.active {
-        color: var(--parchment);
-        font-weight: 600;
-    }
-
-    .nav-links a.active::after {
-        width: 100%;
     }
 
     .nav-links a::after {
@@ -380,7 +332,8 @@
     }
 
     .hero-image-container:hover {
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.4);
     }
 
     .hero-image {
@@ -525,7 +478,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="%23D5A5C9" stroke-width="0.3" opacity="0.1"/></svg>');
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q35,20 50,50 T80,50" fill="none" stroke="%23D5A5C9" stroke-width="0.3" opacity="0.1"/></svg>');
         z-index: 0;
     }
 
@@ -933,13 +886,6 @@
         backdrop-filter: blur(5px);
     }
 
-    /* Mood Chart Styles */
-    .mood-chart-container {
-        position: relative;
-        height: 400px;
-        margin: 2rem 0;
-    }
-
     /* FAQ Section */
     .faq {
         background: var(--section-bg);
@@ -1060,20 +1006,6 @@
         display: flex;
         gap: 1.5rem;
         justify-content: center;
-    }
-
-    /* CTA Light Source Effect */
-    .cta::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgba(187, 164, 92, 0.2) 0%, transparent 70%);
-        z-index: 0;
-        pointer-events: none;
     }
 
     /* PWA Installation Section */
@@ -1348,47 +1280,6 @@
         z-index: -1;
     }
 
-    /* Progress indicator */
-    .progress-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 100vh;
-        z-index: 999;
-    }
-
-    .progress-bar {
-        width: 100%;
-        background: linear-gradient(to bottom, var(--mauve-mist), var(--sacred-gold));
-        height: 0%;
-        transition: height 0.1s ease;
-    }
-
-    .progress-dots {
-        position: absolute;
-        right: -4px;
-        width: 16px;
-        height: 100%;
-    }
-
-    .progress-dot {
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        background: var(--weathered-silver);
-        border-radius: 50%;
-        transform: translateX(-50%);
-        transition: all 0.3s ease;
-    }
-
-    .progress-dot.active {
-        width: 12px;
-        height: 12px;
-        background: var(--sacred-gold);
-        box-shadow: 0 0 10px var(--sacred-gold);
-    }
-
     /* Animations */
     @keyframes float {
         0%, 100% { transform: translateY(0) translateX(0); }
@@ -1566,11 +1457,6 @@
         .swiper {
             padding: 2rem 0;
         }
-
-        /* Hide progress indicator on mobile */
-        .progress-container {
-            display: none;
-        }
     }
 
     @media (max-width: 576px) {
@@ -1631,12 +1517,6 @@
     </style>
 </head>
 <body>
-    <!-- Progress Indicator -->
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-        <div class="progress-dots" id="progressDots"></div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <a href="#" class="logo">
@@ -1644,17 +1524,14 @@
             Cabinet of Selves
         </a>
         <div class="nav-links">
-            <a href="#pricing">Buy Now</a>
-            <a href="#ifs-intro">The Science</a>
-            <a href="#features">Exploration</a>
+            <a href="#pricing">Purchase</a>
+            <a href="#ifs-intro">Science</a>
+            <a href="#features">Discovery</a>
             <a href="#visualization">Visualization</a>
             <a href="#how-it-works">Process</a>
             <a href="#app-screenshots">Journey</a>
             <a href="#testimonials">Experiences</a>
             <a href="#faq">Wisdom</a>
-            <a href="https://tempestlabs.space/paytment.html" class="btn btn-primary" style="margin-left: 1rem;">
-                <i data-lucide="shopping-cart"></i> Get Now
-            </a>
         </div>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i data-lucide="menu"></i>
@@ -1666,21 +1543,21 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text animate__animated animate__fadeInLeft">
-                    <h1>Within You, A Cabinet of Selves Awaits</h1>
-                    <p>Gather your hidden aspects. Listen to your forgotten voices. Reclaim your psychological wholeness through the evidence-based Internal Family Systems approach.</p>
+                    <h1>A Cabinet of Selves Awaits Within You</h1>
+                    <p>Discover your hidden aspects. Listen to forgotten voices. Reclaim your psychological wholeness through the Internal Family Systems approach.</p>
                     <div class="hero-buttons">
                        <a href="https://tempestlabs.space/paytment.html" target="_blank">
                             <button class="btn btn-primary animate-float">
-                                <i data-lucide="compass"></i> Begin My Journey
+                                <i data-lucide="compass"></i> Begin Your Journey
                             </button>
                         </a>
                         <button class="btn btn-secondary" id="openVideo">
-                            <i data-lucide="play-circle"></i> Witness a Demo
+                            <i data-lucide="play-circle"></i> Watch Demo
                         </button>
                     </div>
                 </div>
                 <div class="hero-image-container animate__animated animate__fadeInRight">
-                    <img src="/images/peoplen.webp" alt="People exploring their inner selves" class="hero-image">
+                    <img src="/images/peoplen.webp" alt="People discovering their inner selves" class="hero-image">
                 </div>
             </div>
         </div>
@@ -1692,10 +1569,10 @@
             <div class="ifs-content">
                 <div class="ifs-text">
                     <h2>The Science of Selves</h2>
-                    <p>Internal Family Systems (IFS) is an evidence-based psychotherapy approach developed by Dr. Richard Schwartz in the 1980s. It recognizes the mind as naturally multiple - a system of interacting subpersonalities each with valuable qualities.</p>
-                    <p>IFS therapy helps individuals access their core Self - the calm, curious, compassionate center of consciousness that can heal wounded parts and restore inner harmony.</p>
-                    <p>Cabinet of Selves adapts these clinical insights into a structured self-exploration tool, helping you map your internal system without requiring therapy.</p>
-                    <p class="text-gold"><strong>Important:</strong> This is not a replacement for therapy. We recommend working with an <a href="https://ifs-institute.com/find-a-therapist" target="_blank" style="color: var(--sacred-gold); text-decoration: underline;">IFS-trained therapist</a> for clinical issues.</p>
+                    <p>Internal Family Systems (IFS) is an evidence-based psychotherapy approach developed by Dr. Richard Schwartz in the 1980s. It recognizes the mind as naturally multiple - composed of sub-personalities, each with valuable qualities.</p>
+                    <p>IFS therapy helps individuals access their Self - the calm, curious, compassionate center of consciousness that can heal wounded parts and restore inner harmony.</p>
+                    <p>Cabinet of Selves adapts these clinical insights into a structured self-discovery tool to help you map your internal system independent of therapy.</p>
+                    <p class="text-gold"><strong>Important:</strong> This is not a therapy alternative. For clinical issues, we recommend working with <a href="https://ifs-institute.com/find-a-therapist" target="_blank" style="color: var(--sacred-gold); text-decoration: underline;">an IFS-trained therapist</a>.</p>
                 </div>
                 <div>
                     <img src="/images/cabin2.webp" alt="IFS therapy visualization" class="ifs-image">
@@ -1717,42 +1594,42 @@
                         <i data-lucide="heart-pulse"></i>
                     </div>
                     <h3>Parts Mapping</h3>
-                    <p>Identify and document your internal family of subpersonalities with structured prompts based on IFS protocols.</p>
+                    <p>Identify and document your internal family of sub-personalities using structured prompts based on IFS protocols.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                     <div class="feature-icon">
                         <i data-lucide="brain"></i>
                     </div>
-                    <h3>Self-Leadership</h3>
-                    <p>Cultivate the 8 C's of Self energy: curiosity, calm, clarity, compassion, confidence, courage, creativity, and connectedness.</p>
+                    <h3>Self Leadership</h3>
+                    <p>Develop the 8 C's of Self-energy: curiosity, calm, clarity, compassion, confidence, courage, creativity, and connection.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
                     <div class="feature-icon">
                         <i data-lucide="book-open-text"></i>
                     </div>
                     <h3>Guided Reflection</h3>
-                    <p>Clinical journaling prompts help you unblend from parts and access Self-energy for internal dialog.</p>
+                    <p>Clinical journaling prompts help you unblend from parts and access Self-energy for internal dialogue.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
                     <div class="feature-icon">
                         <i data-lucide="puzzle"></i>
                     </div>
                     <h3>System Visualization</h3>
-                    <p>See your internal relationships and patterns through therapeutic mapping techniques.</p>
+                    <p>See your internal relationships and patterns with therapeutic mapping techniques.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
                     <div class="feature-icon">
                         <i data-lucide="shield"></i>
                     </div>
                     <h3>Protector Work</h3>
-                    <p>Specialized exercises for working with protective parts that manage vulnerability.</p>
+                    <p>Special exercises for working with protective parts that manage vulnerability.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 1s;">
                     <div class="feature-icon">
                         <i data-lucide="lock"></i>
                     </div>
                     <h3>Exile Integration</h3>
-                    <p>Secure protocols for gradually accessing and healing wounded child parts with Self-energy.</p>
+                    <p>Safe protocols to access wounded child parts and heal them with Self-energy.</p>
                 </div>
             </div>
         </div>
@@ -1767,33 +1644,15 @@
                 </div>
                 <div class="ifs-text">
                     <h2>The Power of Visualization</h2>
-                    <p>Visualization is a powerful therapeutic tool that bridges the gap between conscious and unconscious processes, allowing for deeper self-understanding and integration.</p>
+                    <p>Visualization is a powerful therapeutic tool that bridges conscious and unconscious processes, enabling deeper self-understanding and integration.</p>
                     
-                    <h3 class="mt-2">Self-Concept Exploration</h3>
-                    <p>Visualization allows individuals to mentally simulate different scenarios, aiding in the understanding and integration of various self-aspects. By creating mental images of our internal parts, we can engage with them more directly and compassionately.</p>
+                    <h3 class="mt-2">Self-Concept Discovery</h3>
+                    <p>Visualization helps individuals mentally simulate different scenarios, understand various aspects of self, and integrate them. By creating mental images of our internal parts, we can interact with them more directly and compassionately.</p>
                     
                     <h3 class="mt-2">Therapeutic Techniques</h3>
-                    <p>Practices like guided imagery can help individuals confront and reconcile conflicting parts of their identity, fostering a cohesive self-concept. Research shows that visualization activates the same neural networks as actual experiences, making it a potent tool for psychological change.</p>
+                    <p>Practices like guided imagery help individuals confront and reconcile conflicting parts of identity, developing a harmonious self-concept. Research shows visualization activates the same neural networks as real experiences, making it a powerful tool for psychological change.</p>
                     
-                    <p class="text-gold mt-2"><strong>Our Approach:</strong> Cabinet of Selves provides structured visualization exercises based on clinical IFS techniques to help you safely explore your inner world.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mood Trends Section -->
-    <section id="mood-trends" class="data-viz">
-        <div class="container">
-            <div class="section-header">
-                <h2>Mood Trends Visualization</h2>
-                <p>Track your emotional patterns and psychological shifts over time</p>
-            </div>
-            <div class="viz-container">
-                <div class="viz-card">
-                    <div class="mood-chart-container">
-                        <canvas id="moodChart"></canvas>
-                    </div>
-                    <p class="text-center">This example shows how you can track your emotional states over time to identify patterns and triggers in your psychological landscape.</p>
+                    <p class="text-gold mt-2"><strong>Our Approach:</strong> Cabinet of Selves offers structured visualization exercises based on clinical IFS techniques to help you safely explore your inner world.</p>
                 </div>
             </div>
         </div>
@@ -1845,7 +1704,7 @@
                         <li><i data-lucide="check"></i> Basic parts mapping</li>
                         <li><i data-lucide="check"></i> Simple system visualization</li>
                         <li><i data-lucide="check"></i> Local data storage only</li>
-                        <li><i data-lucide="check"></i> PDF export capability</li>
+                        <li><i data-lucide="check"></i> PDF export feature</li>
                     </ul>
                     <div class="btn btn-secondary pricing-button">Start Exploring</div>
                 </div>            
@@ -1865,22 +1724,22 @@
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <h3>Identify</h3>
-                    <p>Recognize distinct parts through their thoughts, emotions, and somatic signatures using IFS differentiation techniques.</p>
+                    <p>Recognize different parts with their thoughts, emotions, and bodily signals using IFS differentiation techniques.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h3>Unblend</h3>
-                    <p>Create psychological space between your core Self and activated parts using therapeutic distancing methods.</p>
+                    <p>Create psychological space between your Self and active parts using therapeutic distancing methods.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <h3>Witness</h3>
-                    <p>With Self-energy, listen to each part's story with compassion to understand its protective role in your system.</p>
+                    <p>With Self-energy, compassionately listen to each part's story and protective role in your system.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
                     <h3>Integrate</h3>
-                    <p>Facilitate healing dialogues between Self and parts, allowing each to transform and take on healthier roles.</p>
+                    <p>Establish healing dialogues between Self and parts, allowing each to transform and assume healthier roles.</p>
                 </div>
             </div>
         </div>
@@ -1895,14 +1754,14 @@
             </div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="/images/cabin1.webp" alt="AI-assisted insights">
+                       <div class="swiper-slide">
+                        <img src="/images/cabin1.webp" alt="AI-powered insights">
                     </div>
                     <div class="swiper-slide">
                         <img src="/images/cabin3.webp" alt="Parts mapping interface">
                     </div>
                     <div class="swiper-slide">
-                        <img src="/images/cabin4.webp" alt="Self-energy cultivation">
+                        <img src="/images/cabin4.webp" alt="Self-energy development">
                     </div>
                     <div class="swiper-slide">
                         <img src="/images/cabin5.webp" alt="System visualization">
@@ -1911,7 +1770,7 @@
                         <img src="/images/cabin6.webp" alt="Healing progress tracking">
                     </div>
                     <div class="swiper-slide">
-                        <img src="/images/cabin2.webp" alt="AI-assisted insights">
+                        <img src="/images/cabin2.webp" alt="AI-powered insights">
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -1926,21 +1785,21 @@
         <div class="container">
             <div class="section-header">
                 <h2>Potential Healing Journeys</h2>
-                <p>How this approach could transform your inner relationships</p>
+                <p>How this approach could transform your internal relationships</p>
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial-card active">
-                    <p class="testimonial-quote">That critical voice inside? It's actually a protector trying to keep you safe from rejection. When you understand its positive intent, you can help it find healthier ways to protect you.</p>
+                    <p class="testimonial-quote">That critical voice inside you is actually a protector trying to shield you from rejection. When you understand its positive intent, you can help it find healthier ways to protect you.</p>
                     <div class="testimonial-author">Inner Critic Transformation</div>
-                    <div class="testimonial-role">From judgment to wise counsel</div>
+                    <div class="testimonial-role">From judgment to wise guidance</div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-quote">Your anger might be a firefighter part trying to protect a vulnerable inner child. When you listen to it with compassion, it can reveal the wounds it's guarding.</p>
+                    <p class="testimonial-quote">Your anger may be a firefighter part trying to protect a vulnerable inner child. When you listen to it with compassion, the wounds it guards can emerge.</p>
                     <div class="testimonial-author">Anger as Protection</div>
                     <div class="testimonial-role">From outbursts to healthy boundaries</div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-quote">The perfectionist isn't your enemy - it's a manager working overtime to prevent shame. When you appreciate its efforts, it can relax its impossible standards.</p>
+                    <p class="testimonial-quote">Your perfectionist isn't an enemy - it's a manager working overtime to protect you from shame. When you appreciate its efforts, it can relax its impossible standards.</p>
                     <div class="testimonial-author">Perfectionist Integration</div>
                     <div class="testimonial-role">From rigid control to healthy striving</div>
                 </div>
@@ -1948,7 +1807,24 @@
         </div>
     </section>
 
-    
+    <!-- Data Visualization Section -->
+    <section id="data-viz" class="data-viz">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mapping Your Psychology</h2>
+                <p>Track your progress in developing greater happiness and wellbeing</p>
+            </div>
+            <div class="viz-container">
+                <div class="viz-card">
+                    <canvas id="happinessChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p><strong>Your data remains private:</strong> All information is stored only on your device. You can export your data as PDF anytime.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
@@ -1959,22 +1835,22 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Is this a replacement for therapy?</span>
+                        <span>Is this a therapy alternative?</span>
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>No. Cabinet of Selves is designed as a self-help tool based on therapeutic principles, but it doesn't replace professional mental health care. For clinical issues, we recommend working with an <a href="https://ifs-institute.com/find-a-therapist" target="_blank">IFS-trained therapist</a>.</p>
-                        <p class="mt-2"><strong>Important Note:</strong> We are not therapists. This tool is meant to complement therapy, not replace it.</p>
+                        <p>No. Cabinet of Selves is designed as a self-help tool based on therapeutic principles, but does not replace professional mental health services. For clinical issues, we recommend working with <a href="https://ifs-institute.com/find-a-therapist" target="_blank">an IFS-trained therapist</a>.</p>
+                        <p class="mt-2"><strong>Important Note:</strong> We are not therapists. This tool complements therapy, it doesn't replace it.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How does this differ from journaling?</span>
+                        <span>How is this different from journaling?</span>
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>While journaling is valuable, our tool provides structured clinical protocols from IFS therapy. The mapping and visualization tools help you see systemic relationships between parts that traditional journaling might miss.</p>
-                        <p class="mt-2">We also use <strong>DeepSeek's AI API</strong> to provide insights while maintaining your privacy - all processing happens locally on your device.</p>
+                        <p>While journaling is valuable, our tool offers structured clinical protocols from IFS therapy. Mapping and visualization tools help you see systemic relationships between parts that traditional journaling might miss.</p>
+                        <p class="mt-2">We also use <strong>DeepSeek's AI API</strong> to provide insights while protecting your privacy - all processing happens locally on your device.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1983,8 +1859,8 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely. We use a <strong>local storage only</strong> approach - your data never leaves your device. There are no user profiles or accounts to create. You can export your work as PDF for your records or to share with your therapist.</p>
-                        <p class="mt-2">For added security, the app includes an option to completely wipe all local data at any time.</p>
+                        <p>Absolutely. We use a <strong>local storage only</strong> approach - your data never leaves your device. No user profiles or accounts are created. You can export your work as PDF for your records or to share with your therapist.</p>
+                        <p class="mt-2">For additional security, the app includes an option to completely delete all local data at any time.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1993,8 +1869,8 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>The tool includes grounding exercises and pacing protocols. However, if you encounter overwhelming material, we recommend pausing and consulting a mental health professional before continuing your work.</p>
-                        <p class="mt-2">Remember: This is a <strong>self-exploration tool</strong>, not a therapeutic intervention. Proceed at your own pace.</p>
+                        <p>The tool includes grounding exercises and pacing protocols. However, if you encounter overwhelming material, we recommend pausing your work and consulting a mental health professional before continuing.</p>
+                        <p class="mt-2">Remember: This is a <strong>self-discovery tool</strong>, not a therapeutic intervention. Proceed at your own pace.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -2003,8 +1879,8 @@
                         <i data-lucide="chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Many therapists recommend using Cabinet of Selves to reinforce clinical work. You can share your maps and insights with your therapist to enhance your sessions. Always follow your therapist's guidance.</p>
-                        <p class="mt-2">We provide PDF export specifically for this purpose - to facilitate communication between you and your mental health professional.</p>
+                        <p>Many therapists recommend using Cabinet of Selves to enhance clinical work. You can share your maps and insights with your therapist to enrich your sessions. Always follow your therapist's guidance.</p>
+                        <p class="mt-2">We specifically provide PDF export for this purpose - to facilitate communication between you and your mental health professional.</p>
                     </div>
                 </div>
             </div>
@@ -2015,7 +1891,7 @@
     <section class="cta">
         <div class="container">
             <h2>Begin Your Psychological Integration</h2>
-            <p>Join those who have discovered greater wholeness through understanding their inner system</p>
+            <p>Join those who have discovered greater wholeness by understanding their internal systems</p>
             <div class="cta-buttons">
                 <a href="https://tempestlabs.space/paytment.html" target="_blank" class="btn btn-primary">Start My Journey</a>
                 <button class="btn btn-secondary" id="openVideo2">Watch Clinical Demo</button>
@@ -2028,14 +1904,14 @@
         <div class="container">
             <div class="section-header">
                 <h2>Continue Your Journey Anywhere</h2>
-                <p>Install as a progressive web app for constant access to your psychological work</p>
+                <p>Install as a progressive web app for continuous access to your psychological work</p>
             </div>
             <div class="pwa-steps">
                 <div class="pwa-step">
                     <h3><i data-lucide="smartphone"></i> iOS (iPhone/iPad)</h3>
                     <ol>
                         <li>Open Cabinet of Selves in Safari</li>
-                        <li>Tap the Share button (box with arrow pointing up)</li>
+                        <li>Tap the Share button (box with upward arrow)</li>
                         <li>Select "Add to Home Screen"</li>
                         <li>Name the app and tap "Add"</li>
                     </ol>
@@ -2046,16 +1922,16 @@
                         <li>Open Cabinet of Selves in Chrome</li>
                         <li>Tap the menu (three dots in top right)</li>
                         <li>Select "Install App" or "Add to Home Screen"</li>
-                        <li>Confirm installation when prompted</li>
+                        <li>Confirm installation if prompted</li>
                     </ol>
                 </div>
                 <div class="pwa-step">
                     <h3><i data-lucide="monitor"></i> Desktop (Windows/Mac/Linux)</h3>
                     <ol>
-                        <li>Open Cabinet of Selves in Chrome, Edge, or Firefox</li>
+                        <li>Open Cabinet of Selves in Chrome, Edge or Firefox</li>
                         <li>Look for the install prompt in the address bar</li>
                         <li>Click to install the app</li>
-                        <li>If no prompt appears, check browser menu for "Install" option</li>
+                        <li>If prompt doesn't appear, check "Install" in browser menu</li>
                     </ol>
                 </div>
             </div>
@@ -2071,12 +1947,12 @@
                         <i data-lucide="layers"></i>
                         Cabinet of Selves
                     </a>
-                    <p>A psychological tool for internal exploration based on Internal Family Systems therapy principles.</p>
+                    <p>A psychological tool for inner exploration based on Internal Family Systems therapy principles.</p>
                     <p><strong>Note:</strong> This is not therapy. We provide tools to complement therapeutic work.</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/company/tempestlabsofficial/" class="social-link"><i data-lucide="linkedin"></i></a>
                         <a href="https://www.instagram.com/tempestlabsofficial/" class="social-link"><i data-lucide="instagram"></i></a>
-                        <a href="https://www.tiktok.com/@cabinetofselves" class="social-link" target="_blank"><i data-lucide="tiktok"></i></a>
+                        <a href="https://www.tiktok.com/@cabinetofselves" class="social-link"><i data-lucide="tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -2093,12 +1969,11 @@
                         <li><a href="mailto:contact@tempestlabs.space"><i data-lucide="mail"></i>Contact Us</a></li>
                     </ul>
                 </div>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
                 <div class="legal-links">
                     <a href="legal/membership-agreement.html"><i data-lucide="file-text"></i> Membership Agreement</a>
-                    <a href="legal/kvkk-clarification.html"><i data-lucide="shield"></i> KVKK Clarification</a>
+                    <a href="legal/kvkk-clarification.html"><i data-lucide="shield"></i> KVKK Disclosure</a>
                     <a href="legal/distance-sales-agreement.html"><i data-lucide="file-text"></i> Distance Sales Agreement</a>
                 </div>
             </div>
@@ -2125,42 +2000,27 @@
         // Initialize Lucide icons
         lucide.createIcons();
         
-        // Initialize mood chart
-        const moodCtx = document.getElementById('moodChart').getContext('2d');
-        const moodChart = new Chart(moodCtx, {
+        // Initialize happiness chart
+        const happinessCtx = document.getElementById('happinessChart').getContext('2d');
+        const happinessChart = new Chart(happinessCtx, {
             type: 'line',
             data: {
-                labels: ['Jan 1', 'Jan 2', 'Jan 3', 'Jan 4', 'Jan 5', 'Jan 6', 'Jan 7', 'Jan 8', 'Jan 9', 'Jan 10', 'Jan 11', 'Jan 12', 'Jan 13', 'Jan 14'],
-                datasets: [
-                    {
-                        label: 'Energy Level',
-                        data: [3.5, 4, 3.2, 4.5, 3.8, 4.2, 3.9, 4.1, 3.7, 4.3, 3.6, 4.4, 3.8, 4.2],
-                        borderColor: '#BBA45C',
-                        backgroundColor: 'rgba(187, 164, 92, 0.1)',
-                        borderWidth: 3,
-                        fill: true,
-                        tension: 0.3,
-                        pointBackgroundColor: '#BBA45C',
-                        pointRadius: 5,
-                        pointHoverRadius: 7
-                    },
-                    {
-                        label: 'Mood State',
-                        data: [3.2, 3.5, 2.8, 4.2, 3.5, 3.8, 3.2, 4.0, 3.0, 4.1, 3.3, 4.0, 3.5, 4.2],
-                        borderColor: '#D5A5C9',
-                        backgroundColor: 'rgba(213, 165, 201, 0.1)',
-                        borderWidth: 3,
-                        fill: true,
-                        tension: 0.3,
-                        pointBackgroundColor: '#D5A5C9',
-                        pointRadius: 5,
-                        pointHoverRadius: 7
-                    }
-                ]
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                datasets: [{
+                    label: 'Happiness Level',
+                    data: [3.2, 3.5, 3.8, 4.2, 4.5, 4.7],
+                    borderColor: '#BBA45C',
+                    backgroundColor: 'rgba(187, 164, 92, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#D5A5C9',
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         position: 'top',
@@ -2185,7 +2045,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Mood & Energy Trends Over 2 Weeks',
+                        text: 'Happiness Development Over 6 Weeks',
                         font: {
                             size: 16,
                             family: "'Cormorant', serif"
@@ -2202,12 +2062,6 @@
                             color: '#C5BCAB',
                             font: {
                                 family: "'Inter', sans-serif"
-                            },
-                            callback: function(value) {
-                                if (value === 1) return 'Low';
-                                if (value === 3) return 'Medium';
-                                if (value === 5) return 'High';
-                                return '';
                             }
                         },
                         grid: {
@@ -2472,58 +2326,6 @@
                 }, 1000);
             });
         }, 5000);
-
-        // Progress indicator functionality
-        const progressBar = document.getElementById('progressBar');
-        const progressDots = document.getElementById('progressDots');
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        // Create progress dots
-        sections.forEach((section, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('progress-dot');
-            dot.dataset.section = section.id;
-            progressDots.appendChild(dot);
-            
-            // Position dots evenly
-            dot.style.top = `${(index / (sections.length - 1)) * 100}%`;
-        });
-
-        // Update progress bar and active section
-        function updateProgress() {
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            
-            // Calculate scroll percentage
-            const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
-            progressBar.style.height = `${scrollPercentage}%`;
-            
-            // Update active dot and nav link
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    const dot = document.querySelector(`.progress-dot[data-section="${section.id}"]`);
-                    document.querySelectorAll('.progress-dot').forEach(d => d.classList.remove('active'));
-                    dot.classList.add('active');
-                    
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${section.id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }
-        
-        // Initialize progress indicator
-        updateProgress();
-        window.addEventListener('scroll', updateProgress);
-        window.addEventListener('resize', updateProgress);
     </script>
 </body>
 </html>
