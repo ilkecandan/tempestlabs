@@ -7,6 +7,8 @@
 
   <!-- Brand fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
@@ -41,6 +43,12 @@
       border-radius: 8px;
       border: none;
       font-size: 1rem;
+      background: rgba(255,255,255,0.1);
+      color: var(--text);
+    }
+
+    input::placeholder {
+      color: rgba(200,205,208,0.6);
     }
 
     img.hero-image {
@@ -72,8 +80,17 @@
       max-width: 480px;
     }
 
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
     #pay-button,
-    .link-button {
+    .link-button,
+    .secondary-button {
       background: var(--accent);
       color: var(--bg);
       border: none;
@@ -84,15 +101,25 @@
       cursor: pointer;
       box-shadow: var(--shadow);
       transition: 0.3s all;
-      margin-bottom: 16px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
     }
 
     .link-button {
       background: var(--accent-dark);
     }
 
+    .secondary-button {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 14px 28px;
+    }
+
     #pay-button:hover,
-    .link-button:hover {
+    .link-button:hover,
+    .secondary-button:hover {
       transform: translateY(-2px);
       opacity: 0.9;
     }
@@ -186,6 +213,8 @@
 
     .language-toggle {
       margin-bottom: 24px;
+      display: flex;
+      gap: 8px;
     }
     
     .language-toggle button {
@@ -194,9 +223,11 @@
       border: 1px solid var(--accent);
       border-radius: 20px;
       padding: 8px 16px;
-      margin: 0 6px;
       cursor: pointer;
       transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
     
     .language-toggle button:hover {
@@ -209,19 +240,75 @@
       color: var(--bg);
       font-weight: 600;
     }
+
+    .nav-links {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .success-note {
+      background: rgba(100, 200, 100, 0.1);
+      border-left: 4px solid #64c864;
+      padding: 12px 16px;
+      margin: 16px 0;
+      text-align: left;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        position: static;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      .language-toggle {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <div class="nav-links">
+    <a href="https://tempestlabs.space/"><i class="fas fa-home"></i> Home</a>
+    <a href="https://tempestlabs.space/product-cabinet.html"><i class="fas fa-arrow-left"></i> Product Page</a>
+  </div>
+
   <div class="language-toggle">
-    <button onclick="setLanguage('en')" class="active" id="en-btn">🇬🇧 English</button>
-    <button onclick="setLanguage('tr')" id="tr-btn">🇹🇷 Türkçe</button>
+    <button onclick="setLanguage('en')" class="active" id="en-btn"><i class="fas fa-language"></i> 🇬🇧 English</button>
+    <button onclick="setLanguage('tr')" id="tr-btn"><i class="fas fa-language"></i> 🇹🇷 Türkçe</button>
+    <button onclick="setLanguage('de')" id="de-btn"><i class="fas fa-language"></i> 🇩🇪 Deutsch</button>
   </div>
 
   <div id="loading-overlay">
     <div class="loader"></div>
     <p id="loading-text">Processing your payment...<br>Please wait a moment 🌑🌕</p>
   </div>
+
+  <img src="images/peoplen.png" alt="Welcome" class="hero-image" />
 
   <h1 id="title">Complete Your $9.99 Purchase</h1>
   <p id="instruction">Enter your name and email to proceed:</p>
@@ -235,31 +322,28 @@
     💬 Your card will be charged in Turkish Lira (₺), based on the latest exchange rates (approx. 1 USD ≈ 38.43 TRY).
   </div>
 
-  <button id="pay-button">💳 Pay Securely via Form</button>
-  <p style="margin: 10px 0;" id="or-text">or</p>
+  <div class="success-note" id="success-note">
+    <i class="fas fa-check-circle"></i> <span id="success-text">After successful payment, you'll be redirected to your access key and website link page.</span>
+  </div>
+
+  <div class="button-container">
+    <button id="pay-button"><i class="fas fa-lock"></i> Pay Securely via Form</button>
+    <a href="https://tempestlabs.space/fail.html" class="secondary-button"><i class="fas fa-question-circle"></i> <span id="payment-help-text">Having payment issues? Try This :) </span></a>
+  </div>
 
   <div id="status"></div>
   <iframe id="paytr-iframe" title="Secure PayTR Checkout"></iframe>
 
-  <a href="https://www.paytr.com/link/PdWV9Ke?lang=en" target="_blank">
-    <button class="link-button" id="direct-link-text">🔗 Pay via Direct Link</button>
-  </a>
-  <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;" id="rate-fixed-note">
-    We've fixed the exchange rate at <strong>1 USD = 39 TRY</strong> for this launch. If the exchange rate changes drastically, we'll update the price accordingly.
-  </p>
-
-  <img src="images/peoplen.png" alt="Welcome" class="hero-image" />
-
   <div class="info-section">
-    <h2 id="payment-process-title">📜 How the Payment Process Works</h2>
+    <h2 id="payment-process-title"><i class="fas fa-list-alt"></i> How the Payment Process Works</h2>
     <ul id="payment-process-steps">
       <li>Fill in your name and email.</li>
-      <li>Click the secure payment button or use the direct link.</li>
+      <li>Click the secure payment button.</li>
       <li>Complete payment via PayTR's secure checkout.</li>
       <li>Get redirected to your access page instantly after success.</li>
     </ul>
 
-    <h2 style="margin-top:32px;" id="install-title">📱 How to Install Cabinet of Selves as an App</h2>
+    <h2 style="margin-top:32px;" id="install-title"><i class="fas fa-mobile-alt"></i> How to Install Cabinet of Selves as an App</h2>
     <ul id="install-steps">
       <li><strong>iPhone (Safari):</strong> Tap the <em>Share</em> icon and select <strong>"Add to Home Screen"</strong>.</li>
       <li><strong>Android (Chrome):</strong> Tap the three-dot menu, then choose <strong>"Install App"</strong>.</li>
@@ -267,10 +351,10 @@
     </ul>
 
     <p style="margin-top:24px;font-size:0.95rem;color:#aaa;" id="app-store-note">
-      🛡️ This app is not from an app store — it's a safe, private space developed independently.
+      <i class="fas fa-shield-alt"></i> This app is not from an app store — it's a safe, private space developed independently.
     </p>
     <p style="margin-top:20px;font-size:0.95rem;color:#aaa;" id="help-note">
-      🕯️ Questions or issues? We're always here to help.
+      <i class="fas fa-life-ring"></i> Questions or issues? We're always here to help.
     </p>
   </div>
 
@@ -306,7 +390,9 @@
         helpNote: "🕯️ Questions or issues? We're always here to help.",
         loadingText: "Processing your payment...<br>Please wait a moment 🌑🌕",
         namePlaceholder: "Your Name",
-        emailPlaceholder: "Your Email"
+        emailPlaceholder: "Your Email",
+        successText: "After successful payment, you'll be redirected to your access key and website link page.",
+        paymentHelpText: "Having payment issues?"
       },
       tr: {
         title: "$9.99'lık Satın Alma İşleminizi Tamamlayın",
@@ -332,7 +418,37 @@
         helpNote: "🕯️ Sorularınız veya sorunlarınız mı var? Her zaman yardıma hazırız.",
         loadingText: "Ödemeniz işleniyor...<br>Lütfen bir dakika bekleyin 🌑🌕",
         namePlaceholder: "Adınız",
-        emailPlaceholder: "E-posta Adresiniz"
+        emailPlaceholder: "E-posta Adresiniz",
+        successText: "Başarılı ödeme sonrası, erişim anahtarınız ve web sitesi bağlantınızın olduğu sayfaya yönlendirileceksiniz.",
+        paymentHelpText: "Ödeme sorunu mu yaşıyorsunuz?"
+      },
+      de: {
+        title: "Schließen Sie Ihren $9.99 Kauf ab",
+        instruction: "Geben Sie Ihren Namen und Ihre E-Mail-Adresse ein, um fortzufahren:",
+        exchangeNote: "💬 Ihre Karte wird in türkischen Lira (₺) basierend auf den aktuellen Wechselkursen belastet (ca. 1 USD ≈ 38,43 TRY).",
+        rateFixedNote: "Wir haben den Wechselkurs für diesen Start auf <strong>1 USD = 39 TRY</strong> festgelegt. Wenn sich der Wechselkurs drastisch ändert, werden wir den Preis entsprechend anpassen.",
+        orText: "oder",
+        directLinkText: "🔗 Über Direktlink bezahlen",
+        paymentProcessTitle: "📜 So funktioniert der Zahlungsvorgang",
+        paymentProcessSteps: [
+          "Geben Sie Ihren Namen und Ihre E-Mail-Adresse ein.",
+          "Klicken Sie auf die Schaltfläche für die sichere Zahlung oder verwenden Sie den Direktlink.",
+          "Schließen Sie die Zahlung über den sicheren Checkout von PayTR ab.",
+          "Nach erfolgreicher Zahlung werden Sie sofort auf Ihre Zugangsseite weitergeleitet."
+        ],
+        installTitle: "📱 So installieren Sie Cabinet of Selves als App",
+        installSteps: [
+          "<strong>iPhone (Safari):</strong> Tippen Sie auf das <em>Teilen</em>-Symbol und wählen Sie <strong>\"Zum Home-Bildschirm\"</strong>.",
+          "<strong>Android (Chrome):</strong> Tippen Sie auf das Dreipunkt-Menü und wählen Sie dann <strong>\"App installieren\"</strong>.",
+          "<strong>Desktop:</strong> Suchen Sie nach einem <em>Installations</em>-Symbol in der Adressleiste oder verwenden Sie die Browsereinstellungen."
+        ],
+        appStoreNote: "🛡️ Diese App stammt nicht aus einem App Store — es ist ein sicherer, privater Raum, der unabhängig entwickelt wurde.",
+        helpNote: "🕯️ Fragen oder Probleme? Wir sind immer für Sie da.",
+        loadingText: "Ihre Zahlung wird verarbeitet...<br>Bitte warten Sie einen Moment 🌑🌕",
+        namePlaceholder: "Ihr Name",
+        emailPlaceholder: "Ihre E-Mail",
+        successText: "Nach erfolgreicher Zahlung werden Sie zu Ihrer Zugangsschlüssel- und Website-Link-Seite weitergeleitet.",
+        paymentHelpText: "Probleme mit der Zahlung?"
       }
     };
 
@@ -340,6 +456,7 @@
       // Update button states
       document.getElementById('en-btn').classList.toggle('active', lang === 'en');
       document.getElementById('tr-btn').classList.toggle('active', lang === 'tr');
+      document.getElementById('de-btn').classList.toggle('active', lang === 'de');
       
       // Update all text elements
       document.getElementById('title').textContent = translations[lang].title;
@@ -355,22 +472,26 @@
       document.getElementById('loading-text').innerHTML = translations[lang].loadingText;
       document.getElementById('user-name').placeholder = translations[lang].namePlaceholder;
       document.getElementById('user-email').placeholder = translations[lang].emailPlaceholder;
+      document.getElementById('success-text').textContent = translations[lang].successText;
+      document.getElementById('payment-help-text').textContent = translations[lang].paymentHelpText;
       
       // Update lists
       const paymentSteps = translations[lang].paymentProcessSteps;
-      const paymentListItems = document.querySelectorAll('#payment-process-steps li');
-      paymentSteps.forEach((step, i) => {
-        if (paymentListItems[i]) {
-          paymentListItems[i].innerHTML = step;
-        }
+      const paymentList = document.getElementById('payment-process-steps');
+      paymentList.innerHTML = '';
+      paymentSteps.forEach(step => {
+        const li = document.createElement('li');
+        li.innerHTML = step;
+        paymentList.appendChild(li);
       });
       
       const installSteps = translations[lang].installSteps;
-      const installListItems = document.querySelectorAll('#install-steps li');
-      installSteps.forEach((step, i) => {
-        if (installListItems[i]) {
-          installListItems[i].innerHTML = step;
-        }
+      const installList = document.getElementById('install-steps');
+      installList.innerHTML = '';
+      installSteps.forEach(step => {
+        const li = document.createElement('li');
+        li.innerHTML = step;
+        installList.appendChild(li);
       });
     }
 
@@ -379,17 +500,17 @@
       const email = document.getElementById("user-email").value.trim();
 
       if (!name || !email) {
-        status.textContent = document.getElementById('en-btn').classList.contains('active') ? 
+        const activeLang = document.querySelector('.language-toggle button.active').id.replace('-btn', '');
+        status.textContent = translations[activeLang].namePlaceholder === "Your Name" ? 
           "⚠️ Please enter your name and email." : 
-          "⚠️ Lütfen adınızı ve e-posta adresinizi girin.";
+          activeLang === 'tr' ? "⚠️ Lütfen adınızı ve e-posta adresinizi girin." : 
+          "⚠️ Bitte geben Sie Ihren Namen und Ihre E-Mail-Adresse ein.";
         return;
       }
 
       iframe.style.display = "none";
-      status.innerHTML = '<span class="loader"></span>' + 
-        (document.getElementById('en-btn').classList.contains('active') ? 
-         "Requesting secure payment link..." : 
-         "Güvenli ödeme bağlantısı isteniyor...");
+      const activeLang = document.querySelector('.language-toggle button.active').id.replace('-btn', '');
+      status.innerHTML = '<span class="loader"></span>' + translations[activeLang].loadingText;
 
       try {
         loadingOverlay.style.display = "flex";
@@ -415,19 +536,22 @@
         if (data.token_url) {
           iframe.src = data.token_url;
           iframe.style.display = "block";
-          status.textContent = document.getElementById('en-btn').classList.contains('active') ? 
+          status.textContent = activeLang === 'en' ? 
             "✅ Secure payment loaded. Please complete your transaction below." : 
-            "✅ Güvenli ödeme yüklendi. Lütfen işleminizi aşağıdan tamamlayın.";
+            activeLang === 'tr' ? "✅ Güvenli ödeme yüklendi. Lütfen işleminizi aşağıdan tamamlayın." :
+            "✅ Sichere Zahlung geladen. Bitte schließen Sie Ihre Transaktion unten ab.";
         } else {
-          status.textContent = document.getElementById('en-btn').classList.contains('active') ? 
+          status.textContent = activeLang === 'en' ? 
             "⚠️ Failed to generate payment link." : 
-            "⚠️ Ödeme bağlantısı oluşturulamadı.";
+            activeLang === 'tr' ? "⚠️ Ödeme bağlantısı oluşturulamadı." :
+            "⚠️ Zahlungslink konnte nicht generiert werden.";
           console.error("Error response:", data);
         }
       } catch (err) {
         loadingOverlay.style.display = "none";
-        status.textContent = (document.getElementById('en-btn').classList.contains('active') ? 
-          "🚨 Error: " : "🚨 Hata: ") + err.message;
+        const activeLang = document.querySelector('.language-toggle button.active').id.replace('-btn', '');
+        status.textContent = (activeLang === 'en' ? 
+          "🚨 Error: " : activeLang === 'tr' ? "🚨 Hata: " : "🚨 Fehler: ") + err.message;
         console.error("Request error:", err);
       }
     });
