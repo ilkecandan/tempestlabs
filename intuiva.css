@@ -1381,21 +1381,18 @@
       transform: translateY(-5px) scale(1.1);
     }
 
-    .chat-container {
-      position: fixed;
-      bottom: 160px;
-      right: 20px;
-      width: 300px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      overflow: hidden;
-      z-index: 1000;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      transform: scale(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease;
-    }
+.chat-container {
+  background: rgba(10, 10, 10, 0.95); /* increased opacity for better contrast */
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
 
     .chat-container.visible {
       transform: scale(1);
