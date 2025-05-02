@@ -1340,43 +1340,7 @@
       transform: translateX(50%) translateY(-150%);
     }
   }
-        .floating-leaves {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
 
-.leaf {
-  position: absolute;
-  width: 40px;
-  opacity: 0.7;
-  animation: floatLeaf 12s linear infinite;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-.leaf1 { top: -50px; left: 10%; animation-delay: 0s; }
-.leaf2 { top: -100px; left: 50%; animation-delay: 5s; }
-.leaf3 { top: -70px; left: 80%; animation-delay: 2.5s; }
-
-@keyframes floatLeaf {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(50vh) rotate(180deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
 
 
     </style>
@@ -1798,11 +1762,6 @@
         <div class="scroll-dot" data-label="FAQ" data-section="faq"></div>
         <div class="scroll-dot" data-label="Get Started" data-section="cta"></div>
     </div>
-    <div class="floating-leaves">
-  <img src="/images/leaf1.png" class="leaf leaf1" />
-  <img src="/images/leaf2.png" class="leaf leaf2" />
-  <img src="/images/leaf3.png" class="leaf leaf3" />
-</div>
 
 
     <script>
