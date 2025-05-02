@@ -332,9 +332,9 @@
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 8px 0 16px;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   p {
@@ -353,7 +353,6 @@
     margin: 12px 0;
   }
 
-  /* Form adjustments */
   #user-form {
     width: 100%;
     padding: 0 8px;
@@ -364,7 +363,6 @@
     font-size: 0.95rem;
   }
 
-  /* Button container adjustments */
   .button-container {
     width: 100%;
     padding: 0 8px;
@@ -376,69 +374,64 @@
     padding: 14px 24px;
   }
 
-  /* Loading overlay text */
   #loading-overlay p {
     font-size: 1rem;
     padding: 0 16px;
   }
 
-  /* --- ENHANCED MOBILE HERO FIXES --- */
+  /* HERO FIXES */
 
   .hero {
-    padding-top: 3rem;
-    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 3rem 1rem 2rem;
     background-size: cover !important;
-    background-position: center center !important;
+    background-position: center top !important;
     background-repeat: no-repeat !important;
+    min-height: 500px;
+    position: relative;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(208, 224, 237, 1));
+    z-index: 1;
   }
 
   .hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 1rem;
     gap: 1rem;
-  }
-
-  .hero-content {
-    order: 2;
-    padding: 1rem;
-    z-index: 2;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 8px;
   }
 
   .hero-title {
     font-size: 1.4rem;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
+    margin: 0;
   }
 
   .hero-subtitle {
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 1rem;
+    padding: 0 1rem;
   }
 
   .hero-cta {
     width: 100%;
     font-size: 1rem;
     padding: 14px;
+    margin-top: 1rem;
     display: inline-block;
-  }
-
-  .hero-illustration {
-    order: 1;
-    width: 100%;
-    max-height: 220px;
-    background-size: contain !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    margin-bottom: 1rem;
   }
 
   .nav-links {
@@ -460,7 +453,6 @@
     justify-content: center;
   }
 }
-
 
     
   </style>
