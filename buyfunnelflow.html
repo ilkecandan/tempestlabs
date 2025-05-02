@@ -325,136 +325,31 @@
       margin: 20px 0;
     }
 
-@media (max-width: 768px) {
-
-  body {
-    padding: 24px 16px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-    margin: 8px 0 16px;
-    line-height: 1.4;
-  }
-
-  p {
-    font-size: 1rem;
-    margin-bottom: 16px;
-    line-height: 1.5;
-  }
-
-  .exchange-note {
-    font-size: 0.85rem;
-    margin-bottom: 20px;
-  }
-
-  .success-note {
-    font-size: 0.9rem;
-    margin: 12px 0;
-  }
-
-  #user-form {
-    width: 100%;
-    padding: 0 8px;
-  }
-
-  input {
-    padding: 10px;
-    font-size: 0.95rem;
-  }
-
-  .button-container {
-    width: 100%;
-    padding: 0 8px;
-  }
-
-  #pay-button,
-  .secondary-button {
-    width: 100%;
-    padding: 14px 24px;
-  }
-
-  #loading-overlay p {
-    font-size: 1rem;
-    padding: 0 16px;
-  }
-
-  /* HERO FIXES */
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 1rem 2rem;
-    background-size: cover !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-    min-height: 500px;
-    position: relative;
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(208, 224, 237, 1));
-    z-index: 1;
-  }
-
-  .hero-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .hero-title {
-    font-size: 1.4rem;
-    margin: 0;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 0 1rem;
-  }
-
-  .hero-cta {
-    width: 100%;
-    font-size: 1rem;
-    padding: 14px;
-    margin-top: 1rem;
-    display: inline-block;
-  }
-
-  .nav-links {
-    position: relative;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 1rem;
-    text-align: center;
-    z-index: 3;
-  }
-
-  .nav-links a {
-    font-size: 0.85rem;
-  }
-
-  .language-toggle {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        position: static;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      .language-toggle {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .button-container {
+        width: 100%;
+      }
+      
+      #pay-button, .secondary-button {
+        width: 100%;
+        padding: 14px 24px;
+      }
+    }
   </style>
 </head>
 
