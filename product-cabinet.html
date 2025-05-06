@@ -1534,8 +1534,6 @@
             <a href="#faq">Wisdom</a>
             <a href="https://tempestlabs.space/turkish/product-cabinet.html">Türkçe</a>
            <a href="https://tempestlabs.space/german.html">Deutsch</a>
-
-
         </div>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i data-lucide="menu"></i>
@@ -1605,7 +1603,7 @@
                     <i data-lucide="brain"></i>
                 </div>
                 <h3>Self Leadership</h3>
-                <p>Strengthen your core Self and develop the 8 C’s: curiosity, calm, clarity, compassion, confidence, courage, creativity, and connection.</p>
+                <p>Strengthen your core Self and develop the 8 C's: curiosity, calm, clarity, compassion, confidence, courage, creativity, and connection.</p>
             </div>
             <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
                 <div class="feature-icon">
@@ -1619,7 +1617,7 @@
                     <i data-lucide="puzzle"></i>
                 </div>
                 <h3>System Visualization</h3>
-                <p>Use visual mapping tools to explore how your parts interact—building a clearer picture of your inner system’s dynamics and relationships.</p>
+                <p>Use visual mapping tools to explore how your parts interact—building a clearer picture of your inner system's dynamics and relationships.</p>
             </div>
             <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
                 <div class="feature-icon">
@@ -1658,6 +1656,28 @@
                     <p>Practices like guided imagery help individuals confront and reconcile conflicting parts of identity, developing a harmonious self-concept. Research shows visualization activates the same neural networks as real experiences, making it a powerful tool for psychological change.</p>
                     
                     <p class="text-gold mt-2"><strong>Our Approach:</strong> Cabinet of Selves offers structured visualization exercises based on clinical IFS techniques to help you safely explore your inner world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Shorts Video Section -->
+    <section id="video-demo" class="pwa-install">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It In Action</h2>
+                <p>Watch a quick demonstration of the Cabinet of Selves experience</p>
+            </div>
+            <div class="video-demo-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="video-wrapper" style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: 1px solid var(--border-color);">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                            src="https://www.youtube.com/embed/iwe-l9eNmDs?rel=0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="text-center mt-3">
+                    <p>This short demo shows the core functionality of the Cabinet of Selves tool.</p>
                 </div>
             </div>
         </div>
@@ -2197,12 +2217,11 @@
         const closeVideo = document.getElementById("closeVideo");
         const youtubePlayer = document.getElementById("youtubePlayer");
 
-  function openVideoModal() {
-    youtubePlayer.src = "https://www.youtube.com/embed/RlHy36hR2AQ?autoplay=1&rel=0";
-    videoModal.classList.add("active");
-    document.body.style.overflow = "hidden";
-}
-
+        function openVideoModal() {
+            youtubePlayer.src = "https://www.youtube.com/embed/RlHy36hR2AQ?autoplay=1&rel=0";
+            videoModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
 
         function closeVideoModal() {
             videoModal.classList.remove("active");
