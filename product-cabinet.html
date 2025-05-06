@@ -1661,28 +1661,34 @@
         </div>
     </section>
 
-    <!-- YouTube Shorts Video Section -->
-    <section id="video-demo" class="pwa-install">
-        <div class="container">
-            <div class="section-header">
-                <h2>See It In Action</h2>
-                <p>Watch a quick demonstration of the Cabinet of Selves experience</p>
+
+<!-- YouTube Shorts Video Section -->
+<section id="video-demo" class="pwa-install">
+    <div class="container">
+        <div class="section-header">
+            <h2>See It In Action</h2>
+            <p>Watch a quick demonstration of the Cabinet of Selves experience</p>
+        </div>
+        <div class="video-demo-container" style="max-width: 800px; margin: 0 auto;">
+            <div class="video-wrapper thumbnail-hover" style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                <img src="/images/thumthum.webp" alt="Watch Demo" 
+                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem; cursor: pointer; transition: opacity 0.3s ease;" 
+                     onclick="openVideoModal()" 
+                     onmouseover="this.style.opacity='0.85'" 
+                     onmouseout="this.style.opacity='1'" />
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+                    <button class="btn btn-secondary" style="font-size: 1.2rem;"><i data-lucide='play-circle'></i> Watch Demo</button>
+                </div>
             </div>
-            <div class="video-demo-container" style="max-width: 800px; margin: 0 auto;">
-                <div class="video-wrapper" style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: 1px solid var(--border-color);">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                            src="https://www.youtube.com/embed/iwe-l9eNmDs?rel=0" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="text-center mt-3">
-                    <p>This short demo shows the core functionality of the Cabinet of Selves tool.</p>
-                </div>
+            <div class="text-center mt-3">
+                <p>This short demo shows the core functionality of the Cabinet of Selves tool.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+
+    
     <!-- Multilingual Section -->
     <section id="multilingual" class="multilingual-section">
         <div class="container">
