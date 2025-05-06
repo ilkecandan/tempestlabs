@@ -1673,11 +1673,13 @@
             <div class="video-wrapper thumbnail-hover" style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
                 <img src="/images/thumthum.webp" alt="Watch Demo" 
                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem; cursor: pointer; transition: opacity 0.3s ease;" 
-                     onclick="openVideoModal()" 
+                     onclick="openShortsVideoModal()" 
                      onmouseover="this.style.opacity='0.85'" 
                      onmouseout="this.style.opacity='1'" />
                 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
-                    <button class="btn btn-secondary" style="font-size: 1.2rem;"><i data-lucide='play-circle'></i> Watch Demo</button>
+                    <button class="btn btn-secondary" style="font-size: 1.2rem;" onclick="openShortsVideoModal()">
+                        <i data-lucide='play-circle'></i> Watch Demo
+                    </button>
                 </div>
             </div>
             <div class="text-center mt-3">
@@ -1686,6 +1688,7 @@
         </div>
     </div>
 </section>
+
 
 
     
@@ -2357,6 +2360,14 @@
                 }, 1000);
             });
         }, 5000);
+
+        function openShortsVideoModal() {
+    const youtubePlayer = document.getElementById("youtubePlayer");
+    youtubePlayer.src = "https://www.youtube.com/embed/iwe-l9eNmDs?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    document.getElementById("videoModal").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
     </script>
 </body>
 </html>
