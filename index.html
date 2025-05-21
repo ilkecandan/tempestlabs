@@ -180,16 +180,17 @@ background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4
             opacity: 1;
         }
 
-        .hero-mythic {
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 5% 8% 5% 5%;
-            isolation: isolate;
-        }
+  .hero-mythic {
+    position: relative;
+    min-height: 100vh;
+    overflow: visible; /* 🔥 allow silhouettes and video to breathe */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ⚖️ balance both sides */
+    padding: 5% 8%;
+    isolation: isolate;
+}
+
 
         .hero-overlay {
     z-index: 2;
@@ -940,18 +941,19 @@ font-family: 'Cinzel', serif;
 }
 
 
-    .hero-video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 1;
-  filter: brightness(1.05) contrast(1.1) saturate(1.1);
-  pointer-events: none;
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1;
+    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+    pointer-events: none;
 }
+
 @media (max-width: 768px) {
     .hero-video-bg {
         display: none;
