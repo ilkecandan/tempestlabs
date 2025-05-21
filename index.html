@@ -363,7 +363,7 @@ box-shadow: 0 0 20px rgba(58, 227, 248, 0.5);
 .product-card {
     background: rgba(6, 30, 34, 0.75); /* Deep dark teal */
     border-radius: 15px;
-    padding: 25px 20px;
+    padding: 40px 20px 25px 20px; /* ✅ Extra space on top */
     box-shadow: 0 8px 24px rgba(58, 227, 248, 0.15), 0 0 15px rgba(0, 0, 0, 0.4);
     transition: all var(--transition-speed);
     border: 1px solid rgba(58, 227, 248, 0.2);
@@ -419,12 +419,17 @@ box-shadow: 0 0 20px rgba(58, 227, 248, 0.5);
             animation: fadeInUp 0.8s ease-out;
 }
 
- .product-image-wrapper {
+.product-image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    overflow: visible !important; /* ✅ Ensure video circle never gets cut off */
+    padding-top: 10px;             /* ✅ Add buffer if it’s near the edge */
+    position: relative;
+    z-index: 2;
 }
+
 
 .product-image-wrapper img {
     max-width: 100%;
