@@ -180,30 +180,40 @@ background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4
             opacity: 1;
         }
 
-  .hero-mythic {
-    position: relative;
-    min-height: 100vh;
-    overflow: visible; /* 🔥 allow silhouettes and video to breathe */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* ⚖️ balance both sides */
-    padding: 5% 8%;
-    isolation: isolate;
+.hero-mythic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5% 8%;
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+  isolation: isolate;
+  flex-direction: row; /* Ensure it's horizontal */
+}
+
+.hero-art {
+  flex: 1;
+  min-width: 50%;
+  position: relative;
+  z-index: 1;
 }
 
 
-        .hero-overlay {
-    z-index: 2;
-    position: relative;
-    backdrop-filter: blur(4px);
-    background-color: rgba(0, 0, 0, 0.15); /* lighter and more transparent */
-    border-radius: 12px;
-    max-width: 45%;
-    padding: 40px;
-    animation: fadeInUp 1s ease-out;
-    border: 1px solid rgba(58, 227, 248, 0.08); /* subtle glow outline */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* ambient depth */
+.hero-overlay {
+  flex: 1;
+  max-width: 45%;
+  margin-left: auto; /* 👈 THIS PUSHES IT RIGHT */
+  z-index: 2;
+  position: relative;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid rgba(58, 227, 248, 0.08);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
+
 
 
         .hero-mythic h1 {
@@ -1008,21 +1018,22 @@ font-family: 'Cinzel', serif;
     <!-- Mobile Menu Backdrop -->
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
-    <!-- Hero Section -->
-    <section class="hero-mythic">
-<video class="hero-video-bg" autoplay muted loop playsinline>
-  <source src="images/hero.mp4" type="video/mp4">
-</video>
-        
-        <div class="hero-overlay">
-        <h1>Build What Doesn’t Yet Exist.</h1>
-<p class="hero-subtitle">Clarity is no accident. You’re here to rewrite the interface of reality.</p>
-<p class="tagline">For minds who never felt at home in the default settings.</p>
+<section class="hero-mythic">
+  <div class="hero-art">
+    <video class="hero-video-bg" autoplay muted loop playsinline>
+      <source src="images/hero.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<a class="cta-button explore-cta" href="products.html">⟶ Enter the Lab</a>
-            <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
-        </div>
-    </section>
+  <div class="hero-overlay">
+    <h1>Build What Doesn’t Yet Exist.</h1>
+    <p class="hero-subtitle">Clarity is no accident. You’re here to rewrite the interface of reality.</p>
+    <p class="tagline">For minds who never felt at home in the default settings.</p>
+    <a class="cta-button explore-cta" href="products.html">⟶ Enter the Lab</a>
+    <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
+  </div>
+</section>
+
 
     <div class="separator"></div>
 
