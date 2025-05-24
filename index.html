@@ -988,6 +988,22 @@ font-family: 'Cinzel', serif;
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
 }
 
+.hero-mythic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 8%;
+    position: relative;
+    min-height: 100vh;
+    overflow: visible;
+    isolation: isolate;
+    flex-direction: row;
+    background-image: url('images/heronew.webp'); /* Set the new image here */
+    background-size: cover;
+    background-position: center;
+}
+
+    
 </style>
     
 </head>
@@ -1022,18 +1038,17 @@ font-family: 'Cinzel', serif;
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
 <section class="hero-mythic">
-  <video class="hero-video-bg" autoplay muted loop playsinline>
-    <source src="images/hero.mp4" type="video/mp4">
-  </video>
+    <div class="hero-image-bg"></div> <!-- New background image container -->
 
-  <div class="hero-overlay right-align">
-    <h1>Build What Doesn’t Yet Exist.</h1>
-    <p class="hero-subtitle">Clarity is no accident. You’re here to rewrite the interface of reality.</p>
-    <p class="tagline">For minds who never felt at home in the default settings.</p>
-    <a class="cta-button explore-cta" href="products.html">⟶ Enter the Lab</a>
-    <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
-  </div>
+    <div class="hero-overlay right-align">
+        <h1>Build What Doesn’t Yet Exist.</h1>
+        <p class="hero-subtitle">Clarity is no accident. You’re here to rewrite the interface of reality.</p>
+        <p class="tagline">For minds who never felt at home in the default settings.</p>
+        <a class="cta-button explore-cta" href="products.html">⟶ Enter the Lab</a>
+        <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
+    </div>
 </section>
+
 
 
 
