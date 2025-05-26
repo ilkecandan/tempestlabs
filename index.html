@@ -642,13 +642,15 @@
             background: linear-gradient(135deg, rgba(10, 157, 183, 0.2), rgba(0, 240, 255, 0.2));
         }
 
-        .use-case-image img {
-            width: 60%;
-            height: 60%;
-            object-fit: contain;
-            filter: grayscale(30%);
-            transition: all 0.3s ease;
-        }
+       .use-case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(30%);
+    transition: all 0.3s ease;
+}
+
 
         .use-case-card:hover .use-case-image img {
             filter: grayscale(0%);
