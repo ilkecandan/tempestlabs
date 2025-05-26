@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="preload" as="image" href="images/hero-mythic-bg.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta name="description" content="Tempest Labs creates beautiful, calm software for real humans. One-time purchase apps designed to empower, not overwhelm.">
+    <meta name="description" content="Tempest Labs creates powerful, focused software for high-performing professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tempest Labs - One-Time Purchase Software That Clears Your Mind">
-    <meta property="og:description" content="Calm tools that help you stay focused, organized, and in control—without the clutter or tracking.">
+    <meta property="og:title" content="Tempest Labs - Tools for Innovators">
+    <meta property="og:description" content="Digital tools that eliminate friction and enhance productivity for CEOs, marketers, and tech professionals.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tempestlabs.com">
     <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
@@ -18,21 +18,21 @@
     <link rel="canonical" href="https://tempestlabs.com" />
     <title>Tempest Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;600&family=EB+Garamond:wght@400;600&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="images/tempest.png" type="image/x-icon">
 
 <style>
         /* ================================= */
-        /* TEMPEST LABS - MYTHIC HERO STYLES */
+        /* TEMPEST LABS - MODERN TECH STYLES */
         /* ================================= */
   :root {
-          --deep-teal: #01343E;       /* base background */
---aqua-glow: #00F0FF;
---muted-aqua: #66FCFF;
---glow-white: #A3FAFF;
---charcoal-black: #04191C;
---burnt-coral: #F74141;
-          --hero-teal: #0A9DB7;       /* luminous main tone */
+          --deep-teal: #01343E;
+          --aqua-glow: #00F0FF;
+          --muted-aqua: #66FCFF;
+          --glow-white: #A3FAFF;
+          --charcoal-black: #04191C;
+          --burnt-coral: #F74141;
+          --hero-teal: #0A9DB7;
           --hero-dark-teal: #055B6D;
           
           --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
@@ -50,31 +50,26 @@
             scroll-behavior: smooth;
         }
 
-  body {
-            font-family: 'Outfit', sans-serif;
+        body {
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
-              background-image: url('images/noise.png'), radial-gradient(...);
-         background-blend-mode: overlay;
-
+            background-color: #f8f9fa;
             color: var(--charcoal-black);
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-            word-spacing: 0.5px;
+            line-height: 1.6;
+            letter-spacing: 0.2px;
             overflow-x: hidden;
-background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4E4 100%);
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cinzel', serif;
-            color: var(--glow-white);
-            letter-spacing: 1px;
-            text-shadow: var(--hero-text-glow);
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal-black);
+            letter-spacing: -0.5px;
             margin-bottom: 1.2rem;
-            font-weight: 400;
+            font-weight: 700;
         }
 
         a {
-            color: var(--aqua-glow);
+            color: var(--hero-teal);
             text-decoration: none;
             transition: all var(--transition-speed);
         }
@@ -84,37 +79,35 @@ background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 27, 28, 0.2);
+            background: white;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
-            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: all 0.4s ease;
         }
 
         header.scrolled {
             padding: 8px 5%;
-            background: rgba(11, 27, 28, 0.95);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
             font-size: 26px;
-            font-weight: 400;
-            letter-spacing: 1.5px;
-            color: var(--glow-white);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--charcoal-black);
             cursor: pointer;
             position: relative;
             padding: 0 12px;
-            font-family: 'Cinzel', serif;
+            font-family: 'Inter', sans-serif;
         }
 
         .logo span {
-            color: var(--aqua-glow);
-            animation: pulse-glow 3.5s infinite;
+            color: var(--hero-teal);
         }
 
         nav ul {
@@ -128,9 +121,9 @@ background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4
         }
 
         nav ul li a {
-            color: var(--glow-white);
-            font-size: 17px;
-            font-weight: 300;
+            color: var(--charcoal-black);
+            font-size: 16px;
+            font-weight: 500;
             padding: 10px 15px;
             border-radius: 6px;
             transition: all var(--transition-speed);
@@ -140,8 +133,7 @@ background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4
         }
 
         nav ul li a:hover {
-            color: var(--aqua-glow);
-            text-shadow: var(--text-glow);
+            color: var(--hero-teal);
         }
 
         nav ul li a::after {
@@ -151,15 +143,14 @@ background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4
             left: 50%;
             transform: translateX(-50%);
             width: 0;
-            height: 1px;
-            background: var(--aqua-glow);
+            height: 2px;
+            background: var(--hero-teal);
             transition: width var(--transition-speed);
         }
 
         nav ul li a:hover::after {
             width: 60%;
         }
-
     
         .social-icons {
             display: flex;
@@ -168,786 +159,480 @@ background: radial-gradient(circle at top center, #02323F 0%, #057A94 40%, #00C4
         }
 
         .social-icons a {
-            color: var(--glow-white);
+            color: var(--charcoal-black);
             font-size: 1.2rem;
             transition: all var(--transition-speed);
             opacity: 0.7;
         }
 
         .social-icons a:hover {
-            color: var(--aqua-glow);
+            color: var(--hero-teal);
             transform: translateY(-3px);
             opacity: 1;
         }
 
-.hero-mythic {
+.hero-modern {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5% 8%;
+    padding: 180px 8% 100px;
     position: relative;
-    min-height: 100vh;
+    min-height: auto;
     overflow: visible;
-    isolation: isolate;
-    flex-direction: row;
-    background-image: url('images/heronew.webp'); /* Set the new image here */
-    background-size: cover;
-    background-position: center;
+    background-color: white;
 }
 
-.hero-art {
+.hero-content {
   flex: 1;
-  min-width: 50%;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 50%;
   position: relative;
   z-index: 1;
 }
 
-
-.hero-overlay {
-  flex: 1;
-  max-width: 45%;
-  margin-left: auto; /* 👈 THIS PUSHES IT RIGHT */
-  z-index: 2;
-  position: relative;
-  backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.15);
+.hero-image img {
+  width: 100%;
+  height: auto;
   border-radius: 12px;
-  padding: 40px;
-  border: 1px solid rgba(58, 227, 248, 0.08);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-}
-.hero-overlay.right-align {
-  margin-left: auto;
-  margin-right: 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+.hero-modern h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    color: var(--charcoal-black);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
 
-
-        .hero-mythic h1 {
-            font-family: 'Cinzel', serif;
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 12px #00faff, 0 0 30px rgba(0, 250, 255, 0.3);
-            line-height: 1.3;
-            color: var(--glow-white);
-            text-shadow: var(--hero-text-glow);
-            font-weight: 400;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .hero-mythic .hero-subtitle {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.1rem;
-            color: #C7E9E9;
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        .hero-mythic .tagline {
-            font-family: 'Outfit', sans-serif;
-            color: var(--aqua-glow);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-            position: relative;
-            padding-left: 20px;
-            border-left: 1px solid var(--hero-teal);
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .hero-mythic .microtagline {
-            font-size: 0.9rem;
-            color: var(--muted-aqua);
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-            margin-top: 2rem;
-            opacity: 0.8;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-        }
-
-.hero-cta {
-    background: transparent;
-    color: white;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-    border: none;
-    border-radius: 0;
-    padding: 12px 0;
+.hero-modern .hero-subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
     font-weight: 400;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    transition: all 0.4s ease;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.cta-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.primary-button {
+    background: var(--charcoal-black);
+    color: white;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.hero-cta:hover {
-    color: var(--aqua-glow);
-    text-shadow: 0 0 12px rgba(88, 188, 197, 0.8), 0 0 18px rgba(88, 188, 197, 0.6);
+.primary-button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+.secondary-button {
+    background: white;
+    color: var(--charcoal-black);
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-        .mist-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: linear-gradient(0deg, rgba(8, 126, 140, 0.3) 0%, transparent 100%);
-            z-index: 0;
-            pointer-events: none;
-        }
+.secondary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--charcoal-black);
+}
 
-        .separator {
-            width: 100%;
-            border-top: 1px solid transparent;
-            position: relative;
-            margin: 20px 0;
-        }
+.featured-products {
+    padding: 100px 5%;
+    text-align: center;
+    position: relative;
+    background-color: white;
+}
 
-        .separator::before {
-             width: 50px;
-             height: 2px;
-            background: var(--aqua-glow);
-box-shadow: 0 0 20px rgba(58, 227, 248, 0.5);
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            width: 30%;
-            border-top: 2px solid var(--aqua-glow);
-        }
+.featured-products h2 {
+    font-size: 42px;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
 
-        .scroll-hint {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 18px;
-            height: 30px;
-            border: 2px solid var(--burnt-coral);
-            border-radius: 20px;
-            opacity: 0.5;
-            animation: scrollPulse 2.5s infinite ease-in-out;
-        }
+.featured-products h2::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--hero-teal);
+}
 
-        .featured-products {
-            padding: 60px 5%;
-            text-align: center;
-            position: relative;
-            background: transparent;
-        }
-
-        .featured-products h2 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .featured-products h2::after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--aqua-glow);
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--burnt-coral);
-            box-shadow: 0 0 10px var(--aqua-glow);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 .product-card {
-    background: rgba(6, 30, 34, 0.75); /* Deep dark teal */
+    background: white;
     border-radius: 15px;
-    padding: 40px 20px 25px 20px; /* ✅ Extra space on top */
-    box-shadow: 0 8px 24px rgba(58, 227, 248, 0.15), 0 0 15px rgba(0, 0, 0, 0.4);
+    padding: 40px 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
     transition: all var(--transition-speed);
-    border: 1px solid rgba(58, 227, 248, 0.2);
+    border: 1px solid #eee;
     text-align: center;
-    backdrop-filter: blur(5px);
     animation: fadeInUp 0.8s ease-out;
     animation-fill-mode: both;
-    min-height: 320px; /* keep a neat height */
 }
 
 .product-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 35px rgba(58, 227, 248, 0.3), 0 0 25px rgba(233, 79, 61, 0.2);
-    border-color: rgba(58, 227, 248, 0.35);
-    background: rgba(6, 30, 34, 0.85);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
 }
 
-/* 🔥 SMALLER Images inside cards */
 .product-card img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 200px;
     object-fit: contain;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 30px auto;
     display: block;
-    opacity: 0.85;
-    filter: drop-shadow(0 0 8px rgba(58, 227, 248, 0.2));
-    transition: transform 0.5s ease;
-}
-
-.product-card:hover img {
-    transform: scale(1.08);
 }
 
 .product-card h3 {
-    margin-bottom: 12px;
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    letter-spacing: 1.1px;
-    font-size: clamp(1.1rem, 1.4vw, 1.5rem);
-    color: var(--glow-white);
-    text-shadow: var(--text-glow);
-    text-transform: none;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: var(--charcoal-black);
 }
 
 .product-card p {
-  font-family: 'Outfit', sans-serif;
-            font-size: clamp(1rem, 1.2vw, 1.2rem);
-              text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* adds subtle separation */
-            color: #EAF4F4; /* was #C7E9E9 */
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease-out;
-}
-
-.product-image-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    overflow: visible !important; /* ✅ Ensure video circle never gets cut off */
-    padding-top: 10px;             /* ✅ Add buffer if it’s near the edge */
-    position: relative;
-    z-index: 2;
-}
-
-
-.product-image-wrapper img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    opacity: 0.9;
-    transition: transform 0.5s ease;
-    filter: drop-shadow(0 0 8px rgba(58, 227, 248, 0.2));
-}
-
-.product-card:hover .product-image-wrapper img {
-    transform: scale(1.08);
-}
-
-.product-image-circle {
-    width: 100px !important;
-    height: 100px !important;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 10px auto;
-    display: block;
-    box-shadow: 0 0 8px rgba(58, 227, 248, 0.25);
-    border: 2px solid rgba(58, 227, 248, 0.5);
-    transition: transform var(--transition-speed);
-}
-
-
-.product-image-circle:hover {
-    transform: scale(1.05);
-}
-
-   
-        .quiet-software {
-            padding: 60px 5%;
-            background: rgba(0, 0, 0, 0.15);
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            margin-bottom: 60px;
-            backdrop-filter: blur(4px);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .quiet-software h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-        }
-
-        .quiet-software p {
-            margin-bottom: 30px;
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-           color: #D5F7F8;
-            text-shadow: 0 0 6px rgba(0,0,0,0.8);       
-        }
-  
-    .quiet-software p:last-of-type {
-    color: var(--glow-white);
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
     font-weight: 400;
-    font-size: 1.05rem;
-    opacity: 0.9;
 }
 
-    .quiet-software::before {
+.product-cta {
+    background: var(--hero-teal);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.product-cta:hover {
+    background: var(--hero-dark-teal);
+    transform: translateY(-2px);
+}
+
+.value-props {
+    padding: 100px 5%;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.value-props h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 42px;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    transition: all var(--transition-speed);
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.value-card h3 {
+    font-size: 22px;
+    color: var(--charcoal-black);
+    margin-bottom: 20px;
+}
+
+.value-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.testimonials {
+    padding: 100px 5%;
+    background-color: white;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 42px;
+    margin-bottom: 60px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--charcoal-black);
+}
+
+.call-to-action {
+    padding: 100px 5%;
+    text-align: center;
+    background-color: var(--charcoal-black);
+    color: white;
+}
+
+.call-to-action h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.call-to-action p {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+footer {
+    padding: 80px 5% 40px;
+    background-color: #222;
+    color: white;
+    position: relative;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
     content: "";
     position: absolute;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120%;
-    height: 200%;
-    background: radial-gradient(circle at 50% 0%, rgba(58, 227, 248, 0.06), transparent 70%);
-    z-index: 0;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--hero-teal);
 }
 
-
-        .approach-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .approach-item {
-background: rgba(6, 30, 34, 0.6); /* darker background for contrast */
-    border-radius: 12px;
-    padding: 30px;
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(58, 227, 248, 0.15);
-    box-shadow: 0 0 20px rgba(58, 227, 248, 0.08);
-    color: #EAF4F4; /* brighter text color */
-    text-align: left;
-    transition: all 0.4s ease;
-        }
-
-        .approach-item:hover {
-  transform: translateY(-5px);
-    background: rgba(6, 30, 34, 0.85);
-    border-color: rgba(58, 227, 248, 0.3);
-    box-shadow: 0 10px 30px rgba(58, 227, 248, 0.25);
-        }
-
-        .approach-item h3 {
-font-family: 'Cinzel', serif;
-    color: var(--burnt-coral);
-    font-weight: 700; /* BOLDER */
-    text-shadow: 0 0 8px rgba(233, 79, 61, 0.2); /* Slight glow for punch */
-    letter-spacing: 1.2px;
-    font-size: clamp(1.5rem, 1.7vw, 1.9rem);
-    text-transform: uppercase;
-        }
-
-        .call-to-action {
-           padding: 60px 5%;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.15);
-            position: relative;
-            backdrop-filter: blur(5px);
-            animation: fadeInUp 0.8s ease-out;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .call-to-action h2 {
-            font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .call-to-action p {
-            font-size: clamp(0.9rem, 1.2vw, 1.2rem);
-            color: #EAF4F4; text-shadow: 0 0 6px rgba(0,0,0,0.8);           
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-.cta-button {
-    background: rgba(0, 0, 0, 0.15); /* darkened contrast backdrop */
-    color: #FFDED3; /* brighter, slightly warm tone for clarity */
-    border-radius: 12px;
-    padding: 16px 32px;
-    font-weight: bold;
-        font-size: 1.1rem;
-    border: 1px solid rgba(233, 79, 61, 0.6);
-    box-shadow: 0 0 10px rgba(233, 79, 61, 0.2), 0 0 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    display: inline-block;
-    margin-top: 1rem;
-    font-family: 'Cinzel', serif;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-    text-shadow: 0 0 8px rgba(233, 79, 61, 0.3), 0 0 6px rgba(255, 222, 211, 0.3); /* GLOW BABY */
-}
-
-.cta-button:hover {
-    background: var(--burnt-coral);
-    color: white;
-    box-shadow: 0 0 25px var(--burnt-coral), 0 0 15px rgba(233, 79, 61, 0.6);
-    transform: translateY(-2px);
-    text-shadow: none;
-}
-
-
-        footer {
-        padding: 60px 5% 30px;
-        background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
-        color: #EAF4F4; /* glow-white */
-         text-shadow: 0 0 2px rgba(0,0,0,0.4);
-        position: relative;
-        overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/noise.png');
-            opacity: 0.1;
-            pointer-events: none;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-column h3 {
-         color: #F8FEFE;
-          text-shadow: 0 0 4px rgba(0,0,0,0.4);
-            margin-bottom: 20px;
-            font-size: clamp(1.5rem, 1.8vw, 1.8rem);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--burnt-coral);
-        }
-
-       .footer-column a {
+.footer-column a {
     display: block;
     margin-bottom: 10px;
-    color: #EAF4F4; /* bright glow white */
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4); /* subtle clarity */
+    color: #ccc;
     transition: all var(--transition-speed);
-    font-size: clamp(0.9rem, 1vw, 1rem); /* slight bigger too */
 }
 
+.footer-column a:hover {
+    color: white;
+}
 
-        .footer-column a:hover {
-            color: var(--aqua-glow);
-    text-shadow: 0 0 6px rgba(58, 227, 248, 0.5);
-        }
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    text-align: center;
+}
 
-        .footer-bottom {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(58, 227, 248, 0.2);
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
 
-        .legal-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .easter-egg {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0.3;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-            color: var(--burnt-coral);
-        }
+@media (max-width: 992px) {
+    .hero-modern {
+        flex-direction: column;
+        text-align: center;
+        padding: 150px 5% 80px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 60px;
+    }
+    
+    .hero-image {
+        max-width: 100%;
+    }
+    
+    .hero-modern h1 {
+        font-size: 48px;
+    }
+}
 
-        .easter-egg:hover {
-            opacity: 1;
-            animation: pulse 2s infinite;
-        }
+@media (max-width: 768px) {
+    header {
+        padding: 12px 5%;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        transition: all 0.4s ease;
+        gap: 20px;
+    }
+    
+    nav ul.active {
+        left: 0;
+    }
+    
+    nav ul li a {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .social-icons {
+        display: none;
+    }
+    
+    .hero-modern h1 {
+        font-size: 36px;
+    }
+    
+    .hero-modern .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .featured-products h2,
+    .value-props h2,
+    .testimonials h2,
+    .call-to-action h2 {
+        font-size: 36px;
+    }
+}
 
-        .menu-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
+@media (max-width: 480px) {
+    .logo {
+        font-size: 22px;
+    }
+    
+    .hero-modern h1 {
+        font-size: 32px;
+    }
+    
+    .featured-products h2,
+    .value-props h2,
+    .testimonials h2,
+    .call-to-action h2 {
+        font-size: 28px;
+    }
+    
+    .product-grid,
+    .value-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .legal-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 
-        .menu-backdrop.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.7; }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0) rotate(0deg); opacity: 0; }
-        }
-
-        @keyframes pulse-glow {
-            0% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
-            50% { opacity: 1; text-shadow: 0 0 20px var(--aqua-glow); }
-            100% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes scrollPulse {
-            0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-            50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
-            100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0px var(--aqua-glow); }
-            50% { box-shadow: 0 0 15px var(--aqua-glow); }
-            100% { box-shadow: 0 0 0px var(--aqua-glow); }
-        }
-
-        @media (max-width: 992px) {
-            .hero-mythic {
-                justify-content: center;
-                padding: 120px 5% 80px;
-                text-align: center;
-            }
-            
-            .hero-overlay {
-                max-width: 90%;
-                padding: 30px;
-            }
-            
-            .hero-mythic h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-mythic .tagline {
-                border-left: none;
-                padding-left: 0;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 12px 5%;
-            }
-            
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: rgba(6, 30, 34, 0.98);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: all 0.4s ease;
-                backdrop-filter: blur(15px);
-                gap: 20px;
-            }
-            
-            nav ul.active {
-            left: 0;
-             transition: left 0.4s ease-out; 
-            }
-            
-            nav ul li a {
-                padding: 12px 20px;
-                font-size: 1.1rem;
-            }
-            
-            .menu-toggle {
-                display: flex;
-            }
-            
-            .social-icons {
-                display: none;
-            }
-            
-            .hero-overlay {
-                max-width: 100%;
-                padding: 25px;
-                text-align: center;
-            }
-            
-            .hero-mythic h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-mythic .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .cta-group {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .featured-products h2 {
-                font-size: 2.2rem;
-                margin-bottom: 40px;
-            }
-            
-            .quiet-software {
-                padding: 60px 5%;
-                background: rgba(0,0,0,0.35); /* darker overlay for contrast */
-                margin-bottom: 60px;
-            }
-            
-            .call-to-action h2 {
-                font-size: 2rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 22px;
-            }
-            
-            .hero-mythic h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-mythic .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .featured-products h2 {
-                font-size: 1.8rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .product-card {
-                padding: 20px;
-            }
-            
-            .approach-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .call-to-action h2 {
-                font-size: 1.6rem;
-            }
-            
-            .legal-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .hero-mythic, .featured-products, .quiet-software, .call-to-action {
-                padding: 60px 3%;
-            }
-
-            .cta-button {
-                padding: 12px 20px;
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (hover: none) {
-            a, button, .menu-toggle {
-                min-height: 44px;
-                min-width: 44px;
-            }
-            
-            .cta-button {
-                padding: 16px 32px;
-            }
-            
-            nav ul li a {
-                padding: 15px 20px;
-            }
-        }
- .menu-toggle {
+.menu-toggle {
     display: none;
 }
 
-/* Show hamburger menu only on mobile screens */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -956,44 +641,6 @@ font-family: 'Cinzel', serif;
         cursor: pointer;
     }
 }
-
-
-.hero-video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 1;
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
-    .hero-video-bg {
-        display: none;
-    }
-
-    .explore-cta {
-  background: linear-gradient(135deg, #00f0ff 0%, #00bfa5 100%);
-  color: #04191C;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  letter-spacing: 1.2px;
-  border-radius: 12px;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-}
-.explore-cta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
-}
-
-
-
-    
 </style>
     
 </head>
@@ -1027,185 +674,104 @@ font-family: 'Cinzel', serif;
     <!-- Mobile Menu Backdrop -->
     <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
-<section class="hero-mythic">
-    <div class="hero-image-bg"></div> <!-- New background image container -->
-
-    <div class="hero-overlay right-align">
-        <h1>Build What Doesn’t Yet Exist.</h1>
-        <p class="hero-subtitle">Clarity is no accident. You’re here to rewrite the interface of reality.</p>
-        <p class="tagline">For minds who never felt at home in the default settings.</p>
-        <a class="cta-button explore-cta" href="products.html">⟶ Enter the Lab</a>
-        <p class="microtagline">Own your time. Own your systems. Stay in flow.</p>
-    </div>
-</section>
-
-
-
-
-    <div class="separator"></div>
-
-    <!-- Quiet Software Section -->
-    <section class="quiet-software" id="scroll-target">
-<h2>Software that respects your nervous system.</h2>
-        <p>At Tempest Labs, we believe digital tools should feel like instruments, not interruptions. We build for clarity, not captivity.</p>
-        
-        <div class="approach-list">
-            <div class="approach-item">
-                <h3>No notifications.</h3>
-                <p>Nothing blinks, pings, or steals your attention. Our tools wait in stillness until you return.</p>
+    <!-- Hero Section -->
+    <section class="hero-modern">
+        <div class="hero-content">
+            <h1>Unlock Your Potential with Tools Designed for Innovators</h1>
+            <p class="hero-subtitle">Tempest Labs helps high-performing professionals and leaders in fast-paced industries streamline their processes, drive growth, and maintain focus with digital tools that eliminate friction and enhance productivity.</p>
+            <div class="cta-group">
+                <a href="products.html" class="primary-button">Explore Products</a>
+                <a href="contact.html" class="secondary-button">Contact Us</a>
             </div>
-            <div class="approach-item">
-    <h3>One-time payment</h3>
-    <p>One payment, lifetime access. The right tools, ready when you are. Nothing in your way.</p>
-</div>
-
-<div class="approach-item">
-    <h3>From chaos to clarity</h3>
-    <p>Every Tempest Labs tool helps you turn ideas, tasks, or inner worlds into clear, living structures you control.</p>
-</div>
         </div>
-
-        <p style="margin-top: 50px;">
-            <strong>Why?</strong><br>
-            Because you're not a product.<br>
-            Because your focus is sacred.<br>
-            Because creativity needs silence, not surveillance.
-        </p>
-        <p class="tagline"><span style="color: var(--aqua-glow);">"Clarity is a rebellion."</span></p>
+        <div class="hero-image">
+            <img src="images/hero-dashboard.png" alt="Tempest Labs dashboard interface">
+        </div>
     </section>
 
-    <div class="separator"></div>
-<!-- Featured Products Section -->
-<section class="featured-products">
-    <h2>Crafted Spaces for Creative Strategy</h2>
-    <div class="product-grid">
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <h2>Our Tools</h2>
+        <p class="subtitle">Each of our products is designed to help you move quickly, clearly, and with intent.</p>
         
-        <!-- Intuiva Card -->
-        <div class="product-card">
-            <a href="product-intuiva.html" class="product-link">
-                <div class="product-image-wrapper">
-                    <img src="images/planner.png" alt="Intuiva app screenshot - project planning dashboard with Kanban board for focused work">
-                </div>
-                <h3>Intuiva</h3>
-            </a>
-            <p>
-Turns mental clutter into clear next steps. Plan, map, and move — without friction.
-            </p>
-            <a href="product-intuiva.html" class="cta-button glow-element">Try / Learn more</a>
-        </div>
-
-        <!-- Cabinet of Selves Card -->
-        <div class="product-card">
-            <a href="product-cabinet.html" class="product-link">
-                <div class="product-image-wrapper">
-                    <img src="images/girl.png" alt="Cabinet of Selves app screenshot - mental health journaling tool for emotional self-reflection">
-                </div>
-                <h3>Cabinet of Selves</h3>
-            </a>
-            <p>
-         A structured mirror for your inner system. Reflect, realign, and act from center.
-            </p>
-            <a href="product-cabinet.html" class="cta-button glow-element">Try / Learn more</a>
-        </div>
-
-        <!-- FunnelFlow Card -->
-        <div class="product-card">
-            <a href="product-funnelflow.html" class="product-link">
-                <div class="product-image-wrapper">
-                    <img src="images/funnel.png" alt="FunnelFlow interface screenshot - sales pipeline visualization tool">
-                </div>
-                <h3>FunnelFlow</h3>
-            </a>
-            <p>
-Gives your pipeline a spine. Drag, drop, decide; no clutter, no confusion.
-            </p>
-            <a href="product-funnelflow.html" class="cta-button glow-element">Try / Learn more</a>
-        </div>
-
-    </div>
-</section>
-
-  
-    <!-- Section Divider -->
-    <div class="separator"></div>
-        
-    <!-- Use Cases Section -->
-  <section class="featured-products">
-    <h2>Made for minds like yours</h2>
-    <div class="product-grid">
-        <div class="product-card">
-            <div class="product-image-wrapper">
-                <img src="images/founder.webp" alt="The Founder" class="product-image-circle">
-            </div>
-            <h3>The Founder: Take control of your vision.</h3>
-<p>Lead without overwhelm. These tools carry the weight.</p>
-        </div>
-        <div class="product-card">
-            <div class="product-image-wrapper">
-                <img src="images/creator.webp" alt="The Creator" class="product-image-circle">
-            </div>
-            <h3>The Creator: Bring ideas to life, effortlessly.</h3>
-      <p>From idea to impact, without mental scatter.</p>
-        </div>
-        <div class="product-card">
-            <div class="product-image-wrapper">
-                <img src="images/reflector.webp" alt="The Reflector" class="product-image-circle">
-            </div>
-            <h3>The Reflector: Find your flow while building your future.</h3>
-            <p>Understand yourself while building what matters.</p>
-        </div>
-    </div>
-    <p class="open-ended-description">
-        For entrepreneurs, marketers, product managers, and anyone seeking mental bandwidth, focus, and creative freedom.
-    </p>
-</section>
-
-
-    <a href="#scroll-target" class="scroll-hint" aria-label="Scroll down"></a>
-    <div class="separator"></div>
-    
-    <!-- PWA Philosophy Section -->
-    <section class="quiet-software">
-        <h2>The PWA Way</h2>
-        <p>At Tempest Labs, we don't just build web apps. We architect tools that transcend platforms. Our PWAs (Progressive Web Apps) are built to run like native software—without the friction, bloat, or dependency.</p>
-
-        <div class="approach-list">
-            <div class="approach-item">
-                <h3>Installable Anywhere</h3>
-                <p>Use them on your browser. Pin them to your desktop. Carry them on your phone. One experience, fluid across devices.</p>
-            </div>
-            <div class="approach-item">
-                <h3>Lightweight but Powerful</h3>
-                <p>No 2GB downloads. No constant updates. Just fast, beautiful interfaces that feel like magic and perform like code.</p>
+        <div class="product-grid">
+            <!-- Intuiva Card -->
+            <div class="product-card">
+                <a href="product-intuiva.html" class="product-link">
+                    <div class="product-image-wrapper">
+                        <img src="images/intuiva-screenshot.png" alt="Intuiva app screenshot">
+                    </div>
+                    <h3>Intuiva</h3>
+                </a>
+                <p>Transform Ideas into Action. Turn mental clutter into clear next steps with Intuiva. Whether you're planning your next product launch or structuring a complex project, Intuiva helps you organize your ideas into actionable steps with ease.</p>
+                <a href="product-intuiva.html" class="product-cta">Try / Learn More</a>
             </div>
 
-            <div class="approach-item">
-                <h3>Device Freedom</h3>
-                <p>Mac? Windows? Linux? Android? iOS? Doesn't matter. You don't need to buy new tools for every screen you touch.</p>
+            <!-- FunnelFlow Card -->
+            <div class="product-card">
+                <a href="product-funnelflow.html" class="product-link">
+                    <div class="product-image-wrapper">
+                        <img src="images/funnel-screenshot.png" alt="FunnelFlow app screenshot">
+                    </div>
+                    <h3>FunnelFlow</h3>
+                </a>
+                <p>Streamline Your Sales Process. FunnelFlow organizes your pipeline so you can move leads through with clarity. No clutter, no confusion—just a structured, streamlined view of your sales process that helps you close more deals, faster.</p>
+                <a href="product-funnelflow.html" class="product-cta">Try / Learn More</a>
             </div>
         </div>
-
-        <p style="margin-top: 50px;">
-            <strong>This isn't just a tech choice. It's a philosophy.</strong><br>
-            Software should be accessible. It should respect your device, your time, and your space.<br>
-            That's why everything we build is PWA-first.
-        </p>
     </section>
-    <div class="separator"></div>
+
+    <!-- Value Propositions Section -->
+    <section class="value-props">
+        <h2>Why Tempest Labs?</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <h3>No Subscriptions</h3>
+                <p>Pay once, own forever. No hidden fees or recurring charges.</p>
+            </div>
+            <div class="value-card">
+                <h3>Built for Flow</h3>
+                <p>Tools that work when you do. Simple, intuitive, and always available.</p>
+            </div>
+            <div class="value-card">
+                <h3>Cross-Platform</h3>
+                <p>Use across all devices—Mac, Windows, Android, iOS—without friction.</p>
+            </div>
+            <div class="value-card">
+                <h3>Efficiency-Driven</h3>
+                <p>Save time, make more money, and focus on what matters most.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Trusted by Professionals</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Tempest Labs has transformed how I manage my workflow. The clarity and focus these tools provide are unmatched in the industry."</p>
+                <div class="testimonial-author">- Sarah K., Product Manager</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"As a CEO, I need tools that don't get in my way. Tempest Labs delivers exactly that - powerful functionality with zero distractions."</p>
+                <div class="testimonial-author">- Michael T., CEO</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"The one-time payment model is a game changer. I own my tools and they work exactly how I need them to."</p>
+                <div class="testimonial-author">- David L., Marketing Director</div>
+            </div>
+        </div>
+    </section>
 
     <!-- Call to Action Section -->
     <section class="call-to-action">
-<h2>We don't follow trends. We build exits.</h2>
-        <p>Tempest Labs tools serve builders who do not wait for conditions. They move. They shape. They thrive.</p>
+        <h2>Ready to Transform Your Workflow?</h2>
+        <p>Tempest Labs: Designed for the Innovators, Built for the Future. Reclaim your time, optimize your processes, and stay focused on growing your business.</p>
         <div class="cta-group">
-            <a href="contact.html" class="cta-button glow-element">Contact Us</a>
-            <a href="contact.html" class="cta-button glow-element">Address: Istanbul, Zeytinburnu</a>
-            <a href="contact.html" class="cta-button glow-element">+90 507 527 56 00</a>
+            <a href="products.html" class="primary-button">Explore Products</a>
+            <a href="contact.html" class="secondary-button">Contact Us</a>
         </div>
     </section>
-
-    <!-- Easter Egg -->
-    <span class="easter-egg" title="Silence is the real OS.">🜂</span>
 
     <!-- Footer -->
     <footer>
@@ -1217,7 +783,6 @@ Gives your pipeline a spine. Drag, drop, decide; no clutter, no confusion.
             <div class="footer-column">
                  <h3><a href="products.html" aria-label="About Tempest Labs">Products</a></h3>
                 <a href="product-intuiva.html">Intuiva</a>
-                <a href="product-cabinet.html">Cabinet of Selves</a>
                 <a href="product-funnelflow.html">FunnelFlow</a>
             </div>
             <div class="footer-column">
@@ -1225,6 +790,12 @@ Gives your pipeline a spine. Drag, drop, decide; no clutter, no confusion.
                 <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
                 <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
                 <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
+            </div>
+            <div class="footer-column">
+                 <h3>Contact</h3>
+                <a href="contact.html">Istanbul, Zeytinburnu</a>
+                <a href="tel:+905075275600">+90 507 527 56 00</a>
+                <a href="mailto:info@tempestlabs.com">info@tempestlabs.com</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1245,7 +816,7 @@ Gives your pipeline a spine. Drag, drop, decide; no clutter, no confusion.
       "name": "Tempest Labs",
       "url": "https://tempestlabs.com",
       "logo": "https://tempestlabs.com/images/tempest.png",
-      "description": "Creating calm, focused software tools that help you stay organized and in control without the clutter or tracking.",
+      "description": "Creating powerful, focused software tools for high-performing professionals.",
       "sameAs": [
         "https://www.linkedin.com/company/tempestlabsofficial/",
         "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
@@ -1278,43 +849,17 @@ Gives your pipeline a spine. Drag, drop, decide; no clutter, no confusion.
             }
         });
         
-        
-        
         // Initialize animations
         document.addEventListener('DOMContentLoaded', function() {
-            
             // Smooth hover effects for product cards
             document.querySelectorAll('.product-card').forEach(card => {
                 card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'scale(1.015)';
-                    card.style.boxShadow = '0 10px 40px rgba(58, 227, 248, 0.25)';
-                    card.style.borderColor = 'rgba(58, 227, 248, 0.2)';
+                    card.style.transform = 'translateY(-10px)';
                 });
                 card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'scale(1)';
-                    card.style.boxShadow = '0 4px 30px rgba(58, 227, 248, 0.12)';
-                    card.style.borderColor = 'rgba(58, 227, 248, 0.1)';
+                    card.style.transform = 'translateY(0)';
                 });
             });
-            
-            // Easter egg interaction
-            const egg = document.querySelector('.easter-egg');
-            if (egg) {
-                egg.addEventListener('click', function() {
-                    alert('"The most profound technologies are those that disappear."\n\n— Mark Weiser');
-                });
-            }
-            
-            // Hero CTA focus effect
-            const heroCta = document.querySelector('.hero-cta');
-            if (heroCta) {
-                heroCta.addEventListener('focus', function() {
-                    this.style.boxShadow = '0 0 0 3px rgba(233, 79, 61, 0.5)';
-                });
-                heroCta.addEventListener('blur', function() {
-                    this.style.boxShadow = 'none';
-                });
-            }
         });
     </script>
 </body>
