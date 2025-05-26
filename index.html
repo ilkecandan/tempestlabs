@@ -506,6 +506,371 @@ footer {
         gap: 10px;
     }
 }
+
+     /* Value Propositions Section */
+.value-props {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 50px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading Styles */
+.value-props h2 {
+    font-size: 36px;
+    color: #2b2d42;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Grid Styles */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Individual Value Card Styles */
+.value-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styles */
+.value-icon {
+    background-color: #2b2d42;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+    background-color: #ff8c00;
+}
+
+/* Icon Font Awesome */
+.fas {
+    font-size: 28px;
+}
+
+/* Title and Paragraph Styles */
+.value-card h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2b2d42;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.value-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .value-props {
+        padding: 30px 15px;
+    }
+    .value-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+     /* General Section Styles */
+.case-studies {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 50px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading Styles */
+.case-studies h2 {
+    font-size: 36px;
+    color: #2b2d42;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Subtitle Styles */
+.case-studies .subtitle {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Case Study Grid */
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Case Study Card Styles */
+.case-study-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+}
+
+.case-study-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Case Study Image */
+.case-study-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-study-card:hover .case-study-image img {
+    transform: scale(1.05);
+}
+
+/* Case Study Card Text */
+.case-study-card h3 {
+    font-size: 24px;
+    color: #2b2d42;
+    margin: 20px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.case-study-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Read More Button */
+.read-more {
+    font-size: 16px;
+    color: #ff8c00;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #e67e00;
+}
+
+.read-more i {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .case-studies {
+        padding: 30px 15px;
+    }
+
+    .case-study-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* General Section Styles */
+.thought-leadership {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 50px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading Styles */
+.thought-leadership h2 {
+    font-size: 36px;
+    color: #2b2d42;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Subtitle Styles */
+.thought-leadership .subtitle {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Insights Grid */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Insight Card Styles */
+.insight-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+}
+
+.insight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Insight Image */
+.insight-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.insight-card:hover .insight-image img {
+    transform: scale(1.05);
+}
+
+/* Insight Card Text */
+.insight-card h3 {
+    font-size: 24px;
+    color: #2b2d42;
+    margin: 20px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.insight-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Read More Button */
+.read-more {
+    font-size: 16px;
+    color: #ff8c00;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #e67e00;
+}
+
+.read-more i {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .thought-leadership {
+        padding: 30px 15px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+     
     </style>
     
 </head>
@@ -736,53 +1101,7 @@ footer {
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Intuiva has transformed how I approach complex projects. What used to feel overwhelming now feels manageable and structured."</p>
-                <div class="testimonial-author">
-                    <strong>Sarah K.</strong>, Product Director
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"FunnelFlow gave me visibility into my sales pipeline that I never had before. I've closed more deals in the past quarter than the previous two combined."</p>
-                <div class="testimonial-author">
-                    <strong>Michael T.</strong>, Sales Executive
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p>"As a CEO, I appreciate tools that don't add to my cognitive load. Tempest Labs products simplify without oversimplifying—they respect the complexity of real work."</p>
-                <div class="testimonial-author">
-                    <strong>David P.</strong>, Founder & CEO
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Call to Action Section -->
     <section class="call-to-action">
