@@ -230,6 +230,51 @@
         justify-content: center;
       }
     }
+
+.section-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-split.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-content {
+  flex: 1 1 480px;
+  max-width: 600px;
+}
+
+.section-image {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .section-split,
+  .section-split.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-content,
+  .section-image {
+    max-width: 100%;
+  }
+}
+    
   </style>
 </head>
 <body>
@@ -259,7 +304,7 @@
 
 <section class="section section-split">
    <div class="section-image">
-    <img src="images/abouthero1.webp" alt="Visual representing our philosophy" />
+    <img src="images/abouthero1.gif" alt="Visual representing our philosophy" />
   </div>
   <div class="section-content">
     <h2>Why We Exist</h2>
