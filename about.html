@@ -2,37 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>About Tempest Labs</title>
-  <meta name="description" content="Tempest Labs builds powerful tools for professionals who need speed, structure, and clarity. Learn our philosophy and the story behind our one-time-purchase software." />
-  <link rel="canonical" href="https://tempestlabs.com/about.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="We build tools for people who lead. Explore the philosophy behind Tempest Labs — structure-first software for fast-moving minds." />
+  <title>About | Tempest Labs</title>
   <link rel="icon" href="images/tempest.png" type="image/x-icon" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Fonts and Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
+      --deep-teal: #01343E;
       --hero-teal: #0A9DB7;
+      --hero-dark-teal: #055B6D;
       --aqua-glow: #00F0FF;
       --charcoal-black: #04191C;
-      --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
-      --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --glow-white: #A3FAFF;
     }
 
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #0a0f11;
-      color: #ffffff;
+      background: #f9fafa;
+      color: var(--charcoal-black);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
     header {
@@ -40,8 +36,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
+      background: #fff;
       position: fixed;
       width: 100%;
       top: 0;
@@ -50,285 +45,263 @@
     }
 
     .logo {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--charcoal-black);
       text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--hero-teal);
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
+      margin: 0;
+      padding: 0;
     }
 
-    nav ul li a {
+    nav a {
       text-decoration: none;
       color: var(--charcoal-black);
       font-weight: 500;
-      transition: 0.3s ease;
     }
 
-    nav ul li a:hover {
+    nav a:hover {
       color: var(--hero-teal);
     }
 
-    .social-icons {
+    /* Hero Section */
+    .hero-about {
       display: flex;
-      gap: 1rem;
-      margin-left: 2rem;
-    }
-
-    .social-icons a {
-      color: var(--charcoal-black);
-      font-size: 1rem;
-    }
-
-    /* Hero */
-    .about-hero {
-      background: radial-gradient(circle at center, #01343E 0%, #000 100%);
-      padding: 10rem 5% 6rem;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #fff, var(--aqua-glow));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: var(--hero-text-glow);
-    }
-
-    .about-hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: #cfdfe2;
-    }
-
-    .about-hero .cta-group {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10rem 5% 6rem;
+      background-color: white;
+      gap: 3rem;
     }
 
-    .primary-button, .secondary-button {
-      padding: 1rem 2rem;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
+    .hero-about-text {
+      flex: 1 1 480px;
+      max-width: 600px;
     }
 
-    .primary-button {
-      background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
-      color: white;
+    .hero-about-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(to right, var(--charcoal-black), var(--hero-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .primary-button:hover {
-      box-shadow: 0 10px 25px rgba(10, 157, 183, 0.4);
-      transform: translateY(-3px);
+    .hero-about-text p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 2rem;
     }
 
-    .secondary-button {
-      background: transparent;
-      border: 1px solid var(--aqua-glow);
-      color: var(--aqua-glow);
+    .hero-about-img {
+      flex: 1 1 400px;
     }
 
-    .secondary-button:hover {
-      background: rgba(0, 240, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .hero-image {
-      margin-top: 3rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-image img {
+    .hero-about-img img {
       width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0, 240, 255, 0.15);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    /* About Section */
-    .about-section {
-      padding: 6rem 5%;
+    .section {
+      padding: 5rem 5%;
       max-width: 900px;
-      margin: 0 auto;
-      color: #e0f7fa;
+      margin: auto;
     }
 
-    .about-section h2 {
+    .section h2 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
-      color: var(--aqua-glow);
+      color: var(--charcoal-black);
     }
 
-    .about-section p {
+    .section p {
       font-size: 1.1rem;
+      color: #444;
       margin-bottom: 1.5rem;
-      color: #d2e3e5;
     }
 
-    .about-section ul {
-      list-style: none;
-      padding-left: 1rem;
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
-    .about-section li::before {
-      content: "✓ ";
-      color: var(--aqua-glow);
-      margin-right: 0.5rem;
+    .grid-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--hero-teal);
+    }
+
+    .grid-box h3 {
+      font-size: 1.25rem;
+      color: var(--charcoal-black);
+      margin-bottom: 0.75rem;
+    }
+
+    .grid-box p {
+      font-size: 1rem;
+      color: #444;
     }
 
     footer {
-      padding: 4rem 5% 2rem;
-      background-color: var(--charcoal-black);
+      background: var(--charcoal-black);
       color: white;
+      padding: 4rem 5% 2rem;
     }
 
     .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
     }
 
     .footer-column h3 {
-      margin-bottom: 1rem;
       color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
     }
 
     .footer-column a {
-      color: #c1dfe2;
-      text-decoration: none;
+      color: rgba(255, 255, 255, 0.75);
       display: block;
       margin-bottom: 0.5rem;
+      text-decoration: none;
     }
 
     .footer-column a:hover {
-      color: var(--aqua-glow);
+      color: white;
     }
 
     .footer-bottom {
       text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       margin-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 1rem;
-      color: #bbb;
     }
 
     .legal-links {
       display: flex;
       justify-content: center;
-      gap: 1rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
+      gap: 1rem;
+      font-size: 0.9rem;
     }
 
     .legal-links a {
-      color: #888;
-      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .legal-links a:hover {
       color: white;
     }
+
+    @media (max-width: 768px) {
+      .hero-about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <a class="logo" href="index.html">Tempest <span>Labs</span></a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="turkish/about.html">Türkçe</a></li>
-      </ul>
-    </nav>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/company/tempestlabsofficial/"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.instagram.com/tempestlabsofficial/"><i class="fab fa-instagram"></i></a>
-      <a href="https://tr.pinterest.com/tempestlabs/"><i class="fab fa-pinterest-p"></i></a>
-    </div>
-  </header>
-
-  <section class="about-hero">
-    <h1>Tools for People Who Lead</h1>
-    <p>No noise. No subscriptions. Just structure, speed, and clear execution—built into every product we make.</p>
-    <div class="cta-group">
-      <a href="products.html" class="primary-button">Explore Products</a>
-      <a href="#our-story" class="secondary-button">Why We Exist</a>
-    </div>
-    <div class="hero-image">
-      <img src="images/heroabout.webp" alt="Abstract visual representing clarity and control">
-    </div>
-  </section>
-
-  <section class="about-section" id="our-story">
-    <h2>Our Philosophy</h2>
-    <p>Tempest Labs exists to serve those who execute. We believe software should enhance clarity, not compete for your attention. That’s why every tool we build is:</p>
+<header>
+  <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+  <nav>
     <ul>
-      <li>One-time purchase</li>
-      <li>Minimal and focused</li>
-      <li>Designed to reduce cognitive load</li>
-      <li>Built for professionals who want to move fast</li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="turkish/about.html">Türkçe</a></li>
     </ul>
+  </nav>
+</header>
 
-    <h2>Who We Are</h2>
-    <p>Founded by İlke Candan Bengi — a researcher, developer, and technologist — Tempest Labs sits at the intersection of intuition and execution. We build apps that help people structure their thinking, optimize workflows, and lead with confidence.</p>
-  </section>
+<section class="hero-about">
+  <div class="hero-about-text">
+    <h1>Tools for People Who Lead</h1>
+    <p>Tempest Labs builds structure-first tools for sharp thinkers. If you lead, organize, ship, or strategize—our software helps you clear the fog and move decisively.</p>
+  </div>
+  <div class="hero-about-img">
+    <img src="images/heroabout.webp" alt="Clarity and execution abstract image" />
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-column">
-        <h3><a href="about.html">About</a></h3>
-        <p>Creating tools for deeper thinking and clearer vision.</p>
-      </div>
-      <div class="footer-column">
-        <h3><a href="products.html">Products</a></h3>
-        <a href="product-intuiva.html">Intuiva</a>
-        <a href="product-cabinet.html">Cabinet of Selves</a>
-        <a href="product-funnelflow.html">FunnelFlow</a>
-      </div>
-      <div class="footer-column">
-        <h3><a href="contact.html">Connect</a></h3>
-        <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
-        <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
-        <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
-      </div>
+<section class="section">
+  <h2>Why We Exist</h2>
+  <p>Modern work is fast, noisy, and demanding. But not every problem needs more alerts, more dashboards, or more subscriptions.</p>
+  <p>We build software that returns your time and sharpens your thinking. Every Tempest Labs product is simple on the surface, deep where it matters, and designed to help you get to clarity faster.</p>
+</section>
+
+<section class="section">
+  <h2>What Makes Us Different</h2>
+  <div class="grid-3">
+    <div class="grid-box">
+      <h3>One-Time Purchase</h3>
+      <p>Pay once. Own forever. We don’t rent you back your own brain. No subscriptions, ever.</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
-      <div class="legal-links">
-        <a href="legal/membership-agreement.html">Membership Agreement</a>
-        <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
-        <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
-      </div>
+    <div class="grid-box">
+      <h3>No Bloat, No Noise</h3>
+      <p>Every feature serves your thinking. No pings, nags, or dark patterns—just tools that help you move.</p>
     </div>
-  </footer>
+    <div class="grid-box">
+      <h3>Designed for Clarity</h3>
+      <p>From the interface to the data model, everything is built to reduce friction and increase flow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3><a href="about.html">About</a></h3>
+      <p>Creating tools for deeper thinking and clearer vision.</p>
+    </div>
+    <div class="footer-column">
+      <h3><a href="products.html">Products</a></h3>
+      <a href="product-intuiva.html">Intuiva</a>
+      <a href="product-funnelflow.html">FunnelFlow</a>
+    </div>
+    <div class="footer-column">
+      <h3><a href="contact.html">Connect</a></h3>
+      <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank">YouTube</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="legal/membership-agreement.html">Membership Agreement</a>
+      <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
+      <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
