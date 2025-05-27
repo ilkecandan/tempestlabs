@@ -6,28 +6,29 @@
     <link rel="preload" as="image" href="images/hero-mythic-bg.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tempest Labs creates powerful, focused software for high-performing professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
-    <meta name="keywords" content="productivity tools, business software, workflow optimization, no subscription software">
+    <meta name="description" content="Tempest Labs creates powerful, focused software for productive professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tempest Labs - Tools for Innovators">
-    <meta property="og:description" content="Digital tools that eliminate friction and enhance productivity for CEOs, marketers, and tech professionals.">
+    <meta property="og:title" content="Tempest Labs - Power Tools for Productive Professionals">
+    <meta property="og:description" content="Clean, one-time-purchase tools that help you turn mental clutter into clear, actionable plans and manage your entire sales pipeline with visual precision.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tempestlabs.com">
     <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tempest Labs - Tools for Innovators">
-    <meta name="twitter:description" content="Digital tools that eliminate friction and enhance productivity.">
+    <meta name="twitter:title" content="Tempest Labs - Power Tools for Productive Professionals">
+    <meta name="twitter:description" content="No noise. No subscriptions. Just clarity, speed, and total control.">
     <meta name="twitter:image" content="https://tempestlabs.com/images/social-preview.jpg">
     
     <!-- Canonical Link -->
     <link rel="canonical" href="https://tempestlabs.com" />
     
-    <title>Tempest Labs | Tools for Innovators</title>
+    <title>Tempest Labs | Power Tools for Productive Professionals</title>
     
     <!-- Favicon -->
     <link rel="icon" href="images/tempest.png" type="image/x-icon">
@@ -35,13 +36,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <!-- CSS -->    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="js/main.min.js" as="script">
- <style>
+    <style>
         /* ================================= */
         /* TEMPEST LABS - FUTURISTIC REDESIGN */
         /* ================================= */
@@ -86,13 +82,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Futuristic Header */
+        /* Improved Header */
         header {
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             position: fixed;
@@ -108,7 +104,6 @@
         header.scrolled {
             padding: 0.75rem 5%;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.98);
         }
 
         .logo {
@@ -121,6 +116,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-decoration: none;
         }
 
         .logo span {
@@ -224,6 +220,7 @@
             color: var(--charcoal-black);
             font-size: 1rem;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .social-icons a:hover {
@@ -250,39 +247,7 @@
             visibility: visible;
         }
 
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding-top: 2rem;
-                gap: 1.5rem;
-                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-
-            nav ul.active {
-                left: 0;
-            }
-
-            .social-icons {
-                margin-left: 0;
-                margin-top: 1rem;
-                justify-content: center;
-            }
-        }
-
-        /* Futuristic Hero Section */
+        /* Enhanced Hero Section */
         .hero-modern {
             display: flex;
             justify-content: space-between;
@@ -315,6 +280,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             transform-style: preserve-3d;
+            loading: lazy;
         }
 
         .hero-image:hover img {
@@ -348,7 +314,7 @@
 
         .hero-modern .hero-subtitle {
             font-size: 1.25rem;
-            color: #666;
+            color: #444;
             margin-bottom: 2rem;
             line-height: 1.6;
             font-weight: 400;
@@ -372,6 +338,8 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .primary-button {
@@ -455,7 +423,7 @@
 
         .featured-products .subtitle {
             font-size: 1.125rem;
-            color: #666;
+            color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
@@ -509,6 +477,7 @@
             object-fit: contain;
             margin: 0 auto 2rem auto;
             transition: transform 0.4s ease;
+            loading: lazy;
         }
 
         .product-card:hover img {
@@ -524,7 +493,7 @@
 
         .product-card p {
             font-size: 1rem;
-            color: #666;
+            color: #444;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
@@ -540,6 +509,8 @@
             transition: all 0.3s ease;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
+            text-decoration: none;
+            display: inline-block;
         }
 
         .product-cta:hover {
@@ -576,7 +547,7 @@
 
         .use-cases .subtitle {
             font-size: 1.125rem;
-            color: #666;
+            color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
@@ -642,15 +613,15 @@
             background: linear-gradient(135deg, rgba(10, 157, 183, 0.2), rgba(0, 240, 255, 0.2));
         }
 
-       .use-case-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    filter: grayscale(30%);
-    transition: all 0.3s ease;
-}
-
+        .use-case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: grayscale(30%);
+            transition: all 0.3s ease;
+            loading: lazy;
+        }
 
         .use-case-card:hover .use-case-image img {
             filter: grayscale(0%);
@@ -665,7 +636,7 @@
 
         .use-case-card p {
             font-size: 1rem;
-            color: #666;
+            color: #444;
             line-height: 1.6;
         }
 
@@ -698,7 +669,7 @@
 
         .thought-leadership .subtitle {
             font-size: 1.125rem;
-            color: #666;
+            color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
@@ -756,6 +727,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            loading: lazy;
         }
 
         .insight-card:hover .insight-image img {
@@ -775,7 +747,7 @@
 
         .insight-card p {
             font-size: 1rem;
-            color: #666;
+            color: #444;
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
@@ -834,7 +806,7 @@
 
         .case-studies .subtitle {
             font-size: 1.125rem;
-            color: #666;
+            color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
@@ -892,6 +864,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            loading: lazy;
         }
 
         .case-study-card:hover .case-study-image img {
@@ -911,12 +884,12 @@
 
         .case-study-card p {
             font-size: 1rem;
-            color: #666;
+            color: #444;
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
 
-        /* Value Propositions Section */
+        /* Enhanced Value Propositions Section */
         .value-props {
             padding: 6rem 5%;
             text-align: center;
@@ -1013,7 +986,7 @@
 
         .value-card p {
             font-size: 1rem;
-            color: #666;
+            color: #444;
             line-height: 1.6;
         }
 
@@ -1207,6 +1180,25 @@
             }
         }
 
+        /* Mobile Touch Improvements */
+        @media (hover: none) {
+            .product-card:active {
+                transform: translateY(-5px) scale(1.01);
+            }
+            .use-case-card:active {
+                transform: translateY(-5px) scale(1.01);
+            }
+            .insight-card:active {
+                transform: translateY(-5px) scale(1.01);
+            }
+            .case-study-card:active {
+                transform: translateY(-5px) scale(1.01);
+            }
+            .value-card:active {
+                transform: translateY(-5px) scale(1.01);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             html {
@@ -1242,6 +1234,7 @@
 
             .hero-modern h1 {
                 font-size: 2.5rem;
+                padding-top: 3rem;
             }
 
             .featured-products h2,
@@ -1293,7 +1286,7 @@
     <!-- Header Section -->
     <header role="banner">
         <a class="logo" href="index.html" aria-label="Tempest Labs Home">
-            <i class="fas fa-bolt"></i> Tempest <span>Labs</span>
+            Tempest <span>Labs</span>
         </a>
         
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -1327,15 +1320,15 @@
     <!-- Hero Section -->
     <section class="hero-modern" role="main">
         <div class="hero-content">
-            <h1>Unlock Your Potential with Tools Designed for Innovators</h1>
-            <p class="hero-subtitle">Tempest Labs helps high-performing professionals and leaders in fast-paced industries streamline their processes, drive growth, and maintain focus with digital tools that eliminate friction and enhance productivity.</p>
+            <h1>Power Tools for Productive Professionals</h1>
+            <p class="hero-subtitle">Tempest Labs creates clean, one-time-purchase tools that help you turn mental clutter into clear, actionable plans and manage your entire sales pipeline with visual precision. No noise. No subscriptions. Just clarity, speed, and total control.</p>
             <div class="cta-group">
                 <a href="products.html" class="primary-button">Explore Products</a>
                 <a href="contact.html" class="secondary-button">Contact Us</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="images/hero-dashboard.webp" alt="Tempest Labs dashboard interface" loading="lazy">
+            <img src="images/hero-dashboard.webp" alt="Tempest Labs dashboard interface">
         </div>
     </section>
 
@@ -1349,7 +1342,7 @@
             <div class="product-card">
                 <a href="product-intuiva.html" class="product-link">
                     <div class="product-image-wrapper">
-                        <img src="images/intuiva-screenshot.webp" alt="Intuiva app screenshot" loading="lazy">
+                        <img src="images/intuiva-screenshot.webp" alt="Intuiva app screenshot">
                     </div>
                     <h3>Intuiva</h3>
                 </a>
@@ -1361,7 +1354,7 @@
             <div class="product-card">
                 <a href="product-funnelflow.html" class="product-link">
                     <div class="product-image-wrapper">
-                        <img src="images/funnel-screenshot.webp" alt="FunnelFlow app screenshot" loading="lazy">
+                        <img src="images/funnel-screenshot.webp" alt="FunnelFlow app screenshot">
                     </div>
                     <h3>FunnelFlow</h3>
                 </a>
@@ -1379,7 +1372,7 @@
         <div class="use-case-grid">
             <div class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/ceo.webp" alt="CEO using Intuiva" loading="lazy">
+                    <img src="images/ceo.webp" alt="CEO using Intuiva">
                 </div>
                 <h3>CEOs & Founders</h3>
                 <p>Organize high-level strategy and turn vision into executable plans. Our tools help you maintain clarity amid complexity.</p>
@@ -1387,7 +1380,7 @@
             
             <div class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/marketing.webp" alt="Marketer using FunnelFlow" loading="lazy">
+                    <img src="images/marketing.webp" alt="Marketer using FunnelFlow">
                 </div>
                 <h3>Marketers</h3>
                 <p>Track funnels & conversions with precision. Visualize your pipeline and optimize your marketing efforts for maximum impact.</p>
@@ -1395,7 +1388,7 @@
             
             <div class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/product.webp" alt="Product manager using Intuiva" loading="lazy">
+                    <img src="images/product.webp" alt="Product manager using Intuiva">
                 </div>
                 <h3>Product/Project Managers</h3>
                 <p>Break down complex projects into manageable components. Structure your roadmap and keep your team aligned.</p>
@@ -1403,7 +1396,7 @@
             
             <div class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/creative.webp" alt="Creative professional using Tempest tools" loading="lazy">
+                    <img src="images/creative.webp" alt="Creative professional using Tempest tools">
                 </div>
                 <h3>Creative Professionals</h3>
                 <p>Capture ideas and develop them systematically. Our tools adapt to your creative process, not the other way around.</p>
@@ -1420,7 +1413,7 @@
             <article class="insight-card">
                 <a href="https://tempestlabs.space/blog/subscriptions.html" target="_blank" rel="noopener noreferrer">
                     <div class="insight-image">
-                        <img src="images/subscriptions-article.webp" alt="Why We Build One-Time Purchase Apps" loading="lazy">
+                        <img src="images/subscriptions-article.webp" alt="Why We Build One-Time Purchase Apps">
                     </div>
                     <div class="insight-content">
                         <h3>Why We Build One-Time Purchase Apps</h3>
@@ -1433,7 +1426,7 @@
             <article class="insight-card">
                 <a href="https://tempestlabs.space/blog/essentialknowledge.html" target="_blank" rel="noopener noreferrer">
                     <div class="insight-image">
-                        <img src="images/visualization-article.webp" alt="Power of Visualization in Your Pipeline" loading="lazy">
+                        <img src="images/visualization-article.webp" alt="Power of Visualization in Your Pipeline">
                     </div>
                     <div class="insight-content">
                         <h3>Power of Visualization in Your Pipeline</h3>
@@ -1446,7 +1439,7 @@
             <article class="insight-card">
                 <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">
                     <div class="insight-image">
-                        <img src="images/tech-article.webp" alt="The Anti-Overwhelm Tech Manifesto" loading="lazy">
+                        <img src="images/tech-article.webp" alt="The Anti-Overwhelm Tech Manifesto">
                     </div>
                     <div class="insight-content">
                         <h3>The Anti-Overwhelm Tech Manifesto</h3>
@@ -1467,7 +1460,7 @@
             <article class="case-study-card">
                 <a href="https://tempestlabs.space/blog/intuiva.html" target="_blank" rel="noopener noreferrer">
                     <div class="case-study-image">
-                        <img src="images/intuiva-case.webp" alt="Intuiva case study" loading="lazy">
+                        <img src="images/intuiva-case.webp" alt="Intuiva case study">
                     </div>
                     <div class="case-study-content">
                         <h3>Structuring Complex Projects</h3>
@@ -1480,7 +1473,7 @@
             <article class="case-study-card">
                 <a href="https://tempestlabs.space/blog/funnelflow.html" target="_blank" rel="noopener noreferrer">
                     <div class="case-study-image">
-                        <img src="images/funnel-case.webp" alt="FunnelFlow case study" loading="lazy">
+                        <img src="images/funnel-case.webp" alt="FunnelFlow case study">
                     </div>
                     <div class="case-study-content">
                         <h3>Optimizing Sales Pipelines</h3>
@@ -1524,7 +1517,6 @@
                 <h3>Efficiency-Driven</h3>
                 <p>Save time, make more money, and focus on what matters most.</p>
             </div>
-            <!-- New Feature Cards -->
             <div class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-shield-alt"></i>
@@ -1601,13 +1593,27 @@
       "name": "Tempest Labs",
       "url": "https://tempestlabs.com",
       "logo": "https://tempestlabs.com/images/tempest.png",
-      "description": "Creating powerful, focused software tools for high-performing professionals.",
+      "description": "Creating powerful, focused software tools for productive professionals.",
       "sameAs": [
         "https://www.linkedin.com/company/tempestlabsofficial/",
         "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
         "https://www.instagram.com/tempestlabsofficial/",
         "https://tr.pinterest.com/tempestlabs/"
       ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tempest Labs",
+      "url": "https://tempestlabs.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://tempestlabs.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
     
