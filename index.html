@@ -1287,6 +1287,26 @@
     min-height: 48px;
 }
 
+        @media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 1rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+
     </style>
     
 </head>
@@ -1506,42 +1526,42 @@
                 <div class="value-icon">
                     <i class="fas fa-dollar-sign"></i>
                 </div>
-                <h3>No Subscriptions</h3>
+                <h2>No Subscriptions</h2>
                 <p>Pay once, own forever. No hidden fees or recurring charges.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-bolt"></i>
                 </div>
-                <h3>Built for Flow</h3>
+                <h2>Built for Flow</h2>
                 <p>Tools that work when you do. Simple, intuitive, and always available.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">
 <i class="fas fa-laptop-code"></i>
                 </div>
-                <h3>Cross-Platform</h3>
+                <h2>Cross-Platform</h2>
                 <p>Use across all devices—Mac, Windows, Android, iOS—without friction.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Efficiency-Driven</h3>
+                <h2>Efficiency-Driven</h2>
                 <p>Save time, make more money, and focus on what matters most.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3>Privacy First</h3>
+                <h2>Privacy First</h2>
                 <p>Your data stays yours. No tracking, no ads, no selling your information.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h3>Continuous Innovation</h3>
+                <h2>Continuous Innovation</h2>
                 <p>Regular updates with new features based on user feedback.</p>
             </div>
         </div>
