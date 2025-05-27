@@ -25,6 +25,7 @@
 
     body {
       margin: 0;
+      padding-top: 80px;
       font-family: 'Inter', sans-serif;
       background: #f9fafa;
       color: var(--charcoal-black);
@@ -82,6 +83,10 @@
       background-color: white;
       gap: 3rem;
     }
+    img, a, button {
+  transition: all 0.3s ease;
+}
+
 
     .hero-about-text {
       flex: 1 1 480px;
@@ -106,12 +111,21 @@
       flex: 1 1 400px;
     }
 
-    .hero-about-img img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
+  .hero-about-img img {
+  width: 80%; /* Shrink size */
+  max-width: 400px; /* Limit width */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
 
+.hero-about-img img:hover,
+.section-image img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+    
     .section {
       padding: 5rem 5%;
       max-width: 1000px;
@@ -272,6 +286,36 @@
   .section-content,
   .section-image {
     max-width: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@media (max-width: 768px) {
+  .hero-about-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-about-text p {
+    font-size: 1rem;
+  }
+
+  .hero-about-img img {
+    width: 100%;
+    max-width: 300px;
   }
 }
     
