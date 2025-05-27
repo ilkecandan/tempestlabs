@@ -1,827 +1,420 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Tempest Labs, modern çalışma ve yaşam için güzel, sakin yazılımlar üretir. Tek seferlik satın alınan, aboneliksiz uygulamalar.">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tempest Labs Hakkında - Zihninizi Berraklaştıran Tek Seferlik Yazılımlar">
-    <meta property="og:description" content="Odaklanmanıza, organize olmanıza ve kontrolü elinizde tutmanıza yardımcı olan sakin araçlar - karmaşa veya takip olmadan.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tempestlabs.com/turkish/about.html">
-    <meta property="og:image" content="https://tempestlabs.com/images/forest.webp">
-    <!-- Canonical Link -->
-    <link rel="canonical" href="https://tempestlabs.com/turkish/about.html" />
-    <title>Tempest Labs Hakkında</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;600&family=EB+Garamond:wght@400;600&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="/images/tempest.png" type="image/x-icon">
-    <style>
-        /* ================================= */
-        /* TEMPEST LABS - MYTHIC ABOUT STYLES */
-        /* ================================= */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="We build tools for people who lead. Explore the philosophy behind Tempest Labs, structure-first software for fast-moving minds." />
+  <title>About | Tempest Labs</title>
+  <link rel="icon" href="images/tempest.png" type="image/x-icon" />
 
-        /* Mythic Color Palette */
-        :root {
-          --deep-teal: #01343E;       /* base background */
-          --aqua-glow: #3AE3F8;
-          --muted-aqua: #34D6E0;      /* secondary highlight tone */
-          --burnt-coral: #E94F3D;
-          --charcoal-black: #0B1B1C;
-          --glow-white: #EAF4F4;
-          --hero-teal: #0A9DB7;       /* luminous main tone */
-          --hero-dark-teal: #055B6D;
-          
-          --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
-          --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
-          --transition-speed: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --deep-teal: #01343E;
+      --hero-teal: #0A9DB7;
+      --hero-dark-teal: #055B6D;
+      --aqua-glow: #00F0FF;
+      --charcoal-black: #04191C;
+      --glow-white: #A3FAFF;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+      margin: 0;
+      padding-top: 80px;
+      font-family: 'Inter', sans-serif;
+      background: #f9fafa;
+      color: var(--charcoal-black);
+      line-height: 1.7;
+    }
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 400;
-            color: var(--charcoal-black);
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-            word-spacing: 0.5px;
-            overflow-x: hidden;
-            background: linear-gradient(135deg, #055B6D, #0A9DB7);
-        }
+    header {
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cinzel', serif;
-            color: var(--glow-white);
-            letter-spacing: 1px;
-            text-shadow: var(--hero-text-glow);
-            margin-bottom: 1.2rem;
-            font-weight: 400;
-        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--charcoal-black);
+      text-decoration: none;
+    }
 
-        a {
-            color: var(--aqua-glow);
-            text-decoration: none;
-            transition: all var(--transition-speed);
-        }
+    .logo span {
+      color: var(--hero-teal);
+    }
 
-        header {
-            padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(11, 27, 28, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
-            backdrop-filter: blur(5px);
-            transition: all 0.4s ease;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
 
-        header.scrolled {
-            padding: 8px 5%;
-            background: rgba(11, 27, 28, 0.95);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
-        }
+    nav a {
+      text-decoration: none;
+      color: var(--charcoal-black);
+      font-weight: 500;
+    }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 400;
-            letter-spacing: 1.5px;
-            color: var(--glow-white);
-            cursor: pointer;
-            position: relative;
-            padding: 0 12px;
-            font-family: 'Cinzel', serif;
-        }
+    nav a:hover {
+      color: var(--hero-teal);
+    }
 
-        .logo span {
-            color: var(--aqua-glow);
-            animation: pulse-glow 3.5s infinite;
-        }
+    .hero-about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10rem 5% 6rem;
+      background-color: white;
+      gap: 3rem;
+    }
+    img, a, button {
+  transition: all 0.3s ease;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
 
-        nav ul li {
-            position: relative;
-        }
+    .hero-about-text {
+      flex: 1 1 480px;
+      max-width: 600px;
+    }
 
-        nav ul li a {
-            color: var(--glow-white);
-            font-size: 17px;
-            font-weight: 300;
-            padding: 10px 15px;
-            border-radius: 6px;
-            transition: all var(--transition-speed);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .hero-about-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(to right, var(--charcoal-black), var(--hero-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        nav ul li a:hover {
-            color: var(--aqua-glow);
-            text-shadow: var(--text-glow);
-        }
+    .hero-about-text p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
 
-        nav ul li a::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 1px;
-            background: var(--aqua-glow);
-            transition: width var(--transition-speed);
-        }
+    .hero-about-img {
+      flex: 1 1 400px;
+    }
 
-        nav ul li a:hover::after {
-            width: 60%;
-        }
+  .hero-about-img img {
+  width: 80%; /* Shrink size */
+  max-width: 400px; /* Limit width */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
 
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-left: 30px;
-        }
+.hero-about-img img:hover,
+.section-image img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
 
-        .social-icons a {
-            color: var(--glow-white);
-            font-size: 1.2rem;
-            transition: all var(--transition-speed);
-            opacity: 0.7;
-        }
+    
+    .section {
+      padding: 5rem 5%;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        .social-icons a:hover {
-            color: var(--aqua-glow);
-            transform: translateY(-3px);
-            opacity: 1;
-        }
+    .section img {
+      width: 100%;
+      max-width: 960px;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
 
-        /* About Hero Section */
-        .about-hero {
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 5% 80px;
-            isolation: isolate;
-            background: url('/images/forest.webp') center center no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--charcoal-black);
+    }
 
-        .about-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 157, 183, 0.6); /* lighter teal overlay */
-            z-index: 1;
-        }
-        .about-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: linear-gradient(0deg, rgba(8, 126, 140, 0.3), transparent 100%);
-            z-index: 0;
-        }
+    .section p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
 
-        .about-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-            backdrop-filter: blur(4px);
-            background-color: rgba(0, 0, 0, 0.25); /* increase from 0.15 */
-            border: 1px solid rgba(58, 227, 248, 0.1); /* slightly stronger outline */         
-            border-radius: 12px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1s ease-out;
-        }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
 
-        .about-content h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-            color: white;
-            text-shadow: 0 0 12px rgba(0,0,0,0.6);            
-            font-weight: 450;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
+    .grid-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--hero-teal);
+    }
 
-        .about-content p {
-            font-family: 'Outfit', sans-serif;
-            font-size: clamp(1rem, 1.2vw, 1.2rem);
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* adds subtle separation */
-            color: #EAF4F4; /* was #C7E9E9 */
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease-out;
-        }
+    .grid-box h3 {
+      font-size: 1.25rem;
+      color: var(--charcoal-black);
+      margin-bottom: 0.75rem;
+    }
 
-        .about-content p:nth-child(2) { animation-delay: 0.3s; }
-        .about-content p:nth-child(3) { animation-delay: 0.5s; }
-        .about-content p:nth-child(4) { animation-delay: 0.7s; }
-        .about-content ul { animation-delay: 0.9s; }
-        .about-content p:nth-child(6) { animation-delay: 1.1s; }
+    .grid-box p {
+      font-size: 1rem;
+      color: #444;
+    }
 
-        .about-content a {
-            color: var(--aqua-glow);
-            font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
+    footer {
+      background: var(--charcoal-black);
+      color: white;
+      padding: 4rem 5% 2rem;
+    }
 
-        .about-content a:hover {
-            color: var(--glow-white);
-        }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .about-content ul {
-            list-style-type: none;
-            margin-bottom: 1.5rem;
-            padding-left: 20px;
-        }
+    .footer-column h3 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
 
-        .about-content ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            color: var(--muted-aqua);
-            font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-        }
+    .footer-column a {
+      color: rgba(255, 255, 255, 0.75);
+      display: block;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+    }
 
-        .about-content ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--burnt-coral);
-            font-size: 1.5rem;
-            line-height: 1;
-        }
+    .footer-column a:hover {
+      color: white;
+    }
 
-        /* Quiet the Noise Section */
-        .quiet-section {
-            padding: 100px 5%;
-            background: rgba(0, 0, 0, 0.15);
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            margin-bottom: 100px;
-            backdrop-filter: blur(4px);
-            animation: fadeInUp 0.8s ease-out;
-        }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 2rem;
+      padding-top: 1rem;
+    }
 
-        .quiet-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-        }
+    .legal-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
 
-        .quiet-section p {
-            margin-bottom: 30px;
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-            color: var(--glow-white);
-        }
+    .legal-links a {
+      color: rgba(255, 255, 255, 0.6);
+    }
 
-        .quiet-section p:last-of-type {
-            color: var(--glow-white);
-            font-weight: 400;
-            font-size: 1.05rem;
-            opacity: 0.9;
-        }
+    .legal-links a:hover {
+      color: white;
+    }
 
-        .quiet-section::before {
-            content: "";
-            position: absolute;
-            top: -80px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120%;
-            height: 200%;
-            background: radial-gradient(circle at 50% 0%, rgba(58, 227, 248, 0.06), transparent 70%);
-            z-index: 0;
-        }
+    @media (max-width: 768px) {
+      .hero-about {
+        flex-direction: column;
+        text-align: center;
+      }
 
-        .quiet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
 
-        .quiet-grid-item {
-            background: rgba(6, 30, 34, 0.6);
-            border-radius: 12px;
-            padding: 30px;
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(58, 227, 248, 0.15);
-            box-shadow: 0 0 20px rgba(58, 227, 248, 0.08);
-            color: #EAF4F4;
-            text-align: left;
-            transition: all 0.4s ease;
-        }
-        .quiet-grid-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
+.section-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
-        .quiet-grid-item img:hover {
-            transform: scale(1.03);
-        }
+.section-split.reverse {
+  flex-direction: row-reverse;
+}
 
-        .quiet-grid-item:hover {
-            transform: translateY(-5px);
-            background: rgba(6, 30, 34, 0.85);
-            border-color: rgba(58, 227, 248, 0.3);
-            box-shadow: 0 10px 30px rgba(58, 227, 248, 0.25);
-        }
+.section-content {
+  flex: 1 1 480px;
+  max-width: 600px;
+}
 
-        .quiet-grid-item h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--burnt-coral);
-            font-weight: 700;
-            text-shadow: 0 0 8px rgba(233, 79, 61, 0.2);
-            letter-spacing: 1.2px;
-            font-size: clamp(1.5rem, 1.7vw, 1.9rem);
-            text-transform: uppercase;
-        }
+.section-image {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
 
-        .scroll-indicator:hover {
-            opacity: 1;
-        }
+.section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
 
-        .scroll-text {
-            color: var(--aqua-glow);
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-            font-family: 'Outfit', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: pulse 2s infinite;
-        }
+@media (max-width: 768px) {
+  .section-split,
+  .section-split.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
 
-        .scroll-arrow {
-            width: 20px;
-            height: 20px;
-            border-right: 2px solid var(--aqua-glow);
-            border-bottom: 2px solid var(--aqua-glow);
-            transform: rotate(45deg);
-            animation: bounce 1.5s infinite;
-        }
-        .floating-icon {
-            position: absolute;
-            opacity: 0;
-            z-index: 1;
-            animation: float 15s linear infinite;
-        }
+  .section-content,
+  .section-image {
+    max-width: 100%;
+  }
+}
 
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.7; }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0) rotate(0); opacity: 0; }
-        }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        /* Footer */
-        footer {
-            padding: 80px 5% 40px;
-            background: var(--charcoal-black);
-            color: var(--muted-aqua);
-            position: relative;
-            overflow: hidden;
-        }
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('/images/noise.png');
-            opacity: 0.1;
-            pointer-events: none;
-        }
+@media (max-width: 768px) {
+  .hero-about-text h1 {
+    font-size: 2rem;
+  }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+  .hero-about-text p {
+    font-size: 1rem;
+  }
 
-        .footer-column h3 {
-            color: var(--glow-white);
-            margin-bottom: 20px;
-            font-size: clamp(1.5rem, 1.8vw, 1.8rem);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--burnt-coral);
-        }
-
-        .footer-column a {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--muted-aqua);
-            transition: all var(--transition-speed);
-            font-size: clamp(0.85rem, 1vw, 1rem);
-        }
-
-        .footer-column a:hover {
-            color: var(--burnt-coral);
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(58, 227, 248, 0.2);
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .legal-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* Animations */
-        @keyframes pulse-glow {
-            0% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
-            50% { opacity: 1; text-shadow: 0 0 20px var(--aqua-glow); }
-            100% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: rotate(45deg) translateY(0);
-            }
-            40% {
-                transform: rotate(45deg) translateY(-10px);
-            }
-            60% {
-                transform: rotate(45deg) translateY(-5px);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 0.6;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-hero {
-                padding: 150px 5% 80px;
-            }
-            
-            .about-content {
-                max-width: 90%;
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: rgba(6, 30, 34, 0.98);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: all 0.4s ease;
-                backdrop-filter: blur(15px);
-                gap: 20px;
-            }
-            
-            nav ul.active {
-                left: 0;
-            }
-            
-            nav ul li a {
-                padding: 12px 20px;
-                font-size: 1.1rem;
-            }
-            
-            .menu-toggle {
-                display: flex;
-            }
-            
-            .social-icons {
-                display: none;
-            }
-            
-            .quiet-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .about-hero {
-                padding: 180px 3% 60px;
-            }
-            
-            .about-content {
-                padding: 20px;
-            }
-            
-            .legal-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        @media (hover: none) {
-            a, button, .menu-toggle {
-                min-height: 44px;
-                min-width: 44px;
-            }
-            
-            nav ul li a {
-                padding: 15px 20px;
-            }
-        }
-    </style>
+  .hero-about-img img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+    
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <a class="logo" href="/turkish/index.html">Tempest <span>Labs</span></a>
-        
-        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-            <i class="fas fa-bars"></i>
-        </div>
 
-        <nav>
-            <ul>
-                <li><a href="/turkish/index.html" aria-label="Ana Sayfa">Ana Sayfa</a></li>
-                <li><a href="/turkish/products.html" aria-label="Ürünlerimizi görüntüleyin">Ürünler</a></li>
-                <li><a href="/turkish/contact.html" aria-label="Bize ulaşın">İletişim</a></li>
-                <li><a href="/about.html" aria-label="İngilizce görüntüleyin">English</a></li>
-            </ul>
-        </nav>
+<header>
+  <a class="logo" href="/turkish/index.html">Tempest <span>Labs</span></a>
+  <nav>
+<ul>
+  <li><a href="/turkish/about.html">Hakkında</a></li>
+  <li><a href="/turkish/products.html">Ürünler</a></li>
+  <li><a href="/turkish/contact.html">İletişim</a></li>
+  <li><a href="/turkish/blog.html">Blog</a></li>
+  <li><a href="https://tempestlabs.space/">İngilizce</a></li>
+</ul>
 
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-        </div>
-    </header>
+  </nav>
+</header>
 
-    <!-- About Hero Section -->
-    <section class="about-hero">
-        <div class="about-content">
-            <h1>Tempest Labs Hakkında</h1>
-            <p>Tempest Labs, kaos içinde yolunu bulmaya çalışan modern zihinler için netlik odaklı dijital araçlar geliştirir.</p>
-            
-            <p>Misyonumuz basit:<br>
-            Derin düşünmenize, bilinçli çalışmanıza ve odaklanmanıza yardımcı olmak—karmaşa, karmaşıklık veya abonelikler olmadan.</p>
-            
-            <p>Minimalist, tek seferlik satın alınan ürünler tasarlıyoruz; fikirlerinizi yapılandıran, projelerinize rehberlik eden ve zihinsel alanınızı koruyan araçlar. Bildirim yok. Ödeme duvarları yok. Sadece güzel çalışan araçlar.</p>
-            
-            <p>Önceliklerimiz:</p>
-            <ul>
-                <li>Nefes alan tasarım</li>
-                <li>Akıcı işlevsellik</li>
-                <li>Anlamlı deneyimler</li>
-            </ul>
-            
-            <p>Tempest Labs, malzeme bilimi, yapay zeka ve web teknolojileri geçmişine sahip bir araştırmacı ve geliştirici olan <a href="https://ilkecandanbengi.com/" target="_blank">İlke Candan Bengi</a> tarafından kuruldu. Çalışmaları, mantık ve duyguyu, form ve işlevi birleştirir—teknolojinin zihninize hizmet etmesi gerektiği, onu ele geçirmemesi gerektiği inancıyla.</p>
-        </div>
-    </section>
+<section class="hero-about">
+<div class="hero-about-text">
+  <h1>Önderlik Yapanlar İçin Araçlar</h1>
+  <p>Tempest Labs, keskin düşünürler için yapı odaklı araçlar geliştirir. Eğer liderlik yapıyorsanız, organize ediyorsanız, göndermeler yapıyorsanız veya strateji oluşturuyorsanız, yazılımımız size sisleri arındırarak kesin bir şekilde ilerlemenizi sağlar.</p>
+</div>
 
-    <!-- Quiet the Noise Section -->
-    <section class="quiet-section">
-        <h2>#GürültüyüAzalt</h2>
-        <p>Pasif kaydırmalar ve algoritmik karmaşanın dünyasında, biz farklı bir ritim seçiyoruz.<br>
-        Netliğin ritmi.<br>
-        Özerkliğin.<br>
-        Kutsal dikkatin.</p>
-        
-        <p>Tempest Labs'ta, trendleri takip etmeyenler için araçlar yaratıyoruz—kendi yollarını çizenler için.<br>
-        Enerjilerini hazine gibi koruyanlar için.<br>
-        Yaylar halinde düşünen, amaçla hareket eden ve sessiz bir güçle yaşayanlar için.</p>
-    </section>
-     <div class="quiet-grid">
-            <div class="quiet-grid-item">
-                <img src="/images/about1.png" alt="Sessiz Görsel 1">
-            </div>
-            <div class="quiet-grid-item">
-                <img src="/images/about2.png" alt="Sessiz Görsel 2">
-            </div>
-            <div class="quiet-grid-item">
-                <img src="/images/about3.png" alt="Sessiz Görsel 3">
-            </div>
-            <div class="quiet-grid-item">
-                <img src="/images/about4.png" alt="Sessiz Görsel 4">
-            </div>
-            <div class="quiet-grid-item">
-                <img src="/images/about5.png" alt="Sessiz Görsel 5">
-            </div>
-            <div class="quiet-grid-item">
-                <img src="/images/about6.png" alt="Sessiz Görsel 6">
-            </div>
-        </div>
-    </section>
+  <div class="hero-about-img">
+    <img src="images/heroabout.webp" alt="Clarity and execution abstract image" />
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                 <h3><a href="/turkish/about.html" aria-label="Tempest Labs Hakkında">Hakkımızda</a></h3>
-                <p>Daha derin düşünme ve daha net görüş için araçlar yaratıyoruz.</p>
-            </div>
-            <div class="footer-column">
-                 <h3><a href="/turkish/products.html" aria-label="Tempest Labs Ürünleri">Ürünler</a></h3>
-                <a href="/turkish/product-intuiva.html">Intuiva</a>
-                <a href="/turkish/product-cabinet.html">Cabinet of Selves</a>
-                <a href="/turkish/product-funnelflow.html">FunnelFlow</a>
-            </div>
-            <div class="footer-column">
-                 <h3><a href="/turkish/contact.html" aria-label="Tempest Labs İletişim">Bağlantı</a></h3>
-                <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
-                <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
-                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
+<section class="section section-split">
+   <div class="section-image">
+    <img src="images/abouthero1.webp" alt="Visual representing our philosophy" />
+  </div>
+  <div class="section-content">
+  <h2>Misyonumuz</h2>
+  <p>İstanbul merkezli Tempest Labs, hızlı düşünen insanlar için sade ve işlevsel araçlar geliştiren, tasarımı odağına alan bir yazılım stüdyosudur. Kaosun ve bilgi kalabalığının hâkim olduğu bir dünyada, odağımız netlik sağlamak — dikkat dağıtmak değil.</p>
+  <p>Bizim için verimlilik, daha fazla iş yapmak değil; neyin önemli olduğunu bilmek, gereksiz olanı elemek ve kararlılıkla ilerlemektir. Ürünlerimiz size daha iyi düşünme, daha hızlı yapı kurma ve net bir şekilde uygulama imkânı sunar.</p>
+</div>
+
+</section>
+
+<section class="section section-split reverse">
+    <div class="section-image">
+    <img src="images/about2hero.webp" alt="Clean interface concept" />
+  </div>
+ <div class="section-content">
+  <h2>Bizi Farklı Kılan Nedir?</h2>
+  
+  <h3>Tek Seferlik Satın Alma</h3>
+  <p>Bir kez ödeyin, sonsuza kadar sizin olsun. Size kendi zihninizi kiralamıyoruz. Abonelik yok, asla olmayacak.</p>
+  
+  <h3>Gereksiz Yük Yok, Gürültü Yok</h3>
+  <p>Her özellik düşünme sürecinizi desteklemek için var. Bildirimler, rahatsız edici uyarılar ya da manipülatif tasarımlar yok — sadece işinize yarayan araçlar.</p>
+  
+  <h3>Netlik İçin Tasarlandı</h3>
+  <p>Arayüzden veri yapısına kadar her şey, sürtünmeyi azaltmak ve akışı hızlandırmak için tasarlandı.</p>
+</div>
+
+
+</section>
+
+<section class="section">
+  <h2>Kurucuyla Tanışın</h2>
+  <p><strong>İlke Candan Bengi</strong>, yapıyı ve sezgiyi bir araya getiren bir araştırmacı ve yaratıcıdır. Malzeme bilimi, yapay zeka ve ürün geliştirme alanlarındaki geçmişiyle, Tempest Labs’in her ürününe netlik ve özen kazandırır.</p>
+  <p>İstanbul’da yaşayan İlke, en iyi araçların zamanınıza, mahremiyetinize ve zihinsel alanınıza saygı duyan araçlar olduğuna inanır. Çalışmalarını yönlendiren temel ilke şudur: Tasarım beyninize hizmet etmeli, onunla yarışmamalıdır.</p>
+  <p><a href="https://ilkecandanbengi.com/" target="_blank" rel="noopener noreferrer">Web sitesini ziyaret et →</a></p>
+</section>
+
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3><a href="/turkish/about.html">About</a></h3>
+<p>Net düşünce ve berrak bir vizyon için araçlar üretiyoruz.</p>
+    </div>
+    <div class="footer-column">
+<h3><a href="/turkish/products.html">Ürünler</a></h3>
+      <a href="/turkish/product-intuiva.html">Intuiva</a>
+      <a href="/turkish/product-funnelflow.html">FunnelFlow</a>
+    </div>
+    <div class="footer-column">
+      <h3><a href="/turkish/contact.html">Connect</a></h3>
+      <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank">YouTube</a>
+    </div>
+  </div>
+ <div class="footer-bottom">
             <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
             <div class="legal-links">
-                <a href="/turkish/legal/membership-agreement.html">Üyelik Sözleşmesi</a>
-                <a href="/turkish/legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
-                <a href="/turkish/legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
+                <a href="legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+                <a href="legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
+                <a href="legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
             </div>
         </div>
-    </footer>
+</footer>
 
-    <script>
-        // Toggle mobile menu
-        function toggleMenu() {
-            const menu = document.querySelector("nav ul");
-            const toggle = document.querySelector(".menu-toggle");
-            
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
-        }
-        
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Animate elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.about-content h1, .about-content p, .about-content ul, .quiet-section, .products-section');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.animation = `fadeInUp 0.8s ease forwards`;
-                }
-            });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Typewriter effect for the first paragraph
-        const typewriter = function() {
-            const firstParagraph = document.querySelector('.about-content p:first-of-type');
-            if (firstParagraph) {
-                const text = firstParagraph.textContent;
-                firstParagraph.textContent = '';
-                
-                let i = 0;
-                const typing = setInterval(() => {
-                    if (i < text.length) {
-                        firstParagraph.textContent += text.charAt(i);
-                        i++;
-                    } else {
-                        clearInterval(typing);
-                    }
-                }, 30);
-            }
-        };
-
-        // Start typewriter effect after page loads
-        window.addEventListener('load', function() {
-            setTimeout(typewriter, 1000);
-        });
-
-        // Floating icons in hero
-        function createFloatingIcons() {
-            const container = document.querySelector('.about-hero');
-            const icons = ['⌘', '⎋', '🍁', '🌀', '🧭'];
-
-            for (let i = 0; i < 10; i++) {
-                const icon = document.createElement('div');
-                icon.className = 'floating-icon';
-                icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-                icon.style.left = Math.random() * 30 + '%';
-                icon.style.top = Math.random() * 100 + '%';
-                icon.style.fontSize = (14 + Math.random() * 10) + 'px';
-                icon.style.animationDelay = Math.random() * 20 + 's';
-                icon.style.animationDuration = 15 + Math.random() * 15 + 's';
-                icon.style.opacity = '0';
-                icon.style.color = `rgba(58, 227, 248, ${0.3 + Math.random() * 0.5})`;
-                container.appendChild(icon);
-
-                setTimeout(() => {
-                    icon.style.opacity = '0.7';
-                }, 100);
-            }
-        }
-        document.addEventListener('DOMContentLoaded', createFloatingIcons);
-    </script>
 </body>
 </html>
