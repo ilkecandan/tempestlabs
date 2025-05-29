@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="preload" as="image" href="images/hero-mythic-bg.webp" type="image/webp">
+    <meta name="description" content="Tempest Labs creates powerful, focused software for productive professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="images/hero-dashboard.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/intuiva-screenshot.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/funnel-screenshot.webp" type="image/webp">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload fonts with font-display: swap -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tempest Labs creates powerful, focused software for productive professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="productivity tools, workflow software, one-time purchase apps, sales pipeline management, task organization">
     
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Tempest Labs - Power Tools for Productive Professionals">
     <meta property="og:description" content="Clean, one-time-purchase tools that help you turn mental clutter into clear, actionable plans and manage your entire sales pipeline with visual precision.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tempestlabs.com">
     <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Tempest Labs">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -25,23 +39,24 @@
     <meta name="twitter:description" content="No noise. No subscriptions. Just clarity, speed, and total control.">
     <meta name="twitter:image" content="https://tempestlabs.com/images/social-preview.jpg">
     
-    <!-- Canonical Link -->
-    <link rel="canonical" href="https://tempestlabs.com" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tempestlabs.com">
     
     <title>Tempest Labs | Power Tools for Productive Professionals</title>
     
-    <!-- Favicon -->
+    <!-- Favicon and App Icons -->
     <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/tempest.png">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Preload Font Awesome with media query to prevent render-blocking -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
     
-    <!-- CSS -->    
+    <!-- Inline Critical CSS -->
     <style>
         /* ================================= */
-        /* TEMPEST LABS - FUTURISTIC REDESIGN */
+        /* TEMPEST LABS - OPTIMIZED VERSION */
         /* ================================= */
-
         :root {
             --deep-teal: #01343E;
             --aqua-glow: #00F0FF;
@@ -72,7 +87,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 400;
             background-color: #f8f9fa;
             color: var(--charcoal-black);
@@ -80,9 +95,10 @@
             letter-spacing: 0.2px;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
-        /* Improved Header */
+        /* Improved Header with will-change for performance */
         header {
             padding: 1rem 5%;
             display: flex;
@@ -99,6 +115,7 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, background, box-shadow;
         }
 
         header.scrolled {
@@ -117,6 +134,7 @@
             align-items: center;
             gap: 0.5rem;
             text-decoration: none;
+            will-change: transform;
         }
 
         .logo span {
@@ -161,6 +179,7 @@
             transition: all var(--transition-speed);
             text-decoration: none;
             position: relative;
+            will-change: transform, color;
         }
 
         nav ul li a:hover {
@@ -190,6 +209,7 @@
             cursor: pointer;
             z-index: 1001;
             position: relative;
+            will-change: transform;
         }
 
         .menu-toggle i {
@@ -221,6 +241,7 @@
             font-size: 1rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            will-change: transform;
         }
 
         .social-icons a:hover {
@@ -240,6 +261,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            will-change: opacity, visibility;
         }
 
         .menu-backdrop.active {
@@ -247,7 +269,7 @@
             visibility: visible;
         }
 
-        /* Enhanced Hero Section */
+        /* Enhanced Hero Section with optimized animations */
         .hero-modern {
             display: flex;
             justify-content: space-between;
@@ -271,6 +293,7 @@
             position: relative;
             z-index: 1;
             perspective: 1000px;
+            will-change: transform;
         }
 
         .hero-image img {
@@ -278,9 +301,10 @@
             height: auto;
             border-radius: 16px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             transform-style: preserve-3d;
             loading: lazy;
+            will-change: transform, box-shadow;
         }
 
         .hero-image:hover img {
@@ -289,7 +313,7 @@
         }
 
         .hero-modern h1 {
-            font-size: 3.75rem;
+            font-size: clamp(2rem, 5vw, 3.75rem);
             color: var(--charcoal-black);
             margin-bottom: 1.5rem;
             font-weight: 700;
@@ -313,7 +337,7 @@
         }
 
         .hero-modern .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: #444;
             margin-bottom: 2rem;
             line-height: 1.6;
@@ -325,6 +349,7 @@
             display: flex;
             gap: 1.25rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .primary-button, .secondary-button {
@@ -340,6 +365,8 @@
             z-index: 1;
             text-decoration: none;
             display: inline-block;
+            min-height: 48px;
+            will-change: transform, box-shadow, background;
         }
 
         .primary-button {
@@ -383,7 +410,7 @@
             border-color: rgba(0, 0, 0, 0.2);
         }
 
-        /* Featured Products Section */
+        /* Featured Products Section with optimized animations */
         .featured-products {
             padding: 6rem 5%;
             text-align: center;
@@ -402,7 +429,7 @@
         }
 
         .featured-products h2 {
-            font-size: 2.75rem;
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
             margin-bottom: 3rem;
             position: relative;
             display: inline-block;
@@ -422,7 +449,7 @@
         }
 
         .featured-products .subtitle {
-            font-size: 1.125rem;
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
             color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
@@ -432,7 +459,7 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -445,9 +472,10 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(0, 0, 0, 0.05);
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
+            will-change: transform, box-shadow;
         }
 
         .product-card::before {
@@ -478,6 +506,7 @@
             margin: 0 auto 2rem auto;
             transition: transform 0.4s ease;
             loading: lazy;
+            will-change: transform;
         }
 
         .product-card:hover img {
@@ -511,6 +540,7 @@
             box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
             text-decoration: none;
             display: inline-block;
+            will-change: transform, box-shadow, background;
         }
 
         .product-cta:hover {
@@ -519,7 +549,7 @@
             background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
         }
 
-        /* Use Cases Section */
+        /* Use Cases Section with optimized animations */
         .use-cases {
             padding: 6rem 5%;
             text-align: center;
@@ -539,14 +569,14 @@
         }
 
         .use-cases h2 {
-            font-size: 2.75rem;
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
             margin-bottom: 1rem;
             position: relative;
             color: var(--charcoal-black);
         }
 
         .use-cases .subtitle {
-            font-size: 1.125rem;
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
             color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
@@ -556,7 +586,7 @@
 
         .use-case-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -569,10 +599,11 @@
             padding: 2rem;
             border-radius: 16px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            will-change: transform, box-shadow;
         }
 
         .use-case-card::before {
@@ -606,6 +637,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            will-change: transform, background;
         }
 
         .use-case-card:hover .use-case-image {
@@ -621,6 +653,7 @@
             filter: grayscale(30%);
             transition: all 0.3s ease;
             loading: lazy;
+            will-change: filter;
         }
 
         .use-case-card:hover .use-case-image img {
@@ -640,7 +673,7 @@
             line-height: 1.6;
         }
 
-        /* Thought Leadership Section */
+        /* Thought Leadership Section with optimized animations */
         .thought-leadership {
             padding: 6rem 5%;
             text-align: center;
@@ -661,14 +694,14 @@
         }
 
         .thought-leadership h2 {
-            font-size: 2.75rem;
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
             margin-bottom: 1rem;
             position: relative;
             color: var(--charcoal-black);
         }
 
         .thought-leadership .subtitle {
-            font-size: 1.125rem;
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
             color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
@@ -678,7 +711,7 @@
 
         .insights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -691,9 +724,10 @@
             border-radius: 16px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            will-change: transform, box-shadow;
         }
 
         .insight-card::before {
@@ -728,6 +762,7 @@
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             loading: lazy;
+            will-change: transform;
         }
 
         .insight-card:hover .insight-image img {
@@ -761,6 +796,7 @@
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s ease;
+            will-change: transform, color;
         }
 
         .read-more:hover {
@@ -772,13 +808,14 @@
             margin-left: 0.5rem;
             font-size: 0.875rem;
             transition: all 0.3s ease;
+            will-change: transform;
         }
 
         .read-more:hover i {
             transform: translateX(3px);
         }
 
-        /* Case Studies Section */
+        /* Case Studies Section with optimized animations */
         .case-studies {
             padding: 6rem 5%;
             text-align: center;
@@ -798,14 +835,14 @@
         }
 
         .case-studies h2 {
-            font-size: 2.75rem;
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
             margin-bottom: 1rem;
             position: relative;
             color: var(--charcoal-black);
         }
 
         .case-studies .subtitle {
-            font-size: 1.125rem;
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
             color: #444;
             margin-bottom: 3rem;
             max-width: 700px;
@@ -815,7 +852,7 @@
 
         .case-study-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -828,9 +865,10 @@
             border-radius: 16px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            will-change: transform, box-shadow;
         }
 
         .case-study-card::before {
@@ -865,6 +903,7 @@
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             loading: lazy;
+            will-change: transform;
         }
 
         .case-study-card:hover .case-study-image img {
@@ -889,7 +928,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Enhanced Value Propositions Section */
+        /* Enhanced Value Propositions Section with optimized animations */
         .value-props {
             padding: 6rem 5%;
             text-align: center;
@@ -910,7 +949,7 @@
         }
 
         .value-props h2 {
-            font-size: 2.75rem;
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
             margin-bottom: 3rem;
             position: relative;
             color: var(--charcoal-black);
@@ -918,7 +957,7 @@
 
         .value-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -931,10 +970,11 @@
             padding: 2.5rem;
             border-radius: 16px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            will-change: transform, box-shadow;
         }
 
         .value-card::before {
@@ -970,6 +1010,7 @@
             color: white;
             font-size: 1.75rem;
             transition: all 0.3s ease;
+            will-change: transform, box-shadow;
         }
 
         .value-card:hover .value-icon {
@@ -990,7 +1031,7 @@
             line-height: 1.6;
         }
 
-        /* Call to Action Section */
+        /* Call to Action Section with optimized animations */
         .call-to-action {
             padding: 6rem 5%;
             text-align: center;
@@ -1013,14 +1054,14 @@
         }
 
         .call-to-action h2 {
-            font-size: 2.75rem;
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
         }
 
         .call-to-action p {
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             max-width: 700px;
             margin: 0 auto 2.5rem auto;
             position: relative;
@@ -1075,7 +1116,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -1112,6 +1153,7 @@
             color: rgba(255, 255, 255, 0.7);
             transition: all 0.3s ease;
             text-decoration: none;
+            will-change: transform, color;
         }
 
         .footer-column a:hover {
@@ -1144,6 +1186,7 @@
             font-size: 0.875rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            will-change: color;
         }
 
         .legal-links a:hover {
@@ -1157,6 +1200,7 @@
             background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
             filter: blur(30px);
             z-index: 0;
+            will-change: transform;
         }
 
         /* Animations */
@@ -1197,6 +1241,24 @@
             .value-card:active {
                 transform: translateY(-5px) scale(1.01);
             }
+            
+            /* Remove hover effects on mobile */
+            .product-card:hover,
+            .use-case-card:hover,
+            .insight-card:hover,
+            .case-study-card:hover,
+            .value-card:hover {
+                transform: none;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            }
+            
+            .product-card:hover::before,
+            .use-case-card:hover::before,
+            .insight-card:hover::before,
+            .case-study-card:hover::before,
+            .value-card:hover::before {
+                opacity: 0;
+            }
         }
 
         /* Responsive Design */
@@ -1225,6 +1287,38 @@
             .hero-modern .hero-subtitle {
                 max-width: 100%;
             }
+            
+            /* Optimize menu for mobile */
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .social-icons {
+                margin-left: 0;
+                margin-top: 2rem;
+                justify-content: center;
+                width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1250,6 +1344,14 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            
+            .product-card,
+            .use-case-card,
+            .insight-card,
+            .case-study-card,
+            .value-card {
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1273,42 +1375,15 @@
                 flex-direction: column;
                 gap: 0.75rem;
             }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
-
-.call-to-action .cta-group {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-        .primary-button,
-.secondary-button {
-    min-height: 48px;
-}
-
-        @media (max-width: 768px) {
-    nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        display: none;
-        padding: 1rem 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-}
-
-
     </style>
     
+    <!-- Preload non-critical CSS -->
+    <link rel="preload" href="css/non-critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
    
 <body>
@@ -1337,14 +1412,14 @@
                 <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
                 <li><a href="turkish/index.html" aria-label="View in Turkish">TR</a></li>
             </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
         </nav>
-
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-        </div>
     </header>
 
     <!-- Mobile Menu Backdrop -->
@@ -1361,7 +1436,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="images/hero-dashboard.webp" alt="Tempest Labs dashboard interface">
+            <img src="images/hero-dashboard.webp" alt="Tempest Labs dashboard interface" width="800" height="600">
         </div>
     </section>
 
@@ -1372,28 +1447,28 @@
         
         <div class="product-grid">
             <!-- Intuiva Card -->
-            <div class="product-card">
+            <article class="product-card">
                 <a href="product-intuiva.html" class="product-link">
                     <div class="product-image-wrapper">
-                        <img src="images/intuiva-screenshot.webp" alt="Intuiva app screenshot">
+                        <img src="images/intuiva-screenshot.webp" alt="Intuiva app screenshot" width="600" height="400" loading="lazy">
                     </div>
                     <h3>Intuiva</h3>
                 </a>
                 <p>Transform Ideas into Action. Turn mental clutter into clear next steps with Intuiva. Whether you're planning your next product launch or structuring a complex project, Intuiva helps you organize your ideas into actionable steps with ease.</p>
                 <a href="product-intuiva.html" class="product-cta">Try / Learn More</a>
-            </div>
+            </article>
 
             <!-- FunnelFlow Card -->
-            <div class="product-card">
+            <article class="product-card">
                 <a href="product-funnelflow.html" class="product-link">
                     <div class="product-image-wrapper">
-                        <img src="images/funnel-screenshot.webp" alt="FunnelFlow app screenshot">
+                        <img src="images/funnel-screenshot.webp" alt="FunnelFlow app screenshot" width="600" height="400" loading="lazy">
                     </div>
                     <h3>FunnelFlow</h3>
                 </a>
                 <p>Streamline Your Sales Process. FunnelFlow organizes your pipeline so you can move leads through with clarity. No clutter, no confusion—just a structured, streamlined view of your sales process that helps you close more deals, faster.</p>
                 <a href="product-funnelflow.html" class="product-cta">Try / Learn More</a>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -1403,37 +1478,37 @@
         <p class="subtitle">Our tools are designed for professionals who need to move fast and think clearly</p>
         
         <div class="use-case-grid">
-            <div class="use-case-card">
+            <article class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/ceo.webp" alt="CEO using Intuiva">
+                    <img src="images/ceo.webp" alt="CEO using Intuiva" width="120" height="120" loading="lazy">
                 </div>
                 <h3>CEOs & Founders</h3>
                 <p>Organize high-level strategy and turn vision into executable plans. Our tools help you maintain clarity amid complexity.</p>
-            </div>
+            </article>
             
-            <div class="use-case-card">
+            <article class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/marketing.webp" alt="Marketer using FunnelFlow">
+                    <img src="images/marketing.webp" alt="Marketer using FunnelFlow" width="120" height="120" loading="lazy">
                 </div>
                 <h3>Marketers</h3>
                 <p>Track funnels & conversions with precision. Visualize your pipeline and optimize your marketing efforts for maximum impact.</p>
-            </div>
+            </article>
             
-            <div class="use-case-card">
+            <article class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/product.webp" alt="Product manager using Intuiva">
+                    <img src="images/product.webp" alt="Product manager using Intuiva" width="120" height="120" loading="lazy">
                 </div>
                 <h3>Product/Project Managers</h3>
                 <p>Break down complex projects into manageable components. Structure your roadmap and keep your team aligned.</p>
-            </div>
+            </article>
             
-            <div class="use-case-card">
+            <article class="use-case-card">
                 <div class="use-case-image">
-                    <img src="images/creative.webp" alt="Creative professional using Tempest tools">
+                    <img src="images/creative.webp" alt="Creative professional using Tempest tools" width="120" height="120" loading="lazy">
                 </div>
                 <h3>Creative Professionals</h3>
                 <p>Capture ideas and develop them systematically. Our tools adapt to your creative process, not the other way around.</p>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -1446,7 +1521,7 @@
             <article class="insight-card">
                 <a href="https://tempestlabs.space/blog/subscriptions.html" target="_blank" rel="noopener noreferrer">
                     <div class="insight-image">
-                        <img src="images/subscriptions-article.webp" alt="Why We Build One-Time Purchase Apps">
+                        <img src="images/subscriptions-article.webp" alt="Why We Build One-Time Purchase Apps" width="600" height="400" loading="lazy">
                     </div>
                     <div class="insight-content">
                         <h3>Why We Build One-Time Purchase Apps</h3>
@@ -1459,7 +1534,7 @@
             <article class="insight-card">
                 <a href="https://tempestlabs.space/blog/essentialknowledge.html" target="_blank" rel="noopener noreferrer">
                     <div class="insight-image">
-                        <img src="images/visualization-article.webp" alt="Power of Visualization in Your Pipeline">
+                        <img src="images/visualization-article.webp" alt="Power of Visualization in Your Pipeline" width="600" height="400" loading="lazy">
                     </div>
                     <div class="insight-content">
                         <h3>Power of Visualization in Your Pipeline</h3>
@@ -1472,7 +1547,7 @@
             <article class="insight-card">
                 <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">
                     <div class="insight-image">
-                        <img src="images/tech-article.webp" alt="The Anti-Overwhelm Tech Manifesto">
+                        <img src="images/tech-article.webp" alt="The Anti-Overwhelm Tech Manifesto" width="600" height="400" loading="lazy">
                     </div>
                     <div class="insight-content">
                         <h3>The Anti-Overwhelm Tech Manifesto</h3>
@@ -1493,7 +1568,7 @@
             <article class="case-study-card">
                 <a href="https://tempestlabs.space/blog/intuiva.html" target="_blank" rel="noopener noreferrer">
                     <div class="case-study-image">
-                        <img src="images/intuiva-case.webp" alt="Intuiva case study">
+                        <img src="images/intuiva-case.webp" alt="Intuiva case study" width="600" height="400" loading="lazy">
                     </div>
                     <div class="case-study-content">
                         <h3>Structuring Complex Projects</h3>
@@ -1506,7 +1581,7 @@
             <article class="case-study-card">
                 <a href="https://tempestlabs.space/blog/funnelflow.html" target="_blank" rel="noopener noreferrer">
                     <div class="case-study-image">
-                        <img src="images/funnel-case.webp" alt="FunnelFlow case study">
+                        <img src="images/funnel-case.webp" alt="FunnelFlow case study" width="600" height="400" loading="lazy">
                     </div>
                     <div class="case-study-content">
                         <h3>Optimizing Sales Pipelines</h3>
@@ -1522,48 +1597,48 @@
     <section class="value-props">
         <h2>Why Tempest Labs?</h2>
         <div class="value-grid">
-            <div class="value-card">
+            <article class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-dollar-sign"></i>
                 </div>
                 <h4>No Subscriptions</h4>
                 <p>Pay once, own forever. No hidden fees or recurring charges.</p>
-            </div>
-            <div class="value-card">
+            </article>
+            <article class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-bolt"></i>
                 </div>
                 <h4>Built for Flow</h4>
                 <p>Tools that work when you do. Simple, intuitive, and always available.</p>
-            </div>
-            <div class="value-card">
+            </article>
+            <article class="value-card">
                 <div class="value-icon">
-<i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-laptop-code"></i>
                 </div>
                 <h4>Cross-Platform</h4>
                 <p>Use across all devices—Mac, Windows, Android, iOS—without friction.</p>
-            </div>
-            <div class="value-card">
+            </article>
+            <article class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <h4>Efficiency-Driven</h4>
                 <p>Save time, make more money, and focus on what matters most.</p>
-            </div>
-            <div class="value-card">
+            </article>
+            <article class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <h4>Privacy First</h4>
                 <p>Your data stays yours. No tracking, no ads, no selling your information.</p>
-            </div>
-            <div class="value-card">
+            </article>
+            <article class="value-card">
                 <div class="value-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
                 <h4>Continuous Innovation</h4>
                 <p>Regular updates with new features based on user feedback.</p>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -1672,20 +1747,17 @@
     }
     </script>
 
-    <!-- JavaScript -->
-    <script src="js/main.min.js" defer></script>
-    
-    <!-- Inline critical JS -->
+    <!-- Optimized JavaScript -->
     <script>
-    // Immediately invoked function for critical functionality
-    (function() {
+    // Critical JavaScript executed immediately
+    document.addEventListener('DOMContentLoaded', function() {
         // Set initial header state
         const header = document.querySelector('header');
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         }
         
-        // Mobile menu toggle
+        // Mobile menu toggle function
         function toggleMenu() {
             const menu = document.querySelector("nav ul");
             const toggle = document.querySelector(".menu-toggle");
@@ -1696,54 +1768,88 @@
             backdrop.classList.toggle("active");
             document.body.classList.toggle("menu-open");
             
-            // Update aria-expanded attribute
+            // Update aria-expanded attribute for accessibility
             const isExpanded = toggle.classList.contains("active");
             toggle.setAttribute("aria-expanded", isExpanded);
         }
         
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
+        // Add scroll effect to header with requestAnimationFrame
+        let lastScrollY = window.scrollY;
+        function updateHeader() {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-        });
+            lastScrollY = window.scrollY;
+            requestAnimationFrame(updateHeader);
+        }
+        requestAnimationFrame(updateHeader);
         
         // Initialize mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
-        document.querySelector('.menu-toggle').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                toggleMenu();
-            }
-        });
-
-        // Add animation to elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMenu);
+            menuToggle.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    toggleMenu();
                 }
             });
+        }
+
+        // Intersection Observer for animations
+        const animateElements = function() {
+            const elements = document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
         };
-
-        // Set initial state for animated elements
-        document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-
-        // Add scroll event listener for animations
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    })();
+        
+        // Load non-critical resources after page load
+        function loadNonCriticalResources() {
+            // Load Font Awesome if not already loaded
+            if (!document.querySelector('link[href*="font-awesome"]')) {
+                const fa = document.createElement('link');
+                fa.rel = 'stylesheet';
+                fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+                document.head.appendChild(fa);
+            }
+            
+            // Load non-critical CSS
+            if (!document.querySelector('link[href*="non-critical.css"]')) {
+                const nonCriticalCSS = document.createElement('link');
+                nonCriticalCSS.rel = 'stylesheet';
+                nonCriticalCSS.href = 'css/non-critical.css';
+                document.head.appendChild(nonCriticalCSS);
+            }
+        }
+        
+        // Initialize animations
+        animateElements();
+        
+        // Load non-critical resources after a slight delay
+        setTimeout(loadNonCriticalResources, 1000);
+    });
     </script>
+    
+    <!-- Preload main JS file -->
+    <link rel="preload" href="js/main.min.js" as="script">
+    <script src="js/main.min.js" defer></script>
 </body>
 </html>
