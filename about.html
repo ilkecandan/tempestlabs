@@ -23,6 +23,10 @@
       --glow-white: #A3FAFF;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding-top: 80px;
@@ -56,6 +60,12 @@
       color: var(--hero-teal);
     }
 
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -83,10 +93,6 @@
       background-color: white;
       gap: 3rem;
     }
-    img, a, button {
-  transition: all 0.3s ease;
-}
-
 
     .hero-about-text {
       flex: 1 1 480px;
@@ -111,21 +117,20 @@
       flex: 1 1 400px;
     }
 
-  .hero-about-img img {
-  width: 80%; /* Shrink size */
-  max-width: 400px; /* Limit width */
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+    .hero-about-img img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-.hero-about-img img:hover,
-.section-image img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.05);
-}
+    .hero-about-img img:hover,
+    .section-image img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
 
-    
     .section {
       padding: 5rem 5%;
       max-width: 1000px;
@@ -152,30 +157,35 @@
       margin-bottom: 1.5rem;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+    .section-split {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .grid-box {
-      background: white;
-      padding: 2rem;
+    .section-split.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .section-content {
+      flex: 1 1 480px;
+      max-width: 600px;
+    }
+
+    .section-image {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .section-image img {
+      width: 100%;
+      height: auto;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      border-top: 4px solid var(--hero-teal);
-    }
-
-    .grid-box h3 {
-      font-size: 1.25rem;
-      color: var(--charcoal-black);
-      margin-bottom: 0.75rem;
-    }
-
-    .grid-box p {
-      font-size: 1rem;
-      color: #444;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
     }
 
     footer {
@@ -234,153 +244,66 @@
     }
 
     @media (max-width: 768px) {
-      .hero-about {
+      .hero-about,
+      .section-split,
+      .section-split.reverse,
+      .footer-content {
         flex-direction: column;
         text-align: center;
       }
 
+      .hamburger {
+        display: block;
+      }
+
       nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 5%;
+        padding: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      .section,
+      .hero-about,
+      .footer-content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .hero-about-text h1 {
+        font-size: 2rem;
+      }
+
+      .hero-about-text p {
+        font-size: 1rem;
+      }
+
+      .hero-about-img img,
+      .section-image img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+
+      .grid-box h3 {
+        font-size: 1.1rem;
       }
     }
-
-.section-split {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section-split.reverse {
-  flex-direction: row-reverse;
-}
-
-.section-content {
-  flex: 1 1 480px;
-  max-width: 600px;
-}
-
-.section-image {
-  flex: 1 1 400px;
-  max-width: 500px;
-}
-
-.section-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-@media (max-width: 768px) {
-  .section-split,
-  .section-split.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .section-content,
-  .section-image {
-    max-width: 100%;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-@media (max-width: 768px) {
-  .hero-about-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-about-text p {
-    font-size: 1rem;
-  }
-
-  .hero-about-img img {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-    @media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 5%;
-    padding: 1rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border-radius: 8px;
-  }
-
-  nav.active ul {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
-  }
-}
-@media (max-width: 768px) {
-  .section, .hero-about, .footer-content {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
- @media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-
-    @media (max-width: 768px) {
-  .section h2 {
-    font-size: 1.5rem;
-  }
-
-  .grid-box h3 {
-    font-size: 1.1rem;
-  }
-}
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-@media (max-width: 480px) {
-  .hero-about-img img,
-  .section-image img {
-    max-width: 90%;
-    height: auto;
-  }
-}
-
-    
   </style>
 </head>
 <body>
-
 <header>
   <a class="logo" href="index.html">Tempest <span>Labs</span></a>
   <div class="hamburger"><i class="fas fa-bars"></i></div>
@@ -406,7 +329,7 @@
 </section>
 
 <section class="section section-split">
-   <div class="section-image">
+  <div class="section-image">
     <img src="images/abouthero1.webp" alt="Visual representing our philosophy" />
   </div>
   <div class="section-content">
@@ -417,7 +340,7 @@
 </section>
 
 <section class="section section-split reverse">
-    <div class="section-image">
+  <div class="section-image">
     <img src="images/about2hero.webp" alt="Clean interface concept" />
   </div>
   <div class="section-content">
@@ -429,7 +352,6 @@
     <h3>Designed for Clarity</h3>
     <p>From the interface to the data model, everything is built to reduce friction and increase flow.</p>
   </div>
-
 </section>
 
 <section class="section">
@@ -466,6 +388,16 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
