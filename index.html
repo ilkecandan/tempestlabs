@@ -2,50 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tempest Labs creates powerful, focused software for productive professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="images/hero-dashboard.webp" as="image" type="image/webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="preload" as="image" href="images/hero-mythic-bg.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
     
-    <!-- Font loading with fallback -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap"></noscript>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tempest Labs creates powerful, focused software for productive professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
     
-    <!-- Open Graph / Social Media Meta Tags -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Tempest Labs - Power Tools for Productive Professionals">
     <meta property="og:description" content="Clean, one-time-purchase tools that help you turn mental clutter into clear, actionable plans and manage your entire sales pipeline with visual precision.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tempestlabs.com">
     <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Tempest Labs">
     
-    <!-- Twitter Card -->
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tempest Labs - Power Tools for Productive Professionals">
     <meta name="twitter:description" content="No noise. No subscriptions. Just clarity, speed, and total control.">
     <meta name="twitter:image" content="https://tempestlabs.com/images/social-preview.jpg">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://tempestlabs.com">
-    
-    <!-- Favicons -->
-    <link rel="icon" href="images/favicon.ico" sizes="any">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://tempestlabs.com" />
     
     <title>Tempest Labs | Power Tools for Productive Professionals</title>
     
-    <!-- Inline Critical CSS -->
+    <!-- Favicon -->
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- CSS -->    
     <style>
         /* ================================= */
-        /* CRITICAL CSS - ABOVE THE FOLD     */
+        /* TEMPEST LABS - FUTURISTIC REDESIGN */
         /* ================================= */
+
         :root {
             --deep-teal: #01343E;
             --aqua-glow: #00F0FF;
@@ -55,6 +51,9 @@
             --burnt-coral: #F74141;
             --hero-teal: #0A9DB7;
             --hero-dark-teal: #055B6D;
+            
+            --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+            --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
             --transition-speed: 0.3s ease-out;
             --glass-effect: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.1);
@@ -73,18 +72,17 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
-            background-color: #fff;
+            background-color: #f8f9fa;
             color: var(--charcoal-black);
             line-height: 1.6;
             letter-spacing: 0.2px;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeSpeed;
         }
 
-        /* Header - Critical for initial render */
+        /* Improved Header */
         header {
             padding: 1rem 5%;
             display: flex;
@@ -103,6 +101,11 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        header.scrolled {
+            padding: 0.75rem 5%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
         .logo {
             font-size: 1.75rem;
             font-weight: 700;
@@ -118,598 +121,7 @@
 
         .logo span {
             color: var(--hero-teal);
-        }
-
-        /* Hero Section - Critical for initial render */
-        .hero-modern {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12rem 8% 6rem;
             position: relative;
-            background-color: white;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero-modern h1 {
-            font-size: 3.75rem;
-            color: var(--charcoal-black);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            background: linear-gradient(90deg, var(--charcoal-black), var(--hero-dark-teal));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-        }
-
-        .hero-modern .hero-subtitle {
-            font-size: 1.25rem;
-            color: #444;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            font-weight: 400;
-            max-width: 90%;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .primary-button, .secondary-button {
-            padding: 1rem 2rem;
-            font-weight: 600;
-            font-size: 1rem;
-            border-radius: 12px;
-            border: none;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            text-decoration: none;
-            display: inline-block;
-            min-height: 48px;
-        }
-
-        .primary-button {
-            background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
-            color: white;
-            box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
-        }
-
-        /* Mobile menu toggle - Critical for mobile UX */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-            position: relative;
-            padding: 0.5rem;
-        }
-
-        .menu-toggle i {
-            font-size: 1.5rem;
-            color: var(--charcoal-black);
-            transition: all 0.3s ease;
-        }
-
-        /* Ensure content is visible if JS fails */
-        .no-js .menu-toggle {
-            display: none;
-        }
-        .no-js nav ul {
-            display: flex !important;
-        }
-    </style>
-    
-    <!-- Deferred CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
-    
-    <!-- Preload CSS for non-critical styles -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
-</head>
-   
-<body class="no-js">
-    <script>document.body.classList.remove('no-js');</script>
-
-    <!-- Floating Background Elements -->
-    <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 5%; animation: float 8s ease-in-out infinite;"></div>
-    <div class="floating-element" style="width: 400px; height: 400px; bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
-
-    <!-- Header Section -->
-    <header role="banner">
-        <a class="logo" href="index.html" aria-label="Tempest Labs Home">
-            Tempest <span>Labs</span>
-        </a>
-        
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-times"></i>
-        </button>
-
-        <nav role="navigation">
-            <ul>
-                <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
-                <li><a href="products.html" aria-label="View our products">Products</a></li>
-                <li><a href="#use-cases" aria-label="Who our tools are for">Who It's For</a></li>
-                <li><a href="#insights" aria-label="Thought leadership">Insights</a></li>
-                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
-                <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
-                <li><a href="turkish/index.html" aria-label="View in Turkish">TR</a></li>
-            </ul>
-        </nav>
-
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-        </div>
-    </header>
-
-    <!-- Mobile Menu Backdrop -->
-    <div class="menu-backdrop" onclick="toggleMenu()"></div>
-
-    <!-- Hero Section -->
-    <section class="hero-modern" role="main">
-        <div class="hero-content">
-            <h1>Power Tools for Productive Professionals</h1>
-            <p class="hero-subtitle">Tempest Labs creates clean, one-time-purchase tools that help you turn mental clutter into clear, actionable plans and manage your entire sales pipeline with visual precision. No noise. No subscriptions. Just clarity, speed, and total control.</p>
-            <div class="cta-group">
-                <a href="products.html" class="primary-button">Explore Products</a>
-                <a href="contact.html" class="secondary-button">Contact Us</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="images/hero-dashboard.webp" alt="Tempest Labs dashboard interface" width="800" height="600" loading="eager">
-        </div>
-    </section>
-
-    <!-- Featured Products Section -->
-    <section class="featured-products">
-        <h2>Our Tools</h2>
-        <p class="subtitle">Each of our products is designed to help you move quickly, clearly, and with intent.</p>
-        
-        <div class="product-grid">
-            <!-- Intuiva Card -->
-            <article class="product-card">
-                <a href="product-intuiva.html" class="product-link">
-                    <div class="product-image-wrapper">
-                        <img src="images/intuiva-screenshot.webp" alt="Intuiva app screenshot" width="600" height="400" loading="lazy">
-                    </div>
-                    <h3>Intuiva</h3>
-                </a>
-                <p>Transform Ideas into Action. Turn mental clutter into clear next steps with Intuiva. Whether you're planning your next product launch or structuring a complex project, Intuiva helps you organize your ideas into actionable steps with ease.</p>
-                <a href="product-intuiva.html" class="product-cta">Try / Learn More</a>
-            </article>
-
-            <!-- FunnelFlow Card -->
-            <article class="product-card">
-                <a href="product-funnelflow.html" class="product-link">
-                    <div class="product-image-wrapper">
-                        <img src="images/funnel-screenshot.webp" alt="FunnelFlow app screenshot" width="600" height="400" loading="lazy">
-                    </div>
-                    <h3>FunnelFlow</h3>
-                </a>
-                <p>Streamline Your Sales Process. FunnelFlow organizes your pipeline so you can move leads through with clarity. No clutter, no confusion—just a structured, streamlined view of your sales process that helps you close more deals, faster.</p>
-                <a href="product-funnelflow.html" class="product-cta">Try / Learn More</a>
-            </article>
-        </div>
-    </section>
-
-    <!-- Who It's For Section -->
-    <section class="use-cases" id="use-cases">
-        <h2>Who We Help</h2>
-        <p class="subtitle">Our tools are designed for professionals who need to move fast and think clearly</p>
-        
-        <div class="use-case-grid">
-            <article class="use-case-card">
-                <div class="use-case-image">
-                    <img src="images/ceo.webp" alt="CEO using Intuiva" width="120" height="120" loading="lazy">
-                </div>
-                <h3>CEOs & Founders</h3>
-                <p>Organize high-level strategy and turn vision into executable plans. Our tools help you maintain clarity amid complexity.</p>
-            </article>
-            
-            <article class="use-case-card">
-                <div class="use-case-image">
-                    <img src="images/marketing.webp" alt="Marketer using FunnelFlow" width="120" height="120" loading="lazy">
-                </div>
-                <h3>Marketers</h3>
-                <p>Track funnels & conversions with precision. Visualize your pipeline and optimize your marketing efforts for maximum impact.</p>
-            </article>
-            
-            <article class="use-case-card">
-                <div class="use-case-image">
-                    <img src="images/product.webp" alt="Product manager using Intuiva" width="120" height="120" loading="lazy">
-                </div>
-                <h3>Product/Project Managers</h3>
-                <p>Break down complex projects into manageable components. Structure your roadmap and keep your team aligned.</p>
-            </article>
-            
-            <article class="use-case-card">
-                <div class="use-case-image">
-                    <img src="images/creative.webp" alt="Creative professional using Tempest tools" width="120" height="120" loading="lazy">
-                </div>
-                <h3>Creative Professionals</h3>
-                <p>Capture ideas and develop them systematically. Our tools adapt to your creative process, not the other way around.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Thought Leadership Section -->
-    <section class="thought-leadership" id="insights">
-        <h2>Insights & Perspectives</h2>
-        <p class="subtitle">Explore our thinking on productivity, workflow design, and digital tools</p>
-        
-        <div class="insights-grid">
-            <article class="insight-card">
-                <a href="https://tempestlabs.space/blog/subscriptions.html" target="_blank" rel="noopener noreferrer">
-                    <div class="insight-image">
-                        <img src="images/subscriptions-article.webp" alt="Why We Build One-Time Purchase Apps" width="600" height="400" loading="lazy">
-                    </div>
-                    <div class="insight-content">
-                        <h3>Why We Build One-Time Purchase Apps</h3>
-                        <p>Our philosophy on software pricing and why we avoid subscriptions.</p>
-                        <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </article>
-            
-            <article class="insight-card">
-                <a href="https://tempestlabs.space/blog/essentialknowledge.html" target="_blank" rel="noopener noreferrer">
-                    <div class="insight-image">
-                        <img src="images/visualization-article.webp" alt="Power of Visualization in Your Pipeline" width="600" height="400" loading="lazy">
-                    </div>
-                    <div class="insight-content">
-                        <h3>Power of Visualization in Your Pipeline</h3>
-                        <p>How visual organization transforms complex workflows into clear processes.</p>
-                        <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </article>
-            
-            <article class="insight-card">
-                <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">
-                    <div class="insight-image">
-                        <img src="images/tech-article.webp" alt="The Anti-Overwhelm Tech Manifesto" width="600" height="400" loading="lazy">
-                    </div>
-                    <div class="insight-content">
-                        <h3>The Anti-Overwhelm Tech Manifesto</h3>
-                        <p>Our approach to building tools that reduce cognitive load rather than add to it.</p>
-                        <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
-    <section class="case-studies">
-        <h2>How Our Tools Help</h2>
-        <p class="subtitle">Real-world applications of our products</p>
-        
-        <div class="case-study-grid">
-            <article class="case-study-card">
-                <a href="https://tempestlabs.space/blog/intuiva.html" target="_blank" rel="noopener noreferrer">
-                    <div class="case-study-image">
-                        <img src="images/intuiva-case.webp" alt="Intuiva case study" width="600" height="400" loading="lazy">
-                    </div>
-                    <div class="case-study-content">
-                        <h3>Structuring Complex Projects</h3>
-                        <p>See how Intuiva helps break down ambitious initiatives into actionable components.</p>
-                        <span class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </article>
-            
-            <article class="case-study-card">
-                <a href="https://tempestlabs.space/blog/funnelflow.html" target="_blank" rel="noopener noreferrer">
-                    <div class="case-study-image">
-                        <img src="images/funnel-case.webp" alt="FunnelFlow case study" width="600" height="400" loading="lazy">
-                    </div>
-                    <div class="case-study-content">
-                        <h3>Optimizing Sales Pipelines</h3>
-                        <p>How FunnelFlow helped a SaaS company increase conversion rates by 32%.</p>
-                        <span class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <!-- Value Propositions Section -->
-    <section class="value-props">
-        <h2>Why Tempest Labs?</h2>
-        <div class="value-grid">
-            <article class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <h4>No Subscriptions</h4>
-                <p>Pay once, own forever. No hidden fees or recurring charges.</p>
-            </article>
-            <article class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <h4>Built for Flow</h4>
-                <p>Tools that work when you do. Simple, intuitive, and always available.</p>
-            </article>
-            <article class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h4>Cross-Platform</h4>
-                <p>Use across all devices—Mac, Windows, Android, iOS—without friction.</p>
-            </article>
-            <article class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h4>Efficiency-Driven</h4>
-                <p>Save time, make more money, and focus on what matters most.</p>
-            </article>
-            <article class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h4>Privacy First</h4>
-                <p>Your data stays yours. No tracking, no ads, no selling your information.</p>
-            </article>
-            <article class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h4>Continuous Innovation</h4>
-                <p>Regular updates with new features based on user feedback.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="call-to-action">
-        <h2>Ready to Transform Your Workflow?</h2>
-        <p>Tempest Labs: Designed for the Innovators, Built for the Future. Reclaim your time, optimize your processes, and stay focused on growing your business.</p>
-        <div class="cta-group">
-            <a href="products.html" class="primary-button">Explore Products</a>
-            <a href="contact.html" class="secondary-button">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3><a href="about.html">About</a></h3>
-                <p>Creating tools for deeper thinking and clearer vision.</p>
-            </div>
-            <div class="footer-column">
-                <h3><a href="products.html">Products</a></h3>
-                <a href="product-intuiva.html">Intuiva</a>
-                <a href="product-funnelflow.html">FunnelFlow</a>
-            </div>
-            <div class="footer-column">
-                <h3><a href="#insights">Insights</a></h3>
-                <a href="https://tempestlabs.space/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
-                <a href="#use-cases">Case Studies</a>
-                <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">Our Philosophy</a>
-            </div>
-            <div class="footer-column">
-                <h3>Connect</h3>
-                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
-            </div>
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <a href="contact.html">Istanbul, Zeytinburnu</a>
-                <a href="tel:+905075275600">+90 507 527 56 00</a>
-                <a href="mailto:itempestlabsofficial@gmail.com">tempestlabsofficial@gmail.com</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
-            <div class="legal-links">
-                <a href="legal/membership-agreement.html">Membership Agreement</a>
-                <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
-                <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tempest Labs",
-      "url": "https://tempestlabs.com",
-      "logo": "https://tempestlabs.com/images/tempest.png",
-      "description": "Creating powerful, focused software tools for productive professionals.",
-      "sameAs": [
-        "https://www.linkedin.com/company/tempestlabsofficial/",
-        "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
-        "https://www.instagram.com/tempestlabsofficial/",
-        "https://tr.pinterest.com/tempestlabs/"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Istanbul",
-        "addressRegion": "Zeytinburnu",
-        "postalCode": "34000",
-        "addressCountry": "TR"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+905075275600",
-        "contactType": "customer service",
-        "email": "tempestlabsofficial@gmail.com",
-        "availableLanguage": ["English","Turkish"]
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Tempest Labs",
-      "url": "https://tempestlabs.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tempestlabs.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Intuiva",
-      "image": "https://tempestlabs.com/images/intuiva-screenshot.webp",
-      "description": "Turn mental clutter into clear next steps with Intuiva.",
-      "brand": { "@type": "Brand", "name": "Tempest Labs" },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "49.99",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "FunnelFlow",
-      "image": "https://tempestlabs.com/images/funnel-screenshot.webp",
-      "description": "Streamline your sales process with FunnelFlow.",
-      "brand": { "@type": "Brand", "name": "Tempest Labs" },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "59.99",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    </script>
-
-    <!-- Deferred JavaScript -->
-    <script src="js/main.min.js" defer></script>
-    
-    <!-- Inline critical JS -->
-    <script>
-    // Immediately invoked function for critical functionality
-    (function() {
-        // Set initial header state
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        }
-        
-        // Mobile menu toggle
-        function toggleMenu() {
-            const menu = document.querySelector("nav ul");
-            const toggle = document.querySelector(".menu-toggle");
-            const backdrop = document.querySelector(".menu-backdrop");
-            
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
-            backdrop.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
-            
-            // Update aria-expanded attribute
-            const isExpanded = toggle.classList.contains("active");
-            toggle.setAttribute("aria-expanded", isExpanded);
-        }
-        
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Initialize mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
-        document.querySelector('.menu-toggle').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleMenu();
-            }
-        });
-
-        // Add animation to elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-
-        // Set initial state for animated elements
-        document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-
-        // Add scroll event listener for animations
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Load non-critical CSS
-        function loadNonCriticalCSS() {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = 'styles.css';
-            document.head.appendChild(link);
-        }
-        
-        // Load non-critical CSS after page load
-        if (window.requestIdleCallback) {
-            window.requestIdleCallback(loadNonCriticalCSS);
-        } else {
-            window.addEventListener('load', loadNonCriticalCSS);
-        }
-    })();
-    </script>
-    
-    <!-- Non-critical CSS (would normally be in external file) -->
-    <style id="non-critical-css">
-        /* ================================= */
-        /* NON-CRITICAL CSS - BELOW THE FOLD  */
-        /* ================================= */
-        header.scrolled {
-            padding: 0.75rem 5%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .logo span::after {
@@ -771,6 +183,21 @@
             width: 100%;
         }
 
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .menu-toggle i {
+            font-size: 1.5rem;
+            color: var(--charcoal-black);
+            transition: all 0.3s ease;
+        }
+
         .menu-toggle .fa-times {
             display: none;
         }
@@ -820,7 +247,24 @@
             visibility: visible;
         }
 
-        /* Hero Image */
+        /* Enhanced Hero Section */
+        .hero-modern {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12rem 8% 6rem;
+            position: relative;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+            position: relative;
+        }
+
         .hero-image {
             flex: 1;
             max-width: 50%;
@@ -836,11 +280,25 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             transform-style: preserve-3d;
+            loading: lazy;
         }
 
         .hero-image:hover img {
             transform: translateY(-10px) rotateY(5deg);
             box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-modern h1 {
+            font-size: 3.75rem;
+            color: var(--charcoal-black);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(90deg, var(--charcoal-black), var(--hero-dark-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
         }
 
         .hero-modern h1::after {
@@ -852,6 +310,42 @@
             height: 4px;
             background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
             border-radius: 2px;
+        }
+
+        .hero-modern .hero-subtitle {
+            font-size: 1.25rem;
+            color: #444;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 90%;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .primary-button, .secondary-button {
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .primary-button {
+            background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
+            color: white;
+            box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
         }
 
         .primary-button::before {
@@ -889,7 +383,7 @@
             border-color: rgba(0, 0, 0, 0.2);
         }
 
-        /* Featured Products */
+        /* Featured Products Section */
         .featured-products {
             padding: 6rem 5%;
             text-align: center;
@@ -983,6 +477,7 @@
             object-fit: contain;
             margin: 0 auto 2rem auto;
             transition: transform 0.4s ease;
+            loading: lazy;
         }
 
         .product-card:hover img {
@@ -1024,7 +519,7 @@
             background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
         }
 
-        /* Use Cases */
+        /* Use Cases Section */
         .use-cases {
             padding: 6rem 5%;
             text-align: center;
@@ -1125,6 +620,7 @@
             border-radius: 50%;
             filter: grayscale(30%);
             transition: all 0.3s ease;
+            loading: lazy;
         }
 
         .use-case-card:hover .use-case-image img {
@@ -1144,7 +640,7 @@
             line-height: 1.6;
         }
 
-        /* Thought Leadership */
+        /* Thought Leadership Section */
         .thought-leadership {
             padding: 6rem 5%;
             text-align: center;
@@ -1231,6 +727,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            loading: lazy;
         }
 
         .insight-card:hover .insight-image img {
@@ -1281,7 +778,7 @@
             transform: translateX(3px);
         }
 
-        /* Case Studies */
+        /* Case Studies Section */
         .case-studies {
             padding: 6rem 5%;
             text-align: center;
@@ -1367,6 +864,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            loading: lazy;
         }
 
         .case-study-card:hover .case-study-image img {
@@ -1391,7 +889,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Value Propositions */
+        /* Enhanced Value Propositions Section */
         .value-props {
             padding: 6rem 5%;
             text-align: center;
@@ -1492,7 +990,7 @@
             line-height: 1.6;
         }
 
-        /* Call to Action */
+        /* Call to Action Section */
         .call-to-action {
             padding: 6rem 5%;
             text-align: center;
@@ -1557,7 +1055,7 @@
             border-color: white;
         }
 
-        /* Footer */
+        /* Footer Section */
         footer {
             padding: 5rem 5% 2.5rem;
             background-color: var(--charcoal-black);
@@ -1671,6 +1169,17 @@
             }
         }
 
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Mobile Touch Improvements */
         @media (hover: none) {
             .product-card:active {
@@ -1741,57 +1250,6 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-            
-            nav ul {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 320px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 6rem 2rem 2rem;
-                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-                transition: right 0.3s ease;
-                z-index: 1000;
-            }
-            
-            nav ul.active {
-                right: 0;
-            }
-            
-            nav ul li {
-                width: 100%;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .social-icons {
-                margin-left: 0;
-                margin-top: 1rem;
-                justify-content: center;
-                width: 100%;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-column h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
         }
 
         @media (max-width: 480px) {
@@ -1816,6 +1274,476 @@
                 gap: 0.75rem;
             }
         }
+
+.call-to-action .cta-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+        .primary-button,
+.secondary-button {
+    min-height: 48px;
+}
+
+        @media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 1rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+
     </style>
+    
+</head>
+   
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 5%; animation: float 8s ease-in-out infinite;"></div>
+    <div class="floating-element" style="width: 400px; height: 400px; bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
+
+    <!-- Header Section -->
+    <header role="banner">
+        <a class="logo" href="index.html" aria-label="Tempest Labs Home">
+            Tempest <span>Labs</span>
+        </a>
+        
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <nav role="navigation">
+            <ul>
+                <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
+                <li><a href="products.html" aria-label="View our products">Products</a></li>
+                <li><a href="#use-cases" aria-label="Who our tools are for">Who It's For</a></li>
+                <li><a href="#insights" aria-label="Thought leadership">Insights</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
+                <li><a href="turkish/index.html" aria-label="View in Turkish">TR</a></li>
+            </ul>
+        </nav>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-modern" role="main">
+        <div class="hero-content">
+            <h1>Power Tools for Productive Professionals</h1>
+            <p class="hero-subtitle">Tempest Labs creates clean, one-time-purchase tools that help you turn mental clutter into clear, actionable plans and manage your entire sales pipeline with visual precision. No noise. No subscriptions. Just clarity, speed, and total control.</p>
+            <div class="cta-group">
+                <a href="products.html" class="primary-button">Explore Products</a>
+                <a href="contact.html" class="secondary-button">Contact Us</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-dashboard.webp" alt="Tempest Labs dashboard interface">
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <h2>Our Tools</h2>
+        <p class="subtitle">Each of our products is designed to help you move quickly, clearly, and with intent.</p>
+        
+        <div class="product-grid">
+            <!-- Intuiva Card -->
+            <div class="product-card">
+                <a href="product-intuiva.html" class="product-link">
+                    <div class="product-image-wrapper">
+                        <img src="images/intuiva-screenshot.webp" alt="Intuiva app screenshot">
+                    </div>
+                    <h3>Intuiva</h3>
+                </a>
+                <p>Transform Ideas into Action. Turn mental clutter into clear next steps with Intuiva. Whether you're planning your next product launch or structuring a complex project, Intuiva helps you organize your ideas into actionable steps with ease.</p>
+                <a href="product-intuiva.html" class="product-cta">Try / Learn More</a>
+            </div>
+
+            <!-- FunnelFlow Card -->
+            <div class="product-card">
+                <a href="product-funnelflow.html" class="product-link">
+                    <div class="product-image-wrapper">
+                        <img src="images/funnel-screenshot.webp" alt="FunnelFlow app screenshot">
+                    </div>
+                    <h3>FunnelFlow</h3>
+                </a>
+                <p>Streamline Your Sales Process. FunnelFlow organizes your pipeline so you can move leads through with clarity. No clutter, no confusion—just a structured, streamlined view of your sales process that helps you close more deals, faster.</p>
+                <a href="product-funnelflow.html" class="product-cta">Try / Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section class="use-cases" id="use-cases">
+        <h2>Who We Help</h2>
+        <p class="subtitle">Our tools are designed for professionals who need to move fast and think clearly</p>
+        
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="images/ceo.webp" alt="CEO using Intuiva">
+                </div>
+                <h3>CEOs & Founders</h3>
+                <p>Organize high-level strategy and turn vision into executable plans. Our tools help you maintain clarity amid complexity.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="images/marketing.webp" alt="Marketer using FunnelFlow">
+                </div>
+                <h3>Marketers</h3>
+                <p>Track funnels & conversions with precision. Visualize your pipeline and optimize your marketing efforts for maximum impact.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="images/product.webp" alt="Product manager using Intuiva">
+                </div>
+                <h3>Product/Project Managers</h3>
+                <p>Break down complex projects into manageable components. Structure your roadmap and keep your team aligned.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="images/creative.webp" alt="Creative professional using Tempest tools">
+                </div>
+                <h3>Creative Professionals</h3>
+                <p>Capture ideas and develop them systematically. Our tools adapt to your creative process, not the other way around.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thought Leadership Section -->
+    <section class="thought-leadership" id="insights">
+        <h2>Insights & Perspectives</h2>
+        <p class="subtitle">Explore our thinking on productivity, workflow design, and digital tools</p>
+        
+        <div class="insights-grid">
+            <article class="insight-card">
+                <a href="https://tempestlabs.space/blog/subscriptions.html" target="_blank" rel="noopener noreferrer">
+                    <div class="insight-image">
+                        <img src="images/subscriptions-article.webp" alt="Why We Build One-Time Purchase Apps">
+                    </div>
+                    <div class="insight-content">
+                        <h3>Why We Build One-Time Purchase Apps</h3>
+                        <p>Our philosophy on software pricing and why we avoid subscriptions.</p>
+                        <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+            <article class="insight-card">
+                <a href="https://tempestlabs.space/blog/essentialknowledge.html" target="_blank" rel="noopener noreferrer">
+                    <div class="insight-image">
+                        <img src="images/visualization-article.webp" alt="Power of Visualization in Your Pipeline">
+                    </div>
+                    <div class="insight-content">
+                        <h3>Power of Visualization in Your Pipeline</h3>
+                        <p>How visual organization transforms complex workflows into clear processes.</p>
+                        <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+            <article class="insight-card">
+                <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">
+                    <div class="insight-image">
+                        <img src="images/tech-article.webp" alt="The Anti-Overwhelm Tech Manifesto">
+                    </div>
+                    <div class="insight-content">
+                        <h3>The Anti-Overwhelm Tech Manifesto</h3>
+                        <p>Our approach to building tools that reduce cognitive load rather than add to it.</p>
+                        <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies">
+        <h2>How Our Tools Help</h2>
+        <p class="subtitle">Real-world applications of our products</p>
+        
+        <div class="case-study-grid">
+            <article class="case-study-card">
+                <a href="https://tempestlabs.space/blog/intuiva.html" target="_blank" rel="noopener noreferrer">
+                    <div class="case-study-image">
+                        <img src="images/intuiva-case.webp" alt="Intuiva case study">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Structuring Complex Projects</h3>
+                        <p>See how Intuiva helps break down ambitious initiatives into actionable components.</p>
+                        <span class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+            <article class="case-study-card">
+                <a href="https://tempestlabs.space/blog/funnelflow.html" target="_blank" rel="noopener noreferrer">
+                    <div class="case-study-image">
+                        <img src="images/funnel-case.webp" alt="FunnelFlow case study">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Optimizing Sales Pipelines</h3>
+                        <p>How FunnelFlow helped a SaaS company increase conversion rates by 32%.</p>
+                        <span class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Value Propositions Section -->
+    <section class="value-props">
+        <h2>Why Tempest Labs?</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h4>No Subscriptions</h4>
+                <p>Pay once, own forever. No hidden fees or recurring charges.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h4>Built for Flow</h4>
+                <p>Tools that work when you do. Simple, intuitive, and always available.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+<i class="fas fa-laptop-code"></i>
+                </div>
+                <h4>Cross-Platform</h4>
+                <p>Use across all devices—Mac, Windows, Android, iOS—without friction.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Efficiency-Driven</h4>
+                <p>Save time, make more money, and focus on what matters most.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Privacy First</h4>
+                <p>Your data stays yours. No tracking, no ads, no selling your information.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h4>Continuous Innovation</h4>
+                <p>Regular updates with new features based on user feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <h2>Ready to Transform Your Workflow?</h2>
+        <p>Tempest Labs: Designed for the Innovators, Built for the Future. Reclaim your time, optimize your processes, and stay focused on growing your business.</p>
+        <div class="cta-group">
+            <a href="products.html" class="primary-button">Explore Products</a>
+            <a href="contact.html" class="secondary-button">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><a href="about.html">About</a></h3>
+                <p>Creating tools for deeper thinking and clearer vision.</p>
+            </div>
+            <div class="footer-column">
+                <h3><a href="products.html">Products</a></h3>
+                <a href="product-intuiva.html">Intuiva</a>
+                <a href="product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                <h3><a href="#insights">Insights</a></h3>
+                <a href="https://tempestlabs.space/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="#use-cases">Case Studies</a>
+                <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">Our Philosophy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <a href="contact.html">Istanbul, Zeytinburnu</a>
+                <a href="tel:+905075275600">+90 507 527 56 00</a>
+                <a href="mailto:info@tempestlabs.com">info@tempestlabs.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="legal/membership-agreement.html">Membership Agreement</a>
+                <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
+                <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tempest Labs",
+      "url": "https://tempestlabs.com",
+      "logo": "https://tempestlabs.com/images/tempest.png",
+      "description": "Creating powerful, focused software tools for productive professionals.",
+      "sameAs": [
+        "https://www.linkedin.com/company/tempestlabsofficial/",
+        "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
+        "https://www.instagram.com/tempestlabsofficial/",
+        "https://tr.pinterest.com/tempestlabs/"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tempest Labs",
+      "url": "https://tempestlabs.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://tempestlabs.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Intuiva",
+      "image": "https://tempestlabs.com/images/intuiva-screenshot.webp",
+      "description": "Turn mental clutter into clear next steps with Intuiva.",
+      "brand": { "@type": "Brand", "name": "Tempest Labs" }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "FunnelFlow",
+      "image": "https://tempestlabs.com/images/funnel-screenshot.webp",
+      "description": "Streamline your sales process with FunnelFlow.",
+      "brand": { "@type": "Brand", "name": "Tempest Labs" }
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="js/main.min.js" defer></script>
+    
+    <!-- Inline critical JS -->
+    <script>
+    // Immediately invoked function for critical functionality
+    (function() {
+        // Set initial header state
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
+            
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+            
+            // Update aria-expanded attribute
+            const isExpanded = toggle.classList.contains("active");
+            toggle.setAttribute("aria-expanded", isExpanded);
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Initialize mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+        document.querySelector('.menu-toggle').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                toggleMenu();
+            }
+        });
+
+        // Add animation to elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Add scroll event listener for animations
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    })();
+    </script>
 </body>
 </html>
