@@ -533,80 +533,201 @@
             line-height: 1.6;
         }
 
-/* FAQ Section */
-.faq-section {
-    padding: 6rem 5%;
-    text-align: center;
-    background-color: white;
-    position: relative;
-}
+        /* Enhanced FAQ Section */
+        .faq-section {
+            padding: 6rem 5%;
+            text-align: center;
+            background-color: white;
+            position: relative;
+        }
 
-.faq-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
-    z-index: 0;
-}
+        .faq-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
 
-.faq-item {
-    max-width: 800px;
-    margin: 0 auto 1rem auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.faq-item:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            background: white;
+        }
 
-.faq-question {
-    padding: 1.5rem;
-    background: white;
-    font-weight: 600;
-    font-size: 1.125rem;
-    color: var(--charcoal-black);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-}
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(10, 157, 183, 0.2);
+        }
 
-.faq-question:hover {
-    color: var(--hero-teal);
-}
+        .faq-question {
+            padding: 1.5rem;
+            background: white;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--charcoal-black);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-.faq-question::after {
-    content: "+";
-    font-size: 1.5rem;
-    color: var(--hero-teal);
-    transition: all 0.3s ease;
-}
+        .faq-question:hover {
+            color: var(--hero-teal);
+        }
 
-.faq-item.active .faq-question::after {
-    content: "-";
-}
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--hero-teal);
+            transition: all 0.3s ease;
+            font-weight: 300;
+        }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
+        .faq-item.active .faq-question {
+            color: var(--hero-teal);
+        }
 
-.faq-answer-inner {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    background: white;
-    text-align: left;
-}
+        .faq-item.active .faq-question::after {
+            content: "-";
+            transform: rotate(0deg);
+        }
 
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            text-align: left;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .faq-answer-inner p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer-inner p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FAQ Search Feature */
+        .faq-search {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            position: relative;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--hero-teal);
+            box-shadow: 0 4px 20px rgba(10, 157, 183, 0.15);
+        }
+
+        .faq-search i {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        /* FAQ Categories */
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-category {
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            background: rgba(10, 157, 183, 0.1);
+            color: var(--hero-teal);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-category:hover, .faq-category.active {
+            background: var(--hero-teal);
+            color: white;
+        }
+
+        /* No results message */
+        .faq-no-results {
+            display: none;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+        }
+
+        /* FAQ Contact CTA */
+        .faq-contact-cta {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(10, 157, 183, 0.05), rgba(0, 240, 255, 0.05));
+            border-radius: 16px;
+            border: 1px solid rgba(10, 157, 183, 0.1);
+        }
+
+        .faq-contact-cta p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .faq-contact-link {
+            color: var(--hero-teal);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-contact-link:hover {
+            color: var(--hero-dark-teal);
+            text-decoration: underline;
+        }
+
+        .faq-contact-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-contact-link:hover i {
+            transform: translateX(3px);
+        }
         
         /* Separator */
         .separator {
@@ -868,6 +989,15 @@
             .social-icons {
                 margin-left: 0;
             }
+
+            .faq-question {
+                padding: 1.25rem;
+                font-size: 1rem;
+            }
+
+            .faq-answer-inner {
+                padding: 0 1.25rem 1.25rem 1.25rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -887,6 +1017,14 @@
             .legal-links {
                 flex-direction: column;
                 gap: 0.75rem;
+            }
+
+            .faq-question {
+                padding: 1rem;
+            }
+
+            .faq-answer-inner {
+                padding: 0 1rem 1rem 1rem;
             }
         }
     </style>
@@ -1033,50 +1171,118 @@
 
     <div class="separator"></div>
 
-    <!-- FAQ Section -->
+    <!-- Enhanced FAQ Section -->
     <section class="faq-section">
         <div class="section-header">
             <h2>Frequently Asked Questions</h2>
             <p>Find answers to common questions about our products and policies.</p>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">How does the one-time payment work?</div>
-            <div class="faq-answer">
-                <div class="faq-answer-inner">
-                    <p>You pay once and own it forever. That's it. No subscriptions, no hidden fees, no nonsense. All future updates are included at no additional cost.</p>
+
+        <div class="faq-container">
+            <!-- FAQ Search -->
+            <div class="faq-search">
+                <input type="text" placeholder="Search questions..." id="faqSearch">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories">
+                <div class="faq-category active" data-category="all">All Questions</div>
+                <div class="faq-category" data-category="pricing">Pricing</div>
+                <div class="faq-category" data-category="features">Features</div>
+                <div class="faq-category" data-category="support">Support</div>
+                <div class="faq-category" data-category="technical">Technical</div>
+            </div>
+
+            <!-- FAQ Items -->
+            <div class="faq-items">
+                <div class="faq-item" data-categories="pricing">
+                    <div class="faq-question">How does the one-time payment work?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>You pay once and own it forever. That's it. No subscriptions, no hidden fees, no nonsense. All future updates are included at no additional cost.</p>
+                            <p>We believe in simple, transparent pricing that respects our customers. Unlike subscription models that lock you into ongoing payments, our one-time purchase gives you lifetime access to the software.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-categories="technical features">
+                    <div class="faq-question">Do your apps work offline?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely. All our apps are designed to work completely offline. Internet is only required for initial download and optional cloud sync features.</p>
+                            <p>Your data remains on your device unless you explicitly choose to sync it across devices using our secure cloud service. We prioritize your privacy and accessibility.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-categories="technical">
+                    <div class="faq-question">What platforms do you support?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We currently support Windows, macOS, iOS, and Android. Our apps are optimized for each platform while maintaining a consistent experience across devices.</p>
+                            <p>When you purchase one of our products, you get access to all platform versions with a single license. Your data syncs seamlessly between devices when you enable cloud sync.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-categories="pricing support">
+                    <div class="faq-question">Can I get a refund if I'm not satisfied?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we offer a 30-day money-back guarantee with no questions asked. If our product doesn't meet your expectations, we'll refund your purchase.</p>
+                            <p>We're confident you'll love our software, but we want you to try it risk-free. Just contact our support team within 30 days of purchase for a full refund.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-categories="features support">
+                    <div class="faq-question">How often do you release updates?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We release minor updates monthly with bug fixes and small improvements. Major feature updates come out quarterly based on user feedback.</p>
+                            <p>Our development roadmap is heavily influenced by customer requests. When you suggest a feature, our team evaluates it for potential inclusion in future updates.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-categories="technical">
+                    <div class="faq-question">What are the system requirements?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Our apps are designed to be lightweight and efficient:</p>
+                            <ul>
+                                <li><strong>Windows:</strong> Windows 10 or later, 4GB RAM, 200MB disk space</li>
+                                <li><strong>macOS:</strong> macOS 10.14 or later, 4GB RAM, 200MB disk space</li>
+                                <li><strong>iOS:</strong> iOS 14 or later, iPhone 8 or newer</li>
+                                <li><strong>Android:</strong> Android 9 or later, 3GB RAM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-categories="features">
+                    <div class="faq-question">Do you offer student discounts?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes! We offer a 40% discount for students and educators. Just contact our support team with proof of your academic status (student ID, enrollment verification, or faculty email) and we'll provide a discount code.</p>
+                            <p>We believe in supporting the next generation of creators and thinkers with affordable access to our tools.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Do your apps work offline?</div>
-            <div class="faq-answer">
-                <div class="faq-answer-inner">
-                    <p>Absolutely. All our apps are designed to work completely offline. Internet is only required for initial download and optional cloud sync features.</p>
-                </div>
+            
+            <!-- No results message -->
+            <div class="faq-no-results">
+                <p>No questions match your search. Try different keywords or browse our categories.</p>
             </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">What platforms do you support?</div>
-            <div class="faq-answer">
-                <div class="faq-answer-inner">
-                    <p>We currently support Windows, macOS, iOS, and Android. Our apps are optimized for each platform while maintaining a consistent experience across devices.</p>
-                </div>
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Can I get a refund if I'm not satisfied?</div>
-            <div class="faq-answer">
-                <div class="faq-answer-inner">
-                    <p>Yes, we offer a 30-day money-back guarantee with no questions asked. If our product doesn't meet your expectations, we'll refund your purchase.</p>
-                </div>
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">How often do you release updates?</div>
-            <div class="faq-answer">
-                <div class="faq-answer-inner">
-                    <p>We release minor updates monthly with bug fixes and small improvements. Major feature updates come out quarterly based on user feedback.</p>
-                </div>
+            
+            <!-- FAQ Contact CTA -->
+            <div class="faq-contact-cta">
+                <p>Still have questions? We're happy to help!</p>
+                <a href="contact.html" class="faq-contact-link">
+                    Contact our support team <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -1151,113 +1357,147 @@
     }
     </script>
     
-<script>
-    // Global toggleMenu so it's accessible from HTML onclick attribute
-    function toggleMenu() {
-        const menu = document.querySelector("nav ul");
-        const toggle = document.querySelector(".menu-toggle");
-        const backdrop = document.querySelector(".menu-backdrop");
+    <script>
+        // Global toggleMenu so it's accessible from HTML onclick attribute
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
 
-        menu.classList.toggle("active");
-        toggle.classList.toggle("active");
-        backdrop.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
 
-        const isExpanded = toggle.classList.contains("active");
-        toggle.setAttribute("aria-expanded", isExpanded);
-    }
-
-    // Immediately invoked function for page behavior
-    (function () {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
+            const isExpanded = toggle.classList.contains("active");
+            toggle.setAttribute("aria-expanded", isExpanded);
         }
 
-        // Scroll effect
-        window.addEventListener('scroll', function () {
+        // Immediately invoked function for page behavior
+        (function () {
+            const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
             }
-        });
 
-        // FAQ expand/collapse
-  // FAQ expand/collapse with dynamic height
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-
-    question.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-
-        // Collapse all (optional: make accordion-style)
-        faqItems.forEach(i => {
-            i.classList.remove('active');
-            i.querySelector('.faq-answer').style.maxHeight = null;
-        });
-
-        // Expand clicked item
-        if (!isActive) {
-            item.classList.add('active');
-            answer.style.maxHeight = answer.scrollHeight + "px";
-        }
-    });
-});
-
-
-        // Initial animation state
-        document.querySelectorAll('.product-card, .feature-card').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-
-        const animateOnScroll = function () {
-            const elements = document.querySelectorAll('.product-card, .feature-card');
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (elementPosition < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+            // Scroll effect
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
             });
-        };
 
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    })();
-</script>
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-
-            // Collapse all
-            faqItems.forEach(i => {
-                i.classList.remove('active');
-                i.querySelector('.faq-answer').style.maxHeight = null;
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            const faqSearch = document.getElementById('faqSearch');
+            const faqCategories = document.querySelectorAll('.faq-category');
+            const faqNoResults = document.querySelector('.faq-no-results');
+            
+            // Toggle FAQ items
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items (optional - remove if you want multiple open)
+                    if (!isActive) {
+                        faqItems.forEach(i => {
+                            i.classList.remove('active');
+                            i.querySelector('.faq-answer').style.maxHeight = null;
+                        });
+                    }
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+            
+            // FAQ search functionality
+            faqSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let hasResults = false;
+                
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide no results message
+                faqNoResults.style.display = hasResults ? 'none' : 'block';
+            });
+            
+            // FAQ category filtering
+            faqCategories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const categoryName = this.getAttribute('data-category');
+                    
+                    // Update active category
+                    faqCategories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter items
+                    faqItems.forEach(item => {
+                        const itemCategories = item.getAttribute('data-categories').split(' ');
+                        
+                        if (categoryName === 'all' || itemCategories.includes(categoryName)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Reset search
+                    faqSearch.value = '';
+                    faqNoResults.style.display = 'none';
+                });
             });
 
-            // Expand this one if it wasn't already active
-            if (!isActive) {
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
+            // Initial animation state
+            document.querySelectorAll('.product-card, .feature-card').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+
+            const animateOnScroll = function () {
+                const elements = document.querySelectorAll('.product-card, .feature-card, .faq-item');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+            
+            // Open first FAQ item by default
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+                faqItems[0].querySelector('.faq-answer').style.maxHeight = 
+                    faqItems[0].querySelector('.faq-answer').scrollHeight + "px";
             }
-        });
-    });
-});
-</script>
-
-
+        })();
+    </script>
 </body>
 </html>
