@@ -318,6 +318,64 @@
     max-width: 300px;
   }
 }
+
+    @media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
+  .section, .hero-about, .footer-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+ @media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+    @media (max-width: 768px) {
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .grid-box h3 {
+    font-size: 1.1rem;
+  }
+}
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+@media (max-width: 480px) {
+  .hero-about-img img,
+  .section-image img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
     
   </style>
 </head>
@@ -325,6 +383,7 @@
 
 <header>
   <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+  <div class="hamburger"><i class="fas fa-bars"></i></div>
   <nav>
     <ul>
       <li><a href="about.html">About</a></li>
