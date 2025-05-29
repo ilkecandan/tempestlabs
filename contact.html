@@ -1,701 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Contact Tempest Labs. Reach out with questions, feedback, or collaboration opportunities.">
-    <link rel="preload" as="image" href="images/contact.webp" type="image/webp">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Tempest Labs. Reach out with questions, feedback, or collaboration opportunities." />
+  <title>Contact | Tempest Labs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/tempest.png" type="image/x-icon" />
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Contact Tempest Labs - Premium Software That Clears Your Mind">
-    <meta property="og:description" content="Get in touch with Tempest Labs for questions, support, or collaboration opportunities.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tempestlabs.com/contact.html">
-    <meta property="og:image" content="https://tempestlabs.com/images/social-preview-contact.jpg">
-    <!-- Canonical Link -->
-    <link rel="canonical" href="https://tempestlabs.com/contact.html" />
-    <title>Contact | Tempest Labs</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;600&family=EB+Garamond:wght@400;600&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/tempest.png" type="image/x-icon">
-    <style>
-        /* ================================= */
-        /* TEMPEST LABS - MYTHIC HERO STYLES */
-        /* ================================= */
+  <style>
+    :root {
+      --deep-teal: #01343E;
+      --aqua-glow: #3AE3F8;
+      --muted-aqua: #34D6E0;
+      --burnt-coral: #E94F3D;
+      --charcoal-black: #0B1B1C;
+      --glow-white: #EAF4F4;
+      --hero-teal: #0A9DB7;
+      --hero-dark-teal: #055B6D;
+      --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+      --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+      --transition-speed: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
 
-        /* Mythic Color Palette */
-        :root {
-          --deep-teal: #01343E;       /* base background */
-          --aqua-glow: #3AE3F8;
-          --muted-aqua: #34D6E0;      /* secondary highlight tone */
-          --burnt-coral: #E94F3D;
-          --charcoal-black: #0B1B1C;
-          --glow-white: #EAF4F4;
-          --hero-teal: #0A9DB7;       /* luminous main tone */
-          --hero-dark-teal: #055B6D;
-          
-          --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
-          --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
-          --transition-speed: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--charcoal-black);
+      background: linear-gradient(135deg, #055B6D, #0A9DB7);
+      line-height: 1.6;
+    }
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 400;
-            color: var(--charcoal-black);
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-            word-spacing: 0.5px;
-            overflow-x: hidden;
-            background: linear-gradient(135deg, #055B6D, #0A9DB7);
-        }
+    header {
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cinzel', serif;
-            color: var(--glow-white);
-            letter-spacing: 1px;
-            text-shadow: var(--hero-text-glow);
-            margin-bottom: 1.2rem;
-            font-weight: 400;
-        }
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      color: var(--glow-white);
+    }
 
-        a {
-            color: var(--aqua-glow);
-            text-decoration: none;
-            transition: all var(--transition-speed);
-        }
+    .logo span {
+      color: var(--aqua-glow);
+    }
 
-        header {
-            padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(11, 27, 28, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(58, 227, 248, 0.1);
-            backdrop-filter: blur(5px);
-            transition: all 0.4s ease;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
 
-        header.scrolled {
-            padding: 8px 5%;
-            background: rgba(11, 27, 28, 0.95);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
-        }
+    nav ul li a {
+      color: var(--glow-white);
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 400;
-            letter-spacing: 1.5px;
-            color: var(--glow-white);
-            cursor: pointer;
-            position: relative;
-            padding: 0 12px;
-            font-family: 'Cinzel', serif;
-        }
+    nav ul li a:hover {
+      color: var(--aqua-glow);
+    }
 
-        .logo span {
-            color: var(--aqua-glow);
-            animation: pulse-glow 3.5s infinite;
-        }
+    .hero-contact {
+      padding: 150px 5% 60px;
+      text-align: center;
+      background-image: url('images/contact.webp');
+      background-size: cover;
+      background-position: center;
+      color: var(--glow-white);
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+    .hero-contact h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      text-shadow: var(--hero-text-glow);
+    }
 
-        nav ul li {
-            position: relative;
-        }
+    .hero-contact p {
+      font-size: 1.2rem;
+      color: #C7E9E9;
+      margin-top: 1rem;
+    }
 
-        nav ul li a {
-            color: var(--glow-white);
-            font-size: 17px;
-            font-weight: 300;
-            padding: 10px 15px;
-            border-radius: 6px;
-            transition: all var(--transition-speed);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .contact-section {
+      padding: 80px 5%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        nav ul li a:hover {
-            color: var(--aqua-glow);
-            text-shadow: var(--text-glow);
-        }
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-        nav ul li a::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 1px;
-            background: var(--aqua-glow);
-            transition: width var(--transition-speed);
-        }
+    .contact-intro h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.4rem;
+      color: var(--glow-white);
+    }
 
-        nav ul li a:hover::after {
-            width: 60%;
-        }
+    .contact-intro p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
 
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: var(--glow-white);
-            z-index: 1001;
-        }
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
 
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-left: 30px;
-        }
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      border: 1px solid rgba(58, 227, 248, 0.15);
+      transition: all 0.3s ease;
+    }
 
-        .social-icons a {
-            color: var(--glow-white);
-            font-size: 1.2rem;
-            transition: all var(--transition-speed);
-            opacity: 0.7;
-        }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(58, 227, 248, 0.25);
+      border-color: rgba(58, 227, 248, 0.4);
+    }
 
-        .social-icons a:hover {
-            color: var(--aqua-glow);
-            transform: translateY(-3px);
-            opacity: 1;
-        }
+    .contact-card i {
+      font-size: 2rem;
+      color: var(--aqua-glow);
+      margin-bottom: 15px;
+    }
 
-        /* Hero Section for Contact */
-        .hero-contact {
-            position: relative;
-            min-height: 50vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15% 8% 8%;
-            isolation: isolate;
-            text-align: center;
-        }
+    .contact-card h3 {
+      color: var(--glow-white);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
 
-        .hero-contact-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/contact.webp') center center no-repeat;
-            background-size: cover;
-            z-index: -1;
-            opacity: 0.8;
-            filter: brightness(0.8) contrast(1.1) saturate(1.05);
-        }
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+    }
 
-        .hero-contact-overlay {
-            z-index: 2;
-            position: relative;
-            backdrop-filter: blur(4px);
-            background-color: rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
-            max-width: 800px;
-            padding: 40px;
-            animation: fadeInUp 1s ease-out;
-            border: 1px solid rgba(58, 227, 248, 0.08);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-        }
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(58, 227, 248, 0.2);
+    }
 
-        .hero-contact h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-            color: var(--glow-white);
-            text-shadow: var(--hero-text-glow);
-            font-weight: 400;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-        .hero-contact .hero-subtitle {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.2rem;
-            color: #C7E9E9;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--aqua-glow);
+    }
 
-        /* Contact Section */
-        .contact-section {
-            padding: 80px 5%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid rgba(58, 227, 248, 0.3);
+      border-radius: 8px;
+      background: rgba(6, 30, 34, 0.4);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+    }
 
-        .contact-section p {
-            color: rgba(255, 255, 255, 0.88);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-            text-align: center;
-        }
+    textarea {
+      min-height: 150px;
+    }
 
-        .contact-section a {
-            color: var(--aqua-glow);
-            font-weight: 600;
-        }
+    .cta-button {
+      width: 100%;
+      padding: 14px;
+      background-color: transparent;
+      color: #FFDED3;
+      border: 1px solid rgba(233, 79, 61, 0.6);
+      border-radius: 10px;
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
+    .cta-button:hover {
+      background: var(--burnt-coral);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(233, 79, 61, 0.6);
+    }
 
-        /* Contact Form */
-        .contact-form {
-            background: rgba(6, 30, 34, 0.55);
-            border-radius: 15px;
-            padding: 40px;
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(58, 227, 248, 0.2);
-            box-shadow: 0 6px 24px rgba(58, 227, 248, 0.25), 0 0 20px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 0.8s ease-out;
-        }
+    footer {
+      margin-top: 80px;
+      padding: 60px 5%;
+      text-align: center;
+      background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
+      color: var(--muted-aqua);
+    }
 
-        .contact-form:hover {
-            border-color: rgba(58, 227, 248, 0.35);
-        }
+    .legal-links {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-        .form-group {
-            margin-bottom: 25px;
-        }
+    .legal-links a {
+      color: var(--muted-aqua);
+      text-decoration: none;
+    }
 
-        .contact-form label {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--aqua-glow);
-            font-weight: 400;
-            font-size: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid rgba(58, 227, 248, 0.3);
-            border-radius: 8px;
-            background: rgba(6, 30, 34, 0.4);
-            color: var(--glow-white);
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            transition: all var(--transition-speed);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--aqua-glow);
-            box-shadow: 0 0 10px rgba(58, 227, 248, 0.3);
-            background: rgba(6, 30, 34, 0.6);
-        }
-
-        .contact-form textarea {
-            min-height: 180px;
-            resize: vertical;
-        }
-
-        .cta-button {
-            background: rgba(0, 0, 0, 0.15);
-            color: #FFDED3;
-            border-radius: 12px;
-            padding: 14px 28px;
-            font-weight: bold;
-            border: 1px solid rgba(233, 79, 61, 0.6);
-            box-shadow: 0 0 10px rgba(233, 79, 61, 0.2), 0 0 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s ease;
-            display: inline-block;
-            margin-top: 1rem;
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            letter-spacing: 1.4px;
-            text-shadow: 0 0 8px rgba(233, 79, 61, 0.3), 0 0 6px rgba(255, 222, 211, 0.3);
-            width: 100%;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background: var(--burnt-coral);
-            color: white;
-            box-shadow: 0 0 25px var(--burnt-coral), 0 0 15px rgba(233, 79, 61, 0.6);
-            transform: translateY(-2px);
-            text-shadow: none;
-        }
-
-        /* Footer */
-        footer {
-            padding: 80px 5% 40px;
-            background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
-            color: var(--muted-aqua);
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/noise.png');
-            opacity: 0.1;
-            pointer-events: none;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-column h3 {
-            color: var(--glow-white);
-            margin-bottom: 20px;
-            font-size: clamp(1.5rem, 1.8vw, 1.8rem);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--burnt-coral);
-        }
-
-        .footer-column a {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--muted-aqua);
-            transition: all var(--transition-speed);
-            font-size: clamp(0.85rem, 1vw, 1rem);
-        }
-
-        .footer-column a:hover {
-            color: var(--burnt-coral);
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(58, 227, 248, 0.2);
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .legal-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .separator {
-            width: 100%;
-            border-top: 1px solid transparent;
-            position: relative;
-            margin: 40px 0;
-        }
-
-        .separator::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            width: 30%;
-            border-top: 2px solid var(--aqua-glow);
-        }
-
-        /* Animations */
-        @keyframes pulse-glow {
-            0% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
-            50% { opacity: 1; text-shadow: 0 0 20px var(--aqua-glow); }
-            100% { opacity: 0.8; text-shadow: 0 0 8px var(--aqua-glow); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-contact {
-                padding: 120px 5% 80px;
-            }
-            
-            .hero-contact-overlay {
-                max-width: 90%;
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 12px 5%;
-            }
-            
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: rgba(6, 30, 34, 0.98);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: all 0.4s ease;
-                backdrop-filter: blur(15px);
-                gap: 20px;
-            }
-            
-            nav ul.active {
-                left: 0;
-            }
-            
-            nav ul li a {
-                padding: 12px 20px;
-                font-size: 1.1rem;
-            }
-            
-            .menu-toggle {
-                display: flex;
-            }
-            
-            .social-icons {
-                display: none;
-            }
-            
-            .hero-contact-overlay {
-                max-width: 100%;
-                padding: 25px;
-            }
-            
-            .hero-contact h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-contact .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .contact-form {
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 22px;
-            }
-            
-            .hero-contact h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-contact .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .contact-form {
-                padding: 20px;
-            }
-            
-            .legal-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        @media (hover: none) {
-            a, button, .menu-toggle {
-                min-height: 44px;
-                min-width: 44px;
-            }
-            
-            nav ul li a {
-                padding: 15px 20px;
-            }
-            
-            .cta-button {
-                padding: 16px 32px;
-            }
-        }
-    </style>
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <a class="logo" href="index.html">Tempest <span>Labs</span></a>
-        
-        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-            <i class="fas fa-bars"></i>
-        </div>
 
-        <nav>
-            <ul>
-                <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
-                <li><a href="products.html" aria-label="View our products">Products</a></li>
-                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
-                <li><a href="blog.html" aria-label="Read our blog">Blog</a></li>
-                <li><a href="/turkish/contact.html" aria-label="View in Turkish">Türkçe</a></li>
-            </ul>
-        </nav>
+  <header>
+    <a class="logo" href="index.html">Tempest <span>Labs</span></a>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="/turkish/contact.html">Türkçe</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-        </div>
-    </header>
+  <section class="hero-contact">
+    <h1>Get In Touch</h1>
+    <p>Have questions, feedback, or want to collaborate? We’d love to hear from you.</p>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero-contact">
-        <div class="hero-contact-bg"></div>
-        <div class="hero-contact-overlay">
-            <h1>Get In Touch</h1>
-            <p class="hero-subtitle">Have questions, feedback, or want to collaborate? We'd love to hear from you.</p>
-        </div>
-    </section>
+  <section class="contact-section">
+    <div class="contact-intro">
+      <h2>How Can We Help?</h2>
+      <p>Whether you're curious about features, pricing, or anything else, we're here to answer all your questions.</p>
+    </div>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <p>You can send an email directly to: <a href='mailto:tempestlabsofficial@gmail.com'>tempestlabsofficial@gmail.com</a>. Or use the form below to reach out to us.</p>
-        
-        <form action="https://formspree.io/f/myzezopr" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
-    </section>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email Us</h3>
+        <p><a href="mailto:tempestlabsofficial@gmail.com">tempestlabsofficial@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-comments"></i>
+        <h3>Quick Inquiry</h3>
+        <p>Use the form below to send us a direct message.</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-user-plus"></i>
+        <h3>Collaboration</h3>
+        <p>Want to collaborate? We’re open to bold ideas and unique partnerships.</p>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3><a href="about.html" aria-label="About Tempest Labs">About</a></h3>
-                <p>Creating tools for deeper thinking and clearer vision.</p>
-            </div>
-            <div class="footer-column">
-                <h3><a href="products.html" aria-label="About Tempest Labs">Products</a></h3>
-                <a href="product-intuiva.html">Intuiva</a>
-                <a href="product-cabinet.html">Cabinet of Selves</a>
-                <a href="product-funnelflow.html">FunnelFlow</a>
-                <a href="product-stem.html">STEM Student Bundle</a>
-            </div>
-            <div class="footer-column">
-                <h3><a href="contact.html" aria-label="About Tempest Labs">Connect</a></h3>
-                <a href="https://www.linkedin.com/company/tempestlabsofficial/">LinkedIn</a>
-                <a href="https://www.instagram.com/tempestlabsofficial/">Instagram</a>
-                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA">YouTube</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
-            <div class="legal-links">
-                <a href="legal/membership-agreement.html">Membership Agreement</a>
-                <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
-                <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
-            </div>
-        </div>
-    </footer>
+    <form action="https://formspree.io/f/myzezopr" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+  </section>
 
-    <script>
-        // Toggle mobile menu
-        function toggleMenu() {
-            const menu = document.querySelector("nav ul");
-            const toggle = document.querySelector(".menu-toggle");
-            
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
-        }
-        
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+  <footer>
+    <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="legal/membership-agreement.html">Membership Agreement</a>
+      <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
+      <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+    </div>
+  </footer>
 
-        // Animate elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.hero-contact-overlay, .contact-form');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.animation = `fadeInUp 0.8s ease forwards`;
-                }
-            });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    </script>
 </body>
 </html>
