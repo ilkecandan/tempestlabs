@@ -37,7 +37,7 @@
     body {
       font-family: 'Outfit', sans-serif;
       color: var(--charcoal-black);
-      background: linear-gradient(135deg, #055B6D, #0A9DB7);
+      background: #ffffff;
       line-height: 1.6;
     }
 
@@ -48,19 +48,19 @@
       align-items: center;
       position: fixed;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       z-index: 1000;
     }
 
     .logo {
       font-family: 'Cinzel', serif;
       font-size: 24px;
-      color: var(--glow-white);
+      color: var(--charcoal-black);
     }
 
     .logo span {
-      color: var(--aqua-glow);
+      color: var(--hero-teal);
     }
 
     nav ul {
@@ -70,34 +70,31 @@
     }
 
     nav ul li a {
-      color: var(--glow-white);
+      color: var(--charcoal-black);
       font-weight: 300;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
-      color: var(--aqua-glow);
+      color: var(--hero-teal);
     }
 
     .hero-contact {
-      padding: 150px 5% 60px;
+      padding: 160px 5% 60px;
       text-align: center;
-      background-image: url('images/contact.webp');
-      background-size: cover;
-      background-position: center;
-      color: var(--glow-white);
+      background-color: #f9f9f9;
+      color: var(--charcoal-black);
     }
 
     .hero-contact h1 {
       font-family: 'Cinzel', serif;
-      font-size: 3rem;
-      text-shadow: var(--hero-text-glow);
+      font-size: 2.6rem;
     }
 
     .hero-contact p {
       font-size: 1.2rem;
-      color: #C7E9E9;
+      color: #555;
       margin-top: 1rem;
     }
 
@@ -114,13 +111,13 @@
 
     .contact-intro h2 {
       font-family: 'Cinzel', serif;
-      font-size: 2.4rem;
-      color: var(--glow-white);
+      font-size: 2rem;
+      color: var(--charcoal-black);
     }
 
     .contact-intro p {
       font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.85);
+      color: #555;
     }
 
     .contact-cards {
@@ -131,42 +128,39 @@
     }
 
     .contact-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: #ffffff;
       border-radius: 12px;
       padding: 30px 20px;
       text-align: center;
-      border: 1px solid rgba(58, 227, 248, 0.15);
+      border: 1px solid #e0e0e0;
       transition: all 0.3s ease;
     }
 
     .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(58, 227, 248, 0.25);
-      border-color: rgba(58, 227, 248, 0.4);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     }
 
     .contact-card i {
       font-size: 2rem;
-      color: var(--aqua-glow);
+      color: var(--hero-teal);
       margin-bottom: 15px;
     }
 
     .contact-card h3 {
-      color: var(--glow-white);
       font-size: 1.3rem;
       margin-bottom: 10px;
     }
 
     .contact-card p {
-      color: rgba(255, 255, 255, 0.85);
+      color: #555;
       font-size: 0.95rem;
     }
 
     .contact-form {
-      background: rgba(255, 255, 255, 0.05);
+      background: #ffffff;
       padding: 40px;
       border-radius: 12px;
-      border: 1px solid rgba(58, 227, 248, 0.2);
+      border: 1px solid #e0e0e0;
     }
 
     .form-group {
@@ -176,17 +170,15 @@
     label {
       display: block;
       margin-bottom: 8px;
-      color: var(--aqua-glow);
+      color: var(--charcoal-black);
     }
 
     input,
     textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid rgba(58, 227, 248, 0.3);
+      border: 1px solid #ccc;
       border-radius: 8px;
-      background: rgba(6, 30, 34, 0.4);
-      color: white;
       font-family: 'Outfit', sans-serif;
     }
 
@@ -197,9 +189,9 @@
     .cta-button {
       width: 100%;
       padding: 14px;
-      background-color: transparent;
-      color: #FFDED3;
-      border: 1px solid rgba(233, 79, 61, 0.6);
+      background-color: var(--hero-teal);
+      color: #fff;
+      border: none;
       border-radius: 10px;
       font-family: 'Cinzel', serif;
       text-transform: uppercase;
@@ -209,17 +201,15 @@
     }
 
     .cta-button:hover {
-      background: var(--burnt-coral);
-      color: #fff;
-      box-shadow: 0 0 20px rgba(233, 79, 61, 0.6);
+      background: var(--hero-dark-teal);
     }
 
     footer {
       margin-top: 80px;
       padding: 60px 5%;
       text-align: center;
-      background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
-      color: var(--muted-aqua);
+      background: #f3f3f3;
+      color: #444;
     }
 
     .legal-links {
@@ -231,7 +221,7 @@
     }
 
     .legal-links a {
-      color: var(--muted-aqua);
+      color: #444;
       text-decoration: none;
     }
 
