@@ -1,420 +1,876 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="We build tools for people who lead. Explore the philosophy behind Tempest Labs, structure-first software for fast-moving minds." />
-  <title>About | Tempest Labs</title>
-  <link rel="icon" href="images/tempest.png" type="image/x-icon" />
-
-  <!-- Fonts and Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Tempest Labs, hızlı düşünenler için yapı-önce yazılım araçları geliştirir. Vizyonumuz ve felsefemiz hakkında daha fazla bilgi edinin.">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="image" href="/images/heroabout.webp" type="image/webp">
+  <link rel="preload" as="image" href="/images/abouthero1.webp" type="image/webp">
+  <link rel="preload" as="image" href="/images/about2hero.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Preload fonts with font-display: swap -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Tempest Labs hakkında, üretkenlik araçları, yazılım felsefesi, tek seferlik satın alma uygulamaları">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Hakkında | Tempest Labs - Üretken Profesyoneller İçin Güçlü Araçlar">
+  <meta property="og:description" content="Tempest Labs, hızlı düşünenler için yapı-önce yazılım araçları geliştirir. Vizyonumuz ve felsefemiz hakkında daha fazla bilgi edinin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tempestlabs.com/turkish/about.html">
+  <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hakkında | Tempest Labs">
+  <meta name="twitter:description" content="Hızlı düşünenler için yapı-önce yazılım. Felsefemiz ve yaklaşımımız hakkında bilgi edinin.">
+  <meta name="twitter:image" content="https://tempestlabs.com/images/social-preview.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tempestlabs.com/turkish/about.html">
+  
+  <title>Hakkında | Tempest Labs | Üretken Profesyoneller İçin Güçlü Araçlar</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/images/tempest.png" type="image/x-icon">
+  
+  <!-- Preload Font Awesome with media query to prevent render-blocking -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  
+  <!-- Inline Critical CSS -->
   <style>
+    /* ================================= */
+    /* TEMPEST LABS ABOUT - OPTIMIZED */
+    /* ================================= */
     :root {
       --deep-teal: #01343E;
+      --aqua-glow: #00F0FF;
+      --muted-aqua: #66FCFF;
+      --glow-white: #A3FAFF;
+      --charcoal-black: #04191C;
+      --burnt-coral: #F74141;
       --hero-teal: #0A9DB7;
       --hero-dark-teal: #055B6D;
-      --aqua-glow: #00F0FF;
-      --charcoal-black: #04191C;
-      --glow-white: #A3FAFF;
+      
+      --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+      --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+      --transition-speed: 0.3s ease-out;
+      --glass-effect: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
     }
 
     body {
-      margin: 0;
-      padding-top: 80px;
-      font-family: 'Inter', sans-serif;
-      background: #f9fafa;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      background-color: #f8f9fa;
       color: var(--charcoal-black);
-      line-height: 1.7;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
+    /* Header - Consistent with main page */
     header {
       padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       position: fixed;
       width: 100%;
       top: 0;
+      left: 0;
       z-index: 1000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, background, box-shadow;
+    }
+
+    header.scrolled {
+      padding: 0.75rem 5%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--charcoal-black);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       text-decoration: none;
+      will-change: transform;
     }
 
     .logo span {
       color: var(--hero-teal);
+      position: relative;
+    }
+
+    .logo span::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--hero-teal);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+
+    .logo:hover span::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
-      margin: 0;
-      padding: 0;
     }
 
-    nav a {
-      text-decoration: none;
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
       color: var(--charcoal-black);
+      font-size: 1rem;
       font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all var(--transition-speed);
+      text-decoration: none;
+      position: relative;
+      will-change: transform, color;
     }
 
-    nav a:hover {
+    nav ul li a:hover {
       color: var(--hero-teal);
+      transform: translateY(-2px);
     }
 
+    nav ul li a::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--hero-teal);
+      transition: width 0.4s ease;
+    }
+
+    nav ul li a:hover::before {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      position: relative;
+      will-change: transform;
+    }
+
+    .menu-toggle i {
+      font-size: 1.5rem;
+      color: var(--charcoal-black);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle .fa-times {
+      display: none;
+    }
+
+    .menu-toggle.active .fa-bars {
+      display: none;
+    }
+
+    .menu-toggle.active .fa-times {
+      display: block;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-left: 2rem;
+    }
+
+    .social-icons a {
+      color: var(--charcoal-black);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      will-change: transform;
+    }
+
+    .social-icons a:hover {
+      color: var(--hero-teal);
+      transform: translateY(-2px);
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      will-change: opacity, visibility;
+    }
+
+    .menu-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hero Section */
     .hero-about {
+      padding: 12rem 5% 6rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 10rem 5% 6rem;
       background-color: white;
       gap: 3rem;
+      position: relative;
+      overflow: hidden;
     }
-    img, a, button {
-  transition: all 0.3s ease;
-}
 
+    .hero-about::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
 
     .hero-about-text {
       flex: 1 1 480px;
       max-width: 600px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-about-text h1 {
-      font-size: 3rem;
-      margin-bottom: 1.2rem;
-      background: linear-gradient(to right, var(--charcoal-black), var(--hero-teal));
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(90deg, var(--charcoal-black), var(--hero-dark-teal));
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+    }
+
+    .hero-about-text h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      border-radius: 2px;
     }
 
     .hero-about-text p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 2vw, 1.25rem);
       color: #444;
       margin-bottom: 2rem;
+      line-height: 1.6;
     }
 
     .hero-about-img {
       flex: 1 1 400px;
+      position: relative;
+      z-index: 1;
+      perspective: 1000px;
+      will-change: transform;
     }
 
-  .hero-about-img img {
-  width: 80%; /* Shrink size */
-  max-width: 400px; /* Limit width */
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.hero-about-img img:hover,
-.section-image img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.05);
-}
-
-    
-    .section {
-      padding: 5rem 5%;
-      max-width: 1000px;
-      margin: auto;
+    .hero-about-img img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      loading: lazy;
+      will-change: transform, box-shadow;
     }
 
-    .section img {
+    .hero-about-img:hover img {
+      transform: translateY(-10px) rotateY(5deg);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* About Sections */
+    .about-section {
+      padding: 6rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .about-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 960px;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+      z-index: 0;
     }
 
-    .section h2 {
-      font-size: 2rem;
+    .section-split {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      margin-bottom: 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-split.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .section-content {
+      flex: 1 1 480px;
+      max-width: 600px;
+    }
+
+    .section-content h2 {
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
       margin-bottom: 1.5rem;
+      color: var(--charcoal-black);
+      position: relative;
+    }
+
+    .section-content h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      border-radius: 2px;
+    }
+
+    .section-content h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
       color: var(--charcoal-black);
     }
 
-    .section p {
-      font-size: 1.1rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .grid-box {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      border-top: 4px solid var(--hero-teal);
-    }
-
-    .grid-box h3 {
-      font-size: 1.25rem;
-      color: var(--charcoal-black);
-      margin-bottom: 0.75rem;
-    }
-
-    .grid-box p {
+    .section-content p {
       font-size: 1rem;
       color: #444;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
 
+    .section-content a {
+      color: var(--hero-teal);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .section-content a:hover {
+      color: var(--hero-dark-teal);
+      text-decoration: underline;
+    }
+
+    .section-image {
+      flex: 1 1 400px;
+      max-width: 500px;
+      position: relative;
+      perspective: 1000px;
+      will-change: transform;
+    }
+
+    .section-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      loading: lazy;
+      will-change: transform, box-shadow;
+    }
+
+    .section-image:hover img {
+      transform: translateY(-10px) rotateY(5deg);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer - Consistent with main page */
     footer {
-      background: var(--charcoal-black);
+      padding: 5rem 5% 2.5rem;
+      background-color: var(--charcoal-black);
       color: white;
-      padding: 4rem 5% 2rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
     }
 
     .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+      gap: 2.5rem;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     .footer-column h3 {
       color: white;
-      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--hero-teal);
+    }
+
+    .footer-column p {
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
     .footer-column a {
-      color: rgba(255, 255, 255, 0.75);
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
       text-decoration: none;
+      will-change: transform, color;
     }
 
     .footer-column a:hover {
       color: white;
+      transform: translateX(5px);
     }
 
     .footer-bottom {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      margin-top: 2rem;
-      padding-top: 1rem;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1rem;
     }
 
     .legal-links {
       display: flex;
       justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
       flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.9rem;
     }
 
     .legal-links a {
       color: rgba(255, 255, 255, 0.6);
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      will-change: color;
     }
 
     .legal-links a:hover {
       color: white;
     }
 
-    @media (max-width: 768px) {
-      .hero-about {
-        flex-direction: column;
-        text-align: center;
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .menu-toggle {
+        display: block;
       }
-
+      
       nav ul {
-        flex-wrap: wrap;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+      
+      nav ul.active {
+        right: 0;
+      }
+      
+      .social-icons {
+        margin-left: 0;
+        margin-top: 2rem;
         justify-content: center;
+        width: 100%;
+      }
+      
+      .hero-about-img img,
+      .section-image img {
+        width: 100%;
+        max-width: 100%;
       }
     }
 
-.section-split {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: auto;
-}
+    @media (max-width: 768px) {
+      .hero-about {
+        padding: 10rem 5% 4rem;
+        text-align: center;
+      }
+      
+      .hero-about-text {
+        text-align: center;
+      }
+      
+      .hero-about-text h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .hero-about-img {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .about-section {
+        padding: 4rem 5%;
+      }
+      
+      .section-split {
+        text-align: center;
+      }
+      
+      .section-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
 
-.section-split.reverse {
-  flex-direction: row-reverse;
-}
+    @media (max-width: 480px) {
+      .hero-about {
+        padding: 8rem 5% 3rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .legal-links {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
 
-.section-content {
-  flex: 1 1 480px;
-  max-width: 600px;
-}
-
-.section-image {
-  flex: 1 1 400px;
-  max-width: 500px;
-}
-
-.section-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-@media (max-width: 768px) {
-  .section-split,
-  .section-split.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .section-content,
-  .section-image {
-    max-width: 100%;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-@media (max-width: 768px) {
-  .hero-about-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-about-text p {
-    font-size: 1rem;
-  }
-
-  .hero-about-img img {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-    
+    /* Mobile Touch Improvements */
+    @media (hover: none) {
+      .hero-about-img:hover img,
+      .section-image:hover img {
+        transform: none;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Header Section -->
+  <header role="banner">
+    <a class="logo" href="/turkish/index.html" aria-label="Tempest Labs Ana Sayfa">
+      Tempest <span>Labs</span>
+    </a>
+    
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Navigasyon menüsünü aç/kapat" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-times"></i>
+    </button>
 
-<header>
-  <a class="logo" href="/turkish/index.html">Tempest <span>Labs</span></a>
-  <nav>
-<ul>
-  <li><a href="/turkish/about.html">Hakkında</a></li>
-  <li><a href="/turkish/products.html">Ürünler</a></li>
-  <li><a href="/turkish/contact.html">İletişim</a></li>
-  <li><a href="/turkish/blog.html">Blog</a></li>
-  <li><a href="https://tempestlabs.space/">İngilizce</a></li>
-</ul>
+    <nav role="navigation">
+      <ul>
+        <li><a href="/turkish/about.html" aria-current="page" aria-label="Tempest Labs Hakkında">Hakkında</a></li>
+        <li><a href="/turkish/products.html" aria-label="Ürünlerimizi görüntüleyin">Ürünler</a></li>
+        <li><a href="/turkish/contact.html" aria-label="Bizimle iletişime geçin">İletişim</a></li>
+        <li><a href="/turkish/blog.html" aria-label="Blogumuzu okuyun">Blog</a></li>
+        <li><a href="/" aria-label="İngilizce görüntüle">EN</a></li>
+      </ul>
+      
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </nav>
+  </header>
 
-  </nav>
-</header>
+  <!-- Mobile Menu Backdrop -->
+  <div class="menu-backdrop" onclick="toggleMenu()"></div>
 
-<section class="hero-about">
-<div class="hero-about-text">
-  <h1>Önderlik Yapanlar İçin Araçlar</h1>
-  <p>Tempest Labs, keskin düşünürler için yapı odaklı araçlar geliştirir. Eğer liderlik yapıyorsanız, organize ediyorsanız, göndermeler yapıyorsanız veya strateji oluşturuyorsanız, yazılımımız size sisleri arındırarak kesin bir şekilde ilerlemenizi sağlar.</p>
-</div>
-
-  <div class="hero-about-img">
-    <img src="/images/heroabout.webp" alt="Clarity and execution abstract image" />
-  </div>
-</section>
-
-<section class="section section-split">
-   <div class="section-image">
-    <img src="/images/abouthero1.webp" alt="Visual representing our philosophy" />
-  </div>
-  <div class="section-content">
-  <h2>Misyonumuz</h2>
-  <p>İstanbul merkezli Tempest Labs, hızlı düşünen insanlar için sade ve işlevsel araçlar geliştiren, tasarımı odağına alan bir yazılım stüdyosudur. Kaosun ve bilgi kalabalığının hâkim olduğu bir dünyada, odağımız netlik sağlamak — dikkat dağıtmak değil.</p>
-  <p>Bizim için verimlilik, daha fazla iş yapmak değil; neyin önemli olduğunu bilmek, gereksiz olanı elemek ve kararlılıkla ilerlemektir. Ürünlerimiz size daha iyi düşünme, daha hızlı yapı kurma ve net bir şekilde uygulama imkânı sunar.</p>
-</div>
-
-</section>
-
-<section class="section section-split reverse">
-    <div class="section-image">
-    <img src="/images/about2hero.webp" alt="Clean interface concept" />
-  </div>
- <div class="section-content">
-  <h2>Bizi Farklı Kılan Nedir?</h2>
-  
-  <h3>Tek Seferlik Satın Alma</h3>
-  <p>Bir kez ödeyin, sonsuza kadar sizin olsun. Size kendi zihninizi kiralamıyoruz. Abonelik yok, asla olmayacak.</p>
-  
-  <h3>Gereksiz Yük Yok, Gürültü Yok</h3>
-  <p>Her özellik düşünme sürecinizi desteklemek için var. Bildirimler, rahatsız edici uyarılar ya da manipülatif tasarımlar yok — sadece işinize yarayan araçlar.</p>
-  
-  <h3>Netlik İçin Tasarlandı</h3>
-  <p>Arayüzden veri yapısına kadar her şey, sürtünmeyi azaltmak ve akışı hızlandırmak için tasarlandı.</p>
-</div>
-
-
-</section>
-
-<section class="section">
-  <h2>Kurucuyla Tanışın</h2>
-  <p><strong>İlke Candan Bengi</strong>, yapıyı ve sezgiyi bir araya getiren bir araştırmacı ve yaratıcıdır. Malzeme bilimi, yapay zeka ve ürün geliştirme alanlarındaki geçmişiyle, Tempest Labs’in her ürününe netlik ve özen kazandırır.</p>
-  <p>İstanbul’da yaşayan İlke, en iyi araçların zamanınıza, mahremiyetinize ve zihinsel alanınıza saygı duyan araçlar olduğuna inanır. Çalışmalarını yönlendiren temel ilke şudur: Tasarım beyninize hizmet etmeli, onunla yarışmamalıdır.</p>
-  <p><a href="https://ilkecandanbengi.com/" target="_blank" rel="noopener noreferrer">Web sitesini ziyaret et →</a></p>
-</section>
-
-
-<footer>
-  <div class="footer-content">
-    <div class="footer-column">
-      <h3><a href="/turkish/about.html">About</a></h3>
-<p>Net düşünce ve berrak bir vizyon için araçlar üretiyoruz.</p>
+  <!-- Hero Section -->
+  <section class="hero-about" role="main">
+    <div class="hero-about-text">
+      <h1>Önderlik Yapanlar İçin Araçlar</h1>
+      <p>Tempest Labs, keskin düşünürler için yapı odaklı araçlar geliştirir. Eğer liderlik yapıyorsanız, organize ediyorsanız, göndermeler yapıyorsanız veya strateji oluşturuyorsanız, yazılımımız size sisleri arındırarak kesin bir şekilde ilerlemenizi sağlar.</p>
     </div>
-    <div class="footer-column">
-<h3><a href="/turkish/products.html">Ürünler</a></h3>
-      <a href="/turkish/product-intuiva.html">Intuiva</a>
-      <a href="/turkish/product-funnelflow.html">FunnelFlow</a>
+    <div class="hero-about-img">
+      <img src="/images/heroabout.webp" alt="Netlik ve uygulama soyut görseli" width="800" height="600" loading="lazy">
     </div>
-    <div class="footer-column">
-      <h3><a href="/turkish/contact.html">Connect</a></h3>
-      <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank">YouTube</a>
-    </div>
-  </div>
- <div class="footer-bottom">
-            <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
-            <div class="legal-links">
-                <a href="legal/membership-agreement.html">Üyelik Sözleşmesi</a>
-                <a href="legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
-                <a href="legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
-            </div>
-        </div>
-</footer>
+  </section>
 
+  <!-- About Sections -->
+  <section class="about-section">
+    <div class="section-split">
+      <div class="section-image">
+        <img src="/images/abouthero1.webp" alt="Felsefemizi temsil eden görsel" width="800" height="600" loading="lazy">
+      </div>
+      <div class="section-content">
+        <h2>Neden Varız?</h2>
+        <p>İstanbul merkezli Tempest Labs, hızlı düşünen insanlar için sade ve işlevsel araçlar geliştiren, tasarımı odağına alan bir yazılım stüdyosudur. Kaosun ve bilgi kalabalığının hâkim olduğu bir dünyada, odağımız netlik sağlamak — dikkat dağıtmak değil.</p>
+        <p>Bizim için verimlilik, daha fazla iş yapmak değil; neyin önemli olduğunu bilmek, gereksiz olanı elemek ve kararlılıkla ilerlemektir. Ürünlerimiz size daha iyi düşünme, daha hızlı yapı kurma ve net bir şekilde uygulama imkânı sunar.</p>
+      </div>
+    </div>
+
+    <div class="section-split reverse">
+      <div class="section-image">
+        <img src="/images/about2hero.webp" alt="Temiz arayüz konsepti" width="800" height="600" loading="lazy">
+      </div>
+      <div class="section-content">
+        <h2>Bizi Farklı Kılan Nedir?</h2>
+        <h3>Tek Seferlik Satın Alma</h3>
+        <p>Bir kez ödeyin, sonsuza kadar sizin olsun. Size kendi zihninizi kiralamıyoruz. Abonelik yok, asla olmayacak.</p>
+        <h3>Gereksiz Yük Yok, Gürültü Yok</h3>
+        <p>Her özellik düşünme sürecinizi desteklemek için var. Bildirimler, rahatsız edici uyarılar ya da manipülatif tasarımlar yok — sadece işinize yarayan araçlar.</p>
+        <h3>Netlik İçin Tasarlandı</h3>
+        <p>Arayüzden veri yapısına kadar her şey, sürtünmeyi azaltmak ve akışı hızlandırmak için tasarlandı.</p>
+      </div>
+    </div>
+
+    <div class="section-split">
+      <div class="section-content">
+        <h2>Kurucuyla Tanışın</h2>
+        <p><strong>İlke Candan Bengi</strong>, yapıyı ve sezgiyi bir araya getiren bir araştırmacı ve yaratıcıdır. Malzeme bilimi, yapay zeka ve ürün geliştirme alanlarındaki geçmişiyle, Tempest Labs'in her ürününe netlik ve özen kazandırır.</p>
+        <p>İstanbul'da yaşayan İlke, en iyi araçların zamanınıza, mahremiyetinize ve zihinsel alanınıza saygı duyan araçlar olduğuna inanır. Çalışmalarını yönlendiren temel ilke şudur: Tasarım beyninize hizmet etmeli, onunla yarışmamalıdır.</p>
+        <p><a href="https://ilkecandanbengi.com/" target="_blank" rel="noopener noreferrer">Web sitesini ziyaret et →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3><a href="/turkish/about.html">Hakkında</a></h3>
+        <p>Net düşünce ve berrak bir vizyon için araçlar üretiyoruz.</p>
+      </div>
+      <div class="footer-column">
+        <h3><a href="/turkish/products.html">Ürünler</a></h3>
+        <a href="/turkish/product-intuiva.html">Intuiva</a>
+        <a href="/turkish/product-funnelflow.html">FunnelFlow</a>
+      </div>
+      <div class="footer-column">
+        <h3><a href="/turkish/blog.html">İçgörüler</a></h3>
+        <a href="/turkish/blog.html">Blog</a>
+        <a href="#use-cases">Vaka Çalışmaları</a>
+        <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">Felsefemiz</a>
+      </div>
+      <div class="footer-column">
+        <h3>Bağlantı</h3>
+        <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+      <div class="footer-column">
+        <h3>İletişim</h3>
+        <a href="/turkish/contact.html">İstanbul, Zeytinburnu</a>
+        <a href="tel:+905075275600">+90 507 527 56 00</a>
+        <a href="mailto:info@tempestlabs.com">info@tempestlabs.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
+      <div class="legal-links">
+        <a href="legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+        <a href="legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
+        <a href="legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Tempest Labs Hakkında",
+    "description": "Hızlı düşünenler için yapı-önce yazılım. Felsefemiz ve yaklaşımımız hakkında bilgi edinin.",
+    "url": "https://tempestlabs.com/turkish/about.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tempest Labs",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tempestlabs.com/images/tempest.png"
+      }
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "İlke Candan Bengi",
+      "url": "https://ilkecandanbengi.com/",
+      "jobTitle": "Kurucu"
+    }
+  }
+  </script>
+
+  <!-- JavaScript -->
+  <script>
+  // Immediately invoked function for critical functionality
+  (function() {
+      // Set initial header state
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+      }
+      
+      // Mobile menu toggle
+      function toggleMenu() {
+          const menu = document.querySelector("nav ul");
+          const toggle = document.querySelector(".menu-toggle");
+          const backdrop = document.querySelector(".menu-backdrop");
+          
+          menu.classList.toggle("active");
+          toggle.classList.toggle("active");
+          backdrop.classList.toggle("active");
+          document.body.classList.toggle("menu-open");
+          
+          // Update aria-expanded attribute
+          const isExpanded = toggle.classList.contains("active");
+          toggle.setAttribute("aria-expanded", isExpanded);
+      }
+      
+      // Add scroll effect to header
+      window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+              header.classList.add('scrolled');
+          } else {
+              header.classList.remove('scrolled');
+          }
+      });
+      
+      // Initialize mobile menu toggle
+      document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+      document.querySelector('.menu-toggle').addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+              toggleMenu();
+          }
+      });
+
+      // Add animation to elements when they come into view
+      const animateOnScroll = function() {
+          const elements = document.querySelectorAll('.section-split');
+          
+          elements.forEach(element => {
+              const elementPosition = element.getBoundingClientRect().top;
+              const windowHeight = window.innerHeight;
+              
+              if (elementPosition < windowHeight - 100) {
+                  element.style.opacity = '1';
+                  element.style.transform = 'translateY(0)';
+              }
+          });
+      };
+
+      // Set initial state for animated elements
+      document.querySelectorAll('.section-split').forEach(element => {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(20px)';
+          element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+
+      // Add scroll event listener for animations
+      window.addEventListener('scroll', animateOnScroll);
+      window.addEventListener('load', animateOnScroll);
+  })();
+  </script>
+  
+  <!-- Preload main JS file -->
+  <link rel="preload" href="/js/main.min.js" as="script">
+  <script src="/js/main.min.js" defer></script>
 </body>
 </html>
