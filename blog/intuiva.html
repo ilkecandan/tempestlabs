@@ -1,1 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Discover how Intuiva transforms half-formed ideas into structured projects with adaptive guidance and visual roadmaps.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="images/intuiva-project-preview.jpg" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload fonts with font-display: swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="project planning, idea organization, visual roadmaps, Intuiva, Tempest Labs">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="From Mental Clutter to Structured Clarity with Intuiva | Tempest Labs">
+    <meta property="og:description" content="How adaptive questioning and visual roadmaps transform half-formed ideas into executable plans">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tempestlabs.com/blog/intuiva-project-structure">
+    <meta property="og:image" content="https://tempestlabs.com/images/intuiva-project-preview.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="From Mental Clutter to Structured Clarity with Intuiva">
+    <meta name="twitter:description" content="Transform half-formed ideas into executable plans with adaptive guidance">
+    <meta name="twitter:image" content="https://tempestlabs.com/images/intuiva-project-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tempestlabs.com/blog/intuiva-project-structure">
+    
+    <title>From Mental Clutter to Structured Clarity with Intuiva | Tempest Labs</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    
+    <!-- Preload Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/min.css"></noscript>
+    
+    <!-- Inline Critical CSS -->
+    <style>
+        /* ================================= */
+        /* TEMPEST LABS BLOG - OPTIMIZED */
+        /* ================================= */
+        :root {
+            --deep-teal: #01343E;
+            --aqua-glow: #00F0FF;
+            --muted-aqua: #66FCFF;
+            --glow-white: #A3FAFF;
+            --charcoal-black: #04191C;
+            --burnt-coral: #F74141;
+            --hero-teal: #0A9DB7;
+            --hero-dark-teal: #055B6D;
+            
+            --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+            --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+            --transition-speed: 0.3s ease-out;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            background-color: white;
+            color: var(--charcoal-black);
+            line-height: 1.6;
+            letter-spacing: 0.2px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Header - Consistent with main page */
+        header {
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, background, box-shadow;
+        }
+
+        header.scrolled {
+            padding: 0.75rem 5%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--charcoal-black);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            will-change: transform;
+        }
+
+        .logo span {
+            color: var(--hero-teal);
+            position: relative;
+        }
+
+        .logo span::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--hero-teal);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--charcoal-black);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all var(--transition-speed);
+            text-decoration: none;
+            position: relative;
+            will-change: transform, color;
+        }
+
+        nav ul li a:hover {
+            color: var(--hero-teal);
+            transform: translateY(-2px);
+        }
+
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--hero-teal);
+            transition: width 0.4s ease;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            will-change: transform;
+        }
+
+        .menu-toggle i {
+            font-size: 1.5rem;
+            color: var(--charcoal-black);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle .fa-times {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-bars {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-times {
+            display: block;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+
+        .social-icons a {
+            color: var(--charcoal-black);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: transform;
+        }
+
+        .social-icons a:hover {
+            color: var(--hero-teal);
+            transform: translateY(-2px);
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            will-change: opacity, visibility;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Blog Content Styles */
+        .blog-container {
+            padding: 12rem 5% 6rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .blog-header {
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .blog-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal-black);
+            position: relative;
+        }
+
+        .blog-header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            border-radius: 2px;
+        }
+
+        .blog-header .subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.8rem;
+            color: #444;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-content em {
+            color: var(--hero-dark-teal);
+            font-style: italic;
+        }
+
+        .blog-content strong {
+            color: var(--hero-teal);
+            font-weight: 600;
+        }
+
+        .blog-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal-black);
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        .blog-content h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            border-radius: 2px;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content ul li::before {
+            content: "→";
+            color: var(--hero-teal);
+            position: absolute;
+            left: 0;
+        }
+
+        .blog-content a {
+            color: var(--hero-teal);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-content a:hover {
+            color: var(--hero-dark-teal);
+            text-decoration: underline;
+        }
+
+        .case-study {
+            background: rgba(10, 157, 183, 0.05);
+            border-left: 4px solid var(--hero-teal);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study h3 {
+            color: var(--hero-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .intuiva-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(10, 157, 183, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--hero-teal);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .process-steps {
+            counter-reset: step-counter;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .process-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--hero-teal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .tool-list {
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .tool-list {
+                columns: 1;
+            }
+        }
+
+        .share-buttons {
+            margin-top: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .share-button {
+            background: white;
+            color: var(--charcoal-black);
+            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .share-button:hover {
+            background: var(--hero-teal);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 157, 183, 0.2);
+            border-color: transparent;
+        }
+
+        .share-button i {
+            font-size: 1rem;
+        }
+
+        /* Footer - Consistent with main page */
+        footer {
+            padding: 5rem 5% 2.5rem;
+            background-color: var(--charcoal-black);
+            color: white;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--hero-teal);
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-column a {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: transform, color;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: color;
+        }
+
+        .legal-links a:hover {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .social-icons {
+                margin-left: 0;
+                margin-top: 2rem;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 10rem 5% 4rem;
+            }
+            
+            .blog-content {
+                padding: 2rem;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-container {
+                padding: 8rem 5% 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header role="banner">
+        <a class="logo" href="index.html" aria-label="Tempest Labs Home">
+            Tempest <span>Labs</span>
+        </a>
+        
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <nav role="navigation">
+            <ul>
+                <li><a href="about.html" aria-label="About Tempest Labs">About</a></li>
+                <li><a href="products.html" aria-label="View our products">Products</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="blog.html" aria-current="page" aria-label="Read our blog">Blog</a></li>
+                <li><a href="turkish/index.html" aria-label="View in Turkish">TR</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Blog Content -->
+    <main class="blog-container" role="main">
+        <header class="blog-header">
+            <h1>From Mental Clutter to Structured Clarity with Intuiva</h1>
+            <p class="subtitle">How adaptive questioning and visual roadmaps transform half-formed ideas into executable plans</p>
+        </header>
+
+        <article class="blog-content">
+            <p>Every meaningful project begins as a swirl of possibilities—a product idea, a book concept, a new service. But between that initial spark and actual execution lies what we call "the messy middle"—where excitement meets overwhelm, and clarity feels just out of reach.</p>
+
+            <p>Intuiva was designed specifically for this creative limbo. Unlike rigid templates that force premature structure or blank canvases that offer no guidance, Intuiva meets you where your thinking is—whether that's a fully formed concept or just a gut feeling something should exist.</p>
+
+            <h2>How Intuiva Structures Projects Differently</h2>
+            <p>Traditional project tools assume you already know what needs to be done. Intuiva recognizes that most important work begins with uncertainty. Here's how the process works:</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>Start With Your Goal</h3>
+                    <p>You describe what you're trying to achieve in plain language—no business jargon required. "Launch a podcast" or "Redesign our onboarding flow" are perfect starting points.</p>
+                </div>
+
+                <div class="process-step">
+                    <h3>Answer Adaptive Questions</h3>
+                    <p>Intuiva asks strategic questions tailored to your goal. For a product launch, it might surface considerations like compliance requirements or beta testing you hadn't accounted for.</p>
+                </div>
+
+                <div class="process-step">
+                    <h3>Generate a Visual Roadmap</h3>
+                    <p>The system organizes your inputs into clear phases with suggested timeframes. You can adjust durations, add/remove steps, or reorganize the flow as needed.</p>
+                </div>
+
+                <div class="process-step">
+                    <h3>Work in Your Preferred View</h3>
+                    <p>Switch between timeline, Kanban, or outline formats depending on whether you're planning, executing, or presenting to stakeholders.</p>
+                </div>
+            </div>
+           <p> Remember, this is an exemplary case. </p>
+            <h2>Case Study: Launching a New SaaS Product with Intuiva</h2>
+            <div class="case-study">
+                <h3>TinyStock: Inventory Management for Small Shops</h3>
+                <p><strong>Challenge:</strong> Tina, a UX designer and solo founder, had wireframes and beta testers for her SaaS product but lacked a clear launch plan. Traditional tools left her feeling more lost.</p>
+                
+                <p><strong>Intuiva's Role:</strong> The system guided her through often-overlooked launch components through questions like:</p>
+                
+                <ul>
+                    <li>"Have you accounted for onboarding materials?"</li>
+                    <li>"Do you need legal/compliance steps before going live?"</li>
+                    <li>"What's your backup plan if payment integration fails?"</li>
+                </ul>
+                
+                <p><strong>Outcome:</strong> In one weekend, Tina transformed vague notes into:</p>
+                <ul>
+                    <li>A visual roadmap covering development, marketing, and launch prep</li>
+                    <li>A Kanban board for daily execution</li>
+                    <li>A polished project brief for her copywriter collaborator</li>
+                </ul>
+                
+                <p>"Planning used to feel like procrastination. With Intuiva, it felt like forward motion," she noted. Her product launched smoothly within four weeks with all critical systems in place.</p>
+            </div>
+
+            <h2>Key Features That Make Intuiva Unique</h2>
+            <div class="intuiva-features">
+                <div class="feature-card">
+                    <h3>Backcasting Mode</h3>
+                    <p>Work backward from your deadline to automatically calculate realistic phase durations and task dependencies.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Context-Aware Prompts</h3>
+                    <p>The system surfaces relevant questions based on your project type—technical, creative, operational, etc.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Exportable Plans</h3>
+                    <p>Generate polished PDFs, presentations, or task lists to share with collaborators who aren't using Intuiva.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Progress Visualization</h3>
+                    <p>See at a glance which phases are on track, which need attention, and where bottlenecks are forming.</p>
+                </div>
+            </div>
+
+            <h2>When Intuiva Shines Brightest</h2>
+            <p>While flexible enough for any project, Intuiva is particularly valuable for:</p>
+
+            <ul>
+                <li><strong>Solo creators</strong> who lack teams to bounce ideas off</li>
+                <li><strong>Cross-functional initiatives</strong> that span multiple domains</li>
+                <li><strong>Early-stage ideas</strong> that haven't found their shape yet</li>
+                <li><strong>Complex projects</strong> with many moving parts</li>
+            </ul>
+
+            <h2>From Overwhelm to Ownership</h2>
+            <p>The greatest barrier to starting meaningful work isn't laziness—it's the cognitive load of holding all the pieces in your head. Intuiva externalizes that mental model, giving you space to think strategically rather than just remember details.</p>
+
+            <p>As one user put it: "I didn't realize how much mental energy I was wasting trying to keep track of everything until Intuiva took that burden away. Now I can actually focus on doing the work instead of worrying I'm forgetting something."</p>
+
+            <div class="share-buttons">
+                <p style="width: 100%; text-align: center; margin-bottom: 1.5rem; color: var(--hero-dark-teal);">Share this post:</p>
+                <!-- Twitter Button -->
+                <a href="https://x.com/intent/tweet?text=From%20Mental%20Clutter%20to%20Structured%20Clarity%20with%20Intuiva&url=https%3A%2F%2Ftempestlabs.com%2Fblog%2Fintuiva-project-structure" target="_blank" class="share-button" rel="noopener noreferrer" aria-label="Share on Twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                
+                <!-- LinkedIn Button -->
+                <a href="#" onclick="shareOnLinkedIn(event)" class="share-button" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                
+                <!-- Email Button -->
+                <a href="mailto:?subject=From%20Mental%20Clutter%20to%20Structured%20Clarity%20with%20Intuiva&body=Read%20it%20here%3A%20https%3A%2F%2Ftempestlabs.com%2Fblog%2Fintuiva-project-structure" target="_blank" class="share-button" aria-label="Share via Email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><a href="about.html">About</a></h3>
+                <p>Creating tools for deeper thinking and clearer vision.</p>
+            </div>
+            <div class="footer-column">
+                <h3><a href="/products.html">Products</a></h3>
+                <a href="/product-intuiva.html">Intuiva</a>
+                <a href="https://tempestlabs.space/product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                <h3><a href="blog.html">Insights</a></h3>
+                <a href="blog.html">Blog</a>
+                <a href="#use-cases">Case Studies</a>
+                <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">Our Philosophy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <a href="contact.html">Istanbul, Zeytinburnu</a>
+                <a href="tel:+905075275600">+90 507 527 56 00</a>
+                <a href="mailto:info@tempestlabs.com">info@tempestlabs.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="legal/membership-agreement.html">Membership Agreement</a>
+                <a href="legal/kvkk-clarification.html">KVKK Clarification</a>
+                <a href="legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "From Mental Clutter to Structured Clarity with Intuiva",
+      "description": "How adaptive questioning and visual roadmaps transform half-formed ideas into executable plans",
+      "url": "https://tempestlabs.com/blog/intuiva-project-structure",
+      "datePublished": "2025-05-30",
+      "author": {
+        "@type": "Person",
+        "name": "İlke Candan Bengi",
+        "url": "https://ilkecandanbengi.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tempest Labs",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tempestlabs.com/images/tempest.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+    // Immediately invoked function for critical functionality
+    (function() {
+        // Set initial header state
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
+            
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+            
+            // Update aria-expanded attribute
+            const isExpanded = toggle.classList.contains("active");
+            toggle.setAttribute("aria-expanded", isExpanded);
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Initialize mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+        document.querySelector('.menu-toggle').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                toggleMenu();
+            }
+        });
+
+        // Guaranteed Working LinkedIn Share Function
+        function shareOnLinkedIn(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Customize these values
+            const shareData = {
+                url: 'https://tempestlabs.com/blog/intuiva-project-structure',
+                title: 'From Mental Clutter to Structured Clarity with Intuiva',
+                text: 'How adaptive questioning and visual roadmaps transform half-formed ideas into executable plans',
+                via: 'TempestLabs'
+            };
+            
+            // First try the most reliable method
+            const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareData.url)}`;
+            
+            // Window dimensions
+            const width = 600;
+            const height = 600;
+            const left = (screen.width - width) / 2;
+            const top = (screen.height - height) / 2;
+            
+            // Open the share window
+            const shareWindow = window.open(
+                linkedinShareUrl,
+                'LinkedInShareWindow',
+                `width=${width},height=${height},left=${left},top=${top}`
+            );
+            
+            // If popup was blocked, fallback to direct URL
+            if (!shareWindow || shareWindow.closed) {
+                window.location.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&summary=${encodeURIComponent(shareData.text)}&source=${encodeURIComponent(shareData.via)}`;
+            }
+            
+            return false;
+        }
+    })();
+    </script>
+    
+    <!-- Preload main JS file -->
+    <link rel="preload" href="js/main.min.js" as="script">
+    <script src="js/main.min.js" defer></script>
+</body>
+</html>
