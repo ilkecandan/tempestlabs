@@ -1,1314 +1,1212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="preload" as="image" href="images/hero-mythic-bg.webp" type="image/webp">
+    <meta name="description" content="Tempest Labs - Üretken profesyoneller için güçlü araçlar. Zihinsel karmaşayı net, uygulanabilir planlara dönüştürmenize yardımcı olan yazılımlar.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="../images/hero-dashboard.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload fonts with font-display: swap -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tempest Labs creates powerful, focused software for productive professionals. One-time purchase apps designed to streamline workflows and enhance productivity.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Tempest Labs, üretkenlik araçları, profesyonel yazılım, zihin haritalama, satış yönetimi">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tempest Labs - Power Tools for Productive Professionals">
-    <meta property="og:description" content="Clean, one-time-purchase tools that help you turn mental clutter into clear, actionable plans and manage your entire sales pipeline with visual precision.">
+    <meta property="og:title" content="Tempest Labs | Üretken Profesyoneller için Güçlü Araçlar">
+    <meta property="og:description" content="Zihinsel karmaşayı net, uygulanabilir planlara dönüştürmenize yardımcı olan sade, tek seferlik satın alınan araçlar.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tempestlabs.com">
-    <meta property="og:image" content="https://tempestlabs.com/images/social-preview.jpg">
+    <meta property="og:url" content="https://tempestlabs.com/turkish/index.html">
+    <meta property="og:image" content="https://tempestlabs.com/images/social-preview-home.jpg">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tempest Labs - Power Tools for Productive Professionals">
-    <meta name="twitter:description" content="No noise. No subscriptions. Just clarity, speed, and total control.">
-    <meta name="twitter:image" content="https://tempestlabs.com/images/social-preview.jpg">
+    <meta name="twitter:title" content="Tempest Labs | Üretken Profesyoneller için Güçlü Araçlar">
+    <meta name="twitter:description" content="Gürültü yok. Abonelik yok. Sadece netlik, hız ve tam kontrol.">
+    <meta name="twitter:image" content="https://tempestlabs.com/images/social-preview-home.jpg">
     
-    <!-- Canonical Link -->
-    <link rel="canonical" href="https://tempestlabs.com" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tempestlabs.com/turkish/index.html">
     
-    <title>Tempest Labs | Power Tools for Productive Professionals</title>
+    <title>Tempest Labs | Üretken Profesyoneller için Güçlü Araçlar</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="images/tempest.png" type="image/x-icon">
+    <link rel="icon" href="../images/tempest.png" type="image/x-icon">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Preload Font Awesome with media query to prevent render-blocking -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
     
-    <!-- CSS -->    
+    <!-- Inline Critical CSS -->
     <style>
-        /* ================================= */
-        /* TEMPEST LABS - FUTURISTIC REDESIGN */
-        /* ================================= */
+    /* ================================= */
+    /* TEMPEST LABS INDEX - OPTIMIZED */
+    /* ================================= */
+    :root {
+      --deep-teal: #01343E;
+      --aqua-glow: #00F0FF;
+      --muted-aqua: #66FCFF;
+      --glow-white: #A3FAFF;
+      --charcoal-black: #04191C;
+      --burnt-coral: #F74141;
+      --hero-teal: #0A9DB7;
+      --hero-dark-teal: #055B6D;
+      
+      --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+      --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+      --transition-speed: 0.3s ease-out;
+      --glass-effect: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      background-color: #f8f9fa;
+      color: var(--charcoal-black);
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Header - Consistent with products page */
+    header {
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, background, box-shadow;
+    }
+
+    header.scrolled {
+      padding: 0.75rem 5%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--charcoal-black);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      will-change: transform;
+    }
+
+    .logo span {
+      color: var(--hero-teal);
+      position: relative;
+    }
+
+    .logo span::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--hero-teal);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+
+    .logo:hover span::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
-        :root {
-            --deep-teal: #01343E;
-            --aqua-glow: #00F0FF;
-            --muted-aqua: #66FCFF;
-            --glow-white: #A3FAFF;
-            --charcoal-black: #04191C;
-            --burnt-coral: #F74141;
-            --hero-teal: #0A9DB7;
-            --hero-dark-teal: #055B6D;
-            
-            --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
-            --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
-            --transition-speed: 0.3s ease-out;
-            --glass-effect: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            background-color: #f8f9fa;
-            color: var(--charcoal-black);
-            line-height: 1.6;
-            letter-spacing: 0.2px;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Improved Header */
-        header {
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        header.scrolled {
-            padding: 0.75rem 5%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--charcoal-black);
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--hero-teal);
-            position: relative;
-        }
-
-        .logo span::after {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--hero-teal);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s ease;
-        }
-
-        .logo:hover span::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav ul li {
-            position: relative;
-        }
-
-        nav ul li a {
-            color: var(--charcoal-black);
-            font-size: 1rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: all var(--transition-speed);
-            text-decoration: none;
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: var(--hero-teal);
-            transform: translateY(-2px);
-        }
-
-        nav ul li a::before {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--hero-teal);
-            transition: width 0.4s ease;
-        }
-
-        nav ul li a:hover::before {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-            position: relative;
-        }
-
-        .menu-toggle i {
-            font-size: 1.5rem;
-            color: var(--charcoal-black);
-            transition: all 0.3s ease;
-        }
-
-        .menu-toggle .fa-times {
-            display: none;
-        }
-
-        .menu-toggle.active .fa-bars {
-            display: none;
-        }
-
-        .menu-toggle.active .fa-times {
-            display: block;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-left: 2rem;
-        }
-
-        .social-icons a {
-            color: var(--charcoal-black);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: var(--hero-teal);
-            transform: translateY(-2px);
-        }
-
-        .menu-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .menu-backdrop.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Enhanced Hero Section */
-        .hero-modern {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12rem 8% 6rem;
-            position: relative;
-            background-color: white;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero-image {
-            flex: 1;
-            max-width: 50%;
-            position: relative;
-            z-index: 1;
-            perspective: 1000px;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            transform-style: preserve-3d;
-            loading: lazy;
-        }
-
-        .hero-image:hover img {
-            transform: translateY(-10px) rotateY(5deg);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-modern h1 {
-            font-size: 3.75rem;
-            color: var(--charcoal-black);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            background: linear-gradient(90deg, var(--charcoal-black), var(--hero-dark-teal));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-        }
-
-        .hero-modern h1::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-            border-radius: 2px;
-        }
-
-        .hero-modern .hero-subtitle {
-            font-size: 1.25rem;
-            color: #444;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            font-weight: 400;
-            max-width: 90%;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .primary-button, .secondary-button {
-            padding: 1rem 2rem;
-            font-weight: 600;
-            font-size: 1rem;
-            border-radius: 12px;
-            border: none;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .primary-button {
-            background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
-            color: white;
-            box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
-        }
-
-        .primary-button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
-
-        .primary-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(10, 157, 183, 0.4);
-        }
-
-        .primary-button:hover::before {
-            opacity: 1;
-        }
-
-        .secondary-button {
-            background: white;
-            color: var(--charcoal-black);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .secondary-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: rgba(0, 0, 0, 0.2);
-        }
-
-        /* Featured Products Section */
-        .featured-products {
-            padding: 6rem 5%;
-            text-align: center;
-            position: relative;
-        }
-
-        .featured-products::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
-            z-index: -1;
-        }
-
-        .featured-products h2 {
-            font-size: 2.75rem;
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
-            color: var(--charcoal-black);
-        }
-
-        .featured-products h2::after {
-            content: "";
-            position: absolute;
-            bottom: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 5rem;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-            border-radius: 2px;
-        }
-
-        .featured-products .subtitle {
-            font-size: 1.125rem;
-            color: #444;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .product-card:hover::before {
-            opacity: 1;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin: 0 auto 2rem auto;
-            transition: transform 0.4s ease;
-            loading: lazy;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            color: var(--charcoal-black);
-            font-weight: 600;
-        }
-
-        .product-card p {
-            font-size: 1rem;
-            color: #444;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .product-cta {
-            background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
-            color: white;
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
-            font-size: 0.875rem;
-            border: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .product-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(10, 157, 183, 0.4);
-            background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
-        }
-
-        /* Use Cases Section */
-        .use-cases {
-            padding: 6rem 5%;
-            text-align: center;
-            background-color: #f8f9fa;
-            position: relative;
-        }
-
-        .use-cases::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .use-cases h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-            position: relative;
-            color: var(--charcoal-black);
-        }
-
-        .use-cases .subtitle {
-            font-size: 1.125rem;
-            color: #444;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .use-case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .use-case-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .use-case-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .use-case-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .use-case-card:hover::before {
-            opacity: 1;
-        }
-
-        .use-case-image {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 1.5rem auto;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .use-case-card:hover .use-case-image {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, rgba(10, 157, 183, 0.2), rgba(0, 240, 255, 0.2));
-        }
-
-        .use-case-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            filter: grayscale(30%);
-            transition: all 0.3s ease;
-            loading: lazy;
-        }
-
-        .use-case-card:hover .use-case-image img {
-            filter: grayscale(0%);
-        }
-
-        .use-case-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--charcoal-black);
-            font-weight: 600;
-        }
-
-        .use-case-card p {
-            font-size: 1rem;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        /* Thought Leadership Section */
-        .thought-leadership {
-            padding: 6rem 5%;
-            text-align: center;
-            background-color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .thought-leadership::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .thought-leadership h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-            position: relative;
-            color: var(--charcoal-black);
-        }
-
-        .thought-leadership .subtitle {
-            font-size: 1.125rem;
-            color: #444;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .insight-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .insight-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .insight-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .insight-card:hover::before {
-            opacity: 1;
-        }
-
-        .insight-image {
-            overflow: hidden;
-            height: 200px;
-        }
-
-        .insight-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            loading: lazy;
-        }
-
-        .insight-card:hover .insight-image img {
-            transform: scale(1.1);
-        }
-
-        .insight-content {
-            padding: 1.5rem;
-        }
-
-        .insight-card h3 {
-            font-size: 1.25rem;
-            color: var(--charcoal-black);
-            margin: 0 0 1rem 0;
-            font-weight: 600;
-        }
-
-        .insight-card p {
-            font-size: 1rem;
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .read-more {
-            font-size: 1rem;
-            color: var(--hero-teal);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover {
-            color: var(--hero-dark-teal);
-            transform: translateX(5px);
-        }
-
-        .read-more i {
-            margin-left: 0.5rem;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover i {
-            transform: translateX(3px);
-        }
-
-        /* Case Studies Section */
-        .case-studies {
-            padding: 6rem 5%;
-            text-align: center;
-            background-color: #f8f9fa;
-            position: relative;
-        }
-
-        .case-studies::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .case-studies h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-            position: relative;
-            color: var(--charcoal-black);
-        }
-
-        .case-studies .subtitle {
-            font-size: 1.125rem;
-            color: #444;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .case-study-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .case-study-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .case-study-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .case-study-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .case-study-card:hover::before {
-            opacity: 1;
-        }
-
-        .case-study-image {
-            overflow: hidden;
-            height: 200px;
-        }
-
-        .case-study-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            loading: lazy;
-        }
-
-        .case-study-card:hover .case-study-image img {
-            transform: scale(1.1);
-        }
-
-        .case-study-content {
-            padding: 1.5rem;
-        }
-
-        .case-study-card h3 {
-            font-size: 1.25rem;
-            color: var(--charcoal-black);
-            margin: 0 0 1rem 0;
-            font-weight: 600;
-        }
-
-        .case-study-card p {
-            font-size: 1rem;
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Enhanced Value Propositions Section */
-        .value-props {
-            padding: 6rem 5%;
-            text-align: center;
-            background-color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-props::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .value-props h2 {
-            font-size: 2.75rem;
-            margin-bottom: 3rem;
-            position: relative;
-            color: var(--charcoal-black);
-        }
-
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .value-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .value-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .value-card:hover::before {
-            opacity: 1;
-        }
-
-        .value-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem auto;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.75rem;
-            transition: all 0.3s ease;
-        }
-
-        .value-card:hover .value-icon {
-            transform: rotate(10deg) scale(1.1);
-            box-shadow: 0 8px 20px rgba(10, 157, 183, 0.3);
-        }
-
-        .value-card h3 {
-            font-size: 1.5rem;
-            color: var(--charcoal-black);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .value-card p {
-            font-size: 1rem;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        /* Call to Action Section */
-        .call-to-action {
-            padding: 6rem 5%;
-            text-align: center;
-            background: linear-gradient(135deg, var(--hero-teal), var(--hero-dark-teal));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .call-to-action::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/pattern.webp') center/cover;
-            opacity: 0.05;
-            z-index: 0;
-        }
-
-        .call-to-action h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .call-to-action p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem auto;
-            position: relative;
-            z-index: 1;
-            opacity: 0.9;
-        }
-
-        .call-to-action .cta-group {
-            position: relative;
-            z-index: 1;
-        }
-
-        .call-to-action .primary-button {
-            background: white;
-            color: var(--hero-teal);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .call-to-action .primary-button:hover {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .call-to-action .secondary-button {
-            background: transparent;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .call-to-action .secondary-button:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-        }
-
-        /* Footer Section */
-        footer {
-            padding: 5rem 5% 2.5rem;
-            background-color: var(--charcoal-black);
-            color: white;
-            position: relative;
-        }
-
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.125rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .footer-column h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--hero-teal);
-        }
-
-        .footer-column p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .footer-column a {
-            display: block;
-            margin-bottom: 0.75rem;
-            color: rgba(255, 255, 255, 0.7);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .footer-column a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .footer-bottom {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 1rem;
-        }
-
-        .legal-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .legal-links a {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .legal-links a:hover {
-            color: white;
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
-            filter: blur(30px);
-            z-index: 0;
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile Touch Improvements */
-        @media (hover: none) {
-            .product-card:active {
-                transform: translateY(-5px) scale(1.01);
-            }
-            .use-case-card:active {
-                transform: translateY(-5px) scale(1.01);
-            }
-            .insight-card:active {
-                transform: translateY(-5px) scale(1.01);
-            }
-            .case-study-card:active {
-                transform: translateY(-5px) scale(1.01);
-            }
-            .value-card:active {
-                transform: translateY(-5px) scale(1.01);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            html {
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-modern {
-                flex-direction: column;
-                text-align: center;
-                padding: 10rem 5% 5rem;
-            }
-            
-            .hero-image {
-                max-width: 100%;
-                margin-top: 3rem;
-            }
-            
-            .hero-modern h1 {
-                font-size: 3rem;
-            }
-
-            .hero-modern .hero-subtitle {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            html {
-                font-size: 14px;
-            }
-
-            .hero-modern h1 {
-                font-size: 2.5rem;
-                padding-top: 3rem;
-            }
-
-            .featured-products h2,
-            .use-cases h2,
-            .thought-leadership h2,
-            .case-studies h2,
-            .value-props h2,
-            .call-to-action h2 {
-                font-size: 2.25rem;
-            }
-
-            .cta-group {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .hero-modern h1 {
-                font-size: 2rem;
-            }
-
-            .product-grid,
-            .use-case-grid,
-            .insights-grid,
-            .case-study-grid,
-            .value-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .legal-links {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-        }
-
-.call-to-action .cta-group {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-        .primary-button,
-.secondary-button {
-    min-height: 48px;
-}
-
-        @media (max-width: 768px) {
     nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: var(--charcoal-black);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all var(--transition-speed);
+      text-decoration: none;
+      position: relative;
+      will-change: transform, color;
+    }
+
+    nav ul li a:hover {
+      color: var(--hero-teal);
+      transform: translateY(-2px);
+    }
+
+    nav ul li a::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--hero-teal);
+      transition: width 0.4s ease;
+    }
+
+    nav ul li a:hover::before {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      position: relative;
+      will-change: transform;
+    }
+
+    .menu-toggle i {
+      font-size: 1.5rem;
+      color: var(--charcoal-black);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle .fa-times {
+      display: none;
+    }
+
+    .menu-toggle.active .fa-bars {
+      display: none;
+    }
+
+    .menu-toggle.active .fa-times {
+      display: block;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-left: 2rem;
+    }
+
+    .social-icons a {
+      color: var(--charcoal-black);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      will-change: transform;
+    }
+
+    .social-icons a:hover {
+      color: var(--hero-teal);
+      transform: translateY(-2px);
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      will-change: opacity, visibility;
+    }
+
+    .menu-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hero Section */
+    .hero-modern {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12rem 8% 6rem;
+      position: relative;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .hero-image {
+      flex: 1;
+      max-width: 50%;
+      position: relative;
+      z-index: 1;
+      perspective: 1000px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      loading: lazy;
+      will-change: transform, box-shadow;
+    }
+
+    .hero-image:hover img {
+      transform: translateY(-10px) rotateY(5deg);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-modern h1 {
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      color: var(--charcoal-black);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(90deg, var(--charcoal-black), var(--hero-dark-teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+    }
+
+    .hero-modern h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      border-radius: 2px;
+    }
+
+    .hero-modern .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #444;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      font-weight: 400;
+      max-width: 90%;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .primary-button, .secondary-button {
+      padding: 1rem 2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      text-decoration: none;
+      display: inline-block;
+      will-change: transform, box-shadow;
+    }
+
+    .primary-button {
+      background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
+      color: white;
+      box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
+    }
+
+    .primary-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(10, 157, 183, 0.4);
+    }
+
+    .primary-button:hover::before {
+      opacity: 1;
+    }
+
+    .secondary-button {
+      background: white;
+      color: var(--charcoal-black);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .secondary-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    /* Featured Products Section */
+    .featured-products {
+      padding: 6rem 5%;
+      text-align: center;
+      position: relative;
+    }
+
+    .featured-products::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+      z-index: -1;
+    }
+
+    .featured-products h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+      color: var(--charcoal-black);
+    }
+
+    .featured-products h2::after {
+      content: "";
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5rem;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      border-radius: 2px;
+    }
+
+    .featured-products .subtitle {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: #444;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      will-change: transform, box-shadow;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      margin: 0 auto 2rem auto;
+      transition: transform 0.4s ease;
+      loading: lazy;
+      will-change: transform;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: var(--charcoal-black);
+      font-weight: 600;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .product-cta {
+      background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
+      color: white;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
+      text-decoration: none;
+      display: inline-block;
+      will-change: transform, box-shadow;
+    }
+
+    .product-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(10, 157, 183, 0.4);
+      background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
+    }
+
+    /* Use Cases Section */
+    .use-cases {
+      padding: 6rem 5%;
+      text-align: center;
+      background-color: #f8f9fa;
+      position: relative;
+    }
+
+    .use-cases::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .use-cases h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      margin-bottom: 1rem;
+      position: relative;
+      color: var(--charcoal-black);
+    }
+
+    .use-cases .subtitle {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: #444;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .use-case-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      will-change: transform, box-shadow;
+    }
+
+    .use-case-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .use-case-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .use-case-card:hover::before {
+      opacity: 1;
+    }
+
+    .use-case-image {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      will-change: transform, background;
+    }
+
+    .use-case-card:hover .use-case-image {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, rgba(10, 157, 183, 0.2), rgba(0, 240, 255, 0.2));
+    }
+
+    .use-case-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      filter: grayscale(30%);
+      transition: all 0.3s ease;
+      loading: lazy;
+      will-change: filter;
+    }
+
+    .use-case-card:hover .use-case-image img {
+      filter: grayscale(0%);
+    }
+
+    .use-case-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--charcoal-black);
+      font-weight: 600;
+    }
+
+    .use-case-card p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Case Studies Section */
+    .case-studies {
+      padding: 6rem 5%;
+      text-align: center;
+      background-color: #f8f9fa;
+      position: relative;
+    }
+
+    .case-studies::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .case-studies h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      margin-bottom: 1rem;
+      position: relative;
+      color: var(--charcoal-black);
+    }
+
+    .case-studies .subtitle {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: #444;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-study-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      will-change: transform, box-shadow;
+    }
+
+    .case-study-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .case-study-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .case-study-card:hover::before {
+      opacity: 1;
+    }
+
+    .case-study-image {
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .case-study-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      loading: lazy;
+      will-change: transform;
+    }
+
+    .case-study-card:hover .case-study-image img {
+      transform: scale(1.1);
+    }
+
+    .case-study-content {
+      padding: 1.5rem;
+    }
+
+    .case-study-card h3 {
+      font-size: 1.25rem;
+      color: var(--charcoal-black);
+      margin: 0 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .case-study-card p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .read-more {
+      font-size: 1rem;
+      color: var(--hero-teal);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      will-change: transform, color;
+    }
+
+    .read-more:hover {
+      color: var(--hero-dark-teal);
+      transform: translateX(5px);
+    }
+
+    .read-more i {
+      margin-left: 0.5rem;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      will-change: transform;
+    }
+
+    .read-more:hover i {
+      transform: translateX(3px);
+    }
+
+    /* Enhanced Value Propositions Section */
+    .value-props {
+      padding: 6rem 5%;
+      text-align: center;
+      background-color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-props::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .value-props h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      margin-bottom: 3rem;
+      position: relative;
+      color: var(--charcoal-black);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .value-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      will-change: transform, box-shadow;
+    }
+
+    .value-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .value-card:hover::before {
+      opacity: 1;
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.75rem;
+      transition: all 0.3s ease;
+      will-change: transform, box-shadow;
+    }
+
+    .value-card:hover .value-icon {
+      transform: rotate(10deg) scale(1.1);
+      box-shadow: 0 8px 20px rgba(10, 157, 183, 0.3);
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      color: var(--charcoal-black);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .value-card p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Call to Action Section */
+    .call-to-action {
+      padding: 6rem 5%;
+      text-align: center;
+      background: linear-gradient(135deg, var(--hero-teal), var(--hero-dark-teal));
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .call-to-action::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../images/pattern.webp') center/cover;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .call-to-action h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .call-to-action p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 700px;
+      margin: 0 auto 2.5rem auto;
+      position: relative;
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    .call-to-action .cta-group {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .call-to-action .primary-button {
+      background: white;
+      color: var(--hero-teal);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .call-to-action .primary-button:hover {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .call-to-action .secondary-button {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .call-to-action .secondary-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+
+    /* Footer Section */
+    footer {
+      padding: 5rem 5% 2.5rem;
+      background-color: var(--charcoal-black);
+      color: white;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--hero-teal);
+    }
+
+    .footer-column p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer-column a {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      will-change: transform, color;
+    }
+
+    .footer-column a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-bottom {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1rem;
+    }
+
+    .legal-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .legal-links a {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      will-change: color;
+    }
+
+    .legal-links a:hover {
+      color: white;
+    }
+
+    /* Floating Elements */
+    .floating-element {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
+      filter: blur(30px);
+      z-index: 0;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Touch Improvements */
+    @media (hover: none) {
+      .product-card:active {
+        transform: translateY(-5px) scale(1.01);
+      }
+      .use-case-card:active {
+        transform: translateY(-5px) scale(1.01);
+      }
+      .case-study-card:active {
+        transform: translateY(-5px) scale(1.01);
+      }
+      .value-card:active {
+        transform: translateY(-5px) scale(1.01);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
         background: white;
         flex-direction: column;
-        align-items: center;
-        display: none;
-        padding: 1rem 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        align-items: flex-start;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+      
+      nav ul.active {
+        right: 0;
+      }
+      
+      .social-icons {
+        margin-left: 0;
+        margin-top: 2rem;
+        justify-content: center;
+        width: 100%;
+      }
+      
+      .hero-modern {
+        flex-direction: column;
+        text-align: center;
+        padding: 10rem 5% 5rem;
+      }
+      
+      .hero-image {
+        max-width: 100%;
+        margin-top: 3rem;
+      }
+      
+      .cta-group {
+        justify-content: center;
+      }
     }
 
-    nav ul.active {
-        display: flex;
+    @media (max-width: 768px) {
+      .hero-modern {
+        padding: 8rem 5% 4rem;
+      }
+      
+      .product-card,
+      .use-case-card,
+      .case-study-card,
+      .value-card {
+        padding: 2rem;
+      }
+      
+      .cta-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
-}
 
-
+    @media (max-width: 480px) {
+      .hero-modern {
+        padding: 7rem 5% 3rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .legal-links {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .product-card,
+      .use-case-card,
+      .case-study-card,
+      .value-card {
+        padding: 1.5rem;
+      }
+    }
     </style>
-    
 </head>
    
 <body>
@@ -1318,31 +1216,30 @@
 
     <!-- Header Section -->
     <header role="banner">
-        <a class="logo" href="/turkish/index.html" aria-label="Tempest Labs Home">
+        <a class="logo" href="/turkish/index.html" aria-label="Tempest Labs Ana Sayfa">
             Tempest <span>Labs</span>
         </a>
         
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Navigasyon menüsünü aç/kapat" aria-expanded="false">
             <i class="fas fa-bars"></i>
             <i class="fas fa-times"></i>
         </button>
-     
-     
-  <nav role="navigation">
-    <ul>
-        <li><a href="/turkish/about.html" aria-label="Tempest Labs Hakkında">Hakkında</a></li>
-        <li><a href="/turkish/products.html" aria-label="Ürünlerimizi görüntüleyin">Ürünler</a></li>
-        <li><a href="/turkish/contact.html" aria-label="Bizimle iletişime geçin">İletişim</a></li>
-        <li><a href="/products.html" aria-label="İngilizce görüntüle">Eng</a></li>
-    </ul>
-</nav>     
 
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-        </div>
+        <nav role="navigation">
+            <ul>
+                <li><a href="/turkish/about.html" aria-label="Tempest Labs Hakkında">Hakkında</a></li>
+                <li><a href="/turkish/products.html" aria-label="Ürünlerimizi görüntüleyin">Ürünler</a></li>
+                <li><a href="/turkish/contact.html" aria-label="Bizimle iletişime geçin">İletişim</a></li>
+                <li><a href="/index.html" aria-label="İngilizce görüntüle">EN</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </nav>
     </header>
 
     <!-- Mobile Menu Backdrop -->
@@ -1350,51 +1247,44 @@
 
     <!-- Hero Section -->
     <section class="hero-modern" role="main">
-<div class="hero-content">
-    <h1>Üretken Profesyoneller için Güçlü Araçlar</h1>
-    <p class="hero-subtitle">Tempest Labs, zihinsel karmaşayı net, uygulanabilir planlara dönüştürmenize ve tüm satış sürecinizi görsel bir hassasiyetle yönetmenize yardımcı olan sade, tek seferlik satın alınan araçlar üretir. Gürültü yok. Abonelik yok. Sadece netlik, hız ve tam kontrol.</p>
-    <div class="cta-group">
-        <a href="/turkish/products.html" class="primary-button">Ürünleri Keşfedin</a>
-        <a href="/turkish/contact.html" class="secondary-button">Bize Ulaşın</a>
-    </div>
-</div>
+        <div class="hero-content">
+            <h1>Üretken Profesyoneller için Güçlü Araçlar</h1>
+            <p class="hero-subtitle">Tempest Labs, zihinsel karmaşayı net, uygulanabilir planlara dönüştürmenize ve tüm satış sürecinizi görsel bir hassasiyetle yönetmenize yardımcı olan sade, tek seferlik satın alınan araçlar üretir. Gürültü yok. Abonelik yok. Sadece netlik, hız ve tam kontrol.</p>
+            <div class="cta-group">
+                <a href="/turkish/products.html" class="primary-button">Ürünleri Keşfedin</a>
+                <a href="/turkish/contact.html" class="secondary-button">Bize Ulaşın</a>
+            </div>
+        </div>
 
         <div class="hero-image">
-            <img src="/images/hero-dashboard.webp" alt="Tempest Labs dashboard interface">
+            <img src="../images/hero-dashboard.webp" alt="Tempest Labs arayüz örneği" loading="lazy">
         </div>
     </section>
 
     <!-- Featured Products Section -->
     <section class="featured-products">
-     <h2>Araçlarımız</h2>
-<p class="subtitle">Ürünlerimizin her biri, hızlı, net ve amaca yönelik ilerlemenize yardımcı olmak için tasarlanmıştır.</p>
-
+        <h2>Araçlarımız</h2>
+        <p class="subtitle">Ürünlerimizin her biri, hızlı, net ve amaca yönelik ilerlemenize yardımcı olmak için tasarlanmıştır.</p>
         
         <div class="product-grid">
             <!-- Intuiva Card -->
             <div class="product-card">
-                <a href="product-intuiva.html" class="product-link">
-                    <div class="product-image-wrapper">
-                        <img src="/images/intuiva-screenshot.webp" alt="Intuiva app screenshot">
-                    </div>
+                <a href="/turkish/product-intuiva.html" class="product-link">
+                    <img src="../images/intuiva-screenshot.webp" alt="Intuiva uygulama ekran görüntüsü" loading="lazy">
                     <h3>Intuiva</h3>
                 </a>
-               <p>Fikirleri Eyleme Dönüştürün. Zihinsel karmaşayı, Intuiva ile net adımlara dönüştürün. İster bir ürün lansmanı planlıyor olun, ister karmaşık bir projeyi yapılandırıyor olun, Intuiva fikirlerinizi kolayca uygulanabilir adımlara dönüştürmenize yardımcı olur.</p>
-<a href="/turkish/product-intuiva.html" class="product-cta">Deneyin / Daha Fazla Bilgi</a>
-
+                <p>Fikirleri Eyleme Dönüştürün. Zihinsel karmaşayı, Intuiva ile net adımlara dönüştürün. İster bir ürün lansmanı planlıyor olun, ister karmaşık bir projeyi yapılandırıyor olun, Intuiva fikirlerinizi kolayca uygulanabilir adımlara dönüştürmenize yardımcı olur.</p>
+                <a href="/turkish/product-intuiva.html" class="product-cta">Deneyin / Daha Fazla Bilgi</a>
             </div>
 
             <!-- FunnelFlow Card -->
             <div class="product-card">
                 <a href="/turkish/product-funnelflow.html" class="product-link">
-                    <div class="product-image-wrapper">
-                        <img src="/images/funnel-screenshot.webp" alt="FunnelFlow app screenshot">
-                    </div>
+                    <img src="../images/funnel-screenshot.webp" alt="FunnelFlow uygulama ekran görüntüsü" loading="lazy">
                     <h3>FunnelFlow</h3>
                 </a>
-               <p>Satış Sürecinizi Kolaylaştırın. FunnelFlow, satış kanalınızı düzenleyerek potansiyel müşterileri net bir şekilde ilerletmenizi sağlar. Dağınıklık yok, kafa karışıklığı yok—sadece satış sürecinize dair yapılandırılmış ve sade bir görünüm. Daha fazla anlaşmayı, daha hızlı kapatın.</p>
-<a href="product-funnelflow.html" class="product-cta">Deneyin / Daha Fazla Bilgi</a>
-
+                <p>Satış Sürecinizi Kolaylaştırın. FunnelFlow, satış kanalınızı düzenleyerek potansiyel müşterileri net bir şekilde ilerletmenizi sağlar. Dağınıklık yok, kafa karışıklığı yok—sadece satış sürecinize dair yapılandırılmış ve sade bir görünüm. Daha fazla anlaşmayı, daha hızlı kapatın.</p>
+                <a href="/turkish/product-funnelflow.html" class="product-cta">Deneyin / Daha Fazla Bilgi</a>
             </div>
         </div>
     </section>
@@ -1402,173 +1292,167 @@
     <!-- Who It's For Section -->
     <section class="use-cases" id="use-cases">
         <h2>Kime Yardımcı Oluyoruz?</h2>
-<p class="subtitle">Araçlarımız, hızlı hareket etmesi ve net düşünmesi gereken profesyoneller için tasarlanmıştır.</p>
-
+        <p class="subtitle">Araçlarımız, hızlı hareket etmesi ve net düşünmesi gereken profesyoneller için tasarlanmıştır.</p>
         
-       <div class="use-case-grid">
-    <div class="use-case-card">
-        <div class="use-case-image">
-            <img src="/images/ceo.webp" alt="Intuiva kullanan CEO">
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="../images/ceo.webp" alt="Intuiva kullanan CEO" loading="lazy">
+                </div>
+                <h3>CEO'lar ve Kurucular</h3>
+                <p>Üst düzey stratejileri organize edin ve vizyonunuzu uygulanabilir planlara dönüştürün. Araçlarımız karmaşa içinde netliği korumanıza yardımcı olur.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="../images/marketing.webp" alt="FunnelFlow kullanan pazarlamacı" loading="lazy">
+                </div>
+                <h3>Pazarlamacılar</h3>
+                <p>Satış kanallarını ve dönüşümleri hassasiyetle takip edin. Sürecinizi görselleştirin ve pazarlama çabalarınızı en yüksek etki için optimize edin.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="../images/product.webp" alt="Intuiva kullanan ürün yöneticisi" loading="lazy">
+                </div>
+                <h3>Ürün/Proje Yöneticileri</h3>
+                <p>Karmaşık projeleri yönetilebilir parçalara ayırın. Yol haritanızı yapılandırın ve ekibinizi uyum içinde tutun.</p>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-image">
+                    <img src="../images/creative.webp" alt="Tempest araçlarını kullanan yaratıcı profesyonel" loading="lazy">
+                </div>
+                <h3>Yaratıcı Profesyoneller</h3>
+                <p>Fikirlerinizi yakalayın ve sistematik bir şekilde geliştirin. Araçlarımız yaratıcı sürecinize uyum sağlar; sizin ona değil.</p>
+            </div>
         </div>
-        <h3>CEO'lar ve Kurucular</h3>
-        <p>Üst düzey stratejileri organize edin ve vizyonunuzu uygulanabilir planlara dönüştürün. Araçlarımız karmaşa içinde netliği korumanıza yardımcı olur.</p>
-    </div>
-    
-    <div class="use-case-card">
-        <div class="use-case-image">
-            <img src="/images/marketing.webp" alt="FunnelFlow kullanan pazarlamacı">
-        </div>
-        <h3>Pazarlamacılar</h3>
-        <p>Satış kanallarını ve dönüşümleri hassasiyetle takip edin. Sürecinizi görselleştirin ve pazarlama çabalarınızı en yüksek etki için optimize edin.</p>
-    </div>
-    
-    <div class="use-case-card">
-        <div class="use-case-image">
-            <img src="/images/product.webp" alt="Intuiva kullanan ürün yöneticisi">
-        </div>
-        <h3>Ürün/Proje Yöneticileri</h3>
-        <p>Karmaşık projeleri yönetilebilir parçalara ayırın. Yol haritanızı yapılandırın ve ekibinizi uyum içinde tutun.</p>
-    </div>
-    
-    <div class="use-case-card">
-        <div class="use-case-image">
-            <img src="/images/creative.webp" alt="Tempest araçlarını kullanan yaratıcı profesyonel">
-        </div>
-        <h3>Yaratıcı Profesyoneller</h3>
-        <p>Fikirlerinizi yakalayın ve sistematik bir şekilde geliştirin. Araçlarımız yaratıcı sürecinize uyum sağlar; sizin ona değil.</p>
-    </div>
-</div>
-
     </section>
 
-  <!-- Case Studies Section -->
-<section class="case-studies">
-    <h2>Araçlarımız Nasıl Yardımcı Oluyor?</h2>
-    <p class="subtitle">Ürünlerimizin gerçek dünyadaki kullanımları</p>
-    
-    <div class="case-study-grid">
-        <article class="case-study-card">
-            <a href="https://tempestlabs.space/turkishintuiva.html" target="_blank" rel="noopener noreferrer">
-                <div class="case-study-image">
-                    <img src="/images/intuiva-case.webp" alt="Intuiva vaka çalışması">
-                </div>
-                <div class="case-study-content">
-                    <h3>Karmaşık Projeleri Yapılandırmak</h3>
-                    <p>Intuiva'nın iddialı girişimleri nasıl uygulanabilir bileşenlere ayırmaya yardımcı olduğunu görün.</p>
-                    <span class="read-more">Vaka Çalışmasını Oku <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-        </article>
+    <!-- Case Studies Section -->
+    <section class="case-studies">
+        <h2>Araçlarımız Nasıl Yardımcı Oluyor?</h2>
+        <p class="subtitle">Ürünlerimizin gerçek dünyadaki kullanımları</p>
         
-        <article class="case-study-card">
-            <a href="https://tempestlabs.space/turkishunnelflow.html" target="_blank" rel="noopener noreferrer">
-                <div class="case-study-image">
-                    <img src="/images/funnel-case.webp" alt="FunnelFlow vaka çalışması">
+        <div class="case-study-grid">
+            <article class="case-study-card">
+                <a href="https://tempestlabs.space/turkish/intuiva.html" target="_blank" rel="noopener noreferrer">
+                    <div class="case-study-image">
+                        <img src="../images/intuiva-case.webp" alt="Intuiva vaka çalışması" loading="lazy">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Karmaşık Projeleri Yapılandırmak</h3>
+                        <p>Intuiva'nın iddialı girişimleri nasıl uygulanabilir bileşenlere ayırmaya yardımcı olduğunu görün.</p>
+                        <span class="read-more">Vaka Çalışmasını Oku <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+            <article class="case-study-card">
+                <a href="https://tempestlabs.space/turkish/funnelflow.html" target="_blank" rel="noopener noreferrer">
+                    <div class="case-study-image">
+                        <img src="../images/funnel-case.webp" alt="FunnelFlow vaka çalışması" loading="lazy">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Satış Kanallarını Optimize Etmek</h3>
+                        <p>FunnelFlow'un bir SaaS şirketinin dönüşüm oranlarını %32 artırmasına nasıl yardımcı olduğunu öğrenin.</p>
+                        <span class="read-more">Vaka Çalışmasını Oku <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Value Propositions Section -->
+    <section class="value-props">
+        <h2>Neden Tempest Labs?</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-dollar-sign"></i>
                 </div>
-                <div class="case-study-content">
-                    <h3>Satış Kanallarını Optimize Etmek</h3>
-                    <p>FunnelFlow’un bir SaaS şirketinin dönüşüm oranlarını %32 artırmasına nasıl yardımcı olduğunu öğrenin.</p>
-                    <span class="read-more">Vaka Çalışmasını Oku <i class="fas fa-arrow-right"></i></span>
+                <h4>Abonelik Yok</h4>
+                <p>Bir kez ödeyin, sonsuza kadar sizin olsun. Gizli ücretler veya tekrar eden ödemeler yok.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-bolt"></i>
                 </div>
-            </a>
-        </article>
-    </div>
-</section>
+                <h4>Akış İçin Tasarlandı</h4>
+                <p>Siz çalışırken çalışan araçlar. Basit, sezgisel ve her zaman erişilebilir.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h4>Platformlar Arası Uyum</h4>
+                <p>Mac, Windows, Android ve iOS dahil tüm cihazlarda sorunsuz kullanım.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Verimlilik Odaklı</h4>
+                <p>Zaman kazanın, daha fazla kazanç elde edin ve en önemli olana odaklanın.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Öncelik Gizlilik</h4>
+                <p>Verileriniz size aittir. Takip yok, reklam yok, bilgileriniz satılmaz.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h4>Sürekli Yenilik</h4>
+                <p>Kullanıcı geri bildirimlerine dayalı olarak düzenli yeni özellik güncellemeleri.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <h2>Çalışma Sürecinizi Dönüştürmeye Hazır mısınız?</h2>
+        <p>Tempest Labs: Yenilikçiler için tasarlandı, geleceğe uygun şekilde inşa edildi. Zamanınızı geri kazanın, süreçlerinizi optimize edin ve işinizi büyütmeye odaklanın.</p>
+        <div class="cta-group">
+            <a href="/turkish/products.html" class="primary-button">Ürünleri Keşfedin</a>
+            <a href="/turkish/contact.html" class="secondary-button">Bize Ulaşın</a>
+        </div>
+    </section>
 
-    <!-- Değer Önerileri Bölümü -->
-<section class="value-props">
-    <h2>Neden Tempest Labs?</h2>
-    <div class="value-grid">
-        <div class="value-card">
-            <div class="value-icon">
-                <i class="fas fa-dollar-sign"></i>
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><a href="/turkish/about.html">Hakkımızda</a></h3>
+                <p>Daha derin düşünme ve daha net bir vizyon için araçlar üretiyoruz.</p>
             </div>
-            <h4>Abonelik Yok</h4>
-            <p>Bir kez ödeyin, sonsuza kadar sizin olsun. Gizli ücretler veya tekrar eden ödemeler yok.</p>
-        </div>
-        <div class="value-card">
-            <div class="value-icon">
-                <i class="fas fa-bolt"></i>
+            <div class="footer-column">
+                <h3><a href="/turkish/products.html">Ürünler</a></h3>
+                <a href="/turkish/product-intuiva.html">Intuiva</a>
+                <a href="/turkish/product-funnelflow.html">FunnelFlow</a>
             </div>
-            <h4>Akış İçin Tasarlandı</h4>
-            <p>Siz çalışırken çalışan araçlar. Basit, sezgisel ve her zaman erişilebilir.</p>
-        </div>
-        <div class="value-card">
-            <div class="value-icon">
-                <i class="fas fa-laptop-code"></i>
+            <div class="footer-column">
+                <h3>Bağlantı Kurun</h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
             </div>
-            <h4>Platformlar Arası Uyum</h4>
-            <p>Mac, Windows, Android ve iOS dahil tüm cihazlarda sorunsuz kullanım.</p>
-        </div>
-        <div class="value-card">
-            <div class="value-icon">
-                <i class="fas fa-chart-line"></i>
+            <div class="footer-column">
+                <h3>İletişim</h3>
+                <a href="/turkish/contact.html">İstanbul, Zeytinburnu</a>
+                <a href="tel:+905075275600">+90 507 527 56 00</a>
+                <a href="mailto:tempestlabsofficial@gmail.com">tempestlabsofficial@gmail.com</a>
             </div>
-            <h4>Verimlilik Odaklı</h4>
-            <p>Zaman kazanın, daha fazla kazanç elde edin ve en önemli olana odaklanın.</p>
-        </div>
-        <div class="value-card">
-            <div class="value-icon">
-                <i class="fas fa-shield-alt"></i>
-            </div>
-            <h4>Öncelik Gizlilik</h4>
-            <p>Verileriniz size aittir. Takip yok, reklam yok, bilgileriniz satılmaz.</p>
-        </div>
-        <div class="value-card">
-            <div class="value-icon">
-                <i class="fas fa-lightbulb"></i>
-            </div>
-            <h4>Sürekli Yenilik</h4>
-            <p>Kullanıcı geri bildirimlerine dayalı olarak düzenli yeni özellik güncellemeleri.</p>
-        </div>
-    </div>
-</section>
-
- <!-- Eylem Çağrısı Bölümü -->
-<section class="call-to-action">
-    <h2>Çalışma Sürecinizi Dönüştürmeye Hazır mısınız?</h2>
-    <p>Tempest Labs: Yenilikçiler için tasarlandı, geleceğe uygun şekilde inşa edildi. Zamanınızı geri kazanın, süreçlerinizi optimize edin ve işinizi büyütmeye odaklanın.</p>
-    <div class="cta-group">
-        <a href="/turkish/products.html" class="primary-button">Ürünleri Keşfedin</a>
-        <a href="/turkishcontact.html" class="secondary-button">Bize Ulaşın</a>
-    </div>
-</section>
-
-<!-- Altbilgi -->
-<footer role="contentinfo">
-    <div class="footer-content">
-        <div class="footer-column">
-            <h3><a href="/turkish/about.html">Hakkımızda</a></h3>
-            <p>Daha derin düşünme ve daha net bir vizyon için araçlar üretiyoruz.</p>
-        </div>
-        <div class="footer-column">
-            <h3><a href="/turkish/products.html">Ürünler</a></h3>
-            <a href="/turkish/product-intuiva.html">Intuiva</a>
-            <a href="/turkish/product-funnelflow.html">FunnelFlow</a>
-        </div>
-        <div class="footer-column">
-            <h3>Bağlantı Kurun</h3>
-            <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
-        </div>
-        <div class="footer-column">
-            <h3>İletişim</h3>
-            <a href="/turkish/contact.html">İstanbul, Zeytinburnu</a>
-            <a href="tel:+905075275600">+90 507 527 56 00</a>
-            <a href="mailto:tempestlabsofficial@gmail.com">tempestlabsofficial@gmail.com</a>
-        </div>
-    </div>
-</footer>
-
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
             <div class="legal-links">
                 <a href="https://tempestlabs.space/turkish/legal/membership-agreement.html">Üyelik Sözleşmesi</a>
                 <a href="https://tempestlabs.space/turkish/legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
-                <a href="https://tempestlabs.space/turkish/legal/distance-sales-agreement.html">Distance Sales Agreement</a>
+                <a href="https://tempestlabs.space/turkish/legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
             </div>
         </div>
     </footer>
@@ -1581,7 +1465,7 @@
       "name": "Tempest Labs",
       "url": "https://tempestlabs.com",
       "logo": "https://tempestlabs.com/images/tempest.png",
-      "description": "Creating powerful, focused software tools for productive professionals.",
+      "description": "Üretken profesyoneller için güçlü araçlar geliştiriyoruz.",
       "sameAs": [
         "https://www.linkedin.com/company/tempestlabsofficial/",
         "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
@@ -1605,100 +1489,66 @@
     }
     </script>
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Intuiva",
-      "image": "https://tempestlabs.com/images/intuiva-screenshot.webp",
-      "description": "Turn mental clutter into clear next steps with Intuiva.",
-      "brand": { "@type": "Brand", "name": "Tempest Labs" }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "FunnelFlow",
-      "image": "https://tempestlabs.com/images/funnel-screenshot.webp",
-      "description": "Streamline your sales process with FunnelFlow.",
-      "brand": { "@type": "Brand", "name": "Tempest Labs" }
-    }
-    </script>
-
-    <!-- JavaScript -->
-    <script src="js/main.min.js" defer></script>
-    
-    <!-- Inline critical JS -->
     <script>
-    // Immediately invoked function for critical functionality
-    (function() {
-        // Set initial header state
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        }
-        
-        // Mobile menu toggle
+        // Global toggleMenu so it's accessible from HTML onclick attribute
         function toggleMenu() {
             const menu = document.querySelector("nav ul");
             const toggle = document.querySelector(".menu-toggle");
             const backdrop = document.querySelector(".menu-backdrop");
-            
+
             menu.classList.toggle("active");
             toggle.classList.toggle("active");
             backdrop.classList.toggle("active");
             document.body.classList.toggle("menu-open");
-            
-            // Update aria-expanded attribute
+
             const isExpanded = toggle.classList.contains("active");
             toggle.setAttribute("aria-expanded", isExpanded);
         }
-        
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
+
+        // Immediately invoked function for page behavior
+        (function () {
+            const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
             }
-        });
-        
-        // Initialize mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
-        document.querySelector('.menu-toggle').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                toggleMenu();
-            }
-        });
 
-        // Add animation to elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+            // Scroll effect
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
             });
-        };
 
-        // Set initial state for animated elements
-        document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
+            // Initial animation state
+            document.querySelectorAll('.product-card, .use-case-card, .case-study-card, .value-card').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
 
-        // Add scroll event listener for animations
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    })();
+            const animateOnScroll = function () {
+                const elements = document.querySelectorAll('.product-card, .use-case-card, .case-study-card, .value-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+        })();
     </script>
+    
+    <!-- Preload main JS file -->
+    <link rel="preload" href="../js/main.min.js" as="script">
+    <script src="../js/main.min.js" defer></script>
 </body>
 </html>
