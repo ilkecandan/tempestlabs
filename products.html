@@ -597,7 +597,7 @@
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease;
 }
 
 .faq-answer-inner {
@@ -605,6 +605,7 @@
     background: white;
     text-align: left;
 }
+
 
         
         /* Separator */
@@ -1183,13 +1184,29 @@
         });
 
         // FAQ expand/collapse
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
+  // FAQ expand/collapse with dynamic height
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Collapse all (optional: make accordion-style)
+        faqItems.forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.faq-answer').style.maxHeight = null;
         });
+
+        // Expand clicked item
+        if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+    });
+});
+
 
         // Initial animation state
         document.querySelectorAll('.product-card, .feature-card').forEach(element => {
