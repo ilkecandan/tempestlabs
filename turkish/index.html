@@ -1550,5 +1550,33 @@
     <!-- Preload main JS file -->
     <link rel="preload" href="../js/main.min.js" as="script">
     <script src="../js/main.min.js" defer></script>
+    <!-- Add this just before </body> -->
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('nav ul');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const backdrop = document.querySelector('.menu-backdrop');
+        
+        nav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        backdrop.classList.toggle('active');
+        
+        // Toggle body scroll
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        
+        // Update aria-expanded attribute
+        const isExpanded = menuToggle.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+    }
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 992) {
+                toggleMenu();
+            }
+        });
+    });
+</script>
 </body>
 </html>
