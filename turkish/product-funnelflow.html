@@ -3,1689 +3,1605 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" href="/images/tempest.png" type="image/x-icon">
-    <meta name="description" content="Tempest Labs'tan FunnelFlow - Kaosu, sakin ve insan merkezli bir yaklaşımla kristal berraklığında hunilere dönüştüren görsel pazarlama panosu.">
-    <title>FunnelFlow - Görsel Pazarlama Panosu | Tempest Labs</title>
+    <meta name="description" content="Tempest Labs'ın FunnelFlow'u - Pazarlama karmaşasını net funnel görsellerine dönüştüren, insan odaklı sakin bir yaklaşım sunan görsel pazarlama paneli.">
     
-    <!-- Fonts -->
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="/images/funnelherohero.webp" type="image/webp">
+    <link rel="preload" as="image" href="/images/funnel-screenshot.webp" type="image/webp">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
+    <!-- Preload fonts with font-display: swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="pazarlama funnel, satış pipeline, görsel dashboard, dönüşüm takibi, pazarlama analitiği">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="FunnelFlow - Görsel Pazarlama Paneli | Tempest Labs">
+    <meta property="og:description" content="FunnelFlow ile pazarlama karmaşasını netliğe dönüştürün. Müşteri yolculuğunuzu hiç olmadığı kadar net görün.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tempestlabs.space/product-funnelflow.html">
+    <meta property="og:image" content="https://tempestlabs.com/images/funnel-social-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Tempest Labs">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FunnelFlow - Görsel Pazarlama Paneli | Tempest Labs">
+    <meta name="twitter:description" content="Potansiyel müşterilerin nerede ayrıldığını görün, nedenini anlayın ve güvenle düzeltin.">
+    <meta name="twitter:image" content="https://tempestlabs.com/images/funnel-social-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tempestlabs.com/funnelflow">
+    
+    <title>FunnelFlow - Görsel Pazarlama Paneli | Tempest Labs</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="/images/tempest.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/tempest.png">
+    
+    <!-- Preload Font Awesome with media query to prevent render-blocking -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    
+    <!-- Inline Critical CSS -->
     <style>
-        /* ===================== */
-        /* MYTHIC CLARITY DESIGN */
-        /* ===================== */
-        
+        /* ================================= */
+        /* TEMPEST LABS - OPTIMIZED VERSION */
+        /* ================================= */
         :root {
-            /* Color Palette - Pastel Pink & Blue Theme */
-             --bg: #d0e0ed; /* Updated to soft blue */
-            --text-main: #2B2C28;      /* Cozy charcoal-black */
-            --accent-pink: #FFB6C1;    /* Soft pastel pink */
-            --accent-blue: #89CFF0;    /* Calm pastel blue */
-            --accent-dark-blue: #5D8AA8;   /* Darker blue for contrast */
-            --bg-soft: #F5F9FF;        /* Light blue section backgrounds */
-            --card-bg: #FFFFFF;        /* Surface cards */
-            --shadow-soft: 0 6px 18px rgba(0,0,0,0.04);
-            --shadow-medium: 0 8px 24px rgba(0,0,0,0.08);
-            --shadow-large: 0 12px 32px rgba(0,0,0,0.12);
-            --symbol-glow: rgba(137,207,240,0.1);
-            --pastel-pink-light: #FFE4E1;
-            --pastel-pink-dark: #FFC0CB;
-            --text-on-dark: rgba(255,255,255,0.9);
+            --deep-teal: #01343E;
+            --aqua-glow: #00F0FF;
+            --muted-aqua: #66FCFF;
+            --glow-white: #A3FAFF;
+            --charcoal-black: #04191C;
+            --burnt-coral: #F74141;
+            --hero-teal: #0A9DB7;
+            --hero-dark-teal: #055B6D;
             
-            /* Typography */
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans: 'Outfit', sans-serif;
-            
-            /* Spacing */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2.5rem;
-            --space-xl: 3.5rem;
-            --space-xxl: 5rem;
-            
-            /* Transitions */
-            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+            --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+            --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+            --transition-speed: 0.3s ease-out;
+            --glass-effect: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
-        
+
         body {
-            font-family: var(--font-sans);
-            color: var(--text-main);
-            background-color: var(--bg);
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 400;
-            -webkit-font-smoothing: antialiased;
+            background-color: #f8f9fa;
+            color: var(--charcoal-black);
+            line-height: 1.6;
+            letter-spacing: 0.2px;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
-        
-        h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 500;
-            line-height: 1.2;
-            color: var(--text-main);
-        }
-        
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            letter-spacing: -0.5px;
-        }
-        
-        h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-        }
-        
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-        }
-        
-        p {
-           font-size: 1.15rem;
-            margin-bottom: var(--space-sm);
-            color: var(--text-main);
-            opacity: 0.9;
-        }
-        
-        a {
-            color: var(--accent-dark-blue);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        /* Layout Components */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-        }
-        
-        .section {
-            padding: var(--space-xl) 0;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: var(--space-lg);
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: "⌘";
-            display: block;
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            margin-top: var(--space-sm);
-            opacity: 0.6;
-            animation: pulse 2s infinite;
-        }
-        
-        /* Header */
+
+        /* Improved Header with will-change for performance */
         header {
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, background, box-shadow;
+        }
+
+        header.scrolled {
+            padding: 0.75rem 5%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--charcoal-black);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            will-change: transform;
+        }
+
+        .logo span {
+            color: var(--hero-teal);
+            position: relative;
+        }
+
+        .logo span::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--hero-teal);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--charcoal-black);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all var(--transition-speed);
+            text-decoration: none;
+            position: relative;
+            will-change: transform, color;
+        }
+
+        nav ul li a:hover {
+            color: var(--hero-teal);
+            transform: translateY(-2px);
+        }
+
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--hero-teal);
+            transition: width 0.4s ease;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            will-change: transform;
+        }
+
+        .menu-toggle i {
+            font-size: 1.5rem;
+            color: var(--charcoal-black);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle .fa-times {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-bars {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-times {
+            display: block;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+
+        .social-icons a {
+            color: var(--charcoal-black);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: transform;
+        }
+
+        .social-icons a:hover {
+            color: var(--hero-teal);
+            transform: translateY(-2px);
+        }
+
+        .menu-backdrop {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: var(--space-sm) 0;
-            z-index: 1000;
-            transition: var(--transition);
-            transform: translateY(0);
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            will-change: opacity, visibility;
         }
-        
-        header.hidden {
-            transform: translateY(-100%);
+
+        .menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
         }
-        
-        header.scrolled {
-            box-shadow: var(--shadow-soft);
-            padding: 0.5rem 0;
-        }
-        
-        .header-container {
+
+        /* Enhanced Hero Section with optimized animations */
+        .hero-modern {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        
-        .logo {
-            font-family: var(--font-serif);
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-        
-        .logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .logo span {
-            color: var(--accent-dark-blue);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: var(--space-md);
-        }
-        
-        nav a {
-            font-family: var(--font-serif);
-            font-weight: 500;
-            color: var(--text-main);
+            padding: 12rem 8% 6rem;
             position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        nav a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-dark-blue);
-            transition: var(--transition);
-        }
-        
-        nav a:hover:after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 0;
-  object-fit: cover;
-}
-
-.hero-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  padding: 10vh var(--space-md);
-}
-
-.hero-content {
-  max-width: 560px;
-  color: var(--text-main);
-  padding: var(--space-sm);
-  background: none;
-  position: relative;
-  top: -80px;   /* was -40px, now more upward */
-  left: -20px;
-  z-index: 2;
-}
-
-
-        
-.hero-title {
-    font-size: 2.4rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    position: relative;
-    color: var(--text-main);
-    text-shadow: none;
-    animation: fadeInUp 0.8s ease-out;
-}
-        
-.hero-subtitle {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
-    max-width: 100%;
-    color: var(--text-main);
-    text-shadow: none;
-    animation: fadeInUp 0.8s ease-out 0.2s forwards;
-    opacity: 0;
-}
-        
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background-color: var(--accent-pink);
-            color: white;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: 8px;
-            font-family: var(--font-serif);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition-bounce);
-            animation: fadeInUp 0.8s ease-out 0.4s forwards;
-            opacity: 0;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .hero-cta:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(255,182,193,0.4);
-            background-color: var(--pastel-pink-dark);
-        }
-        
-        .hero-cta i {
-            transition: var(--transition);
-        }
-        
-        .hero-cta:hover i {
-            transform: translateX(3px);
-        }
-        
-        /* Funnel Basics */
-        .funnel-basics {
-            background-color: var(--bg-soft);
-        }
-        
-        .funnel-explainer {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-lg);
-        }
-        
-        .funnel-diagram {
-            background-color: var(--card-bg);
-            padding: var(--space-md);
-            border-radius: 12px;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-        
-        .funnel-diagram:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .funnel-stage {
-            padding: var(--space-sm);
-            margin-bottom: var(--space-xs);
-            border-radius: 8px;
-            background-color: var(--bg-soft);
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        
-        .funnel-stage:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .funnel-stage:before {
-            content: attr(data-icon);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-        
-        .funnel-stage:hover:before {
-            transform: scale(1.2);
-        }
-        
-        .funnel-stage:nth-child(1) { border-left: 4px solid var(--accent-blue); }
-        .funnel-stage:nth-child(2) { border-left: 4px solid var(--accent-pink); }
-        .funnel-stage:nth-child(3) { border-left: 4px solid var(--accent-dark-blue); }
-        .funnel-stage:nth-child(4) { border-left: 4px solid var(--accent-blue); }
-        .funnel-stage:nth-child(5) { border-left: 4px solid var(--accent-pink); }
-        
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        
-        .feature-card {
-            background-color: var(--card-bg);
-            padding: var(--space-md);
-            border-radius: 12px;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition-bounce);
-            transform: translateY(20px);
-            opacity: 0;
-            cursor: pointer;
-        }
-        
-        .feature-card.animated {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-large);
-        }
-        
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            background-color: var(--bg-soft);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: var(--space-sm);
-            color: var(--accent-dark-blue);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover .feature-icon {
-            transform: rotate(10deg) scale(1.1);
-            background-color: var(--accent-pink);
-            color: white;
-        }
-        
-        /* Visualization Demo */
-        .visualization-demo {
-            background-color: var(--bg-soft);
-        }
-        
-        .demo-container {
-            background-color: var(--card-bg);
-            padding: var(--space-md);
-            border-radius: 12px;
-            box-shadow: var(--shadow-soft);
-            margin-top: var(--space-lg);
-            transition: var(--transition);
-        }
-        
-        .demo-container:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: var(--space-md);
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition-bounce);
-            transform: translateY(20px);
-            opacity: 0;
-        }
-        
-        .stat-card.animated {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-8px);
-            background-color: var(--pastel-pink-light);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .stat-value {
-            font-size: 2.5rem;
-            font-family: var(--font-serif);
-            color: var(--accent-dark-blue);
-            margin-bottom: var(--space-xs);
-            transition: var(--transition);
-        }
-        
-        .stat-card:hover .stat-value {
-            transform: scale(1.1);
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Case Studies */
-        .case-study {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-md);
-            margin-bottom: var(--space-xl);
-            align-items: center;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: var(--transition-slow);
-        }
-        
-        .case-study.animated {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .case-study-image {
-            background-color: var(--bg-soft);
-            height: auto;
-            max-height: 400px;
-            border-radius: 12px;
+            background-color: white;
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-dark-blue);
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            transition: var(--transition);
         }
-        
-        .case-study-image img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            transition: var(--transition-slow);
-        }
-        
-        .case-study:hover .case-study-image img {
-            transform: scale(1.05);
-        }
-        
-        .case-study-results {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-sm);
-            margin-top: var(--space-md);
-        }
-        
-        .result-item {
-            background-color: var(--bg-soft);
-            padding: var(--space-sm);
-            border-radius: 8px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .result-item:hover {
-            background-color: var(--pastel-pink-light);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .result-value {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            color: var(--accent-dark-blue);
-            transition: var(--transition);
-        }
-        
-        .result-item:hover .result-value {
-            transform: scale(1.1);
-        }
-        
-        /* FAQ */
-        .faq-item {
-            margin-bottom: var(--space-sm);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding-bottom: var(--space-sm);
-            transition: var(--transition);
-        }
-        
-        .faq-item:hover {
-            border-bottom-color: var(--accent-pink);
-        }
-        
-        .faq-question {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            margin-bottom: var(--space-xs);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-            padding: var(--space-xs) 0;
-        }
-        
-        .faq-question:hover {
-            color: var(--accent-dark-blue);
-        }
-        
-        .faq-question:after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--accent-pink);
-            transition: var(--transition);
-        }
-        
-        .faq-item.active .faq-question:after {
-            content: '-';
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            background-color: var(--bg-soft);
-        }
-        
-        .pricing-card {
-            background-color: var(--card-bg);
-            padding: var(--space-xl);
-            border-radius: 12px;
-            box-shadow: var(--shadow-soft);
+
+        .hero-content {
+            flex: 1;
             max-width: 600px;
-            margin: 0 auto;
-            margin-top: var(--space-lg);
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 50%;
+            position: relative;
+            z-index: 1;
+            perspective: 1000px;
+            will-change: transform;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d;
+            loading: lazy;
+            will-change: transform, box-shadow;
+        }
+
+        .hero-image:hover img {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-modern h1 {
+            font-size: clamp(2rem, 5vw, 3.75rem);
+            color: var(--charcoal-black);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(90deg, var(--charcoal-black), var(--hero-dark-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+
+        .hero-modern h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            border-radius: 2px;
+        }
+
+        .hero-modern .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #444;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 90%;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .primary-button, .secondary-button {
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
             position: relative;
             overflow: hidden;
-            transition: var(--transition-bounce);
-            transform: translateY(20px);
-            opacity: 0;
+            z-index: 1;
+            text-decoration: none;
+            display: inline-block;
+            min-height: 48px;
+            will-change: transform, box-shadow, background;
         }
-        
-        .pricing-card.animated {
-            transform: translateY(0);
+
+        .primary-button {
+            background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
+            color: white;
+            box-shadow: 0 4px 15px rgba(10, 157, 183, 0.3);
+        }
+
+        .primary-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--hero-dark-teal), var(--hero-teal));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(10, 157, 183, 0.4);
+        }
+
+        .primary-button:hover::before {
             opacity: 1;
         }
-        
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-large);
+
+        .secondary-button {
+            background: white;
+            color: var(--charcoal-black);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-        
-        .pricing-card:before {
-            content: '';
+
+        .secondary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Product Showcase Section */
+        .product-showcase {
+            padding: 6rem 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-showcase::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .product-showcase h2 {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            color: var(--charcoal-black);
+        }
+
+        .product-showcase h2::after {
+            content: "";
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5rem;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            border-radius: 2px;
+        }
+
+        .product-showcase .subtitle {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            color: #444;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+        }
+
+        .feature-card::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--hero-teal);
+            font-size: 1.75rem;
+            transition: all 0.3s ease;
+            will-change: transform, background;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotate(10deg) scale(1.1);
+            background: linear-gradient(135deg, var(--hero-teal), var(--aqua-glow));
+            color: white;
+            box-shadow: 0 8px 20px rgba(10, 157, 183, 0.3);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: var(--charcoal-black);
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Video Demo Section */
+        .video-demo {
+            padding: 6rem 5%;
+            text-align: center;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .video-demo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .video-demo h2 {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--charcoal-black);
+        }
+
+        .video-demo .subtitle {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            color: #444;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            margin: 0 auto;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, box-shadow;
+        }
+
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 6rem 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .use-cases h2 {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--charcoal-black);
+        }
+
+        .use-cases .subtitle {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            color: #444;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            will-change: transform, box-shadow;
+        }
+
+        .use-case-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .use-case-card:hover::before {
+            opacity: 1;
+        }
+
+        .use-case-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            will-change: transform, background;
+        }
+
+        .use-case-card:hover .use-case-image {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(10, 157, 183, 0.2), rgba(0, 240, 255, 0.2));
+        }
+
+        .use-case-image img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            will-change: transform;
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal-black);
+            font-weight: 600;
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 5%;
+            text-align: center;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .pricing::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(10, 157, 183, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .pricing h2 {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--charcoal-black);
+        }
+
+        .pricing .subtitle {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            color: #444;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, box-shadow;
+        }
+
+        .pricing-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            transition: opacity 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
         .price {
             font-size: 3.5rem;
-            font-family: var(--font-serif);
-            color: var(--accent-dark-blue);
-            margin: var(--space-sm) 0;
-            transition: var(--transition);
+            font-weight: 700;
+            color: var(--hero-teal);
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+            will-change: transform;
         }
-        
+
         .pricing-card:hover .price {
             transform: scale(1.05);
         }
-        
+
         .price-period {
             font-size: 1rem;
-            opacity: 0.8;
+            color: #666;
+            margin-bottom: 2rem;
         }
-        
+
         .benefits-list {
             text-align: left;
-            margin: var(--space-md) 0;
+            margin: 2rem 0;
             list-style: none;
         }
-        
+
         .benefits-list li {
-            margin-bottom: var(--space-xs);
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: var(--space-xs);
-            transition: var(--transition);
-            padding: 0.5rem;
-            border-radius: 4px;
+            gap: 0.75rem;
+            will-change: transform, background;
         }
-        
+
         .benefits-list li:hover {
             transform: translateX(8px);
-            background-color: var(--pastel-pink-light);
+            background: rgba(10, 157, 183, 0.05);
         }
-        
-        .benefits-list li:before {
-            content: '✓';
-            color: var(--accent-pink);
+
+        .benefits-list li::before {
+            content: "✓";
+            color: var(--hero-teal);
             font-weight: bold;
         }
-        
-        .btn {
-            display: inline-block;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: 8px;
-            font-family: var(--font-serif);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition-bounce);
-            border: none;
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .faq h2 {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--charcoal-black);
+        }
+
+        .faq .subtitle {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            color: #444;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            will-change: transform, box-shadow;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--charcoal-black);
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            will-change: color;
         }
-        
-        .btn-primary {
-            background-color: var(--accent-pink);
+
+        .faq-question:hover {
+            color: var(--hero-teal);
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--hero-teal);
+            transition: all 0.3s ease;
+            will-change: transform;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: max-height;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Call to Action Section */
+        .call-to-action {
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--hero-teal), var(--hero-dark-teal));
             color: white;
-            box-shadow: 0 4px 12px rgba(255,182,193,0.3);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(255,182,193,0.4);
-            background-color: var(--pastel-pink-dark);
+
+        .call-to-action::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern.webp') center/cover;
+            opacity: 0.05;
+            z-index: 0;
         }
-        
-        /* Footer */
+
+        .call-to-action h2 {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .call-to-action p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .call-to-action .cta-group {
+            position: relative;
+            z-index: 1;
+        }
+
+        .call-to-action .primary-button {
+            background: white;
+            color: var(--hero-teal);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .call-to-action .primary-button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .call-to-action .secondary-button {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .call-to-action .secondary-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        /* Footer Section */
         footer {
-            background-color: var(--text-main);
+            padding: 5rem 5% 2.5rem;
+            background-color: var(--charcoal-black);
             color: white;
-            padding: var(--space-xl) 0;
+            position: relative;
         }
-        
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+        }
+
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-xl);
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
+
         .footer-column h3 {
             color: white;
-            margin-bottom: var(--space-md);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
             position: relative;
-            padding-bottom: var(--space-xs);
+            padding-bottom: 0.75rem;
+            font-weight: 600;
         }
-        
-        .footer-column h3:after {
-            content: '';
+
+        .footer-column h3::after {
+            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
             width: 40px;
             height: 2px;
-            background-color: var(--accent-pink);
+            background: var(--hero-teal);
         }
-        
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
         .footer-column a {
             display: block;
-            margin-bottom: var(--space-xs);
-            color: rgba(255,255,255,0.7);
-            transition: var(--transition);
-            padding: 0.25rem 0;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: transform, color;
         }
-        
+
         .footer-column a:hover {
-            color: var(--accent-pink);
+            color: white;
             transform: translateX(5px);
         }
-        
+
         .footer-bottom {
-            margin-top: var(--space-xl);
-            padding-top: var(--space-md);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-        }
-        
-        /* Sticky CTA */
-        .sticky-cta {
-            position: fixed;
-            bottom: var(--space-md);
-            right: var(--space-md);
-            background-color: var(--accent-pink);
-            color: white;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: 8px;
-            font-family: var(--font-serif);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: var(--shadow-medium);
-            z-index: 100;
-            transform: translateY(100px);
-            transition: var(--transition-bounce);
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-            border: none;
-            cursor: pointer;
-        }
-        
-        .sticky-cta.visible {
-            transform: translateY(0);
-        }
-        
-        .sticky-cta:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--shadow-large);
-            background-color: var(--pastel-pink-dark);
-        }
-        
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: fixed;
-            right: var(--space-md);
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
-            z-index: 99;
-        }
-        
-        .scroll-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background-color: rgba(0,0,0,0.1);
-            transition: var(--transition);
-            position: relative;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-        
-        .scroll-dot.active {
-            background-color: var(--accent-dark-blue);
-            transform: scale(1.2);
-            border-color: white;
-        }
-        
-        .scroll-dot:hover {
-            transform: scale(1.3);
-        }
-        
-        .scroll-dot:after {
-            content: attr(data-label);
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--text-main);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition);
-        }
-        
-        .scroll-dot:hover:after {
-            opacity: 1;
-            right: 30px;
-        }
-        
-        /* Funnel Visualization */
-        .funnel-visualization {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            margin: var(--space-lg) auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .funnel-stage-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight: 500;
-            transition: all 0.5s ease;
-            box-shadow: var(--shadow-soft);
-            z-index: 1;
-        }
-        
-        .funnel-stage-visual.attention {
-            width: 250px;
-            height: 80px;
-            background-color: var(--accent-blue);
-            border-radius: 8px 8px 0 0;
-        }
-        
-        .funnel-stage-visual.interest {
-            width: 200px;
-            height: 80px;
-            background-color: var(--accent-pink);
-        }
-        
-        .funnel-stage-visual.desire {
-            width: 150px;
-            height: 80px;
-            background-color: var(--accent-dark-blue);
-        }
-        
-        .funnel-stage-visual.action {
-            width: 100px;
-            height: 80px;
-            background-color: var(--accent-blue);
-            border-radius: 0 0 8px 8px;
-        }
-        
-        .lead-card {
-            position: absolute;
-            width: 40px;
-            height: 20px;
-            background-color: white;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 10px;
-            color: var(--text-main);
-            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 10;
-            opacity: 0;
-        }
-        
-        .lead-card.visible {
-            opacity: 1;
-        }
-        
-        .analytics-section {
-            background-color: var(--bg-soft);
-            border-radius: 12px;
-            padding: var(--space-md);
-            margin-top: var(--space-lg);
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-        
-        .analytics-section:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-md);
-        }
-        
-        .analytics-card {
-            background-color: white;
-            padding: var(--space-md);
-            border-radius: 8px;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-        
-        .analytics-card:hover {
-            transform: translateY(-5px);
-            background-color: var(--pastel-pink-light);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .analytics-value {
-            font-size: 2rem;
-            font-family: var(--font-serif);
-            color: var(--accent-dark-blue);
-            margin-bottom: var(--space-xs);
-            transition: var(--transition);
-        }
-        
-        .analytics-card:hover .analytics-value {
-            transform: scale(1.1);
-        }
-        
-        .analytics-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .conversion-path {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            margin: var(--space-md) 0;
-            padding: var(--space-sm);
-            background-color: var(--bg-soft);
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        
-        .conversion-path:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .path-stage {
-            text-align: center;
-            flex: 1 1 100%;
-            position: relative;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .path-stage:not(:last-child):after {
-            content: '↓';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--accent-dark-blue);
-            animation: bounceDown 1.5s infinite;
-        }
-        
-        .path-percentage {
-            font-weight: bold;
-            color: var(--accent-dark-blue);
-            transition: var(--transition);
-        }
-        
-        .path-stage:hover .path-percentage {
-            transform: scale(1.1);
-        }
-        
-        .stage-distribution {
-            width: 250px;
-            height: 250px;
-            margin: var(--space-md) auto;
-            position: relative;
-            border-radius: 50%;
-            background: conic-gradient(
-                var(--accent-blue) 0% 60%,
-                var(--accent-pink) 60% 80%,
-                var(--accent-dark-blue) 80% 95%,
-                var(--pastel-pink-dark) 95% 100%
-            );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-        
-        .stage-distribution:hover {
-            transform: rotate(5deg) scale(1.05);
-        }
-        
-        .stage-distribution:before {
-            content: '';
-            position: absolute;
-            width: 70%;
-            height: 70%;
-            background-color: white;
-            border-radius: 50%;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-        }
-        
-        .stage-distribution-label {
-            position: absolute;
-            font-family: var(--font-serif);
-            color: var(--text-main);
-            z-index: 2;
-            font-size: 1.5rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
-        
-        .stage-distribution-legend {
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .legal-links {
             display: flex;
             justify-content: center;
-            gap: var(--space-md);
-            margin-top: var(--space-md);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-            font-size: 0.9rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            transition: var(--transition);
+
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: color;
         }
-        
-        .legend-item:hover {
-            background-color: var(--pastel-pink-light);
-            transform: translateY(-3px);
+
+        .legal-links a:hover {
+            color: white;
         }
-        
-        .legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            transition: var(--transition);
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(10, 157, 183, 0.1), rgba(0, 240, 255, 0.1));
+            filter: blur(30px);
+            z-index: 0;
+            will-change: transform;
         }
-        
-        .legend-item:hover .legend-color {
-            transform: scale(1.2);
-        }
-        
-        /* Responsive */
-        @media (min-width: 768px) {
-            .hero {
-                min-height: 80vh;
-                padding: 8rem 0 6rem;
-            }
-            
-            .hero-container {
-                flex-direction: row;
-                align-items: center;
-            }
-            
-            .hero-content {
-                text-align: left;
-            }
-            
-            .funnel-explainer {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-xl);
-            }
-            
-            .case-study {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .path-stage {
-                flex: 1;
-                margin-bottom: 0;
-            }
-            
-            .path-stage:not(:last-child):after {
-                content: '→';
-                position: absolute;
-                right: -15px;
-                top: 50%;
-                bottom: auto;
-                left: auto;
-                transform: translateY(-50%);
-                animation: bounceRight 1.5s infinite;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .analytics-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .section {
-                padding: var(--space-lg) 0;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .case-study-results {
-                grid-template-columns: 1fr;
-            }
-            
-            .funnel-visualization {
-                height: 350px;
-            }
-            
-            .funnel-stage-visual.attention {
-                width: 200px;
-            }
-            
-            .funnel-stage-visual.interest {
-                width: 160px;
-            }
-            
-            .funnel-stage-visual.desire {
-                width: 120px;
-            }
-            
-            .funnel-stage-visual.action {
-                width: 80px;
-            }
-            
-            .stage-distribution {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .scroll-indicator {
-                right: var(--space-sm);
-            }
-            
-            nav ul {
-                gap: var(--space-sm);
-            }
-        }
-        
+
         /* Animations */
-        @keyframes fadeInUp {
-            from {
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            to {
+            100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.6; }
+
+        /* Mobile Touch Improvements */
+        @media (hover: none) {
+            .feature-card:active,
+            .use-case-card:active,
+            .pricing-card:active,
+            .faq-item:active {
+                transform: translateY(-5px) scale(1.01);
+            }
+            
+            /* Remove hover effects on mobile */
+            .feature-card:hover,
+            .use-case-card:hover,
+            .pricing-card:hover,
+            .faq-item:hover {
+                transform: none;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            }
+            
+            .feature-card:hover::before,
+            .use-case-card:hover::before,
+            .pricing-card:hover::before {
+                opacity: 0;
+            }
         }
-        
-        @keyframes bounceRight {
-            0%, 100% { transform: translateY(-50%) translateX(0); }
-            50% { transform: translateY(-50%) translateX(5px); }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            html {
+                font-size: 15px;
+            }
         }
-        
-        @keyframes bounceDown {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(5px); }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        .delay-1 {
-            animation-delay: 0.1s;
-        }
-        
-        .delay-2 {
-            animation-delay: 0.2s;
-        }
-        
-        .delay-3 {
-            animation-delay: 0.3s;
-        }
-        
-        .delay-4 {
-            animation-delay: 0.4s;
-        }
-        
-        .delay-5 {
-            animation-delay: 0.5s;
-        }
-        
-        .delay-6 {
-            animation-delay: 0.6s;
+
+        @media (max-width: 992px) {
+            .hero-modern {
+                flex-direction: column;
+                text-align: center;
+                padding: 10rem 5% 5rem;
+            }
+            
+            .hero-image {
+                max-width: 100%;
+                margin-top: 3rem;
+            }
+            
+            .hero-modern h1 {
+                font-size: 3rem;
+            }
+
+            .hero-modern .hero-subtitle {
+                max-width: 100%;
+            }
+            
+            /* Optimize menu for mobile */
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .social-icons {
+                margin-left: 0;
+                margin-top: 2rem;
+                justify-content: center;
+                width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
+            html {
+                font-size: 14px;
+            }
 
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
+            .hero-modern h1 {
+                font-size: 2.5rem;
+                padding-top: 3rem;
+            }
 
-  .hero-content {
-    transform: translateY(-20px);
-  }
-}
+            .product-showcase h2,
+            .video-demo h2,
+            .use-cases h2,
+            .pricing h2,
+            .faq h2,
+            .call-to-action h2 {
+                font-size: 2.25rem;
+            }
 
+            .cta-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .feature-card,
+            .use-case-card,
+            .pricing-card,
+            .faq-item {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hero-modern h1 {
+                font-size: 2rem;
+            }
+
+            .product-features,
+            .use-case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+    
+    <!-- Preload non-critical CSS -->
+    <link rel="preload" href="css/non-critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
+   
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">Tempest <span>Labs</span></a>
-            <nav>
-                <ul>
-                    <li><a href="about.html">Hakkımızda</a></li>
-                    <li><a href="products.html">Ürünler</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Floating Background Elements -->
+    <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 5%; animation: float 8s ease-in-out infinite;"></div>
+    <div class="floating-element" style="width: 400px; height: 400px; bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
+
+    <!-- Header Section -->
+    <header role="banner">
+        <a class="logo" href="/turkish/index.html" aria-label="Tempest Labs Anasayfa">
+            Tempest <span>Labs</span>
+        </a>
+        
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Navigasyon menüsünü aç/kapat" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <nav role="navigation">
+            <ul>
+                <li><a href="/turkish/about.html" aria-label="Tempest Labs Hakkında">Hakkımızda</a></li>
+                <li><a href="/turkish/products.html" aria-label="Ürünlerimizi görüntüle">Ürünler</a></li>
+                <li><a href="#use-cases" aria-label="Kimler için uygun">Kimler İçin</a></li>
+                <li><a href="#demo" aria-label="Ürün demosu">Demo</a></li>
+                <li><a href="/turkish/contact.html" aria-label="Bizimle iletişime geçin">İletişim</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </nav>
     </header>
 
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
     <!-- Hero Section -->
-
-<section class="hero" id="hero">
-  <img src="/images/herofunnel.webp" alt="FunnelFlow Hero" class="hero-image" />
-  <div class="container hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">Pazarlama Kaosu → Netlik</h1>
-      <p class="hero-subtitle">
-        FunnelFlow, müşteri yolculuğunuzu hiç olmadığı kadar net görmenizi sağlayan sakin, görsel bir panodur.
-        Potansiyel müşterilerin nerede ayrıldığını görün, nedenini anlayın ve güvenle düzeltin.
-      </p>
-      <button class="hero-cta" onclick="location.href='#cta'">
-        <span>Nasıl Çalıştığını Görün</span>
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Funnel Basics Section -->
-    <section class="section funnel-basics" id="basics">
-        <div class="container">
-            <h2 class="section-title">Pazarlama Hunilerini Anlamak</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">Pazarlama hunisi, müşteri yolculuğunun ilk farkındalıktan nihai satın almaya kadar görsel bir temsilidir. Potansiyel müşterilerin markanızla nasıl etkileşime girdiğini ve süreçte nerede ayrılabileceklerini anlamanıza yardımcı olur.</p>
-            
-            <div class="funnel-visualization" id="funnelVisualization">
-                <div class="funnel-stage-visual attention">Dikkat</div>
-                <div class="funnel-stage-visual interest">İlgi</div>
-                <div class="funnel-stage-visual desire">Arzu</div>
-                <div class="funnel-stage-visual action">Hareket</div>
+    <section class="hero-modern" role="main">
+        <div class="hero-content">
+            <h1>Pazarlama Karmaşası → Netlik</h1>
+            <p class="hero-subtitle">FunnelFlow, müşteri yolculuğunuzu hiç olmadığı kadar net gösteren sakin, görsel bir paneldir. Potansiyel müşterilerin nerede ayrıldığını görün, nedenini anlayın ve güvenle düzeltin.</p>
+            <div class="cta-group">
+                <a href="#demo" class="primary-button">Nasıl Çalıştığını Görün</a>
+                <a href="https://tempestlabs.space/buyfunnelflow.html" class="secondary-button">Şimdi Satın Al</a>
             </div>
-            
-            <div class="analytics-section">
-                <h3 style="text-align: center; margin-bottom: var(--space-md);">Gelişmiş Huni Analitiği</h3>
-                
-                <div class="analytics-grid">
-                    <div class="analytics-card fade-in-up delay-1">
-                        <div class="analytics-value">60</div>
-                        <div class="analytics-label">Toplam Potansiyel Müşteri</div>
-                        <div class="analytics-description">Huninizdeki toplam potansiyel müşteri sayısı</div>
-                    </div>
-                    
-                    <div class="analytics-card fade-in-up delay-2">
-                        <div class="analytics-value">40</div>
-                        <div class="analytics-label">Sıcak Potansiyel Müşteriler</div>
-                        <div class="analytics-description">Yüksek etkileşim gösteren potansiyel müşteriler</div>
-                    </div>
-                    
-                    <div class="analytics-card fade-in-up delay-3">
-                        <div class="analytics-value">50%</div>
-                        <div class="analytics-label">Etkileşim Oranı</div>
-                        <div class="analytics-description">İçerikle ortalama etkileşim</div>
-                    </div>
-                    
-                    <div class="analytics-card fade-in-up delay-1">
-                        <div class="analytics-value">23</div>
-                        <div class="analytics-label">Eklenen Potansiyel Müşteriler</div>
-                        <div class="analytics-description">Bu hafta eklenen yeni potansiyel müşteriler</div>
-                    </div>
-                    
-                    <div class="analytics-card fade-in-up delay-2">
-                        <div class="analytics-value">4</div>
-                        <div class="analytics-label">Bayat Potansiyel Müşteriler</div>
-                        <div class="analytics-description">30+ gündür hareketsiz</div>
-                    </div>
-                    
-                    <div class="analytics-card fade-in-up delay-3">
-                        <div class="analytics-value">12</div>
-                        <div class="analytics-label">Dönüşümler</div>
-                        <div class="analytics-description">Müşteriye dönüşen potansiyel müşteriler</div>
-                    </div>
-                </div>
-                
-                <div class="conversion-path">
-                    <div class="path-stage">
-                        <div>Farkındalık→İlgi</div>
-                        <div class="path-percentage">100%</div>
-                    </div>
-                    <div class="path-stage">
-                        <div>İlgi→Değerlendirme</div>
-                        <div class="path-percentage">20%</div>
-                    </div>
-                    <div class="path-stage">
-                        <div>Hunide Ort. Süre</div>
-                        <div class="path-percentage">Veri yok</div>
-                    </div>
-                </div>
-                
-                <h4 style="margin-top: var(--space-lg); text-align: center;">Aşama Dağılımı</h4>
-                <div class="stage-distribution">
-                    <div class="stage-distribution-label">Huni Aşamaları</div>
-                </div>
-                <div class="stage-distribution-legend">
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: var(--accent-blue);"></div>
-                        <span>Farkındalık (60%)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: var(--accent-pink);"></div>
-                        <span>İlgi (20%)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: var(--accent-dark-blue);"></div>
-                        <span>Arzu (15%)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: var(--pastel-pink-dark);"></div>
-                        <span>Hareket (5%)</span>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/images/funnelherohero.webp" alt="FunnelFlow panel arayüzü, görsel pazarlama funnel'ını gösteriyor" width="800" height="600" loading="eager">
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section" id="features">
-        <div class="container">
-            <h2 class="section-title">FunnelFlow Nasıl Çalışır?</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto;">Pazarlama huninizi anlamak için sakin, odaklanmış bir yaklaşım.</p>
+    <!-- Product Showcase Section -->
+    <section class="product-showcase" id="overview">
+        <h2>Satış Sürecinizi Düzenleyin</h2>
+        <p class="subtitle">FunnelFlow, pipeline'ınızı daha fazla işi daha hızlı kapatmanıza yardımcı olacak şekilde düzenler. Karmaşa yok, kafa karışıklığı yok - sadece satış sürecinizin yapılandırılmış, düzenli bir görünümü.</p>
+        
+        <div class="product-features">
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Görsel Funnel Haritalama</h3>
+                <p>Tüm müşteri yolculuğunuzu tek bakışta görün. Potansiyel müşterilerin nerede ayrıldığını tahmin etmeye son.</p>
+            </article>
             
-            <div class="features-grid">
-                <div class="feature-card fade-in-up delay-1">
-                    <div class="feature-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Görsel Huni Haritalama</h3>
-                    <p>Güzel, sezgisel huni görselleştirmemizle tüm müşteri yolculuğunuzu tek bakışta görün. Potansiyel müşterilerin nerede ayrıldığını tahmin etmeye son.</p>
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lightbulb"></i>
                 </div>
-                
-                <div class="feature-card fade-in-up delay-2">
-                    <div class="feature-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Akıllı Öngörüler</h3>
-                    <p>Sistemimiz, huni verilerinizi analiz ederek her aşamada dönüşümleri iyileştirmek için eyleme dönüştürülebilir öneriler sunar.</p>
+                <h3>Akıllı Öngörüler</h3>
+                <p>Sistemimiz funnel verilerinizi analiz ederek her aşamada dönüşümleri iyileştirmek için eyleme dönüştürülebilir öneriler sunar.</p>
+            </article>
+            
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tasks"></i>
                 </div>
-                
-                <div class="feature-card fade-in-up delay-3">
-                    <div class="feature-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3>Potansiyel Müşteri Organizasyonu</h3>
-                    <p>Sezgisel sistemimizle potansiyel müşterileri her aşamada takip edin ve besleyin. Her potansiyel müşterinin yolculuktaki tam konumunu bilin.</p>
+                <h3>Lead Organizasyonu</h3>
+                <p>Lead'leri her aşamada takip edin ve geliştirin. Her potansiyel müşterinin yolculuktaki konumunu tam olarak bilin.</p>
+            </article>
+            
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-pie"></i>
                 </div>
-                
-                <div class="feature-card fade-in-up delay-1">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Temel Metrikler</h3>
-                    <p>Önemli olan sayılara odaklanın - aşamalar arası dönüşüm oranları, hunide geçirilen süre ve içerik performansı.</p>
+                <h3>Önemli Metrikler</h3>
+                <p>Önemli olan sayılara odaklanın - aşamalar arası dönüşüm oranları, funnel'da geçirilen süre ve içerik performansı.</p>
+            </article>
+            
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-alt"></i>
                 </div>
-                
-                <div class="feature-card fade-in-up delay-2">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>İçerik Takibi</h3>
-                    <p>Her huni aşamasında içerik performansını atayın ve takip ederek doğru mesajı doğru zamanda iletmenizi sağlayın.</p>
+                <h3>İçerik Takibi</h3>
+                <p>Her funnel aşamasında içerik performansını atayın ve takip ederek doğru mesajı doğru zamanda verdiğinizden emin olun.</p>
+            </article>
+            
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users-cog"></i>
                 </div>
-                
-                <div class="feature-card fade-in-up delay-3">
-                    <div class="feature-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3>Basit Kurulum</h3>
-                    <p>Karmaşık entegrasyonlar yok. Sadece veri kaynaklarınızı bağlayın ve huninizi dakikalar içinde net bir şekilde görmeye başlayın.</p>
-                </div>
-            </div>
+                <h3>Basit Kurulum</h3>
+                <p>Karmaşık entegrasyonlar yok. Sadece veri kaynaklarınızı bağlayın ve funnel'ınızı dakikalar içinde net bir şekilde görmeye başlayın.</p>
+            </article>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="section" id="proof">
-        <div class="container">
-            <h2 class="section-title">Kanıt Süreçte Gizli</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-lg);">Pazarlama hunilerini görselleştiren işletmeler çarpıcı iyileştirmeler görür.</p>
-            
-            <div class="stats-grid">
-                <div class="stat-card fade-in-up delay-1">
-                    <div class="stat-value">2x</div>
-                    <div class="stat-label">Hunileri görselleştiren pazarlamacıların hedefleri aşma olasılığı 2 kat daha fazla</div>
-                </div>
-                
-                <div class="stat-card fade-in-up delay-2">
-                    <div class="stat-value">54%</div>
-                    <div class="stat-label">Huni haritalama ile pazarlama yatırımında daha büyük getiri</div>
-                </div>
-                
-                <div class="stat-card fade-in-up delay-3">
-                    <div class="stat-value">58%</div>
-                    <div class="stat-label">Pazarlamacıların en büyük engel olarak belirttiği net olmayan müşteri yolculukları</div>
-                </div>
-            </div>
+    <!-- Video Demo Section -->
+    <section class="video-demo" id="demo">
+        <h2>FunnelFlow'u Çalışırken Görün</h2>
+        <p class="subtitle">FunnelFlow'un pazarlama karmaşasını nasıl netliğe dönüştürdüğünü gösteren 2 dakikalık bir genel bakış.</p>
+        
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/r9yP4kffPEk?si=pHU6DycPKW5D_ZSG" title="FunnelFlow Demo Videosu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
 
-    <!-- Case Studies -->
-    <section class="section" id="scenarios">
-        <div class="container">
-            <h2 class="section-title">Örnek Başarı Hikayeleri</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-xl);">Bu kurgusal örnekler, işletmelerin pazarlamalarını iyileştirmek için FunnelFlow'u nasıl kullanabileceğini göstermektedir.</p>
+    <!-- Use Cases Section -->
+    <section class="use-cases" id="use-cases">
+        <h2>FunnelFlow'u Kimler Kullanıyor?</h2>
+        <p class="subtitle">Farklı sektörlerden profesyoneller pazarlama çabalarında netlik kazanmak için FunnelFlow'u kullanıyor</p>
+        
+        <div class="use-case-grid">
+            <article class="use-case-card">
+                <div class="use-case-image">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>SaaS Kurucuları</h3>
+                <p>Deneme kayıtlarını, özellik benimsemeyi ve ücretli planlara dönüşümü görsel bir kesinlikle takip edin.</p>
+            </article>
             
-            <div class="case-study fade-in-up">
-                <div class="case-study-image">
-                    <img src="/images/funnelds.webp" alt="Örnek SaaS Panosu" style="width: 100%; height: auto; max-height: 400px; object-fit: contain;" />
+            <article class="use-case-card">
+                <div class="use-case-image">
+                    <i class="fas fa-shopping-cart"></i>
                 </div>
-                <div>
-                    <h3>Odaklanmayı Bulan SaaS Kurucusu</h3>
-                    <p><em>Bu sadece açıklayıcı bir örnektir</em></p>
-                    <p>Bir SaaS kurucusu, yüksek deneme kayıtları ancak düşük dönüşümlerle mücadele ediyordu. FunnelFlow, kullanıcıların nerede ayrıldığını (onboarding sırasında) ve hangi içeriğin onları ileriye taşıdığını belirlemeye yardımcı oldu.</p>
-                    
-                    <div class="case-study-results">
-                        <div class="result-item">
-                            <div class="result-value">68%</div>
-                            <div class="result-label">Dönüşüm artışı</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">2.5x</div>
-                            <div class="result-label">Daha fazla etkileşimli kullanıcı</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <h3>E-ticaret Yöneticileri</h3>
+                <p>Alışveriş yapanların satın alma funnel'ınızın tam olarak neresinde ayrıldığını belirleyin ve buna göre optimize edin.</p>
+            </article>
             
-            <div class="case-study fade-in-up">
-                <div class="case-study-image">
-                    <img src="/images/funnelds2.webp" alt="Örnek E-ticaret Mağazası" style="width: 100%; height: auto; max-height: 400px; object-fit: contain;" />
+            <article class="use-case-card">
+                <div class="use-case-image">
+                    <i class="fas fa-chart-line"></i>
                 </div>
-                <div>
-                    <h3>Sızıntıyı Durduran E-ticaret Mağazası</h3>
-                    <p><em>Bu sadece açıklayıcı bir örnektir</em></p>
-                    <p>Bir e-ticaret mağazasının harika trafiği vardı ancak durgun satışları vardı. FunnelFlow, "Sepete Ekle" sonrasında büyük bir düşüş olduğunu ortaya çıkardı. Hedefli ödeme optimizasyonları ile dönüşümleri iyileştirdiler.</p>
-                    
-                    <div class="case-study-results">
-                        <div class="result-item">
-                            <div class="result-value">42%</div>
-                            <div class="result-label">Daha yüksek dönüşüm oranı</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">$28k</div>
-                            <div class="result-label">Aylık gelir artışı</div>
-                        </div>
-                    </div>
+                <h3>Pazarlama Ajansları</h3>
+                <p>Müşterilerinize kampanyalarının tüm müşteri yolculuğu boyunca tam olarak nasıl performans gösterdiğini gösterin.</p>
+            </article>
+            
+            <article class="use-case-card">
+                <div class="use-case-image">
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
-            </div>
+                <h3>Kurs Yaratıcıları</h3>
+                <p>Hangi içeriğin ziyaretçileri öğrenciye dönüştürdüğünü ve potansiyel öğrencilerin nerede ilgisini kaybettiğini anlayın.</p>
+            </article>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-        <div class="container">
-            <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <h2>Basit, Şeffaf Fiyatlandırma</h2>
+        <p class="subtitle">Tek seferlik ödeme. Abonelik yok. Gizli ücret yok.</p>
+        
+        <div class="pricing-card">
+            <h3>FunnelFlow Standart</h3>
+            <div class="price">$9.99</div>
+            <div class="price-period">tek seferlik ödeme (normal fiyat $29)</div>
             
-            <div class="faq-item">
+            <ul class="benefits-list">
+                <li>Sınırsız funnel & lead</li>
+                <li>Görsel funnel oluşturucu</li>
+                <li>Temel analiz paneli</li>
+                <li>İçerik performans takibi</li>
+                <li>Excel'e aktarım</li>
+                <li>E-posta desteği</li>
+            </ul>
+            
+            <a href="https://tempestlabs.space/buyfunnelflow.html" class="primary-button">FunnelFlow'u Şimdi Edinin</a>
+            
+       
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <p class="subtitle">FunnelFlow hakkında bilmeniz gereken her şey</p>
+        
+        <div class="faq-grid">
+            <article class="faq-item">
                 <div class="faq-question">FunnelFlow bir CRM midir?</div>
                 <div class="faq-answer">
-                    <p>Hayır, FunnelFlow CRM'inizin görselleştirme katmanını sağlayarak onu tamamlar. HubSpot veya Salesforce gibi araçlarla birlikte çalışacak şekilde tasarlanmıştır, pazarlama huninizin büyük resmini görmenize yardımcı olur.</p>
+                    <div class="faq-answer-content">
+                        <p>Hayır, FunnelFlow CRM'inizin sağlamadığı görselleştirme katmanını sunarak onu tamamlar. HubSpot veya Salesforce gibi araçlarla birlikte çalışacak şekilde tasarlanmıştır, pazarlama funnel'ınızın büyük resmini görmenize yardımcı olur.</p>
+                    </div>
                 </div>
-            </div>
+            </article>
             
-            <div class="faq-item">
+            <article class="faq-item">
                 <div class="faq-question">Verilerimi FunnelFlow'a nasıl aktarırım?</div>
                 <div class="faq-answer">
-                    <p>FunnelFlow, potansiyel müşterileri hunilerinize manuel olarak eklemenize izin verir. Harici veri kaynaklarına bağlanmasak da, huni verilerinizi daha fazla analiz için kolayca Excel'e aktarabilirsiniz.</p>
+                    <div class="faq-answer-content">
+                        <p>FunnelFlow, potansiyel lead'leri funnel'larınıza manuel olarak eklemenize izin verir. Harici veri kaynaklarına bağlanmasak da, funnel verilerinizi daha fazla analiz için kolayca Excel'e aktarabilirsiniz.</p>
+                    </div>
                 </div>
-            </div>
+            </article>
             
-            <div class="faq-item">
+            <article class="faq-item">
                 <div class="faq-question">Maliyeti nedir?</div>
                 <div class="faq-answer">
-                    <p>Lansman dönemimizde FunnelFlow sadece $9.99 (tek seferlik ödeme). Bu, 1 yıl için tüm temel özellikleri ve güncellemeleri içerir. Aylık ücret yok, ek satış yok.</p>
+                    <div class="faq-answer-content">
+                        <p>Lansman dönemimizde FunnelFlow sadece $9.99 (tek seferlik ödeme). Bu, tüm temel özellikleri ve 1 yıllık güncellemeleri içerir. Aylık ücret yok, ek satış yok.</p>
+                    </div>
                 </div>
-            </div>
+            </article>
             
-            <div class="faq-item">
+            <article class="faq-item">
                 <div class="faq-question">Öğrenme eğrisi var mı?</div>
                 <div class="faq-answer">
-                    <p>FunnelFlow geliştiriciler için değil, pazarlamacılar için tasarlanmıştır. Trello veya Notion gibi araçları kullanabiliyorsanız, hemen kendinizi evinizde hissedeceksiniz. Hızlı başlamanız için şablon huniler ve adım adım rehberlik sunuyoruz.</p>
+                    <div class="faq-answer-content">
+                        <p>FunnelFlow geliştiriciler için değil, pazarlamacılar için tasarlanmıştır. Trello veya Notion gibi araçları kullanabiliyorsanız, hemen kendinizi evinizde gibi hissedeceksiniz. Hızlı başlamanız için şablon funnel'lar ve adım adım rehberlik sunuyoruz.</p>
+                    </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
-    <!-- CTA Section -->
- <a href="https://tempestlabs.space/buyfunnelflow.html" style="text-decoration: none;">
-    <section class="section cta-section" id="cta">
-        <div class="container">
-            <h2 class="section-title">Netlik İçin Hazır mısınız?</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto;">Görsel huni yönetiminin gücünün kilidini açan binlerce pazarlamacıya katılın.</p>
-            
-            <div class="pricing-card fade-in-up">
-                <h3>FunnelFlow Lansman Özel</h3>
-                <p style="opacity: 0.8; margin-bottom: var(--space-sm);">Tek seferlik ödeme. Abonelik yok.</p>
-                
-                <div class="price">$9.99</div>
-                <div class="price-period">lansman fiyatı (normal $29)</div>
-                
-                <ul class="benefits-list">
-                    <li>Sınırsız huni & potansiyel müşteri</li>
-                    <li>Görsel huni oluşturucu</li>
-                    <li>Temel analiz panosu</li>
-                    <li>İçerik performans takibi</li>
-                    <li>Excel'e aktarım</li>
-                    <li>E-posta desteği</li>
-                </ul>
-                
-                <button class="btn btn-primary">
-                    Hemen FunnelFlow Alın
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                
-                <p style="margin-top: var(--space-md); font-size: 0.9rem; opacity: 0.8;">
-                    <i class="fas fa-lock"></i> Güvenli ödeme. 30 gün para iade garantisi.
-                </p>
-            </div>
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <h2>Pazarlamanızı Dönüştürmeye Hazır mısınız?</h2>
+        <p>FunnelFlow: Netlik için tasarlandı, sonuçlar için inşa edildi. Müşteri yolculuğunuzu hiç olmadığı kadar net görün ve güvenle optimize edin.</p>
+        <div class="cta-group">
+            <a href="https://tempestlabs.space/buyfunnelflow.html" class="primary-button">FunnelFlow'u Şimdi Edinin</a>
+            <a href="#demo" class="secondary-button">Demo İzle</a>
         </div>
     </section>
-</a>
-
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Tempest Labs</h3>
-                    <p>Daha derin düşünme ve daha net görüş için araçlar yaratıyoruz.</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Ürünler</h3>
-                    <a href="#">FunnelFlow</a>
-                    <a href="#">Intuiva</a>
-                    <a href="#">Cabinet</a>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Bağlantı</h3>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Instagram</a>
-                </div>
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><a href="/turkish/about.html">Hakkımızda</a></h3>
+                <p>Daha derin düşünme ve daha net görüş için araçlar yaratıyoruz.</p>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
+            <div class="footer-column">
+                <h3><a href="/turkish/products.html">Ürünler</a></h3>
+                <a href="/turkish/product-intuiva.html">Intuiva</a>
+                <a href="/turkish/product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                <h3><a href="#insights">İçgörüler</a></h3>
+                <a href="https://tempestlabs.space/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="#use-cases">Vaka Çalışmaları</a>
+                <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">Felsefemiz</a>
+            </div>
+            <div class="footer-column">
+                <h3>Bağlantı</h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+            <div class="footer-column">
+                <h3>İletişim</h3>
+                <a href="contact.html">İstanbul, Zeytinburnu</a>
+                <a href="tel:+905075275600">+90 507 527 56 00</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
+            <div class="legal-links">
+                <a href="legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+                <a href="legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
+                <a href="legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
             </div>
         </div>
     </footer>
 
-    <!-- Sticky CTA -->
-    <button class="sticky-cta" id="stickyCta" onclick="location.href='https://tempestlabs.space/buyfunnelflow.html'">
-        <span>FunnelFlow Alın</span>
-        <i class="fas fa-arrow-right"></i>
-    </button>
-
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-        <div class="scroll-dot active" data-label="Ana Sayfa" data-section="hero"></div>
-        <div class="scroll-dot" data-label="Huni" data-section="basics"></div>
-        <div class="scroll-dot" data-label="Özellikler" data-section="features"></div>
-        <div class="scroll-dot" data-label="Görselleştirme" data-section="visualization"></div>
-        <div class="scroll-dot" data-label="Kanıt" data-section="proof"></div>
-        <div class="scroll-dot" data-label="Hikayeler" data-section="scenarios"></div>
-        <div class="scroll-dot" data-label="SSS" data-section="faq"></div>
-        <div class="scroll-dot" data-label="Başlayın" data-section="cta"></div>
-    </div>
-
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "FunnelFlow",
+      "description": "Pazarlama karmaşasını net funnel görsellerine dönüştüren, insan odaklı sakin bir yaklaşım sunan görsel pazarlama paneli.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Tempest Labs"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://tempestlabs.com/funnelflow",
+        "priceCurrency": "USD",
+        "price": "9.99",
+        "priceValidUntil": "2025-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "42"
+      }
+    }
+    </script>
+    
+    <!-- Optimized JavaScript -->
     <script>
-        // Header scroll effects
-        let lastScroll = 0;
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            const currentScroll = window.scrollY;
+    // Critical JavaScript executed immediately
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set initial header state
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+        
+        // Mobile menu toggle function
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
             
-            // Add/remove scrolled class based on scroll position
-            if (currentScroll > 50) {
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+            
+            // Update aria-expanded attribute for accessibility
+            const isExpanded = toggle.classList.contains("active");
+            toggle.setAttribute("aria-expanded", isExpanded);
+        }
+        
+        // Add scroll effect to header with requestAnimationFrame
+        let lastScrollY = window.scrollY;
+        function updateHeader() {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-            
-            // Hide header on scroll down, show on scroll up
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
-            }
-            lastScroll = currentScroll;
-        });
+            lastScrollY = window.scrollY;
+            requestAnimationFrame(updateHeader);
+        }
+        requestAnimationFrame(updateHeader);
         
-        // Show sticky CTA after scrolling
-        window.addEventListener('scroll', function() {
-            const cta = document.getElementById('stickyCta');
-            if (window.scrollY > 300) {
-                cta.classList.add('visible');
-            } else {
-                cta.classList.remove('visible');
-            }
-        });
-        
-        // FAQ toggle with smooth animation
+        // Initialize mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMenu);
+            menuToggle.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    toggleMenu();
+                }
+            });
+        }
+
+        // FAQ toggle functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
-                const item = question.parentElement;
+                const item = question.closest('.faq-item');
                 const isActive = item.classList.contains('active');
                 
                 // Close all other FAQ items
@@ -1705,149 +1621,55 @@
             });
         });
         
-        // Scroll indicator
-        const sections = document.querySelectorAll('section[id]');
-        const dots = document.querySelectorAll('.scroll-dot');
-        
-        function updateScrollIndicator() {
-            let currentSection = '';
-            const scrollPosition = window.scrollY + window.innerHeight / 2;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-                if (dot.getAttribute('data-section') === currentSection) {
-                    dot.classList.add('active');
-                }
-            });
-        }
-        
-        // Dot click navigation
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const targetSection = dot.getAttribute('data-section');
-                const targetElement = document.getElementById(targetSection);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Funnel visualization animation
-        function animateFunnel() {
-            const funnel = document.getElementById('funnelVisualization');
-            const stages = ['attention', 'interest', 'desire', 'action'];
-            
-            // Create lead cards
-            function createLead() {
-                const lead = document.createElement('div');
-                lead.className = 'lead-card';
-                lead.textContent = Math.floor(Math.random() * 1000);
-                funnel.appendChild(lead);
-                
-                // Random starting position at top of funnel
-                const startX = Math.random() * 200 + 50;
-                lead.style.left = `${startX}px`;
-                lead.style.top = '0px';
-                
-                // Make lead visible after positioning
-                setTimeout(() => {
-                    lead.classList.add('visible');
-                }, 50);
-                
-                // Animate through stages
-                let currentStage = 0;
-                const animate = () => {
-                    if (currentStage >= stages.length) {
-                        // Lead has completed the funnel, remove it
-                        setTimeout(() => {
-                            lead.style.opacity = '0';
-                            setTimeout(() => funnel.removeChild(lead), 300);
-                        }, 1000);
-                        return;
-                    }
-                    
-                    const stageElement = document.querySelector(`.${stages[currentStage]}`);
-                    const rect = stageElement.getBoundingClientRect();
-                    const funnelRect = funnel.getBoundingClientRect();
-                    
-                    const targetX = rect.left + rect.width/2 - funnelRect.left - 20;
-                    const targetY = rect.top - funnelRect.top + rect.height/2 - 10;
-                    
-                    lead.style.left = `${targetX}px`;
-                    lead.style.top = `${targetY}px`;
-                    
-                    // Some leads drop off at each stage
-                    const dropOff = Math.random() < 0.3 && currentStage > 0;
-                    if (dropOff) {
-                        // Animate off to the side
-                        setTimeout(() => {
-                            lead.style.left = `${targetX + (Math.random() > 0.5 ? 100 : -100)}px`;
-                            lead.style.opacity = '0';
-                            setTimeout(() => funnel.removeChild(lead), 300);
-                        }, 1000);
-                        return;
-                    }
-                    
-                    currentStage++;
-                    setTimeout(animate, 1000 + Math.random() * 1000);
-                };
-                
-                setTimeout(animate, Math.random() * 2000);
-            }
-            
-            // Create initial leads
-            for (let i = 0; i < 10; i++) {
-                setTimeout(createLead, i * 800);
-            }
-            
-            // Keep adding new leads periodically
-            setInterval(createLead, 2000);
-        }
-        
         // Animate elements on scroll
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.feature-card, .case-study, .stat-card, .analytics-card, .pricing-card');
+            const elements = document.querySelectorAll('.feature-card, .use-case-card, .pricing-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
                 
                 if (elementPosition < screenPosition) {
-                    element.classList.add('animated');
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
                 }
             });
         };
         
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            updateScrollIndicator();
-            
-            // Run animations
-            animateFunnel();
-            
-            // Run on load and scroll
-            animateOnScroll();
-            window.addEventListener('scroll', animateOnScroll);
-            window.addEventListener('scroll', updateScrollIndicator);
-            
-            // Add smooth hover effects to all interactive elements
-            document.querySelectorAll('a, button, .feature-card, .stat-card, .faq-question').forEach(el => {
-                el.style.transition = 'var(--transition)';
-            });
+        // Initialize animations
+        document.querySelectorAll('.feature-card, .use-case-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
+        
+        // Run animations on load and scroll
+        animateOnScroll();
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Load non-critical resources after a slight delay
+        setTimeout(function() {
+            // Load Font Awesome if not already loaded
+            if (!document.querySelector('link[href*="font-awesome"]')) {
+                const fa = document.createElement('link');
+                fa.rel = 'stylesheet';
+                fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+                document.head.appendChild(fa);
+            }
+            
+            // Load non-critical CSS
+            if (!document.querySelector('link[href*="non-critical.css"]')) {
+                const nonCriticalCSS = document.createElement('link');
+                nonCriticalCSS.rel = 'stylesheet';
+                nonCriticalCSS.href = 'css/non-critical.css';
+                document.head.appendChild(nonCriticalCSS);
+            }
+        }, 1000);
+    });
     </script>
+    
+    <!-- Preload main JS file -->
+    <link rel="preload" href="js/main.min.js" as="script">
+    <script src="js/main.min.js" defer></script>
 </body>
 </html>
