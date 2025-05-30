@@ -849,16 +849,14 @@
             position: relative;
         }
 
-        .testimonial-slider {
-            display: flex;
-            gap: 2rem;
-            padding: 1rem;
-            scroll-behavior: smooth;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
+     .testimonial-slider {
+    display: flex;
+    flex-direction: column; /* change from row to column */
+    gap: 2rem;
+    padding: 1rem;
+    overflow: visible; /* remove horizontal scrolling */
+    scroll-snap-type: none; /* disable snapping */
+}
 
         .testimonial-slider::-webkit-scrollbar {
             display: none;
