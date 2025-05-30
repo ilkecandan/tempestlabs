@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="FunnelFlow'nin Nick'in pazarlama karmaşasını nasıl düzenli, yüksek dönüşümlü bir satış kanalına dönüştürdüğünü keşfedin: görsel kanal haritalama ve akıllı içgörülerle.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="images/funnelflow-dashboard-preview.jpg" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload fonts with font-display: swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap"></noscript>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="pazarlama kanalı, satış süreci, dönüşüm optimizasyonu, FunnelFlow, Tempest Labs">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pazarlama Karmaşasından Netliğe: FunnelFlow Bir Satış Sürecini Nasıl Optimize Etti | Tempest Labs">
+    <meta property="og:description" content="Görsel kanal haritalama ve akıllı içgörülerin dağınık pazarlama verilerini yüksek dönüşümlü bir sisteme nasıl dönüştürdüğü">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tempestlabs.com/blog/funnelflow-case-study">
+    <meta property="og:image" content="https://tempestlabs.com/images/funnelflow-dashboard-preview.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FunnelFlow ile Pazarlama Karmaşasından Netliğe">
+    <meta name="twitter:description" content="Görsel kanal haritalama bir pazarlamacının dönüşümlerini %32 nasıl artırdı">
+    <meta name="twitter:image" content="https://tempestlabs.com/images/funnelflow-dashboard-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tempestlabs.com/blog/funnelflow-case-study">
+    
+    <title>Pazarlama Karmaşasından Netliğe: FunnelFlow Nick'in Satış Sürecini Nasıl Optimize Etti | Tempest Labs</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/tempest.png" type="image/x-icon">
+    
+    <!-- Preload Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/min.css"></noscript>
+    
+    <!-- Inline Critical CSS -->
+    <style>
+        /* ================================= */
+        /* TEMPEST LABS BLOG - OPTIMIZED */
+        /* ================================= */
+        :root {
+            --deep-teal: #01343E;
+            --aqua-glow: #00F0FF;
+            --muted-aqua: #66FCFF;
+            --glow-white: #A3FAFF;
+            --charcoal-black: #04191C;
+            --burnt-coral: #F74141;
+            --hero-teal: #0A9DB7;
+            --hero-dark-teal: #055B6D;
+            
+            --text-glow: 0 0 8px rgba(58, 227, 248, 0.3);
+            --hero-text-glow: 0 0 12px rgba(58, 227, 248, 0.4);
+            --transition-speed: 0.3s ease-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            background-color: white;
+            color: var(--charcoal-black);
+            line-height: 1.6;
+            letter-spacing: 0.2px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Header - Consistent with main page */
+        header {
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, background, box-shadow;
+        }
+
+        header.scrolled {
+            padding: 0.75rem 5%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--charcoal-black);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            will-change: transform;
+        }
+
+        .logo span {
+            color: var(--hero-teal);
+            position: relative;
+        }
+
+        .logo span::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--hero-teal);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--charcoal-black);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all var(--transition-speed);
+            text-decoration: none;
+            position: relative;
+            will-change: transform, color;
+        }
+
+        nav ul li a:hover {
+            color: var(--hero-teal);
+            transform: translateY(-2px);
+        }
+
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--hero-teal);
+            transition: width 0.4s ease;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            will-change: transform;
+        }
+
+        .menu-toggle i {
+            font-size: 1.5rem;
+            color: var(--charcoal-black);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle .fa-times {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-bars {
+            display: none;
+        }
+
+        .menu-toggle.active .fa-times {
+            display: block;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+
+        .social-icons a {
+            color: var(--charcoal-black);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: transform;
+        }
+
+        .social-icons a:hover {
+            color: var(--hero-teal);
+            transform: translateY(-2px);
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            will-change: opacity, visibility;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Blog Content Styles */
+        .blog-container {
+            padding: 12rem 5% 6rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .blog-header {
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .blog-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal-black);
+            position: relative;
+        }
+
+        .blog-header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            border-radius: 2px;
+        }
+
+        .blog-header .subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.8rem;
+            color: #444;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-content em {
+            color: var(--hero-dark-teal);
+            font-style: italic;
+        }
+
+        .blog-content strong {
+            color: var(--hero-teal);
+            font-weight: 600;
+        }
+
+        .blog-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal-black);
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        .blog-content h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+            border-radius: 2px;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content ul li::before {
+            content: "→";
+            color: var(--hero-teal);
+            position: absolute;
+            left: 0;
+        }
+
+        .blog-content a {
+            color: var(--hero-teal);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-content a:hover {
+            color: var(--hero-dark-teal);
+            text-decoration: underline;
+        }
+
+        .case-study {
+            background: rgba(10, 157, 183, 0.05);
+            border-left: 4px solid var(--hero-teal);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study h3 {
+            color: var(--hero-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .funnelflow-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(10, 157, 183, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--hero-teal);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .result-card .stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--hero-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-list {
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .tool-list {
+                columns: 1;
+            }
+        }
+
+        .share-buttons {
+            margin-top: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .share-button {
+            background: white;
+            color: var(--charcoal-black);
+            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .share-button:hover {
+            background: var(--hero-teal);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 157, 183, 0.2);
+            border-color: transparent;
+        }
+
+        .share-button i {
+            font-size: 1rem;
+        }
+
+        /* Footer - Consistent with main page */
+        footer {
+            padding: 5rem 5% 2.5rem;
+            background-color: var(--charcoal-black);
+            color: white;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--hero-teal), var(--aqua-glow));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--hero-teal);
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-column a {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: transform, color;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            will-change: color;
+        }
+
+        .legal-links a:hover {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .social-icons {
+                margin-left: 0;
+                margin-top: 2rem;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 10rem 5% 4rem;
+            }
+            
+            .blog-content {
+                padding: 2rem;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-container {
+                padding: 8rem 5% 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header role="banner">
+        <a class="logo" href="/turkish/index.html" aria-label="Tempest Labs Anasayfa">
+            Tempest <span>Labs</span>
+        </a>
+        
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Navigasyon menüsünü aç/kapat" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </button>
+
+        <nav role="navigation">
+            <ul>
+                <li><a href="/turkish/about.html" aria-label="Tempest Labs Hakkında">Hakkımızda</a></li>
+                <li><a href="/turkish/products.html" aria-label="Ürünlerimizi görüntüle">Ürünler</a></li>
+                <li><a href="/turkish/contact.html" aria-label="Bize ulaşın">İletişim</a></li>
+                <li><a href="/turkish/blog.html" aria-current="page" aria-label="Blogumuzu okuyun">Blog</a></li>
+                <li><a href="/index.html" aria-label="İngilizce görüntüle">EN</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tr.pinterest.com/tempestlabs/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Blog Content -->
+    <main class="blog-container" role="main">
+        <header class="blog-header">
+            <h1>Pazarlama Karmaşasından Netliğe: FunnelFlow Nick'in Satış Sürecini Nasıl Optimize Etti</h1>
+            <p class="subtitle">Görsel kanal haritalama ve akıllı içgörülerin dağınık pazarlama verilerini yüksek dönüşümlü bir sisteme nasıl dönüştürdüğü</p>
+        </header>
+
+        <article class="blog-content">
+            <p>Günümüzün hızlı tempolu pazarlama dünyasında, dağınık veriler, belirsiz müşteri yolculukları ve öngörülemeyen satış süreçleri arasında boğulmuş hissetmek kolaydır. FunnelFlow tam da bu tür bir karmaşayı çözmek için tasarlandı.</p>
+
+            <h2>FunnelFlow Nedir?</h2>
+            <p>FunnelFlow, pazarlama stratejinize yapı kazandıran görsel bir kontrol panelidir. Elektronik tablolar arasında gezinmek ve tahminler yapmak yerine, müşteri yolculuğunuzun farkındalıktan dönüşüme kadar net ve sakin bir görünümünü elde edersiniz. Görsel kanal haritalama, akıllı içgörüler ve gerçek zamanlı lead takibi ile FunnelFlow, veri karmaşasını harekete geçirilebilir netliğe dönüştürür.</p>
+
+            <div class="funnelflow-features">
+                <div class="feature-card">
+                    <h3>Görsel Kanal Haritalama</h3>
+                    <p>Potansiyel müşterilerinizin dönüşüm kanalında nerede olduğunu ve nerede ayrıldığını anında görün.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Akıllı İçgörüler</h3>
+                    <p>Müşteri yolculuğunun her aşamasında dönüşümleri iyileştirmek için harekete geçirilebilir öneriler alın.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Lead Organizasyonu</h3>
+                    <p>Renk kodlu takip ve etiketleme ile hangi leadin hangi aşamada olduğunu tam olarak bilin.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>İçerik Takibi</h3>
+                    <p>Maksimum etki için doğru içeriği kanalın doğru aşamasıyla eşleştirin.</p>
+                </div>
+            </div>
+
+            <p>Ve sadece güçlü değil - aynı zamanda kolaydır. Kurulum dakikalar sürer ve dik bir öğrenme eğrisi yoktur.</p>
+             
+            <h2>Vaka Çalışması: Nick FunnelFlow ile Pazarlamasını Nasıl Dönüştürdü</h2>
+            <div class="case-study">
+                <h3>TinyStock: Küçük Dükkanlar için Envanter Yönetimi</h3>
+                <p><strong>Nick büyüyen bir SaaS şirketinde dijital pazarlamacı olarak Nick, birden fazla reklam kampanyası, içerik kanalı ve lead kaynağını yönetiyordu - ancak bunların nasıl bağlantılı olduğuna dair net bir resmi yoktu. Leadler geliyordu ancak dönüşümler sadece %8'de kalıyordu. Satış ekibi genellikle yanlış potansiyel müşterilerle iletişime geçiyordu ve içerik etkisi net olmadan oluşturuluyordu.</p>
+                
+                <p><strong>Dönüm Noktası:</strong> "Bir şeylerin ters gittiğini biliyordum ama nerede olduğunu bilmiyordum," diye hatırlıyor Nick. "Pazarlama kanalımız bir kara kutuydu. İyi trafik ve etkileşime rağmen karanlıkta ateş ediyorduk."</p>
+                
+                <p><strong>FunnelFlow Uygulaması:</strong> Nick FunnelFlow'u bir saatten kısa sürede uyguladı. Hemen, kontrol paneli önemli bir sorunu ortaya çıkardı: İlgi ve Değerlendirme aşamaları arasında %62'lik büyük bir düşüş vardı. Potansiyel müşteriler içerikle etkileşime giriyor ancak ileriye doğru hareket etmiyordu. Sorun? Uyumsuz mesajlaşma ve net olmayan CTA'lar.</p>
+                
+                <p><strong>Çözüm:</strong> FunnelFlow ile Nick:</p>
+                <ul>
+                    <li>Müşteri yolculuğunun her aşamasını ilk kez görsel olarak haritaladı</li>
+                    <li>Isı haritası tarzı görselleştirmeyle kanaldaki zayıf noktaları belirledi</li>
+                    <li>Dahili analizlerle her aşamada içerik etkinliğini takip etti</li>
+                    <li>Lead takip sürecini kesin kanal konumuna göre yeniden düzenledi</li>
+                </ul>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="stat">%32</div>
+                        <p>İlk ay içinde dönüşüm oranlarında artış</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="stat">%40</div>
+                        <p>Lead nitelendirme süresinde azalma</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="stat">2.5x</div>
+                        <p>Aşama özel içerikle daha yüksek e-posta açma oranları</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="stat">%54</div>
+                        <p>Pazarlama-satış uyumunda iyileşme</p>
+                    </div>
+                </div>
+                
+                <p><strong>Nick'in Yorumu:</strong> "FunnelFlow, gürültüyü stratejiye dönüştüren eksik bulmacaydı. Ekibimize neyin gerçekten işe yaradığına dair ortak bir görünürlük sağladı - sadece doğru hissettiren şey değil."</p>
+            </div>
+
+            <h2>Pazarlamada Görselleştirme Neden Önemli?</h2>
+            <p>Araştırmalar, kanallarını görselleştiren pazarlamacıların şunları yapma olasılığının daha yüksek olduğunu gösteriyor:</p>
+            <ul>
+                <li><strong>2 kat daha fazla</strong> lead ve gelir hedeflerini aşma</li>
+                <li>Pazarlama yatırımlarında <strong>%54 daha fazla ROI</strong> elde etme</li>
+                <li>Azalan hayal kırıklığı nedeniyle <strong>daha yüksek iş memnuniyeti</strong> bildirme</li>
+            </ul>
+
+            <p>Yine çoğu pazarlamacı, net olmayan müşteri yolculuklarını bir numaralı engelleri olarak belirtiyor - FunnelFlow bunu doğrudan şunlarla çözüyor:</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>Gerçek Zamanlı Kanal Görselleştirme</h3>
+                    <p>Potansiyel müşterilerin kanalınıza tam olarak nereden girdiğini, etkileşime girdiğini ve çıktığını sezgisel renk kodlaması ve akış diyagramlarıyla görün.</p>
+                </div>
+
+                <div class="process-step">
+                    <h3>Otomatik Darboğaz Tespiti</h3>
+                    <p>Sistem, anormal düşüş oranları olan aşamaları otomatik olarak işaretler ve optimizasyon stratejileri önerir.</p>
+                </div>
+
+                <div class="process-step">
+                    <h3>İçerik-Aşama Uyumu</h3>
+                    <p>Eşleştirme sistemimizle her içerik parçasının belirli bir kanal aşamasında net bir amaca hizmet etmesini sağlayın.</p>
+                </div>
+            </div>
+
+            <h2>Kanalınızı Net Bir Şekilde Görmeye Hazır mısınız?</h2>
+            <p>Nick gibi bir SaaS startup'ı yönetiyor olun ya da hareketli bir e-ticaret markasını yönetiyor olun, FunnelFlow büyümek için ihtiyacınız olan netliği sağlar. En iyi yanı? İlk oturumunuzdan itibaren içgörüler görmeye başlayacaksınız - karmaşık kurulum veya veri geçişi gerekmez.</p>
+
+            <p><strong>Özel Teklif:</strong> Tempest Labs okuyucuları ödeme sırasında <strong>FUNNEL30</strong> kodunu kullanarak 30 gün ücretsiz alır.</p>
+
+            <div class="share-buttons">
+                <p style="width: 100%; text-align: center; margin-bottom: 1.5rem; color: var(--hero-dark-teal);">Bu gönderiyi paylaş:</p>
+                <!-- Twitter Button -->
+                <a href="https://x.com/intent/tweet?text=FunnelFlow%20ile%20Pazarlama%20Karmaşasından%20Netliğe&url=https%3A%2F%2Ftempestlabs.com%2Fblog%2Ffunnelflow-case-study" target="_blank" class="share-button" rel="noopener noreferrer" aria-label="Twitter'da paylaş">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                
+       
+                
+                <!-- Email Button -->
+                <a href="mailto:?subject=FunnelFlow%20ile%20Pazarlama%20Karmaşasından%20Netliğe&body=Buradan%20okuyun%3A%20https%3A%2F%2Ftempestlabs.com%2Fblog%2Ffunnelflow-case-study" target="_blank" class="share-button" aria-label="E-posta ile paylaş">
+                    <i class="fas fa-envelope"></i> E-posta
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><a href="/turkish/about.html">Hakkımızda</a></h3>
+                <p>Daha derin düşünme ve daha net görüş için araçlar yaratıyoruz.</p>
+            </div>
+            <div class="footer-column">
+                <h3><a href="/products.html">Ürünler</a></h3>
+                <a href="/turkish/product-intuiva.html">Intuiva</a>
+                <a href="https://tempestlabs.space/product-funnelflow.html">FunnelFlow</a>
+            </div>
+            <div class="footer-column">
+                <h3><a href="/turkish/blog.html">İçgörüler</a></h3>
+                <a href="/turkish/blog.html">Blog</a>
+                <a href="#use-cases">Vaka Çalışmaları</a>
+                <a href="https://tempestlabs.space/blog/tech.html" target="_blank" rel="noopener noreferrer">Felsefemiz</a>
+            </div>
+            <div class="footer-column">
+                <h3>Bağlantı</h3>
+                <a href="https://www.linkedin.com/company/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/tempestlabsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+            <div class="footer-column">
+                <h3>İletişim</h3>
+                <a href="/turkish/contact.html">İstanbul, Zeytinburnu</a>
+                <a href="tel:+905075275600">+90 507 527 56 00</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tempest Labs. Tüm hakları saklıdır.</p>
+            <div class="legal-links">
+                <a href="/turkish/legal/membership-agreement.html">Üyelik Sözleşmesi</a>
+                <a href="/turkish/legal/kvkk-clarification.html">KVKK Aydınlatma Metni</a>
+                <a href="/turkish/legal/distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Pazarlama Karmaşasından Netliğe: FunnelFlow Bir Satış Sürecini Nasıl Optimize Etti",
+      "description": "Görsel kanal haritalama ve akıllı içgörülerin dağınık pazarlama verilerini yüksek dönüşümlü bir sisteme nasıl dönüştürdüğü",
+      "url": "https://tempestlabs.com/blog/funnelflow-case-study",
+      "datePublished": "2025-05-30",
+      "author": {
+        "@type": "Person",
+        "name": "İlke Candan Bengi",
+        "url": "https://ilkecandanbengi.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tempest Labs",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tempestlabs.com/images/tempest.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+    // Immediately invoked function for critical functionality
+    (function() {
+        // Set initial header state
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            const toggle = document.querySelector(".menu-toggle");
+            const backdrop = document.querySelector(".menu-backdrop");
+            
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+            backdrop.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+            
+            // Update aria-expanded attribute
+            const isExpanded = toggle.classList.contains("active");
+            toggle.setAttribute("aria-expanded", isExpanded);
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Initialize mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+        document.querySelector('.menu-toggle').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                toggleMenu();
+            }
+        });
+
+        // Guaranteed Working LinkedIn Share Function
+        function shareOnLinkedIn(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Customize these values
+            const shareData = {
+                url: 'https://tempestlabs.com/blog/funnelflow-case-study',
+                title: 'FunnelFlow ile Pazarlama Karmaşasından Netliğe',
+                text: 'Görsel kanal haritalama bir pazarlamacının dönüşümlerini %32 nasıl artırdı',
+                via: 'TempestLabs'
+            };
+            
+            // First try the most reliable method
+            const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareData.url)}`;
+            
+            // Window dimensions
+            const width = 600;
+            const height = 600;
+            const left = (screen.width - width) / 2;
+            const top = (screen.height - height) / 2;
+            
+            // Open the share window
+            const shareWindow = window.open(
+                linkedinShareUrl,
+                'LinkedInShareWindow',
+                `width=${width},height=${height},left=${left},top=${top}`
+            );
+            
+            // If popup was blocked, fallback to direct URL
+            if (!shareWindow || shareWindow.closed) {
+                window.location.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}&summary=${encodeURIComponent(shareData.text)}&source=${encodeURIComponent(shareData.via)}`;
+            }
+            
+            return false;
+        }
+    })();
+    </script>
+    
+    <!-- Preload main JS file -->
+    <link rel="preload" href="js/main.min.js" as="script">
+    <script src="js/main.min.js" defer></script>
+</body>
+</html>
