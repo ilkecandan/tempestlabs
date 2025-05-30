@@ -21,7 +21,6 @@
     
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="productivity tools, workflow software, one-time purchase apps, sales pipeline management, task organization">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Tempest Labs - Power Tools for Productive Professionals">
@@ -1693,163 +1692,192 @@
         </div>
     </footer>
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tempest Labs",
-      "url": "https://tempestlabs.com",
-      "logo": "https://tempestlabs.com/images/tempest.png",
-      "description": "Creating powerful, focused software tools for productive professionals.",
-      "sameAs": [
-        "https://www.linkedin.com/company/tempestlabsofficial/",
-        "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
-        "https://www.instagram.com/tempestlabsofficial/",
-        "https://tr.pinterest.com/tempestlabs/"
-      ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Tempest Labs",
-      "url": "https://tempestlabs.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tempestlabs.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Intuiva",
-      "image": "https://tempestlabs.com/images/intuiva-screenshot.webp",
-      "description": "Turn mental clutter into clear next steps with Intuiva.",
-      "brand": { "@type": "Brand", "name": "Tempest Labs" }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "FunnelFlow",
-      "image": "https://tempestlabs.com/images/funnel-screenshot.webp",
-      "description": "Streamline your sales process with FunnelFlow.",
-      "brand": { "@type": "Brand", "name": "Tempest Labs" }
-    }
-    </script>
+  <!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tempest Labs",
+  "url": "https://tempestlabs.com",
+  "logo": "https://tempestlabs.com/images/tempest.png",
+  "description": "Creating powerful, focused software tools for productive professionals.",
+  "sameAs": [
+    "https://www.linkedin.com/company/tempestlabsofficial/",
+    "https://www.youtube.com/channel/UCngCWdYdius52NH2McQ2YQA",
+    "https://www.instagram.com/tempestlabsofficial/",
+    "https://tr.pinterest.com/tempestlabs/"
+  ]
+}
+</script>
 
-    <!-- Optimized JavaScript -->
-    <script>
-    // Critical JavaScript executed immediately
-    document.addEventListener('DOMContentLoaded', function() {
-        // Set initial header state
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        }
-        
-        // Mobile menu toggle function
-        function toggleMenu() {
-            const menu = document.querySelector("nav ul");
-            const toggle = document.querySelector(".menu-toggle");
-            const backdrop = document.querySelector(".menu-backdrop");
-            
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
-            backdrop.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
-            
-            // Update aria-expanded attribute for accessibility
-            const isExpanded = toggle.classList.contains("active");
-            toggle.setAttribute("aria-expanded", isExpanded);
-        }
-        
-        // Add scroll effect to header with requestAnimationFrame
-        let lastScrollY = window.scrollY;
-        function updateHeader() {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            lastScrollY = window.scrollY;
-            requestAnimationFrame(updateHeader);
-        }
-        requestAnimationFrame(updateHeader);
-        
-        // Initialize mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        if (menuToggle) {
-            menuToggle.addEventListener('click', toggleMenu);
-            menuToggle.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    toggleMenu();
-                }
-            });
-        }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tempest Labs",
+  "url": "https://tempestlabs.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tempestlabs.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 
-        // Intersection Observer for animations
-        const animateElements = function() {
-            const elements = document.querySelectorAll('.product-card, .use-case-card, .insight-card, .case-study-card, .value-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            
-            elements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(element);
-            });
-        };
-        
-        // Load non-critical resources after page load
-        function loadNonCriticalResources() {
-            // Load Font Awesome if not already loaded
-            if (!document.querySelector('link[href*="font-awesome"]')) {
-                const fa = document.createElement('link');
-                fa.rel = 'stylesheet';
-                fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
-                document.head.appendChild(fa);
-            }
-            
-            // Load non-critical CSS
-            if (!document.querySelector('link[href*="non-critical.css"]')) {
-                const nonCriticalCSS = document.createElement('link');
-                nonCriticalCSS.rel = 'stylesheet';
-                nonCriticalCSS.href = 'css/non-critical.css';
-                document.head.appendChild(nonCriticalCSS);
-            }
-        }
-        
-        // Initialize animations
-        animateElements();
-        
-        // Load non-critical resources after a slight delay
-        setTimeout(loadNonCriticalResources, 1000);
-    });
-    </script>
-    
-    <!-- Preload main JS file -->
-    <link rel="preload" href="js/main.min.js" as="script">
-    <script src="js/main.min.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Intuiva",
+  "image": "https://tempestlabs.com/images/intuiva-screenshot.webp",
+  "description": "Turn mental clutter into clear next steps with Intuiva.",
+  "brand": { "@type": "Brand", "name": "Tempest Labs" },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://tempestlabs.com/product-intuiva.html",
+    "priceCurrency": "USD",
+    "price": "29.99",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "10"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "FunnelFlow",
+  "image": "https://tempestlabs.com/images/funnel-screenshot.webp",
+  "description": "Streamline your sales process with FunnelFlow.",
+  "brand": { "@type": "Brand", "name": "Tempest Labs" },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://tempestlabs.com/product-funnelflow.html",
+    "priceCurrency": "USD",
+    "price": "29.99",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "8"
+  }
+}
+</script>
+
+<!-- BreadcrumbList for better SEO navigation -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tempestlabs.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Products",
+      "item": "https://tempestlabs.com/products.html"
+    }
+  ]
+}
+</script>
+
+<!-- BlogPosting: Why We Build One-Time Purchase Apps -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why We Build One-Time Purchase Apps",
+  "image": "https://tempestlabs.com/images/subscriptions-article.webp",
+  "author": {
+    "@type": "Person",
+    "name": "İlke Candan Bengi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tempest Labs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tempestlabs.com/images/tempest.png"
+    }
+  },
+  "datePublished": "2025-05-01",
+  "dateModified": "2025-05-01",
+  "description": "Our philosophy on software pricing and why we avoid subscriptions.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tempestlabs.space/blog/subscriptions.html"
+  }
+}
+</script>
+
+<!-- BlogPosting: Power of Visualization in Your Pipeline -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Power of Visualization in Your Pipeline",
+  "image": "https://tempestlabs.com/images/visualization-article.webp",
+  "author": {
+    "@type": "Person",
+    "name": "İlke Candan Bengi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tempest Labs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tempestlabs.com/images/tempest.png"
+    }
+  },
+  "datePublished": "2025-05-01",
+  "dateModified": "2025-05-01",
+  "description": "How visual organization transforms complex workflows into clear processes.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tempestlabs.space/blog/essentialknowledge.html"
+  }
+}
+</script>
+
+<!-- BlogPosting: The Anti-Overwhelm Tech Manifesto -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Anti-Overwhelm Tech Manifesto",
+  "image": "https://tempestlabs.com/images/tech-article.webp",
+  "author": {
+    "@type": "Person",
+    "name": "İlke Candan Bengi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tempest Labs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tempestlabs.com/images/tempest.png"
+    }
+  },
+  "datePublished": "2025-05-01",
+  "dateModified": "2025-05-01",
+  "description": "Our approach to building tools that reduce cognitive load rather than add to it.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tempestlabs.space/blog/tech.html"
+  }
+}
+</script>
+
 </body>
 </html>
